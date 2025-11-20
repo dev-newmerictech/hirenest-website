@@ -11,6 +11,7 @@ import { NeedTalent } from './components/Needtalent';
 import { Work } from './components/Work';
 import { ResumeCTA } from './components/resumeCTA';
 import { Block as Footer } from '@/src/components/blocks/footers/footer-with-four-columns/block';
+import { TabsComponent } from './components/Tabs';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <NeedTalent />
       <CTA />
       <Work />
+      <TabsComponent />
       <ResumeCTA />
       <Logos />
       <Pricing />

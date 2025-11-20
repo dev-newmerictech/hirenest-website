@@ -2,8 +2,8 @@ import { Link, Stack, type StackProps } from '@chakra-ui/react'
 
 export const NavbarLinks = (props: StackProps) => {
   const links = [
-    { label: 'For Job Seeker', href: '/job-seeker' },
-    { label: 'For Job Providers', href: '/job-providers' },
+    { label: 'For Job Seeker', href: '/#' },
+    { label: 'For Job Providers', href: '/#' },
   ]
 
   return (

@@ -7,7 +7,7 @@ export const Work = () => (
     position="relative"
     bg="#fff"
   >
-    <Container py={{ base: '16', md: '24' }} maxW="7xl" position="relative" zIndex="1">
+    <Container py={{ base: '16' }} maxW="7xl" position="relative" zIndex="1">
       <VStack gap="10" textAlign="center">
         <Stack gap="8">
           <Heading

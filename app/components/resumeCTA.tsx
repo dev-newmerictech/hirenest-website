@@ -113,6 +113,7 @@ export const ResumeCTA = () => (
                         variant="outline"
                         color="white"
                         rounded="full"
+                        mt={7}
                     >
                         Know More
                     </Button>

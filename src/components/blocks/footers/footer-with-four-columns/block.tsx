@@ -55,19 +55,19 @@ const footerLinks = {
   company: {
     title: 'Company',
     links: [
-      { label: 'About', href: '#about' },
-      { label: 'Careers', href: '#careers' },
+      { label: 'About', href: '/about' },
+      { label: 'Careers', href: '/careers' },
       { label: 'Contact Us', href: '#contact' },
     ],
   },
   legal: {
     title: 'Legal',
     links: [
-      { label: 'Privacy Policy', href: '#privacy' },
-      { label: 'Terms of Service', href: '#terms' },
-      { label: 'Refund Policy', href: '#refund' },
-      { label: 'Cookie Policy', href: '#cookies' },
-      { label: 'Security', href: '#security' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
+      { label: 'Terms of Service', href: '/terms-of-service' },
+      { label: 'Refund Policy', href: '/refund-policy' },
+      { label: 'Cookie Policy', href: '/cookie-policy' },
+      { label: 'Security', href: '/security' },
     ],
   },
 };
@@ -206,6 +206,11 @@ export function Block() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
+                  _focus={
+                    {
+                      border: 'none'
+                    }
+                  }
                 >
                   <Box
                     as={social.icon}

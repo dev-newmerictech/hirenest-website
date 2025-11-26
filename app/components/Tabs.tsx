@@ -99,16 +99,16 @@ export function TabsComponent() {
                     <VStack gap="4" textAlign="center" maxW="3xl" mx="auto">
                         <Heading
                             as="h2"
-                            fontSize={{ base: '3xl', md: '5xl' }}
+                            fontSize={{ base: '3xl', md: '4xl' }}
                             fontWeight="bold"
-                            color="rgba(42, 63, 94, 1)"
+                            color="#000"
                             lineHeight="tighter"
                         >
                             Choose Your Path
                         </Heading>
                         <Text
-                            fontSize={{ base: 'lg', md: 'xl' }}
-                            color="rgba(42, 63, 94, 1)"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            color="#000"
                             opacity={0.8}
                             lineHeight="relaxed"
                             maxW="2xl"
@@ -120,16 +120,16 @@ export function TabsComponent() {
                     <Box w="full">
                         <Tabs.Root defaultValue="job-seekers" variant="plain" w="full">
                             <Flex justifyContent="center" mb={{ base: '8', md: '12' }}>
-                                <Tabs.List 
-                                    bg="white" 
-                                    rounded="full" 
-                                    p="2" 
+                                <Tabs.List
+                                    bg="white"
+                                    rounded="full"
+                                    p="2"
                                     shadow="0px 4px 20px rgba(0, 0, 0, 0.08)"
                                     border="1px solid rgba(0, 0, 0, 0.05)"
                                 >
-                                    <Tabs.Trigger 
-                                        value="job-seekers" 
-                                        fontWeight="semibold" 
+                                    <Tabs.Trigger
+                                        value="job-seekers"
+                                        fontWeight="semibold"
                                         fontSize={{ base: 'md', md: 'lg' }}
                                         px={{ base: '6', md: '8' }}
                                         py={{ base: '3', md: '4' }}
@@ -138,14 +138,14 @@ export function TabsComponent() {
                                             bg: "linear-gradient(90deg, #0071fb 0%, #b000ea 100%)",
                                             color: "white"
                                         }}
-                                        color="rgba(42, 63, 94, 1)"
+                                        color="#000"
                                         transition="all 0.3s ease"
                                     >
                                         Job Seekers
                                     </Tabs.Trigger>
-                                    <Tabs.Trigger 
-                                        value="recruiters" 
-                                        fontWeight="semibold" 
+                                    <Tabs.Trigger
+                                        value="recruiters"
+                                        fontWeight="semibold"
                                         fontSize={{ base: 'md', md: 'lg' }}
                                         px={{ base: '6', md: '8' }}
                                         py={{ base: '3', md: '4' }}
@@ -154,7 +154,7 @@ export function TabsComponent() {
                                             bg: "linear-gradient(90deg, #0071fb 0%, #b000ea 100%)",
                                             color: "white"
                                         }}
-                                        color="rgba(42, 63, 94, 1)"
+                                        color="#000"
                                         transition="all 0.3s ease"
                                     >
                                         Job Recruiters
@@ -163,8 +163,8 @@ export function TabsComponent() {
                             </Flex>
 
                             <Tabs.Content value="job-seekers">
-                                <Grid 
-                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} 
+                                <Grid
+                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
                                     gap={{ base: '6', md: '8' }}
                                 >
                                     {jobSeekersCards.map((card, index) => {
@@ -217,7 +217,7 @@ export function TabsComponent() {
                                                         as="h3"
                                                         fontSize={{ base: 'xl', md: '2xl' }}
                                                         fontWeight="bold"
-                                                        color="rgba(42, 63, 94, 1)"
+                                                        color="#000"
                                                         lineHeight="tight"
                                                         mt="2"
                                                     >
@@ -225,7 +225,7 @@ export function TabsComponent() {
                                                     </Heading>
                                                     <Text
                                                         fontSize={{ base: 'sm', md: 'md' }}
-                                                        color="rgba(42, 63, 94, 1)"
+                                                        color="#000"
                                                         opacity={0.7}
                                                         lineHeight="relaxed"
                                                         flex="1"
@@ -261,8 +261,8 @@ export function TabsComponent() {
                             </Tabs.Content>
 
                             <Tabs.Content value="recruiters">
-                                <Grid 
-                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} 
+                                <Grid
+                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
                                     gap={{ base: '6', md: '8' }}
                                 >
                                     {recruitersCards.map((card, index) => {
@@ -315,7 +315,7 @@ export function TabsComponent() {
                                                         as="h3"
                                                         fontSize={{ base: 'xl', md: '2xl' }}
                                                         fontWeight="bold"
-                                                        color="rgba(42, 63, 94, 1)"
+                                                        color="#000"
                                                         lineHeight="tight"
                                                         mt="2"
                                                     >
@@ -323,7 +323,7 @@ export function TabsComponent() {
                                                     </Heading>
                                                     <Text
                                                         fontSize={{ base: 'sm', md: 'md' }}
-                                                        color="rgba(42, 63, 94, 1)"
+                                                        color="#000"
                                                         opacity={0.7}
                                                         lineHeight="relaxed"
                                                         flex="1"

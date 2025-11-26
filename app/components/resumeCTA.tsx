@@ -1,12 +1,12 @@
 import { Badge, Box, Button, Container, Grid, Heading, Text, VStack } from "@chakra-ui/react";
 
 export const ResumeCTA = () => (
-    <Box margin="0 auto">
+    <Box margin="0 auto" py={{ base: 16, md: 20 }}>
         <Container maxW="6xl" bg="rgba(16, 37, 67, 1)" py={{ base: 16, md: 20 }} px={{ base: 8, md: 16 }} borderRadius="16px" mb={{ base: 16 }}>
             <VStack>
                 <Heading
                     as="h2"
-                    fontSize={{ base: '4xl' }}
+                    fontSize={{ base: '3xl', md: '4xl' }}
                     maxW={{ md: '6xl' }}
                     mx="auto"
                     lineHeight="tighter"
@@ -18,7 +18,7 @@ export const ResumeCTA = () => (
                     Your Resume, Reinvented by AI
                 </Heading>
                 <Text
-                    fontSize={{ base: 'md', md: 'xl' }}
+                    fontSize={{ base: 'md', md: 'lg' }}
                     fontWeight="500"
                     color="white"
                     textAlign="center"
@@ -49,12 +49,12 @@ export const ResumeCTA = () => (
 
             <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={4}>
                 <Box bg="rgba(70, 62, 254, 1)" borderRadius="24px" p={8}>
-                    <Badge mb={12} color="rgba(42, 63, 94, 1)" shadow={'0px 4px 13px 0px rgba(0, 0, 0, 0.13)'} bg="white" borderRadius="full" px={5} py={3} fontSize={{ base: 'sm', md: 'md' }} fontWeight="medium">
+                    <Badge mb={12} color="#4241ff" shadow={'0px 4px 13px 0px rgba(0, 0, 0, 0.13)'} bg="white" borderRadius="full" px={5} py={3} fontSize={{ base: 'sm', md: 'md' }} fontWeight="medium">
                         Smart AI Feature
                     </Badge>
                     <Heading
                         as="h3"
-                        fontSize={{ base: '2xl', md: '3xl' }}
+                        fontSize={{ base: 'xl', md: '2xl' }}
                         fontWeight="bold"
                         color="white"
                         textAlign="left"
@@ -63,7 +63,7 @@ export const ResumeCTA = () => (
                         AI Matching Algorithm
                     </Heading>
                     <Text
-                        fontSize={{ base: 'md', md: 'xl' }}
+                        fontSize={{ base: 'sm', md: 'md' }}
                         fontWeight="500"
                         color="white"
                         textAlign="left"
@@ -84,12 +84,12 @@ export const ResumeCTA = () => (
                 </Box>
 
                 <Box bg="rgba(175, 1, 234, 1)" borderRadius="24px" p={8}>
-                    <Badge mb={12} color="rgba(42, 63, 94, 1)" shadow={'0px 4px 13px 0px rgba(0, 0, 0, 0.13)'} bg="white" borderRadius="full" px={5} py={3} fontSize={{ base: 'sm', md: 'md' }} fontWeight="medium">
+                    <Badge mb={12} color="#4241ff" shadow={'0px 4px 13px 0px rgba(0, 0, 0, 0.13)'} bg="white" borderRadius="full" px={5} py={3} fontSize={{ base: 'sm', md: 'md' }} fontWeight="medium">
                         Smart AI Feature
                     </Badge>
                     <Heading
                         as="h3"
-                        fontSize={{ base: '2xl', md: '3xl' }}
+                        fontSize={{ base: 'xl', md: '2xl' }}
                         fontWeight="bold"
                         color="white"
                         textAlign="left"
@@ -98,7 +98,7 @@ export const ResumeCTA = () => (
                         Skill Gap Insights
                     </Heading>
                     <Text
-                        fontSize={{ base: 'md', md: 'xl' }}
+                        fontSize={{ base: 'sm', md: 'md' }}
                         fontWeight="500"
                         color="white"
                         textAlign="left"
@@ -125,38 +125,38 @@ export const ResumeCTA = () => (
             <Grid templateColumns={{ base: '1fr', md: 'repeat(4, 1fr)' }} gap={14}>
                 <Box textAlign="center" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
 
-                    <Heading as="h3" fontSize={{ base: '3xl', md: '5xl' }} fontWeight="bold" color="rgba(42, 63, 94, 1)" textAlign="left" mb={4}>
+                    <Heading as="h3" fontSize={{ base: '3xl', md: '4xl' }} fontWeight="bold" color="#000" textAlign="left" mb={4}>
                         100K+
                     </Heading>
-                    <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="500" color="rgba(42, 63, 94, 1)" textAlign="center" maxW={{ md: '4xl' }} mx="auto" lineHeight="relaxed">
+                    <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight="500" color="#000" textAlign="center" maxW={{ md: '4xl' }} mx="auto" lineHeight="relaxed">
                         Skill Assessments <br /> Taken
                     </Text>
                 </Box>
                 <Box textAlign="center" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
 
-                    <Heading as="h3" fontSize={{ base: '3xl', md: '5xl' }} fontWeight="bold" color="rgba(42, 63, 94, 1)" textAlign="left" mb={4}>
+                    <Heading as="h3" fontSize={{ base: '3xl', md: '4xl' }} fontWeight="bold" color="#000" textAlign="left" mb={4}>
                         85%
                     </Heading>
-                    <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="500" color="rgba(42, 63, 94, 1)" textAlign="center" maxW={{ md: '4xl' }} mx="auto" lineHeight="relaxed">
+                    <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight="500" color="#000" textAlign="center" maxW={{ md: '4xl' }} mx="auto" lineHeight="relaxed">
                         Users Got Interview Calls Faster
                     </Text>
                 </Box>
                 <Box textAlign="center" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
 
-                    <Heading as="h3" fontSize={{ base: '3xl', md: '5xl' }} fontWeight="bold" color="rgba(42, 63, 94, 1)" textAlign="left" mb={4}>
+                    <Heading as="h3" fontSize={{ base: '3xl', md: '4xl' }} fontWeight="bold" color="#000" textAlign="left" mb={4}>
                         3x
                     </Heading>
-                    <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="500" color="rgba(42, 63, 94, 1)" textAlign="center" maxW={{ md: '4xl' }} mx="auto" lineHeight="relaxed">
+                    <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight="500" color="#000" textAlign="center" maxW={{ md: '4xl' }} mx="auto" lineHeight="relaxed">
                         Faster Hiring <br /> With AI
                     </Text>
                 </Box>
                 <Box textAlign="center" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
 
-                    <Heading as="h3" fontSize={{ base: '3xl', md: '5xl' }} fontWeight="bold" color="rgba(42, 63, 94, 1)" textAlign="left" mb={4}>
-                    50K+
+                    <Heading as="h3" fontSize={{ base: '3xl', md: '4xl' }} fontWeight="bold" color="#000" textAlign="left" mb={4}>
+                        50K+
                     </Heading>
-                    <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="500" color="rgba(42, 63, 94, 1)" textAlign="center" maxW={{ md: '4xl' }} mx="auto" lineHeight="relaxed">
-                    Verified Job <br /> Listings
+                    <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight="500" color="#000" textAlign="center" maxW={{ md: '4xl' }} mx="auto" lineHeight="relaxed">
+                        Verified Job <br /> Listings
                     </Text>
                 </Box>
             </Grid>

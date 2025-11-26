@@ -35,20 +35,20 @@ export const PricingCard = (props: PricingCardProps) => {
         {data.title}
       </HStack>
       <Flex gap="1">
-        <Span fontSize="24px" lineHeight="1" fontWeight="700" color="rgba(42, 63, 94, 1)">
+        <Span fontSize="24px" lineHeight="1" fontWeight="700" color="#000">
           {data.priceSymbol}
           {data.price}
         </Span>
         /
-        <Span fontSize="24px" lineHeight="1" fontWeight="400" color="rgba(42, 63, 94, 1)" textTransform="capitalize">
+        <Span fontSize="24px" lineHeight="1" fontWeight="400" color="#000" textTransform="capitalize">
           {data.priceUnit}
         </Span>
       </Flex>
-      {data.extraline && <Span fontSize="16px" lineHeight="1" fontWeight="400" color="rgba(42, 63, 94, 1)" textTransform="capitalize">{data.extraline}</Span>}
+      {data.extraline && <Span fontSize="16px" lineHeight="1" fontWeight="400" color="#000" textTransform="capitalize">{data.extraline}</Span>}
       <List.Root variant="plain" align="center" textStyle="sm" gap="5">
         <For each={data.features}>
           {(item) => (
-            <List.Item fontSize="16px" lineHeight="normal" fontWeight="400" color="rgba(42, 63, 94, 1)" alignItems="flex-start" key={item}>
+            <List.Item fontSize="16px" lineHeight="normal" fontWeight="400" color="#000" alignItems="flex-start" key={item}>
               <List.Indicator p={0.5} w="20px" h="20px" asChild color="rgba(0, 168, 81, 1)" border="1px solid rgba(0, 168, 81, 1)" rounded="50%">
                 <LuCheck />
               </List.Indicator>

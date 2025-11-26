@@ -11,19 +11,22 @@ export const NeedTalent = () => (
             <VStack alignItems="flex-start" mb={16}>
                 <Heading
                     as="h2"
-                    fontSize={{ base: '2xl', md: '34px' }}
+                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
                     fontWeight="600"
-                    color="rgba(42, 63, 94, 1)"
+                    color="#4241ff"
+                    textTransform="uppercase"
+                    letterSpacing="wider"
                 >
                     Need talent?
                 </Heading>
-                <Text
-                    fontSize={{ base: 'md', md: '5xl' }}
+                <Heading
+                    as="h3"
+                    fontSize={{ base: '3xl', md: '4xl' }}
                     fontWeight="700"
-                    color="rgba(42, 63, 94, 1)"
+                    color="#000"
                 >
                     Why recruiters love us
-                </Text>
+                </Heading>
             </VStack>
             <Flex flexDirection="column" alignItems="flex-start" w="full">
                 <Flex alignItems="center" justifyContent="between" w="full" mb={16}>
@@ -32,18 +35,18 @@ export const NeedTalent = () => (
                     </VStack>
                     <VStack alignItems="flex-start" flex={1}>
                         <Heading
-                            as="h2"
-                            fontSize={{ base: '2xl', md: '3xl' }}
-                            fontWeight="600"
-                            color="rgba(0, 0, 0, 1)"
+                            as="h4"
+                            fontSize={{ base: 'xl', md: '2xl' }}
+                            fontWeight="700"
+                            color="#000"
                         >
                             AI Candidate Ranking
                         </Heading>
                         <Text
-                            fontSize={{ base: 'md', md: '2xl' }}
-                            fontWeight="500"
-                            color="rgba(42, 63, 94, 1)"
-                            lineHeight="1.5"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontWeight="400"
+                            color="#000"
+                            lineHeight="1.6"
                         >
                             Instantly see top-fit, skill-verified candidates.
                         </Text>
@@ -58,18 +61,18 @@ export const NeedTalent = () => (
                     </VStack>
                     <VStack alignItems="flex-start" flex={1}>
                         <Heading
-                            as="h2"
-                            fontSize={{ base: '2xl', md: '3xl' }}
-                            fontWeight="600"
-                            color="rgba(0, 0, 0, 1)"
+                            as="h4"
+                            fontSize={{ base: 'xl', md: '2xl' }}
+                            fontWeight="700"
+                            color="#000"
                         >
                             Assessment-Based Hiring
                         </Heading>
                         <Text
-                            fontSize={{ base: 'md', md: '2xl' }}
-                            fontWeight="500"
-                            color="rgba(42, 63, 94, 1)"
-                            lineHeight="1.5"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontWeight="400"
+                            color="#000"
+                            lineHeight="1.6"
                         >
                             Hire based on real skills, not keywords.
                         </Text>
@@ -82,18 +85,18 @@ export const NeedTalent = () => (
                     </VStack>
                     <VStack alignItems="flex-start" flex={1}>
                         <Heading
-                            as="h2"
-                            fontSize={{ base: '2xl', md: '3xl' }}
-                            fontWeight="600"
-                            color="rgba(0, 0, 0, 1)"
+                            as="h4"
+                            fontSize={{ base: 'xl', md: '2xl' }}
+                            fontWeight="700"
+                            color="#000"
                         >
                             Analytics Dashboard
                         </Heading>
                         <Text
-                            fontSize={{ base: 'md', md: '2xl' }}
-                            fontWeight="500"
-                            color="rgba(42, 63, 94, 1)"
-                            lineHeight="1.5"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontWeight="400"
+                            color="#000"
+                            lineHeight="1.6"
                         >
                             See hiring metrics, cost-savings, and diversity insights.
                         </Text>

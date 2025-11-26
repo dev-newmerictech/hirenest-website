@@ -12,21 +12,21 @@ export const Work = () => (
         <Stack gap="8">
           <Heading
             as="h2"
-            fontSize={{ base: '4xl', md: '6xl' }}
+            fontSize={{ base: '3xl', md: '4xl' }}
             maxW={{ md: '6xl' }}
             mx="auto"
-            lineHeight="tighter"
-            fontWeight="bold"
-            color="#2a3f5d"
+            lineHeight="1.2"
+            fontWeight="700"
+            color="#000"
           >
             How Hirenest Works
           </Heading>
           <Text
-            color="#2a3f5d"
-            fontSize={{ base: 'lg', md: '2xl', lg: '24px' }}
+            color="#000"
+            fontSize={{ base: 'md', md: 'lg' }}
             maxW={{ md: '4xl' }}
             mx="auto"
-            lineHeight="relaxed"
+            lineHeight="1.6"
           >
             Your Smart Path, From Search to Success.
           </Text>
@@ -36,10 +36,10 @@ export const Work = () => (
 
             <Heading
               as="h3"
-              fontSize={{ base: 'xl', md: '3xl' }}
-              lineHeight="tighter"
-              fontWeight="bold"
-              color="rgba(42, 63, 94, 1)"
+              fontSize={{ base: 'xl', md: '2xl' }}
+              lineHeight="1.2"
+              fontWeight="700"
+              color="#000"
               mb={8}
             >
               For Job Seekers
@@ -47,34 +47,34 @@ export const Work = () => (
             <Flex flexDirection="row" alignItems="center" gap={4} mb={6}>
 
               <Image src="/Group 160.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="400" color="#000" lineHeight="1.6">
                 Create profile & upload resume.
               </Text>
             </Flex>
-            
+
             <Flex flexDirection="row" alignItems="center" gap={4} mb={6}>
 
               <Image src="/Group 161.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              AI matches you with best-fit roles.
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="400" color="#000" lineHeight="1.6">
+                AI matches you with best-fit roles.
               </Text>
             </Flex>
-            
+
             <Flex flexDirection="row" alignItems="center" gap={4}>
 
               <Image src="/Group 162.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} textAlign="left" fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              Take skill assessments & get ranked higher.
+              <Text fontSize={{ base: 'sm', md: 'md' }} textAlign="left" fontWeight="400" color="#000" lineHeight="1.6">
+                Take skill assessments & get ranked higher.
               </Text>
             </Flex>
           </Box>
           <Box display="flex" flexDirection="column" alignItems="start" justifyContent="start" bg="rgba(250, 236, 255, 1)" borderRadius="24px" p={8} w="full">
             <Heading
               as="h3"
-              fontSize={{ base: 'xl', md: '3xl' }}
-              lineHeight="tighter"
-              fontWeight="bold"
-              color="rgba(42, 63, 94, 1)"
+              fontSize={{ base: 'xl', md: '2xl' }}
+              lineHeight="1.2"
+              fontWeight="700"
+              color="#000"
               mb={8}
             >
               For Employers
@@ -82,25 +82,25 @@ export const Work = () => (
             <Flex flexDirection="row" alignItems="center" gap={4} mb={6}>
 
               <Image src="/Group 163.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              Post a job or add an assessment.
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="400" color="#000" lineHeight="1.6">
+                Post a job or add an assessment.
               </Text>
             </Flex>
-            
+
             <Flex flexDirection="row" alignItems="center" gap={4} mb={6}>
 
               <Image src="/Group 163.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              Get AI-ranked candidates instantly.
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="400" color="#000" lineHeight="1.6">
+                Get AI-ranked candidates instantly.
               </Text>
             </Flex>
 
-            
+
             <Flex flexDirection="row" alignItems="center" gap={4}>
 
               <Image src="/Group 164.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              Hire faster with confidence.
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="400" color="#000" lineHeight="1.6">
+                Hire faster with confidence.
               </Text>
             </Flex>
           </Box>

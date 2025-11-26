@@ -10,29 +10,28 @@ export const links = [
     ],
   },
   {
-    title: 'Features',
+    title: 'For Users',
     links: [
-      { label: 'AI-Powered Tools', href: '#features' },
-      { label: 'Pay-As-You-Go', href: '#pricing' },
-      { label: 'No Vendor Lock-In', href: '#features' },
-      { label: 'First-Party Support', href: '#support' },
-      { label: 'Integrations', href: '#integrations' },
+      { label: 'For Job Seekers', href: '/job-seeker' },
+      { label: 'For Employers', href: '/job-provider' },
+      { label: 'Pricing', href: '/#pricing' },
+      { label: 'How It Works', href: '/#how-it-works' },
     ],
   },
   {
     title: 'Resources',
     links: [
       { label: 'Case Studies', href: '#case-studies' },
-      { label: 'ROI Calculator', href: '#roi-calculator' },
       { label: 'Documentation', href: '#docs' },
       { label: 'Blog', href: '#blog' },
-      { label: 'API', href: '#api' },
+      { label: 'FAQ', href: '/#faq' },
+      { label: 'Support', href: '#support' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About TinyCheque', href: '#about' },
+      { label: 'About Hirenest', href: '#about' },
       { label: 'Careers', href: '#careers' },
       { label: 'Partner Program', href: '#partners' },
       { label: 'Contact Us', href: '#contact' },
@@ -41,11 +40,12 @@ export const links = [
   {
     title: 'Legal',
     links: [
-      { label: 'Privacy Policy', href: '#privacy' },
-      { label: 'Terms of Service', href: '#terms' },
-      { label: 'Refund Policy', href: '#refund' },
-      { label: 'Cookie Policy', href: '#cookies' },
-      { label: 'Security', href: '#security' },
+      { label: 'Legal', href: '/legal' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
+      { label: 'Terms of Service', href: '/terms-of-service' },
+      { label: 'Refund Policy', href: '/refund-policy' },
+      { label: 'Cookie Policy', href: '/cookie-policy' },
+      { label: 'Security', href: '/security' },
     ],
   },
 ]

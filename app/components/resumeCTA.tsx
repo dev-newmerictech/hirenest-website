@@ -1,4 +1,5 @@
 import { Badge, Box, Button, Container, Grid, Heading, Text, VStack } from "@chakra-ui/react";
+import Link from "next/link";
 
 export const ResumeCTA = () => (
     <Box margin="0 auto" py={{ base: 16, md: 20 }}>
@@ -29,20 +30,22 @@ export const ResumeCTA = () => (
                 >
                     Hirenest uses AI to design dynamic resumes that adapt to your skills, role, and industry. helping you stand out in every application.
                 </Text>
-                <Button
-                    size={{ base: 'md', md: 'xl' }}
-                    borderRadius="full"
-                    background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
-                    color="white"
-                    fontWeight="medium"
-                    minW={{ base: 'auto', md: '300px' }}
-                    _hover={{
-                        background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-                        opacity: 0.9,
-                    }}
-                >
-                    Try the AI Resume Builder
-                </Button>
+                <Link href="/ai-resume-builder">
+                    <Button
+                        size={{ base: 'md', md: 'xl' }}
+                        borderRadius="full"
+                        background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                        color="white"
+                        fontWeight="medium"
+                        minW={{ base: 'auto', md: '300px' }}
+                        _hover={{
+                            background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+                            opacity: 0.9,
+                        }}
+                    >
+                        Try the AI Resume Builder
+                    </Button>
+                </Link>
             </VStack>
         </Container>
         <Container maxW="6xl" p={0} mb={{ base: 16 }}>

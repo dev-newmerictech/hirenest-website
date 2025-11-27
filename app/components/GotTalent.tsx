@@ -1,5 +1,6 @@
 import { Box, Button, Container, Flex, Grid, Heading, Stack, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const GotTalent = () => (
     <Box
@@ -53,7 +54,7 @@ export const GotTalent = () => (
                     </VStack>
                 </Flex>
                 <Flex alignItems="center" justifyContent="between" w="full" mb={16}>
-                    <VStack alignItems="flex-start" flex={1}>
+                    <VStack alignItems="flex-start" flex={1} gap={4}>
                         <Heading
                             as="h4"
                             fontSize={{ base: 'xl', md: '2xl' }}
@@ -70,6 +71,23 @@ export const GotTalent = () => (
                         >
                             Build a standout, ATS-friendly resume.
                         </Text>
+                        <Link href="/ai-resume-builder" passHref>
+                            <Button
+                                as="a"
+                                size={{ base: 'md', md: 'lg' }}
+                                borderRadius="full"
+                                background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                                color="white"
+                                _hover={{
+                                    background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+                                    transform: "translateY(-2px)",
+                                    boxShadow: "lg"
+                                }}
+                                transition="all 0.3s"
+                            >
+                                Learn More
+                            </Button>
+                        </Link>
                     </VStack>
                     <VStack flex={1} alignItems="center" position={'relative'}>
                         <Image src="/Frame 189.svg" alt="AI Career Matcher" width={200} height={150} style={{ position: 'absolute', top: 22, left: 122 }} />

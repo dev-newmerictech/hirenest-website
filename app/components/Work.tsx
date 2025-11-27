@@ -1,108 +1,320 @@
-import { Box, Button, Container, Flex, Grid, Heading, Stack, Text, VStack } from '@chakra-ui/react'
+"use client"
+import { Box, Container, Flex, Grid, Heading, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
 
 export const Work = () => (
   <Box
     w="full"
     position="relative"
-    bg="#fff"
+    bg="white"
+    overflow="hidden"
   >
-    <Container py={{ base: '16' }} maxW="7xl" position="relative" zIndex="1">
-      <VStack gap="10" textAlign="center">
-        <Stack gap="8">
+    <Container py={{ base: '20' }} maxW="7xl">
+      <VStack gap={{ base: 10 }}>
+        {/* Section Header - Apple Style */}
+        <VStack textAlign="center" gap={2} maxW="7xl" mx="auto">
           <Heading
             as="h2"
-            fontSize={{ base: '4xl', md: '6xl' }}
-            maxW={{ md: '6xl' }}
-            mx="auto"
-            lineHeight="tighter"
-            fontWeight="bold"
-            color="#2a3f5d"
+            fontSize={{ base: '3xl', md: '4xl' }}
+            fontWeight="700"
+            color="#000"
+            lineHeight="1.2"
+            maxW="7xl"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            gap={2}
           >
-            How Hirenest Works
+            How Hirenest <Text as="span" display="block" bg="#4241ff" bgClip="text">works.</Text>
           </Heading>
           <Text
-            color="#2a3f5d"
-            fontSize={{ base: 'lg', md: '2xl', lg: '24px' }}
-            maxW={{ md: '4xl' }}
-            mx="auto"
-            lineHeight="relaxed"
+            fontSize={{ base: 'lg' }}
+            color="#6e6e73"
+            lineHeight="1.4"
+            fontWeight="400"
           >
-            Your Smart Path, From Search to Success.
+            Simple. Powerful. Designed for everyone.
           </Text>
-        </Stack>
-        <Grid width={{ base: 'full', md: '5xl' }} templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={14}>
-          <Box display="flex" flexDirection="column" alignItems="start" justifyContent="start" bg="rgba(242, 241, 255, 1)" borderRadius="24px" p={8} w="full">
+        </VStack>
 
-            <Heading
-              as="h3"
-              fontSize={{ base: 'xl', md: '3xl' }}
-              lineHeight="tighter"
-              fontWeight="bold"
-              color="rgba(42, 63, 94, 1)"
-              mb={8}
-            >
-              For Job Seekers
-            </Heading>
-            <Flex flexDirection="row" alignItems="center" gap={4} mb={6}>
+        {/* Cards Grid - Minimalist Apple Style */}
+        <Grid
+          width="full"
+          templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }}
+          gap={{ base: 6, md: 8 }}
+          maxW="1200px"
+          mx="auto"
+        >
+          {/* Job Seekers Card */}
+          <Box
+            position="relative"
+            bg="#f5f5f7"
+            borderRadius="28px"
+            p={{ base: 10, md: 12 }}
+            w="full"
+            overflow="hidden"
+            transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+            _hover={{
+              bg: "#fafafa",
+              transform: 'scale(1.02)'
+            }}
+          >
+            <VStack align="flex-start" gap={8} h="full">
+              {/* Header */}
+              <VStack align="flex-start" gap={3}>
+                <Text
+                  fontSize="sm"
+                  fontWeight="600"
+                  color="#4241ff"
+                  textTransform="uppercase"
+                  letterSpacing="0.08em"
+                >
+                  For Job Seekers
+                </Text>
+                <Heading
+                  as="h3"
+                  fontSize={{ base: '2xl', md: '3xl' }}
+                  lineHeight="1.2"
+                  fontWeight="600"
+                  color="#1d1d1f"
+                  letterSpacing="-0.01em"
+                >
+                  Find your dream job.
+                </Heading>
+              </VStack>
 
-              <Image src="/Group 160.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-                Create profile & upload resume.
-              </Text>
-            </Flex>
-            
-            <Flex flexDirection="row" alignItems="center" gap={4} mb={6}>
+              {/* Steps - Clean List */}
+              <VStack align="flex-start" gap={6} w="full" flex="1">
+                {/* Step 1 */}
+                <Flex align="flex-start" gap={4} w="full">
+                  <Box
+                    w={12}
+                    h={12}
+                    flexShrink={0}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Image src="/Group 160.svg" alt="Create Profile" width={48} height={48} />
+                  </Box>
+                  <VStack align="flex-start" gap={1} flex="1">
+                    <Text
+                      fontSize={{ base: 'md', md: 'lg' }}
+                      fontWeight="500"
+                      color="#1d1d1f"
+                      lineHeight="1.3"
+                    >
+                      Create your profile
+                    </Text>
+                    <Text
+                      fontSize={{ base: 'sm', md: 'md' }}
+                      color="#6e6e73"
+                      lineHeight="1.5"
+                    >
+                      Upload your resume and let AI build your profile instantly.
+                    </Text>
+                  </VStack>
+                </Flex>
 
-              <Image src="/Group 161.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              AI matches you with best-fit roles.
-              </Text>
-            </Flex>
-            
-            <Flex flexDirection="row" alignItems="center" gap={4}>
+                {/* Step 2 */}
+                <Flex align="flex-start" gap={4} w="full">
+                  <Box
+                    w={12}
+                    h={12}
+                    flexShrink={0}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Image src="/Group 161.svg" alt="AI Matching" width={48} height={48} />
+                  </Box>
+                  <VStack align="flex-start" gap={1} flex="1">
+                    <Text
+                      fontSize={{ base: 'md', md: 'lg' }}
+                      fontWeight="500"
+                      color="#1d1d1f"
+                      lineHeight="1.3"
+                    >
+                      Get matched instantly
+                    </Text>
+                    <Text
+                      fontSize={{ base: 'sm', md: 'md' }}
+                      color="#6e6e73"
+                      lineHeight="1.5"
+                    >
+                      AI finds the perfect roles that match your skills and goals.
+                    </Text>
+                  </VStack>
+                </Flex>
 
-              <Image src="/Group 162.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} textAlign="left" fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              Take skill assessments & get ranked higher.
-              </Text>
-            </Flex>
+                {/* Step 3 */}
+                <Flex align="flex-start" gap={4} w="full">
+                  <Box
+                    w={12}
+                    h={12}
+                    flexShrink={0}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Image src="/Group 162.svg" alt="Skill Assessment" width={48} height={48} />
+                  </Box>
+                  <VStack align="flex-start" gap={1} flex="1">
+                    <Text
+                      fontSize={{ base: 'md', md: 'lg' }}
+                      fontWeight="500"
+                      color="#1d1d1f"
+                      lineHeight="1.3"
+                    >
+                      Stand out with skills
+                    </Text>
+                    <Text
+                      fontSize={{ base: 'sm', md: 'md' }}
+                      color="#6e6e73"
+                      lineHeight="1.5"
+                    >
+                      Take assessments to prove your abilities and rank higher.
+                    </Text>
+                  </VStack>
+                </Flex>
+              </VStack>
+            </VStack>
           </Box>
-          <Box display="flex" flexDirection="column" alignItems="start" justifyContent="start" bg="rgba(250, 236, 255, 1)" borderRadius="24px" p={8} w="full">
-            <Heading
-              as="h3"
-              fontSize={{ base: 'xl', md: '3xl' }}
-              lineHeight="tighter"
-              fontWeight="bold"
-              color="rgba(42, 63, 94, 1)"
-              mb={8}
-            >
-              For Employers
-            </Heading>
-            <Flex flexDirection="row" alignItems="center" gap={4} mb={6}>
 
-              <Image src="/Group 163.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              Post a job or add an assessment.
-              </Text>
-            </Flex>
-            
-            <Flex flexDirection="row" alignItems="center" gap={4} mb={6}>
+          {/* Employers Card */}
+          <Box
+            position="relative"
+            bg="#f5f5f7"
+            borderRadius="28px"
+            p={{ base: 10, md: 12 }}
+            w="full"
+            overflow="hidden"
+            transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+            _hover={{
+              bg: "#fafafa",
+              transform: 'scale(1.02)'
+            }}
+          >
+            <VStack align="flex-start" gap={8} h="full">
+              {/* Header */}
+              <VStack align="flex-start" gap={3}>
+                <Text
+                  fontSize="sm"
+                  fontWeight="600"
+                  color="#b000ea"
+                  textTransform="uppercase"
+                  letterSpacing="0.08em"
+                >
+                  For Employers
+                </Text>
+                <Heading
+                  as="h3"
+                  fontSize={{ base: '2xl', md: '3xl' }}
+                  lineHeight="1.2"
+                  fontWeight="600"
+                  color="#1d1d1f"
+                  letterSpacing="-0.01em"
+                >
+                  Hire the best talent.
+                </Heading>
+              </VStack>
 
-              <Image src="/Group 163.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              Get AI-ranked candidates instantly.
-              </Text>
-            </Flex>
+              {/* Steps - Clean List */}
+              <VStack align="flex-start" gap={6} w="full" flex="1">
+                {/* Step 1 */}
+                <Flex align="flex-start" gap={4} w="full">
+                  <Box
+                    w={12}
+                    h={12}
+                    flexShrink={0}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Image src="/Group 163.svg" alt="Post Job" width={48} height={48} />
+                  </Box>
+                  <VStack align="flex-start" gap={1} flex="1">
+                    <Text
+                      fontSize={{ base: 'md', md: 'lg' }}
+                      fontWeight="500"
+                      color="#1d1d1f"
+                      lineHeight="1.3"
+                    >
+                      Post your opening
+                    </Text>
+                    <Text
+                      fontSize={{ base: 'sm', md: 'md' }}
+                      color="#6e6e73"
+                      lineHeight="1.5"
+                    >
+                      Create job listings or custom skill assessments in minutes.
+                    </Text>
+                  </VStack>
+                </Flex>
 
-            
-            <Flex flexDirection="row" alignItems="center" gap={4}>
+                {/* Step 2 */}
+                <Flex align="flex-start" gap={4} w="full">
+                  <Box
+                    w={12}
+                    h={12}
+                    flexShrink={0}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Image src="/Group 163.svg" alt="AI Ranking" width={48} height={48} />
+                  </Box>
+                  <VStack align="flex-start" gap={1} flex="1">
+                    <Text
+                      fontSize={{ base: 'md', md: 'lg' }}
+                      fontWeight="500"
+                      color="#1d1d1f"
+                      lineHeight="1.3"
+                    >
+                      AI ranks candidates
+                    </Text>
+                    <Text
+                      fontSize={{ base: 'sm', md: 'md' }}
+                      color="#6e6e73"
+                      lineHeight="1.5"
+                    >
+                      Get the best matches ranked and ready to interview.
+                    </Text>
+                  </VStack>
+                </Flex>
 
-              <Image src="/Group 164.svg" alt="AI Career Matcher" width={60} height={60} />
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="400" color="rgba(42, 63, 94, 1)" lineHeight="1.5">
-              Hire faster with confidence.
-              </Text>
-            </Flex>
+                {/* Step 3 */}
+                <Flex align="flex-start" gap={4} w="full">
+                  <Box
+                    w={12}
+                    h={12}
+                    flexShrink={0}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Image src="/Group 164.svg" alt="Hire Fast" width={48} height={48} />
+                  </Box>
+                  <VStack align="flex-start" gap={1} flex="1">
+                    <Text
+                      fontSize={{ base: 'md', md: 'lg' }}
+                      fontWeight="500"
+                      color="#1d1d1f"
+                      lineHeight="1.3"
+                    >
+                      Hire with confidence
+                    </Text>
+                    <Text
+                      fontSize={{ base: 'sm', md: 'md' }}
+                      color="#6e6e73"
+                      lineHeight="1.5"
+                    >
+                      Make faster, smarter hiring decisions backed by data.
+                    </Text>
+                  </VStack>
+                </Flex>
+              </VStack>
+            </VStack>
           </Box>
         </Grid>
       </VStack>

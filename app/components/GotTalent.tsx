@@ -1,5 +1,6 @@
 import { Box, Button, Container, Flex, Grid, Heading, Stack, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const GotTalent = () => (
     <Box
@@ -11,36 +12,39 @@ export const GotTalent = () => (
             <VStack alignItems="flex-start" mb={16}>
                 <Heading
                     as="h2"
-                    fontSize={{ base: '2xl', md: '34px' }}
+                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
                     fontWeight="600"
-                    color="rgba(42, 63, 94, 1)"
+                    color="#4241ff"
+                    textTransform="uppercase"
+                    letterSpacing="wider"
                 >
                     Got Talent?
                 </Heading>
-                <Text
-                    fontSize={{ base: 'md', md: '5xl' }}
+                <Heading
+                    as="h3"
+                    fontSize={{ base: '3xl', md: '4xl' }}
                     fontWeight="700"
-                    color="rgba(42, 63, 94, 1)"
+                    color="#000"
                 >
                     Why job seekers love us
-                </Text>
+                </Heading>
             </VStack>
             <Flex flexDirection="column" alignItems="flex-start" w="full">
                 <Flex alignItems="center" justifyContent="between" w="full" mb={16}>
                     <VStack alignItems="flex-start" flex={1}>
                         <Heading
-                            as="h2"
-                            fontSize={{ base: '2xl', md: '3xl' }}
-                            fontWeight="600"
-                            color="rgba(0, 0, 0, 1)"
+                            as="h4"
+                            fontSize={{ base: 'xl', md: '2xl' }}
+                            fontWeight="700"
+                            color="#000"
                         >
                             AI Career Matcher
                         </Heading>
                         <Text
-                            fontSize={{ base: 'md', md: '2xl' }}
-                            fontWeight="500"
-                            color="rgba(42, 63, 94, 1)"
-                            lineHeight="1.5"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontWeight="400"
+                            color="#000"
+                            lineHeight="1.6"
                         >
                             Instantly discover jobs that fit your skills and goals.
                         </Text>
@@ -50,23 +54,40 @@ export const GotTalent = () => (
                     </VStack>
                 </Flex>
                 <Flex alignItems="center" justifyContent="between" w="full" mb={16}>
-                    <VStack alignItems="flex-start" flex={1}>
+                    <VStack alignItems="flex-start" flex={1} gap={4}>
                         <Heading
-                            as="h2"
-                            fontSize={{ base: '2xl', md: '3xl' }}
-                            fontWeight="600"
-                            color="rgba(0, 0, 0, 1)"
+                            as="h4"
+                            fontSize={{ base: 'xl', md: '2xl' }}
+                            fontWeight="700"
+                            color="#000"
                         >
                             Smart Resume Builder
                         </Heading>
                         <Text
-                            fontSize={{ base: 'md', md: '2xl' }}
-                            fontWeight="500"
-                            color="rgba(42, 63, 94, 1)"
-                            lineHeight="1.5"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontWeight="400"
+                            color="#000"
+                            lineHeight="1.6"
                         >
                             Build a standout, ATS-friendly resume.
                         </Text>
+                        <Link href="/ai-resume-builder" passHref>
+                            <Button
+                                as="a"
+                                size={{ base: 'md', md: 'lg' }}
+                                borderRadius="full"
+                                background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                                color="white"
+                                _hover={{
+                                    background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+                                    transform: "translateY(-2px)",
+                                    boxShadow: "lg"
+                                }}
+                                transition="all 0.3s"
+                            >
+                                Learn More
+                            </Button>
+                        </Link>
                     </VStack>
                     <VStack flex={1} alignItems="center" position={'relative'}>
                         <Image src="/Frame 189.svg" alt="AI Career Matcher" width={200} height={150} style={{ position: 'absolute', top: 22, left: 122 }} />
@@ -81,18 +102,18 @@ export const GotTalent = () => (
                 <Flex alignItems="center" justifyContent="between" w="full">
                     <VStack alignItems="flex-start" flex={1}>
                         <Heading
-                            as="h2"
-                            fontSize={{ base: '2xl', md: '3xl' }}
-                            fontWeight="600"
-                            color="rgba(0, 0, 0, 1)"
+                            as="h4"
+                            fontSize={{ base: 'xl', md: '2xl' }}
+                            fontWeight="700"
+                            color="#000"
                         >
                             Career insights Dashbaord
                         </Heading>
                         <Text
-                            fontSize={{ base: 'md', md: '2xl' }}
-                            fontWeight="500"
-                            color="rgba(42, 63, 94, 1)"
-                            lineHeight="1.5"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontWeight="400"
+                            color="#000"
+                            lineHeight="1.6"
                         >
                             Track your progress, get learning suggestions.
                         </Text>

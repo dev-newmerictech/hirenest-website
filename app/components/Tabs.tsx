@@ -1,48 +1,46 @@
-import { Box, Container, Tabs, Grid, Heading, Text, VStack, Flex, Badge, Button } from "@chakra-ui/react"
+"use client"
+
+import { Box, Container, Tabs, Grid, Heading, Text, VStack, Flex, Button } from "@chakra-ui/react"
+import Link from "next/link"
+
 import { LuBriefcase, LuUserCheck, LuTrendingUp, LuSearch, LuUsers, LuTarget, LuFileCheck, LuSparkles, LuActivity, LuZap, LuShield, LuRocket, LuArrowRight } from "react-icons/lu"
 
 const jobSeekersCards = [
     {
         icon: LuFileCheck,
         title: "AI Resume Builder",
-        description: "Create professional resumes tailored to each job application with AI-powered suggestions and formatting.",
-        badge: "Smart Tool",
-        color: "rgba(70, 62, 254, 1)"
+        description: "Create professional resumes tailored to each job application with AI-powered suggestions.",
+        link: "/ai-resume-builder"
     },
     {
         icon: LuSearch,
         title: "Smart Job Matching",
-        description: "Get matched with opportunities that align with your skills, experience, and career goals automatically.",
-        badge: "AI Powered",
-        color: "rgba(0, 113, 251, 1)"
+        description: "Get matched with opportunities that align with your skills and career goals automatically.",
+        link: "/smart-job-matching"
     },
     {
         icon: LuTrendingUp,
         title: "Career Insights",
-        description: "Track your application progress, interview success rate, and get personalized career growth recommendations.",
-        badge: "Analytics",
-        color: "rgba(175, 1, 234, 1)"
+        description: "Track your progress and get personalized career growth recommendations.",
+        link: "/career-insights"
     },
     {
         icon: LuTarget,
         title: "Skill Assessments",
-        description: "Take industry-specific assessments to showcase your expertise and rank higher in candidate searches.",
-        badge: "Verified",
-        color: "rgba(0, 168, 81, 1)"
+        description: "Showcase your expertise and rank higher in candidate searches.",
+        link: "/skill-assessments"
     },
     {
         icon: LuSparkles,
         title: "Profile Optimization",
-        description: "Get real-time feedback on your profile completeness and suggestions to improve your visibility.",
-        badge: "Pro Tip",
-        color: "rgba(255, 152, 0, 1)"
+        description: "Get real-time feedback to improve your visibility to recruiters.",
+        link: "/profile-optimization"
     },
     {
         icon: LuRocket,
         title: "Fast-Track Applications",
-        description: "Apply to multiple jobs with one click using your optimized profile and AI-enhanced resume.",
-        badge: "Time Saver",
-        color: "rgba(236, 72, 153, 1)"
+        description: "Apply to multiple jobs with one click using your optimized profile.",
+        link: "/fast-track-applications"
     }
 ]
 
@@ -50,209 +48,189 @@ const recruitersCards = [
     {
         icon: LuUsers,
         title: "AI Candidate Ranking",
-        description: "Instantly rank candidates based on skills, experience, and job requirements using advanced AI algorithms.",
-        badge: "AI Powered",
-        color: "rgba(70, 62, 254, 1)"
+        description: "Instantly rank candidates based on skills and requirements using advanced AI.",
+        link: "/ai-candidate-ranking"
     },
     {
         icon: LuZap,
         title: "Quick Screening",
-        description: "Filter through hundreds of applications in minutes with automated candidate screening and shortlisting.",
-        badge: "Efficient",
-        color: "rgba(0, 113, 251, 1)"
+        description: "Filter through hundreds of applications in minutes with automated screening.",
+        link: "/quick-screening"
     },
     {
         icon: LuActivity,
         title: "Hiring Analytics",
-        description: "Track your hiring metrics, time-to-fill, and candidate pipeline with comprehensive analytics dashboard.",
-        badge: "Insights",
-        color: "rgba(175, 1, 234, 1)"
+        description: "Track your hiring metrics and candidate pipeline with comprehensive analytics.",
+        link: "/hiring-analytics"
     },
     {
         icon: LuShield,
         title: "Verified Candidates",
-        description: "Access pre-verified candidates with skill assessments and background checks already completed.",
-        badge: "Trusted",
-        color: "rgba(0, 168, 81, 1)"
+        description: "Access pre-verified candidates with skill assessments already completed.",
+        link: "/verified-candidates"
     },
     {
         icon: LuBriefcase,
         title: "Custom Assessments",
-        description: "Create role-specific assessments to evaluate candidates' technical skills and cultural fit.",
-        badge: "Customizable",
-        color: "rgba(255, 152, 0, 1)"
+        description: "Create role-specific assessments to evaluate technical skills and cultural fit.",
+        link: "/custom-assessments"
     },
     {
         icon: LuUserCheck,
         title: "Team Collaboration",
-        description: "Collaborate with your hiring team, share candidate profiles, and streamline the interview process.",
-        badge: "Collaborative",
-        color: "rgba(236, 72, 153, 1)"
+        description: "Collaborate with your hiring team and streamline the interview process.",
+        link: "/team-collaboration"
     }
 ]
 
 export function TabsComponent() {
     return (
-        <Box w="full" bg="rgba(249, 249, 249, 1)" py={{ base: '12', md: '16' }}>
+        <Box w="full" bg="white" pb={{ base: '20' }}>
             <Container maxW="7xl">
-                <VStack gap={{ base: '8', md: '12' }}>
-                    <VStack gap="4" textAlign="center" maxW="3xl" mx="auto">
+                <VStack gap={{ base: 10 }}>
+                    {/* Section Header - Apple Style */}
+                    <VStack textAlign="center" gap={2} maxW="7xl" mx="auto">
                         <Heading
                             as="h2"
-                            fontSize={{ base: '3xl', md: '5xl' }}
-                            fontWeight="bold"
-                            color="rgba(42, 63, 94, 1)"
-                            lineHeight="tighter"
+                            fontSize={{ base: '3xl', md: '4xl' }}
+                            fontWeight="700"
+                            color="#000"
+                            lineHeight="1.2"
                         >
-                            Choose Your Path
+                            Choose your <Text as="span" bg="#4241ff" bgClip="text">path.</Text>
                         </Heading>
                         <Text
-                            fontSize={{ base: 'lg', md: 'xl' }}
-                            color="rgba(42, 63, 94, 1)"
-                            opacity={0.8}
-                            lineHeight="relaxed"
-                            maxW="2xl"
+                            fontSize={{ base: 'lg' }}
+                            color="#6e6e73"
+                            lineHeight="1.4"
+                            fontWeight="400"
                         >
-                            Discover powerful features tailored to your needs
+                            Powerful features tailored to your needs.
                         </Text>
                     </VStack>
 
                     <Box w="full">
                         <Tabs.Root defaultValue="job-seekers" variant="plain" w="full">
-                            <Flex justifyContent="center" mb={{ base: '8', md: '12' }}>
-                                <Tabs.List 
-                                    bg="white" 
-                                    rounded="full" 
-                                    p="2" 
-                                    shadow="0px 4px 20px rgba(0, 0, 0, 0.08)"
-                                    border="1px solid rgba(0, 0, 0, 0.05)"
+                            <Flex justifyContent="center" mb={{ base: 8, md: 10 }}>
+                                <Tabs.List
+                                    bg="#f5f5f7"
+                                    rounded="full"
+                                    p="1.5"
                                 >
-                                    <Tabs.Trigger 
-                                        value="job-seekers" 
-                                        fontWeight="semibold" 
+                                    <Tabs.Trigger
+                                        value="job-seekers"
+                                        fontWeight="500"
                                         fontSize={{ base: 'md', md: 'lg' }}
                                         px={{ base: '6', md: '8' }}
-                                        py={{ base: '3', md: '4' }}
+                                        py={{ base: '2.5', md: '3' }}
                                         rounded="full"
                                         _selected={{
-                                            bg: "linear-gradient(90deg, #0071fb 0%, #b000ea 100%)",
-                                            color: "white"
+                                            bg: "white",
+                                            color: "#1d1d1f",
+                                            shadow: "sm"
                                         }}
-                                        color="rgba(42, 63, 94, 1)"
+                                        color="#6e6e73"
                                         transition="all 0.3s ease"
                                     >
                                         Job Seekers
                                     </Tabs.Trigger>
-                                    <Tabs.Trigger 
-                                        value="recruiters" 
-                                        fontWeight="semibold" 
+                                    <Tabs.Trigger
+                                        value="recruiters"
+                                        fontWeight="500"
                                         fontSize={{ base: 'md', md: 'lg' }}
                                         px={{ base: '6', md: '8' }}
-                                        py={{ base: '3', md: '4' }}
+                                        py={{ base: '2.5', md: '3' }}
                                         rounded="full"
                                         _selected={{
-                                            bg: "linear-gradient(90deg, #0071fb 0%, #b000ea 100%)",
-                                            color: "white"
+                                            bg: "white",
+                                            color: "#1d1d1f",
+                                            shadow: "sm"
                                         }}
-                                        color="rgba(42, 63, 94, 1)"
+                                        color="#6e6e73"
                                         transition="all 0.3s ease"
                                     >
-                                        Job Recruiters
+                                        Recruiters
                                     </Tabs.Trigger>
                                 </Tabs.List>
                             </Flex>
 
                             <Tabs.Content value="job-seekers">
-                                <Grid 
-                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} 
-                                    gap={{ base: '6', md: '8' }}
+                                <Grid
+                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
+                                    gap={{ base: 4, md: 6 }}
+                                    maxW="1200px"
+                                    mx="auto"
                                 >
                                     {jobSeekersCards.map((card, index) => {
                                         const Icon = card.icon
                                         return (
                                             <Box
                                                 key={index}
-                                                bg="white"
+                                                bg="#f5f5f7"
                                                 borderRadius="24px"
-                                                p={{ base: '6', md: '8' }}
-                                                shadow="0px 4px 20px rgba(0, 0, 0, 0.08)"
-                                                border="1px solid rgba(0, 0, 0, 0.05)"
-                                                transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+                                                p={{ base: 6, md: 8 }}
+                                                transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
                                                 _hover={{
-                                                    transform: "translateY(-8px)",
-                                                    shadow: "0px 16px 48px rgba(0, 0, 0, 0.12)",
-                                                    borderColor: `${card.color}40`,
+                                                    bg: "#fafafa",
+                                                    transform: "scale(1.02)"
                                                 }}
-                                                position="relative"
-                                                overflow="hidden"
                                                 h="full"
                                                 display="flex"
                                                 flexDirection="column"
                                             >
-                                                <Box
-                                                    position="absolute"
-                                                    top="0"
-                                                    right="0"
-                                                    w="140px"
-                                                    h="140px"
-                                                    bg={'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)'}
-                                                    opacity="0.08"
-                                                    borderRadius="0 0 0 120px"
-                                                    transition="all 0.3s ease"
-                                                />
-                                                <VStack align="start" gap="5" position="relative" zIndex="1" flex="1">
-                                                    <Flex align="center" gap="3" w="full" flexWrap="wrap">
-                                                        <Box
-                                                            bg={card.color}
-                                                            p="3.5"
-                                                            borderRadius="14px"
-                                                            color="white"
-                                                            boxShadow={`0 4px 12px ${card.color}40`}
-                                                            transition="all 0.3s ease"
-                                                        >
-                                                            <Icon size={26} />
-                                                        </Box>
+                                                <VStack align="flex-start" gap={4} flex="1">
+                                                    {/* Icon */}
+                                                    <Flex
+                                                        w={12}
+                                                        h={12}
+                                                        align="center"
+                                                        justify="center"
+                                                        borderRadius="12px"
+                                                        bg="white"
+                                                    >
+                                                        <Icon size={24} color="#4241ff" />
                                                     </Flex>
+
+                                                    {/* Title */}
                                                     <Heading
                                                         as="h3"
-                                                        fontSize={{ base: 'xl', md: '2xl' }}
-                                                        fontWeight="bold"
-                                                        color="rgba(42, 63, 94, 1)"
-                                                        lineHeight="tight"
-                                                        mt="2"
+                                                        fontSize={{ base: 'lg', md: 'xl' }}
+                                                        fontWeight="600"
+                                                        color="#1d1d1f"
+                                                        lineHeight="1.3"
                                                     >
                                                         {card.title}
                                                     </Heading>
+
+                                                    {/* Description */}
                                                     <Text
                                                         fontSize={{ base: 'sm', md: 'md' }}
-                                                        color="rgba(42, 63, 94, 1)"
-                                                        opacity={0.7}
-                                                        lineHeight="relaxed"
+                                                        color="#6e6e73"
+                                                        lineHeight="1.5"
                                                         flex="1"
                                                     >
                                                         {card.description}
                                                     </Text>
-                                                    <Button
-                                                        variant="ghost"
-                                                        size={{ base: 'sm', md: 'md' }}
-                                                        fontWeight="semibold"
-                                                        px="4"
-                                                        py="2"
-                                                        bg="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
-                                                        color="white"
-                                                        borderRadius="lg"
-                                                        _hover={{
-                                                            transform: "translateX(4px)",
-                                                        }}
-                                                        transition="all 0.2s ease"
-                                                        mt="auto"
-                                                        w="fit-content"
-                                                    >
-                                                        <Flex align="center" gap="2">
-                                                            Learn More
+
+                                                    {/* Link */}
+                                                    <Link href={card.link} passHref style={{ width: '100%' }}>
+                                                        <Flex
+                                                            as="a"
+                                                            align="center"
+                                                            gap={2}
+                                                            color="#4241ff"
+                                                            fontSize="md"
+                                                            fontWeight="500"
+                                                            mt={2}
+                                                            transition="all 0.2s ease"
+                                                            _hover={{
+                                                                gap: 3
+                                                            }}
+                                                        >
+                                                            Learn more
                                                             <LuArrowRight size={18} />
                                                         </Flex>
-                                                    </Button>
+                                                    </Link>
                                                 </VStack>
                                             </Box>
                                         )
@@ -261,97 +239,82 @@ export function TabsComponent() {
                             </Tabs.Content>
 
                             <Tabs.Content value="recruiters">
-                                <Grid 
-                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} 
-                                    gap={{ base: '6', md: '8' }}
+                                <Grid
+                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
+                                    gap={{ base: 4, md: 6 }}
+                                    maxW="1200px"
+                                    mx="auto"
                                 >
                                     {recruitersCards.map((card, index) => {
                                         const Icon = card.icon
                                         return (
                                             <Box
                                                 key={index}
-                                                bg="white"
+                                                bg="#f5f5f7"
                                                 borderRadius="24px"
-                                                p={{ base: '6', md: '8' }}
-                                                shadow="0px 4px 20px rgba(0, 0, 0, 0.08)"
-                                                border="1px solid rgba(0, 0, 0, 0.05)"
-                                                transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+                                                p={{ base: 6, md: 8 }}
+                                                transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
                                                 _hover={{
-                                                    transform: "translateY(-8px)",
-                                                    shadow: "0px 16px 48px rgba(0, 0, 0, 0.12)",
-                                                    borderColor: `${card.color}40`,
+                                                    bg: "#fafafa",
+                                                    transform: "scale(1.02)"
                                                 }}
-                                                position="relative"
-                                                overflow="hidden"
                                                 h="full"
                                                 display="flex"
                                                 flexDirection="column"
                                             >
-                                                <Box
-                                                    position="absolute"
-                                                    top="0"
-                                                    right="0"
-                                                    w="140px"
-                                                    h="140px"
-                                                    bg={'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)'}
-                                                    opacity="0.08"
-                                                    borderRadius="0 0 0 120px"
-                                                    transition="all 0.3s ease"
-                                                />
-                                                <VStack align="start" gap="5" position="relative" zIndex="1" flex="1">
-                                                    <Flex align="center" gap="3" w="full" flexWrap="wrap">
-                                                        <Box
-                                                            bg={card.color}
-                                                            p="3.5"
-                                                            borderRadius="14px"
-                                                            color="white"
-                                                            boxShadow={`0 4px 12px ${card.color}40`}
-                                                            transition="all 0.3s ease"
-                                                        >
-                                                            <Icon size={26} />
-                                                        </Box>
+                                                <VStack align="flex-start" gap={4} flex="1">
+                                                    {/* Icon */}
+                                                    <Flex
+                                                        w={12}
+                                                        h={12}
+                                                        align="center"
+                                                        justify="center"
+                                                        borderRadius="12px"
+                                                        bg="white"
+                                                    >
+                                                        <Icon size={24} color="#b000ea" />
                                                     </Flex>
+
+                                                    {/* Title */}
                                                     <Heading
                                                         as="h3"
-                                                        fontSize={{ base: 'xl', md: '2xl' }}
-                                                        fontWeight="bold"
-                                                        color="rgba(42, 63, 94, 1)"
-                                                        lineHeight="tight"
-                                                        mt="2"
+                                                        fontSize={{ base: 'lg', md: 'xl' }}
+                                                        fontWeight="600"
+                                                        color="#1d1d1f"
+                                                        lineHeight="1.3"
                                                     >
                                                         {card.title}
                                                     </Heading>
+
+                                                    {/* Description */}
                                                     <Text
                                                         fontSize={{ base: 'sm', md: 'md' }}
-                                                        color="rgba(42, 63, 94, 1)"
-                                                        opacity={0.7}
-                                                        lineHeight="relaxed"
+                                                        color="#6e6e73"
+                                                        lineHeight="1.5"
                                                         flex="1"
                                                     >
                                                         {card.description}
                                                     </Text>
-                                                    <Button
-                                                        variant="ghost"
-                                                        color={'white'}
-                                                        size={{ base: 'sm', md: 'md' }}
-                                                        fontWeight="semibold"
-                                                        px="4"
-                                                        py="2"
-                                                        borderRadius="lg"
-                                                        bg="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
-                                                        _hover={{
-                                                            bg: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-                                                            transform: "translateX(4px)",
-                                                        }}
-                                                        transition="all 0.2s ease"
-                                                        mt="auto"
-                                                        w="fit-content"
-                                                    >
-                                                        <Flex align="center" gap="2">
-                                                            Learn More
+
+                                                    {/* Link */}
+                                                    <Link href={card.link} passHref style={{ width: '100%' }}>
+                                                        <Flex
+                                                            as="a"
+                                                            align="center"
+                                                            gap={2}
+                                                            color="#b000ea"
+                                                            fontSize="md"
+                                                            fontWeight="500"
+                                                            mt={2}
+                                                            transition="all 0.2s ease"
+                                                            _hover={{
+                                                                gap: 3
+                                                            }}
+                                                        >
+                                                            Learn more
                                                             <LuArrowRight size={18} />
                                                         </Flex>
-                                                    </Button>
+                                                    </Link>
                                                 </VStack>
                                             </Box>
                                         )

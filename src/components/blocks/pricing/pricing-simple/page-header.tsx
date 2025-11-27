@@ -22,14 +22,14 @@ export const PageHeader = (props: PageHeaderProps) => {
     <Stack gap={{ base: '6', md: '8' }} {...rootProps}>
       <Stack gap={{ base: '5', md: '6' }}>
         <Stack gap={{ base: '3', md: '4' }}>
-          <Text textStyle={{ base: 'sm', md: 'md' }} fontWeight="medium" color="colorPalette.fg">
+          <Text textStyle={{ base: 'sm', md: 'md' }} fontWeight="medium" color="#4241ff">
             {tagline}
           </Text>
-          <Heading as="h1" color="rgba(42, 63, 94, 1)" fontWeight="700" fontSize={{ base: '4xl', md: '5xl' }}>
+          <Heading as="h1" color="#000" fontWeight="700" fontSize={{ base: '3xl', md: '4xl' }}>
             {headline}
           </Heading>
         </Stack>
-        <Text color="rgba(42, 63, 94, 1)" fontSize={{ base: 'lg', md: 'xl' }} maxW="3xl">
+        <Text color="#000" fontSize={{ base: 'md', md: 'lg' }} maxW="3xl">
           {description}
         </Text>
       </Stack>

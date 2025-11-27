@@ -6,28 +6,28 @@ export const Block = () => {
       <Container py={{ base: '16', md: '20' }} maxW="full">
         <Stack align="center" gap="8">
           <VStack gap="4" textAlign="center">
-            <Heading 
-              as="h2" 
-              size={{ base: '4xl', md: '5xl' }} 
+            <Heading
+              as="h2"
+              fontSize={{ base: '3xl', md: '4xl' }}
               color="white"
               maxW="4xl"
             >
               Join the future of hiring and careers
             </Heading>
-            <Text 
-              color="gray.300" 
-              fontSize={{ base: 'lg', md: 'xl' }}
+            <Text
+              color="white"
+              fontSize={{ base: 'md', md: 'lg' }}
               maxW="2xl"
             >
               One platform, powered by AI Build for your success
             </Text>
           </VStack>
-          <HStack 
-            gap="4" 
+          <HStack
+            gap="4"
             flexDirection={{ base: 'column', md: 'row' }}
             w={{ base: 'full', md: 'auto' }}
           >
-            <Button 
+            <Button
               size={{ base: 'lg', md: 'xl' }}
               variant="outline"
               borderColor="white"
@@ -45,7 +45,7 @@ export const Block = () => {
             >
               Find Your Dream Job
             </Button>
-            <Button 
+            <Button
               size={{ base: 'lg', md: 'xl' }}
               variant="outline"
               borderColor="white"

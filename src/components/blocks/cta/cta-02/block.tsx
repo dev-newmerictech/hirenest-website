@@ -6,16 +6,16 @@ export const Block = () => {
       <Container py={{ base: '16', md: '20' }} maxW="full">
         <Stack align="center" gap="8">
           <VStack gap="6" textAlign="center">
-            <Heading 
-              as="h2" 
-              size={{ base: '4xl', md: '5xl' }} 
+            <Heading
+              as="h2"
+              size={{ base: '3xl', md: '4xl' }}
               color="white"
               maxW="4xl"
             >
               Experience how AI transforms your career or hiring process.
             </Heading>
           </VStack>
-          <Button 
+          <Button
             size={{ base: 'lg', md: 'xl' }}
             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
             color="white"

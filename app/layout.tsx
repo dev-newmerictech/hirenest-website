@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
+import { Box } from "@chakra-ui/react";
+import { Block as Navbar } from '@/src/components/blocks/marketing-navbars/navbar-island/block';
+import { Block as Footer } from '@/src/components/blocks/footers/footer-with-four-columns/block';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -93,7 +96,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Box bg="gray.100">
+            <Navbar />
+            {children}
+            <Footer />
+          </Box>
+        </Provider>
       </body>
     </html>
   );

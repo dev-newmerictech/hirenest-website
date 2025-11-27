@@ -59,7 +59,7 @@ export const Testimonials = () => {
                         color="#000"
                         mt={2}
                     >
-                        Loved by Hiring Teams Worldwide
+                        Loved by Hiring <Text as="span" color="#4241ff">Teams Worldwide</Text>
                     </Heading>
                     <Text
                         fontSize={{ base: 'md', md: 'lg' }}

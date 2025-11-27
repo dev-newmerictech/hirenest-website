@@ -47,7 +47,7 @@ export const JobProviderFeatures = () => (
         w="full"
         position="relative"
         bg="rgba(248, 248, 248, 1)"
-        py={{ base: '12', md: '20', lg: '24' }}
+        py={{ base: '12', md: '20' }}
     >
         <Container maxW="7xl" position="relative">
             {/* Section Header */}
@@ -67,8 +67,12 @@ export const JobProviderFeatures = () => (
                     fontSize={{ base: '3xl', md: '4xl' }}
                     fontWeight="700"
                     color="#000"
-                    maxW="800px"
+                    maxW="7xl"
                     lineHeight={'normal'}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    gap={2}
                 >
                     Everything You Need to
                     <Text as="span" display="block" color="#4241ff">
@@ -78,8 +82,8 @@ export const JobProviderFeatures = () => (
                 <Text
                     fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
                     color="#000"
-                    maxW="700px"
-                    mt={4}
+                    maxW="7xl"
+                    mt={2}
                 >
                     Powerful recruitment tools designed to help you find and hire the best talent faster
                 </Text>

@@ -57,17 +57,23 @@ const brandGradient = "linear-gradient(90deg, #0071fb 0%, #b000ea 100%)";
 
 export const AdvancedScreening = () => {
     return (
-        <Box py={{ base: 16, md: 24 }} bg="white" position="relative">
+        <Box py={{ base: 16 }} bg="white" position="relative">
             <Container maxW="7xl">
-                <VStack gap={4} textAlign="center" mb={16}>
+                <VStack gap={4} textAlign="center" mb={10}>
                     <Heading
                         as="h2"
                         fontSize={{ base: '3xl', md: '4xl' }}
                         fontWeight="700"
                         letterSpacing="tight"
                         color="#000"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        gap={2}
                     >
-                        Advanced Candidate Screening
+                        Advanced <Text as="span" display="block" color="#4241ff">
+                            Candidate Screening
+                        </Text>
                     </Heading>
                     <Text fontSize={{ base: 'lg', md: 'xl' }} color="#000" maxW="3xl">
                         Multi-stage screening process that ensures you never miss great talent

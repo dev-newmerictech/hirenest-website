@@ -48,10 +48,6 @@ export default function JobSeekerPage() {
             {/* Features Section */}
             <JobSeekerFeatures />
 
-            {/* Second CTA */}
-            {/* Second CTA */}
-            <JobSeekerCTA variant="secondary" />
-
             <Testimonials />
             <Pricing />
             <FAQ />

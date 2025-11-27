@@ -10,6 +10,7 @@ export const JobProviderHero = () => (
         position="relative"
         bgGradient="linear(to-br, rgba(2, 62, 138, 0.05), rgba(248, 248, 248, 1))"
         overflow="hidden"
+        pt={20}
     >
         <Container py={{ base: '12', md: '20' }} maxW="7xl" position="relative">
             <Grid

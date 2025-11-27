@@ -55,7 +55,7 @@ const features = [
 export const FindPerfectCandidates = () => {
     return (
         <Box bg="white" py={{ base: 16, md: 24 }} position="relative" overflow="hidden">
-            <Container maxW="container.xl">
+            <Container maxW="7xl">
                 <Flex direction={{ base: 'column', lg: 'row' }} gap={{ base: 12, lg: 20 }} align="center">
 
                     {/* Left Content - Dashboard Preview */}

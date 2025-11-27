@@ -48,14 +48,21 @@ const brandGradient = "linear-gradient(90deg, #0071fb 0%, #b000ea 100%)";
 
 export const EnterpriseReady = () => {
     return (
-        <Box py={{ base: 16 }} bg="gray.50" position="relative">
+        <Box pb={{ base: 16 }} bg="#fff" position="relative">
             <Container maxW="7xl">
-                <VStack gap={4} textAlign="center" mb={16}>
-                    <Box mx={'auto'} mb={4}>
-                        <Badge rounded={'full'} fontSize={14} className='!bg-gradient-to-r !from-indigo-600 !to-purple-600' color='#fff' px={4} py={2}>
-                            <Star />
+                <VStack gap={4} textAlign="center" mb={10}>
+                    <Box mx={'auto'} mb={0}>
+
+                        <Text
+                            fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                            fontWeight="600"
+                            color="#4241ff"
+                            textTransform="uppercase"
+                            letterSpacing="wider"
+                            mb={3}
+                        >
                             Enterprise
-                        </Badge>
+                        </Text>
                     </Box>
                     <Heading
                         as="h2"
@@ -63,8 +70,14 @@ export const EnterpriseReady = () => {
                         fontWeight="800"
                         letterSpacing="tight"
                         color="#000"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        gap={2}
                     >
-                        Enterprise-Ready Platform
+                        Enterprise-Ready <Text as="span" display="block" color="#4241ff">
+                            Platform
+                        </Text>
                     </Heading>
                     <Text fontSize={{ base: 'lg', md: 'xl' }} color="#000" maxW="3xl">
                         Built for scale, security, and seamless integration with your existing tools
@@ -75,7 +88,7 @@ export const EnterpriseReady = () => {
                     {enterpriseFeatures.map((feature, index) => (
                         <Box
                             key={index}
-                            bg="white"
+                            bg="gray.100"
                             p={8}
                             rounded="2xl"
                             border="1px solid"

@@ -36,20 +36,25 @@ const footerLinks = {
     ],
   },
   features: {
-    title: 'Features',
+    title: 'Job Seeker Features',
     links: [
-      { label: 'AI-Powered Tools', href: '#features' },
-      { label: 'Pay-As-You-Go', href: '#pricing' },
-      { label: 'No Vendor Lock-In', href: '#why' },
-      { label: 'First-Party Support', href: '#support' },
-      { label: 'Integrations', href: '#integrations' },
+      { label: 'AI Resume Builder', href: '/ai-resume-builder' },
+      { label: 'Smart Job Matching', href: '/smart-job-matching' },
+      { label: 'Career Insights', href: '/career-insights' },
+      { label: 'Skill Assessments', href: '/skill-assessments' },
+      { label: 'Profile Optimization', href: '/profile-optimization' },
+      { label: 'Fast-Track Applications', href: '/fast-track-applications' },
     ],
   },
   resources: {
-    title: 'Resources',
+    title: 'Job Provider Features',
     links: [
-      { label: 'Documentation', href: '#docs' },
-      { label: 'Blog', href: '#blog' },
+      { label: 'AI Candidate Ranking', href: '/ai-candidate-ranking' },
+      { label: 'Quick Screening', href: '/quick-screening' },
+      { label: 'Hiring Analytics', href: '/hiring-analytics' },
+      { label: 'Verified Candidates', href: '/verified-candidates' },
+      { label: 'Custom Assessments', href: '/custom-assessments' },
+      { label: 'Team Collaboration', href: '/team-collaboration' },
     ],
   },
   company: {
@@ -57,7 +62,6 @@ const footerLinks = {
     links: [
       { label: 'About', href: '/about' },
       { label: 'Careers', href: '/careers' },
-      { label: 'Contact Us', href: '#contact' },
     ],
   },
   legal: {

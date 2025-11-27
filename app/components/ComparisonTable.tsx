@@ -14,23 +14,20 @@ const comparisonData = [
 
 export const ComparisonTable = () => {
     return (
-        <Box py={{ base: 16, md: 24 }} bg="white">
+        <Box py={{ base: 16 }} bg="white">
             <Container maxW="7xl">
                 <VStack gap={4} textAlign="center" mb={10}>
-                    <Badge
-                        colorScheme="blue"
-                        variant="subtle"
-                        px={4}
-                        py={1}
-                        rounded="full"
+
+                    <Text
+                        fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                        fontWeight="600"
+                        color="#4241ff"
                         textTransform="uppercase"
-                        fontSize="sm"
-                        fontWeight="bold"
-                        color="blue.600"
-                        bg="blue.50"
+                        letterSpacing="wider"
+                        mb={3}
                     >
                         Comparison
-                    </Badge>
+                    </Text>
                     <Heading
                         as="h2"
                         fontSize={{ base: '3xl', md: '4xl' }}
@@ -38,7 +35,7 @@ export const ComparisonTable = () => {
                         letterSpacing="tight"
                         color="#000"
                     >
-                        See How We Compare
+                        See How <Text as="span" bg="#4241ff" bgClip="text">We Compare</Text>
                     </Heading>
                     <Text fontSize={{ base: 'md', md: 'lg' }} color="#000" maxW="4xl">
                         More features, better experience, and smarter technology at a fraction of the cost

@@ -59,10 +59,6 @@ export default function JobProviderPage() {
             {/* Enterprise Ready Section */}
             <EnterpriseReady />
 
-            {/* Second CTA */}
-            {/* Second CTA */}
-            <JobProviderCTA variant="secondary" />
-
             <Testimonials />
             <Pricing />
             <FAQ />

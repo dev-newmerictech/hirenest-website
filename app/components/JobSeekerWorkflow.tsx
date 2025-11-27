@@ -60,8 +60,12 @@ export const JobSeekerWorkflow = () => (
                     fontSize={{ base: '3xl', md: '4xl' }}
                     fontWeight="700"
                     color="#000"
-                    maxW="800px"
+                    maxW="7xl"
                     lineHeight={'normal'}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    gap={2}
                 >
                     Your Journey to Success
                     <Text as="span" display="block" color="#4241ff">
@@ -71,8 +75,8 @@ export const JobSeekerWorkflow = () => (
                 <Text
                     fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
                     color="#000"
-                    maxW="700px"
-                    mt={4}
+                    maxW="7xl"
+                    mt={2}
                 >
                     From profile creation to landing your dream job, we guide you every step of the way
                 </Text>

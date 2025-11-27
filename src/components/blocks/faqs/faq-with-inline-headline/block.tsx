@@ -10,7 +10,7 @@ export const Block = () => {
 
   return (
     <Box mx="auto" bg="white">
-      <Container py={{ base: '16' }} maxW="6xl">
+      <Container py={{ base: '16' }} maxW="7xl">
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: '12', lg: '24' }}>
           <SectionHeader
             headline="Got Questions? We've Got Answers!"

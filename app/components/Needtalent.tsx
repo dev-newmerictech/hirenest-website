@@ -1,108 +1,158 @@
-import { Box, Button, Container, Flex, Grid, Heading, Stack, Text, VStack } from '@chakra-ui/react'
+'use client'
+
+import { Box, Button, Container, Flex, Grid, Heading, Icon, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Trophy, CheckCircle, Shield, BarChart } from 'lucide-react'
 
-export const NeedTalent = () => (
-    <Box
-        w="full"
-        position="relative"
-        bg="rgba(239, 239, 239, 1)"
-    >
-        <Container py={{ base: '16' }} maxW="7xl" position="relative">
-            <VStack alignItems="flex-start" mb={16}>
-                <Heading
-                    as="h2"
-                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                    fontWeight="600"
-                    color="#4241ff"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
-                >
-                    Need talent?
-                </Heading>
-                <Heading
-                    as="h3"
-                    fontSize={{ base: '3xl', md: '4xl' }}
-                    fontWeight="700"
-                    color="#000"
-                >
-                    Why recruiters love us
-                </Heading>
-            </VStack>
-            <Flex flexDirection="column" alignItems="flex-start" w="full">
-                <Flex alignItems="center" justifyContent="between" w="full" mb={16}>
-                    <VStack flex={1} alignItems="flex-start">
-                        <Image src="/Group 145.svg" alt="AI Career Matcher" width={500} height={300} />
-                    </VStack>
-                    <VStack alignItems="flex-start" flex={1}>
+export const NeedTalent = () => {
+    return (
+        <Box w="full" position="relative" bg="#F5F5F7" overflow="hidden" py={{ base: 20, md: 32 }}>
+            <Container maxW="7xl">
+                <Flex direction={{ base: 'column', lg: 'row-reverse' }} align="center" gap={{ base: 16, lg: 24 }}>
+                    {/* Right Content */}
+                    <Box flex={1}>
+
+                        <Flex align="center" gap={2} mb={0}>
+
+                            <Text
+                                fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                                fontWeight="600"
+                                color="#4241ff"
+                                textTransform="uppercase"
+                                letterSpacing="wider"
+                                mb={3}
+                            >
+                                For Employers
+                            </Text>
+                        </Flex>
                         <Heading
-                            as="h4"
-                            fontSize={{ base: 'xl', md: '2xl' }}
+                            as="h2"
+                            fontSize={{ base: '3xl', md: '4xl' }}
                             fontWeight="700"
+                            letterSpacing="tight"
                             color="#000"
+                            mb={4}
                         >
-                            AI Candidate Ranking
+                            Hire the top 1% <Text as="span" bg="#4241ff" bgClip="text">effortlessly.</Text>
                         </Heading>
                         <Text
-                            fontSize={{ base: 'md', md: 'lg' }}
-                            fontWeight="400"
-                            color="#000"
+                            fontSize="lg"
+                            color="#6e6e73"
                             lineHeight="1.6"
+                            mb={10}
+                            maxW="lg"
                         >
-                            Instantly see top-fit, skill-verified candidates.
+                            Streamline your hiring pipeline with AI. Identify the best candidates instantly and reduce time-to-hire by 50%.
                         </Text>
-                    </VStack>
-                </Flex>
-                <Flex alignItems="center" justifyContent="between" w="full" mb={16}>
-                    <VStack flex={1} alignItems="flex-start" position={'relative'}>
-                        <Box>
 
-                            <Image src="/Group 151.svg" alt="AI Career Matcher" width={350} height={250} />
+                        {/* Feature Grid */}
+                        <Grid templateColumns={{ base: '1fr', sm: 'repeat(2, 1fr)' }} gap={8} mb={10}>
+                            <Feature
+                                icon={Trophy}
+                                title="Top Talent Ranking"
+                                desc="Instantly identify the best candidates based on skills and experience."
+                            />
+                            <Feature
+                                icon={CheckCircle}
+                                title="Skill Verification"
+                                desc="Validate candidate abilities with automated technical assessments."
+                            />
+                            <Feature
+                                icon={Shield}
+                                title="Unbiased Hiring"
+                                desc="Remove unconscious bias from your screening process automatically."
+                            />
+                            <Feature
+                                icon={BarChart}
+                                title="Hiring Analytics"
+                                desc="Track your funnel performance and optimize your recruitment ROI."
+                            />
+                        </Grid>
+
+                        <Link href="/hiring" passHref>
+                            <Button
+                                as="a"
+                                size="lg"
+                                h="14"
+                                px="8"
+                                fontSize="md"
+                                borderRadius="full"
+
+                                background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                                minW={{ base: '80px', md: '220px' }}
+                                _hover={{
+                                    background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+                                    opacity: 0.9,
+                                }}
+                                transition="all 0.3s"
+                            >
+                                Start Hiring Now
+                            </Button>
+                        </Link>
+                    </Box>
+
+                    {/* Left Visual */}
+                    <Box flex={1} position="relative" w="full">
+                        {/* Glow Effect */}
+                        <Box
+                            position="absolute"
+                            top="50%"
+                            left="50%"
+                            transform="translate(-50%, -50%)"
+                            w="120%"
+                            h="120%"
+                            bgGradient="radial(#4241ff33, transparent 70%)"
+                            filter="blur(60px)"
+                            zIndex={0}
+                        />
+
+                        {/* Layered Images */}
+                        <Box position="relative" zIndex={1}>
+                            {/* Back Image */}
+                            <Box
+                                borderRadius="2xl"
+                                overflow="hidden"
+                                boxShadow="2xl"
+                                bg="white"
+                            >
+                                <Image
+                                    src="/ai-candidate-ranking-ui.png"
+                                    alt="AI Candidate Ranking"
+                                    width={600}
+                                    height={400}
+                                    style={{ objectFit: 'cover' }}
+                                />
+                            </Box>
                         </Box>
-                    </VStack>
-                    <VStack alignItems="flex-start" flex={1}>
-                        <Heading
-                            as="h4"
-                            fontSize={{ base: 'xl', md: '2xl' }}
-                            fontWeight="700"
-                            color="#000"
-                        >
-                            Assessment-Based Hiring
-                        </Heading>
-                        <Text
-                            fontSize={{ base: 'md', md: 'lg' }}
-                            fontWeight="400"
-                            color="#000"
-                            lineHeight="1.6"
-                        >
-                            Hire based on real skills, not keywords.
-                        </Text>
-                    </VStack>
+                    </Box>
                 </Flex>
+            </Container>
+        </Box>
+    )
+}
 
-                <Flex alignItems="center" justifyContent="between" w="full">
-                    <VStack flex={1} alignItems="flex-start" position={'relative'}>
-                        <Image src="/Group 152.svg" alt="AI Career Matcher" width={400} height={350} />
-                    </VStack>
-                    <VStack alignItems="flex-start" flex={1}>
-                        <Heading
-                            as="h4"
-                            fontSize={{ base: 'xl', md: '2xl' }}
-                            fontWeight="700"
-                            color="#000"
-                        >
-                            Analytics Dashboard
-                        </Heading>
-                        <Text
-                            fontSize={{ base: 'md', md: 'lg' }}
-                            fontWeight="400"
-                            color="#000"
-                            lineHeight="1.6"
-                        >
-                            See hiring metrics, cost-savings, and diversity insights.
-                        </Text>
-                    </VStack>
-                </Flex>
-            </Flex>
-        </Container>
-    </Box>
+const Feature = ({ icon, title, desc }: { icon: any, title: string, desc: string }) => (
+    <VStack align="flex-start" gap={3}>
+        <Flex
+            w={10}
+            h={10}
+            align="center"
+            justify="center"
+            borderRadius="lg"
+            bg="white"
+            color="#4241ff"
+            boxShadow="sm"
+        >
+            <Icon as={icon} boxSize={5} />
+        </Flex>
+        <VStack align="flex-start" gap={1}>
+            <Text fontWeight="700" fontSize="md" color="#1d1d1f">
+                {title}
+            </Text>
+            <Text fontSize="md" color="#6e6e73" lineHeight="1.5">
+                {desc}
+            </Text>
+        </VStack>
+    </VStack>
 )

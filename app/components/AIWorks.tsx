@@ -176,8 +176,8 @@ export const AIWorks = () => {
                                         <Icon as={Check} color="#4bb756" ml="auto" />
                                     </HStack>
                                     <Flex wrap="wrap" gap={2}>
-                                        {['React', 'Node.js', 'TypeScript', 'AWS', 'Python'].map((tag) => (
-                                            <Badge key={tag} bg="rgba(66,65,255,0.2)" color="#4241ff" borderRadius="md" px={2} py={1}>
+                                        {['React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python'].map((tag) => (
+                                            <Badge key={tag} bg="#fff" color="#4241ff" borderRadius="md" px={2} py={1}>
                                                 {tag}
                                             </Badge>
                                         ))}
@@ -254,6 +254,24 @@ export const AIWorks = () => {
                                 <Text color="#6e6e73" fontSize="sm">Real-time alerts for inclusive hiring decisions.</Text>
 
                                 {/* Visual */}
+                                <HStack w="full" bg="red.50" p={4} borderRadius="xl" border="1px solid" borderColor="red.100">
+                                    <Flex
+                                        w={8}
+                                        h={8}
+                                        align="center"
+                                        justify="center"
+                                        borderRadius="full"
+                                        bg="white"
+                                        color="red.500"
+                                        boxShadow="sm"
+                                    >
+                                        <Icon as={ShieldAlert} boxSize="14px" />
+                                    </Flex>
+                                    <VStack align="flex-start" gap={0}>
+                                        <Text fontSize="xs" fontWeight="700" color="#1d1d1f">Bias Detected</Text>
+                                        <Text fontSize="xs" color="gray.500">Pattern flagged in description</Text>
+                                    </VStack>
+                                </HStack>
                                 <HStack w="full" bg="red.50" p={4} borderRadius="xl" border="1px solid" borderColor="red.100">
                                     <Flex
                                         w={8}

@@ -1,8 +1,7 @@
 "use client"
 
-import { Box, Container, Tabs, Grid, Heading, Text, VStack, Flex, Button } from "@chakra-ui/react"
+import { Box, Container, Tabs, Grid, Heading, Text, VStack, Flex } from "@chakra-ui/react"
 import Link from "next/link"
-
 import { LuBriefcase, LuUserCheck, LuTrendingUp, LuSearch, LuUsers, LuTarget, LuFileCheck, LuSparkles, LuActivity, LuZap, LuShield, LuRocket, LuArrowRight } from "react-icons/lu"
 
 const jobSeekersCards = [
@@ -85,246 +84,177 @@ const recruitersCards = [
 
 export function TabsComponent() {
     return (
-        <Box w="full" bg="white" pb={{ base: '20' }}>
-            <Container maxW="7xl">
+        <Box w="full" bg="white" pb={{ base: 20 }} position="relative" overflow="hidden">
+            {/* Background Gradients */}
+            <Box position="absolute" top="0" left="0" w="full" h="full" overflow="hidden" pointerEvents="none">
+                <Box position="absolute" top="10%" left="-5%" w="500px" h="500px" bg="blue.50" filter="blur(100px)" opacity="0.5" borderRadius="full" />
+                <Box position="absolute" bottom="10%" right="-5%" w="500px" h="500px" bg="purple.50" filter="blur(100px)" opacity="0.5" borderRadius="full" />
+            </Box>
+
+            <Container maxW="7xl" position="relative">
                 <VStack gap={{ base: 10 }}>
-                    {/* Section Header - Apple Style */}
-                    <VStack textAlign="center" gap={2} maxW="7xl" mx="auto">
+                    {/* Header */}
+                    <VStack textAlign="center" gap={4} maxW="3xl" mx="auto">
+                        <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider">
+                            Features
+                        </Text>
                         <Heading
                             as="h2"
                             fontSize={{ base: '3xl', md: '4xl' }}
-                            fontWeight="700"
-                            color="#000"
-                            lineHeight="1.2"
+                            fontWeight="800"
+                            color="#1d1d1f"
+                            lineHeight="1.1"
+                            letterSpacing="tight"
                         >
-                            Choose your <Text as="span" bg="#4241ff" bgClip="text">path.</Text>
+                            Choose your <Text as="span" color="#4241ff">path.</Text>
                         </Heading>
-                        <Text
-                            fontSize={{ base: 'lg' }}
-                            color="#6e6e73"
-                            lineHeight="1.4"
-                            fontWeight="400"
-                        >
-                            Powerful features tailored to your needs.
+                        <Text fontSize="xl" color="#6e6e73" maxW="2xl">
+                            Powerful features tailored to your needs. Whether you're hiring or hunting, we've got you covered.
                         </Text>
                     </VStack>
 
-                    <Box w="full">
-                        <Tabs.Root defaultValue="job-seekers" variant="plain" w="full">
-                            <Flex justifyContent="center" mb={{ base: 8, md: 10 }}>
-                                <Tabs.List
-                                    bg="#f5f5f7"
-                                    rounded="full"
-                                    p="1.5"
-                                >
+                    {/* Tabs */}
+                    <Tabs.Root defaultValue="job-seekers" variant="plain" w="full">
+                        <Flex justifyContent="center" mb={{ base: 10 }}>
+                            <Tabs.List bg="gray.100" p={1} rounded="full" border="1px solid" borderColor="gray.200">
+                                {['job-seekers', 'recruiters'].map((tab) => (
                                     <Tabs.Trigger
-                                        value="job-seekers"
-                                        fontWeight="500"
-                                        fontSize={{ base: 'md', md: 'lg' }}
-                                        px={{ base: '6', md: '8' }}
-                                        py={{ base: '2.5', md: '3' }}
+                                        key={tab}
+                                        value={tab}
+                                        px={{ base: 6, md: 10 }}
+                                        py={3}
                                         rounded="full"
-                                        _selected={{
-                                            bg: "white",
-                                            color: "#1d1d1f",
-                                            shadow: "sm"
-                                        }}
-                                        color="#6e6e73"
-                                        transition="all 0.3s ease"
+                                        fontSize="md"
+                                        fontWeight="600"
+                                        color="gray.500"
+                                        _selected={{ bg: "white", color: "#1d1d1f", shadow: "sm" }}
+                                        transition="all 0.2s"
                                     >
-                                        Job Seekers
+                                        {tab === 'job-seekers' ? 'For Job Seekers' : 'For Recruiters'}
                                     </Tabs.Trigger>
-                                    <Tabs.Trigger
-                                        value="recruiters"
-                                        fontWeight="500"
-                                        fontSize={{ base: 'md', md: 'lg' }}
-                                        px={{ base: '6', md: '8' }}
-                                        py={{ base: '2.5', md: '3' }}
-                                        rounded="full"
-                                        _selected={{
-                                            bg: "white",
-                                            color: "#1d1d1f",
-                                            shadow: "sm"
-                                        }}
-                                        color="#6e6e73"
-                                        transition="all 0.3s ease"
-                                    >
-                                        Recruiters
-                                    </Tabs.Trigger>
-                                </Tabs.List>
-                            </Flex>
+                                ))}
+                            </Tabs.List>
+                        </Flex>
 
-                            <Tabs.Content value="job-seekers">
-                                <Grid
-                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
-                                    gap={{ base: 4, md: 6 }}
-                                    maxW="1200px"
-                                    mx="auto"
-                                >
-                                    {jobSeekersCards.map((card, index) => {
-                                        const Icon = card.icon
-                                        return (
-                                            <Box
-                                                key={index}
-                                                bg="#f5f5f7"
-                                                borderRadius="24px"
-                                                p={{ base: 6, md: 8 }}
-                                                transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
-                                                _hover={{
-                                                    bg: "#fafafa",
-                                                    transform: "scale(1.02)"
-                                                }}
-                                                h="full"
-                                                display="flex"
-                                                flexDirection="column"
-                                            >
-                                                <VStack align="flex-start" gap={4} flex="1">
-                                                    {/* Icon */}
-                                                    <Flex
-                                                        w={12}
-                                                        h={12}
-                                                        align="center"
-                                                        justify="center"
-                                                        borderRadius="12px"
-                                                        bg="white"
-                                                    >
-                                                        <Icon size={24} color="#4241ff" />
-                                                    </Flex>
+                        <Tabs.Content value="job-seekers">
+                            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={8}>
+                                {jobSeekersCards.map((card, index) => (
+                                    <FeatureCard key={index} {...card} color="#4241ff" bg="blue.50" />
+                                ))}
+                            </Grid>
+                        </Tabs.Content>
 
-                                                    {/* Title */}
-                                                    <Heading
-                                                        as="h3"
-                                                        fontSize={{ base: 'lg', md: 'xl' }}
-                                                        fontWeight="600"
-                                                        color="#1d1d1f"
-                                                        lineHeight="1.3"
-                                                    >
-                                                        {card.title}
-                                                    </Heading>
-
-                                                    {/* Description */}
-                                                    <Text
-                                                        fontSize={{ base: 'sm', md: 'md' }}
-                                                        color="#6e6e73"
-                                                        lineHeight="1.5"
-                                                        flex="1"
-                                                    >
-                                                        {card.description}
-                                                    </Text>
-
-                                                    {/* Link */}
-                                                    <Link href={card.link} passHref style={{ width: '100%' }}>
-                                                        <Flex
-                                                            as="a"
-                                                            align="center"
-                                                            gap={2}
-                                                            color="#4241ff"
-                                                            fontSize="md"
-                                                            fontWeight="500"
-                                                            mt={2}
-                                                            transition="all 0.2s ease"
-                                                            _hover={{
-                                                                gap: 3
-                                                            }}
-                                                        >
-                                                            Learn more
-                                                            <LuArrowRight size={18} />
-                                                        </Flex>
-                                                    </Link>
-                                                </VStack>
-                                            </Box>
-                                        )
-                                    })}
-                                </Grid>
-                            </Tabs.Content>
-
-                            <Tabs.Content value="recruiters">
-                                <Grid
-                                    templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
-                                    gap={{ base: 4, md: 6 }}
-                                    maxW="1200px"
-                                    mx="auto"
-                                >
-                                    {recruitersCards.map((card, index) => {
-                                        const Icon = card.icon
-                                        return (
-                                            <Box
-                                                key={index}
-                                                bg="#f5f5f7"
-                                                borderRadius="24px"
-                                                p={{ base: 6, md: 8 }}
-                                                transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
-                                                _hover={{
-                                                    bg: "#fafafa",
-                                                    transform: "scale(1.02)"
-                                                }}
-                                                h="full"
-                                                display="flex"
-                                                flexDirection="column"
-                                            >
-                                                <VStack align="flex-start" gap={4} flex="1">
-                                                    {/* Icon */}
-                                                    <Flex
-                                                        w={12}
-                                                        h={12}
-                                                        align="center"
-                                                        justify="center"
-                                                        borderRadius="12px"
-                                                        bg="white"
-                                                    >
-                                                        <Icon size={24} color="#b000ea" />
-                                                    </Flex>
-
-                                                    {/* Title */}
-                                                    <Heading
-                                                        as="h3"
-                                                        fontSize={{ base: 'lg', md: 'xl' }}
-                                                        fontWeight="600"
-                                                        color="#1d1d1f"
-                                                        lineHeight="1.3"
-                                                    >
-                                                        {card.title}
-                                                    </Heading>
-
-                                                    {/* Description */}
-                                                    <Text
-                                                        fontSize={{ base: 'sm', md: 'md' }}
-                                                        color="#6e6e73"
-                                                        lineHeight="1.5"
-                                                        flex="1"
-                                                    >
-                                                        {card.description}
-                                                    </Text>
-
-                                                    {/* Link */}
-                                                    <Link href={card.link} passHref style={{ width: '100%' }}>
-                                                        <Flex
-                                                            as="a"
-                                                            align="center"
-                                                            gap={2}
-                                                            color="#b000ea"
-                                                            fontSize="md"
-                                                            fontWeight="500"
-                                                            mt={2}
-                                                            transition="all 0.2s ease"
-                                                            _hover={{
-                                                                gap: 3
-                                                            }}
-                                                        >
-                                                            Learn more
-                                                            <LuArrowRight size={18} />
-                                                        </Flex>
-                                                    </Link>
-                                                </VStack>
-                                            </Box>
-                                        )
-                                    })}
-                                </Grid>
-                            </Tabs.Content>
-                        </Tabs.Root>
-                    </Box>
+                        <Tabs.Content value="recruiters">
+                            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={8}>
+                                {recruitersCards.map((card, index) => (
+                                    <FeatureCard key={index} {...card} color="#b000ea" bg="purple.50" />
+                                ))}
+                            </Grid>
+                        </Tabs.Content>
+                    </Tabs.Root>
                 </VStack>
             </Container>
         </Box>
     )
 }
+
+const FeatureCard = ({ icon: Icon, title, description, link, color, bg }: any) => (
+    <Link href={link} style={{ display: 'block', height: '100%' }}>
+        <VStack
+            bg="white"
+            p={8}
+            rounded="2xl"
+            border="1px solid"
+            borderColor="gray.200"
+            align="flex-start"
+            gap={6}
+            h="full"
+            position="relative"
+            overflow="hidden"
+            transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+            className="group"
+            cursor="pointer"
+            _hover={{
+                transform: 'translateY(-8px)',
+                shadow: 'xl',
+                borderColor: color
+            }}
+        >
+            {/* Subtle Background Gradient */}
+            <Box
+                position="absolute"
+                top={0}
+                right={0}
+                w="200px"
+                h="200px"
+                bgGradient={`radial(${bg}, transparent)`}
+                opacity={0.4}
+                transition="opacity 0.3s ease"
+                css={{ ".group:hover &": { opacity: 0.7 } }}
+            />
+
+            {/* Icon */}
+            <Flex
+                w={14}
+                h={14}
+                align="center"
+                justify="center"
+                rounded="xl"
+                bg={bg}
+                color={color}
+                position="relative"
+                zIndex={1}
+                transition="all 0.3s ease"
+                css={{
+                    ".group:hover &": {
+                        transform: "scale(1.1)",
+                        bg: color,
+                        color: "white"
+                    }
+                }}
+            >
+                <Icon size={28} strokeWidth={2} />
+            </Flex>
+
+            {/* Content */}
+            <VStack align="flex-start" gap={3} flex={1} position="relative" zIndex={1}>
+                <Heading
+                    size="lg"
+                    fontWeight="700"
+                    color="#1d1d1f"
+                    lineHeight="1.2"
+                >
+                    {title}
+                </Heading>
+                <Text
+                    color="#6e6e73"
+                    lineHeight="1.6"
+                    fontSize="sm"
+                >
+                    {description}
+                </Text>
+            </VStack>
+
+            {/* Learn More Link */}
+            <Flex
+                align="center"
+                gap={2}
+                color={color}
+                fontWeight="600"
+                fontSize="sm"
+                position="relative"
+                zIndex={1}
+                transition="gap 0.3s ease"
+                css={{ ".group:hover &": { gap: "12px" } }}
+            >
+                <Text>Learn more</Text>
+                <Box
+                    transition="transform 0.3s ease"
+                    css={{ ".group:hover &": { transform: "translateX(4px)" } }}
+                >
+                    <LuArrowRight size={16} strokeWidth={2.5} />
+                </Box>
+            </Flex>
+        </VStack>
+    </Link>
+)

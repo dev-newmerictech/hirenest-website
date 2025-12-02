@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Badge,
   Button,
@@ -65,6 +67,8 @@ export const PricingCard = (props: PricingCardProps) => {
         color={data.recommended ? 'white' : 'rgba(66, 65, 255, 1)'}
         fontWeight="medium"
         border={!data.recommended ? '1px solid rgba(66, 65, 255, 1)' : 'none'}
+        cursor={'not-allowed'}
+        // onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
       >
         {data.buttonText}
       </Button>

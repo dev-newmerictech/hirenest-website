@@ -2,7 +2,6 @@
 
 import { Box, Button, Container, Flex, Grid, Heading, Icon, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Trophy, CheckCircle, Shield, BarChart } from 'lucide-react'
 
 export const NeedTalent = () => {
@@ -70,26 +69,24 @@ export const NeedTalent = () => {
                             />
                         </Grid>
 
-                        <Link href="/hiring" passHref>
-                            <Button
-                                as="a"
-                                size="lg"
-                                h="14"
-                                px="8"
-                                fontSize="md"
-                                borderRadius="full"
-
-                                background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
-                                minW={{ base: '80px', md: '220px' }}
-                                _hover={{
-                                    background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-                                    opacity: 0.9,
-                                }}
-                                transition="all 0.3s"
-                            >
-                                Start Hiring Now
-                            </Button>
-                        </Link>
+                        <Button
+                            size="lg"
+                            h="14"
+                            px="8"
+                            fontSize="md"
+                            borderRadius="full"
+                            background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                            color="white"
+                            minW={{ base: '80px', md: '220px' }}
+                            _hover={{
+                                background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+                                opacity: 0.9,
+                            }}
+                            transition="all 0.3s"
+                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                        >
+                            Start Hiring Now
+                        </Button>
                     </Box>
 
                     {/* Left Visual */}

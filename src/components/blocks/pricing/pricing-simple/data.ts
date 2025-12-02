@@ -15,7 +15,7 @@ export const plans: PlanData[] = [
     priceCurrency: 'US',
     priceSymbol: '$',
     recommended: false,
-    buttonText: 'Get Started — It’s Free',
+    buttonText: 'Coming Soon',
   },
   {
     value: 'pro',
@@ -32,7 +32,7 @@ export const plans: PlanData[] = [
     priceCurrency: 'US',
     priceSymbol: '$',
     recommended: true,
-    buttonText: 'Upgrade to Pro',
+    buttonText: 'Coming Soon',
   },
   {
     value: 'enterprise',
@@ -52,7 +52,7 @@ export const plans: PlanData[] = [
     priceCurrency: 'US',
     priceSymbol: '$',
     recommended: false,
-    buttonText: 'Become an Elite Member',
+    buttonText: 'Coming Soon',
   },
 ]
 

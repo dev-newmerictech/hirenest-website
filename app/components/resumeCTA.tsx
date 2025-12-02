@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, Button, Container, Grid, Heading, Text, VStack, Flex, Icon } from "@chakra-ui/react";
-import Link from "next/link";
 import { Sparkles, Target, TrendingUp, Users } from "lucide-react";
 
 export const ResumeCTA = () => (
@@ -27,23 +26,22 @@ export const ResumeCTA = () => (
                 >
                     AI-powered resumes that adapt to your skills, role, and industry.
                 </Text>
-                <Link href="/ai-resume-builder">
-                    <Button
-                        size={{ base: 'md', md: 'lg' }}
-                        borderRadius="full"
-                        fontWeight="500"
-                        background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
-                        color="white"
-                        minW={{ base: '100px', md: '100px' }}
-                        _hover={{
-                            background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-                            opacity: 0.9,
-                        }}
-                        transition="all 0.3s ease"
-                    >
-                        Try AI Resume Builder
-                    </Button>
-                </Link>
+                <Button
+                    size={{ base: 'md', md: 'lg' }}
+                    borderRadius="full"
+                    fontWeight="500"
+                    background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                    color="white"
+                    minW={{ base: '100px', md: '100px' }}
+                    _hover={{
+                        background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+                        opacity: 0.9,
+                    }}
+                    transition="all 0.3s ease"
+                    onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                >
+                    Try AI Resume Builder
+                </Button>
             </VStack>
         </Container>
 

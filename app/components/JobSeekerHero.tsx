@@ -28,7 +28,7 @@ export const JobSeekerHero = () => (
                             letterSpacing="wider"
                             mb={3}
                         >
-                            For Job Seekers
+                            Job Seekers
                         </Text>
                         <Heading
                             as="h1"
@@ -109,10 +109,10 @@ export const JobSeekerHero = () => (
                 <Box position="relative" h={{ base: '400px', md: '500px' }}>
                     {/* Main Image */}
                     <Image
-                        src="/job-seeker-hero-1.png"
+                        src="/job-seeker-hero-new.png"
                         alt="Professional job seeker"
                         fill
-                        style={{ objectFit: 'cover', }}
+                        style={{ objectFit: 'contain' }}
                         priority
                     />
                 </Box>

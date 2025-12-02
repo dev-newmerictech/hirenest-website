@@ -91,22 +91,40 @@ export const JobSeekerWorkflow = () => (
                 {workflowSteps.map((step, index) => {
                     const Icon = step.icon
                     return (
-                        <Box
+                        <VStack
                             key={index}
+                            bg="white"
+                            p={8}
+                            rounded="2xl"
+                            border="1px solid"
+                            borderColor="gray.200"
+                            align="flex-start"
+                            gap={6}
+                            h="full"
                             position="relative"
-                            bg="rgba(248, 248, 248, 1)"
-                            p={{ base: 6, md: 8 }}
-                            borderRadius="xl"
-                            border="2px solid"
-                            borderColor="transparent"
-                            transition="all 0.3s"
+                            overflow="hidden"
+                            transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+                            className="group"
+                            cursor="pointer"
                             _hover={{
-                                borderColor: "#4241ff",
-                                transform: "translateY(-4px)",
-                                boxShadow: "xl",
-                                bg: "white"
+                                transform: 'translateY(-8px)',
+                                shadow: 'xl',
+                                borderColor: '#4241ff'
                             }}
                         >
+                            {/* Subtle Background Gradient */}
+                            <Box
+                                position="absolute"
+                                top={0}
+                                right={0}
+                                w="200px"
+                                h="200px"
+                                bgGradient="radial(blue.50, transparent)"
+                                opacity={0.4}
+                                transition="opacity 0.3s ease"
+                                css={{ ".group:hover &": { opacity: 0.7 } }}
+                            />
+
                             {/* Step Number */}
                             <Text
                                 position="absolute"
@@ -115,42 +133,53 @@ export const JobSeekerWorkflow = () => (
                                 fontSize={{ base: '3xl', md: '4xl' }}
                                 fontWeight="700"
                                 color="rgba(66, 65, 255, 0.1)"
+                                zIndex={1}
                             >
                                 {step.step}
                             </Text>
 
                             {/* Icon */}
                             <Flex
-                                w={{ base: '50px', md: '60px' }}
-                                h={{ base: '50px', md: '60px' }}
-                                bg="rgba(66, 65, 255, 0.1)"
-                                borderRadius="lg"
-                                alignItems="center"
-                                justifyContent="center"
-                                mb={4}
+                                w={14}
+                                h={14}
+                                align="center"
+                                justify="center"
+                                rounded="xl"
+                                bg="blue.50"
+                                color="#4241ff"
+                                position="relative"
+                                zIndex={1}
+                                transition="all 0.3s ease"
+                                css={{
+                                    ".group:hover &": {
+                                        transform: "scale(1.1)",
+                                        bg: "#4241ff",
+                                        color: "white"
+                                    }
+                                }}
                             >
-                                <Icon size={30} color="#4241ff" strokeWidth={2} />
+                                <Icon size={28} strokeWidth={2} />
                             </Flex>
 
                             {/* Content */}
-                            <VStack alignItems="flex-start" gap={3}>
+                            <VStack align="flex-start" gap={3} flex={1} position="relative" zIndex={1}>
                                 <Heading
-                                    as="h3"
-                                    fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-                                    fontWeight="600"
-                                    color="#000"
+                                    size="lg"
+                                    fontWeight="700"
+                                    color="#1d1d1f"
+                                    lineHeight="1.2"
                                 >
                                     {step.title}
                                 </Heading>
                                 <Text
-                                    fontSize={{ base: 'sm', md: 'md', lg: 'lg' }}
-                                    color="#000"
+                                    color="#6e6e73"
                                     lineHeight="1.6"
+                                    fontSize="sm"
                                 >
                                     {step.description}
                                 </Text>
                             </VStack>
-                        </Box>
+                        </VStack>
                     )
                 })}
             </Grid>

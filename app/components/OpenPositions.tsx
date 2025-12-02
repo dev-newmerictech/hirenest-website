@@ -184,6 +184,7 @@ const PositionCard = ({ title, department, location, type, description }: {
             display="flex"
             alignItems="center"
             gap={2}
+            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
         >
             Apply Now
             <ArrowRight size={16} />

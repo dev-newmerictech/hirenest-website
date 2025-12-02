@@ -29,7 +29,7 @@ export const JobProviderHero = () => (
                             letterSpacing="wider"
                             mb={3}
                         >
-                            For Employers
+                            Job Providers
                         </Text>
                         <Heading
                             as="h1"
@@ -57,6 +57,8 @@ export const JobProviderHero = () => (
 
                     <Stack direction={{ base: 'column', sm: 'row' }} gap={4} w="full">
                         <Button
+                            as="a"
+                            rel="noopener noreferrer"
                             _hover={{
                                 background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
                                 transform: "translateY(-2px)",
@@ -68,6 +70,7 @@ export const JobProviderHero = () => (
                             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                             color="white"
                             minW={{ base: '80px', md: '250px' }}
+                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
                         >
                             Post a Job
                             <Box as={ArrowRight} ml={1} />
@@ -107,10 +110,10 @@ export const JobProviderHero = () => (
                 <Box position="relative" h={{ base: '400px', md: '500px' }}>
                     {/* Main Image */}
                     <Image
-                        src="/job-provider-hero.png"
+                        src="/job-provider-hero-new.png"
                         alt="Professional hiring manager"
                         fill
-                        style={{ objectFit: 'cover' }}
+                        style={{ objectFit: 'contain' }}
                         priority
                     />
                 </Box>

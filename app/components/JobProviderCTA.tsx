@@ -104,6 +104,10 @@ export const JobProviderCTA = ({ variant = 'primary' }: JobProviderCTAProps) => 
                         mt={4}
                     >
                         <Button
+                            as="a"
+                            href="https://app.hirenest.ai/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             size={{ base: 'md', md: 'lg' }}
                             bg={isPrimary ? "white" : "linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"}
                             color={isPrimary ? "#4241ff" : "white"}

@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Button, Container, Heading, Stack, VStack } from '@chakra-ui/react'
 
 export const Block = () => {
@@ -30,6 +32,7 @@ export const Block = () => {
               background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
               opacity: 0.9,
             }}
+            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
           >
             Get Started Free
           </Button>

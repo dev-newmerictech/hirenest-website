@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Button, Container, Heading, HStack, Stack, Text, VStack } from '@chakra-ui/react'
 
 export const Block = () => {
@@ -42,6 +44,7 @@ export const Block = () => {
               _hover={{
                 bg: 'whiteAlpha.200',
               }}
+              onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
             >
               Find Your Dream Job
             </Button>
@@ -60,6 +63,7 @@ export const Block = () => {
               _hover={{
                 bg: 'whiteAlpha.200',
               }}
+              onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
             >
               Hire Smarter Today
             </Button>

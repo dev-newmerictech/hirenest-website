@@ -64,6 +64,7 @@ export const Block = () => {
                 _hover={{
                   bg: 'brand.50',
                 }}
+                onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
               >
                 Login
               </Button>
@@ -77,6 +78,7 @@ export const Block = () => {
                   background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
                   opacity: 0.9,
                 }}
+                onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
               >
                 Sign Up
               </Button>
@@ -98,6 +100,7 @@ export const Block = () => {
                 _hover={{
                   bg: 'brand.50',
                 }}
+                onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
               >
                 Login
               </Button>
@@ -111,6 +114,7 @@ export const Block = () => {
                   background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
                   opacity: 0.9,
                 }}
+                onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
               >
                 Sign Up
               </Button>

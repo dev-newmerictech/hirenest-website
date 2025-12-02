@@ -3,7 +3,6 @@
 
 import { Box, Button, Container, Flex, Grid, Heading, Icon, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Sparkles, FileText, Target, TrendingUp } from 'lucide-react'
 
 export const GotTalent = () => {
@@ -70,26 +69,24 @@ export const GotTalent = () => {
                             />
                         </Grid>
 
-                        <Link href="/jobs" passHref>
-                            <Button
-                                as="a"
-                                size="lg"
-                                h="14"
-                                px="8"
-                                fontSize="md"
-                                borderRadius="full"
-
-                                background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
-                                minW={{ base: '80px', md: '220px' }}
-                                _hover={{
-                                    background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-                                    opacity: 0.9,
-                                }}
-                                transition="all 0.3s"
-                            >
-                                Find Your Dream Job
-                            </Button>
-                        </Link>
+                        <Button
+                            size="lg"
+                            h="14"
+                            px="8"
+                            fontSize="md"
+                            borderRadius="full"
+                            background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                            color="white"
+                            minW={{ base: '80px', md: '220px' }}
+                            _hover={{
+                                background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+                                opacity: 0.9,
+                            }}
+                            transition="all 0.3s"
+                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                        >
+                            Find Your Dream Job
+                        </Button>
                     </Box>
 
                     {/* Right Visual */}

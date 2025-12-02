@@ -83,6 +83,7 @@ export const AICareerPartner = () => {
                             fontWeight="bold"
                             px={8}
                             h={14}
+                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
                         >
                             Build Your Profile
                         </Button>

@@ -58,8 +58,6 @@ export const JobProviderHero = () => (
                     <Stack direction={{ base: 'column', sm: 'row' }} gap={4} w="full">
                         <Button
                             as="a"
-                            href="https://app.hirenest.ai/"
-                            target="_blank"
                             rel="noopener noreferrer"
                             _hover={{
                                 background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
@@ -72,6 +70,7 @@ export const JobProviderHero = () => (
                             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                             color="white"
                             minW={{ base: '80px', md: '250px' }}
+                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
                         >
                             Post a Job
                             <Box as={ArrowRight} ml={1} />

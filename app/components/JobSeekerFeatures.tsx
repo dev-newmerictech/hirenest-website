@@ -92,90 +92,87 @@ export const JobSeekerFeatures = () => (
             {/* Features Grid */}
             <Grid
                 templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
-                gap={{ base: 6, md: 8 }}
+                gap={8}
             >
                 {features.map((feature, index) => {
                     const Icon = feature.icon
                     return (
-                        <Box
+                        <VStack
                             key={index}
                             bg="white"
-                            p={{ base: 6, md: 8 }}
-                            borderRadius="xl"
-                            boxShadow="sm"
+                            p={8}
+                            rounded="2xl"
                             border="1px solid"
-                            borderColor="rgba(0, 0, 0, 0.05)"
-                            transition="all 0.3s"
+                            borderColor="gray.200"
+                            align="flex-start"
+                            gap={6}
+                            h="full"
                             position="relative"
                             overflow="hidden"
+                            transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+                            className="group"
+                            cursor="pointer"
                             _hover={{
-                                transform: "translateY(-8px)",
-                                boxShadow: "2xl",
-                                borderColor: feature.color,
-                                _before: {
-                                    opacity: 1
-                                }
-                            }}
-                            _before={{
-                                content: '""',
-                                position: "absolute",
-                                top: 0,
-                                left: 0,
-                                right: 0,
-                                height: "4px",
-                                bg: feature.color,
-                                opacity: 0,
-                                transition: "opacity 0.3s"
+                                transform: 'translateY(-8px)',
+                                shadow: 'xl',
+                                borderColor: feature.color
                             }}
                         >
+                            {/* Subtle Background Gradient */}
+                            <Box
+                                position="absolute"
+                                top={0}
+                                right={0}
+                                w="200px"
+                                h="200px"
+                                bgGradient="radial(blue.50, transparent)"
+                                opacity={0.4}
+                                transition="opacity 0.3s ease"
+                                css={{ ".group:hover &": { opacity: 0.7 } }}
+                            />
+
                             {/* Icon */}
                             <Flex
-                                w={{ base: '60px', md: '70px' }}
-                                h={{ base: '60px', md: '70px' }}
-                                bg="rgba(66, 65, 255, 0.1)"
-                                borderRadius="xl"
-                                alignItems="center"
-                                justifyContent="center"
-                                mb={6}
-                                transition="all 0.3s"
-                                _groupHover={{
-                                    transform: "scale(1.1)"
+                                w={14}
+                                h={14}
+                                align="center"
+                                justify="center"
+                                rounded="xl"
+                                bg="blue.50"
+                                color={feature.color}
+                                position="relative"
+                                zIndex={1}
+                                transition="all 0.3s ease"
+                                css={{
+                                    ".group:hover &": {
+                                        transform: "scale(1.1)",
+                                        bg: feature.color,
+                                        color: "white"
+                                    }
                                 }}
                             >
-                                <Icon size={36} color={feature.color} strokeWidth={2} />
+                                <Icon size={28} strokeWidth={2} />
                             </Flex>
 
                             {/* Content */}
-                            <VStack alignItems="flex-start" gap={3}>
+                            <VStack align="flex-start" gap={3} flex={1} position="relative" zIndex={1}>
                                 <Heading
-                                    as="h3"
-                                    fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-                                    fontWeight="600"
-                                    color="#000"
+                                    size="lg"
+                                    fontWeight="700"
+                                    color="#1d1d1f"
+                                    lineHeight="1.2"
                                 >
                                     {feature.title}
                                 </Heading>
                                 <Text
-                                    fontSize={{ base: 'sm', md: 'md', lg: 'lg' }}
-                                    color="#000"
+                                    color="#6e6e73"
                                     lineHeight="1.6"
+                                    fontSize="sm"
                                 >
                                     {feature.description}
                                 </Text>
                             </VStack>
-
-                            {/* Decorative Element */}
-                            <Box
-                                position="absolute"
-                                bottom="-20px"
-                                right="-20px"
-                                w="100px"
-                                h="100px"
-                                borderRadius="full"
-                                bg="rgba(66, 65, 255, 0.05)"
-                                transition="all 0.3s"
-                            />
-                        </Box>
+                        </VStack>
                     )
                 })}
             </Grid>

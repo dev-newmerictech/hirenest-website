@@ -57,7 +57,9 @@ export default function JobProviderPage() {
             <AdvancedScreening />
 
             {/* Enterprise Ready Section */}
+            <Box pb={10} bg="#fff">
             <EnterpriseReady />
+            </Box>
 
             <Testimonials />
             <Pricing />

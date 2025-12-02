@@ -1,102 +1,206 @@
-import { Badge, Box, Button, Container, Heading, Stack, Text, VStack } from '@chakra-ui/react'
-import { ImagePlaceholder } from './image-placeholder'
+'use client'
+
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  HStack,
+  Icon,
+  Input,
+  SimpleGrid,
+  Stack,
+  Text,
+  VStack
+} from '@chakra-ui/react'
 import Image from 'next/image'
-import { ArrowRight, Star } from 'lucide-react'
+import { Search, MapPin, PlayCircle, Star, Briefcase } from 'lucide-react'
 
-export const Block = () => (
-  <Box
-    w="full"
-    position="relative"
-    bg="#fff"
-  >
-    <Box
-      position="absolute"
-      top="0"
-      left="0"
-      right="0"
-      bottom="0"
-      height="500px"
-      filter="blur(90px)"
-      background="linear-gradient(90deg,rgba(199, 194, 253, 1) 10%, rgba(255, 255, 255, 1) 50%, rgba(199, 194, 253, 1) 100%);"
-      zIndex="0"
-    />
-    <Container py={{ base: '16', md: '24' }} maxW="7xl" position="relative" zIndex="1">
-      <VStack gap="14" textAlign="center" mt={'24'}>
-        <Stack gap="12">
-          <Box mx={'auto'}>
-            <Badge rounded={'full'} fontSize={14} className='!bg-gradient-to-r !from-indigo-600 !to-purple-600' color='#fff' px={4} py={2}>
-              <Star />
-              Powered by AI & Machine Learning
-            </Badge>
+export const Block = () => {
+  return (
+    <Box w="full" position="relative" bg="gray.100" overflow="hidden" py={{ base: 24, lg: 36 }}>
+      <Container maxW="7xl" px={{ base: 5, md: 10 }}>
+        <SimpleGrid columns={{ base: 1, lg: 2 }} gap={{ base: 10, lg: 20 }} alignItems="center">
+
+          {/* Left Column */}
+          <VStack align="flex-start" gap={8} w="full">
+
+            {/* Badge */}
+            <HStack px={4} py={2} rounded="full" gap={3}>
+              <Box bgGradient="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)" p={1} rounded="full" color="white">
+                <PlayCircle size={14} fill="currentColor" />
+              </Box>
+              <Text fontSize="sm" fontWeight="600" color="#0071fb ">
+                Inclusive workplaces for all.
+              </Text>
+            </HStack>
+
+            {/* Heading */}
+            <Heading
+              as="h1"
+              fontSize={{ base: '4xl', md: '6xl' }}
+              fontWeight="800"
+              lineHeight="1.1"
+              color="#1d1d1f"
+            >
+              Find <Text as="span" bg="#0071fb" bgClip="text" color="transparent">Jobs</Text> Where
+              Diversity Thrives
+            </Heading>
+
+            {/* Subtext */}
+            <Text fontSize={{ base: 'lg', md: 'xl' }} color="gray.500" maxW="lg" lineHeight="1.6">
+              Search for roles in organizations prioritizing diversity and inclusion that align with your values.
+            </Text>
+
+            {/* Search Bar */}
+            <Box
+              bg="white"
+              rounded="full"
+              w="auto"
+              maxW="xl"
+            >
+              <Flex align="center" gap={2} direction={{ base: 'column', md: 'row' }}>
+                <Button
+                  rounded="full"
+                  bgGradient="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                  color="white"
+                  px={8}
+                  h="12"
+                  fontSize="md"
+                  _hover={{ opacity: 0.9 }}
+                  w={{ base: 'full', md: 'auto' }}
+                >
+                  Find Your Job
+                </Button>
+              </Flex>
+            </Box>
+
+            {/* Social Proof */}
+            <Stack direction={{ base: 'column', sm: 'row' }} align="flex-end" gap={6} pt={0}>
+              <VStack align="flex-start" gap={1}>
+                <Text fontSize="sm" fontWeight="700" bgGradient="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)" bgClip="text" color="transparent">
+                  &gt;100k+ People Join
+                </Text>
+                <HStack>
+                  {[
+                    "https://bit.ly/ryan-florence",
+                    "https://bit.ly/kent-c-dodds",
+                    "https://bit.ly/prosper-baba"
+                  ].map((src, i) => (
+                    <Box
+                      key={i}
+                      ml={i === 0 ? 0 : -2}
+                      w="8"
+                      h="8"
+                      rounded="full"
+                      border="2px solid white"
+                      overflow="hidden"
+                      position="relative"
+                    >
+                      <Image src={src} alt="User" fill style={{ objectFit: 'cover' }} />
+                    </Box>
+                  ))}
+                </HStack>
+              </VStack>
+
+              <Box h="10" w="1px" bg="gray.200" display={{ base: 'none', sm: 'block' }} />
+
+              <HStack gap={1}>
+                <Text fontWeight="800" fontSize="xl">5.0</Text>
+                <Flex color="#b000ea">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} size={16} fill="currentColor" />
+                  ))}
+                </Flex>
+              </HStack>
+            </Stack>
+
+            {/* Trusted Companies Text */}
+            <Text fontSize="sm" color="gray.500" fontWeight="600">
+              Trusted <Text as="span" bgGradient="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)" bgClip="text" color="transparent">1000+</Text> company find best jobseeker
+            </Text>
+
+          </VStack>
+
+          {/* Right Column - Image & Stats */}
+          <Box position="relative" h="full" minH={{ base: '400px', lg: '500px' }}>
+            {/* Main Hero Image */}
+            <Box
+              position="relative"
+              w="full"
+              h="full"
+              rounded="3xl"
+              overflow="hidden"
+              bgGradient="linear(to-br, #f3e8ff, #e9d5ff)"
+            >
+              <Image
+                src="/hero-illustration.png"
+                alt="Happy professional finding a job"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </Box>
+
+            {/* Floating Stat Card 2 - Job Available */}
+            <Box
+              position="absolute"
+              top="20%"
+              right="-5%"
+              shadow="xl"
+              rounded="full"
+              bg="white"
+              py={2}
+              px={4}
+              zIndex={2}
+              display={{ base: 'none', md: 'block' }}
+            >
+              <HStack gap={3}>
+                <Box bg="blue.50" p={1.5} rounded="full" color="#0071fb">
+                  <Briefcase size={16} />
+                </Box>
+                <Text fontSize="sm" fontWeight="700">Job available</Text>
+              </HStack>
+            </Box>
+
+            {/* Floating Stat Card 3 - Diversity */}
+            <Box
+              position="absolute"
+              bottom="5%"
+              right="5%"
+              shadow="2xl"
+              rounded="2xl"
+              bg="white"
+              maxW="260px"
+              zIndex={2}
+              display={{ base: 'none', lg: 'block' }}
+              p={4}
+            >
+              <HStack gap={4}>
+                <Box rounded="lg" overflow="hidden" w="16" h="16" position="relative">
+                  <Image
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                    alt="Diversity"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </Box>
+                <VStack align="flex-start" gap={1}>
+                  <Text fontSize="sm" fontWeight="700" lineHeight="1.2">
+                    Where Diversity Aligns with Possibilities
+                  </Text>
+                  <Text fontSize="xs" bgGradient="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)" bgClip="text" color="transparent" fontWeight="600" cursor="pointer">
+                    &gt; Browse your expertise
+                  </Text>
+                </VStack>
+              </HStack>
+            </Box>
+
           </Box>
-          <Heading
-            as="h1"
-            fontSize={{ base: '4xl', md: '6xl' }}
-            maxW={{ md: '6xl' }}
-            mx="auto"
-            lineHeight="normal"
-            fontWeight="800"
-            color="#2a3f5d"
-          >
-            Revolutionary Features <br /> for <Text as="span" className='bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent'>Modern Hiring</Text>
-          </Heading>
-          <Text
-            color="#2a3f5d"
-            fontSize={{ base: 'lg', md: '2xl', lg: '24px' }}
-            maxW={{ md: '4xl' }}
-            mx="auto"
-            lineHeight="relaxed"
-          >
-            Transform your recruitment process with cutting-edge technology that saves time, reduces bias, and finds the perfect candidates.
-          </Text>
-        </Stack>
 
-        <Stack
-          align="center"
-          direction={{ base: 'column', md: 'row' }}
-          gap="4"
-          w={{ base: 'full', md: 'auto' }}
-        >
-          <Button
-            size={{ base: 'xl', md: '2xl' }}
-            color="white"
-            fontWeight={'bold'}
-            borderRadius="full"
-            px="12"
-            background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
-            minW={{ base: '80px', md: '220px' }}
-            _hover={{
-              background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-              opacity: 0.9,
-            }}
-          >
-            Start Free Trial <ArrowRight />
-          </Button>
-          <Button
-            size={{ base: 'xl', md: '2xl' }}
-            variant="outline"
-            fontWeight={'bold'}
-            colorPalette="brand"
-            borderColor="brand.500"
-            color="brand.500"
-            bg="transparent"
-            borderRadius="full"
-            px="12"
-            minW={{ base: 'full', md: '220px' }}
-            _hover={{
-              bg: 'brand.50',
-            }}
-          >
-            Watch Demo
-          </Button>
-        </Stack>
-
-        <Box maxW="7xl" mx="auto" w="full" justifyContent="center" alignItems="center" display="flex" mt="10">
-          <Box p={2} bg="white" borderRadius="2xl" boxShadow="md">
-            <Image src="/dashborad.svg" alt="Hero Image" width={1000} height={1000} />
-          </Box>
-        </Box>
-      </VStack>
-    </Container>
-  </Box>
-)
+        </SimpleGrid>
+      </Container>
+    </Box>
+  )
+}

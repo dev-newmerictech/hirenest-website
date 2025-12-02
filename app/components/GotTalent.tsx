@@ -8,7 +8,7 @@ import { Sparkles, FileText, Target, TrendingUp } from 'lucide-react'
 
 export const GotTalent = () => {
     return (
-        <Box w="full" position="relative" bg="white" overflow="hidden" pb={{ base: 20, md: 32 }}>
+        <Box w="full" position="relative" bg="white" overflow="hidden" py={{ base: 20, md: 32 }}>
             <Container maxW="7xl">
                 <Flex direction={{ base: 'column', lg: 'row' }} align="center" gap={{ base: 16, lg: 24 }}>
                     {/* Left Content */}

@@ -96,6 +96,7 @@ export default function FastTrackApplicationsPage() {
                                     background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                                     color="white"
                                     minW={{ base: '80px', md: '250px' }}
+                                    onClick={() => window.open('https://app.hirenest.ai/jobseeker/my-applications', '_blank')}
                                 >
                                     Fast-Track Now
                                     <Box as={ArrowRight} ml={1} />
@@ -408,6 +409,7 @@ export default function FastTrackApplicationsPage() {
                                     fontWeight="400"
                                     color="#000"
                                     lineHeight="1.6"
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Time is money. Stop wasting both on slow, inefficient application processes.
                                 </Text>

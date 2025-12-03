@@ -71,7 +71,7 @@ export const Block = () => {
                   fontSize="md"
                   _hover={{ opacity: 0.9 }}
                   w={{ base: 'full', md: 'auto' }}
-                  onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                  onClick={() => window.open('https://app.hirenest.ai/jobseeker/find-jobs', '_blank')}
                 >
                   Find Your Job
                 </Button>

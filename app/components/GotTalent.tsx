@@ -22,7 +22,7 @@ export const GotTalent = () => {
                                 letterSpacing="wider"
                                 mb={3}
                             >
-                                For Job Seekers
+                                Job Seekers
                             </Text>
                         </Flex>
                         <Heading
@@ -83,7 +83,7 @@ export const GotTalent = () => {
                                 opacity: 0.9,
                             }}
                             transition="all 0.3s"
-                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                            onClick={() => window.open('https://app.hirenest.ai/jobseeker/find-jobs', '_blank')}
                         >
                             Find Your Dream Job
                         </Button>

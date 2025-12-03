@@ -96,6 +96,7 @@ export default function ProfileOptimizationPage() {
                                     background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                                     color="white"
                                     minW={{ base: '80px', md: '250px' }}
+                                    onClick={() => window.open('https://app.hirenest.ai/jobseeker/profile', '_blank')}
                                 >
                                     Optimize My Profile
                                     <Box as={ArrowRight} ml={1} />

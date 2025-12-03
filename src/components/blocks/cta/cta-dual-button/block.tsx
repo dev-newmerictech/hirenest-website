@@ -44,7 +44,7 @@ export const Block = () => {
               _hover={{
                 bg: 'whiteAlpha.200',
               }}
-              onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+              onClick={() => window.open('https://app.hirenest.ai/jobseeker', '_blank')}
             >
               Find Your Dream Job
             </Button>
@@ -63,7 +63,7 @@ export const Block = () => {
               _hover={{
                 bg: 'whiteAlpha.200',
               }}
-              onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+              onClick={() => window.open('https://app.hirenest.ai/jobprovider', '_blank')}
             >
               Hire Smarter Today
             </Button>

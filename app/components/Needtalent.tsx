@@ -22,7 +22,7 @@ export const NeedTalent = () => {
                                 letterSpacing="wider"
                                 mb={3}
                             >
-                                For Employers
+                                Job Providers
                             </Text>
                         </Flex>
                         <Heading
@@ -83,7 +83,7 @@ export const NeedTalent = () => {
                                 opacity: 0.9,
                             }}
                             transition="all 0.3s"
-                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                            onClick={() => window.open('https://app.hirenest.ai/jobprovider/search-candidates', '_blank')}
                         >
                             Start Hiring Now
                         </Button>

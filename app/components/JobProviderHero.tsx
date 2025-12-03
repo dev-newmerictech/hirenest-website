@@ -73,7 +73,7 @@ export const JobProviderHero = () => (
                             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                             color="white"
                             minW={{ base: '80px', md: '250px' }}
-                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                            onClick={() => window.open('https://app.hirenest.ai/jobprovider/post-job', '_blank')}
                         >
                             Post a Job
                             <Box as={ArrowRight} ml={1} />

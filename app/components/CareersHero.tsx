@@ -70,6 +70,7 @@ export const CareersHero = () => (
                             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                             color="white"
                             minW={{ base: '80px', md: '250px' }}
+                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
                         >
                             View Open Positions
                             <Box as={ArrowRight} ml={1} />

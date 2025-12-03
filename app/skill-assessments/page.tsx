@@ -40,7 +40,7 @@ export default function SkillAssessmentsPage() {
                 bgGradient="linear(to-br, rgba(66, 65, 255, 0.05), rgba(248, 248, 248, 1))"
                 overflow="hidden"
             >
-                <Container pt={{ base: '12', md: '20', lg: '40' }} pb={{ base: '12', md: '16' }} maxW="7xl" position="relative">
+                <Container pt={{ base: '36', lg: '40' }} pb={{ base: '12', md: '16' }} maxW="7xl" position="relative">
                     <Grid
                         templateColumns={{ base: '1fr', lg: '1fr 1fr' }}
                         gap={{ base: 8, lg: 16 }}
@@ -56,6 +56,7 @@ export default function SkillAssessmentsPage() {
                                     textTransform="uppercase"
                                     letterSpacing="wider"
                                     mb={3}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Skill Assessments
                                 </Text>
@@ -66,6 +67,7 @@ export default function SkillAssessmentsPage() {
                                     color="#000"
                                     lineHeight="1.2"
                                     mb={4}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Prove Your Skills &
                                     <Text as="span" display="block" bg="#4241ff" bgClip="text">Get Hired Faster</Text>
@@ -386,6 +388,7 @@ export default function SkillAssessmentsPage() {
                                     textTransform="uppercase"
                                     letterSpacing="wider"
                                     mb={3}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Key Benefits
                                 </Text>
@@ -396,6 +399,7 @@ export default function SkillAssessmentsPage() {
                                     color="#000"
                                     lineHeight="1.2"
                                     mb={4}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Why Take <Text as="span" color="#4241ff">Assessments?</Text>
                                 </Heading>

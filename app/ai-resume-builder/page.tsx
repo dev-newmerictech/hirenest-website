@@ -40,14 +40,14 @@ export default function AIResumeBuilderPage() {
                 bgGradient="linear(to-br, rgba(66, 65, 255, 0.05), rgba(248, 248, 248, 1))"
                 overflow="hidden"
             >
-                <Container pt={{ base: '12', md: '20', lg: '40' }} pb={{ base: '12', md: '16' }} maxW="7xl" position="relative">
+                <Container pt={{ base: '36', lg: '40' }} pb={{ base: '12', md: '16' }} maxW="7xl" position="relative">
                     <Grid
                         templateColumns={{ base: '1fr', lg: '1fr 1fr' }}
                         gap={{ base: 8, lg: 16 }}
                         alignItems="center"
                     >
                         {/* Left Content */}
-                        <VStack alignItems="flex-start" gap={6}>
+                        <VStack alignItems={{ base: 'center', lg: 'flex-start' }} gap={6}>
                             <Box>
                                 <Text
                                     fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
@@ -56,6 +56,7 @@ export default function AIResumeBuilderPage() {
                                     textTransform="uppercase"
                                     letterSpacing="wider"
                                     mb={3}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     AI Resume Builder
                                 </Text>
@@ -66,6 +67,7 @@ export default function AIResumeBuilderPage() {
                                     color="#000"
                                     lineHeight="1.2"
                                     mb={4}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Build a Resume That
                                     <Text as="span" display="block" bg="#4241ff" bgClip="text">Gets You Hired</Text>
@@ -76,6 +78,7 @@ export default function AIResumeBuilderPage() {
                                     color="#000"
                                     lineHeight="1.6"
                                     maxW="600px"
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Create a professional, ATS-friendly resume in minutes with our AI-powered builder. Stand out from the competition and land more interviews.
                                 </Text>
@@ -388,6 +391,7 @@ export default function AIResumeBuilderPage() {
                                     textTransform="uppercase"
                                     letterSpacing="wider"
                                     mb={3}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Key Benefits
                                 </Text>
@@ -398,6 +402,7 @@ export default function AIResumeBuilderPage() {
                                     color="#000"
                                     lineHeight="1.2"
                                     mb={4}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Stand Out from the{' '}
                                     <Text as="span" color="#4241ff">Competition</Text>
@@ -553,6 +558,7 @@ export default function AIResumeBuilderPage() {
                                     color="#4241ff"
                                     textTransform="uppercase"
                                     letterSpacing="wider"
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Advanced Technology
                                 </Text>
@@ -563,11 +569,12 @@ export default function AIResumeBuilderPage() {
                                     color="#000"
                                     lineHeight="1.2"
                                     mb={4}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Beat the ATS Bots <br />
                                     <Text as="span" color="#4241ff">Every Single Time</Text>
                                 </Heading>
-                                <Text fontSize="lg" color="#000" opacity={0.8} lineHeight="1.8">
+                                <Text fontSize="lg" color="#000" opacity={0.8} lineHeight="1.8" textAlign={{ base: 'center', lg: 'left' }}>
                                     75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them. Our AI analyzes your resume exactly like an ATS does, ensuring you pass the filters and get noticed.
                                 </Text>
                             </Box>
@@ -598,6 +605,7 @@ export default function AIResumeBuilderPage() {
                                     opacity: 0.9,
                                 }}
                                 onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                                w={{ base: 'full', md: 'auto' }}
                             >
                                 Scan My Resume Now
                             </Button>

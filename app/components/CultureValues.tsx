@@ -24,6 +24,7 @@ export const CultureValues = () => {
                             fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
                             letterSpacing="wider"
                             textTransform="uppercase"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Our Culture
                         </Text>
@@ -33,6 +34,7 @@ export const CultureValues = () => {
                             fontWeight="700"
                             lineHeight="1.2"
                             color="#000"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             A Place Where{' '}
                             <Box as="span" bg="#4241ff" bgClip="text">
@@ -43,6 +45,7 @@ export const CultureValues = () => {
                             color="#000"
                             fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
                             lineHeight="1.6"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Our culture is built on trust, transparency, and collaboration. We believe in empowering our team members to do their best work while maintaining a healthy work-life balance.
                         </Text>
@@ -50,6 +53,7 @@ export const CultureValues = () => {
                             color="#000"
                             fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
                             lineHeight="1.6"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             We celebrate diversity, encourage innovation, and support each other's growth. Whether you're working remotely or in the office, you'll find a welcoming community that values your unique perspective.
                         </Text>

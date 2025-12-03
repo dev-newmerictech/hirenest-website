@@ -19,7 +19,7 @@ export const JobProviderHero = () => (
                 alignItems="center"
             >
                 {/* Left Content */}
-                <VStack alignItems="flex-start" gap={6}>
+                <VStack alignItems={{ base: 'center', lg: 'flex-start' }} gap={6}>
                     <Box>
                         <Text
                             fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
@@ -28,6 +28,7 @@ export const JobProviderHero = () => (
                             textTransform="uppercase"
                             letterSpacing="wider"
                             mb={3}
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Job Providers
                         </Text>
@@ -38,6 +39,7 @@ export const JobProviderHero = () => (
                             color="#000"
                             lineHeight="1.2"
                             mb={4}
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Find Top Talent
                             <Text as="span" display="block" color="#4241ff">
@@ -50,6 +52,7 @@ export const JobProviderHero = () => (
                             color="#000"
                             lineHeight="1.6"
                             maxW="600px"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             AI-powered candidate matching connects you with qualified professionals who perfectly align with your job requirements and company culture.
                         </Text>

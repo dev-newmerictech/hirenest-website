@@ -70,6 +70,7 @@ export const AdvancedScreening = () => {
                         alignItems="center"
                         justifyContent="center"
                         gap={2}
+                        flexWrap={'wrap'}
                     >
                         Advanced <Text as="span" display="block" color="#4241ff">
                             Candidate Screening

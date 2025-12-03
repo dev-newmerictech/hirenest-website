@@ -144,6 +144,7 @@ export const FindPerfectCandidates = () => {
                             mb={4}
                             letterSpacing="wider"
                             textTransform="uppercase"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             For Employers
                         </Text>
@@ -154,6 +155,7 @@ export const FindPerfectCandidates = () => {
                             color="#000"
                             mb={6}
                             lineHeight="1.2"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Find Perfect Candidates in <br />
                             <Box as="span" color="#4241ff">Minutes, Not Months</Box>
@@ -192,6 +194,7 @@ export const FindPerfectCandidates = () => {
                             color="white"
                             minW={{ base: '80px', md: '250px' }}
                             onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                            width={{ base: 'full', md: 'auto' }}
                         >
                             Start Hiring Free
                         </Button>

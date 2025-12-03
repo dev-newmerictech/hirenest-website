@@ -73,6 +73,7 @@ export const JobProviderFeatures = () => (
                     alignItems="center"
                     justifyContent="center"
                     gap={2}
+                    flexWrap={'wrap'}
                 >
                     Everything You Need to
                     <Text as="span" display="block" color="#4241ff">

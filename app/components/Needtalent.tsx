@@ -118,7 +118,7 @@ export const NeedTalent = () => {
                                     alt="AI Candidate Ranking"
                                     width={600}
                                     height={400}
-                                    style={{ objectFit: 'cover' }}
+                                    style={{ objectFit: 'cover', width: '100%', height: 'auto' }}
                                 />
                             </Box>
                         </Box>

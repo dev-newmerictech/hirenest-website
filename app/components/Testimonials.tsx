@@ -58,6 +58,7 @@ export const Testimonials = () => {
                         fontWeight="700"
                         color="#000"
                         mt={2}
+                        lineHeight="1.2"
                     >
                         Loved by Hiring <Text as="span" color="#4241ff">Teams Worldwide</Text>
                     </Heading>

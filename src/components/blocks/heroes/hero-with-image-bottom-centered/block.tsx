@@ -24,7 +24,7 @@ export const Block = () => {
         <SimpleGrid columns={{ base: 1, lg: 2 }} gap={{ base: 10, lg: 20 }} alignItems="center">
 
           {/* Left Column */}
-          <VStack align="flex-start" gap={8} w="full">
+          <VStack align={{ base: 'center', lg: 'flex-start' }} gap={8} w="full">
 
             {/* Badge */}
             <HStack px={4} py={2} rounded="full" gap={3}>
@@ -43,13 +43,14 @@ export const Block = () => {
               fontWeight="800"
               lineHeight="1.1"
               color="#1d1d1f"
+              textAlign={{ base: 'center', lg: 'left' }}
             >
               Find <Text as="span" bg="#0071fb" bgClip="text" color="transparent">Jobs</Text> Where
               Diversity Thrives
             </Heading>
 
             {/* Subtext */}
-            <Text fontSize={{ base: 'lg', md: 'xl' }} color="gray.500" maxW="lg" lineHeight="1.6">
+            <Text fontSize={{ base: 'lg', md: 'xl' }} color="gray.500" maxW="lg" lineHeight="1.6" textAlign={{ base: 'center', lg: 'left' }}>
               Search for roles in organizations prioritizing diversity and inclusion that align with your values.
             </Text>
 
@@ -70,7 +71,7 @@ export const Block = () => {
                   fontSize="md"
                   _hover={{ opacity: 0.9 }}
                   w={{ base: 'full', md: 'auto' }}
-                  onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                  onClick={() => window.open('https://app.hirenest.ai/jobseeker/find-jobs', '_blank')}
                 >
                   Find Your Job
                 </Button>

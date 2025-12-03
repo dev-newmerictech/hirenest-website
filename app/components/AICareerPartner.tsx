@@ -29,7 +29,7 @@ export const AICareerPartner = () => {
                             letterSpacing="wider"
                             textTransform="uppercase"
                         >
-                            For Candidates
+                            Job Seeker
                         </Text>
                         <Heading
                             as="h2"
@@ -83,7 +83,7 @@ export const AICareerPartner = () => {
                             fontWeight="bold"
                             px={8}
                             h={14}
-                            onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                            onClick={() => window.open('https://app.hirenest.ai/jobseeker/profile', '_blank')}
                         >
                             Build Your Profile
                         </Button>

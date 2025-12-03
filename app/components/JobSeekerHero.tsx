@@ -11,14 +11,14 @@ export const JobSeekerHero = () => (
         bgGradient="linear(to-br, rgba(2, 62, 138, 0.05), rgba(248, 248, 248, 1))"
         overflow="hidden"
     >
-        <Container pt={{ base: '12', md: '20', lg: '40' }} maxW="7xl" position="relative">
+        <Container pt={{ base: '36', md: '20', lg: '40' }} maxW="7xl" position="relative">
             <Grid
                 templateColumns={{ base: '1fr', lg: '1fr 1fr' }}
                 gap={{ base: 8, lg: 16 }}
                 alignItems="center"
             >
                 {/* Left Content */}
-                <VStack alignItems="flex-start" gap={6}>
+                <VStack alignItems={{ base: 'center', lg: 'flex-start' }} gap={6}>
                     <Box>
                         <Text
                             fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
@@ -27,6 +27,7 @@ export const JobSeekerHero = () => (
                             textTransform="uppercase"
                             letterSpacing="wider"
                             mb={3}
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Job Seekers
                         </Text>
@@ -37,6 +38,7 @@ export const JobSeekerHero = () => (
                             color="#000"
                             lineHeight="1.2"
                             mb={4}
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Find Your Dream Job
                             <Text as="span" display="block" color="#4241ff">
@@ -49,6 +51,7 @@ export const JobSeekerHero = () => (
                             color="#000"
                             lineHeight="1.6"
                             maxW="600px"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             AI-powered job matching connects you with opportunities that perfectly align with your skills, experience, and career goals.
                         </Text>

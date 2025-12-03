@@ -38,7 +38,7 @@ export const ResumeCTA = () => (
                         opacity: 0.9,
                     }}
                     transition="all 0.3s ease"
-                    onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+                    onClick={() => window.open('https://app.hirenest.ai/jobseeker/resume-builder', '_blank')}
                 >
                     Try AI Resume Builder
                 </Button>

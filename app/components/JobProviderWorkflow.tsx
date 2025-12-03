@@ -66,6 +66,7 @@ export const JobProviderWorkflow = () => (
                     alignItems="center"
                     justifyContent="center"
                     gap={2}
+                    flexWrap={'wrap'}
                 >
                     Hire Top Talent
                     <Text as="span" display="block" color="#4241ff">

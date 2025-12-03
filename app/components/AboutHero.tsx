@@ -11,14 +11,14 @@ export const AboutHero = () => (
         bgGradient="linear(to-br, rgba(66, 65, 255, 0.05), rgba(248, 248, 248, 1))"
         overflow="hidden"
     >
-        <Container pt={{ base: '12', md: '20', lg: '40' }} pb={{ base: '12', md: '16' }} maxW="7xl" position="relative">
+        <Container pt={{ base: '36', lg: '40' }} pb={{ base: '12', md: '16' }} maxW="7xl" position="relative">
             <Grid
                 templateColumns={{ base: '1fr', lg: '1fr 1fr' }}
                 gap={{ base: 8, lg: 16 }}
                 alignItems="center"
             >
                 {/* Left Content */}
-                <VStack alignItems="flex-start" gap={6}>
+                <VStack alignItems={{ base: 'center', lg: 'flex-start' }} gap={6}>
                     <Box>
                         <Text
                             fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
@@ -27,6 +27,7 @@ export const AboutHero = () => (
                             textTransform="uppercase"
                             letterSpacing="wider"
                             mb={3}
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             About Us
                         </Text>
@@ -37,6 +38,7 @@ export const AboutHero = () => (
                             color="#000"
                             lineHeight="1.2"
                             mb={4}
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Transforming Talent
                             <Text as="span" display="block" bg="#4241ff" bgClip="text">
@@ -49,6 +51,7 @@ export const AboutHero = () => (
                             color="#000"
                             lineHeight="1.6"
                             maxW="600px"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             We're on a mission to revolutionize recruitment by making it faster, smarter, and more human-centered through the power of artificial intelligence.
                         </Text>
@@ -67,6 +70,7 @@ export const AboutHero = () => (
                             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                             color="white"
                             minW={{ base: '80px', md: '250px' }}
+                            onClick={() => window.open('https://app.hirenest.ai', '_blank')}
                         >
                             Join Our Team
                             <Box as={ArrowRight} ml={1} />

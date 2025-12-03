@@ -104,10 +104,6 @@ export const JobSeekerCTA = ({ variant = 'primary' }: JobSeekerCTAProps) => {
                         mt={4}
                     >
                         <Button
-                            as="a"
-                            href="https://app.hirenest.ai/"
-                            target="_blank"
-                            rel="noopener noreferrer"
                             size={{ base: 'md', md: 'lg' }}
                             bg={isPrimary ? "white" : "linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"}
                             color={isPrimary ? "#4241ff" : "white"}
@@ -124,6 +120,7 @@ export const JobSeekerCTA = ({ variant = 'primary' }: JobSeekerCTAProps) => {
                                 boxShadow: "lg"
                             }}
                             transition="all 0.3s"
+                            onClick={() => window.open('https://app.hirenest.ai/jobseeker', '_blank')}
                         >
                             {isPrimary ? "Get Started Free" : "Create Free Account"}
                             <Box as={ArrowRight} ml={2} />

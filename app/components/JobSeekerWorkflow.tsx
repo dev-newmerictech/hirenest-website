@@ -66,6 +66,7 @@ export const JobSeekerWorkflow = () => (
                     alignItems="center"
                     justifyContent="center"
                     gap={2}
+                    flexWrap={'wrap'}
                 >
                     Your Journey to Success
                     <Text as="span" display="block" color="#4241ff">

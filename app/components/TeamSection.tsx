@@ -119,6 +119,7 @@ export const TeamSection = () => {
                         transition="all 0.3s"
                         fontWeight="bold"
                         px={8}
+                        onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
                     >
                         View Open Positions
                         <Box as={ArrowRight} ml={2} />

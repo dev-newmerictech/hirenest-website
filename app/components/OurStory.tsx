@@ -34,6 +34,7 @@ export const OurStory = () => {
                             fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
                             letterSpacing="wider"
                             textTransform="uppercase"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Our Story
                         </Text>
@@ -43,6 +44,7 @@ export const OurStory = () => {
                             fontWeight="700"
                             lineHeight="1.2"
                             color="#000"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             From Idea to{' '}
                             <Box as="span" bg="#4241ff" bgClip="text">Innovation</Box>
@@ -51,6 +53,7 @@ export const OurStory = () => {
                             color="#000"
                             fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
                             lineHeight="1.6"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Founded in 2019, Hirenest was born from a simple observation: the traditional hiring process was broken. Talented candidates were getting lost in the noise, and companies were spending months trying to find the right fit.
                         </Text>
@@ -58,6 +61,7 @@ export const OurStory = () => {
                             color="#000"
                             fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
                             lineHeight="1.6"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Our founders, experienced technologists and HR professionals, knew there had to be a better way. By combining cutting-edge AI with deep industry expertise, they created a platform that doesn't just match resumes to job descriptions—it understands potential.
                         </Text>
@@ -65,6 +69,7 @@ export const OurStory = () => {
                             color="#000"
                             fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
                             lineHeight="1.6"
+                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Today, we're proud to serve over 100,000 users and 5,000+ companies worldwide, helping them build teams that drive innovation and success.
                         </Text>

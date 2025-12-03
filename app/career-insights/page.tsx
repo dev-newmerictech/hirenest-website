@@ -40,7 +40,7 @@ export default function CareerInsightsPage() {
                 bgGradient="linear(to-br, rgba(66, 65, 255, 0.05), rgba(248, 248, 248, 1))"
                 overflow="hidden"
             >
-                <Container pt={{ base: '12', md: '20', lg: '40' }} pb={{ base: '12', md: '16' }} maxW="7xl" position="relative">
+                <Container pt={{ base: '36', lg: '40' }} pb={{ base: '12', md: '16' }} maxW="7xl" position="relative">
                     <Grid
                         templateColumns={{ base: '1fr', lg: '1fr 1fr' }}
                         gap={{ base: 8, lg: 16 }}
@@ -56,6 +56,7 @@ export default function CareerInsightsPage() {
                                     textTransform="uppercase"
                                     letterSpacing="wider"
                                     mb={3}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Career Insights
                                 </Text>
@@ -66,6 +67,7 @@ export default function CareerInsightsPage() {
                                     color="#000"
                                     lineHeight="1.2"
                                     mb={4}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Data-Driven Decisions for
                                     <Text as="span" display="block" bg="#4241ff" bgClip="text">Your Career Growth</Text>
@@ -94,6 +96,7 @@ export default function CareerInsightsPage() {
                                     background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                                     color="white"
                                     minW={{ base: '80px', md: '250px' }}
+                                    onClick={() => window.open('https://app.hirenest.ai/jobseeker/career-insights', '_blank')}
                                 >
                                     Explore Insights
                                     <Box as={ArrowRight} ml={1} />
@@ -386,6 +389,7 @@ export default function CareerInsightsPage() {
                                     textTransform="uppercase"
                                     letterSpacing="wider"
                                     mb={3}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Key Benefits
                                 </Text>
@@ -396,6 +400,7 @@ export default function CareerInsightsPage() {
                                     color="#000"
                                     lineHeight="1.2"
                                     mb={4}
+                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Why You Need <Text as="span" color="#4241ff">Career Insights</Text>
                                 </Heading>

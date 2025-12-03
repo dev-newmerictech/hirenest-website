@@ -12,6 +12,7 @@ import {
     Heading,
     Icon,
     Container,
+    Grid,
 } from '@chakra-ui/react'
 import {
     Sparkles,
@@ -60,7 +61,7 @@ export const AIAssistantDemo = () => {
         provider: {
             title: 'Your Personal AI Hiring Assistant',
             subtitle: 'Experience the future of recruitment with our advanced AI assistant. Automate tasks, get instant insights, and streamline your entire hiring process.',
-            sidebarTitle: 'Hiring Actions',
+            sidebarTitle: 'Quick Actions',
             quickActions: [
                 { icon: MapPin, label: 'Show nearby candidates', color: 'blue' },
                 { icon: Users, label: 'List job applicants', color: 'green' },
@@ -75,8 +76,8 @@ export const AIAssistantDemo = () => {
                 'Solves doubts instantly',
                 '24/7 availability',
             ],
-            headerGradient: 'linear(to-r, blue.600, purple.600)',
-            headerTitle: 'AI Hiring Assistant',
+            headerGradient: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+            headerTitle: 'AI Assistant',
             headerSubtitle: 'Always here to help with your hiring needs',
             chatTitle: "Hi! I'm your AI hiring assistant.",
             chatSubtitle: 'I can help you with candidate recommendations, job postings, analytics, and more. What would you like to do today?',
@@ -90,7 +91,7 @@ export const AIAssistantDemo = () => {
         seeker: {
             title: 'Your Personal AI Career Coach',
             subtitle: 'Accelerate your career with our intelligent AI companion. Get personalized job matches, resume optimization, and interview preparation guidance.',
-            sidebarTitle: 'Career Actions',
+            sidebarTitle: 'Quick Actions',
             quickActions: [
                 { icon: Search, label: 'Find matching jobs', color: 'blue' },
                 { icon: FileText, label: 'Optimize resume', color: 'green' },
@@ -105,8 +106,8 @@ export const AIAssistantDemo = () => {
                 'Interview roleplay & coaching',
                 'Career path guidance',
             ],
-            headerGradient: '#0071fb',
-            headerTitle: 'AI Career Coach',
+            headerGradient: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+            headerTitle: 'AI Assistant',
             headerSubtitle: 'Your partner in career growth and success',
             chatTitle: "Hi! I'm your AI career coach.",
             chatSubtitle: 'I can help you find the perfect job, improve your resume, and prepare for interviews. What is your goal today?',
@@ -122,10 +123,11 @@ export const AIAssistantDemo = () => {
     const currentConfig = config[userType]
 
     return (
-        <Box pt={{ base: 16, md: 16 }} bg="white">
-            <Container maxW="7xl">
+        <Box pt={{ base: 16, md: 16 }} bg="white" position="relative" overflow="hidden">
+            {/* Background Gradients */}
+            <Container maxW="7xl" position="relative">
                 {/* Section Header */}
-                <Box textAlign="center" mb={16}>
+                <Box textAlign="center" mb={10}>
                     <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider" mb={4}>
                         AI Assistant
                     </Text>
@@ -178,137 +180,195 @@ export const AIAssistantDemo = () => {
                 </Box>
 
                 {/* Dashboard UI */}
-                <Flex
+                <Box
                     bg="white"
                     rounded="3xl"
-                    shadow="lg"
-                    border="1px"
+                    // shadow="lg"
+                    border="1px solid"
                     borderColor="gray.200"
                     overflow="hidden"
-                    minH="650px"
-                    flexDirection={{ base: 'column', lg: 'row' }}
                     maxW="7xl"
                     mx="auto"
                 >
-                    {/* Sidebar */}
-                    <Box
-                        w={{ base: 'auto', lg: '320px' }}
-                        p={6}
-                        borderRight="1px"
-                        borderColor="gray.200"
-                        bg="white"
-                        display="flex"
-                        flexDirection="column"
-                        gap={8}
-                    >
-                        {/* Quick Actions */}
-                        <Box>
-                            <HStack mb={4} color={userType === 'provider' ? '#4241ff' : '#0071fb'}>
-                                <Icon as={Sparkles} boxSize={5} />
-                                <Text fontWeight="700" fontSize="lg" color="#1d1d1f">{currentConfig.sidebarTitle}</Text>
-                            </HStack>
-                            <VStack align="stretch" gap={3}>
-                                {currentConfig.quickActions.map((action, index) => (
-                                    <QuickActionButton
-                                        key={index}
-                                        icon={action.icon}
-                                        label={action.label}
-                                        colorScheme={action.color}
-                                    />
-                                ))}
-                            </VStack>
-                        </Box>
-                    </Box>
-
-                    {/* Main Content */}
-                    <Box flex={1} display="flex" flexDirection="column" bg="white">
-                        {/* Header */}
-
-
-                        {/* Chat Area */}
-                        <Flex
-                            flex={1}
-                            direction="column"
-                            justify="center"
-                            align="center"
-                            p={10}
-                            textAlign="center"
+                    <Grid templateColumns={{ base: '1fr', lg: '280px 1fr' }} gap={0}>
+                        {/* Sidebar */}
+                        <Box
+                            p={6}
+                            borderRight={{ base: 'none', lg: '1px solid #e7e7e7' }}
+                            borderBottom={{ base: '1px solid', lg: 'none' }}
+                            borderColor="gray"
                             bg="white"
+                            display="flex"
+                            flexDirection="column"
+                            gap={6}
                         >
-                            <Icon
-                                as={Bot}
-                                w={20}
-                                h={20}
-                                color={userType === 'provider' ? 'purple.500' : '#0071fb'}
-                                mb={8}
-                            />
-                            <Text fontSize="2xl" fontWeight="700" mb={4} color="#1d1d1f">
-                                {currentConfig.chatTitle}
-                            </Text>
-                            <Text color="#6e6e73" fontSize="lg" maxW="2xl" mb={10} lineHeight="1.6">
-                                {currentConfig.chatSubtitle}
-                            </Text>
+                            {/* Quick Actions */}
+                            <Box>
+                                <HStack mb={4}>
+                                    <Icon as={Sparkles} boxSize={5} color="#4241ff" />
+                                    <Text fontWeight="700" fontSize="md" color="#1d1d1f">{currentConfig.sidebarTitle}</Text>
+                                </HStack>
+                                <VStack align="stretch" gap={2}>
+                                    {currentConfig.quickActions.map((action, index) => (
+                                        <QuickActionButton
+                                            key={index}
+                                            icon={action.icon}
+                                            label={action.label}
+                                            colorScheme={action.color}
+                                        />
+                                    ))}
+                                </VStack>
+                            </Box>
 
-                            <HStack gap={4} mb={12} wrap="wrap" justify="center">
-                                {currentConfig.suggestedActions.map((action, index) => (
-                                    <Button
-                                        key={index}
-                                        colorScheme={userType === 'provider' ? 'purple' : '#bedcffff'}
-                                        variant="ghost"
-                                        size="lg"
-                                        rounded="xl"
-                                        bg={userType === 'provider' ? '#bedcffff' : '#bedcffff'}
-                                        color={userType === 'provider' ? '#000' : '#000'}
-                                    >
-                                        <Icon as={action.icon} boxSize={5} mr={2} />
-                                        {action.label}
-                                    </Button>
-                                ))}
-                            </HStack>
-
-                            <Text fontSize="sm" color="#6e6e73" display="flex" alignItems="center" gap={2}>
-                                <Icon as={AlertCircle} boxSize={4} />
-                                Use the suggestions on the left or ask anything below
-                            </Text>
-                        </Flex>
-
-                        {/* Input Area */}
-                        <Box p={6} borderTop="1px" borderColor="gray.100">
-                            <HStack gap={4}>
-                                <Input
-                                    placeholder={currentConfig.inputPlaceholder}
-                                    size="lg"
-                                    rounded="2xl"
-                                    bg="gray.50"
-                                    border="none"
-                                    _focus={{
-                                        bg: 'white',
-                                        shadow: 'md',
-                                        boxShadow: `0 0 0 2px ${userType === 'provider' ? 'var(--chakra-colors-purple-100)' : 'var(--chakra-colors-teal-100)'}`
-                                    }}
-                                    h={14}
-                                />
-                                <Button
-                                    w={14}
-                                    h={14}
-                                    size={{ base: 'sm', md: 'md' }}
-                                    borderRadius="full"
-                                    background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
-                                    color="white"
-                                    _hover={{
-                                        background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-                                        opacity: 0.9,
-                                    }}
-                                    onClick={() => {
-                                        window.open('https://app.hirenest.ai', '_blank');
-                                    }}
-                                >
-                                    <Icon as={Send} boxSize={6} />
-                                </Button>
-                            </HStack>
+                            {/* AI Capabilities Card */}
+                            <Box
+                                background="linear-gradient(135deg, #4241ff 0%, #b000ea 100%)"
+                                p={5}
+                                rounded="2xl"
+                                color="white"
+                            >
+                                <HStack mb={4}>
+                                    <Icon as={Sparkles} boxSize={5} />
+                                    <Text fontWeight="700" fontSize="md">AI Capabilities</Text>
+                                </HStack>
+                                <VStack align="stretch" gap={3}>
+                                    {currentConfig.capabilities.map((capability, index) => (
+                                        <HStack key={index} align="start">
+                                            <Icon as={Check} boxSize={4} mt={0.5} flexShrink={0} />
+                                            <Text fontSize="sm" lineHeight="1.5">{capability}</Text>
+                                        </HStack>
+                                    ))}
+                                </VStack>
+                            </Box>
                         </Box>
-                    </Box>
-                </Flex>
+
+                        {/* Main Content */}
+                        <Box display="flex" flexDirection="column" bg="white">
+                            {/* Gradient Header */}
+                            <Box
+                                background={currentConfig.headerGradient}
+                                p={6}
+                                color="white"
+                            >
+                                <Flex justify="space-between" align="center">
+                                    <Box>
+                                        <Text fontSize="xl" fontWeight="700" mb={1}>
+                                            {currentConfig.headerTitle}
+                                        </Text>
+                                        <Text fontSize="sm" opacity={0.9}>
+                                            {currentConfig.headerSubtitle}
+                                        </Text>
+                                    </Box>
+                                    <Flex
+                                        align="center"
+                                        gap={2}
+                                        bg="white"
+                                        px={4}
+                                        py={2}
+                                        rounded="full"
+                                        backdropFilter="blur(10px)"
+                                    >
+                                        <Box w={2} h={2} bg="green" rounded="full" />
+                                        <Text fontSize="sm" color="green" fontWeight="600">Online</Text>
+                                    </Flex>
+                                </Flex>
+                            </Box>
+
+                            {/* Chat Area */}
+                            <Flex
+                                flex={1}
+                                direction="column"
+                                justify="center"
+                                align="center"
+                                p={{ base: 8, md: 12 }}
+                                textAlign="center"
+                                bg="gray.50"
+                                minH="500px"
+                            >
+                                <Flex
+                                    w={20}
+                                    h={20}
+                                    align="center"
+                                    justify="center"
+                                    rounded="2xl"
+                                    bg={currentConfig.headerGradient}
+                                    mb={6}
+                                    shadow="lg"
+                                >
+                                    <Icon as={Bot} boxSize={10} color="white" />
+                                </Flex>
+                                <Text fontSize="2xl" fontWeight="700" mb={4} color="#1d1d1f">
+                                    {currentConfig.chatTitle}
+                                </Text>
+                                <Text color="#6e6e73" fontSize="lg" maxW="2xl" mb={10} lineHeight="1.6">
+                                    {currentConfig.chatSubtitle}
+                                </Text>
+
+                                <HStack gap={3} mb={10} wrap="wrap" justify="center">
+                                    {currentConfig.suggestedActions.map((action, index) => (
+                                        <Button
+                                            key={index}
+                                            variant="ghost"
+                                            size="md"
+                                            rounded="xl"
+                                            bg="white"
+                                            color="#1d1d1f"
+                                            border="1px solid"
+                                            borderColor="gray.200"
+                                            _hover={{ borderColor: '#4241ff', bg: 'gray.50' }}
+                                            px={5}
+                                        >
+                                            <Icon as={action.icon} boxSize={4} mr={2} color="#4241ff" />
+                                            {action.label}
+                                        </Button>
+                                    ))}
+                                </HStack>
+
+                                <Flex align="center" gap={2} color="#6e6e73" fontSize="sm">
+                                    <Icon as={AlertCircle} boxSize={4} />
+                                    <Text>Use the suggestions on the left or ask anything below</Text>
+                                </Flex>
+                            </Flex>
+
+                            {/* Input Area */}
+                            <Box p={6} borderTop="1px solid" borderColor="gray.200" bg="white">
+                                <HStack gap={3}>
+                                    <Input
+                                        placeholder={currentConfig.inputPlaceholder}
+                                        size="lg"
+                                        rounded="full"
+                                        bg="gray.50"
+                                        border="1px solid"
+                                        borderColor="gray.200"
+                                        _focus={{
+                                            bg: 'white',
+                                            borderColor: '#4241ff',
+                                            boxShadow: '0 0 0 1px #4241ff'
+                                        }}
+                                        h={14}
+                                    />
+                                    <Button
+                                        w={14}
+                                        h={14}
+                                        size={{ base: 'sm', md: 'md' }}
+                                        borderRadius="full"
+                                        background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                                        color="white"
+                                        _hover={{
+                                            background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+                                            opacity: 0.9,
+                                        }}
+                                        onClick={() => {
+                                            window.open('https://app.hirenest.ai', '_blank');
+                                        }}
+                                    >
+                                        <Icon as={Send} boxSize={5} />
+                                    </Button>
+                                </HStack>
+                            </Box>
+                        </Box>
+                    </Grid>
+                </Box>
             </Container>
         </Box>
     )

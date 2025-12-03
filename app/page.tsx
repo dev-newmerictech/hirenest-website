@@ -16,18 +16,21 @@ import { AICareerPartner } from './components/AICareerPartner';
 import { AIAssistantDemo } from './components/AIAssistantDemo';
 import { Testimonials } from './components/Testimonials';
 
+import { AIInterviewDemo } from './components/AIInterviewDemo';
+
 export default function Home() {
   return (
     <>
       <Box>
         <Hero />
       </Box>
+      <AIInterviewDemo />
+      <AIAssistantDemo />
       <GotTalent />
       <NeedTalent />
       <CTA />
       <Work />
       <AIWorks />
-      <AIAssistantDemo />
       <TabsComponent />
       <ResumeCTA />
       <AICareerPartner />

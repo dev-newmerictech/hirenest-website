@@ -122,7 +122,7 @@ export const AIAssistantDemo = () => {
     const currentConfig = config[userType]
 
     return (
-        <Box pb={{ base: 16, md: 24 }} bg="white">
+        <Box pt={{ base: 16, md: 16 }} bg="white">
             <Container maxW="7xl">
                 {/* Section Header */}
                 <Box textAlign="center" mb={16}>

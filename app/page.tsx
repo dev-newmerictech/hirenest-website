@@ -13,6 +13,7 @@ import { ResumeCTA } from './components/resumeCTA';
 import { TabsComponent } from './components/Tabs';
 import { ComparisonTable } from './components/ComparisonTable';
 import { AICareerPartner } from './components/AICareerPartner';
+import { AIAssistantDemo } from './components/AIAssistantDemo';
 import { Testimonials } from './components/Testimonials';
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       <CTA />
       <Work />
       <AIWorks />
+      <AIAssistantDemo />
       <TabsComponent />
       <ResumeCTA />
       <AICareerPartner />

@@ -12,6 +12,7 @@ import {
     Grid,
     Flex,
     Icon,
+    Accordion,
 } from '@chakra-ui/react'
 import {
     Video,
@@ -136,10 +137,68 @@ export const AIInterviewDemo = () => {
                     </VStack>
 
                     {/* Interview Type Selector */}
+                    {/* Mobile: Accordion */}
+                    <Box display={{ base: 'block', md: 'none' }} w="full">
+                        <Accordion.Root
+                            value={[selectedType]}
+                            onValueChange={(details) => {
+                                if (details.value && details.value.length > 0) {
+                                    setSelectedType(details.value[0] as InterviewType)
+                                }
+                            }}
+                            collapsible
+                        >
+                            {interviewTypes.map((type) => (
+                                <Accordion.Item key={type.id} value={type.id}>
+                                    <Accordion.ItemTrigger
+                                        py={4}
+                                        px={6}
+                                        border="2px solid"
+                                        borderColor={selectedType === type.id ? type.color : 'gray.200'}
+                                        rounded="2xl"
+                                        mb={4}
+                                        bg="white"
+                                        transition="all 0.3s ease"
+                                        _hover={{
+                                            borderColor: type.color,
+                                        }}
+                                        w="full"
+                                    >
+                                        <Flex flexDirection="row" gap={4} alignItems="center" w="full" justifyContent="space-between">
+                                            <Flex gap={4} alignItems="center" flex="1">
+                                                <Flex
+                                                    p={4}
+                                                    w={'auto'}
+                                                    h={'auto'}
+                                                    align="center"
+                                                    justify="center"
+                                                    rounded="xl"
+                                                    bg={selectedType === type.id ? type.color : type.bg}
+                                                    color={selectedType === type.id ? 'white' : type.color}
+                                                    transition="all 0.3s ease"
+                                                >
+                                                    <Icon as={type.icon} boxSize={6} />
+                                                </Flex>
+                                                <Box textAlign="left">
+                                                    <Heading size="md" fontWeight="700" color="#1d1d1f" mb={1}>
+                                                        {type.title}
+                                                    </Heading>
+                                                </Box>
+                                            </Flex>
+                                            <Accordion.ItemIndicator />
+                                        </Flex>
+                                    </Accordion.ItemTrigger>
+                                </Accordion.Item>
+                            ))}
+                        </Accordion.Root>
+                    </Box>
+
+                    {/* Desktop: Grid */}
                     <Grid
                         templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }}
                         gap={6}
                         w="full"
+                        display={{ base: 'none', md: 'grid' }}
                     >
                         {interviewTypes.map((type) => (
                             <Box
@@ -150,7 +209,7 @@ export const AIInterviewDemo = () => {
                                 border="2px solid"
                                 borderColor={selectedType === type.id ? type.color : 'gray.200'}
                                 rounded="2xl"
-                                p={6}
+                                p={4}
                                 transition="all 0.3s ease"
                                 _hover={{
                                     borderColor: type.color,
@@ -158,7 +217,7 @@ export const AIInterviewDemo = () => {
                                     shadow: 'lg',
                                 }}
                             >
-                                <Flex flexDirection={{base:'column', md:'row'}} gap={4} alignItems={'flex-start'}>
+                                <Flex flexDirection={{base:'column', md:'row'}} gap={4} alignItems={{base: 'flex-start', md: 'center'}}>
                                     <Flex
                                         p={4}
                                         w={'auto'}
@@ -204,7 +263,7 @@ export const AIInterviewDemo = () => {
                                 alignItems="center"
                                 justifyContent="center"
                                 position="relative"
-                                minH={{ base: '400px', md: '500px' }}
+                                minH={{ base: '400px', md: '400px' }}
                             >
                                 {selectedType === 'video' ? (
                                     <Box position="relative" w="full" h="full">
@@ -214,7 +273,7 @@ export const AIInterviewDemo = () => {
                                         >
                                             <video
                                                 ref={videoRef}
-                                                style={{ width: '100%', height: '500px', display: 'block', objectFit: 'cover' }}
+                                                style={{ width: '100%', height: '430px', display: 'block', objectFit: 'cover' }}
                                                 muted
                                                 playsInline
                                                 onEnded={handleVideoEnd}
@@ -324,7 +383,7 @@ export const AIInterviewDemo = () => {
                             </Box>
 
                             {/* Right Side - Features */}
-                            <Box p={{ base: 8, md: 12 }} display="flex" flexDirection="column" justifyContent="center">
+                            <Box px={{ base: 8, md: 12 }} py={{ base: 4, md: 8 }} display="flex" flexDirection="column" justifyContent="center">
                                 <VStack align="flex-start" gap={6}>
                                     <Box>
                                         <Heading size="lg" fontWeight="700" color="#1d1d1f" mb={3}>

@@ -178,6 +178,8 @@ export const Block = () => {
               zIndex={2}
               display={{ base: 'none', lg: 'block' }}
               p={4}
+              onClick={() => window.open('https://app.hirenest.ai', '_blank')}
+              cursor="pointer"
             >
               <HStack gap={4}>
                 <Box rounded="lg" overflow="hidden" w="16" h="16" position="relative">

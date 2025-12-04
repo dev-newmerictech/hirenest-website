@@ -114,7 +114,7 @@ export const AIInterviewDemo = () => {
             </Box>
 
             <Container maxW="7xl" position="relative">
-                <VStack gap={16}>
+                <VStack gap={8}>
                     {/* Section Header */}
                     <VStack textAlign="center" gap={4} maxW="3xl" mx="auto">
                         <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider">
@@ -158,10 +158,11 @@ export const AIInterviewDemo = () => {
                                     shadow: 'lg',
                                 }}
                             >
-                                <VStack align="flex-start" gap={4}>
+                                <Flex flexDirection={{base:'column', md:'row'}} gap={4} alignItems={'flex-start'}>
                                     <Flex
-                                        w={12}
-                                        h={12}
+                                        p={4}
+                                        w={'auto'}
+                                        h={'auto'}
                                         align="center"
                                         justify="center"
                                         rounded="xl"
@@ -179,7 +180,7 @@ export const AIInterviewDemo = () => {
                                             {type.description}
                                         </Text>
                                     </Box>
-                                </VStack>
+                                </Flex>
                             </Box>
                         ))}
                     </Grid>

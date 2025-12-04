@@ -98,7 +98,7 @@ export const Block = () => {
       left="0"
       right="0"
       bg={'transparent'}
-      backdropFilter="blur(36px)"
+      backdropFilter="blur(44px)"
       pt={{ base: '4' }}
       transition="background-color 0.2s ease"
     >
@@ -108,11 +108,11 @@ export const Block = () => {
             <HStack gap={{ base: '2', md: '4', lg: '8' }} w="full" justify="space-between">
               {/* <Text fontSize="24px" fontWeight="bold" color="brand.500">Hirenest</Text> */}
 
-              <Image src="/HpLogo.svg" alt="Hirenest Logo" width={200} height={100} style={{ cursor: 'pointer' }} onClick={() => router.push('/')} />
+              <Image src="/HpLogo.svg" alt="Hirenest Logo" width={150} height={80} style={{ cursor: 'pointer' }} onClick={() => router.push('/')} />
               <NavbarLinks hideBelow="lg" />
               <HStack gap={{ base: '2', md: '3' }} hideBelow="lg">
                 <Button
-                  size={{ base: 'sm', md: 'md' }}
+                  size={{ base: 'sm', md: 'sm' }}
                   variant="outline"
                   colorPalette="brand"
                   borderRadius="full"
@@ -128,7 +128,7 @@ export const Block = () => {
                   Login
                 </Button>
                 <Button
-                  size={{ base: 'sm', md: 'md' }}
+                  size={{ base: 'sm', md: 'sm' }}
                   borderRadius="full"
                   background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                   color="white"

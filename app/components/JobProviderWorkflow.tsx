@@ -52,10 +52,7 @@ export const JobProviderWorkflow = () => (
           display={'flex'}
           gap={2}
         >
-          3 Simple Steps.
-          <Text as="span" display="block" color="#4241ff">
-            0 Guesswork.
-          </Text>
+          3 Simple Steps. Zero Guesswork.
         </Heading>
 
         <Text

@@ -150,7 +150,7 @@ export const FindPerfectCandidates = () => {
                         </Text>
                         <Heading
                             as="h2"
-                            fontSize={{ base: '3xl', md: '4xl' }}
+                            fontSize={{ base: '2xl', md: '4xl' }}
                             fontWeight="700"
                             color="#000"
                             mb={6}

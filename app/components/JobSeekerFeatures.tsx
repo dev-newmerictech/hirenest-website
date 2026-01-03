@@ -49,9 +49,7 @@ export const JobSeekerFeatures = () => (
       <VStack gap={4} textAlign="center" mb={{ base: 12, md: 16 }}>
         <Heading fontSize={{ base: '3xl', md: '4xl' }} fontWeight="700" display={'flex'} gap={2}>
           What You Get With
-          <Text as="span" display="block" color="#4241ff">
             Hirenest
-          </Text>
         </Heading>
         <Text fontSize={{ base: 'md', md: 'lg' }} maxW="3xl">
           Everything you need to get discovered, prove your skills, and land the right job — without wasting time on broken systems.

@@ -31,9 +31,7 @@ export const EnterpriseReady = () => {
                         justifyContent="center"
                         gap={2}
                     >
-                        Enterprise-Ready <Text as="span" display="block" color="#fff">
-                            Platform
-                        </Text>
+                        Enterprise-Ready Platform
                     </Heading>
                     <Text fontSize={{ base: 'lg', md: 'xl' }} color="#fff" maxW="3xl">
                         Built for scale, security, and seamless integration with your existing tools

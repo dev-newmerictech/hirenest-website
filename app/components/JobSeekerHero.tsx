@@ -40,11 +40,9 @@ export const JobSeekerHero = () => (
               lineHeight="1.2"
               mb={4}
               textAlign={{ base: 'center', lg: 'left' }}
+              
             >
-              Stop Applying Into the Void.
-              <Text as="span" display="block" color="#4241ff">
-                Get Matched With Jobs That Actually Want You.
-              </Text>
+              Stop Applying Into the Void.&nbsp;<Text as="span" display="block" color="#4241ff">Get Matched With Jobs That Actually Want You.</Text>
             </Heading>
 
             <Text

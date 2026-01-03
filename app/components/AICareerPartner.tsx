@@ -36,41 +36,57 @@ export const AICareerPartner = () => {
                             fontSize={{ base: '3xl', md: '4xl' }}
                             fontWeight="700"
                             lineHeight="1.2"
+                            mb={4}
                         >
-                            Your AI Career Partner That <br />
-                            <Box as="span" bgGradient="linear(to-r, #4241ff, purple.400)" bgClip="text">Never Stops Working</Box>
+                            Your AI Career Partner That Never Stops
                         </Heading>
                         <Text
                             color="#fff"
                             fontSize={{ base: 'md', md: 'lg' }}
-                            mb={12}
+                            mb={1}
+                            maxW="lg"
+                            lineHeight="1.6"
+                        >What if Opportunity came knocking at your door, but you were sleeping?
+                        </Text>
+                        <Text
+                            color="#fff"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            mb={1}
+                            maxW="lg"
+                            lineHeight="1.6"
+                        >Don’t worry!
+                        </Text>
+                        <Text
+                            color="#fff"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            mb={10}
                             maxW="lg"
                             lineHeight="1.6"
                         >
-                            Let opportunities come to you. Our AI analyzes your skills and potential to match you
-                            with dream roles—even when you're sleeping.
+                        Our AI lets the employers discover you. It analyzes your validated skills and matches you with relevant roles around the clock - even when you're not sending applications.
+                        
                         </Text>
 
                         <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={10} mb={10}>
                             <Feature
                                 icon={FileText}
                                 title="AI Resume Builder"
-                                desc="Refine your resume with one-click edits and professional templates."
+                                desc="Refine your resume with one-click optimization and professional templates that easily pass ATS systems."
                             />
                             <Feature
                                 icon={Globe}
                                 title="End-to-End Tracking"
-                                desc="Monitor every stage of your applications in one unified dashboard."
+                                desc="Monitor every application stage in one unified dashboard with real-time updates."
                             />
                             <Feature
                                 icon={BarChart}
                                 title="Detailed Feedback"
-                                desc="Get performance summaries and improvement guidance after every screening."
+                                desc="Get performance summaries and improvement guidance after every assessment so you know what went wrong and what to fix."
                             />
                             <Feature
                                 icon={Shield}
                                 title="Secure Identity"
-                                desc="Your data is yours. Secure verification keeps your profile trusted and safe."
+                                desc="Your data stays yours. Secure verification keeps your profile trusted without compromising privacy."
                             />
                         </Grid>
 
@@ -85,7 +101,7 @@ export const AICareerPartner = () => {
                             h={14}
                             onClick={() => window.open('https://app.hirenest.ai/jobseeker/profile', '_blank')}
                         >
-                            Build Your Profile
+                            Watch AI Build Your Portfolio
                         </Button>
                     </Box>
 

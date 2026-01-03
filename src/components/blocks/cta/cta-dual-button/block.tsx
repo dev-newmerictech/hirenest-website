@@ -1,46 +1,65 @@
 'use client'
 
-import { Box, Button, Container, Heading, Stack, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, Container, Stack, Text, VStack } from '@chakra-ui/react'
 
 export const Block = () => {
   return (
     <Box bg="#0f2442" w="full">
       <Container py={{ base: '16' }} maxW="full">
         <Stack align="center" gap={{ base: '8', md: '10' }}>
-          <VStack gap={{ base: '6' }} textAlign="center" maxW="4xl" w="full">
-            <VStack gap={{ base: '5', md: '6' }} align="center" w="full" maxW="2xl">
+          <VStack gap={{ base: '6' }} textAlign="center" maxW="7xl" w="full">
+            <VStack align="center" w="full" maxW="7xl">
               <Text
                 color="white"
-                fontSize={{ base: 'lg', md: '4xl' }}
-                fontWeight="600"
+                fontSize={{ base: '2xl', md: '4xl' }}
+                fontWeight="700"
+                lineHeight="1.2"
               >
-                On the call, we'll:
+                Join us as we build the future of skills-based hiring
               </Text>
-              <VStack justifyContent={'center'} flexDirection={{ base: 'column', md: 'row' }} flexWrap="wrap" gap={{ base: '3', md: '4' }} align="start" w="full" px={{ base: '4', md: '8' }}>
-                <Text color="white" fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.7">
-                  ● Show you the platform with your actual job posting
+
+              <Text
+                color="white"
+                fontSize={{ base: 'md', md: 'xl' }}
+                opacity={0.9}
+              >
+                One platform. Two broken systems solved. Built for better outcomes.
+              </Text>
+
+              <Text
+                color="white"
+                fontSize={{ base: 'md', md: 'lg' }}
+                opacity={0.85}
+              >
+                Get ready to stop wasting time on hiring that doesn’t work.
+              </Text>
+
+              <VStack gap="2" pt="4">
+                <Text color="white" fontSize={{ base: 'md', md: 'lg' }}>
+                  <strong>Picture this:</strong>
                 </Text>
-                <Text color="white" fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.7">
-                  ● Calculate your specific ROI
+                <Text color="white" fontSize={{ base: 'md', md: 'lg' }}>
+                  Next Monday, you post a job.
                 </Text>
-                <Text color="white" fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.7">
-                  ● Answer all your questions
+                <Text color="white" fontSize={{ base: 'md', md: 'lg' }}>
+                  By Wednesday, you have ranked candidates who’ve proven they can do the work.
                 </Text>
-                <Text color="white" fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.7">
-                  ● Give you custom pricing
+                <Text color="white" fontSize={{ base: 'md', md: 'lg' }}>
+                  By Friday, you’re making an offer you trust — because data backs your decision.
                 </Text>
               </VStack>
+
               <Text
                 color="white"
                 fontSize={{ base: 'lg', md: 'xl' }}
                 fontWeight="600"
-                textAlign="center"
-                w="full"
+                pt="4"
               >
-                No sales pitch. Just honest answers.
+                That’s Hirenest.
               </Text>
             </VStack>
-            <VStack gap="4" w="full">
+
+            <VStack gap="4" w="full" pt="0">
               <Button
                 size={{ base: 'lg', md: 'xl' }}
                 variant="outline"
@@ -53,7 +72,7 @@ export const Block = () => {
                 fontWeight="600"
                 borderRadius="full"
                 w={{ base: 'full', md: 'auto' }}
-                minW={{ base: 'full', md: '300px' }}
+                minW={{ base: 'full', md: '320px' }}
                 _hover={{
                   bg: 'white',
                   color: '#0f2442',
@@ -62,15 +81,16 @@ export const Block = () => {
                 transition="all 0.3s"
                 onClick={() => window.open('#', '_blank')}
               >
-                Book Your Demo
+                Start Skills-Based Hiring
               </Button>
+
               <Text
                 color="white"
                 fontSize={{ base: 'sm', md: 'md' }}
                 opacity={0.85}
                 fontWeight="400"
               >
-                (15-minute call, zero pressure)
+                No credit card • No setup friction • Just better hiring
               </Text>
             </VStack>
           </VStack>
@@ -79,4 +99,3 @@ export const Block = () => {
     </Box>
   )
 }
-

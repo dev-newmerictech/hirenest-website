@@ -32,26 +32,25 @@ export const Block = () => {
                 <PlayCircle size={14} fill="currentColor" />
               </Box>
               <Text fontSize="sm" fontWeight="600" color="#0071fb ">
-                Inclusive workplaces for all.
+              Welcome to Hirenest!  
               </Text>
             </HStack>
 
             {/* Heading */}
             <Heading
               as="h1"
-              fontSize={{ base: '4xl', md: '6xl' }}
+              fontSize={{ base: '4xl' }}
               fontWeight="800"
               lineHeight="1.1"
               color="#1d1d1f"
               textAlign={{ base: 'center', lg: 'left' }}
             >
-              Find <Text as="span" bg="#0071fb" bgClip="text" color="transparent">Jobs</Text> Where
-              Diversity Thrives
+              Intelligent <Text as="span" bg="#0071fb" bgClip="text" color="transparent">Hiring Platform</Text>  Where Top Skills Get Matched With the Best Opportunities
             </Heading>
 
             {/* Subtext */}
             <Text fontSize={{ base: 'lg', md: 'xl' }} color="gray.500" maxW="lg" lineHeight="1.6" textAlign={{ base: 'center', lg: 'left' }}>
-              Search for roles in organizations prioritizing diversity and inclusion that align with your values.
+            An AI-powered hiring platform where job seekers show what they can do and employers meet candidates who've already demonstrated they can perform.
             </Text>
 
             {/* Search Bar */}

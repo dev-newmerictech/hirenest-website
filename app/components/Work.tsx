@@ -166,14 +166,14 @@ export const Work = () => (
                       color="#1d1d1f"
                       lineHeight="1.3"
                     >
-                      Stand out with skills
+                      Stand Out with Skills
                     </Text>
                     <Text
                       fontSize={{ base: 'sm', md: 'md' }}
                       color="#6e6e73"
                       lineHeight="1.5"
                     >
-                      Take assessments to prove your abilities and rank higher.
+                    Take assessments to prove your abilities and rank higher in employer searches.                    
                     </Text>
                   </VStack>
                 </Flex>
@@ -246,8 +246,7 @@ export const Work = () => (
                       fontSize={{ base: 'sm', md: 'md' }}
                       color="#6e6e73"
                       lineHeight="1.5"
-                    >
-                      Create job listings or custom skill assessments in minutes.
+                    >Our AI helps you define requirements, create job listings or custom skill assessments in minutes.
                     </Text>
                   </VStack>
                 </Flex>
@@ -278,7 +277,8 @@ export const Work = () => (
                       color="#6e6e73"
                       lineHeight="1.5"
                     >
-                      Get the best matches ranked and ready to interview.
+                    Our AI reviews all the matched candidates, ranks them and brings you the best matches, ready to interview.
+                    
                     </Text>
                   </VStack>
                 </Flex>
@@ -309,7 +309,7 @@ export const Work = () => (
                       color="#6e6e73"
                       lineHeight="1.5"
                     >
-                      Make faster, smarter hiring decisions backed by data.
+                    Make faster, smarter hiring decisions backed by real data. No scope for costly bad hires.                    
                     </Text>
                   </VStack>
                 </Flex>

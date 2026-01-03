@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {
     Box,
@@ -7,140 +7,157 @@ import {
     Heading,
     Text,
     SimpleGrid,
-    Avatar,
     Icon,
     VStack,
-    HStack
+    HStack,
+    Button,
 } from '@chakra-ui/react';
 import { Star } from 'lucide-react';
 
 const testimonials = [
     {
-        quote: "This platform reduced our time-to-hire by 60%. The AI screening is incredibly accurate.",
-        name: "Sarah Johnson",
-        role: "VP of Talent, TechCorp",
-        avatarBg: "brand.400",
-        initial: "S"
-    },
-    {
-        quote: "Best recruitment tool we've ever used. The video interview feature is a game-changer.",
-        name: "Michael Chen",
-        role: "Head of HR, StartupXYZ",
-        avatarBg: "brand.400",
-        initial: "M"
-    },
-    {
-        quote: "The analytics dashboard gives us insights we never had before. Highly recommend!",
+        quote:
+            "This platform gave me something I never had before: proof of my skills before the interview. I completed assessments, and within two weeks, three companies reached out after seeing my results. I got hired based on what I can actually do.",
         name: "Emma Williams",
-        role: "Recruiting Manager, Enterprise Co",
-        avatarBg: "brand.400",
-        initial: "E"
-    }
+        role: "Job Seeker Success Story",
+        initial: "E",
+    },
+    {
+        quote:
+            "We tested 47 candidates for one engineering role using unlimited assessments — something we couldn’t afford with our old platform. We found someone exceptional we would have missed if we’d rationed tests. Best hire we’ve made in two years.",
+        name: "Sarah Johnson",
+        role: "Tech Company Hiring Manager",
+        initial: "S",
+    },
+    {
+        quote:
+            "The video interviews let us see communication skills before scheduling calls. We cut our time-to-hire from 52 days to 28 days. The AI ranking means we’re only talking to people who’ve proven they can do the work.",
+        name: "Michael Chen",
+        role: "Operations Director",
+        initial: "M",
+    },
 ];
 
 const stats = [
-    { value: "50K+", label: "Companies" },
+    { value: "50K+", label: "Companies Using the Platform" },
     { value: "2M+", label: "Candidates Screened" },
+    { value: "85%", label: "Matching Accuracy" },
     { value: "98%", label: "Customer Satisfaction" },
-    { value: "24/7", label: "Support Available" }
+    { value: "24/7", label: "Support Available" },
 ];
 
 export const Testimonials = () => {
     return (
-        <Box bg="white" pb={{ base: 16 }} position="relative" overflow="hidden">
+        <Box bg="white" pb={16}>
             <Container maxW="7xl">
                 {/* Header */}
                 <VStack gap={4} textAlign="center" mb={16}>
-
                     <Heading
-                        as="h2"
                         fontSize={{ base: '3xl', md: '4xl' }}
                         fontWeight="700"
-                        color="#000"
-                        mt={2}
                         lineHeight="1.2"
                     >
-                        Loved by Hiring <Text as="span" color="#4241ff">Teams Worldwide</Text>
+                        Loved by People Finding{" "}
+                        <Text as="span" color="#4241ff">
+                            Better Opportunities
+                        </Text>
                     </Heading>
-                    <Text
-                        fontSize={{ base: 'md', md: 'lg' }}
-                        color="#000"
-                    >
-                        Join thousands of companies already hiring smarter
+
+                    <Text fontSize={{ base: 'md', md: 'lg' }} maxW="3xl">
+                        Join thousands already using Hirenest to make smarter career and
+                        hiring decisions.
                     </Text>
                 </VStack>
 
-                {/* Testimonial Cards */}
+                {/* Testimonials */}
                 <SimpleGrid columns={{ base: 1, md: 3 }} gap={8} mb={20}>
-                    {testimonials.map((testimonial, index) => (
+                    {testimonials.map((t, i) => (
                         <Box
-                            key={index}
+                            key={i}
                             bg="white"
                             p={8}
                             borderRadius="2xl"
                             boxShadow="sm"
-                            _hover={{ transform: 'translateY(-5px)', boxShadow: 'md' }}
                             transition="all 0.3s"
+                            _hover={{ transform: 'translateY(-4px)', boxShadow: 'md' }}
                         >
                             <HStack gap={1} mb={4}>
                                 {[...Array(5)].map((_, i) => (
-                                    <Icon key={i} as={Star} color="yellow.400" fill="currentColor" boxSize={5} />
+                                    <Icon
+                                        key={i}
+                                        as={Star}
+                                        color="yellow.400"
+                                        fill="currentColor"
+                                        boxSize={5}
+                                    />
                                 ))}
                             </HStack>
-                            <Text
-                                fontSize={{ base: 'sm', md: 'md' }}
-                                color="#000"
-                                mb={6}
-                                lineHeight="1.6"
-                                minH="72px"
-                            >
-                                "{testimonial.quote}"
+
+                            <Text fontSize="md" lineHeight="1.6">
+                                “{t.quote}”
                             </Text>
-                            <Flex align="center" gap={4}>
+
+                            <Flex align="center" gap={4} mt={t.initial === 'E' ? 10 : t.initial === 'M' ? 7 : 3}>
                                 <Flex
                                     w={12}
                                     h={12}
-                                    bg={testimonial.avatarBg}
                                     borderRadius="full"
+                                    bg="#4241ff"
+                                    color="white"
                                     align="center"
                                     justify="center"
-                                    color="white"
                                     fontWeight="bold"
                                     fontSize="lg"
                                 >
-                                    {testimonial.initial}
+                                    {t.initial}
                                 </Flex>
                                 <Box>
-                                    <Text fontWeight="bold" color="#000" fontSize="sm">{testimonial.name}</Text>
-                                    <Text fontSize="xs" color="#000">{testimonial.role}</Text>
+                                    <Text fontWeight="bold" fontSize="sm">
+                                        {t.name}
+                                    </Text>
+                                    <Text fontSize="xs" color="gray.600">
+                                        {t.role}
+                                    </Text>
                                 </Box>
                             </Flex>
                         </Box>
                     ))}
                 </SimpleGrid>
 
-                {/* Stats */}
-                <SimpleGrid columns={{ base: 2, md: 4 }} gap={10} textAlign="center">
-                    {stats.map((stat, index) => (
-                        <Box key={index}>
-                            <Text
-                                fontSize={{ base: '3xl', md: '4xl' }}
-                                fontWeight="700"
-                                color="#4241ff"
-                                mb={2}
-                            >
-                                {stat.value}
-                            </Text>
-                            <Text
-                                fontSize={{ base: 'sm', md: 'md' }}
-                                color="#000"
-                                fontWeight="medium"
-                            >
-                                {stat.label}
-                            </Text>
-                        </Box>
-                    ))}
-                </SimpleGrid>
+                {/* Impact */}
+                <VStack gap={10}>
+                    <Heading fontSize="2xl">Our Impact</Heading>
+
+                    <SimpleGrid columns={{ base: 2, md: 5 }} gap={10} textAlign="center">
+                        {stats.map((stat, i) => (
+                            <Box key={i}>
+                                <Text fontSize="4xl" fontWeight="700" color="#4241ff">
+                                    {stat.value}
+                                </Text>
+                                <Text fontSize="sm" fontWeight="medium">
+                                    {stat.label}
+                                </Text>
+                            </Box>
+                        ))}
+                    </SimpleGrid>
+
+                    <Button
+                        borderRadius="full"
+                        fontWeight="500"
+                        background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                        color="white"
+                        minW={{ base: '100px', md: '100px' }}
+                        _hover={{
+                            background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
+                            opacity: 0.9,
+                        }}
+                        transition="all 0.3s ease"
+                        onClick={() => window.open('https://app.hirenest.ai', '_blank')}
+                        mt={4}
+                    >
+                        Let’s Find the Right Candidate
+                    </Button>
+                </VStack>
             </Container>
         </Box>
     );

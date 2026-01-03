@@ -60,7 +60,7 @@ export const PricingCard = (props: PricingCardProps) => {
         </For>
       </List.Root>
       <Button
-        mt={data.value === 'free' ? '70px' : data.value === 'pro' ? '45px' : '1'}
+        mt={data.value === 'free' ? '145px' : data.value === 'pro' ? '45px' : '1'}
         size={{ base: 'md', md: 'xl' }}
         borderRadius="full"
         background={data.recommended ? 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)' : 'transparent'}

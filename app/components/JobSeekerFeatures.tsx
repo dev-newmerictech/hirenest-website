@@ -1,193 +1,123 @@
 'use client'
 
-import { Box, Container, Flex, Heading, Text, VStack, Grid } from '@chakra-ui/react'
-import { Brain, FileText, BarChart3, MessageCircle, DollarSign, CheckCircle } from 'lucide-react'
+import { Box, Container, Flex, Heading, Text, VStack, Grid, Button } from '@chakra-ui/react'
+import { Brain, FileText, BarChart3, MessageCircle, CheckCircle, Search } from 'lucide-react'
 
 const features = [
-    {
-        icon: Brain,
-        title: 'AI-Powered Job Matching',
-        description: 'Advanced algorithms analyze your profile and match you with the most relevant job opportunities.',
-        color: '#4241ff'
-    },
-    {
-        icon: FileText,
-        title: 'Smart Resume Builder',
-        description: 'Create ATS-friendly resumes with AI-powered suggestions and professional templates.',
-        color: '#4241ff'
-    },
-    {
-        icon: BarChart3,
-        title: 'Career Insights Dashboard',
-        description: 'Track your job search progress, get personalized recommendations, and monitor market trends.',
-        color: '#4241ff'
-    },
-    {
-        icon: MessageCircle,
-        title: 'Interview Preparation',
-        description: 'Practice with AI-powered mock interviews and get instant feedback to improve your skills.',
-        color: '#4241ff'
-    },
-    {
-        icon: DollarSign,
-        title: 'Salary Insights',
-        description: 'Access real-time salary data and negotiate better offers with confidence.',
-        color: '#4241ff'
-    },
-    {
-        icon: CheckCircle,
-        title: 'Application Tracking',
-        description: 'Keep track of all your applications in one place and never miss a follow-up.',
-        color: '#4241ff'
-    }
+  {
+    icon: Brain,
+    title: '🎯 AI Career Matcher',
+    description:
+      'Stop guessing which jobs fit. Get matched with roles based on your validated skills and career goals — not keywords. Fibo finds opportunities you are actually qualified for.',
+  },
+  {
+    icon: FileText,
+    title: '📝 Smart Resume Builder',
+    description:
+      'Create ATS-friendly resumes that actually reach human recruiters. Optimize for each role in minutes with AI-suggested keywords, templates, and one-click customization.',
+  },
+  {
+    icon: BarChart3,
+    title: '📊 Application Tracking',
+    description:
+      'Never wonder “where did my application go?” Track views, reviews, and next steps in real time. No stress. No guessing. One dashboard for your entire job search.',
+  },
+  {
+    icon: MessageCircle,
+    title: '💡 Career Insights',
+    description:
+      'Get real market-backed insights — salary ranges, in-demand skills, and personalized recommendations to close gaps and advance faster.',
+  },
+  {
+    icon: CheckCircle,
+    title: '⭐ Skill Verification',
+    description:
+      'Prove your expertise with 350+ verified assessments. Rank higher in employer searches. Stand out from applicants who only make claims.',
+  },
+  {
+    icon: Search,
+    title: '🔍 Profile Optimization',
+    description:
+      'Your profile works 24/7. Employers searching for your skills discover you — even when you’re not actively applying. Opportunities come to you.',
+  },
 ]
 
 export const JobSeekerFeatures = () => (
-    <Box
-        w="full"
-        position="relative"
-        bg="#fff"
-        py={{ base: '12', md: '20' }}
-    >
-        <Container maxW="7xl" position="relative">
-            {/* Section Header */}
-            <VStack alignItems="center" mb={{ base: 12, md: 16 }} textAlign="center">
-                <Text
-                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                    fontWeight="600"
-                    color="#4241ff"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
-                    mb={3}
-                >
-                    Features
-                </Text>
-                <Heading
-                    as="h2"
-                    fontSize={{ base: '3xl', md: '4xl' }}
-                    fontWeight="700"
-                    color="#000"
-                    maxW="7xl"
-                    lineHeight={'normal'}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    gap={2}
-                    flexWrap={'wrap'}
-                >
-                    Everything You Need to
-                    <Text as="span" display="block" color="#4241ff">
-                        Succeed in Your Job Search
-                    </Text>
-                </Heading>
-                <Text
-                    fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                    color="#000"
-                    maxW="7xl"
-                    mt={2}
-                >
-                    Powerful tools and features designed to help you find and land your dream job faster
-                </Text>
-            </VStack>
+  <Box w="full" bg="white" py={{ base: '12', md: '20' }}>
+    <Container maxW="7xl">
+      {/* Section Header */}
+      <VStack gap={4} textAlign="center" mb={{ base: 12, md: 16 }}>
+        <Heading fontSize={{ base: '3xl', md: '4xl' }} fontWeight="700" display={'flex'} gap={2}>
+          What You Get With
+          <Text as="span" display="block" color="#4241ff">
+            Hirenest
+          </Text>
+        </Heading>
+        <Text fontSize={{ base: 'md', md: 'lg' }} maxW="3xl">
+          Everything you need to get discovered, prove your skills, and land the right job — without wasting time on broken systems.
+        </Text>
+      </VStack>
 
-            {/* Features Grid */}
-            <Grid
-                templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
-                gap={8}
+      {/* Features Grid */}
+      <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={8}>
+        {features.map((feature, index) => {
+          const Icon = feature.icon
+          return (
+            <VStack
+              key={index}
+              align="flex-start"
+              bg="white"
+              p={8}
+              border="1px solid"
+              borderColor="gray.200"
+              rounded="2xl"
+              gap={5}
+              transition="all 0.3s"
+              _hover={{ transform: 'translateY(-6px)', shadow: 'xl', borderColor: '#4241ff' }}
             >
-                {features.map((feature, index) => {
-                    const Icon = feature.icon
-                    return (
-                        <VStack
-                            key={index}
-                            bg="white"
-                            p={8}
-                            rounded="2xl"
-                            border="1px solid"
-                            borderColor="gray.200"
-                            align="flex-start"
-                            gap={6}
-                            h="full"
-                            position="relative"
-                            overflow="hidden"
-                            transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-                            className="group"
-                            cursor="pointer"
-                            _hover={{
-                                transform: 'translateY(-8px)',
-                                shadow: 'xl',
-                                borderColor: feature.color
-                            }}
-                        >
-                            {/* Subtle Background Gradient */}
-                            <Box
-                                position="absolute"
-                                top={0}
-                                right={0}
-                                w="200px"
-                                h="200px"
-                                bgGradient="radial(blue.50, transparent)"
-                                opacity={0.4}
-                                transition="opacity 0.3s ease"
-                                css={{ ".group:hover &": { opacity: 0.7 } }}
-                            />
+              <Flex
+                w={14}
+                h={14}
+                align="center"
+                justify="center"
+                rounded="xl"
+                bg="blue.50"
+                color="#4241ff"
+              >
+                <Icon size={28} />
+              </Flex>
 
-                            {/* Icon */}
-                            <Flex
-                                w={14}
-                                h={14}
-                                align="center"
-                                justify="center"
-                                rounded="xl"
-                                bg="blue.50"
-                                color={feature.color}
-                                position="relative"
-                                zIndex={1}
-                                transition="all 0.3s ease"
-                                css={{
-                                    ".group:hover &": {
-                                        transform: "scale(1.1)",
-                                        bg: feature.color,
-                                        color: "white"
-                                    }
-                                }}
-                            >
-                                <Icon size={28} strokeWidth={2} />
-                            </Flex>
+              <Heading size="md" fontWeight="700">
+                {feature.title}
+              </Heading>
 
-                            {/* Content */}
-                            <VStack align="flex-start" gap={3} flex={1} position="relative" zIndex={1}>
-                                <Heading
-                                    size="lg"
-                                    fontWeight="700"
-                                    color="#1d1d1f"
-                                    lineHeight="1.2"
-                                >
-                                    {feature.title}
-                                </Heading>
-                                <Text
-                                    color="#6e6e73"
-                                    lineHeight="1.6"
-                                    fontSize="sm"
-                                >
-                                    {feature.description}
-                                </Text>
-                            </VStack>
-                        </VStack>
-                    )
-                })}
-            </Grid>
-
-            {/* Bottom CTA Text */}
-            <VStack mt={{ base: 12, md: 16 }} textAlign="center">
-                <Text
-                    fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                    fontWeight="600"
-                    color="#000"
-                >
-                    And many more features to help you succeed! 🚀
-                </Text>
+              <Text color="gray.600" fontSize="sm" lineHeight="1.6">
+                {feature.description}
+              </Text>
             </VStack>
-        </Container>
-    </Box>
+          )
+        })}
+      </Grid>
+
+      {/* Bottom CTA */}
+      <VStack mt={{ base: 14, md: 20 }} gap={6} textAlign="center">
+        <Heading size="lg">Results Beat Resumes.</Heading>
+        <Text maxW="2xl">
+          With Hirenest, you prove your abilities upfront. Employers find you based on what you can actually do — not how well you play the keyword game.
+        </Text>
+        <Button
+          size="lg"
+          rounded="full"
+          bg="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+          color="white"
+          px={10}
+          py={6}
+          _hover={{ transform: 'translateY(-2px)', shadow: 'lg' }}
+          onClick={() => window.open('https://app.hirenest.ai/jobseeker', '_blank')}
+        >
+          Create My Free Profile
+        </Button>
+      </VStack>
+    </Container>
+  </Box>
 )

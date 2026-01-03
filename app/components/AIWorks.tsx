@@ -8,7 +8,7 @@ export const AIWorks = () => {
             <Container maxW="7xl">
                 <VStack gap={{ base: 12 }}>
                     {/* Header */}
-                    <VStack textAlign="center" gap={4} maxW="3xl" mx="auto">
+                    <VStack textAlign="center" maxW="7xl" mx="auto">
                         <Text
                             fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
                             fontWeight="600"
@@ -17,7 +17,7 @@ export const AIWorks = () => {
                             letterSpacing="wider"
                             mb={1}
                         >
-                            NexAgent Intelligence
+                            Intelligent Matching System
                         </Text>
                         <Heading
                             as="h2"
@@ -26,14 +26,19 @@ export const AIWorks = () => {
                             color="#1d1d1f"
                             lineHeight="1.1"
                             letterSpacing="tight"
+                            mb={4}
                         >
-                            The brain behind your{' '}
-                            <Text as="span" color="#4241ff">hiring decisions.</Text>
+                            The Technology Driving Better{' '}
+                            <Text as="span" color="#4241ff">Hiring Decisions</Text>
                         </Heading>
 
-                        <Text fontSize="xl" color="#6e6e73" maxW="2xl">
-                            Our multi-agent system doesn't just process data—it understands talent.
-                            From parsing to prediction, experience the power of true AI.
+                        <Text fontSize="xl" color="#6e6e73" maxW="6xl">What if you could predict which candidate will succeed before you make an offer?
+                        </Text>
+                        
+                        <Text fontSize="xl" color="#6e6e73" maxW="6xl">
+                        Our multi-agent AI system will process, parse and score all the resumes before predicting their job success and selecting the right talent for you.
+                        
+                        From assessment design to performance prediction, you’ll experience hiring powered by an intelligent matching system.
                         </Text>
                     </VStack>
 
@@ -58,9 +63,9 @@ export const AIWorks = () => {
                                 <VStack align="flex-start" gap={2}>
                                     <Flex align="center" gap={2}>
                                         <Icon as={TrendingUp} color="#4241ff" />
-                                        <Heading size="md" color="#1d1d1f">Predictive Scoring</Heading>
+                                        <Heading size="md" color="#1d1d1f">Predictive Scoring </Heading>
                                     </Flex>
-                                    <Text color="#6e6e73">ML models that predict candidate success with 98.5% accuracy.</Text>
+                                    <Text color="#6e6e73">Our AI system predicts candidate success with 98.5% accuracy.</Text>
                                 </VStack>
                             </HStack>
 
@@ -153,7 +158,7 @@ export const AIWorks = () => {
                                 <Box>
                                     <Heading size="md" color="white" mb={2}>Smart Parsing</Heading>
                                     <Text color="#a1a1a6" fontSize="sm">
-                                        Instantly extract and structure data from any resume format.
+                                        Instantly extracts and structures data from any resume format, saving hours of manual work
                                     </Text>
                                 </Box>
 
@@ -202,7 +207,7 @@ export const AIWorks = () => {
                                     <Icon as={Search} color="#b000ea" />
                                     <Heading size="md" color="#1d1d1f">Semantic Search</Heading>
                                 </Flex>
-                                <Text color="#6e6e73" fontSize="sm">Find candidates by concept, not just keywords.</Text>
+                                <Text color="#6e6e73" fontSize="sm">Find candidates by skills and concepts, not just keywords</Text>
 
                                 {/* Visual */}
                                 <Box w="full" bg="#f5f5f7" p={4} borderRadius="xl">
@@ -251,7 +256,7 @@ export const AIWorks = () => {
                                     <Icon as={ShieldAlert} color="#ff4242" />
                                     <Heading size="md" color="#1d1d1f">Bias Detection</Heading>
                                 </Flex>
-                                <Text color="#6e6e73" fontSize="sm">Real-time alerts for inclusive hiring decisions.</Text>
+                                <Text color="#6e6e73" fontSize="sm">Real-time monitoring to ensure skills-based decisions, not subjective preferences</Text>
 
                                 {/* Visual */}
                                 <HStack w="full" bg="red.50" p={4} borderRadius="xl" border="1px solid" borderColor="red.100">

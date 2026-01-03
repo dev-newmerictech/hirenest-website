@@ -32,40 +32,59 @@ export const NeedTalent = () => {
                             letterSpacing="tight"
                             color="#000"
                             mb={4}
+                            lineHeight={'normal'}
                         >
-                            Hire the top 1% <Text as="span" bg="#4241ff" bgClip="text">effortlessly.</Text>
+                            Hire Qualified Candidates Without the <Text as="span" bg="#4241ff" bgClip="text">Guesswork</Text>
                         </Heading>
                         <Text
                             fontSize="lg"
                             color="#6e6e73"
-                            lineHeight="1.6"
+                            lineHeight="1.4"
+                            mb={2}
+                            maxW="lg"
+                        >
+                            A bad hire can cost you as much as $50,000. Our AI will help you avoid one.
+                        </Text>
+                        <Text
+                            fontSize="lg"
+                            color="#6e6e73"
+                            lineHeight="1.4"
+                            mb={2}
+                            maxW="lg"
+                        >Imagine receiving a ranked list of pre-screened candidates for a job you posted, where each one has proven they can do the work. You'd be scheduling interviews with confidence, without crossing your fingers.
+                        </Text>
+                        <Text
+                            fontSize="lg"
+                            color="#6e6e73"
+                            lineHeight="1.4"
                             mb={10}
                             maxW="lg"
                         >
-                            Streamline your hiring pipeline with AI. Identify the best candidates instantly and reduce time-to-hire by 50%.
+                        When you automate your hiring process through our AI, your time-to-hire will reduce by ~40%. It’ll evaluate everything and identify the people who can actually perform:
+                        
                         </Text>
 
                         {/* Feature Grid */}
                         <Grid templateColumns={{ base: '1fr', sm: 'repeat(2, 1fr)' }} gap={8} mb={10}>
                             <Feature
                                 icon={Trophy}
-                                title="Top Talent Ranking"
-                                desc="Instantly identify the best candidates based on skills and experience."
+                                title="Candidate Ranking "
+                                desc="Get applicants ranked by demonstrated skills and assessment performance"
                             />
                             <Feature
                                 icon={CheckCircle}
-                                title="Skill Verification"
-                                desc="Validate candidate abilities with automated technical assessments."
+                                title="Skill Verification "
+                                desc="Validates abilities with automated assessments across 350+ skills"
                             />
                             <Feature
                                 icon={Shield}
-                                title="Unbiased Hiring"
-                                desc="Remove unconscious bias from your screening process automatically."
+                                title="Reduced Bias "
+                                desc="Removes the scope for any unconscious bias with structured, skills-based screening"
                             />
                             <Feature
                                 icon={BarChart}
-                                title="Hiring Analytics"
-                                desc="Track your funnel performance and optimize your recruitment ROI."
+                                title="Hiring Analytics "
+                                desc="Make better, data-backed decisions that improve with every hire"
                             />
                         </Grid>
 
@@ -85,7 +104,7 @@ export const NeedTalent = () => {
                             transition="all 0.3s"
                             onClick={() => window.open('https://app.hirenest.ai/jobprovider/search-candidates', '_blank')}
                         >
-                            Start Hiring Now
+                            Let’s Find the Right Talent
                         </Button>
                     </Box>
 

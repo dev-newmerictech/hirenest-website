@@ -7,38 +7,38 @@ import { LuBriefcase, LuUserCheck, LuTrendingUp, LuSearch, LuUsers, LuTarget, Lu
 const jobSeekersCards = [
     {
         icon: LuFileCheck,
-        title: "AI Resume Builder",
-        description: "Create professional resumes tailored to each job application with AI-powered suggestions.",
+        title: "AI Resume Builder ",
+        description: "Create professional resumes optimized for each application with AI-powered suggestions within minutes.",
         link: "/ai-resume-builder"
     },
     {
         icon: LuSearch,
-        title: "Smart Job Matching",
-        description: "Get matched with opportunities that align with your skills and career goals automatically.",
+        title: "Smart Job Matching ",
+        description: "Get matched with opportunities that align with validated skills and career goals automatically.",
         link: "/smart-job-matching"
     },
     {
         icon: LuTrendingUp,
         title: "Career Insights",
-        description: "Track your progress and get personalized career growth recommendations.",
+        description: "Track progress and receive personalized growth recommendations based on real market data.",
         link: "/career-insights"
     },
     {
         icon: LuTarget,
         title: "Skill Assessments",
-        description: "Showcase your expertise and rank higher in candidate searches.",
+        description: "Showcase your expertise with 350+ tests and rank higher in candidate searches.",
         link: "/skill-assessments"
     },
     {
         icon: LuSparkles,
         title: "Profile Optimization",
-        description: "Get real-time feedback to improve your visibility to recruiters.",
+        description: "Improve your visibility to recruiters searching for your skills, with real-time feedback.",
         link: "/profile-optimization"
     },
     {
         icon: LuRocket,
         title: "Fast-Track Applications",
-        description: "Apply to multiple jobs with one click using your optimized profile.",
+        description: "Apply to multiple jobs with one click, using your optimized profile.",
         link: "/fast-track-applications"
     }
 ]
@@ -109,7 +109,7 @@ export function TabsComponent() {
                             Choose your <Text as="span" color="#4241ff">path.</Text>
                         </Heading>
                         <Text fontSize="xl" color="#6e6e73" maxW="2xl">
-                            Powerful features tailored to your needs. Whether you're hiring or hunting, we've got you covered.
+                        Powerful features built for your needs. Whether you're hiring or job hunting, we've specifically-designed tools that work. You’re covered.
                         </Text>
                     </VStack>
 

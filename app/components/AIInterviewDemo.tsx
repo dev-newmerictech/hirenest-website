@@ -34,21 +34,21 @@ const interviewTypes = [
         id: 'video' as InterviewType,
         icon: Video,
         title: 'AI Video Interview',
-        description: 'Conduct realistic video interviews with AI-powered analysis of responses, body language, and communication skills.',
+        description: 'Watch candidates explain their approach. AI scores communication, confidence, and critical thinking, before you schedule calls.',
         color: '#4241ff',
         bg: '#bedcffff',
         features: [
-            'Real-time facial analysis',
-            'Speech-to-text transcription',
-            'Sentiment analysis',
-            'Automated scoring',
+            'Real-time facial analysis for analysing confidence levels',
+            'Speech-to-text transcription for accurate record-keeping',
+            'Sentiment analysis to understand candidate authenticity',
+            'Automated scoring based on role requirements',
         ],
     },
     {
         id: 'mcq' as InterviewType,
         icon: CheckSquare,
         title: 'MCQ Assessments',
-        description: 'Create custom multiple-choice assessments to evaluate technical knowledge and domain expertise efficiently.',
+        description: 'Build custom tests in minutes. AI grades automatically and ranks candidates instantly. Zero manual scoring.',
         color: '#0071fb',
         bg: '#e3f2fd',
         features: [
@@ -62,7 +62,7 @@ const interviewTypes = [
         id: 'openended' as InterviewType,
         icon: MessageSquare,
         title: 'Open-Ended Questions',
-        description: 'Assess critical thinking and problem-solving skills with AI-evaluated open-ended questions.',
+        description: 'Test problem-solving at scale. AI evaluates hundreds of responses. You see the insights, not the essays.',
         color: '#b000ea',
         bg: '#f3e5f5',
         features: [
@@ -117,9 +117,9 @@ export const AIInterviewDemo = () => {
             <Container maxW="7xl" position="relative">
                 <VStack gap={8}>
                     {/* Section Header */}
-                    <VStack textAlign="center" gap={4} maxW="3xl" mx="auto">
+                    <VStack textAlign="center" gap={4} maxW="5xl" mx="auto">
                         <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider">
-                            AI-Powered Interviews
+                        Hiring Platform
                         </Text>
                         <Heading
                             as="h2"
@@ -129,10 +129,13 @@ export const AIInterviewDemo = () => {
                             lineHeight="1.1"
                             letterSpacing="tight"
                         >
-                            Interview Smarter with <Text as="span" color="#4241ff">AI Technology</Text>
+                            Let <Text as="span" color="#4241ff">AI Evaluate</Text> All The Candidates AI
                         </Heading>
-                        <Text fontSize="xl" color="#6e6e73" maxW="2xl">
-                            Choose from multiple interview formats powered by advanced AI to find the perfect candidates faster.
+                        <Text fontSize="xl" color="#6e6e73" maxW="6xl">
+                        Tired of interviewing candidates who look perfect on paper but can't actually do the job?
+                        </Text>
+                        <Text fontSize="xl" color="#6e6e73" maxW="6xl">
+                        Choose from multiple assessment formats powered by AI to identify people who can perform, not just talk.
                         </Text>
                     </VStack>
 

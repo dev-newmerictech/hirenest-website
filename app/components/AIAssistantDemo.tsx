@@ -59,7 +59,7 @@ export const AIAssistantDemo = () => {
 
     const config = {
         provider: {
-            title: 'Your Personal AI Hiring Assistant',
+            title: 'Your Personal Hiring Assistant That Works Even While You’re Asleep',
             subtitle: 'Experience the future of recruitment with our advanced AI assistant. Automate tasks, get instant insights, and streamline your entire hiring process.',
             sidebarTitle: 'Quick Actions',
             quickActions: [
@@ -80,7 +80,7 @@ export const AIAssistantDemo = () => {
             headerTitle: 'AI Assistant',
             headerSubtitle: 'Always here to help with your hiring needs',
             chatTitle: "Hi! I'm your AI hiring assistant.",
-            chatSubtitle: 'I can help you with candidate recommendations, job postings, analytics, and more. What would you like to do today?',
+            chatSubtitle: 'I can help you with candidate recommendations, job posting optimization, performance analytics, and more. What would you like to accomplish today?',
             suggestedActions: [
                 { icon: Search, label: 'Find Candidates' },
                 { icon: Plus, label: 'Create Job' },
@@ -89,8 +89,8 @@ export const AIAssistantDemo = () => {
             inputPlaceholder: 'Ask about your job posts, candidates, or hiring...',
         },
         seeker: {
-            title: 'Your Personal AI Career Coach',
-            subtitle: 'Accelerate your career with our intelligent AI companion. Get personalized job matches, resume optimization, and interview preparation guidance.',
+            title: 'Your AI coach that works 24/7 to land you interviews.',
+            subtitle: 'Get resume fixes that beat ATS filters, personalized job matches based on your actual skills, and interview prep that builds real confidence, not generic advice.',
             sidebarTitle: 'Quick Actions',
             quickActions: [
                 { icon: Search, label: 'Find matching jobs', color: 'blue' },
@@ -109,14 +109,14 @@ export const AIAssistantDemo = () => {
             headerGradient: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
             headerTitle: 'AI Assistant',
             headerSubtitle: 'Your partner in career growth and success',
-            chatTitle: "Hi! I'm your AI career coach.",
-            chatSubtitle: 'I can help you find the perfect job, improve your resume, and prepare for interviews. What is your goal today?',
+            chatTitle: "Let's get you interview-ready.",
+            chatSubtitle: 'I can optimize your resume to beat ATS filters, find jobs matching your validated skills, or coach you through realistic interview scenarios.',
             suggestedActions: [
                 { icon: Search, label: 'Find Jobs' },
                 { icon: FileText, label: 'Review Resume' },
                 { icon: MessageSquare, label: 'Interview Prep' },
             ],
-            inputPlaceholder: 'Ask about jobs, resume tips, or interview advice...',
+            inputPlaceholder: 'Where should we start?',
         },
     }
 

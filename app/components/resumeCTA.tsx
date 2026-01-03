@@ -7,7 +7,7 @@ export const ResumeCTA = () => (
     <Box margin="0 auto" py={{ base: '20' }}>
         {/* Main CTA Section */}
         <Container maxW="7xl" mb={{ base: 12, md: 16 }}>
-            <VStack gap={2} textAlign="center" maxW="900px" mx="auto">
+            <VStack gap={2} textAlign="center" maxW="7xl" mx="auto">
                 <Heading
                     as="h2"
                     fontSize={{ base: '3xl', md: '4xl' }}
@@ -15,8 +15,17 @@ export const ResumeCTA = () => (
                     color="#000"
                     lineHeight="1.2"
                 >
-                    Your resume, <Text as="span" bg="#4241ff" bgClip="text">reinvented.</Text>
+                    Your Resume, <Text as="span" bg="#4241ff" bgClip="text">Re-built for Results</Text>
                 </Heading>
+                <Text
+                    fontSize={{ base: 'lg' }}
+                    color="#6e6e73"
+                    lineHeight="1.4"
+                    fontWeight="400"
+                    mb={0}
+                >
+                    Ever wondered if your resume even got past the ATS filters?
+                </Text>
                 <Text
                     fontSize={{ base: 'lg' }}
                     color="#6e6e73"
@@ -24,7 +33,7 @@ export const ResumeCTA = () => (
                     fontWeight="400"
                     mb={4}
                 >
-                    AI-powered resumes that adapt to your skills, role, and industry.
+                Now imagine a resume that both algorithms and hiring managers actually want to read. An AI-powered optimization that adapts to your skills, target role, and industry requirements.                
                 </Text>
                 <Button
                     size={{ base: 'md', md: 'lg' }}
@@ -83,8 +92,7 @@ export const ResumeCTA = () => (
                             fontSize={{ base: 'sm', md: 'md' }}
                             color="#6e6e73"
                             lineHeight="1.5"
-                        >
-                            Matches you with opportunities based on real skills and career goals.
+                        >Connects you with opportunities based on demonstrated skills and career goals.
                         </Text>
                     </VStack>
                 </Box>
@@ -117,15 +125,13 @@ export const ResumeCTA = () => (
                             fontWeight="600"
                             color="#1d1d1f"
                             lineHeight="1.3"
-                        >
-                            Skill Gap Insights
+                        >Skill Gap Analysis 
                         </Heading>
                         <Text
                             fontSize={{ base: 'sm', md: 'md' }}
                             color="#6e6e73"
                             lineHeight="1.5"
-                        >
-                            Shows which skills you need with personalized recommendations.
+                        >Shows you which skills employers want the most, with personalized recommendations to close the gap.
                         </Text>
                     </VStack>
                 </Box>

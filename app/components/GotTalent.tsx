@@ -29,43 +29,71 @@ export const GotTalent = () => {
                             as="h2"
                             fontSize={{ base: '3xl', md: '4xl' }}
                             fontWeight="700"
-                            letterSpacing="tight"
+                            letterSpacing="normal"
                             color="#000"
                             mb={4}
+                            lineHeight={'normal'}
                         >
-                            Unlock your <Text as="span" bg="#4241ff" bgClip="text">true potential</Text>
+                            Stop Sending Applications into the <Text as="span" bg="#4241ff" bgClip="text">Void</Text>
                         </Heading>
                         <Text
                             fontSize="lg"
                             color="#6e6e73"
-                            lineHeight="1.6"
+                            lineHeight="1.4"
+                            mb={2}
+                            maxW="lg"
+                        >
+                            Ever wondered why your applications disappear without a response?
+                        </Text>
+                        <Text
+                            fontSize="lg"
+                            color="#6e6e73"
+                            lineHeight="1.4"
+                            mb={2}
+                            maxW="lg"
+                        >
+                            What if your next job found you because of what you can do, not what you wrote on paper?
+                        </Text>
+                        <Text
+                            fontSize="lg"
+                            color="#6e6e73"
+                            lineHeight="1.4"
+                            mb={2}
+                            maxW="lg"
+                        >
+                        We've rebuilt job searching from the ground up because the old way doesn't work well today.                        
+                        </Text>
+                        <Text
+                            fontSize="lg"
+                            color="#6e6e73"
+                            lineHeight="1.4"
                             mb={10}
                             maxW="lg"
                         >
-                            We've reimagined the job search experience. No more black holes. Just smart matching, powerful tools, and real results.
+                        What this means is you wouldn’t have to worry about your applications vanishing.                                                
                         </Text>
 
                         {/* Feature Grid */}
                         <Grid templateColumns={{ base: '1fr', sm: 'repeat(2, 1fr)' }} gap={8} mb={10}>
                             <Feature
                                 icon={Sparkles}
-                                title="AI Career Matcher"
-                                desc="Get matched with roles that fit your unique skills and goals."
+                                title="AI Career Matcher "
+                                desc="Get matched with roles based on your validated skills and career goals."
                             />
                             <Feature
                                 icon={FileText}
-                                title="Smart Resume"
-                                desc="Build an ATS-friendly resume that stands out to recruiters."
+                                title="Smart Resume Builder "
+                                desc="Create ATS-friendly resumes that stand out to both algorithms and hiring managers."
                             />
                             <Feature
                                 icon={Target}
-                                title="Precision Tracking"
-                                desc="Monitor every application status in real-time."
+                                title="Application Tracking "
+                                desc="Monitor every application status in real-time so you always know where you stand, with no stress or anxiety."
                             />
                             <Feature
                                 icon={TrendingUp}
-                                title="Career Insights"
-                                desc="Data-driven advice to help you negotiate better salaries."
+                                title="Career Insights "
+                                desc="Get data-driven advice, ranging from negotiating better salaries to advancing faster in your career."
                             />
                         </Grid>
 
@@ -85,7 +113,7 @@ export const GotTalent = () => {
                             transition="all 0.3s"
                             onClick={() => window.open('https://app.hirenest.ai/jobseeker/find-jobs', '_blank')}
                         >
-                            Find Your Dream Job
+                            Get Matched with Your Dream Job
                         </Button>
                     </Box>
 

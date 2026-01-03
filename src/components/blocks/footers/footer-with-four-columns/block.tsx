@@ -25,24 +25,14 @@ import {
 import { LuShield, LuLock, LuCheck } from 'react-icons/lu';
 
 const footerLinks = {
-  products: {
-    title: 'Products',
-    links: [
-      { label: 'Hirenest', href: '#' },
-      { label: 'Hirenest', href: '#' },
-      { label: 'Hirenest', href: '#' },
-      { label: 'Hirenest', href: '#' },
-      { label: 'Hirenest', href: '#' },
-    ],
-  },
   features: {
     title: 'Job Seeker Features',
     links: [
       { label: 'AI Resume Builder', href: '/ai-resume-builder' },
       { label: 'Smart Job Matching', href: '/smart-job-matching' },
-      { label: 'Career Insights', href: '/career-insights' },
-      { label: 'Skill Assessments', href: '/skill-assessments' },
-      { label: 'Profile Optimization', href: '/profile-optimization' },
+      { label: 'Career Insights Dashboard', href: '/career-insights' },
+      { label: '350+ Skill Assessments', href: '/skill-assessments' },
+      { label: 'Profile Optimization Tools', href: '/profile-optimization' },
       { label: 'Fast-Track Applications', href: '/fast-track-applications' },
     ],
   },
@@ -50,11 +40,12 @@ const footerLinks = {
     title: 'Job Provider Features',
     links: [
       { label: 'AI Candidate Ranking', href: '/ai-candidate-ranking' },
-      { label: 'Quick Screening', href: '/quick-screening' },
-      { label: 'Hiring Analytics', href: '/hiring-analytics' },
-      { label: 'Verified Candidates', href: '/verified-candidates' },
-      { label: 'Custom Assessments', href: '/custom-assessments' },
-      { label: 'Team Collaboration', href: '/team-collaboration' },
+      { label: 'Unlimited Skill Assessments', href: '/skill-assessments' },
+      { label: 'Video Interview Platform', href: '/video-interviews' },
+      { label: 'Hiring Analytics Dashboard', href: '/hiring-analytics' },
+      { label: 'Verified Candidate Profiles', href: '/verified-candidates' },
+      { label: 'Custom Assessment Builder', href: '/custom-assessments' },
+      { label: 'Team Collaboration Tools', href: '/team-collaboration' },
     ],
   },
   company: {
@@ -62,6 +53,7 @@ const footerLinks = {
     links: [
       { label: 'About', href: '/about' },
       { label: 'Careers', href: '/careers' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
   legal: {
@@ -100,7 +92,7 @@ export function Block() {
 
               <Image src="/HpLogo.svg" alt="Hirenest" width={200} height={100} />
               <Text fontSize="sm" color="fg.muted">
-                Find your dream job with Hirenest. Connect with top employers and opportunities worldwide.
+                Connect with opportunities and talent through validated skills and AI-powered matching.
               </Text>
             </VStack>
 
@@ -197,7 +189,7 @@ export function Block() {
             {/* Copyright & Trust Badges */}
             <Stack gap="4" flex="1" ml={10}>
               <Text fontSize="sm" color="fg.muted">
-                © 2025 Hirenest.co | All products built and owned by Hirenest
+              © 2025 Hirenest.co | Hire people who can actually do the job.
               </Text>
             </Stack>
 

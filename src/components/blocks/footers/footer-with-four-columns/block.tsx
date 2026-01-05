@@ -41,7 +41,7 @@ const footerLinks = {
     links: [
       { label: 'AI Candidate Ranking', href: '/ai-candidate-ranking' },
       { label: 'Unlimited Skill Assessments', href: '/skill-assessments' },
-      { label: 'Video Interview Platform', href: '/video-interviews' },
+      // { label: 'Video Interview Platform', href: '/video-interviews' },
       { label: 'Hiring Analytics Dashboard', href: '/hiring-analytics' },
       { label: 'Verified Candidate Profiles', href: '/verified-candidates' },
       { label: 'Custom Assessment Builder', href: '/custom-assessments' },

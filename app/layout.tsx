@@ -114,6 +114,8 @@ export const metadata: Metadata = {
     // Additional date formats for better SEO
     'date': "2024-01-01T00:00:00.000Z",
     'last-modified': new Date().toISOString(),
+    // Ahrefs site verification
+    'ahrefs-site-verification': '9d53d325e70fb9a019b6bebdb98c427aded20a7491d6ba73f31efad3358b6622',
   },
 };
 

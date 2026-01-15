@@ -35,10 +35,10 @@ export function generatePageMetadata({
         description,
         keywords: ['Hirenest', ...keywords],
         alternates: {
-            canonical: path,
+            canonical: url,
             languages: {
-                'en-US': `/en-US${path}`,
-                'en': path,
+                'en-US': `${baseUrl}/en-US${path}`,
+                'en': url,
             },
         },
         openGraph: {
@@ -228,7 +228,7 @@ export const pageMetadata = {
 
     refundPolicy: generatePageMetadata({
         title: 'Refund Policy - Our Refund Terms',
-        description: 'Our refund policy and terms for subscription cancellations.',
+        description: 'Hirenest Refund Policy. Clear details on our 30-day money-back guarantee, subscription cancellations, and refund processing timelines.',
         path: '/refund-policy',
         keywords: ['refund policy', 'cancellation', 'money back', 'refunds'],
     }),

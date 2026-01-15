@@ -18,10 +18,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://hirenest.ai'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://hirenest.ai',
     languages: {
-      'en-US': '/en-US',
-      'en': '/',
+      'en-US': 'https://hirenest.ai/en-US',
+      'en': 'https://hirenest.ai',
     },
   },
   title: {

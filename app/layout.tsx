@@ -100,8 +100,7 @@ export const metadata: Metadata = {
     ],
   },
   verification: {
-    // Add your verification codes here when available
-    // google: 'your-google-verification-code',
+    google: 'SqIaihXLeSiPTgcIzHdNg544Qq56dGxLAy8c8mmsImk',
     // yandex: 'your-yandex-verification-code',
     // bing: 'your-bing-verification-code',
   },

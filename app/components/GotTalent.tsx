@@ -61,7 +61,7 @@ export const GotTalent = () => {
                             mb={2}
                             maxW="lg"
                         >
-                        We've rebuilt job searching from the ground up because the old way doesn't work well today.                        
+                            We've rebuilt job searching from the ground up because the old way doesn't work well today.
                         </Text>
                         <Text
                             fontSize="lg"
@@ -70,7 +70,7 @@ export const GotTalent = () => {
                             mb={10}
                             maxW="lg"
                         >
-                        What this means is you wouldn’t have to worry about your applications vanishing.                                                
+                            What this means is you wouldn’t have to worry about your applications vanishing.
                         </Text>
 
                         {/* Feature Grid */}
@@ -144,7 +144,7 @@ export const GotTalent = () => {
                             // _hover={{ transform: "rotate(-2deg) translateX(-20px) translateY(-5px)" }}
                             >
                                 <Image
-                                    src="/ai-career-matcher-ui.png"
+                                    src="/smart_job_matching_hero.png"
                                     alt="AI Career Matcher"
                                     width={600}
                                     height={400}

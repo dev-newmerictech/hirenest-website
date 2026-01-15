@@ -60,8 +60,8 @@ export const NeedTalent = () => {
                             mb={10}
                             maxW="lg"
                         >
-                        When you automate your hiring process through our AI, your time-to-hire will reduce by ~40%. It’ll evaluate everything and identify the people who can actually perform:
-                        
+                            When you automate your hiring process through our AI, your time-to-hire will reduce by ~40%. It’ll evaluate everything and identify the people who can actually perform:
+
                         </Text>
 
                         {/* Feature Grid */}
@@ -133,8 +133,8 @@ export const NeedTalent = () => {
                                 bg="white"
                             >
                                 <Image
-                                    src="/ai-candidate-ranking-ui.png"
-                                    alt="AI Candidate Ranking"
+                                    src="/job-provider-hero.png"
+                                    alt="Job Provider Dashboard"
                                     width={600}
                                     height={400}
                                     style={{ objectFit: 'cover', width: '100%', height: 'auto' }}

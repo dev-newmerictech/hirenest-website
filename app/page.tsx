@@ -1,4 +1,6 @@
+import { Metadata } from 'next';
 import { Box } from '@chakra-ui/react';
+import { pageMetadata } from './lib/metadata';
 import { Block as Hero } from '@/src/components/blocks/heroes/hero-with-image-bottom-centered/block';
 import { Block as Logos } from '@/src/components/blocks/logos/logo-centered/block';
 import { Block as Pricing } from '@/src/components/blocks/pricing/pricing-simple/block';
@@ -18,6 +20,8 @@ import { Testimonials } from './components/Testimonials';
 import { AIInterviewDemo } from './components/AIInterviewDemo';
 import { generateFAQSchema } from './lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
+
+export const metadata: Metadata = pageMetadata.home;
 
 export default function Home() {
   // Generate FAQ Schema for SEO

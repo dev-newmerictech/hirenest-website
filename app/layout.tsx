@@ -95,6 +95,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Hirenest RSS Feed"
+          href="https://hirenest.com/rss.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/xml"
+          title="Hirenest LLM Metadata"
+          href="https://hirenest.com/llms.xml"
+        />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         <Provider>
           <Box bg="gray.100">

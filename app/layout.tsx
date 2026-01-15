@@ -155,6 +155,13 @@ export default function RootLayout({
             }),
           }}
         />
+        <script>
+          var ahrefs_analytics_script = document.createElement('script');
+          ahrefs_analytics_script.async = true;
+          ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
+          ahrefs_analytics_script.setAttribute('data-key', 'tI+0vq92ZbFL7onBCkAeVQ');
+          document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
+        </script>
       </head>
       <body className={`${inter.variable} antialiased`}>
         <Provider>

@@ -53,7 +53,6 @@ const footerLinks = {
     links: [
       { label: 'About', href: '/about' },
       { label: 'Careers', href: '/careers' },
-      { label: 'Contact', href: '/contact' },
     ],
   },
   legal: {
@@ -189,7 +188,7 @@ export function Block() {
             {/* Copyright & Trust Badges */}
             <Stack gap="4" flex="1" ml={10}>
               <Text fontSize="sm" color="fg.muted">
-              © 2025 Hirenest.co | Hire people who can actually do the job.
+                © 2025 Hirenest.co | Hire people who can actually do the job.
               </Text>
             </Stack>
 

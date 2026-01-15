@@ -6,6 +6,7 @@ import { Block as Pricing } from '@/src/components/blocks/pricing/pricing-simple
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block';
 import { Testimonials } from '../components/Testimonials';
 import { Block as CTADualButton } from '@/src/components/blocks/cta/cta-dual-button/block';
+import { AIResumeBuilderStructuredData } from './structured-data';
 
 const features = [
     {
@@ -33,6 +34,9 @@ const features = [
 export default function AIResumeBuilderPage() {
     return (
         <Box>
+            {/* Structured Data */}
+            <AIResumeBuilderStructuredData />
+
             {/* Hero Section */}
             <Box
                 w="full"

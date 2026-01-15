@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
+import { pageMetadata } from '../lib/metadata';
+import { SecurityStructuredData } from './structured-data';
 
-export const metadata: Metadata = {
-    title: 'Security',
-    description: 'Security measures at Hirenest - Our commitment to keeping your information safe.',
-}
+export const metadata: Metadata = pageMetadata.security;
 
 export default function SecurityPage() {
     return (
         <Box bg="gray.100" pb={{ base: '16' }} pt={{ base: '24', md: '32' }} borderBottom={'2px solid #fff'}>
+            <SecurityStructuredData />
             <Container maxW="4xl">
                 <VStack alignItems="flex-start" gap={8}>
                     <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">

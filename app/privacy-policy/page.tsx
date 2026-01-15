@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
+import { pageMetadata } from '../lib/metadata';
+import { PrivacyPolicyStructuredData } from './structured-data';
 
-export const metadata: Metadata = {
-    title: 'Privacy Policy',
-    description: 'Privacy Policy for Hirenest - Learn how we collect, use, and protect your personal information.',
-}
+export const metadata: Metadata = pageMetadata.privacyPolicy;
 
 export default function PrivacyPolicyPage() {
     return (
         <Box bg="gray.100" pb={{ base: '16' }} pt={{ base: '24', md: '32' }} borderBottom={'2px solid #fff'}>
+            <PrivacyPolicyStructuredData />
             <Container maxW="4xl">
                 <VStack alignItems="flex-start" gap={8}>
                     <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">

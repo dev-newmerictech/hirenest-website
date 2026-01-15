@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
+import { pageMetadata } from '../lib/metadata';
+import { RefundPolicyStructuredData } from './structured-data';
 
-export const metadata: Metadata = {
-    title: 'Refund Policy',
-    description: 'Refund Policy for Hirenest - Information about refunds and cancellations.',
-}
+export const metadata: Metadata = pageMetadata.refundPolicy;
 
 export default function RefundPolicyPage() {
     return (
         <Box bg="gray.100" pb={{ base: '16' }} pt={{ base: '24', md: '32' }} borderBottom={'2px solid #fff'}>
+            <RefundPolicyStructuredData />
             <Container maxW="4xl">
                 <VStack alignItems="flex-start" gap={8}>
                     <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">

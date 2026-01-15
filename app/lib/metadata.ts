@@ -89,6 +89,7 @@ export const pageMetadata = {
         description: 'Discover your perfect job with AI-powered matching, resume building, and career insights. Stand out from the competition.',
         path: '/job-seeker',
         keywords: ['job seeker', 'find jobs', 'career development', 'resume builder'],
+        ogImage: '/job-seeker-og.png',
     }),
 
     jobProvider: generatePageMetadata({
@@ -96,6 +97,7 @@ export const pageMetadata = {
         description: 'Find and hire exceptional talent with AI-powered candidate ranking, screening tools, and comprehensive analytics.',
         path: '/job-provider',
         keywords: ['employer', 'hire talent', 'recruitment software', 'candidate screening'],
+        ogImage: '/job-provider-og.png',
     }),
 
     aiResumeBuilder: generatePageMetadata({

@@ -25,7 +25,7 @@ export const PageHeader = (props: PageHeaderProps) => {
           <Text textStyle={{ base: 'sm', md: 'md' }} fontWeight="medium" color="#4241ff">
             {tagline}
           </Text>
-          <Heading as="h1" color="#000" fontWeight="700" fontSize={{ base: '3xl', md: '4xl' }}>
+          <Heading as="h2" color="#000" fontWeight="700" fontSize={{ base: '3xl', md: '4xl' }}>
             {headline}
           </Heading>
         </Stack>

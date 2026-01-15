@@ -8,7 +8,14 @@ import { Block as Pricing } from '@/src/components/blocks/pricing/pricing-simple
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block';
 import { Testimonials } from '../components/Testimonials';
 import { pageMetadata } from '../lib/metadata';
-import { generateWebPageSchema, generateSoftwareApplicationSchema } from '../lib/structured-data';
+import {
+    generateWebPageSchema,
+    generateSoftwareApplicationSchema,
+    generateFAQSchema,
+    generateImageObjectSchema,
+    generateVideoObjectSchema
+} from '../lib/structured-data';
+import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export const metadata: Metadata = pageMetadata.jobSeeker;
 
@@ -30,6 +37,36 @@ export default function JobSeekerPage() {
         'BusinessApplication'
     );
 
+    // Generate FAQ Schema
+    const faqSchema = generateFAQSchema(faqs);
+
+    // Generate Image Schema
+    const imageSchema = generateImageObjectSchema(
+        'https://hirenest.ai/job-seeker-og.png',
+        {
+            name: 'Hirenest for Job Seekers - Find Your Dream Job',
+            description: 'AI-powered job matching platform for job seekers',
+            width: 1200,
+            height: 630,
+            encodingFormat: 'image/png',
+            uploadDate: '2024-01-15T00:00:00.000Z',
+            author: 'Hirenest Team'
+        }
+    );
+
+    // Generate Video Schema
+    const videoSchema = generateVideoObjectSchema(
+        'Hirenest for Job Seekers - Platform Demo',
+        'Learn how Hirenest helps job seekers find their dream job with AI-powered matching, resume building, and career insights.',
+        'https://hirenest.ai/job-seeker-og.png',
+        '2024-01-15T00:00:00.000Z',
+        {
+            duration: 'PT4M15S', // 4 minutes 15 seconds
+            width: 1920,
+            height: 1080
+        }
+    );
+
     return (
         <Box>
             {/* Structured Data */}
@@ -40,6 +77,18 @@ export default function JobSeekerPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
             />
 
             {/* Hero Section with Images */}

@@ -24,6 +24,8 @@ export interface WebsiteSchema {
     name: string;
     url: string;
     description: string;
+    datePublished?: string;
+    dateModified?: string;
     potentialAction: {
         '@type': string;
         target: {
@@ -87,6 +89,55 @@ export interface SoftwareApplicationSchema {
     };
 }
 
+export interface ImageObjectSchema {
+    '@context': string;
+    '@type': string;
+    contentUrl: string;
+    url?: string;
+    name?: string;
+    description?: string;
+    width?: number | string;
+    height?: number | string;
+    encodingFormat?: string;
+    uploadDate?: string;
+    author?: {
+        '@type': string;
+        name: string;
+    };
+    copyrightHolder?: {
+        '@type': string;
+        name: string;
+    };
+    license?: string;
+}
+
+export interface VideoObjectSchema {
+    '@context': string;
+    '@type': string;
+    name: string;
+    description: string;
+    thumbnailUrl: string | string[];
+    uploadDate: string;
+    contentUrl?: string;
+    embedUrl?: string;
+    duration?: string; // ISO 8601 format (e.g., "PT1M30S" for 1 minute 30 seconds)
+    width?: number | string;
+    height?: number | string;
+    author?: {
+        '@type': string;
+        name: string;
+    };
+    publisher?: {
+        '@type': string;
+        name: string;
+        logo?: {
+            '@type': string;
+            url: string;
+        };
+    };
+}
+
+
 const baseUrl = 'https://hirenest.ai';
 
 export const organizationSchema: OrganizationSchema = {
@@ -125,6 +176,8 @@ export const websiteSchema: WebsiteSchema = {
     name: 'Hirenest',
     url: baseUrl,
     description: 'Your trusted platform connecting job seekers with top employers.',
+    datePublished: '2024-01-01T00:00:00.000Z',
+    dateModified: new Date().toISOString(),
     potentialAction: {
         '@type': 'SearchAction',
         target: {
@@ -234,4 +287,128 @@ export function generateJobPostingSchema(
             },
         },
     };
+}
+
+/**
+ * Generate ImageObject schema for images
+ * @param contentUrl - Direct URL to the image file
+ * @param options - Optional metadata for the image
+ */
+export function generateImageObjectSchema(
+    contentUrl: string,
+    options?: {
+        url?: string;
+        name?: string;
+        description?: string;
+        width?: number;
+        height?: number;
+        encodingFormat?: string;
+        uploadDate?: string;
+        author?: string;
+        license?: string;
+    }
+): ImageObjectSchema {
+    const schema: ImageObjectSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'ImageObject',
+        contentUrl,
+    };
+
+    if (options?.url) schema.url = options.url;
+    if (options?.name) schema.name = options.name;
+    if (options?.description) schema.description = options.description;
+    if (options?.width) schema.width = options.width;
+    if (options?.height) schema.height = options.height;
+    if (options?.encodingFormat) schema.encodingFormat = options.encodingFormat;
+    if (options?.uploadDate) schema.uploadDate = options.uploadDate;
+
+    if (options?.author) {
+        schema.author = {
+            '@type': 'Person',
+            name: options.author,
+        };
+        schema.copyrightHolder = {
+            '@type': 'Organization',
+            name: 'Hirenest',
+        };
+    }
+
+    if (options?.license) schema.license = options.license;
+
+    return schema;
+}
+
+/**
+ * Generate VideoObject schema for videos
+ * @param name - Title of the video
+ * @param description - Description of the video content
+ * @param thumbnailUrl - URL(s) to video thumbnail image(s)
+ * @param uploadDate - ISO 8601 date when video was uploaded
+ * @param options - Optional metadata for the video
+ */
+export function generateVideoObjectSchema(
+    name: string,
+    description: string,
+    thumbnailUrl: string | string[],
+    uploadDate: string,
+    options?: {
+        contentUrl?: string;
+        embedUrl?: string;
+        duration?: string; // ISO 8601 format (e.g., "PT1M30S")
+        width?: number;
+        height?: number;
+        author?: string;
+    }
+): VideoObjectSchema {
+    const schema: VideoObjectSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name,
+        description,
+        thumbnailUrl,
+        uploadDate,
+        publisher: {
+            '@type': 'Organization',
+            name: 'Hirenest',
+            logo: {
+                '@type': 'ImageObject',
+                url: `${baseUrl}/HpLogo.svg`,
+            },
+        },
+    };
+
+    if (options?.contentUrl) schema.contentUrl = options.contentUrl;
+    if (options?.embedUrl) schema.embedUrl = options.embedUrl;
+    if (options?.duration) schema.duration = options.duration;
+    if (options?.width) schema.width = options.width;
+    if (options?.height) schema.height = options.height;
+
+    if (options?.author) {
+        schema.author = {
+            '@type': 'Person',
+            name: options.author,
+        };
+    }
+
+    return schema;
+}
+
+/**
+ * Generate a complete FAQ schema with multiple questions
+ * This is an enhanced version that can be used in pages with FAQ sections
+ */
+export function generateCompleteFAQSchema(
+    faqs: { question: string; answer: string }[],
+    pageUrl?: string
+): FAQSchema & { url?: string } {
+    const schema = generateFAQSchema(faqs);
+
+    if (pageUrl) {
+        return {
+            ...schema,
+            url: pageUrl,
+        };
+    }
+
+    return schema;
 }

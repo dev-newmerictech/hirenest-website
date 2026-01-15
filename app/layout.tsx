@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
 import { Box } from "@chakra-ui/react";
@@ -155,13 +156,14 @@ export default function RootLayout({
             }),
           }}
         />
-        <script>
-          var ahrefs_analytics_script = document.createElement('script');
-          ahrefs_analytics_script.async = true;
-          ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
-          ahrefs_analytics_script.setAttribute('data-key', 'tI+0vq92ZbFL7onBCkAeVQ');
-          document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
-        </script>
+
+        {/* Ahrefs Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="tI+0vq92ZbFL7onBCkAeVQ"
+          strategy="afterInteractive"
+        />
+
       </head>
       <body className={`${inter.variable} antialiased`}>
         <Provider>

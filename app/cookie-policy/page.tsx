@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
+import { pageMetadata } from '../lib/metadata';
+import { CookiePolicyStructuredData } from './structured-data';
 
-export const metadata: Metadata = {
-    title: 'Cookie Policy',
-    description: 'Cookie Policy for Hirenest - Learn how we use cookies and tracking technologies.',
-}
+export const metadata: Metadata = pageMetadata.cookiePolicy;
 
 export default function CookiePolicyPage() {
     return (
         <Box bg="gray.100" pb={{ base: '16' }} pt={{ base: '24', md: '32' }} borderBottom={'2px solid #fff'}>
+            <CookiePolicyStructuredData />
             <Container maxW="4xl">
                 <VStack alignItems="flex-start" gap={8}>
                     <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">

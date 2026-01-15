@@ -6,6 +6,7 @@ import { Block as Pricing } from '@/src/components/blocks/pricing/pricing-simple
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block';
 import { Testimonials } from '../components/Testimonials';
 import { Block as CTADualButton } from '@/src/components/blocks/cta/cta-dual-button/block';
+import { TeamCollaborationStructuredData } from './structured-data';
 
 const features = [
     {
@@ -33,6 +34,7 @@ const features = [
 export default function TeamCollaborationPage() {
     return (
         <Box>
+            <TeamCollaborationStructuredData />
             {/* Hero Section */}
             <Box
                 w="full"

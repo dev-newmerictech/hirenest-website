@@ -109,119 +109,119 @@ export const pageMetadata = {
 
     aiCandidateRanking: generatePageMetadata({
         title: 'AI Candidate Ranking - Smart Hiring Decisions',
-        description: 'Automatically rank and score candidates with AI. Make data-driven hiring decisions faster.',
+        description: 'Instantly identify top talent with AI Candidate Ranking. Our smart scoring system evaluates skills and fit for faster, data-driven hiring decisions.',
         path: '/ai-candidate-ranking',
         keywords: ['candidate ranking', 'AI hiring', 'recruitment AI', 'candidate scoring'],
     }),
 
     smartJobMatching: generatePageMetadata({
         title: 'Smart Job Matching - Find Perfect Opportunities',
-        description: 'AI-driven job matching that analyzes your skills and preferences for personalized recommendations.',
+        description: 'AI-driven job matching that analyzes your skills, experience, and preferences to deliver personalized job recommendations. Find your perfect role faster.',
         path: '/smart-job-matching',
         keywords: ['job matching', 'AI matching', 'job recommendations', 'career matching'],
     }),
 
     careerInsights: generatePageMetadata({
         title: 'Career Insights - Data-Driven Career Decisions',
-        description: 'Get personalized career insights, salary benchmarks, and market trends to advance your career.',
+        description: 'Get personalized AI-powered career insights, real-time salary benchmarks, and emerging market trends to make data-driven decisions and advance your career.',
         path: '/career-insights',
         keywords: ['career insights', 'salary data', 'career analytics', 'job market trends'],
     }),
 
     profileOptimization: generatePageMetadata({
         title: 'Profile Optimization - Boost Your Visibility',
-        description: 'Optimize your professional profile with AI-powered suggestions to attract better opportunities.',
+        description: 'Transform your online presence with AI-powered profile optimization. Enhance your LinkedIn profile and portfolio to attract recruiters and land your dream job.',
         path: '/profile-optimization',
         keywords: ['profile optimization', 'LinkedIn optimization', 'professional profile', 'career profile'],
     }),
 
     skillAssessments: generatePageMetadata({
         title: 'Skill Assessments - Validate Your Expertise',
-        description: 'Prove your skills with comprehensive assessments and earn verified badges for employers.',
+        description: 'Validate your expertise with 350+ industry-standard skill assessments. Earn verified badges in coding, soft skills, and more to stand out to top employers.',
         path: '/skill-assessments',
         keywords: ['skill assessment', 'skill testing', 'certification', 'skill validation'],
     }),
 
     customAssessments: generatePageMetadata({
         title: 'Custom Assessments - Tailored Hiring Tests',
-        description: 'Create custom assessments specific to your job requirements and company needs.',
+        description: 'Create custom skill assessments tailored to your specific job requirements. Use our drag-and-drop builder to test coding, soft skills, and more.',
         path: '/custom-assessments',
         keywords: ['custom assessment', 'hiring tests', 'recruitment tests', 'skill tests'],
     }),
 
     quickScreening: generatePageMetadata({
         title: 'Quick Screening - Accelerate Your Hiring',
-        description: 'Streamline candidate screening with automated tools and AI-powered assessments.',
+        description: 'Accelerate your hiring with Quick Screening. Use automated tools to filter candidates, screen in minutes not days, and fast-track the best talent.',
         path: '/quick-screening',
         keywords: ['candidate screening', 'quick screening', 'hiring automation', 'applicant screening'],
     }),
 
     verifiedCandidates: generatePageMetadata({
         title: 'Verified Candidates - Pre-Screened Talent Pool',
-        description: 'Access pre-verified candidates with validated skills and backgrounds for faster hiring.',
+        description: 'Hire with confidence using Verified Candidates. Access talent with pre-validated skills, comprehensive background checks, and confirmed employment history.',
         path: '/verified-candidates',
         keywords: ['verified candidates', 'pre-screened', 'background check', 'talent pool'],
     }),
 
     hiringAnalytics: generatePageMetadata({
         title: 'Hiring Analytics - Data-Driven Recruitment',
-        description: 'Comprehensive analytics and insights to optimize your recruitment process and hiring strategy.',
+        description: 'Optimize your recruitment with comprehensive Hiring Analytics. Track real-time metrics, identify bottlenecks, and make data-driven decisions to hire faster.',
         path: '/hiring-analytics',
         keywords: ['hiring analytics', 'recruitment metrics', 'HR analytics', 'hiring insights'],
     }),
 
     teamCollaboration: generatePageMetadata({
         title: 'Team Collaboration - Collaborative Hiring',
-        description: 'Collaborate with your hiring team through shared feedback and decision-making tools.',
+        description: 'Streamline hiring with Team Collaboration tools. Share candidate pipelines, discuss in real-time, and make smarter hiring decisions together.',
         path: '/team-collaboration',
         keywords: ['team collaboration', 'collaborative hiring', 'hiring team', 'recruitment collaboration'],
     }),
 
     fastTrackApplications: generatePageMetadata({
         title: 'Fast Track Applications - Quick Apply Process',
-        description: 'Streamline your application process and get hired faster with our fast-track system.',
+        description: 'Skip the queue with Fast-Track Applications. Streamline your search, apply with one click to verified employers, and get priority review.',
         path: '/fast-track-applications',
         keywords: ['fast track', 'quick apply', 'job application', 'easy apply'],
     }),
 
     about: generatePageMetadata({
         title: 'About Hirenest - Our Mission & Vision',
-        description: 'Learn about Hirenest mission to revolutionize recruitment through AI-powered technology.',
+        description: 'Learn about Hirenest\'s mission to revolutionize recruitment with AI. Discover our story, values, and the team behind the next generation of hiring technology.',
         path: '/about',
         keywords: ['about us', 'company mission', 'recruitment platform', 'AI hiring'],
     }),
 
     careers: generatePageMetadata({
         title: 'Careers at Hirenest - Join Our Team',
-        description: 'Join the Hirenest team and help shape the future of recruitment technology.',
+        description: 'Build the future of recruitment with Hirenest. Explore open positions, learn about our culture, and join a team dedicated to transforming hiring with AI.',
         path: '/careers',
         keywords: ['careers', 'jobs at hirenest', 'work with us', 'hiring'],
     }),
 
     security: generatePageMetadata({
         title: 'Security - Your Data Protection',
-        description: 'Learn about our security practices and commitment to protecting your data.',
+        description: 'Your security comes first. Learn about Hirenest\'s enterprise-grade data protection, encryption standards, and commitment to keeping your information safe.',
         path: '/security',
         keywords: ['security', 'data protection', 'privacy', 'data security'],
     }),
 
     privacyPolicy: generatePageMetadata({
         title: 'Privacy Policy - How We Protect Your Data',
-        description: 'Our commitment to protecting your privacy and personal information.',
+        description: 'Hirenest Privacy Policy. Understand how we collect, use, and safeguard your personal data. Transparent practices for job seekers and employers.',
         path: '/privacy-policy',
         keywords: ['privacy policy', 'data privacy', 'personal information', 'GDPR'],
     }),
 
     termsOfService: generatePageMetadata({
         title: 'Terms of Service - User Agreement',
-        description: 'Terms and conditions for using the Hirenest platform.',
+        description: 'Hirenest Terms of Service. Review the rules, guidelines, and user agreements for accessing and using our recruitment platform.',
         path: '/terms-of-service',
         keywords: ['terms of service', 'user agreement', 'terms and conditions', 'legal'],
     }),
 
     cookiePolicy: generatePageMetadata({
         title: 'Cookie Policy - How We Use Cookies',
-        description: 'Information about how we use cookies and similar technologies.',
+        description: 'Hirenest Cookie Policy. Learn about the cookies we use to improve your experience, analyze traffic, and personalize content. Manage your preferences.',
         path: '/cookie-policy',
         keywords: ['cookie policy', 'cookies', 'tracking', 'web analytics'],
     }),
@@ -235,7 +235,7 @@ export const pageMetadata = {
 
     legal: generatePageMetadata({
         title: 'Legal Information - Terms & Policies',
-        description: 'Legal information, terms, and policies for using Hirenest.',
+        description: 'Hirenest Legal Hub. Access all legal documents, policies, and terms governing your use of the Hirenest recruitment platform.',
         path: '/legal',
         keywords: ['legal', 'terms', 'policies', 'compliance'],
     }),

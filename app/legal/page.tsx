@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
+import { pageMetadata } from '../lib/metadata';
+import { LegalStructuredData } from './structured-data';
 
-export const metadata: Metadata = {
-    title: 'Legal Information',
-    description: 'Legal information and policies for Hirenest platform.',
-}
+export const metadata: Metadata = pageMetadata.legal;
 
 export default function LegalPage() {
     return (
         <Box bg="gray.100" pb={{ base: '16' }} pt={{ base: '24', md: '32' }} borderBottom={'2px solid #fff'}>
+            <LegalStructuredData />
             <Container maxW="4xl">
                 <VStack alignItems="flex-start" gap={8}>
                     <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">

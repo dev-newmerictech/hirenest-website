@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-    const baseUrl = 'https://hirenest.com';
+    const baseUrl = 'https://hirenest.ai';
     const currentDate = new Date().toUTCString();
 
     // Define content items for RSS feed

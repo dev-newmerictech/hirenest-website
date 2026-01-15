@@ -122,10 +122,9 @@ export const JobProviderHero = () => (
         {/* Right Image */}
         <Box position="relative" h={{ base: '400px', md: '500px' }}>
           <Image
-            src="/job-provider-hero-new.png"
+            src="/Hire.png"
             alt="Skills-based hiring dashboard"
             fill
-            style={{ objectFit: 'contain' }}
             priority
           />
         </Box>

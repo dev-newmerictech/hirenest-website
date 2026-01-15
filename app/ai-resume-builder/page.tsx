@@ -468,17 +468,19 @@ export default function AIResumeBuilderPage() {
                         <Box
                             position="relative"
                             h={{ base: '300px', md: '500px' }}
-                            bg="rgba(66, 65, 255, 0.05)"
                             borderRadius="2xl"
                             overflow="hidden"
                             display="flex"
                             alignItems="center"
                             justifyContent="center"
                         >
-                            <VStack gap={4}>
-                                <Icon as={Award} boxSize={16} color="#4241ff" opacity={0.5} />
-                                <Text color="#4241ff" fontWeight="medium">Success Metrics</Text>
-                            </VStack>
+                            <Image
+                                src="/Img1.png"
+                                alt="Success Metrics"
+                                width={500}
+                                height={500}
+                                priority
+                            />
                         </Box>
                     </Grid>
                 </Container>

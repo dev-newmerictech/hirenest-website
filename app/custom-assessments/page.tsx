@@ -121,18 +121,20 @@ export default function CustomAssessmentsPage() {
                         {/* Right Image - Placeholder */}
                         <Box
                             position="relative"
-                            h={{ base: '400px', md: '500px' }}
-                            bg="linear-gradient(135deg, rgba(66, 65, 255, 0.1) 0%, rgba(176, 0, 234, 0.1) 100%)"
-                            borderRadius="16px"
+                            h={{ base: '300px', md: '500px' }}
+                            borderRadius="2xl"
+                            overflow="hidden"
                             display="flex"
                             alignItems="center"
                             justifyContent="center"
-                            overflow="hidden"
                         >
-                            <VStack gap={4}>
-                                <Icon as={Puzzle} boxSize={24} color="#4241ff" opacity={0.3} />
-                                <Text color="#4241ff" fontWeight="600" fontSize="lg">Custom Builder</Text>
-                            </VStack>
+                            <Image
+                                src="/Img12.png"
+                                alt="Verified & Trusted"
+                                width={500}
+                                height={500}
+                                priority
+                            />
                         </Box>
                     </Grid>
                 </Container>
@@ -468,20 +470,24 @@ export default function CustomAssessmentsPage() {
                             </VStack>
                         </VStack>
 
+
+                        {/* Right Image - Placeholder */}
                         <Box
                             position="relative"
                             h={{ base: '300px', md: '500px' }}
-                            bg="rgba(66, 65, 255, 0.05)"
                             borderRadius="2xl"
                             overflow="hidden"
                             display="flex"
                             alignItems="center"
                             justifyContent="center"
                         >
-                            <VStack gap={4}>
-                                <Icon as={Settings} boxSize={16} color="#4241ff" opacity={0.5} />
-                                <Text color="#4241ff" fontWeight="medium">Fully Customizable</Text>
-                            </VStack>
+                            <Image
+                                src="/Img13.png"
+                                alt="Verified & Trusted"
+                                width={500}
+                                height={500}
+                                priority
+                            />
                         </Box>
                     </Grid>
                 </Container>

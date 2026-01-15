@@ -40,7 +40,7 @@ export const JobSeekerHero = () => (
               lineHeight="1.2"
               mb={4}
               textAlign={{ base: 'center', lg: 'left' }}
-              
+
             >
               Stop Applying Into the Void.&nbsp;<Text as="span" display="block" color="#4241ff">Get Matched With Jobs That Actually Want You.</Text>
             </Heading>
@@ -106,10 +106,9 @@ export const JobSeekerHero = () => (
         {/* Right Image */}
         <Box position="relative" h={{ base: '400px', md: '500px' }}>
           <Image
-            src="/job-seeker-hero-new.png"
+            src="/find_job.png"
             alt="Job seeker proving skills with assessments"
             fill
-            style={{ objectFit: 'contain' }}
             priority
           />
         </Box>

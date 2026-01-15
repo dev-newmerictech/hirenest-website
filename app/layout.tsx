@@ -105,8 +105,15 @@ export const metadata: Metadata = {
     // bing: 'your-bing-verification-code',
   },
   other: {
+    // Open Graph article dates (for compatibility)
     'article:published_time': "2024-01-01T00:00:00.000Z",
     'article:modified_time': new Date().toISOString(),
+    // Standard meta tags for dates
+    'published_time': "2024-01-01T00:00:00.000Z",
+    'modified_time': new Date().toISOString(),
+    // Additional date formats for better SEO
+    'date': "2024-01-01T00:00:00.000Z",
+    'last-modified': new Date().toISOString(),
   },
 };
 
@@ -130,18 +137,22 @@ export default function RootLayout({
           title="Hirenest LLM Metadata"
           href="https://hirenest.ai/llms.xml"
         />
-        {/* Structured Data - Organization */}
+        {/* Structured Data - Combined Organization & Website */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        {/* Structured Data - Website */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                // Remove @context from individual schemas when using @graph
+                { ...organizationSchema, '@context': undefined },
+                { ...websiteSchema, '@context': undefined },
+              ].map(schema => {
+                // Clean up undefined values
+                const { '@context': _, ...rest } = schema;
+                return rest;
+              }),
+            }),
           }}
         />
       </head>

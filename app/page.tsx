@@ -15,12 +15,22 @@ import { ComparisonTable } from './components/ComparisonTable';
 import { AICareerPartner } from './components/AICareerPartner';
 import { AIAssistantDemo } from './components/AIAssistantDemo';
 import { Testimonials } from './components/Testimonials';
-
 import { AIInterviewDemo } from './components/AIInterviewDemo';
+import { generateFAQSchema } from './lib/structured-data';
+import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export default function Home() {
+  // Generate FAQ Schema for SEO
+  const faqSchema = generateFAQSchema(faqs);
+
   return (
     <>
+      {/* FAQ Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <Box>
         <Hero />
       </Box>

@@ -23,9 +23,9 @@ export default function JobSeekerPage() {
     const webPageSchema = generateWebPageSchema(
         'For Job Seekers - Find Your Dream Job',
         'AI-powered job matching platform for job seekers. Create your profile, upload your resume, and get matched with opportunities.',
-        'https://www.hirenest.ai/job-seeker',
+        'https://hirenest.ai/job-seeker',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'Home', url: 'https://hirenest.ai' },
             { name: 'For Job Seekers' }
         ]
     );
@@ -33,7 +33,7 @@ export default function JobSeekerPage() {
     const softwareSchema = generateSoftwareApplicationSchema(
         'Hirenest Job Seeker Platform',
         'AI-powered job matching and career development platform for job seekers',
-        'https://www.hirenest.ai/job-seeker',
+        'https://hirenest.ai/job-seeker',
         'BusinessApplication'
     );
 
@@ -42,7 +42,7 @@ export default function JobSeekerPage() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/job-seeker-og.png',
+        'https://hirenest.ai/job-seeker-og.png',
         {
             name: 'Hirenest for Job Seekers - Find Your Dream Job',
             description: 'AI-powered job matching platform for job seekers',
@@ -58,7 +58,7 @@ export default function JobSeekerPage() {
     const videoSchema = generateVideoObjectSchema(
         'Hirenest for Job Seekers - Platform Demo',
         'Learn how Hirenest helps job seekers find their dream job with AI-powered matching, resume building, and career insights.',
-        'https://www.hirenest.ai/job-seeker-og.png',
+        'https://hirenest.ai/job-seeker-og.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT4M15S', // 4 minutes 15 seconds

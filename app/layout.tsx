@@ -17,12 +17,12 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.hirenest.ai'),
+  metadataBase: new URL('https://hirenest.ai'),
   alternates: {
-    canonical: 'https://www.hirenest.ai',
+    canonical: 'https://hirenest.ai',
     languages: {
-      'en-US': 'https://www.hirenest.ai/en-US',
-      'en': 'https://www.hirenest.ai',
+      'x-default': 'https://hirenest.ai',
+      'en': 'https://hirenest.ai',
     },
   },
   title: {
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.hirenest.ai",
+    url: "https://hirenest.ai",
     siteName: "Hirenest",
     title: "Hirenest - Connect Job Seekers with Employers",
     description: "AI-powered platform connecting job seekers with employers. Find your dream job or hire exceptional talent.",
     images: [
       {
-        url: "https://www.hirenest.ai/og-image.png",
+        url: "https://hirenest.ai/og-image.png",
         width: 1200,
         height: 630,
         alt: "Hirenest - Connect Job Seekers with Employers",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Hirenest - Connect Job Seekers with Employers",
     description: "AI-powered platform connecting job seekers with employers. Find your dream job or hire exceptional talent.",
     images: {
-      url: "https://www.hirenest.ai/og-image.png",
+      url: "https://hirenest.ai/og-image.png",
       alt: "Hirenest - Connect Job Seekers with Employers",
     },
   },
@@ -131,13 +131,13 @@ export default function RootLayout({
           rel="alternate"
           type="application/rss+xml"
           title="Hirenest RSS Feed"
-          href="https://www.hirenest.ai/rss.xml"
+          href="https://hirenest.ai/rss.xml"
         />
         <link
           rel="alternate"
           type="application/xml"
           title="Hirenest LLM Metadata"
-          href="https://www.hirenest.ai/llms.xml"
+          href="https://hirenest.ai/llms.xml"
         />
         {/* Structured Data - Combined Organization & Website */}
         <script

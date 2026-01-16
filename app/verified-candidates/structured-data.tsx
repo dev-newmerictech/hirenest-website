@@ -13,7 +13,7 @@ export function VerifiedCandidatesStructuredData() {
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Verified Candidates - Hire With Confidence',
             description: 'Stop worrying about resume fraud and bad hires. Our verification process ensures every candidate is exactly who they say they are.',
@@ -29,7 +29,7 @@ export function VerifiedCandidatesStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Verified Candidates Demo',
         'See how our comprehensive background checks and skill verification process ensure you only hire trusted talent.',
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT2M50S',

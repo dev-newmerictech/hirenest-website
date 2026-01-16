@@ -12,7 +12,7 @@ export function RefundPolicyStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest Refund Policy',
             description: 'Information about refunds, cancellations, and money-back guarantees on Hirenest.',

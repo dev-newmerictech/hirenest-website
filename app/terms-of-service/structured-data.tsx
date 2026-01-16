@@ -12,7 +12,7 @@ export function TermsOfServiceStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest Terms of Service',
             description: 'Rules and guidelines for using the Hirenest recruitment platform.',

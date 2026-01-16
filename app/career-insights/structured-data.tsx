@@ -11,7 +11,7 @@ export function CareerInsightsStructuredData() {
     const faqSchema = generateFAQSchema(faqs);
 
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/career_insights_hero.png',
+        'https://www.hirenest.ai/career_insights_hero.png',
         {
             name: 'Career Insights Dashboard - Data-Driven Career Decisions',
             description: 'AI-powered career insights dashboard with salary benchmarks and market trends',
@@ -26,7 +26,7 @@ export function CareerInsightsStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Career Insights Dashboard Demo',
         'Get personalized career insights, salary benchmarks, and market trends to advance your career with Hirenest.',
-        'https://hirenest.ai/career_insights_hero.png',
+        'https://www.hirenest.ai/career_insights_hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT4M00S',

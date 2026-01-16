@@ -13,7 +13,7 @@ export function AboutStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/about-hero.png',
+        'https://www.hirenest.ai/about-hero.png',
         {
             name: 'About Hirenest - Transforming Talent Acquisition',
             description: 'Learn about Hirenest mission to revolutionize recruitment through AI-powered technology.',
@@ -29,7 +29,7 @@ export function AboutStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'About Hirenest',
         'Discover the story behind Hirenest and our mission to transform the recruitment industry with AI.',
-        'https://hirenest.ai/about-hero.png',
+        'https://www.hirenest.ai/about-hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT2M00S',

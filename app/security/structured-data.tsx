@@ -12,7 +12,7 @@ export function SecurityStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Security at Hirenest - Your Data Protection',
             description: 'Learn about our security practices, encryption standards, and commitment to protecting your data.',

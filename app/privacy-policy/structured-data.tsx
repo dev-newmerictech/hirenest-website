@@ -12,7 +12,7 @@ export function PrivacyPolicyStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest Privacy Policy',
             description: 'Learn how Hirenest collects, uses, and protects your personal information.',

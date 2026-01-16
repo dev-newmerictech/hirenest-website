@@ -12,7 +12,7 @@ export function LegalStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest Legal Information',
             description: 'Legal hub for Hirenest policies, terms, and compliance information.',

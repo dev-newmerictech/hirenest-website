@@ -13,7 +13,7 @@ export function HiringAnalyticsStructuredData() {
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Hiring Analytics - Turn Data Into Hiring Success',
             description: 'Make smarter hiring decisions with powerful analytics that reveal what\'s working and what\'s not.',
@@ -29,7 +29,7 @@ export function HiringAnalyticsStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Hiring Analytics Demo',
         'Learn how to track hiring metrics, identify bottlenecks, and optimize your recruitment process with Hiring Analytics.',
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT3M00S',

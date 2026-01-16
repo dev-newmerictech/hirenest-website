@@ -13,7 +13,7 @@ export function CustomAssessmentsStructuredData() {
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Custom Assessments - Test What Matters To Your Business',
             description: 'Build tailored assessments with our drag-and-drop builder to measure the exact skills you need.',
@@ -29,7 +29,7 @@ export function CustomAssessmentsStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Custom Assessments Demo',
         'See how easily you can create custom technical and soft skill assessments to find the perfect candidate.',
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT3M30S',

@@ -13,7 +13,7 @@ export function SkillAssessmentsStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/skill_assessments_hero.png',
+        'https://www.hirenest.ai/skill_assessments_hero.png',
         {
             name: 'Skill Assessments - Validate Your Expertise',
             description: 'Prove your skills with industry-standard assessments and earn verified badges.',
@@ -29,7 +29,7 @@ export function SkillAssessmentsStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Skill Assessments Demo',
         'Learn how to take skill assessments, earn badges, and showcase your expertise to potential employers.',
-        'https://hirenest.ai/skill_assessments_hero.png',
+        'https://www.hirenest.ai/skill_assessments_hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT3M30S',

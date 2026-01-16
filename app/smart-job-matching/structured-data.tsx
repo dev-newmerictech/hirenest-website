@@ -13,7 +13,7 @@ export function SmartJobMatchingStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/smart_job_matching_hero.png',
+        'https://www.hirenest.ai/smart_job_matching_hero.png',
         {
             name: 'Smart Job Matching - Find Your Dream Job Without the Search',
             description: 'AI-powered job matching interface showing personalized job recommendations',
@@ -29,7 +29,7 @@ export function SmartJobMatchingStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Smart Job Matching Demo',
         'See how Hirenest AI analyzes your profile to deliver perfect job opportunities directly to you. Stop scrolling endlessly and let our smart matching find your dream job.',
-        'https://hirenest.ai/smart_job_matching_hero.png',
+        'https://www.hirenest.ai/smart_job_matching_hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT4M30S', // 4 minutes 30 seconds

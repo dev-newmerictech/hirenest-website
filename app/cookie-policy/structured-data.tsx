@@ -12,7 +12,7 @@ export function CookiePolicyStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest Cookie Policy',
             description: 'Learn about the cookies and tracking technologies used on the Hirenest platform.',

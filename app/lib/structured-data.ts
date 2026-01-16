@@ -138,7 +138,7 @@ export interface VideoObjectSchema {
 }
 
 
-const baseUrl = 'https://hirenest.ai';
+const baseUrl = 'https://www.hirenest.ai';
 
 export const organizationSchema: OrganizationSchema = {
     '@context': 'https://schema.org',

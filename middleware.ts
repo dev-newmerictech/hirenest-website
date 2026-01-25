@@ -2,52 +2,56 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-    const url = request.nextUrl.clone();
-    const hostname = request.headers.get('host') || '';
-    let shouldRedirect = false;
+  const url = request.nextUrl.clone();
 
-    // Force HTTPS (if not already)
-    if (url.protocol === 'http:') {
-        url.protocol = 'https:';
-        shouldRedirect = true;
-    }
+  const host = request.headers.get('x-forwarded-host') 
+    || request.headers.get('host') 
+    || '';
 
-    // Force non-www (remove www. prefix)
-    if (hostname.startsWith('www.')) {
-        url.host = hostname.replace('www.', '');
-        shouldRedirect = true;
-    }
+  const proto = request.headers.get('x-forwarded-proto') || 'http';
 
-    // Single redirect for both HTTP→HTTPS and WWW→non-WWW
-    if (shouldRedirect) {
-        return NextResponse.redirect(url, 301); // Permanent redirect
-    }
+  let shouldRedirect = false;
 
-    const response = NextResponse.next();
+  // ✅ Force HTTPS (based on forwarded proto)
+  if (proto !== 'https') {
+    url.protocol = 'https:';
+    shouldRedirect = true;
+  }
 
-    // Add X-Robots-Tag headers for SEO control
-    response.headers.set('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+  // ✅ Force non-www
+  if (host.startsWith('www.')) {
+    url.hostname = host.replace('www.', '');
+    shouldRedirect = true;
+  } else {
+    url.hostname = host;
+  }
 
-    // Add security headers
-    response.headers.set('X-Content-Type-Options', 'nosniff');
-    response.headers.set('X-Frame-Options', 'DENY');
-    response.headers.set('X-XSS-Protection', '1; mode=block');
-    response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  // ✅ CRITICAL: remove internal port (3000)
+  url.port = '';
 
-    return response;
+  if (shouldRedirect) {
+    return NextResponse.redirect(url, 301);
+  }
+
+  const response = NextResponse.next();
+
+  // SEO
+  response.headers.set(
+    'X-Robots-Tag',
+    'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+  );
+
+  // Security headers
+  response.headers.set('X-Content-Type-Options', 'nosniff');
+  response.headers.set('X-Frame-Options', 'DENY');
+  response.headers.set('X-XSS-Protection', '1; mode=block');
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+
+  return response;
 }
 
 export const config = {
-    matcher: [
-        /*
-         * Match all request paths except for the ones starting with:
-         * - api (API routes)
-         * - _next/static (static files)
-         * - _next/image (image optimization files)
-         * - favicon.ico (favicon file)
-         * - robots.txt (SEO crawlers)
-         * - sitemap.xml (SEO crawlers)
-         */
-        '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)',
-    ],
+  matcher: [
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)',
+  ],
 };

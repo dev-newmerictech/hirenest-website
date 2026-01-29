@@ -53,9 +53,12 @@ export const Testimonials = () => {
                 {/* Header */}
                 <VStack gap={4} textAlign="center" mb={16}>
                     <Heading
+                        as="h2"
                         fontSize={{ base: '3xl', md: '4xl' }}
-                        fontWeight="700"
-                        lineHeight="1.2"
+                        fontWeight="800"
+                        color="#1d1d1f"
+                        lineHeight="1.1"
+                        letterSpacing="tight"
                     >
                         Loved by People Finding{" "}
                         <Text as="span" color="#4241ff">
@@ -63,7 +66,9 @@ export const Testimonials = () => {
                         </Text>
                     </Heading>
 
-                    <Text fontSize={{ base: 'md', md: 'lg' }} maxW="3xl">
+                    <Text
+                        fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
+                        lineHeight="1.4" maxW="3xl">
                         Join thousands already using Hirenest to make smarter career and
                         hiring decisions.
                     </Text>
@@ -93,11 +98,11 @@ export const Testimonials = () => {
                                 ))}
                             </HStack>
 
-                            <Text fontSize="md" lineHeight="1.6">
+                            <Text fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.6">
                                 “{t.quote}”
                             </Text>
 
-                            <Flex align="center" gap={4} mt={t.initial === 'E' ? 10 : t.initial === 'M' ? 7 : 3}>
+                            <Flex align="center" gap={4} mt={t.initial === 'E' ? 10 : t.initial === 'M' ? 10 : 3}>
                                 <Flex
                                     w={12}
                                     h={12}
@@ -107,15 +112,15 @@ export const Testimonials = () => {
                                     align="center"
                                     justify="center"
                                     fontWeight="bold"
-                                    fontSize="lg"
+                                    fontSize={{ base: 'md', md: 'lg' }}
                                 >
                                     {t.initial}
                                 </Flex>
                                 <Box>
-                                    <Text fontWeight="bold" fontSize="sm">
+                                    <Text fontWeight="bold" fontSize={{ base: 'md', md: 'lg' }}>
                                         {t.name}
                                     </Text>
-                                    <Text fontSize="xs" color="gray.600">
+                                    <Text fontSize={{ base: 'xs', md: 'sm' }} color="gray.600">
                                         {t.role}
                                     </Text>
                                 </Box>
@@ -126,15 +131,21 @@ export const Testimonials = () => {
 
                 {/* Impact */}
                 <VStack gap={10}>
-                    <Heading fontSize="2xl">Our Impact</Heading>
+                    <Heading
+                        fontSize={{ base: '3xl', md: '4xl' }}
+                        fontWeight="800"
+                        color="#1d1d1f"
+                        lineHeight="1.1"
+                        letterSpacing="tight"
+                    >Our Impact</Heading>
 
                     <SimpleGrid columns={{ base: 2, md: 5 }} gap={10} textAlign="center">
                         {stats.map((stat, i) => (
                             <Box key={i}>
-                                <Text fontSize="4xl" fontWeight="700" color="#4241ff">
+                                <Text fontSize={{ base: '2xl', md: '4xl' }} fontWeight="700" color="#4241ff">
                                     {stat.value}
                                 </Text>
-                                <Text fontSize="sm" fontWeight="medium">
+                                <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="medium">
                                     {stat.label}
                                 </Text>
                             </Box>
@@ -143,7 +154,8 @@ export const Testimonials = () => {
 
                     <Button
                         borderRadius="full"
-                        fontWeight="500"
+                        fontWeight="600"
+                        fontSize={'lg'}
                         background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                         color="white"
                         minW={{ base: '100px', md: '100px' }}

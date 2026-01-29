@@ -16,9 +16,10 @@ export const Work = () => (
           <Heading
             as="h2"
             fontSize={{ base: '3xl', md: '4xl' }}
-            fontWeight="700"
-            color="#000"
-            lineHeight="1.2"
+            fontWeight="800"
+            color="#1d1d1f"
+            lineHeight="1.1"
+            letterSpacing="tight"
             maxW="7xl"
             display="flex"
             alignItems="center"
@@ -28,9 +29,7 @@ export const Work = () => (
             How Hirenest <Text as="span" display="block" bg="#4241ff" bgClip="text">works.</Text>
           </Heading>
           <Text
-            fontSize={{ base: 'lg' }}
-            color="#6e6e73"
-            lineHeight="1.4"
+            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
             fontWeight="400"
           >
             Simple. Powerful. Designed for everyone.
@@ -62,20 +61,15 @@ export const Work = () => (
             <VStack align="flex-start" gap={8} h="full">
               {/* Header */}
               <VStack align="flex-start" gap={3}>
-                <Text
-                  fontSize="sm"
-                  fontWeight="600"
-                  color="#4241ff"
-                  textTransform="uppercase"
-                  letterSpacing="0.08em"
+                <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                 >
                   For Job Seekers
                 </Text>
                 <Heading
                   as="h3"
-                  fontSize={{ base: '2xl', md: '3xl' }}
+                  fontSize={{ base: 'xl', md: '2xl' }}
                   lineHeight="1.2"
-                  fontWeight="600"
+                  fontWeight="800"
                   color="#1d1d1f"
                   letterSpacing="-0.01em"
                 >
@@ -99,15 +93,15 @@ export const Work = () => (
                   </Box>
                   <VStack align="flex-start" gap={1} flex="1">
                     <Text
-                      fontSize={{ base: 'md', md: 'lg' }}
-                      fontWeight="500"
+                      fontSize={{ base: 'lg', md: 'xl' }}
+                      fontWeight="600"
                       color="#1d1d1f"
                       lineHeight="1.3"
                     >
                       Create your profile
                     </Text>
                     <Text
-                      fontSize={{ base: 'sm', md: 'md' }}
+                      fontSize={{ base: 'md', md: 'lg' }}
                       color="#6e6e73"
                       lineHeight="1.5"
                     >
@@ -130,15 +124,15 @@ export const Work = () => (
                   </Box>
                   <VStack align="flex-start" gap={1} flex="1">
                     <Text
-                      fontSize={{ base: 'md', md: 'lg' }}
-                      fontWeight="500"
+                      fontSize={{ base: 'lg', md: 'xl' }}
+                      fontWeight="600"
                       color="#1d1d1f"
                       lineHeight="1.3"
                     >
                       Get matched instantly
                     </Text>
                     <Text
-                      fontSize={{ base: 'sm', md: 'md' }}
+                      fontSize={{ base: 'md', md: 'lg' }}
                       color="#6e6e73"
                       lineHeight="1.5"
                     >
@@ -161,19 +155,19 @@ export const Work = () => (
                   </Box>
                   <VStack align="flex-start" gap={1} flex="1">
                     <Text
-                      fontSize={{ base: 'md', md: 'lg' }}
-                      fontWeight="500"
+                      fontSize={{ base: 'lg', md: 'xl' }}
+                      fontWeight="600"
                       color="#1d1d1f"
                       lineHeight="1.3"
                     >
                       Stand Out with Skills
                     </Text>
                     <Text
-                      fontSize={{ base: 'sm', md: 'md' }}
+                      fontSize={{ base: 'md', md: 'lg' }}
                       color="#6e6e73"
                       lineHeight="1.5"
                     >
-                    Take assessments to prove your abilities and rank higher in employer searches.                    
+                      Take assessments to prove your abilities and rank higher in employer searches.
                     </Text>
                   </VStack>
                 </Flex>
@@ -203,15 +197,15 @@ export const Work = () => (
                   fontWeight="600"
                   color="#b000ea"
                   textTransform="uppercase"
-                  letterSpacing="0.08em"
+                  letterSpacing="wider"
                 >
                   For Employers
                 </Text>
                 <Heading
                   as="h3"
-                  fontSize={{ base: '2xl', md: '3xl' }}
+                  fontSize={{ base: 'xl', md: '2xl' }}
                   lineHeight="1.2"
-                  fontWeight="600"
+                  fontWeight="800"
                   color="#1d1d1f"
                   letterSpacing="-0.01em"
                 >
@@ -235,15 +229,15 @@ export const Work = () => (
                   </Box>
                   <VStack align="flex-start" gap={1} flex="1">
                     <Text
-                      fontSize={{ base: 'md', md: 'lg' }}
-                      fontWeight="500"
+                      fontSize={{ base: 'lg', md: 'xl' }}
+                      fontWeight="600"
                       color="#1d1d1f"
                       lineHeight="1.3"
                     >
                       Post your opening
                     </Text>
                     <Text
-                      fontSize={{ base: 'sm', md: 'md' }}
+                      fontSize={{ base: 'md', md: 'lg' }}
                       color="#6e6e73"
                       lineHeight="1.5"
                     >Our AI helps you define requirements, create job listings or custom skill assessments in minutes.
@@ -265,20 +259,20 @@ export const Work = () => (
                   </Box>
                   <VStack align="flex-start" gap={1} flex="1">
                     <Text
-                      fontSize={{ base: 'md', md: 'lg' }}
-                      fontWeight="500"
+                      fontSize={{ base: 'lg', md: 'xl' }}
+                      fontWeight="600"
                       color="#1d1d1f"
                       lineHeight="1.3"
                     >
                       AI ranks candidates
                     </Text>
                     <Text
-                      fontSize={{ base: 'sm', md: 'md' }}
+                      fontSize={{ base: 'md', md: 'lg' }}
                       color="#6e6e73"
                       lineHeight="1.5"
                     >
-                    Our AI reviews all the matched candidates, ranks them and brings you the best matches, ready to interview.
-                    
+                      Our AI reviews all the matched candidates, ranks them and brings you the best matches, ready to interview.
+
                     </Text>
                   </VStack>
                 </Flex>
@@ -297,19 +291,19 @@ export const Work = () => (
                   </Box>
                   <VStack align="flex-start" gap={1} flex="1">
                     <Text
-                      fontSize={{ base: 'md', md: 'lg' }}
-                      fontWeight="500"
+                      fontSize={{ base: 'lg', md: 'xl' }}
+                      fontWeight="600"
                       color="#1d1d1f"
                       lineHeight="1.3"
                     >
                       Hire with confidence
                     </Text>
                     <Text
-                      fontSize={{ base: 'sm', md: 'md' }}
+                      fontSize={{ base: 'md', md: 'lg' }}
                       color="#6e6e73"
                       lineHeight="1.5"
                     >
-                    Make faster, smarter hiring decisions backed by real data. No scope for costly bad hires.                    
+                      Make faster, smarter hiring decisions backed by real data. No scope for costly bad hires.
                     </Text>
                   </VStack>
                 </Flex>

@@ -9,12 +9,7 @@ export const AIWorks = () => {
                 <VStack gap={{ base: 12 }}>
                     {/* Header */}
                     <VStack textAlign="center" maxW="7xl" mx="auto">
-                        <Text
-                            fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                            fontWeight="600"
-                            color="#4241ff"
-                            textTransform="uppercase"
-                            letterSpacing="wider"
+                        <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                             mb={1}
                         >
                             Intelligent Matching System
@@ -32,13 +27,11 @@ export const AIWorks = () => {
                             <Text as="span" color="#4241ff">Hiring Decisions</Text>
                         </Heading>
 
-                        <Text fontSize="xl" color="#6e6e73" maxW="6xl">What if you could predict which candidate will succeed before you make an offer?
-                        </Text>
-                        
-                        <Text fontSize="xl" color="#6e6e73" maxW="6xl">
-                        Our multi-agent AI system will process, parse and score all the resumes before predicting their job success and selecting the right talent for you.
-                        
-                        From assessment design to performance prediction, you’ll experience hiring powered by an intelligent matching system.
+                        <Text fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="6xl">What if you could predict which candidate will succeed before you make an offer?
+
+                            Our multi-agent AI system will process, parse and score all the resumes before predicting their job success and selecting the right talent for you.
+
+                            From assessment design to performance prediction, you’ll experience hiring powered by an intelligent matching system.
                         </Text>
                     </VStack>
 
@@ -63,9 +56,9 @@ export const AIWorks = () => {
                                 <VStack align="flex-start" gap={2}>
                                     <Flex align="center" gap={2}>
                                         <Icon as={TrendingUp} color="#4241ff" />
-                                        <Heading size="md" color="#1d1d1f">Predictive Scoring </Heading>
+                                        <Heading fontSize={{ base: 'lg', md: 'xl' }} fontWeight={'600'} color="#1d1d1f">Predictive Scoring </Heading>
                                     </Flex>
-                                    <Text color="#6e6e73">Our AI system predicts candidate success with 98.5% accuracy.</Text>
+                                    <Text color="#6e6e73" fontSize={{ base: 'md', md: 'lg' }} >Our AI system predicts candidate success with 98.5% accuracy.</Text>
                                 </VStack>
                             </HStack>
 
@@ -78,11 +71,11 @@ export const AIWorks = () => {
                                             <Box w="80px" h="3px" bg="gray.300" borderRadius="full" mb={1} />
                                             <Box w="50px" h="3px" bg="gray.200" borderRadius="full" />
                                         </Box>
-                                        <Badge ml="auto" colorPalette="green" variant="solid" borderRadius="full">98% Match</Badge>
+                                        <Badge ml="auto" fontSize={'sm'} colorPalette="green" variant="solid" borderRadius="full">98% Match</Badge>
                                     </HStack>
                                     <VStack align="stretch" gap={2}>
                                         <Box>
-                                            <Flex justify="space-between" mb={1}><Text fontSize="xs" fontWeight="600">Skills</Text><Text fontSize="xs">9.8/10</Text></Flex>
+                                            <Flex justify="space-between" mb={1}><Text fontSize="sm" fontWeight="600">Skills</Text><Text fontSize="xs">9.8/10</Text></Flex>
                                             <Progress.Root value={98} size="xs" colorPalette="blue">
                                                 <Progress.Track borderRadius="full">
                                                     <Progress.Range borderRadius="full" />
@@ -90,7 +83,7 @@ export const AIWorks = () => {
                                             </Progress.Root>
                                         </Box>
                                         <Box>
-                                            <Flex justify="space-between" mb={1}><Text fontSize="xs" fontWeight="600">Experience</Text><Text fontSize="xs">9.5/10</Text></Flex>
+                                            <Flex justify="space-between" mb={1}><Text fontSize="sm" fontWeight="600">Experience</Text><Text fontSize="xs">9.5/10</Text></Flex>
                                             <Progress.Root value={95} size="xs" colorPalette="purple">
                                                 <Progress.Track borderRadius="full">
                                                     <Progress.Range borderRadius="full" />
@@ -106,11 +99,11 @@ export const AIWorks = () => {
                                             <Box w="80px" h="3px" bg="gray.300" borderRadius="full" mb={1} />
                                             <Box w="50px" h="3px" bg="gray.200" borderRadius="full" />
                                         </Box>
-                                        <Badge ml="auto" colorPalette="blue" variant="subtle" borderRadius="full">85% Match</Badge>
+                                        <Badge ml="auto" fontSize={'sm'} colorPalette="blue" variant="subtle" borderRadius="full">85% Match</Badge>
                                     </HStack>
                                     <VStack align="stretch" gap={2}>
                                         <Box>
-                                            <Flex justify="space-between" mb={1}><Text fontSize="xs" fontWeight="600">Skills</Text><Text fontSize="xs">8.5/10</Text></Flex>
+                                            <Flex justify="space-between" mb={1}><Text fontSize="sm" fontWeight="600">Skills</Text><Text fontSize="xs">8.5/10</Text></Flex>
                                             <Progress.Root value={85} size="xs" colorPalette="blue">
                                                 <Progress.Track borderRadius="full">
                                                     <Progress.Range borderRadius="full" />
@@ -118,7 +111,7 @@ export const AIWorks = () => {
                                             </Progress.Root>
                                         </Box>
                                         <Box>
-                                            <Flex justify="space-between" mb={1}><Text fontSize="xs" fontWeight="600">Experience</Text><Text fontSize="xs">8.2/10</Text></Flex>
+                                            <Flex justify="space-between" mb={1}><Text fontSize="sm" fontWeight="600">Experience</Text><Text fontSize="xs">8.2/10</Text></Flex>
                                             <Progress.Root value={82} size="xs" colorPalette="purple">
                                                 <Progress.Track borderRadius="full">
                                                     <Progress.Range borderRadius="full" />
@@ -156,8 +149,8 @@ export const AIWorks = () => {
                                     <Icon as={FileText} color="white" boxSize={6} />
                                 </Box>
                                 <Box>
-                                    <Heading size="md" color="white" mb={2}>Smart Parsing</Heading>
-                                    <Text color="#a1a1a6" fontSize="sm">
+                                    <Heading fontSize={{ base: 'lg', md: 'xl' }} fontWeight={'600'} color="white" mb={2}>Smart Parsing</Heading>
+                                    <Text color="#a1a1a6" fontSize={{ base: 'md', md: 'lg' }}>
                                         Instantly extracts and structures data from any resume format, saving hours of manual work
                                     </Text>
                                 </Box>
@@ -182,7 +175,7 @@ export const AIWorks = () => {
                                     </HStack>
                                     <Flex wrap="wrap" gap={2}>
                                         {['React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python'].map((tag) => (
-                                            <Badge key={tag} bg="#fff" color="#4241ff" borderRadius="md" px={2} py={1}>
+                                            <Badge key={tag} bg="#fff" fontSize={'sm'} color="#4241ff" borderRadius="md" px={2} py={1}>
                                                 {tag}
                                             </Badge>
                                         ))}
@@ -205,16 +198,16 @@ export const AIWorks = () => {
                             <VStack align="flex-start" gap={4}>
                                 <Flex align="center" gap={2}>
                                     <Icon as={Search} color="#b000ea" />
-                                    <Heading size="md" color="#1d1d1f">Semantic Search</Heading>
+                                    <Heading fontSize={{ base: 'lg', md: 'xl' }} fontWeight={'600'} color="#1d1d1f">Semantic Search</Heading>
                                 </Flex>
-                                <Text color="#6e6e73" fontSize="sm">Find candidates by skills and concepts, not just keywords</Text>
+                                <Text color="#6e6e73" fontSize={{ base: 'md', md: 'lg' }}>Find candidates by skills and concepts, not just keywords</Text>
 
                                 {/* Visual */}
                                 <Box w="full" bg="#f5f5f7" p={4} borderRadius="xl">
                                     <HStack bg="white" p={3} borderRadius="full" boxShadow="sm" mb={4} justify="space-between">
                                         <HStack gap={3}>
                                             <Icon as={Search} boxSize="16px" color="gray.400" />
-                                            <Text fontSize="xs" color="gray.500">"Senior dev with fintech exp"</Text>
+                                            <Text fontSize="sm" color="gray.500">"Senior dev with fintech exp"</Text>
                                         </HStack>
                                         <Box w={6} h={6} borderRadius="full" bg="#b000ea" display="flex" alignItems="center" justifyContent="center">
                                             <Icon as={Search} boxSize="10px" color="white" />
@@ -254,9 +247,9 @@ export const AIWorks = () => {
                             <VStack align="flex-start" gap={4}>
                                 <Flex align="center" gap={2}>
                                     <Icon as={ShieldAlert} color="#ff4242" />
-                                    <Heading size="md" color="#1d1d1f">Bias Detection</Heading>
+                                    <Heading fontSize={{ base: 'lg', md: 'xl' }} fontWeight={'600'} color="#1d1d1f">Bias Detection</Heading>
                                 </Flex>
-                                <Text color="#6e6e73" fontSize="sm">Real-time monitoring to ensure skills-based decisions, not subjective preferences</Text>
+                                <Text color="#6e6e73" fontSize={{ base: 'md', md: 'lg' }}>Real-time monitoring to ensure skills-based decisions, not subjective preferences</Text>
 
                                 {/* Visual */}
                                 <HStack w="full" bg="red.50" p={4} borderRadius="xl" border="1px solid" borderColor="red.100">
@@ -273,8 +266,8 @@ export const AIWorks = () => {
                                         <Icon as={ShieldAlert} boxSize="14px" />
                                     </Flex>
                                     <VStack align="flex-start" gap={0}>
-                                        <Text fontSize="xs" fontWeight="700" color="#1d1d1f">Bias Detected</Text>
-                                        <Text fontSize="xs" color="gray.500">Pattern flagged in description</Text>
+                                        <Text fontSize="sm" fontWeight="700" color="#1d1d1f">Bias Detected</Text>
+                                        <Text fontSize="sm" color="gray.500">Pattern flagged in description</Text>
                                     </VStack>
                                 </HStack>
                                 <HStack w="full" bg="red.50" p={4} borderRadius="xl" border="1px solid" borderColor="red.100">
@@ -291,8 +284,8 @@ export const AIWorks = () => {
                                         <Icon as={ShieldAlert} boxSize="14px" />
                                     </Flex>
                                     <VStack align="flex-start" gap={0}>
-                                        <Text fontSize="xs" fontWeight="700" color="#1d1d1f">Bias Detected</Text>
-                                        <Text fontSize="xs" color="gray.500">Pattern flagged in description</Text>
+                                        <Text fontSize="sm" fontWeight="700" color="#1d1d1f">Bias Detected</Text>
+                                        <Text fontSize="sm" color="gray.500">Pattern flagged in description</Text>
                                     </VStack>
                                 </HStack>
                             </VStack>

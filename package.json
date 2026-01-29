@@ -30,7 +30,7 @@
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.6",
     "tailwindcss": "^4",
-    "turbo": "^2.6.1",
+    "turbo": "^2.8.0",
     "typescript": "^5"
   }
 }

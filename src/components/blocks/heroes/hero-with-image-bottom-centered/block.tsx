@@ -31,8 +31,8 @@ export const Block = () => {
               <Box bgGradient="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)" p={1} rounded="full" color="white">
                 <PlayCircle size={14} fill="currentColor" />
               </Box>
-              <Text fontSize="sm" fontWeight="600" color="#0071fb ">
-              Welcome to Hirenest!  
+              <Text fontSize="sm" fontWeight="600" color="#4241ff">
+                Welcome to Hirenest!
               </Text>
             </HStack>
 
@@ -50,7 +50,7 @@ export const Block = () => {
 
             {/* Subtext */}
             <Text fontSize={{ base: 'lg', md: 'xl' }} color="gray.500" maxW="lg" lineHeight="1.6" textAlign={{ base: 'center', lg: 'left' }}>
-            An AI-powered hiring platform where job seekers show what they can do and employers meet candidates who've already demonstrated they can perform.
+              An AI-powered hiring platform where job seekers show what they can do and employers meet candidates who've already demonstrated they can perform.
             </Text>
 
             {/* Search Bar */}

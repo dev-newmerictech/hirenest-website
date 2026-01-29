@@ -108,8 +108,9 @@ export function TabsComponent() {
                         >
                             Choose your <Text as="span" color="#4241ff">path.</Text>
                         </Heading>
-                        <Text fontSize="xl" color="#6e6e73" maxW="2xl">
-                        Powerful features built for your needs. Whether you're hiring or job hunting, we've specifically-designed tools that work. You’re covered.
+                        <Text
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="3xl">
+                            Powerful features built for your needs. Whether you're hiring or job hunting, we've specifically-designed tools that work. You’re covered.
                         </Text>
                     </VStack>
 
@@ -124,7 +125,7 @@ export function TabsComponent() {
                                         px={{ base: 6, md: 10 }}
                                         py={3}
                                         rounded="full"
-                                        fontSize="md"
+                                        fontSize={{ base: 'md', md: 'lg' }}
                                         fontWeight="600"
                                         color="gray.500"
                                         _selected={{ bg: "white", color: "#1d1d1f", shadow: "sm" }}
@@ -219,7 +220,8 @@ const FeatureCard = ({ icon: Icon, title, description, link, color, bg }: any) =
             {/* Content */}
             <VStack align="flex-start" gap={3} flex={1} position="relative" zIndex={1}>
                 <Heading
-                    size="lg"
+
+                    fontSize={{ base: 'lg', md: 'xl' }}
                     fontWeight="700"
                     color="#1d1d1f"
                     lineHeight="1.2"
@@ -229,7 +231,7 @@ const FeatureCard = ({ icon: Icon, title, description, link, color, bg }: any) =
                 <Text
                     color="#6e6e73"
                     lineHeight="1.6"
-                    fontSize="sm"
+                    fontSize={{ base: 'md', md: 'lg' }}
                 >
                     {description}
                 </Text>
@@ -241,7 +243,7 @@ const FeatureCard = ({ icon: Icon, title, description, link, color, bg }: any) =
                 gap={2}
                 color={color}
                 fontWeight="600"
-                fontSize="sm"
+                fontSize="md"
                 position="relative"
                 zIndex={1}
                 transition="gap 0.3s ease"

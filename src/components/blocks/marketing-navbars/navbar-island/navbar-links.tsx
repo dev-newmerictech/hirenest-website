@@ -21,6 +21,7 @@ export const NavbarLinks = (props: StackProps) => {
             key={item.label}
             href={item.href}
             fontWeight="medium"
+            fontSize={{ base: 'md', md: 'lg' }}
             color={isActive ? 'brand.500' : 'fg.muted'}
             colorPalette="brand"
             _hover={{

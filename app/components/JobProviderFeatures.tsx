@@ -53,11 +53,7 @@ export const JobProviderFeatures = () => (
             {/* Section Header */}
             <VStack alignItems="center" mb={{ base: 12, md: 16 }} textAlign="center">
                 <Text
-                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                    fontWeight="600"
-                    color="#4241ff"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
+                    fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                     mb={3}
                 >
                     Features
@@ -65,10 +61,11 @@ export const JobProviderFeatures = () => (
                 <Heading
                     as="h2"
                     fontSize={{ base: '3xl', md: '4xl' }}
-                    fontWeight="700"
-                    color="#000"
+                    fontWeight="800"
+                    color="#1d1d1f"
+                    lineHeight="1.1"
+                    letterSpacing="tight"
                     maxW="7xl"
-                    lineHeight={'normal'}
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
@@ -81,8 +78,7 @@ export const JobProviderFeatures = () => (
                     </Text>
                 </Heading>
                 <Text
-                    fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                    color="#000"
+                    fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
                     maxW="7xl"
                     mt={2}
                 >
@@ -158,7 +154,7 @@ export const JobProviderFeatures = () => (
                             {/* Content */}
                             <VStack align="flex-start" gap={3} flex={1} position="relative" zIndex={1}>
                                 <Heading
-                                    size="lg"
+                                    fontSize={{ base: 'lg', md: 'xl' }}
                                     fontWeight="700"
                                     color="#1d1d1f"
                                     lineHeight="1.2"
@@ -168,7 +164,7 @@ export const JobProviderFeatures = () => (
                                 <Text
                                     color="#6e6e73"
                                     lineHeight="1.6"
-                                    fontSize="sm"
+                                    fontSize={{ base: 'md', md: 'lg' }}
                                 >
                                     {feature.description}
                                 </Text>
@@ -180,8 +176,7 @@ export const JobProviderFeatures = () => (
 
             {/* Bottom CTA Text */}
             <VStack mt={{ base: 12, md: 16 }} textAlign="center">
-                <Text
-                    fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                <Text fontSize={{ base: 'lg', md: 'xl' }}
                     fontWeight="600"
                     color="#000"
                 >

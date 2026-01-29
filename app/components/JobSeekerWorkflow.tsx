@@ -32,12 +32,7 @@ export const JobSeekerWorkflow = () => (
     <Container maxW="7xl" position="relative">
       {/* Section Header */}
       <VStack alignItems="center" mb={{ base: 12 }} textAlign="center">
-        <Text
-          fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-          fontWeight="600"
-          color="#4241ff"
-          textTransform="uppercase"
-          letterSpacing="wider"
+        <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
           mb={3}
         >
           How It Works
@@ -46,18 +41,17 @@ export const JobSeekerWorkflow = () => (
         <Heading
           as="h2"
           fontSize={{ base: '3xl', md: '4xl' }}
-          fontWeight="700"
-          color="#000"
-          lineHeight="1.2"
+          fontWeight="800"
+          color="#1d1d1f"
+          lineHeight="1.1"
+          letterSpacing="tight"
           display={'flex'}
           gap={2}
         >
           3 Simple Steps. Zero Guesswork.
         </Heading>
 
-        <Text
-          fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-          color="#000"
+        <Text fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
           maxW="3xl"
           mt={2}
         >
@@ -96,8 +90,10 @@ export const JobSeekerWorkflow = () => (
                 position="absolute"
                 top={4}
                 right={4}
-                fontSize="4xl"
-                fontWeight="700"
+                fontSize={{ base: '3xl', md: '4xl' }}
+                fontWeight="800"
+                lineHeight="1.1"
+                letterSpacing="tight"
                 color="rgba(66, 65, 255, 0.1)"
               >
                 {step.step}
@@ -118,10 +114,10 @@ export const JobSeekerWorkflow = () => (
 
               {/* Content */}
               <VStack align="flex-start" gap={3}>
-                <Heading size="lg" fontWeight="700" color="#1d1d1f">
+                <Heading fontSize={{ base: 'lg', md: 'xl' }} color="#1d1d1f">
                   {step.title}
                 </Heading>
-                <Text color="#6e6e73" lineHeight="1.6" fontSize="sm">
+                <Text color="#6e6e73" lineHeight="1.6" fontSize={{ base: 'md', md: 'lg' }}>
                   {step.description}
                 </Text>
               </VStack>
@@ -152,5 +148,5 @@ export const JobSeekerWorkflow = () => (
         </Button>
       </VStack>
     </Container>
-  </Box>
+  </Box >
 )

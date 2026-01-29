@@ -60,12 +60,14 @@ export const AdvancedScreening = () => {
           <Heading
             as="h2"
             fontSize={{ base: '3xl', md: '4xl' }}
-            fontWeight="700"
-            color="#000"
+            fontWeight="800"
+            color="#1d1d1f"
+            lineHeight="1.1"
+            letterSpacing="tight"
           >
             Your Key <Text as="span" color="#4241ff">Hiring Advantages</Text>
           </Heading>
-          <Text fontSize={{ base: 'lg', md: 'xl' }} color="#000" maxW="3xl">
+          <Text fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="3xl">
             Stop screening resumes. Start hiring based on proof.
           </Text>
         </VStack>
@@ -98,16 +100,16 @@ export const AdvancedScreening = () => {
                 >
                   <Icon as={feature.icon} boxSize={6} />
                 </Flex>
-                <Heading as="h3" fontSize="xl" fontWeight="700" color="#000">
+                <Heading as="h3" fontSize={{ base: 'lg', md: 'xl' }} fontWeight="700" color="#000">
                   {feature.title}
                 </Heading>
               </Flex>
 
               <VStack as="ul" gap={3} align="start">
                 {feature.items.map((item, idx) => (
-                  <Flex key={idx} align="center">
-                    <Icon as={CheckCircle2} color="#4241ff" mr={3} />
-                    <Text fontSize="md" color="#000">
+                  <Flex key={idx} align="flex-start">
+                    <Icon as={CheckCircle2} color="#4241ff" mr={3} mt={1} />
+                    <Text fontSize={{ base: 'md', md: 'lg' }} color="#000">
                       {item}
                     </Text>
                   </Flex>

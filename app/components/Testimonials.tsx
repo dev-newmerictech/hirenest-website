@@ -166,6 +166,8 @@ export const Testimonials = () => {
                         transition="all 0.3s ease"
                         onClick={() => window.open('https://app.hirenest.ai', '_blank')}
                         mt={4}
+                        py={6}
+                        px={6}
                     >
                         Let’s Find the Right Candidate
                     </Button>

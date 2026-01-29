@@ -19,12 +19,10 @@ export const JobProviderHero = () => (
         alignItems="center"
       >
         {/* Left Content */}
-        <VStack alignItems={{ base: 'center', lg: 'flex-start' }} gap={6}>
+        <VStack alignItems={{ base: 'center', lg: 'flex-start' }} gap={4}>
           <Box>
             <Text
-              fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-              fontWeight="600"
-              color="#4241ff"
+              fontSize="sm" fontWeight="600" color="#4241ff"
               textTransform="uppercase"
               letterSpacing="wider"
               mb={3}
@@ -35,10 +33,10 @@ export const JobProviderHero = () => (
 
             <Heading
               as="h1"
-              fontSize={{ base: '3xl', md: '4xl' }}
-              fontWeight="700"
-              color="#000"
-              lineHeight="1.2"
+              fontSize={{ base: '4xl' }}
+              fontWeight="800"
+              lineHeight="1.1"
+              color="#1d1d1f"
               mb={4}
               textAlign={{ base: 'center', lg: 'left' }}
             >
@@ -49,24 +47,13 @@ export const JobProviderHero = () => (
             </Heading>
 
             <Text
-              fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-              fontWeight="500"
-              color="#000"
-              lineHeight="1.6"
+              fontSize={{ base: 'lg', md: 'xl' }} color="gray.900" lineHeight="1.6"
               maxW="600px"
               textAlign={{ base: 'center', lg: 'left' }}
               mb={4}
             >
               Because resumes lie. Skills don’t.
-            </Text>
 
-            <Text
-              fontSize={{ base: 'md', sm: 'lg' }}
-              color="#000"
-              lineHeight="1.6"
-              maxW="650px"
-              textAlign={{ base: 'center', lg: 'left' }}
-            >
               Hirenest is an intelligent <strong>skills-first hiring platform</strong> powered by a multi-AI agent system with ~85% matching accuracy.
               We help employers see who can actually perform <em>before</em> interviews—and help candidates prove what they can do beyond resume keywords.
             </Text>
@@ -81,7 +68,8 @@ export const JobProviderHero = () => (
                 boxShadow: 'lg',
               }}
               transition="all 0.3s"
-              size={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
+              size={{ base: 'lg' }}
+              fontWeight={'600'}
               borderRadius="full"
               background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
               color="white"
@@ -96,7 +84,8 @@ export const JobProviderHero = () => (
               variant="outline"
               borderColor="#4241ff"
               color="#4241ff"
-              size={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
+              size={{ base: 'lg' }}
+              fontWeight={'600'}
               borderRadius="full"
               minW={{ base: '80px', md: '250px' }}
               onClick={() => window.open('https://app.hirenest.ai/jobseeker', '_blank')}
@@ -107,14 +96,14 @@ export const JobProviderHero = () => (
 
           {/* Supporting Copy */}
           <Text
-            fontSize={{ base: 'sm', md: 'md' }}
+            fontSize={{ base: 'lg', md: 'xl' }}
             color="#000"
             maxW="650px"
             textAlign={{ base: 'center', lg: 'left' }}
             mt={2}
           >
             Not just another job board. LinkedIn, Indeed, and Monster are resume databases where you compete with 300+ applicants.
-            <br /><br />
+            <br />
             <strong>Hirenest is different:</strong> candidates prove skills first, employers search verified abilities, and matches happen based on real capability—not keywords.
           </Text>
         </VStack>

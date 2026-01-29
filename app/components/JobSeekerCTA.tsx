@@ -61,15 +61,16 @@ export const JobSeekerCTA = ({ variant = 'primary' }: JobSeekerCTAProps) => {
             <Heading
               as="h2"
               fontSize={{ base: '3xl', md: '4xl' }}
-              fontWeight="700"
+              fontWeight="800"
+              lineHeight="1.1"
+              letterSpacing="tight"
               color={isPrimary ? 'white' : '#000'}
-              lineHeight="1.2"
             >
               But Don’t Assessments Take Forever?
             </Heading>
 
             <Text
-              fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+              fontSize={{ base: 'lg', md: 'xl' }}
               color={isPrimary ? 'rgba(255, 255, 255, 0.9)' : '#000'}
               lineHeight="1.7"
             >
@@ -81,7 +82,7 @@ export const JobSeekerCTA = ({ variant = 'primary' }: JobSeekerCTAProps) => {
           {/* Comparison Block */}
           <VStack
             gap={3}
-            fontSize={{ base: 'sm', md: 'md' }}
+            fontSize={{ base: 'lg', md: 'xl' }}
             color={isPrimary ? 'rgba(255, 255, 255, 0.85)' : '#000'}
           >
             <Text>• Tailoring 50 resumes: <strong>10+ hours</strong></Text>
@@ -90,7 +91,7 @@ export const JobSeekerCTA = ({ variant = 'primary' }: JobSeekerCTAProps) => {
             <Text fontWeight="600" pt={2}>
               15 minutes once vs. 30+ hours of resume tweaking. You choose.
             </Text>
-            <Text fontSize="sm" opacity={0.85}>
+            <Text opacity={0.85}>
               Plus, you get detailed feedback showing exactly where to improve.
               Think of it as a skills diagnostic — not a pass/fail test.
             </Text>
@@ -104,7 +105,7 @@ export const JobSeekerCTA = ({ variant = 'primary' }: JobSeekerCTAProps) => {
               color={isPrimary ? '#4241ff' : 'white'}
               px={{ base: 8, md: 10 }}
               py={{ base: 6, md: 7 }}
-              fontSize={{ base: 'md', md: 'lg' }}
+              fontSize={{ base: 'lg' }}
               fontWeight="600"
               borderRadius="full"
               _hover={{
@@ -127,7 +128,7 @@ export const JobSeekerCTA = ({ variant = 'primary' }: JobSeekerCTAProps) => {
               flexWrap="wrap"
               justifyContent="center"
               color="rgba(255, 255, 255, 0.8)"
-              fontSize={{ base: 'xs', sm: 'sm' }}
+              fontSize={{ base: 'sm', sm: 'md' }}
             >
               <Text>Free to join</Text>
               <Text>No credit card required</Text>

@@ -112,7 +112,7 @@ export const Block = () => {
               <NavbarLinks hideBelow="lg" />
               <HStack gap={{ base: '2', md: '3' }} hideBelow="lg">
                 <Button
-                  size={{ base: 'sm', md: 'sm' }}
+                  size={{ base: 'md', md: 'lg' }}
                   variant="outline"
                   colorPalette="brand"
                   borderRadius="full"
@@ -128,7 +128,7 @@ export const Block = () => {
                   Login
                 </Button>
                 <Button
-                  size={{ base: 'sm', md: 'sm' }}
+                  size={{ base: 'md', md: 'lg' }}
                   borderRadius="full"
                   background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                   color="white"
@@ -148,7 +148,7 @@ export const Block = () => {
               <NavbarLinks pt="5" pb="2" alignItems="center" justify="center" />
               <HStack gap="3" pt="4" pb="2" justify="center">
                 <Button
-                  size={{ base: 'sm', md: 'md' }}
+                  size={{ base: 'md', md: 'lg' }}
                   variant="outline"
                   colorPalette="brand"
                   borderRadius="full"
@@ -164,7 +164,7 @@ export const Block = () => {
                   Login
                 </Button>
                 <Button
-                  size={{ base: 'sm', md: 'md' }}
+                  size={{ base: 'md', md: 'lg' }}
                   borderRadius="full"
                   background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                   color="white"

@@ -10,21 +10,23 @@ export const Block = () => {
           <VStack gap="6" textAlign="center">
             <Heading
               as="h2"
-              size={{ base: '3xl', md: '4xl' }}
-              color="white"
-              maxW="4xl"
+              fontSize={{ base: '3xl', md: '4xl' }}
+              fontWeight="800"
+              color="#fff"
+              lineHeight="1.1"
+              letterSpacing="tight"
             >
               Experience how AI transforms your career or hiring process.
             </Heading>
           </VStack>
           <Button
-            size={{ base: 'lg', md: 'xl' }}
+            size={{ base: 'lg' }}
             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
             color="white"
             px="12"
             py="6"
             fontSize={{ base: 'lg' }}
-            fontWeight="medium"
+            fontWeight="600"
             borderRadius="full"
             w={{ base: 'full', sm: 'auto' }}
             maxW={{ base: 'full', sm: '400px' }}

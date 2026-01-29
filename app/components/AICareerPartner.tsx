@@ -22,27 +22,25 @@ export const AICareerPartner = () => {
                     {/* Left Content */}
                     <Box flex={1}>
                         <Text
-                            color="#4241ff"
-                            fontWeight="600"
-                            fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                            fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                             mb={4}
-                            letterSpacing="wider"
-                            textTransform="uppercase"
                         >
                             Job Seeker
                         </Text>
                         <Heading
                             as="h2"
                             fontSize={{ base: '3xl', md: '4xl' }}
-                            fontWeight="700"
-                            lineHeight="1.2"
+                            fontWeight="800"
+                            color="#fff"
+                            lineHeight="1.1"
+                            letterSpacing="tight"
                             mb={4}
                         >
                             Your AI Career Partner That Never Stops
                         </Heading>
                         <Text
                             color="#fff"
-                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontSize={{ base: 'lg', md: 'xl' }}
                             mb={1}
                             maxW="lg"
                             lineHeight="1.6"
@@ -50,7 +48,7 @@ export const AICareerPartner = () => {
                         </Text>
                         <Text
                             color="#fff"
-                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontSize={{ base: 'lg', md: 'xl' }}
                             mb={1}
                             maxW="lg"
                             lineHeight="1.6"
@@ -58,13 +56,13 @@ export const AICareerPartner = () => {
                         </Text>
                         <Text
                             color="#fff"
-                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontSize={{ base: 'lg', md: 'xl' }}
                             mb={10}
                             maxW="lg"
                             lineHeight="1.6"
                         >
-                        Our AI lets the employers discover you. It analyzes your validated skills and matches you with relevant roles around the clock - even when you're not sending applications.
-                        
+                            Our AI lets the employers discover you. It analyzes your validated skills and matches you with relevant roles around the clock - even when you're not sending applications.
+
                         </Text>
 
                         <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={10} mb={10}>
@@ -96,7 +94,7 @@ export const AICareerPartner = () => {
                             color="brand.900"
                             borderRadius="full"
                             _hover={{ bg: 'gray.100' }}
-                            fontWeight="bold"
+                            fontWeight="600"
                             px={8}
                             h={14}
                             onClick={() => window.open('https://app.hirenest.ai/jobseeker/profile', '_blank')}
@@ -137,8 +135,9 @@ export const AICareerPartner = () => {
                             >
                                 <Flex justify="space-between" align="center" mb={6}>
                                     <Box>
-                                        <Text color="gray.400" fontSize="sm">Welcome back,</Text>
-                                        <Text fontWeight="bold" fontSize="xl" color="white">Alex Morgan</Text>
+                                        <Text color="gray.400" fontSize="md">Welcome back,</Text>
+                                        <Text fontWeight="bold"
+                                            fontSize={{ base: 'lg', md: 'xl' }} color="white">Alex Morgan</Text>
                                     </Box>
                                     <Flex bg="brand.600" p={2} borderRadius="full" align="center" justify="center">
                                         <Icon as={User} color="white" boxSize={5} />
@@ -147,17 +146,18 @@ export const AICareerPartner = () => {
 
                                 <Box bg="gray.700" p={4} borderRadius="xl" mb={6}>
                                     <Flex justify="space-between" mb={2}>
-                                        <Text fontSize="sm" fontWeight="medium" color="gray.200">Profile Strength</Text>
-                                        <Text fontSize="sm" fontWeight="bold" color="green.400">94%</Text>
+                                        <Text fontSize="md" fontWeight="medium" color="gray.200">Profile Strength</Text>
+                                        <Text fontSize="md" fontWeight="bold" color="green.400">94%</Text>
                                     </Flex>
                                     {/* Progress Replacement */}
                                     <Box w="full" h="2" bg="gray.600" borderRadius="full" mb={2} overflow="hidden">
                                         <Box w="94%" h="full" bg="#4241ff" borderRadius="full" />
                                     </Box>
-                                    <Text fontSize="xs" color="gray.400">Add a video intro to reach 100%</Text>
+                                    <Text fontSize="sm" color="gray.400">Add a video intro to reach 100%</Text>
                                 </Box>
 
-                                <Text fontWeight="bold" mb={4} color="white">Recommended for You</Text>
+                                <Text fontWeight="bold"
+                                    fontSize={{ base: 'md', md: 'lg' }} mb={4} color="white">Recommended for You</Text>
 
                                 <VStack gap={3} align="stretch">
                                     <JobCard
@@ -187,8 +187,9 @@ export const AICareerPartner = () => {
 const Feature = ({ icon, title, desc }: { icon: any, title: string, desc: string }) => (
     <Box>
         <Icon as={icon} color="#4241ff" boxSize={6} mb={3} />
-        <Text fontWeight="bold" mb={2} fontSize={{ base: 'lg', md: 'xl' }} color="white">{title}</Text>
-        <Text color="gray.400" fontSize={{ base: 'sm', md: 'md' }} lineHeight="relaxed">{desc}</Text>
+        <Text fontWeight="bold" mb={2}
+            fontSize={{ base: 'lg', md: 'xl' }} color="white">{title}</Text>
+        <Text color="gray.400" fontSize={{ base: 'md', md: 'lg' }} lineHeight="relaxed">{desc}</Text>
     </Box>
 );
 
@@ -198,8 +199,8 @@ const JobCard = ({ icon, role, company, iconBg, iconColor }: { icon: any, role: 
             <Icon as={icon} color={iconColor === 'colored' ? undefined : iconColor} boxSize={5} />
         </Flex>
         <Box>
-            <Text fontWeight="bold" fontSize="sm" color="white">{role}</Text>
-            <Text fontSize="xs" color="gray.400">{company}</Text>
+            <Text fontWeight="bold" fontSize="md" color="white">{role}</Text>
+            <Text fontSize="sm" color="gray.400">{company}</Text>
         </Box>
     </Flex>
 );

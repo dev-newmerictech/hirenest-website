@@ -21,6 +21,9 @@ import { AIInterviewDemo } from './components/AIInterviewDemo';
 import { generateFAQSchema } from './lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = pageMetadata.home;
 
 export default function Home() {

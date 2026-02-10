@@ -3,6 +3,9 @@ import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import { pageMetadata } from '../lib/metadata';
 import { RefundPolicyStructuredData } from './structured-data';
 
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = pageMetadata.refundPolicy;
 
 export default function RefundPolicyPage() {

@@ -3,6 +3,9 @@ import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import { pageMetadata } from '../lib/metadata';
 import { TermsOfServiceStructuredData } from './structured-data';
 
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = pageMetadata.termsOfService;
 
 export default function TermsOfServicePage() {

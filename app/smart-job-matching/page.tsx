@@ -1,4 +1,8 @@
 "use client"
+
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
+
 import { Box, Button, Container, Flex, Heading, Stack, Text, VStack, Grid, Icon, Badge } from '@chakra-ui/react'
 import { ArrowRight, CheckCircle, Target, Zap, Search, Briefcase, Users, TrendingUp, Globe, Star, Shield, Clock } from 'lucide-react'
 import Image from 'next/image'

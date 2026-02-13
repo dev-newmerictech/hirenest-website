@@ -16,10 +16,10 @@ export function AboutStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'About Us - Hirenest',
         'Hirenest is an AI-powered recruitment platform connecting job seekers with top employers. Learn about our mission, vision, and team.',
-        'https://hirenest.ai/about',
+        'https://www.hirenest.ai/about',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'About Us', url: 'https://hirenest.ai/about' }
+            { name: 'About Us', url: 'https://www.hirenest.ai/about' }
         ]
     );
 

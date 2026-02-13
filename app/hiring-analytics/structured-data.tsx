@@ -16,10 +16,10 @@ export function HiringAnalyticsStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Hiring Analytics - Data-Driven Recruitment',
         'Optimize your recruitment with comprehensive Hiring Analytics. Track metrics, identify bottlenecks, and improve your time-to-hire with real-time data.',
-        'https://hirenest.ai/hiring-analytics',
+        'https://www.hirenest.ai/hiring-analytics',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Hiring Analytics', url: 'https://hirenest.ai/hiring-analytics' }
+            { name: 'Hiring Analytics', url: 'https://www.hirenest.ai/hiring-analytics' }
         ]
     );
 

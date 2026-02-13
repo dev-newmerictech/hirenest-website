@@ -15,10 +15,10 @@ export function RefundPolicyStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Refund Policy - Hirenest',
         'Read our Refund Policy to understand our terms regarding subscriptions, cancellations, and refunds.',
-        'https://hirenest.ai/refund-policy',
+        'https://www.hirenest.ai/refund-policy',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Refund Policy', url: 'https://hirenest.ai/refund-policy' }
+            { name: 'Refund Policy', url: 'https://www.hirenest.ai/refund-policy' }
         ]
     );
 

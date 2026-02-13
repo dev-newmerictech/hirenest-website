@@ -16,10 +16,10 @@ export function CustomAssessmentsStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Custom Assessments - Tailored Hiring Tests',
         'Create custom skill assessments tailored to your specific job requirements. Use our drag-and-drop builder to test coding, soft skills, and more.',
-        'https://hirenest.ai/custom-assessments',
+        'https://www.hirenest.ai/custom-assessments',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Custom Assessments', url: 'https://hirenest.ai/custom-assessments' }
+            { name: 'Custom Assessments', url: 'https://www.hirenest.ai/custom-assessments' }
         ]
     );
 

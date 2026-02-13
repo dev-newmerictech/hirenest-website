@@ -15,10 +15,10 @@ export function TermsOfServiceStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Terms of Service - Hirenest',
         'Review our Terms of Service to understand the rules and guidelines for using the Hirenest platform.',
-        'https://hirenest.ai/terms-of-service',
+        'https://www.hirenest.ai/terms-of-service',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Terms of Service', url: 'https://hirenest.ai/terms-of-service' }
+            { name: 'Terms of Service', url: 'https://www.hirenest.ai/terms-of-service' }
         ]
     );
 

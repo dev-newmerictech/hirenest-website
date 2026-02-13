@@ -15,10 +15,10 @@ export function SecurityStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Security - Your Data is Safe',
         'Hirenest prioritizes security and compliance. Learn about our data protection measures, GDPR compliance, and encryption standards.',
-        'https://hirenest.ai/security',
+        'https://www.hirenest.ai/security',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Security', url: 'https://hirenest.ai/security' }
+            { name: 'Security', url: 'https://www.hirenest.ai/security' }
         ]
     );
 

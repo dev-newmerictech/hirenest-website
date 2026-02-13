@@ -16,10 +16,10 @@ export function FastTrackApplicationsStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Fast-Track Applications - Simplify Applying',
         'Apply to hundreds of jobs instantly and get priority status with hiring managers. Improve candidate experience with Fast-Track Applications.',
-        'https://hirenest.ai/fast-track-applications',
+        'https://www.hirenest.ai/fast-track-applications',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Fast-Track Applications', url: 'https://hirenest.ai/fast-track-applications' }
+            { name: 'Fast-Track Applications', url: 'https://www.hirenest.ai/fast-track-applications' }
         ]
     );
 

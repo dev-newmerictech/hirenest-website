@@ -15,10 +15,10 @@ export function LegalStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Legal Information - Hirenest',
         'Access Hirenest legal documents, including Terms of Service, Privacy Policy, and other compliance information.',
-        'https://hirenest.ai/legal',
+        'https://www.hirenest.ai/legal',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Legal', url: 'https://hirenest.ai/legal' }
+            { name: 'Legal', url: 'https://www.hirenest.ai/legal' }
         ]
     );
 

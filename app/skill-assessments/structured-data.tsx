@@ -16,10 +16,10 @@ export function SkillAssessmentsStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Skill Assessments - Validate Your Expertise',
         'Validate your expertise with 350+ industry-standard skill assessments. Earn verified badges in coding, soft skills, and more to stand out to top employers.',
-        'https://hirenest.ai/skill-assessments',
+        'https://www.hirenest.ai/skill-assessments',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Skill Assessments', url: 'https://hirenest.ai/skill-assessments' }
+            { name: 'Skill Assessments', url: 'https://www.hirenest.ai/skill-assessments' }
         ]
     );
 

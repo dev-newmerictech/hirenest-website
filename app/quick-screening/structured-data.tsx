@@ -16,10 +16,10 @@ export function QuickScreeningStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Quick Screening - Accelerate Your Hiring',
         'Accelerate your hiring with Quick Screening. Use automated tools to filter candidates, screen in minutes not days, and fast-track the best talent.',
-        'https://hirenest.ai/quick-screening',
+        'https://www.hirenest.ai/quick-screening',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Quick Screening', url: 'https://hirenest.ai/quick-screening' }
+            { name: 'Quick Screening', url: 'https://www.hirenest.ai/quick-screening' }
         ]
     );
 

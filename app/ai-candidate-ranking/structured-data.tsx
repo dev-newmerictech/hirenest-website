@@ -16,10 +16,10 @@ export function AICandidateRankingStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'AI Candidate Ranking - Smart Hiring Decisions',
         'Instantly identify top talent with AI Candidate Ranking. Our smart scoring system evaluates skills and fit for faster, data-driven hiring decisions.',
-        'https://hirenest.ai/ai-candidate-ranking',
+        'https://www.hirenest.ai/ai-candidate-ranking',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'AI Candidate Ranking', url: 'https://hirenest.ai/ai-candidate-ranking' }
+            { name: 'AI Candidate Ranking', url: 'https://www.hirenest.ai/ai-candidate-ranking' }
         ]
     );
 

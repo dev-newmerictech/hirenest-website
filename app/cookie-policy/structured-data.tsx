@@ -15,10 +15,10 @@ export function CookiePolicyStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Cookie Policy - How We Use Cookies',
         'Learn about how we use cookies and similar technologies to enhance your experience on Hirenest.',
-        'https://hirenest.ai/cookie-policy',
+        'https://www.hirenest.ai/cookie-policy',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Cookie Policy', url: 'https://hirenest.ai/cookie-policy' }
+            { name: 'Cookie Policy', url: 'https://www.hirenest.ai/cookie-policy' }
         ]
     );
 

@@ -208,7 +208,7 @@ Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&ref&fbclid&
 Sitemap: https://www.hirenest.ai/sitemap.xml
 
 # RSS Feed is discoverable via <link> tag in HTML
-# llms.xml is available at https://www.hirenest.ai/llms.xml
+# llms.xml is available at https://www.hirenest.ai/llms.txt
 
 # =============================================================================
 # END

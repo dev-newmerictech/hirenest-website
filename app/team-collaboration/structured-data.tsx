@@ -16,10 +16,10 @@ export function TeamCollaborationStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Team Collaboration - Hire Together, Decide Smarter',
         'Streamline your hiring process with Team Collaboration tools. Share feedback, rate candidates, and make hiring decisions together.',
-        'https://hirenest.ai/team-collaboration',
+        'https://www.hirenest.ai/team-collaboration',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Team Collaboration', url: 'https://hirenest.ai/team-collaboration' }
+            { name: 'Team Collaboration', url: 'https://www.hirenest.ai/team-collaboration' }
         ]
     );
 

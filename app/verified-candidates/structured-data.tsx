@@ -16,10 +16,10 @@ export function VerifiedCandidatesStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Verified Candidates - Pre-Screened Talent Pool',
         'Hire with confidence using Verified Candidates. Access a pool of pre-screened talent with verified skills and background checks.',
-        'https://hirenest.ai/verified-candidates',
+        'https://www.hirenest.ai/verified-candidates',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Verified Candidates', url: 'https://hirenest.ai/verified-candidates' }
+            { name: 'Verified Candidates', url: 'https://www.hirenest.ai/verified-candidates' }
         ]
     );
 

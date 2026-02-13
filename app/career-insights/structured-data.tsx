@@ -14,10 +14,10 @@ export function CareerInsightsStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Career Insights - Data-Driven Career Decisions',
         'Get personalized AI-powered career insights, real-time salary benchmarks, and emerging market trends to make data-driven decisions and advance your career.',
-        'https://hirenest.ai/career-insights',
+        'https://www.hirenest.ai/career-insights',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Career Insights', url: 'https://hirenest.ai/career-insights' }
+            { name: 'Career Insights', url: 'https://www.hirenest.ai/career-insights' }
         ]
     );
 

@@ -15,10 +15,10 @@ export function PrivacyPolicyStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Privacy Policy - Your Privacy Matters',
         'Read our Privacy Policy to understand how we collect, use, and protect your personal data.',
-        'https://hirenest.ai/privacy-policy',
+        'https://www.hirenest.ai/privacy-policy',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Privacy Policy', url: 'https://hirenest.ai/privacy-policy' }
+            { name: 'Privacy Policy', url: 'https://www.hirenest.ai/privacy-policy' }
         ]
     );
 

@@ -16,10 +16,10 @@ export function ProfileOptimizationStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Profile Optimization - Boost Your Visibility',
         'Transform your online presence with AI-powered profile optimization. Enhance your LinkedIn profile and portfolio to attract recruiters and land your dream job.',
-        'https://hirenest.ai/profile-optimization',
+        'https://www.hirenest.ai/profile-optimization',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Profile Optimization', url: 'https://hirenest.ai/profile-optimization' }
+            { name: 'Profile Optimization', url: 'https://www.hirenest.ai/profile-optimization' }
         ]
     );
 

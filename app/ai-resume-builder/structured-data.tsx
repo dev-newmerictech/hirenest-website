@@ -16,10 +16,10 @@ export function AIResumeBuilderStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'AI Resume Builder - Create Professional Resumes',
         'Build ATS-optimized resumes with AI assistance. Get personalized suggestions and stand out to employers.',
-        'https://hirenest.ai/ai-resume-builder',
+        'https://www.hirenest.ai/ai-resume-builder',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'AI Resume Builder', url: 'https://hirenest.ai/ai-resume-builder' }
+            { name: 'AI Resume Builder', url: 'https://www.hirenest.ai/ai-resume-builder' }
         ]
     );
 

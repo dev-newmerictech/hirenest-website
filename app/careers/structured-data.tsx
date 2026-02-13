@@ -16,10 +16,10 @@ export function CareersStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Careers at Hirenest - Join Our Team',
         'Join the Hirenest team and help us build the next generation of AI-powered recruitment technology. View open positions and apply today.',
-        'https://hirenest.ai/careers',
+        'https://www.hirenest.ai/careers',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Careers', url: 'https://hirenest.ai/careers' }
+            { name: 'Careers', url: 'https://www.hirenest.ai/careers' }
         ]
     );
 

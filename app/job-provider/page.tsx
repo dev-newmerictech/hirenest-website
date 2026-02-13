@@ -32,16 +32,16 @@ export default function JobProviderPage() {
     const webPageSchema = generateWebPageSchema(
         'For Employers - Hire Top Talent',
         'Find and hire exceptional talent with AI-powered candidate ranking, screening tools, and comprehensive analytics.',
-        'https://hirenest.ai/job-provider',
+        'https://www.hirenest.ai/job-provider',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'For Employers', url: 'https://hirenest.ai/job-provider' }
+            { name: 'For Employers', url: 'https://www.hirenest.ai/job-provider' }
         ]
     );
 
     // Generate Image Schema for the OG image
     const imageSchema = generateImageObjectSchema(
-        'https://hirenest.ai/job-provider-og.png',
+        'https://www.hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest for Employers - Find Top Talent Fast',
             description: 'AI-powered recruitment platform dashboard for employers',
@@ -57,12 +57,12 @@ export default function JobProviderPage() {
     const videoSchema = generateVideoObjectSchema(
         'Hirenest for Employers - Platform Demo',
         'See how Hirenest helps employers find and hire top talent with AI-powered candidate matching, screening tools, and comprehensive analytics.',
-        'https://hirenest.ai/job-provider-og.png', // Using OG image as thumbnail
+        'https://www.hirenest.ai/job-provider-og.png', // Using OG image as thumbnail
         '2024-01-15T00:00:00.000Z',
         {
             // Add actual video URLs when available
             // embedUrl: 'https://youtube.com/embed/your-video-id',
-            // contentUrl: 'https://hirenest.ai/videos/employer-demo.mp4',
+            // contentUrl: 'https://www.hirenest.ai/videos/employer-demo.mp4',
             duration: 'PT3M30S', // 3 minutes 30 seconds
             width: 1920,
             height: 1080

@@ -16,10 +16,10 @@ export function SmartJobMatchingStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Smart Job Matching - Find Perfect Opportunities',
         'AI-driven job matching that analyzes your skills, experience, and preferences to deliver personalized job recommendations. Find your perfect role faster.',
-        'https://hirenest.ai/smart-job-matching',
+        'https://www.hirenest.ai/smart-job-matching',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'Smart Job Matching', url: 'https://hirenest.ai/smart-job-matching' }
+            { name: 'Smart Job Matching', url: 'https://www.hirenest.ai/smart-job-matching' }
         ]
     );
 

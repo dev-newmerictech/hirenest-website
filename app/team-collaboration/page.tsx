@@ -56,7 +56,7 @@ export default function TeamCollaborationPage() {
                         <VStack alignItems="flex-start" gap={6}>
                             <Box>
                                 <Text
-                                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                                    fontSize="sm"
                                     fontWeight="600"
                                     color="#4241ff"
                                     textTransform="uppercase"
@@ -68,10 +68,10 @@ export default function TeamCollaborationPage() {
                                 </Text>
                                 <Heading
                                     as="h1"
-                                    fontSize={{ base: '3xl', md: '4xl' }}
-                                    fontWeight="700"
-                                    color="#000"
-                                    lineHeight="1.2"
+                                    fontSize={{ base: '4xl' }}
+                                    fontWeight="800"
+                                    lineHeight="1.1"
+                                    color="#1d1d1f"
                                     mb={4}
                                     textAlign={{ base: 'center', lg: 'left' }}
                                 >
@@ -79,12 +79,10 @@ export default function TeamCollaborationPage() {
                                     <Text as="span" display="block" bg="#4241ff" bgClip="text">Decide Smarter</Text>
                                 </Heading>
                                 <Text
-                                    fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                                    fontWeight="400"
-                                    color="#000"
-                                    lineHeight="1.6"
+                                    fontSize={{ base: 'lg', md: 'xl' }} color="gray.900" lineHeight="1.6"
                                     maxW="600px"
                                     textAlign={{ base: 'center', lg: 'left' }}
+                                    mb={4}
                                 >
                                     Bring your entire hiring team together with tools designed for seamless collaboration and faster decision-making.
                                 </Text>
@@ -94,11 +92,12 @@ export default function TeamCollaborationPage() {
                                 <Button
                                     _hover={{
                                         background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-                                        transform: "translateY(-2px)",
-                                        boxShadow: "lg"
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: 'lg',
                                     }}
-                                    transition="all 0.3s"
-                                    size={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
+                                    transition="all 0.3"
+                                    size={{ base: 'lg' }}
+                                    fontWeight={'600'}
                                     borderRadius="full"
                                     background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                                     color="white"
@@ -110,7 +109,7 @@ export default function TeamCollaborationPage() {
                                 </Button>
                             </Stack>
 
-                            <Flex gap={6} mt={4} fontSize="sm" color="#000" fontWeight="500">
+                            <Flex gap={6} mt={4} fontSize="md" color="#000" fontWeight="500">
                                 <Flex align="center" gap={2}>
                                     <Icon as={CheckCircle} color="#4241ff" />
                                     <Text>Unlimited Users</Text>
@@ -155,27 +154,25 @@ export default function TeamCollaborationPage() {
                         {/* Section Header */}
                         <VStack textAlign="center" gap={4} maxW="800px" mx="auto">
                             <Text
-                                fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                fontWeight="600"
-                                color="#4241ff"
-                                textTransform="uppercase"
-                                letterSpacing="wider"
+                                fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Seamless Teamwork
                             </Text>
                             <Heading
                                 as="h2"
                                 fontSize={{ base: '3xl', md: '4xl' }}
-                                fontWeight="700"
-                                color="#000"
-                                lineHeight="1.2"
+                                fontWeight="800"
+                                color="#1d1d1f"
+                                lineHeight="1.1"
+                                letterSpacing="tight"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Work Better <Text as="span" color="#4241ff">Together</Text>
                             </Heading>
                             <Text
-                                fontSize={{ base: 'md', md: 'lg' }}
-                                color="#000"
-                                opacity={0.8}
+                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                lineHeight="1.6"
                                 maxW="7xl"
                             >
                                 No more endless email threads or lost feedback. Keep everyone aligned with powerful collaboration tools.
@@ -254,7 +251,7 @@ export default function TeamCollaborationPage() {
                                             <Text
                                                 color="#000"
                                                 opacity={0.7}
-                                                fontSize={{ base: 'sm', md: 'md' }}
+                                                fontSize={{ base: 'lg', md: 'xl' }}
                                                 lineHeight="1.6"
                                             >
                                                 {feature.description}
@@ -274,23 +271,25 @@ export default function TeamCollaborationPage() {
                     <VStack gap={{ base: 12, md: 20 }}>
                         <VStack textAlign="center" gap={4} maxW="800px" mx="auto">
                             <Text
-                                fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                fontWeight="600"
-                                color="#4241ff"
-                                textTransform="uppercase"
-                                letterSpacing="wider"
+                                fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Simple Process
                             </Text>
                             <Heading
                                 as="h2"
                                 fontSize={{ base: '3xl', md: '4xl' }}
-                                fontWeight="700"
-                                color="#000"
+                                fontWeight="800"
+                                color="#1d1d1f"
+                                lineHeight="1.1"
+                                letterSpacing="tight"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 How It <Text as="span" color="#4241ff">Works</Text>
                             </Heading>
-                            <Text fontSize={{ base: 'md', md: 'lg' }} color="#000" opacity={0.8}>
+                            <Text
+                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                lineHeight="1.6">
                                 Collaborate seamlessly in 4 easy steps
                             </Text>
                         </VStack>
@@ -308,7 +307,7 @@ export default function TeamCollaborationPage() {
                                 zIndex={0}
                             />
 
-                            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} gap={8}>
+                            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }} gap={8}>
                                 {[
                                     {
                                         icon: UserPlus,
@@ -376,10 +375,12 @@ export default function TeamCollaborationPage() {
                                             </Badge>
                                         </Flex>
                                         <VStack textAlign="center" gap={3}>
-                                            <Heading as="h3" fontSize="xl" fontWeight="600" color="#000">
+                                            <Heading as="h3" fontSize="2xl" fontWeight="600" color="#000">
                                                 {step.title}
                                             </Heading>
-                                            <Text color="#000" fontSize="sm" lineHeight="1.6" opacity={0.8}>
+                                            <Text color="#000"
+                                                fontSize={{ base: 'lg', md: 'xl' }}
+                                                lineHeight="1.6" opacity={0.8}>
                                                 {step.description}
                                             </Text>
                                         </VStack>
@@ -398,33 +399,27 @@ export default function TeamCollaborationPage() {
                         <VStack alignItems="flex-start" gap={6}>
                             <Box>
                                 <Text
-                                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                    fontWeight="600"
-                                    color="#4241ff"
-                                    textTransform="uppercase"
-                                    letterSpacing="wider"
-                                    mb={3}
+                                    fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                                     textAlign={{ base: 'center', lg: 'left' }}
+                                    mb={3}
                                 >
                                     Key Benefits
                                 </Text>
                                 <Heading
                                     as="h2"
                                     fontSize={{ base: '3xl', md: '4xl' }}
-                                    fontWeight="700"
-                                    color="#000"
-                                    lineHeight="1.2"
-                                    mb={4}
+                                    fontWeight="800"
+                                    color="#1d1d1f"
+                                    lineHeight="1.1"
+                                    letterSpacing="tight"
                                     textAlign={{ base: 'center', lg: 'left' }}
+                                    mb={4}
                                 >
                                     Why Collaborate <Text as="span" color="#4241ff">Together?</Text>
                                 </Heading>
                                 <Text
-                                    fontSize={{ base: 'md', md: 'lg' }}
-                                    fontWeight="400"
-                                    color="#000"
+                                    fontSize={{ base: 'lg', md: 'xl' }} color="#000"
                                     lineHeight="1.6"
-                                    textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Hiring is a team sport. Make better decisions faster with everyone on the same page.
                                 </Text>
@@ -462,10 +457,12 @@ export default function TeamCollaborationPage() {
                                             <Icon as={benefit.icon} boxSize={5} />
                                         </Flex>
                                         <Box>
-                                            <Heading as="h3" fontSize="lg" fontWeight="600" color="#000" mb={1}>
+                                            <Heading as="h3" fontSize="1xl" fontWeight="600" color="#000" mb={1}>
                                                 {benefit.title}
                                             </Heading>
-                                            <Text color="#000" fontSize="sm" lineHeight="1.6">
+                                            <Text
+                                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                                lineHeight="1.6">
                                                 {benefit.description}
                                             </Text>
                                         </Box>

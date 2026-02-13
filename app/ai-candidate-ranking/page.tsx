@@ -56,7 +56,7 @@ export default function AICandidateRankingPage() {
                         <VStack alignItems="flex-start" gap={6}>
                             <Box>
                                 <Text
-                                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                                    fontSize="sm"
                                     fontWeight="600"
                                     color="#4241ff"
                                     textTransform="uppercase"
@@ -68,10 +68,10 @@ export default function AICandidateRankingPage() {
                                 </Text>
                                 <Heading
                                     as="h1"
-                                    fontSize={{ base: '3xl', md: '4xl' }}
-                                    fontWeight="700"
-                                    color="#000"
-                                    lineHeight="1.2"
+                                    fontSize={{ base: '4xl' }}
+                                    fontWeight="800"
+                                    lineHeight="1.1"
+                                    color="#1d1d1f"
                                     mb={4}
                                     textAlign={{ base: 'center', lg: 'left' }}
                                 >
@@ -79,12 +79,10 @@ export default function AICandidateRankingPage() {
                                     <Text as="span" display="block" bg="#4241ff" bgClip="text">Ignore the Rest</Text>
                                 </Heading>
                                 <Text
-                                    fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                                    fontWeight="400"
-                                    color="#000"
-                                    lineHeight="1.6"
+                                    fontSize={{ base: 'lg', md: 'xl' }} color="gray.900" lineHeight="1.6"
                                     maxW="600px"
                                     textAlign={{ base: 'center', lg: 'left' }}
+                                    mb={4}
                                 >
                                     Stop drowning in resumes. Our AI instantly identifies and ranks your top candidates so you can focus on interviewing the best.
                                 </Text>
@@ -94,11 +92,12 @@ export default function AICandidateRankingPage() {
                                 <Button
                                     _hover={{
                                         background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-                                        transform: "translateY(-2px)",
-                                        boxShadow: "lg"
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: 'lg',
                                     }}
-                                    transition="all 0.3s"
-                                    size={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
+                                    transition="all 0.3"
+                                    size={{ base: 'lg' }}
+                                    fontWeight={'600'}
                                     borderRadius="full"
                                     background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                                     color="white"
@@ -110,7 +109,7 @@ export default function AICandidateRankingPage() {
                                 </Button>
                             </Stack>
 
-                            <Flex gap={6} mt={4} fontSize="sm" color="#000" fontWeight="500">
+                            <Flex gap={6} mt={4} fontSize="md" color="#000" fontWeight="500">
                                 <Flex align="center" gap={2}>
                                     <Icon as={CheckCircle} color="#4241ff" />
                                     <Text>95% Accuracy</Text>
@@ -147,27 +146,25 @@ export default function AICandidateRankingPage() {
                         {/* Section Header */}
                         <VStack textAlign="center" gap={4} maxW="800px" mx="auto">
                             <Text
-                                fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                fontWeight="600"
-                                color="#4241ff"
-                                textTransform="uppercase"
-                                letterSpacing="wider"
+                                fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Intelligent Scoring
                             </Text>
                             <Heading
                                 as="h2"
                                 fontSize={{ base: '3xl', md: '4xl' }}
-                                fontWeight="700"
-                                color="#000"
-                                lineHeight="1.2"
+                                fontWeight="800"
+                                color="#1d1d1f"
+                                lineHeight="1.1"
+                                letterSpacing="tight"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Data-Driven <Text as="span" color="#4241ff">Hiring Decisions</Text>
                             </Heading>
                             <Text
-                                fontSize={{ base: 'md', md: 'lg' }}
-                                color="#000"
-                                opacity={0.8}
+                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                lineHeight="1.6"
                                 maxW="7xl"
                             >
                                 We analyze every data point to ensure you never miss a hidden gem or waste time on unqualified applicants.
@@ -246,7 +243,7 @@ export default function AICandidateRankingPage() {
                                             <Text
                                                 color="#000"
                                                 opacity={0.7}
-                                                fontSize={{ base: 'sm', md: 'md' }}
+                                                fontSize={{ base: 'lg', md: 'xl' }}
                                                 lineHeight="1.6"
                                             >
                                                 {feature.description}
@@ -266,23 +263,25 @@ export default function AICandidateRankingPage() {
                     <VStack gap={{ base: 12, md: 20 }}>
                         <VStack textAlign="center" gap={4} maxW="800px" mx="auto">
                             <Text
-                                fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                fontWeight="600"
-                                color="#4241ff"
-                                textTransform="uppercase"
-                                letterSpacing="wider"
+                                fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Simple Process
                             </Text>
                             <Heading
                                 as="h2"
                                 fontSize={{ base: '3xl', md: '4xl' }}
-                                fontWeight="700"
-                                color="#000"
+                                fontWeight="800"
+                                color="#1d1d1f"
+                                lineHeight="1.1"
+                                letterSpacing="tight"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 How It <Text as="span" color="#4241ff">Works</Text>
                             </Heading>
-                            <Text fontSize={{ base: 'md', md: 'lg' }} color="#000" opacity={0.8}>
+                            <Text
+                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                lineHeight="1.6">
                                 Rank candidates in 4 easy steps
                             </Text>
                         </VStack>
@@ -300,7 +299,7 @@ export default function AICandidateRankingPage() {
                                 zIndex={0}
                             />
 
-                            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} gap={8}>
+                            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }} gap={8}>
                                 {[
                                     {
                                         icon: Users,
@@ -368,10 +367,12 @@ export default function AICandidateRankingPage() {
                                             </Badge>
                                         </Flex>
                                         <VStack textAlign="center" gap={3}>
-                                            <Heading as="h3" fontSize="xl" fontWeight="600" color="#000">
+                                            <Heading as="h3" fontSize="2xl" fontWeight="600" color="#000">
                                                 {step.title}
                                             </Heading>
-                                            <Text color="#000" fontSize="sm" lineHeight="1.6" opacity={0.8}>
+                                            <Text color="#000"
+                                                fontSize={{ base: 'lg', md: 'xl' }}
+                                                lineHeight="1.6" opacity={0.8}>
                                                 {step.description}
                                             </Text>
                                         </VStack>
@@ -390,31 +391,26 @@ export default function AICandidateRankingPage() {
                         <VStack alignItems="flex-start" gap={6}>
                             <Box>
                                 <Text
-                                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                    fontWeight="600"
-                                    color="#4241ff"
-                                    textTransform="uppercase"
-                                    letterSpacing="wider"
-                                    mb={3}
+                                    fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                                     textAlign={{ base: 'center', lg: 'left' }}
+                                    mb={3}
                                 >
                                     Key Benefits
                                 </Text>
                                 <Heading
                                     as="h2"
                                     fontSize={{ base: '3xl', md: '4xl' }}
-                                    fontWeight="700"
-                                    color="#000"
-                                    lineHeight="1.2"
-                                    mb={4}
+                                    fontWeight="800"
+                                    color="#1d1d1f"
+                                    lineHeight="1.1"
+                                    letterSpacing="tight"
                                     textAlign={{ base: 'center', lg: 'left' }}
+                                    mb={4}
                                 >
                                     Why Use <Text as="span" color="#4241ff">AI Ranking?</Text>
                                 </Heading>
                                 <Text
-                                    fontSize={{ base: 'md', md: 'lg' }}
-                                    fontWeight="400"
-                                    color="#000"
+                                    fontSize={{ base: 'lg', md: 'xl' }} color="#000"
                                     lineHeight="1.6"
                                 >
                                     Efficiency, accuracy, and fairness. Transform your hiring process today.
@@ -453,10 +449,12 @@ export default function AICandidateRankingPage() {
                                             <Icon as={benefit.icon} boxSize={5} />
                                         </Flex>
                                         <Box>
-                                            <Heading as="h3" fontSize="lg" fontWeight="600" color="#000" mb={1}>
+                                            <Heading as="h3" fontSize="1xl" fontWeight="600" color="#000" mb={1}>
                                                 {benefit.title}
                                             </Heading>
-                                            <Text color="#000" fontSize="sm" lineHeight="1.6">
+                                            <Text
+                                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                                lineHeight="1.6">
                                                 {benefit.description}
                                             </Text>
                                         </Box>

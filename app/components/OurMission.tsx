@@ -19,30 +19,23 @@ export const OurMission = () => {
                 {/* Section Header */}
                 <VStack mb={12} textAlign="center">
                     <Text
-                        color="#4241ff"
-                        fontWeight="600"
-                        fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                        mb={4}
-                        letterSpacing="wider"
-                        textTransform="uppercase"
+                        fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider" mb={4}
                     >
                         Our Mission
                     </Text>
                     <Heading
                         as="h2"
                         fontSize={{ base: '3xl', md: '4xl' }}
-                        fontWeight="700"
+                        fontWeight="800"
+                        color="#1d1d1f"
+                        lineHeight="1.1"
+                        letterSpacing="tight"
                         mb={6}
-                        lineHeight="1.2"
-                        color="#000"
-                        maxW="4xl"
                     >
                         Empowering People and Organizations to Thrive
                     </Heading>
                     <Text
-                        color="#000"
-                        fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                        maxW="4xl"
+                        fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="4xl"
                         lineHeight="1.6"
                     >
                         We believe that finding the right talent shouldn't be a struggle. Our AI-powered platform bridges the gap between exceptional candidates and forward-thinking companies.
@@ -108,7 +101,7 @@ const MissionCard = ({ icon, title, description }: { icon: any, title: string, d
         </Heading>
         <Text
             color="#000"
-            fontSize={{ base: 'sm', md: 'md' }}
+            fontSize={{ base: 'md', md: 'lg' }}
             lineHeight="1.6"
         >
             {description}

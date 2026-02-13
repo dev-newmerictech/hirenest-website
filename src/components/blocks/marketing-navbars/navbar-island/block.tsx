@@ -108,7 +108,7 @@ export const Block = () => {
             <HStack gap={{ base: '2', md: '4', lg: '8' }} w="full" justify="space-between">
               {/* <Text fontSize="24px" fontWeight="bold" color="brand.500">Hirenest</Text> */}
 
-              <Image src="/HpLogo.svg" alt="Hirenest Logo" width={150} height={80} style={{ cursor: 'pointer' }} onClick={() => router.push('/')} />
+              <Image src="/HpLogo.svg" alt="Hirenest Logo" width={150} height={31} priority style={{ cursor: 'pointer' }} onClick={() => router.push('/')} />
               <NavbarLinks hideBelow="lg" />
               <HStack gap={{ base: '2', md: '3' }} hideBelow="lg">
                 <Button

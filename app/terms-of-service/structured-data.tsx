@@ -17,7 +17,7 @@ export function TermsOfServiceStructuredData() {
         'Review our Terms of Service to understand the rules and guidelines for using the Hirenest platform.',
         'https://www.hirenest.ai/terms-of-service',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Terms of Service', url: 'https://www.hirenest.ai/terms-of-service' }
         ]
     );

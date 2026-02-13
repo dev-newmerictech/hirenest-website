@@ -18,7 +18,7 @@ export function CareersStructuredData() {
         'Join the Hirenest team and help us build the next generation of AI-powered recruitment technology. View open positions and apply today.',
         'https://www.hirenest.ai/careers',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Careers', url: 'https://www.hirenest.ai/careers' }
         ]
     );

@@ -18,7 +18,7 @@ export function AboutStructuredData() {
         'Hirenest is an AI-powered recruitment platform connecting job seekers with top employers. Learn about our mission, vision, and team.',
         'https://www.hirenest.ai/about',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'About Us', url: 'https://www.hirenest.ai/about' }
         ]
     );

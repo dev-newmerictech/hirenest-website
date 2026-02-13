@@ -19,7 +19,7 @@ export function generatePageMetadata({
     publishedTime,
     modifiedTime,
 }: GenerateMetadataParams): Metadata {
-    const baseUrl = 'https://hirenest.ai';
+    const baseUrl = 'https://www.hirenest.ai';
     const url = `${baseUrl}${path}`;
 
     // Use current date if not provided

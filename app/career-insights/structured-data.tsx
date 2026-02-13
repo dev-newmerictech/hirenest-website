@@ -16,7 +16,7 @@ export function CareerInsightsStructuredData() {
         'Get personalized AI-powered career insights, real-time salary benchmarks, and emerging market trends to make data-driven decisions and advance your career.',
         'https://www.hirenest.ai/career-insights',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Career Insights', url: 'https://www.hirenest.ai/career-insights' }
         ]
     );

@@ -17,7 +17,7 @@ export function SecurityStructuredData() {
         'Hirenest prioritizes security and compliance. Learn about our data protection measures, GDPR compliance, and encryption standards.',
         'https://www.hirenest.ai/security',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Security', url: 'https://www.hirenest.ai/security' }
         ]
     );

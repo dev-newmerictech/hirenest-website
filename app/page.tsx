@@ -34,8 +34,8 @@ export default function Home() {
   const webPageSchema = generateWebPageSchema(
     pageMetadata.home.title as string,
     pageMetadata.home.description as string,
-    'https://hirenest.ai',
-    [{ name: 'Home', url: 'https://hirenest.ai' }]
+    'https://www.hirenest.ai',
+    [{ name: 'Home', url: 'https://www.hirenest.ai' }]
   );
 
   return (

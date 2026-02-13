@@ -18,7 +18,7 @@ export function VerifiedCandidatesStructuredData() {
         'Hire with confidence using Verified Candidates. Access a pool of pre-screened talent with verified skills and background checks.',
         'https://www.hirenest.ai/verified-candidates',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Verified Candidates', url: 'https://www.hirenest.ai/verified-candidates' }
         ]
     );

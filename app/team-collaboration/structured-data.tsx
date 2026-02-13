@@ -18,7 +18,7 @@ export function TeamCollaborationStructuredData() {
         'Streamline your hiring process with Team Collaboration tools. Share feedback, rate candidates, and make hiring decisions together.',
         'https://www.hirenest.ai/team-collaboration',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Team Collaboration', url: 'https://www.hirenest.ai/team-collaboration' }
         ]
     );

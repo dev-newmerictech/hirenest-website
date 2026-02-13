@@ -18,7 +18,7 @@ export function FastTrackApplicationsStructuredData() {
         'Apply to hundreds of jobs instantly and get priority status with hiring managers. Improve candidate experience with Fast-Track Applications.',
         'https://www.hirenest.ai/fast-track-applications',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Fast-Track Applications', url: 'https://www.hirenest.ai/fast-track-applications' }
         ]
     );

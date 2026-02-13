@@ -18,7 +18,7 @@ export function AIResumeBuilderStructuredData() {
         'Build ATS-optimized resumes with AI assistance. Get personalized suggestions and stand out to employers.',
         'https://www.hirenest.ai/ai-resume-builder',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'AI Resume Builder', url: 'https://www.hirenest.ai/ai-resume-builder' }
         ]
     );

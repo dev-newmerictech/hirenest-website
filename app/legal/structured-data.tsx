@@ -2,13 +2,25 @@
 
 import {
     generateFAQSchema,
-    generateImageObjectSchema
+    generateImageObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function LegalStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Legal Information - Hirenest',
+        'Access Hirenest legal documents, including Terms of Service, Privacy Policy, and other compliance information.',
+        'https://hirenest.ai/legal',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Legal', url: 'https://hirenest.ai/legal' }
+        ]
+    );
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
@@ -26,6 +38,12 @@ export function LegalStructuredData() {
 
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

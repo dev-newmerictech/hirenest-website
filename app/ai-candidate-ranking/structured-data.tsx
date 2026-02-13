@@ -3,13 +3,25 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateVideoObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function AICandidateRankingStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'AI Candidate Ranking - Smart Hiring Decisions',
+        'Instantly identify top talent with AI Candidate Ranking. Our smart scoring system evaluates skills and fit for faster, data-driven hiring decisions.',
+        'https://hirenest.ai/ai-candidate-ranking',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'AI Candidate Ranking', url: 'https://hirenest.ai/ai-candidate-ranking' }
+        ]
+    );
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
@@ -40,6 +52,12 @@ export function AICandidateRankingStructuredData() {
 
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

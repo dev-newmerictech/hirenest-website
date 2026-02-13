@@ -3,13 +3,25 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateVideoObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function ProfileOptimizationStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Profile Optimization - Boost Your Visibility',
+        'Transform your online presence with AI-powered profile optimization. Enhance your LinkedIn profile and portfolio to attract recruiters and land your dream job.',
+        'https://hirenest.ai/profile-optimization',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Profile Optimization', url: 'https://hirenest.ai/profile-optimization' }
+        ]
+    );
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
@@ -40,6 +52,12 @@ export function ProfileOptimizationStructuredData() {
 
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

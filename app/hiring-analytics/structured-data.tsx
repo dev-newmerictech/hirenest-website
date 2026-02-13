@@ -3,13 +3,25 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateVideoObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function HiringAnalyticsStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Hiring Analytics - Data-Driven Recruitment',
+        'Optimize your recruitment with comprehensive Hiring Analytics. Track metrics, identify bottlenecks, and improve your time-to-hire with real-time data.',
+        'https://hirenest.ai/hiring-analytics',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Hiring Analytics', url: 'https://hirenest.ai/hiring-analytics' }
+        ]
+    );
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
@@ -40,6 +52,12 @@ export function HiringAnalyticsStructuredData() {
 
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

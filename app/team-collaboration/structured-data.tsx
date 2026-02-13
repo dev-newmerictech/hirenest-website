@@ -3,13 +3,25 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateVideoObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function TeamCollaborationStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Team Collaboration - Hire Together, Decide Smarter',
+        'Streamline your hiring process with Team Collaboration tools. Share feedback, rate candidates, and make hiring decisions together.',
+        'https://hirenest.ai/team-collaboration',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Team Collaboration', url: 'https://hirenest.ai/team-collaboration' }
+        ]
+    );
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
@@ -40,6 +52,12 @@ export function TeamCollaborationStructuredData() {
 
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

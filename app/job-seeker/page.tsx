@@ -29,7 +29,7 @@ export default function JobSeekerPage() {
         'https://hirenest.ai/job-seeker',
         [
             { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'For Job Seekers' }
+            { name: 'For Job Seekers', url: 'https://hirenest.ai/job-seeker' }
         ]
     );
 

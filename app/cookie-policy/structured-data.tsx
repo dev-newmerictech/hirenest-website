@@ -2,13 +2,25 @@
 
 import {
     generateFAQSchema,
-    generateImageObjectSchema
+    generateImageObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function CookiePolicyStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Cookie Policy - How We Use Cookies',
+        'Learn about how we use cookies and similar technologies to enhance your experience on Hirenest.',
+        'https://hirenest.ai/cookie-policy',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Cookie Policy', url: 'https://hirenest.ai/cookie-policy' }
+        ]
+    );
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
@@ -26,6 +38,12 @@ export function CookiePolicyStructuredData() {
 
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

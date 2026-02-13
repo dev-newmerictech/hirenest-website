@@ -3,13 +3,25 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateVideoObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function AIResumeBuilderStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'AI Resume Builder - Create Professional Resumes',
+        'Build ATS-optimized resumes with AI assistance. Get personalized suggestions and stand out to employers.',
+        'https://hirenest.ai/ai-resume-builder',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'AI Resume Builder', url: 'https://hirenest.ai/ai-resume-builder' }
+        ]
+    );
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
@@ -40,6 +52,12 @@ export function AIResumeBuilderStructuredData() {
 
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

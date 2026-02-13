@@ -14,7 +14,8 @@ import { pageMetadata } from '../lib/metadata';
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateVideoObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
@@ -26,6 +27,17 @@ export const metadata: Metadata = pageMetadata.jobProvider;
 export default function JobProviderPage() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'For Employers - Hire Top Talent',
+        'Find and hire exceptional talent with AI-powered candidate ranking, screening tools, and comprehensive analytics.',
+        'https://hirenest.ai/job-provider',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'For Employers', url: 'https://hirenest.ai/job-provider' }
+        ]
+    );
 
     // Generate Image Schema for the OG image
     const imageSchema = generateImageObjectSchema(
@@ -59,6 +71,12 @@ export default function JobProviderPage() {
 
     return (
         <Box>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* Structured Data - FAQ */}
             <script
                 type="application/ld+json"

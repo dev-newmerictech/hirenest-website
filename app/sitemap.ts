@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://hirenest.ai';
+    const baseUrl = 'https://www.hirenest.ai';
     const currentDate = new Date();
 
     // Define all static pages with their priorities and change frequencies

@@ -6,7 +6,7 @@ import { MetadataRoute } from 'next';
  * Purpose: Crawler management for recruitment platform
  */
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = 'https://hirenest.ai';
+    const baseUrl = 'https://www.hirenest.ai';
 
     return {
         rules: [

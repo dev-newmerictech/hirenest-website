@@ -3,13 +3,25 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateVideoObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function FastTrackApplicationsStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Fast-Track Applications - Simplify Applying',
+        'Apply to hundreds of jobs instantly and get priority status with hiring managers. Improve candidate experience with Fast-Track Applications.',
+        'https://www.hirenest.ai/fast-track-applications',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Fast-Track Applications', url: 'https://www.hirenest.ai/fast-track-applications' }
+        ]
+    );
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
@@ -40,6 +52,12 @@ export function FastTrackApplicationsStructuredData() {
 
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

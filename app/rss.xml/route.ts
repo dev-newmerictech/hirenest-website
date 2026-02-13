@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-static';
+
 export async function GET() {
     const baseUrl = 'https://hirenest.ai';
     const currentDate = new Date().toUTCString();
@@ -79,7 +81,7 @@ export async function GET() {
         .join('');
 
     const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hirenest - Connect Job Seekers with Employers</title>
     <link>${baseUrl}</link>
@@ -93,9 +95,12 @@ export async function GET() {
       <link>${baseUrl}</link>
     </image>
     <copyright>Copyright ${new Date().getFullYear()} Hirenest. All rights reserved.</copyright>
+    <managingEditor>hello@hirenest.ai (Hirenest Team)</managingEditor>
+    <webMaster>hello@hirenest.ai (Hirenest Team)</webMaster>
     <category>Jobs and Recruitment</category>
     <category>Career Development</category>
     <category>AI Technology</category>
+    <ttl>60</ttl>
     ${rssItems}
   </channel>
 </rss>`;
@@ -107,3 +112,4 @@ export async function GET() {
         },
     });
 }
+

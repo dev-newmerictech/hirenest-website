@@ -3,12 +3,23 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateVideoObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function CareerInsightsStructuredData() {
     const faqSchema = generateFAQSchema(faqs);
+
+    const webPageSchema = generateWebPageSchema(
+        'Career Insights - Data-Driven Career Decisions',
+        'Get personalized AI-powered career insights, real-time salary benchmarks, and emerging market trends to make data-driven decisions and advance your career.',
+        'https://www.hirenest.ai/career-insights',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Career Insights', url: 'https://www.hirenest.ai/career-insights' }
+        ]
+    );
 
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/career_insights_hero.png',
@@ -37,6 +48,7 @@ export function CareerInsightsStructuredData() {
 
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />

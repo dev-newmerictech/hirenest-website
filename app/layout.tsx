@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: "AI-powered platform connecting job seekers with employers. Find your dream job or hire exceptional talent.",
     images: [
       {
-        url: "https://hirenest.ai/og-image.png",
+        url: "https://www.hirenest.ai/og-image.png",
         width: 1200,
         height: 630,
         alt: "Hirenest - Connect Job Seekers with Employers",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Hirenest - Connect Job Seekers with Employers",
     description: "AI-powered platform connecting job seekers with employers. Find your dream job or hire exceptional talent.",
     images: {
-      url: "https://hirenest.ai/og-image.png",
+      url: "https://www.hirenest.ai/og-image.png",
       alt: "Hirenest - Connect Job Seekers with Employers",
     },
   },
@@ -131,13 +131,13 @@ export default function RootLayout({
           rel="alternate"
           type="application/rss+xml"
           title="Hirenest RSS Feed"
-          href="https://hirenest.ai/rss.xml"
+          href="https://www.hirenest.ai/rss.xml"
         />
         <link
           rel="alternate"
           type="application/xml"
           title="Hirenest LLM Metadata"
-          href="https://hirenest.ai/llms.xml"
+          href="https://www.hirenest.ai/llms.txt"
         />
         {/* Structured Data - Combined Organization & Website */}
         <script

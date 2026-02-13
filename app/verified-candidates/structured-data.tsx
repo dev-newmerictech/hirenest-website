@@ -3,13 +3,25 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateVideoObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 export function VerifiedCandidatesStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Verified Candidates - Pre-Screened Talent Pool',
+        'Hire with confidence using Verified Candidates. Access a pool of pre-screened talent with verified skills and background checks.',
+        'https://www.hirenest.ai/verified-candidates',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Verified Candidates', url: 'https://www.hirenest.ai/verified-candidates' }
+        ]
+    );
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
@@ -40,6 +52,12 @@ export function VerifiedCandidatesStructuredData() {
 
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

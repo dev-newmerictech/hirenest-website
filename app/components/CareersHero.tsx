@@ -21,7 +21,7 @@ export const CareersHero = () => (
                 <VStack alignItems={{ base: 'center', lg: 'flex-start' }} gap={6}>
                     <Box>
                         <Text
-                            fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                            fontSize="sm"
                             fontWeight="600"
                             color="#4241ff"
                             textTransform="uppercase"
@@ -33,12 +33,12 @@ export const CareersHero = () => (
                         </Text>
                         <Heading
                             as="h1"
-                            fontSize={{ base: '3xl', md: '4xl' }}
-                            fontWeight="700"
-                            color="#000"
-                            lineHeight="1.2"
-                            mb={4}
+                            fontSize={{ base: '4xl' }}
+                            fontWeight="800"
+                            lineHeight="1.1"
+                            color="#1d1d1f"
                             textAlign={{ base: 'center', lg: 'left' }}
+                            mb={3}
                         >
                             Build the Future of
                             <Text as="span" display="block" bg="#4241ff" bgClip="text">
@@ -46,11 +46,7 @@ export const CareersHero = () => (
                             </Text>
                         </Heading>
                         <Text
-                            fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                            fontWeight="400"
-                            color="#000"
-                            lineHeight="1.6"
-                            maxW="600px"
+                            fontSize={{ base: 'lg', md: 'xl' }} color="gray.500" maxW="lg" lineHeight="1.6"
                             textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Join our mission to transform how people find jobs and companies find talent. We're looking for passionate individuals ready to make an impact.
@@ -80,26 +76,26 @@ export const CareersHero = () => (
                     {/* Stats */}
                     <Flex gap={{ base: 6, md: 8 }} mt={4} flexWrap="wrap">
                         <Box>
-                            <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700" color="#000">
+                            <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700" color="#000" opacity={0.5}>
                                 50+
                             </Text>
-                            <Text fontSize={{ base: 'xs', md: 'sm' }} color="#000">
+                            <Text fontSize={{ base: 'xs', md: 'sm' }} color="#000" opacity={0.5}>
                                 Team Members
                             </Text>
                         </Box>
                         <Box>
-                            <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700" color="#000">
+                            <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700" color="#000" opacity={0.5}>
                                 15+
                             </Text>
-                            <Text fontSize={{ base: 'xs', md: 'sm' }} color="#000">
+                            <Text fontSize={{ base: 'xs', md: 'sm' }} color="#000" opacity={0.5}>
                                 Countries
                             </Text>
                         </Box>
                         <Box>
-                            <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700" color="#000">
+                            <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700" color="#000" opacity={0.5}>
                                 100%
                             </Text>
-                            <Text fontSize={{ base: 'xs', md: 'sm' }} color="#000">
+                            <Text fontSize={{ base: 'xs', md: 'sm' }} color="#000" opacity={0.5}>
                                 Remote Friendly
                             </Text>
                         </Box>

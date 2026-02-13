@@ -43,32 +43,28 @@ export const TeamSection = () => {
                 {/* Section Header */}
                 <VStack mb={12} textAlign="center">
                     <Text
-                        color="#4241ff"
-                        fontWeight="600"
-                        fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                        fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                         mb={4}
-                        letterSpacing="wider"
-                        textTransform="uppercase"
                     >
                         Our Team
                     </Text>
                     <Heading
                         as="h2"
                         fontSize={{ base: '3xl', md: '4xl' }}
-                        fontWeight="700"
+                        fontWeight="800"
+                        color="#1d1d1f"
+                        lineHeight="1.1"
+                        letterSpacing="tight"
                         mb={6}
-                        lineHeight="1.2"
-                        color="#000"
                         maxW="800px"
                     >
                         Meet The{' '}
                         <Box as="span" bg="#4241ff" bgClip="text">Innovators</Box>
                     </Heading>
                     <Text
-                        color="#000"
-                        fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                        maxW="700px"
+                        fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
                         lineHeight="1.6"
+                        maxW="700px"
                     >
                         Our diverse team of technologists, designers, and talent experts is united by a shared passion for transforming the hiring experience.
                     </Text>
@@ -90,16 +86,16 @@ export const TeamSection = () => {
                 >
                     <Heading
                         as="h3"
-                        fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}
-                        fontWeight="700"
+                        fontSize={{ base: '3xl', md: '4xl' }}
+                        fontWeight="800"
                         color="white"
                         mb={4}
                     >
                         Join Our Growing Team
                     </Heading>
                     <Text
-                        color="rgba(255, 255, 255, 0.9)"
-                        fontSize={{ base: 'md', md: 'lg' }}
+                        fontSize={{ base: 'lg', md: 'xl' }} color="#fff"
+                        lineHeight="1.6"
                         mb={8}
                         maxW="600px"
                         mx="auto"
@@ -107,7 +103,7 @@ export const TeamSection = () => {
                         We're always looking for talented individuals who share our vision and values. Explore our open positions and be part of the future of recruitment.
                     </Text>
                     <Button
-                        size={{ base: 'md', md: 'lg' }}
+                        size={{ base: 'lg', md: 'xl' }}
                         bg="white"
                         color="#023E8A"
                         borderRadius="full"
@@ -164,7 +160,7 @@ const TeamMemberCard = ({ name, role, image }: { name: string, role: string, ima
             </Heading>
             <Text
                 color="#000"
-                fontSize={{ base: 'sm', md: 'md' }}
+                fontSize={{ base: 'md', md: 'lg' }}
                 fontWeight="600"
             >
                 {role}

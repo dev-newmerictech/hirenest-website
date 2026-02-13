@@ -58,9 +58,7 @@ export default function AIResumeBuilderPage() {
                         <VStack alignItems={{ base: 'center', lg: 'flex-start' }} gap={6}>
                             <Box>
                                 <Text
-                                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                    fontWeight="600"
-                                    color="#4241ff"
+                                    fontSize="sm" fontWeight="600" color="#4241ff"
                                     textTransform="uppercase"
                                     letterSpacing="wider"
                                     mb={3}
@@ -70,10 +68,10 @@ export default function AIResumeBuilderPage() {
                                 </Text>
                                 <Heading
                                     as="h1"
-                                    fontSize={{ base: '3xl', md: '4xl' }}
-                                    fontWeight="700"
-                                    color="#000"
-                                    lineHeight="1.2"
+                                    fontSize={{ base: '4xl' }}
+                                    fontWeight="800"
+                                    lineHeight="1.1"
+                                    color="#1d1d1f"
                                     mb={4}
                                     textAlign={{ base: 'center', lg: 'left' }}
                                 >
@@ -81,12 +79,10 @@ export default function AIResumeBuilderPage() {
                                     <Text as="span" display="block" bg="#4241ff" bgClip="text">Gets You Hired</Text>
                                 </Heading>
                                 <Text
-                                    fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                                    fontWeight="400"
-                                    color="#000"
-                                    lineHeight="1.6"
+                                    fontSize={{ base: 'lg', md: 'xl' }} color="gray.900" lineHeight="1.6"
                                     maxW="600px"
                                     textAlign={{ base: 'center', lg: 'left' }}
+                                    mb={4}
                                 >
                                     Create a professional, ATS-friendly resume in minutes with our AI-powered builder. Stand out from the competition and land more interviews.
                                 </Text>
@@ -96,11 +92,12 @@ export default function AIResumeBuilderPage() {
                                 <Button
                                     _hover={{
                                         background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
-                                        transform: "translateY(-2px)",
-                                        boxShadow: "lg"
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: 'lg',
                                     }}
                                     transition="all 0.3s"
-                                    size={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
+                                    size={{ base: 'lg' }}
+                                    fontWeight={'600'}
                                     borderRadius="full"
                                     background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                                     color="white"
@@ -112,7 +109,7 @@ export default function AIResumeBuilderPage() {
                                 </Button>
                             </Stack>
 
-                            <Flex gap={6} mt={4} fontSize="sm" color="#000" fontWeight="500">
+                            <Flex gap={6} mt={4} fontSize="md" color="#000" fontWeight="500">
                                 <Flex align="center" gap={2}>
                                     <Icon as={CheckCircle} color="#4241ff" />
                                     <Text>Free to try</Text>
@@ -149,28 +146,25 @@ export default function AIResumeBuilderPage() {
                         {/* Section Header */}
                         <VStack textAlign="center" gap={4} maxW="800px" mx="auto">
                             <Text
-                                fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                fontWeight="600"
-                                color="#4241ff"
-                                textTransform="uppercase"
-                                letterSpacing="wider"
+                                fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Powerful Features
                             </Text>
                             <Heading
                                 as="h2"
                                 fontSize={{ base: '3xl', md: '4xl' }}
-                                fontWeight="700"
-                                color="#000"
-                                lineHeight="1.2"
+                                fontWeight="800"
+                                color="#1d1d1f"
+                                lineHeight="1.1"
+                                letterSpacing="tight"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Why Choose Our <Text as="span" color="#4241ff">AI Resume Builder</Text>
                             </Heading>
                             <Text
-                                fontSize={{ base: 'md', md: 'lg' }}
-                                color="#000"
-                                opacity={0.8}
-                                maxW="7xl"
+                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                lineHeight="1.6"
                             >
                                 Powerful features designed to help you create the perfect resume effortlessly.
                             </Text>
@@ -248,7 +242,7 @@ export default function AIResumeBuilderPage() {
                                             <Text
                                                 color="#000"
                                                 opacity={0.7}
-                                                fontSize={{ base: 'sm', md: 'md' }}
+                                                fontSize={{ base: 'lg', md: 'xl' }}
                                                 lineHeight="1.6"
                                             >
                                                 {feature.description}
@@ -268,24 +262,26 @@ export default function AIResumeBuilderPage() {
                     <VStack gap={{ base: 12, md: 20 }}>
                         <VStack textAlign="center" gap={4} maxW="800px" mx="auto">
                             <Text
-                                fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                fontWeight="600"
-                                color="#4241ff"
-                                textTransform="uppercase"
-                                letterSpacing="wider"
+                                fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Simple Process
                             </Text>
                             <Heading
                                 as="h2"
                                 fontSize={{ base: '3xl', md: '4xl' }}
-                                fontWeight="700"
-                                color="#000"
+                                fontWeight="800"
+                                color="#1d1d1f"
+                                lineHeight="1.1"
+                                letterSpacing="tight"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 How It {' '}
                                 <Text as="span" color="#4241ff">Works</Text>
                             </Heading>
-                            <Text fontSize={{ base: 'md', md: 'lg' }} color="#000" opacity={0.8}>
+                            <Text
+                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                lineHeight="1.6">
                                 Create your professional resume in just 4 simple steps
                             </Text>
                         </VStack>
@@ -303,7 +299,7 @@ export default function AIResumeBuilderPage() {
                                 zIndex={0}
                             />
 
-                            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} gap={8}>
+                            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }} gap={8}>
                                 {[
                                     {
                                         icon: Upload,
@@ -371,10 +367,12 @@ export default function AIResumeBuilderPage() {
                                             </Badge>
                                         </Flex>
                                         <VStack textAlign="center" gap={3}>
-                                            <Heading as="h3" fontSize="xl" fontWeight="600" color="#000">
+                                            <Heading as="h3" fontSize="2xl" fontWeight="600" color="#000">
                                                 {step.title}
                                             </Heading>
-                                            <Text color="#000" fontSize="sm" lineHeight="1.6" opacity={0.8}>
+                                            <Text color="#000"
+                                                fontSize={{ base: 'lg', md: 'xl' }}
+                                                lineHeight="1.6" opacity={0.8}>
                                                 {step.description}
                                             </Text>
                                         </VStack>
@@ -393,32 +391,27 @@ export default function AIResumeBuilderPage() {
                         <VStack alignItems="flex-start" gap={6}>
                             <Box>
                                 <Text
-                                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                    fontWeight="600"
-                                    color="#4241ff"
-                                    textTransform="uppercase"
-                                    letterSpacing="wider"
-                                    mb={3}
+                                    fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                                     textAlign={{ base: 'center', lg: 'left' }}
+                                    mb={6}
                                 >
                                     Key Benefits
                                 </Text>
                                 <Heading
                                     as="h2"
                                     fontSize={{ base: '3xl', md: '4xl' }}
-                                    fontWeight="700"
-                                    color="#000"
-                                    lineHeight="1.2"
-                                    mb={4}
+                                    fontWeight="800"
+                                    color="#1d1d1f"
+                                    lineHeight="1.1"
+                                    letterSpacing="tight"
                                     textAlign={{ base: 'center', lg: 'left' }}
+                                    mb={4}
                                 >
                                     Stand Out from the{' '}
                                     <Text as="span" color="#4241ff">Competition</Text>
                                 </Heading>
                                 <Text
-                                    fontSize={{ base: 'md', md: 'lg' }}
-                                    fontWeight="400"
-                                    color="#000"
+                                    fontSize={{ base: 'lg', md: 'xl' }} color="#000"
                                     lineHeight="1.6"
                                 >
                                     Our AI-powered resume builder gives you the competitive edge you need in today's job market.
@@ -457,10 +450,12 @@ export default function AIResumeBuilderPage() {
                                             <Icon as={benefit.icon} boxSize={5} />
                                         </Flex>
                                         <Box>
-                                            <Heading as="h3" fontSize="lg" fontWeight="600" color="#000" mb={1}>
+                                            <Heading as="h3" fontSize="1xl" fontWeight="600" color="#000" mb={1}>
                                                 {benefit.title}
                                             </Heading>
-                                            <Text color="#000" fontSize="sm" lineHeight="1.6">
+                                            <Text
+                                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                                lineHeight="1.6">
                                                 {benefit.description}
                                             </Text>
                                         </Box>
@@ -498,13 +493,18 @@ export default function AIResumeBuilderPage() {
                             <Heading
                                 as="h2"
                                 fontSize={{ base: '3xl', md: '4xl' }}
-                                fontWeight="700"
-                                color="#000"
+                                fontWeight="800"
+                                color="#1d1d1f"
+                                lineHeight="1.1"
+                                letterSpacing="tight"
+                                textAlign={{ base: 'center', lg: 'left' }}
                             >
                                 Why Hirenest is{' '}
                                 <Text as="span" color="#4241ff">Better</Text>
                             </Heading>
-                            <Text fontSize={{ base: 'md', md: 'lg' }} color="#000" opacity={0.8}>
+                            <Text
+                                fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                lineHeight="1.6" opacity={0.8}>
                                 See how we stack up against traditional resume building methods.
                             </Text>
                         </VStack>
@@ -520,13 +520,13 @@ export default function AIResumeBuilderPage() {
                             <Grid templateColumns="2fr 1fr 1fr" minW="600px">
                                 {/* Header Row */}
                                 <Box p={6} bg="gray.50" borderBottom="1px solid" borderColor="gray.100">
-                                    <Text fontWeight="700" color="#000">Features</Text>
+                                    <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="700" color="#000">Features</Text>
                                 </Box>
                                 <Box p={6} bg="#4241ff" borderBottom="1px solid" borderColor="gray.100" textAlign="center">
-                                    <Text fontWeight="700" color="white">Hirenest AI</Text>
+                                    <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="700" color="white">Hirenest AI</Text>
                                 </Box>
                                 <Box p={6} bg="gray.50" borderBottom="1px solid" borderColor="gray.100" textAlign="center">
-                                    <Text fontWeight="700" color="#000">Standard Builders</Text>
+                                    <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="700" color="#000">Standard Builders</Text>
                                 </Box>
 
                                 {/* Rows */}
@@ -540,7 +540,7 @@ export default function AIResumeBuilderPage() {
                                 ].map((row, index) => (
                                     <>
                                         <Box key={`f-${index}`} p={6} borderBottom="1px solid" borderColor="gray.100" bg="white">
-                                            <Text fontWeight="500" color="#000">{row.feature}</Text>
+                                            <Text fontWeight="500" fontSize={{ base: 'lg', md: 'xl' }} color="#000">{row.feature}</Text>
                                         </Box>
                                         <Box key={`u-${index}`} p={6} borderBottom="1px solid" borderColor="gray.100" bg="rgba(66, 65, 255, 0.03)" textAlign="center" display="flex" justifyContent="center" alignItems="center">
                                             {row.us ? <Icon as={CheckCircle} color="#4241ff" boxSize={6} /> : <Icon as={X} color="gray.300" boxSize={6} />}
@@ -563,28 +563,27 @@ export default function AIResumeBuilderPage() {
                         <VStack alignItems="flex-start" gap={8}>
                             <Box>
                                 <Text
-                                    fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                    fontWeight="600"
-                                    color="#4241ff"
-                                    textTransform="uppercase"
-                                    letterSpacing="wider"
-                                    textAlign={{ base: 'center', lg: 'left' }}
+                                    fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
+                                    textAlign={{ base: 'center', lg: 'left' }} mb={2}
                                 >
                                     Advanced Technology
                                 </Text>
                                 <Heading
                                     as="h2"
                                     fontSize={{ base: '3xl', md: '4xl' }}
-                                    fontWeight="700"
-                                    color="#000"
-                                    lineHeight="1.2"
+                                    fontWeight="800"
+                                    color="#1d1d1f"
+                                    lineHeight="1.1"
+                                    letterSpacing="tight"
                                     mb={4}
                                     textAlign={{ base: 'center', lg: 'left' }}
                                 >
                                     Beat the ATS Bots <br />
                                     <Text as="span" color="#4241ff">Every Single Time</Text>
                                 </Heading>
-                                <Text fontSize="lg" color="#000" opacity={0.8} lineHeight="1.8" textAlign={{ base: 'center', lg: 'left' }}>
+                                <Text
+                                    fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                    lineHeight="1.6" opacity={0.8} textAlign={{ base: 'center', lg: 'left' }}>
                                     75% of resumes are rejected by Applicant Tracking Systems before a human ever sees them. Our AI analyzes your resume exactly like an ATS does, ensuring you pass the filters and get noticed.
                                 </Text>
                             </Box>
@@ -598,7 +597,9 @@ export default function AIResumeBuilderPage() {
                                 ].map((item, index) => (
                                     <Flex key={index} gap={3} align="center">
                                         <Icon as={CheckCircle} color="#4241ff" boxSize={5} />
-                                        <Text fontWeight="500" color="#000">{item}</Text>
+                                        <Text fontWeight="500"
+                                            fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                            lineHeight="1.6">{item}</Text>
                                     </Flex>
                                 ))}
                             </VStack>
@@ -637,12 +638,16 @@ export default function AIResumeBuilderPage() {
                             {/* Visual representation of scanning */}
                             <VStack gap={6} w="full">
                                 <Flex justify="space-between" w="full" align="center" borderBottom="1px solid" borderColor="gray.100" pb={4}>
-                                    <Text fontWeight="600" color="#000">ATS Score</Text>
-                                    <Text fontWeight="700" color="#4241ff" fontSize="2xl">98/100</Text>
+                                    <Text fontWeight="600"
+                                        fontSize={{ base: 'lg', md: 'xl' }} color="#000"
+                                        lineHeight="1.6">ATS Score</Text>
+                                    <Text fontWeight="700"
+                                        fontSize={{ base: 'lg', md: 'xl' }}
+                                        lineHeight="1.6" color="#4241ff">98/100</Text>
                                 </Flex>
                                 <VStack gap={3} w="full">
                                     <Box w="full">
-                                        <Flex justify="space-between" mb={2} fontSize="sm">
+                                        <Flex justify="space-between" mb={2} fontSize="md">
                                             <Text color="#000">Keywords</Text>
                                             <Text color="green.500">Perfect</Text>
                                         </Flex>
@@ -651,7 +656,7 @@ export default function AIResumeBuilderPage() {
                                         </Box>
                                     </Box>
                                     <Box w="full">
-                                        <Flex justify="space-between" mb={2} fontSize="sm">
+                                        <Flex justify="space-between" mb={2} fontSize="md">
                                             <Text color="#000">Formatting</Text>
                                             <Text color="green.500">Clean</Text>
                                         </Flex>
@@ -660,7 +665,7 @@ export default function AIResumeBuilderPage() {
                                         </Box>
                                     </Box>
                                     <Box w="full">
-                                        <Flex justify="space-between" mb={2} fontSize="sm">
+                                        <Flex justify="space-between" mb={2} fontSize="md">
                                             <Text color="#000">Relevance</Text>
                                             <Text color="#4241ff">High</Text>
                                         </Flex>

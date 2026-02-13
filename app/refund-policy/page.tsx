@@ -14,17 +14,17 @@ export default function RefundPolicyPage() {
             <RefundPolicyStructuredData />
             <Container maxW="4xl">
                 <VStack alignItems="flex-start" gap={8}>
-                    <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">
+                    <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A" fontWeight="800">
                         Refund Policy
                     </Heading>
 
-                    <Text fontSize={{ base: 'sm', md: 'md' }} color="gray.600">
+                    <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.600">
                         Last Updated: November 21, 2025
                     </Text>
 
                     <VStack alignItems="flex-start" gap={6}>
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 1. Refund Eligibility
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -35,7 +35,7 @@ export default function RefundPolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 2. How to Request a Refund
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -46,7 +46,7 @@ export default function RefundPolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 3. Non-Refundable Items
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -57,7 +57,7 @@ export default function RefundPolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 4. Subscription Cancellations
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -68,7 +68,7 @@ export default function RefundPolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 5. Refund Processing
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -79,7 +79,7 @@ export default function RefundPolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 6. Contact Us
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">

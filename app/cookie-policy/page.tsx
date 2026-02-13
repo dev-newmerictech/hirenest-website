@@ -14,17 +14,17 @@ export default function CookiePolicyPage() {
             <CookiePolicyStructuredData />
             <Container maxW="4xl">
                 <VStack alignItems="flex-start" gap={8}>
-                    <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">
+                    <Heading as="h1" fontWeight="800" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">
                         Cookie Policy
                     </Heading>
 
-                    <Text fontSize={{ base: 'sm', md: 'md' }} color="gray.600">
+                    <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.600">
                         Last Updated: November 21, 2025
                     </Text>
 
                     <VStack alignItems="flex-start" gap={6}>
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 1. What Are Cookies
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -35,7 +35,7 @@ export default function CookiePolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 2. Types of Cookies We Use
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8" mb={3}>
@@ -50,7 +50,7 @@ export default function CookiePolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 3. How We Use Cookies
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -61,7 +61,7 @@ export default function CookiePolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 4. Third-Party Cookies
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -72,7 +72,7 @@ export default function CookiePolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 5. Managing Cookies
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -83,7 +83,7 @@ export default function CookiePolicyPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3} fontWeight="800">
                                 6. Contact Us
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">

@@ -17,12 +17,12 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hirenest.ai'),
+  metadataBase: new URL('https://www.hirenest.ai'),
   alternates: {
-    canonical: 'https://hirenest.ai',
+    canonical: 'https://www.hirenest.ai',
     languages: {
-      'x-default': 'https://hirenest.ai',
-      'en': 'https://hirenest.ai',
+      'x-default': 'https://www.hirenest.ai',
+      'en': 'https://www.hirenest.ai',
     },
   },
   title: {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://hirenest.ai",
+    url: "https://www.hirenest.ai",
     siteName: "Hirenest",
     title: "Hirenest - Connect Job Seekers with Employers",
     description: "AI-powered platform connecting job seekers with employers. Find your dream job or hire exceptional talent.",

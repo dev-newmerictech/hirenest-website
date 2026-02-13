@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const baseUrl = 'https://hirenest.ai';
+  const baseUrl = 'https://www.hirenest.ai';
   const currentDate = new Date().toISOString();
 
   // LLM-optimized content structure

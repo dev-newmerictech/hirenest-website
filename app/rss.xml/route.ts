@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-static';
 
 export async function GET() {
-    const baseUrl = 'https://hirenest.ai';
+    const baseUrl = 'https://www.hirenest.ai';
     const currentDate = new Date().toUTCString();
 
     // Define content items for RSS feed

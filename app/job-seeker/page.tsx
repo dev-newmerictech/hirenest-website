@@ -28,7 +28,7 @@ export default function JobSeekerPage() {
         'AI-powered job matching platform for job seekers. Create your profile, upload your resume, and get matched with opportunities.',
         'https://www.hirenest.ai/job-seeker',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'For Job Seekers', url: 'https://www.hirenest.ai/job-seeker' }
         ]
     );

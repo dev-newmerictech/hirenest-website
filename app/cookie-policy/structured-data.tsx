@@ -17,7 +17,7 @@ export function CookiePolicyStructuredData() {
         'Learn about how we use cookies and similar technologies to enhance your experience on Hirenest.',
         'https://www.hirenest.ai/cookie-policy',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Cookie Policy', url: 'https://www.hirenest.ai/cookie-policy' }
         ]
     );

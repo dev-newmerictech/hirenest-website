@@ -17,7 +17,7 @@ export function RefundPolicyStructuredData() {
         'Read our Refund Policy to understand our terms regarding subscriptions, cancellations, and refunds.',
         'https://www.hirenest.ai/refund-policy',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Refund Policy', url: 'https://www.hirenest.ai/refund-policy' }
         ]
     );

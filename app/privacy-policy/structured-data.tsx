@@ -17,7 +17,7 @@ export function PrivacyPolicyStructuredData() {
         'Read our Privacy Policy to understand how we collect, use, and protect your personal data.',
         'https://www.hirenest.ai/privacy-policy',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Privacy Policy', url: 'https://www.hirenest.ai/privacy-policy' }
         ]
     );

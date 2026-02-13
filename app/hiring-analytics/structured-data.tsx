@@ -18,7 +18,7 @@ export function HiringAnalyticsStructuredData() {
         'Optimize your recruitment with comprehensive Hiring Analytics. Track metrics, identify bottlenecks, and improve your time-to-hire with real-time data.',
         'https://www.hirenest.ai/hiring-analytics',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Hiring Analytics', url: 'https://www.hirenest.ai/hiring-analytics' }
         ]
     );

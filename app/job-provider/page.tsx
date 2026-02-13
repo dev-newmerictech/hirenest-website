@@ -34,7 +34,7 @@ export default function JobProviderPage() {
         'Find and hire exceptional talent with AI-powered candidate ranking, screening tools, and comprehensive analytics.',
         'https://www.hirenest.ai/job-provider',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'For Employers', url: 'https://www.hirenest.ai/job-provider' }
         ]
     );

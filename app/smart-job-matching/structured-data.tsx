@@ -18,7 +18,7 @@ export function SmartJobMatchingStructuredData() {
         'AI-driven job matching that analyzes your skills, experience, and preferences to deliver personalized job recommendations. Find your perfect role faster.',
         'https://www.hirenest.ai/smart-job-matching',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Smart Job Matching', url: 'https://www.hirenest.ai/smart-job-matching' }
         ]
     );

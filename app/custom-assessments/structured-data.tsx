@@ -18,7 +18,7 @@ export function CustomAssessmentsStructuredData() {
         'Create custom skill assessments tailored to your specific job requirements. Use our drag-and-drop builder to test coding, soft skills, and more.',
         'https://www.hirenest.ai/custom-assessments',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Custom Assessments', url: 'https://www.hirenest.ai/custom-assessments' }
         ]
     );

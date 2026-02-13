@@ -18,7 +18,7 @@ export function ProfileOptimizationStructuredData() {
         'Transform your online presence with AI-powered profile optimization. Enhance your LinkedIn profile and portfolio to attract recruiters and land your dream job.',
         'https://www.hirenest.ai/profile-optimization',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Profile Optimization', url: 'https://www.hirenest.ai/profile-optimization' }
         ]
     );

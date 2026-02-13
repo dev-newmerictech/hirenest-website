@@ -18,7 +18,7 @@ export function AICandidateRankingStructuredData() {
         'Instantly identify top talent with AI Candidate Ranking. Our smart scoring system evaluates skills and fit for faster, data-driven hiring decisions.',
         'https://www.hirenest.ai/ai-candidate-ranking',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'AI Candidate Ranking', url: 'https://www.hirenest.ai/ai-candidate-ranking' }
         ]
     );

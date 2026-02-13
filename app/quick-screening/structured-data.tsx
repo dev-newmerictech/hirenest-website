@@ -18,7 +18,7 @@ export function QuickScreeningStructuredData() {
         'Accelerate your hiring with Quick Screening. Use automated tools to filter candidates, screen in minutes not days, and fast-track the best talent.',
         'https://www.hirenest.ai/quick-screening',
         [
-            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Home', url: 'https://www.hirenest.ai' },
             { name: 'Quick Screening', url: 'https://www.hirenest.ai/quick-screening' }
         ]
     );

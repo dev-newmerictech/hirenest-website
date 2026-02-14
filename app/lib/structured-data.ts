@@ -55,7 +55,25 @@ export interface WebPageSchema {
     url: string;
     breadcrumb?: BreadcrumbSchema;
     mainEntity?: any;
+    primaryImageOfPage?: ImageObjectSchema;
+    video?: VideoObjectSchema;
+    author?: {
+        '@type': string;
+        name: string;
+        url?: string;
+    };
+    datePublished?: string;
+    dateModified?: string;
 }
+
+export interface WebPageOptions {
+    image?: string | ImageObjectSchema;
+    video?: VideoObjectSchema;
+    author?: string;
+    datePublished?: string;
+    dateModified?: string;
+}
+
 
 export interface FAQSchema {
     '@context': string;
@@ -205,7 +223,8 @@ export function generateWebPageSchema(
     name: string,
     description: string,
     url: string,
-    breadcrumbItems?: { name: string; url?: string }[]
+    breadcrumbItems?: { name: string; url?: string }[],
+    options?: WebPageOptions
 ): WebPageSchema {
     const schema: WebPageSchema = {
         '@context': 'https://schema.org',
@@ -218,6 +237,28 @@ export function generateWebPageSchema(
     if (breadcrumbItems && breadcrumbItems.length > 0) {
         schema.breadcrumb = generateBreadcrumbSchema(breadcrumbItems);
     }
+
+    if (options?.image) {
+        if (typeof options.image === 'string') {
+            schema.primaryImageOfPage = generateImageObjectSchema(options.image);
+        } else {
+            schema.primaryImageOfPage = options.image;
+        }
+    }
+
+    if (options?.video) {
+        schema.video = options.video;
+    }
+
+    const authorName = options?.author || 'Hirenest';
+    schema.author = {
+        '@type': 'Organization',
+        name: authorName,
+        url: 'https://www.hirenest.ai'
+    };
+
+    if (options?.datePublished) schema.datePublished = options.datePublished;
+    if (options?.dateModified) schema.dateModified = options.dateModified;
 
     return schema;
 }

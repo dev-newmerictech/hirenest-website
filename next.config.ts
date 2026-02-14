@@ -56,6 +56,20 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: '/en-US',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/en-US/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

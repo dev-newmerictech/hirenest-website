@@ -12,17 +12,6 @@ export function HiringAnalyticsStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
 
-    // Generate WebPage Schema
-    const webPageSchema = generateWebPageSchema(
-        'Hiring Analytics - Data-Driven Recruitment',
-        'Optimize your recruitment with comprehensive Hiring Analytics. Track metrics, identify bottlenecks, and improve your time-to-hire with real-time data.',
-        'https://www.hirenest.ai/hiring-analytics',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Hiring Analytics', url: 'https://www.hirenest.ai/hiring-analytics' }
-        ]
-    );
-
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/job-provider-og.png',
@@ -50,6 +39,22 @@ export function HiringAnalyticsStructuredData() {
         }
     );
 
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Hiring Analytics - Data-Driven Recruitment',
+        'Optimize your recruitment with comprehensive Hiring Analytics. Track metrics, identify bottlenecks, and improve your time-to-hire with real-time data.',
+        'https://www.hirenest.ai/hiring-analytics',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'Hiring Analytics', url: 'https://www.hirenest.ai/hiring-analytics' }
+        ],
+        {
+            image: imageSchema,
+            video: videoSchema,
+            author: 'Hirenest Team'
+        }
+    );
+
     return (
         <>
             {/* Structured Data - WebPage */}
@@ -62,18 +67,6 @@ export function HiringAnalyticsStructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Image Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
-            />
-
-            {/* Video Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
             />
         </>
     );

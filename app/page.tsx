@@ -35,7 +35,12 @@ export default function Home() {
     pageMetadata.home.title as string,
     pageMetadata.home.description as string,
     'https://www.hirenest.ai',
-    [{ name: 'Home', url: 'https://www.hirenest.ai' }]
+    [{ name: 'Home', url: 'https://www.hirenest.ai' }],
+    {
+      image: 'https://www.hirenest.ai/og-image.png',
+      datePublished: '2024-01-01T00:00:00.000Z',
+      dateModified: new Date().toISOString()
+    }
   );
 
   return (

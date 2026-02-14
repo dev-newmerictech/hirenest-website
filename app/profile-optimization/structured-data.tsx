@@ -12,17 +12,6 @@ export function ProfileOptimizationStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
 
-    // Generate WebPage Schema
-    const webPageSchema = generateWebPageSchema(
-        'Profile Optimization - Boost Your Visibility',
-        'Transform your online presence with AI-powered profile optimization. Enhance your LinkedIn profile and portfolio to attract recruiters and land your dream job.',
-        'https://www.hirenest.ai/profile-optimization',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Profile Optimization', url: 'https://www.hirenest.ai/profile-optimization' }
-        ]
-    );
-
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/profile_optimization_hero.png',
@@ -50,6 +39,22 @@ export function ProfileOptimizationStructuredData() {
         }
     );
 
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Profile Optimization - Boost Your Visibility',
+        'Transform your online presence with AI-powered profile optimization. Enhance your LinkedIn profile and portfolio to attract recruiters and land your dream job.',
+        'https://www.hirenest.ai/profile-optimization',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'Profile Optimization', url: 'https://www.hirenest.ai/profile-optimization' }
+        ],
+        {
+            image: imageSchema,
+            video: videoSchema,
+            author: 'Hirenest Team'
+        }
+    );
+
     return (
         <>
             {/* Structured Data - WebPage */}
@@ -62,18 +67,6 @@ export function ProfileOptimizationStructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Image Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
-            />
-
-            {/* Video Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
             />
         </>
     );

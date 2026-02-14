@@ -23,26 +23,6 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = pageMetadata.jobSeeker;
 
 export default function JobSeekerPage() {
-    const webPageSchema = generateWebPageSchema(
-        'For Job Seekers - Find Your Dream Job',
-        'AI-powered job matching platform for job seekers. Create your profile, upload your resume, and get matched with opportunities.',
-        'https://www.hirenest.ai/job-seeker',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'For Job Seekers', url: 'https://www.hirenest.ai/job-seeker' }
-        ]
-    );
-
-    const softwareSchema = generateSoftwareApplicationSchema(
-        'Hirenest Job Seeker Platform',
-        'AI-powered job matching and career development platform for job seekers',
-        'https://www.hirenest.ai/job-seeker',
-        'BusinessApplication'
-    );
-
-    // Generate FAQ Schema
-    const faqSchema = generateFAQSchema(faqs);
-
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/job-seeker-og.png',
@@ -70,6 +50,31 @@ export default function JobSeekerPage() {
         }
     );
 
+    const webPageSchema = generateWebPageSchema(
+        'For Job Seekers - Find Your Dream Job',
+        'AI-powered job matching platform for job seekers. Create your profile, upload your resume, and get matched with opportunities.',
+        'https://www.hirenest.ai/job-seeker',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'For Job Seekers', url: 'https://www.hirenest.ai/job-seeker' }
+        ],
+        {
+            image: imageSchema,
+            video: videoSchema,
+            author: 'Hirenest Team'
+        }
+    );
+
+    const softwareSchema = generateSoftwareApplicationSchema(
+        'Hirenest Job Seeker Platform',
+        'AI-powered job matching and career development platform for job seekers',
+        'https://www.hirenest.ai/job-seeker',
+        'BusinessApplication'
+    );
+
+    // Generate FAQ Schema
+    const faqSchema = generateFAQSchema(faqs);
+
     return (
         <Box>
             {/* Structured Data */}
@@ -84,14 +89,6 @@ export default function JobSeekerPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
             />
 
             {/* Hero Section with Images */}

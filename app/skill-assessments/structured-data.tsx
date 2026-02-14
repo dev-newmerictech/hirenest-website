@@ -12,17 +12,6 @@ export function SkillAssessmentsStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
 
-    // Generate WebPage Schema
-    const webPageSchema = generateWebPageSchema(
-        'Skill Assessments - Validate Your Expertise',
-        'Validate your expertise with 350+ industry-standard skill assessments. Earn verified badges in coding, soft skills, and more to stand out to top employers.',
-        'https://www.hirenest.ai/skill-assessments',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Skill Assessments', url: 'https://www.hirenest.ai/skill-assessments' }
-        ]
-    );
-
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/skill_assessments_hero.png',
@@ -50,6 +39,22 @@ export function SkillAssessmentsStructuredData() {
         }
     );
 
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Skill Assessments - Validate Your Expertise',
+        'Validate your expertise with 350+ industry-standard skill assessments. Earn verified badges in coding, soft skills, and more to stand out to top employers.',
+        'https://www.hirenest.ai/skill-assessments',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'Skill Assessments', url: 'https://www.hirenest.ai/skill-assessments' }
+        ],
+        {
+            image: imageSchema,
+            video: videoSchema,
+            author: 'Hirenest Team'
+        }
+    );
+
     return (
         <>
             {/* Structured Data - WebPage */}
@@ -62,18 +67,6 @@ export function SkillAssessmentsStructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Image Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
-            />
-
-            {/* Video Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
             />
         </>
     );

@@ -11,17 +11,6 @@ export function RefundPolicyStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
 
-    // Generate WebPage Schema
-    const webPageSchema = generateWebPageSchema(
-        'Refund Policy - Hirenest',
-        'Read our Refund Policy to understand our terms regarding subscriptions, cancellations, and refunds.',
-        'https://www.hirenest.ai/refund-policy',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Refund Policy', url: 'https://www.hirenest.ai/refund-policy' }
-        ]
-    );
-
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/job-provider-og.png',
@@ -32,6 +21,21 @@ export function RefundPolicyStructuredData() {
             height: 630,
             encodingFormat: 'image/png',
             uploadDate: '2024-01-15T00:00:00.000Z',
+            author: 'Hirenest Team'
+        }
+    );
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Refund Policy - Hirenest',
+        'Read our Refund Policy to understand our terms regarding subscriptions, cancellations, and refunds.',
+        'https://www.hirenest.ai/refund-policy',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'Refund Policy', url: 'https://www.hirenest.ai/refund-policy' }
+        ],
+        {
+            image: imageSchema,
             author: 'Hirenest Team'
         }
     );
@@ -48,12 +52,6 @@ export function RefundPolicyStructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Image Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
             />
         </>
     );

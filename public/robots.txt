@@ -192,15 +192,8 @@ Disallow: /
 User-agent: Wget
 Disallow: /
 
-# -----------------------------------------------------------------------------
-# CANONICAL HOST (for Yandex and other search engines)
-# -----------------------------------------------------------------------------
-Host: https://www.hirenest.ai
 
-# -----------------------------------------------------------------------------
-# CLEAN PARAMS (strip tracking parameters from URLs)
-# -----------------------------------------------------------------------------
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&ref&fbclid&gclid&msclkid
+
 
 # -----------------------------------------------------------------------------
 # SITEMAPS & FEEDS

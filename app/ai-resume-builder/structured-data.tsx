@@ -12,17 +12,6 @@ export function AIResumeBuilderStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
 
-    // Generate WebPage Schema
-    const webPageSchema = generateWebPageSchema(
-        'AI Resume Builder - Create Professional Resumes',
-        'Build ATS-optimized resumes with AI assistance. Get personalized suggestions and stand out to employers.',
-        'https://www.hirenest.ai/ai-resume-builder',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'AI Resume Builder', url: 'https://www.hirenest.ai/ai-resume-builder' }
-        ]
-    );
-
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/resume-builder-hero.png',
@@ -50,6 +39,22 @@ export function AIResumeBuilderStructuredData() {
         }
     );
 
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'AI Resume Builder - Create Professional Resumes',
+        'Build ATS-optimized resumes with AI assistance. Get personalized suggestions and stand out to employers.',
+        'https://www.hirenest.ai/ai-resume-builder',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'AI Resume Builder', url: 'https://www.hirenest.ai/ai-resume-builder' }
+        ],
+        {
+            image: imageSchema,
+            video: videoSchema,
+            author: 'Hirenest Team'
+        }
+    );
+
     return (
         <>
             {/* Structured Data - WebPage */}
@@ -62,18 +67,6 @@ export function AIResumeBuilderStructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Image Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
-            />
-
-            {/* Video Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
             />
         </>
     );

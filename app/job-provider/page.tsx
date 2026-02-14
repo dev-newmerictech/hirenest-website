@@ -26,19 +26,6 @@ export const metadata: Metadata = pageMetadata.jobProvider;
 
 export default function JobProviderPage() {
     // Generate FAQ Schema
-    const faqSchema = generateFAQSchema(faqs);
-
-    // Generate WebPage Schema
-    const webPageSchema = generateWebPageSchema(
-        'For Employers - Hire Top Talent',
-        'Find and hire exceptional talent with AI-powered candidate ranking, screening tools, and comprehensive analytics.',
-        'https://www.hirenest.ai/job-provider',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'For Employers', url: 'https://www.hirenest.ai/job-provider' }
-        ]
-    );
-
     // Generate Image Schema for the OG image
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/job-provider-og.png',
@@ -69,6 +56,25 @@ export default function JobProviderPage() {
         }
     );
 
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'For Employers - Hire Top Talent',
+        'Find and hire exceptional talent with AI-powered candidate ranking, screening tools, and comprehensive analytics.',
+        'https://www.hirenest.ai/job-provider',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'For Employers', url: 'https://www.hirenest.ai/job-provider' }
+        ],
+        {
+            image: imageSchema,
+            video: videoSchema,
+            author: 'Hirenest Team'
+        }
+    );
+
+    // Generate FAQ Schema
+    const faqSchema = generateFAQSchema(faqs);
+
     return (
         <Box>
             {/* Structured Data - WebPage */}
@@ -81,18 +87,6 @@ export default function JobProviderPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Structured Data - Image */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
-            />
-
-            {/* Structured Data - Video */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
             />
 
             {/* Hero Section */}

@@ -37,8 +37,8 @@ export function generatePageMetadata({
         alternates: {
             canonical: url,
             languages: {
-                'en-US': `${baseUrl}/en-US${path}`,
-                'en': url,
+                'en-US': url,
+                'x-default': url,
             },
         },
         openGraph: {

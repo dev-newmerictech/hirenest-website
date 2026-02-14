@@ -63,6 +63,7 @@ const footerLinks = {
       { label: 'Refund Policy', href: '/refund-policy' },
       { label: 'Cookie Policy', href: '/cookie-policy' },
       { label: 'Security', href: '/security' },
+      { label: 'Legal Information', href: '/legal' },
     ],
   },
 };

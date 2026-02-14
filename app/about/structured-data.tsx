@@ -12,17 +12,6 @@ export function AboutStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
 
-    // Generate WebPage Schema
-    const webPageSchema = generateWebPageSchema(
-        'About Us - Hirenest',
-        'Hirenest is an AI-powered recruitment platform connecting job seekers with top employers. Learn about our mission, vision, and team.',
-        'https://www.hirenest.ai/about',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'About Us', url: 'https://www.hirenest.ai/about' }
-        ]
-    );
-
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/about-hero.png',
@@ -50,6 +39,22 @@ export function AboutStructuredData() {
         }
     );
 
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'About Us - Hirenest',
+        'Hirenest is an AI-powered recruitment platform connecting job seekers with top employers. Learn about our mission, vision, and team.',
+        'https://www.hirenest.ai/about',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'About Us', url: 'https://www.hirenest.ai/about' }
+        ],
+        {
+            image: imageSchema,
+            video: videoSchema,
+            author: 'Hirenest Team'
+        }
+    );
+
     return (
         <>
             {/* Structured Data - WebPage */}
@@ -62,18 +67,6 @@ export function AboutStructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Image Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
-            />
-
-            {/* Video Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
             />
         </>
     );

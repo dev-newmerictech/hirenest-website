@@ -11,17 +11,6 @@ export function TermsOfServiceStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
 
-    // Generate WebPage Schema
-    const webPageSchema = generateWebPageSchema(
-        'Terms of Service - Hirenest',
-        'Review our Terms of Service to understand the rules and guidelines for using the Hirenest platform.',
-        'https://www.hirenest.ai/terms-of-service',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Terms of Service', url: 'https://www.hirenest.ai/terms-of-service' }
-        ]
-    );
-
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/job-provider-og.png',
@@ -32,6 +21,21 @@ export function TermsOfServiceStructuredData() {
             height: 630,
             encodingFormat: 'image/png',
             uploadDate: '2024-01-15T00:00:00.000Z',
+            author: 'Hirenest Team'
+        }
+    );
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Terms of Service - Hirenest',
+        'Review our Terms of Service to understand the rules and guidelines for using the Hirenest platform.',
+        'https://www.hirenest.ai/terms-of-service',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'Terms of Service', url: 'https://www.hirenest.ai/terms-of-service' }
+        ],
+        {
+            image: imageSchema,
             author: 'Hirenest Team'
         }
     );
@@ -48,12 +52,6 @@ export function TermsOfServiceStructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Image Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
             />
         </>
     );

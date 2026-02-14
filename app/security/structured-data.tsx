@@ -11,17 +11,6 @@ export function SecurityStructuredData() {
     // Generate FAQ Schema
     const faqSchema = generateFAQSchema(faqs);
 
-    // Generate WebPage Schema
-    const webPageSchema = generateWebPageSchema(
-        'Security - Your Data is Safe',
-        'Hirenest prioritizes security and compliance. Learn about our data protection measures, GDPR compliance, and encryption standards.',
-        'https://www.hirenest.ai/security',
-        [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Security', url: 'https://www.hirenest.ai/security' }
-        ]
-    );
-
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
         'https://www.hirenest.ai/job-provider-og.png',
@@ -32,6 +21,21 @@ export function SecurityStructuredData() {
             height: 630,
             encodingFormat: 'image/png',
             uploadDate: '2024-01-15T00:00:00.000Z',
+            author: 'Hirenest Team'
+        }
+    );
+
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Security - Your Data is Safe',
+        'Hirenest prioritizes security and compliance. Learn about our data protection measures, GDPR compliance, and encryption standards.',
+        'https://www.hirenest.ai/security',
+        [
+            { name: 'Home', url: 'https://www.hirenest.ai' },
+            { name: 'Security', url: 'https://www.hirenest.ai/security' }
+        ],
+        {
+            image: imageSchema,
             author: 'Hirenest Team'
         }
     );
@@ -48,12 +52,6 @@ export function SecurityStructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Image Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
             />
         </>
     );

@@ -1,10 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"],
-      "cache": true
+      "outputs": [".next/**", "!.next/cache/**", "!.next/server/pages/**"],
+      "cache": true,
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "public/**"]
     },
     "dev": {
       "cache": false,
@@ -19,6 +21,9 @@
       "outputs": [],
       "cache": true
     }
+  },
+  "remoteCache": {
+    "enabled": false
   }
 }
 

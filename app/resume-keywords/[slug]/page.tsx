@@ -1,0 +1,313 @@
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import { Box, Wrap, WrapItem, Text, Heading, VStack, HStack } from '@chakra-ui/react'
+import { SeoHero } from '../../components/programmatic-seo/SeoHero'
+import { SeoContentSection, SeoCardGrid, SeoKeywordBadge, SeoCard } from '../../components/programmatic-seo/SeoContentSection'
+import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
+import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
+import { ProgrammaticSeoStructuredData } from '../../components/programmatic-seo/StructuredData'
+import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
+import { getKeywordsForJob, getKeywordsByCategory } from '../../lib/programmatic-seo/resume-keywords'
+import { generatePageMetadata } from '../../lib/metadata'
+import { Check, BookOpen, Wrench, Award } from 'lucide-react'
+
+// Force static generation for optimal performance
+export const dynamic = 'force-static'
+
+// Generate static params for all job titles
+export async function generateStaticParams() {
+    const { jobTitles } = await import('../../lib/programmatic-seo/job-titles')
+    return jobTitles.map((job) => ({
+        slug: job.slug,
+    }))
+}
+
+interface PageProps {
+    params: Promise<{ slug: string }>
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { slug } = await params
+    const job = getJobBySlug(slug)
+
+    if (!job) {
+        return {
+            title: 'Page Not Found'
+        }
+    }
+
+    const title = `$${job.title} Resume Keywords & Skills (2026)`
+    const description = `Discover the top $${job.title} resume keywords and skills that get past ATS scanners. Our comprehensive list includes hard skills, soft skills, and action verbs to make your $${job.title} resume stand out.`
+
+    return generatePageMetadata({
+        title,
+        description,
+        path: `/resume-keywords/${slug}`,
+        keywords: [
+            `$${job.title} resume keywords`,
+            `$${job.title} skills for resume`,
+            `$${job.title} resume keywords 2026`,
+            `ATS resume keywords $${job.title}`,
+            `$${job.title} resume skills`,
+            `best keywords for $${job.title} resume`,
+            `$${job.title} resume examples`,
+            ...job.aliases.flatMap(alias => [
+                `${alias} resume keywords`,
+                `${alias} skills for resume`
+            ])
+        ]
+    })
+}
+
+export default async function ResumeKeywordsPage({ params }: PageProps) {
+    const { slug } = await params
+    const job = getJobBySlug(slug)
+
+    if (!job) {
+        notFound()
+    }
+
+    const keywords = getKeywordsForJob(slug)
+    const hardSkills = keywords.filter(k => k.category === 'hard-skill')
+    const tools = keywords.filter(k => k.category === 'tool')
+    const softSkills = keywords.filter(k => k.category === 'soft-skill')
+    const actionVerbs = keywords.filter(k => k.category === 'action-verb')
+    const certifications = keywords.filter(k => k.category === 'certification')
+
+    return (
+        <Box>
+            {/* Structured Data - SEO */}
+            <ProgrammaticSeoStructuredData
+                jobTitle={job.title}
+                pageType="resume-keywords"
+                slug={slug}
+                description={`Discover the top ${job.title} resume keywords and skills that get past ATS scanners. Our comprehensive list includes hard skills, soft skills, and action verbs to make your ${job.title} resume stand out.`}
+            />
+
+            {/* Hero Section */}
+            <SeoHero
+                badge={`${job.title} Resume Guide`}
+                title={`${job.title} Resume Keywords`}
+                titleHighlight="That Get You Hired"
+                description={`Optimize your ${job.title} resume with ATS-friendly keywords that recruiters search for. Our comprehensive list includes ${keywords.length}+ proven keywords and skills to help your resume stand out and get noticed.`}
+                ctaText="Build Your Resume"
+                ctaHref="https://app.hirenest.ai"
+                stats={[
+                    { value: keywords.length.toString(), label: 'Keywords Listed' },
+                    { value: hardSkills.length.toString(), label: 'Key Skills' },
+                    { value: 'ATS', label: 'Optimized' }
+                ]}
+            />
+
+            {/* Why Keywords Matter */}
+            <SeoContentSection
+                badge="ATS Optimization"
+                title={`Why Resume Keywords Matter for ${job.title} Roles`}
+                description={`Most companies use Applicant Tracking Systems (ATS) to filter resumes. Using the right keywords ensures your ${job.title} resume passes these filters and reaches human recruiters.`}
+                bgColor="white"
+            >
+                <SeoCardGrid>
+                    <SeoCard
+                        title="Beat the ATS"
+                        description={`ATS scanners search for specific keywords matching the job description. Our list includes terms that ${job.title} recruiters actively search for.`}
+                    />
+                    <SeoCard
+                        title="Match Job Descriptions"
+                        description={`Align your resume with ${job.title} job postings using industry-standard terminology. This shows you understand the role and requirements.`}
+                    />
+                    <SeoCard
+                        title="Stand Out to Recruiters"
+                        description={`When recruiters review resumes, they look for relevant keywords. Highlighting the right ${job.title} skills grabs attention quickly.`}
+                    />
+                </SeoCardGrid>
+            </SeoContentSection>
+
+            {/* Hard Skills Section */}
+            <SeoContentSection
+                badge={<HStack gap={2}><BookOpen size={4} /><Text>Hard Skills</Text></HStack>}
+                title={`Essential ${job.title} Hard Skills`}
+                description={`These technical skills are crucial for ${job.title} roles. Include them in your skills section and work experience.`}
+                bgColor="gray.50"
+            >
+                <Wrap gap={3} justify="center" maxW="6xl" mx="auto">
+                    {hardSkills.map((keyword) => (
+                        <WrapItem key={keyword.id}>
+                            <SeoKeywordBadge
+                                keyword={keyword.keyword}
+                                category={keyword.context}
+                            />
+                        </WrapItem>
+                    ))}
+                </Wrap>
+            </SeoContentSection>
+
+            {/* Tools & Software */}
+            {tools.length > 0 && (
+                <SeoContentSection
+                    badge={<HStack gap={2}><Wrench size={4} /><Text>Tools & Software</Text></HStack>}
+                    title={`${job.title} Tools & Software`}
+                    description={`Familiarity with these tools demonstrates your practical ${job.title} expertise. List them prominently on your resume.`}
+                    bgColor="white"
+                >
+                    <Wrap gap={3} justify="center" maxW="5xl" mx="auto">
+                        {tools.map((keyword) => (
+                            <WrapItem key={keyword.id}>
+                                <SeoKeywordBadge
+                                    keyword={keyword.keyword}
+                                    category={keyword.context}
+                                />
+                            </WrapItem>
+                        ))}
+                    </Wrap>
+                </SeoContentSection>
+            )}
+
+            {/* Soft Skills Section */}
+            {softSkills.length > 0 && (
+                <SeoContentSection
+                    badge="Soft Skills"
+                    title={`${job.title} Soft Skills`}
+                    description={`These interpersonal qualities make ${job.title} professionals successful. Weave them into your summary and experience sections.`}
+                    bgColor="gray.50"
+                >
+                    <Wrap gap={3} justify="center" maxW="5xl" mx="auto">
+                        {softSkills.map((keyword) => (
+                            <WrapItem key={keyword.id}>
+                                <SeoKeywordBadge
+                                    keyword={keyword.keyword}
+                                    category={keyword.context}
+                                />
+                            </WrapItem>
+                        ))}
+                    </Wrap>
+                </SeoContentSection>
+            )}
+
+            {/* Action Verbs */}
+            {actionVerbs.length > 0 && (
+                <SeoContentSection
+                    badge="Power Words"
+                    title={`${job.title} Resume Action Verbs`}
+                    description={`Start your bullet points with these strong action verbs to create impactful statements that showcase your ${job.title} achievements.`}
+                    bgColor="white"
+                >
+                    <Wrap gap={3} justify="center" maxW="5xl" mx="auto">
+                        {actionVerbs.map((keyword) => (
+                            <WrapItem key={keyword.id}>
+                                <SeoKeywordBadge
+                                    keyword={keyword.keyword}
+                                    category={keyword.context}
+                                />
+                            </WrapItem>
+                        ))}
+                    </Wrap>
+                </SeoContentSection>
+            )}
+
+            {/* Sample Bullet Points */}
+            <SeoContentSection
+                badge="Examples"
+                title={`${job.title} Resume Bullet Point Examples`}
+                description="Use these templates as inspiration for writing impactful bullet points that incorporate keywords."
+                bgColor="white"
+            >
+                <SeoCardGrid>
+                    <Box
+                        bg="white"
+                        p={6}
+                        borderRadius="lg"
+                        borderWidth="1px"
+                        borderColor="gray.200"
+                    >
+                        <Text fontSize="md" fontWeight="600" color="#4241ff" mb={2}>EXAMPLE 1</Text>
+                        <Text fontSize="lg" color="#1d1d1f" lineHeight="1.7">
+                            <Text as="strong">Spearheaded</Text> the development of <Text as="strong" color="#4241ff">{job.title}</Text> projects using <Text as="strong" color="#4241ff">Agile methodology</Text>, resulting in a 30% improvement in <Text as="strong" color="#4241ff">team productivity</Text> and on-time delivery of all milestones.
+                        </Text>
+                    </Box>
+                    <Box
+                        bg="white"
+                        p={6}
+                        borderRadius="lg"
+                        borderWidth="1px"
+                        borderColor="gray.200"
+                    >
+                        <Text fontSize="md" fontWeight="600" color="#4241ff" mb={2}>EXAMPLE 2</Text>
+                        <Text fontSize="lg" color="#1d1d1f" lineHeight="1.7">
+                            <Text as="strong">Implemented</Text> automated <Text as="strong" color="#4241ff">testing protocols</Text> that reduced bugs by 45% and improved <Text as="strong" color="#4241ff">code quality</Text> across the <Text as="strong" color="#4241ff">{job.title}</Text> team.
+                        </Text>
+                    </Box>
+                    <Box
+                        bg="white"
+                        p={6}
+                        borderRadius="lg"
+                        borderWidth="1px"
+                        borderColor="gray.200"
+                    >
+                        <Text fontSize="md" fontWeight="600" color="#4241ff" mb={2}>EXAMPLE 3</Text>
+                        <Text fontSize="lg" color="#1d1d1f" lineHeight="1.7">
+                            <Text as="strong">Collaborated</Text> with cross-functional teams using <Text as="strong" color="#4241ff">project management tools</Text> to deliver <Text as="strong" color="#4241ff">{job.title}</Text> initiatives 2 weeks ahead of schedule.
+                        </Text>
+                    </Box>
+                    <Box
+                        bg="white"
+                        p={6}
+                        borderRadius="lg"
+                        borderWidth="1px"
+                        borderColor="gray.200"
+                    >
+                        <Text fontSize="md" fontWeight="600" color="#4241ff" mb={2}>EXAMPLE 4</Text>
+                        <Text fontSize="lg" color="#1d1d1f" lineHeight="1.7">
+                            <Text as="strong">Optimized</Text> database performance through <Text as="strong" color="#4241ff">SQL query refinement</Text>, reducing load times by 60% and enhancing <Text as="strong" color="#4241ff">user experience</Text>.
+                        </Text>
+                    </Box>
+                </SeoCardGrid>
+            </SeoContentSection>
+
+            {/* Related Roles */}
+            {/* <SeoContentSection
+                badge="Explore More"
+                title="Related Resume Keywords"
+                description="Find resume keywords for similar roles to expand your options."
+                bgColor="gray.50"
+            >
+                <SeoCardGrid>
+                    {job.aliases.slice(0, 4).map((alias, index) => (
+                        <Link
+                            key={index}
+                            href={`/resume-keywords/${alias.toLowerCase().replace(/ /g, '-')}`}
+                            style={{ textDecoration: 'none' }}
+                        >
+                            <Box
+                                bg="white"
+                                p={6}
+                                borderRadius="lg"
+                                borderWidth="1px"
+                                borderColor="gray.200"
+                                _hover={{
+                                    borderColor: 'rgba(66, 65, 255, 0.3)',
+                                    boxShadow: 'md',
+                                    transform: 'translateY(-2px)'
+                                }}
+                                transition="all 0.2s"
+                                cursor="pointer"
+                            >
+                                <Text
+                                    fontSize="md"
+                                    fontWeight="600"
+                                    color="#1d1d1f"
+                                >
+                                    {alias} Resume Keywords
+                                </Text>
+                            </Box>
+                        </Link>
+                    ))}
+                </SeoCardGrid>
+            </SeoContentSection> */}
+
+            {/* Final CTA */}
+            <CTA />
+            <FAQ />
+        </Box>
+    )
+}

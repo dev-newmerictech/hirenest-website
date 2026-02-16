@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { jobTitles } from '../lib/programmatic-seo/job-titles';
 
 export const dynamic = 'force-static';
 
@@ -6,8 +7,8 @@ export async function GET() {
     const baseUrl = 'https://www.hirenest.ai';
     const currentDate = new Date().toUTCString();
 
-    // Define content items for RSS feed
-    const items = [
+    // Main feature items
+    const featureItems = [
         {
             title: 'AI-Powered Resume Builder',
             link: `${baseUrl}/ai-resume-builder`,
@@ -66,7 +67,52 @@ export async function GET() {
         },
     ];
 
-    const rssItems = items
+    // Interview Questions items - Index page
+    const interviewQuestionsIndexItem = {
+        title: 'Interview Questions - All Jobs',
+        link: `${baseUrl}/interview-questions`,
+        description: 'Prepare for your job interview with our comprehensive collection of interview questions and answers for 50+ job titles. Expert tips, behavioral questions, and technical interview prep.',
+        pubDate: currentDate,
+        category: 'Interview Preparation',
+    };
+
+    // Resume Keywords items - Index page
+    const resumeKeywordsIndexItem = {
+        title: 'Resume Keywords & Skills',
+        link: `${baseUrl}/resume-keywords`,
+        description: 'Discover the best resume keywords and skills for your job. Optimize your resume for ATS and impress recruiters with our comprehensive guides covering 50+ job titles.',
+        pubDate: currentDate,
+        category: 'Resume Writing',
+    };
+
+    // Generate individual interview question items (top 20 most popular)
+    const interviewQuestionItems = jobTitles.slice(0, 20).map((job) => ({
+        title: `${job.title} Interview Questions & Answers`,
+        link: `${baseUrl}/interview-questions/${job.slug}`,
+        description: `Prepare for your ${job.title} interview with our comprehensive guide. Discover the most commonly asked questions, expert-approved answers, and proven strategies to ace your next job interview.`,
+        pubDate: currentDate,
+        category: 'Interview Preparation',
+    }));
+
+    // Generate individual resume keyword items (top 20 most popular)
+    const resumeKeywordItems = jobTitles.slice(0, 20).map((job) => ({
+        title: `${job.title} Resume Keywords & Skills`,
+        link: `${baseUrl}/resume-keywords/${job.slug}`,
+        description: `Discover the top ${job.title} resume keywords and skills that get past ATS scanners. Our comprehensive list includes hard skills, soft skills, and action verbs to make your resume stand out.`,
+        pubDate: currentDate,
+        category: 'Resume Writing',
+    }));
+
+    // Combine all items
+    const allItems = [
+        ...featureItems,
+        interviewQuestionsIndexItem,
+        resumeKeywordsIndexItem,
+        ...interviewQuestionItems,
+        ...resumeKeywordItems,
+    ];
+
+    const rssItems = allItems
         .map(
             (item) => `
     <item>
@@ -100,6 +146,8 @@ export async function GET() {
     <category>Jobs and Recruitment</category>
     <category>Career Development</category>
     <category>AI Technology</category>
+    <category>Interview Preparation</category>
+    <category>Resume Writing</category>
     <ttl>60</ttl>
     ${rssItems}
   </channel>
@@ -112,4 +160,3 @@ export async function GET() {
         },
     });
 }
-

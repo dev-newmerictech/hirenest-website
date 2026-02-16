@@ -13,6 +13,7 @@ import {
   Separator,
   Flex,
   Button,
+  IconButton,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import {
@@ -21,6 +22,9 @@ import {
   FaGithub,
   FaYoutube,
   FaInstagram,
+  FaSitemap,
+  FaRss,
+  FaRobot,
 } from 'react-icons/fa';
 import { LuShield, LuLock, LuCheck } from 'react-icons/lu';
 
@@ -53,6 +57,8 @@ const footerLinks = {
     links: [
       { label: 'About', href: '/about' },
       { label: 'Careers', href: '/careers' },
+      { label: 'Interview Questions', href: '/interview-questions' },
+      { label: 'Resume Keywords', href: '/resume-keywords' },
     ],
   },
   legal: {
@@ -196,6 +202,39 @@ export function Block() {
 
             {/* Social Links and Join Our Community Button */}
             <HStack gap="4" ml={'10'} mr={'10'} flexWrap="wrap">
+              <Link href="/sitemap.xml" >
+                <IconButton
+
+                  aria-label="Sitemap"
+                  variant="ghost"
+                  color="fg.muted"
+                  _hover={{ color: 'brand.500' }}
+                >
+                  <FaSitemap />
+                </IconButton>
+              </Link>
+              <Link href="/rss.xml" >
+                <IconButton
+
+                  aria-label="RSS Feed"
+                  variant="ghost"
+                  color="fg.muted"
+                  _hover={{ color: 'brand.500' }}
+                >
+                  <FaRss />
+                </IconButton>
+              </Link>
+              <Link href="/llms.txt" >
+                <IconButton
+
+                  aria-label="LLMs.txt"
+                  variant="ghost"
+                  color="fg.muted"
+                  _hover={{ color: 'brand.500' }}
+                >
+                  <FaRobot />
+                </IconButton>
+              </Link>
               {socialLinks.map((social) => (
                 <Link
                   key={social.label}

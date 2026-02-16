@@ -13,7 +13,7 @@ export function TermsOfServiceStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest Terms of Service',
             description: 'Rules and guidelines for using the Hirenest recruitment platform.',
@@ -29,10 +29,10 @@ export function TermsOfServiceStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Terms of Service - Hirenest',
         'Review our Terms of Service to understand the rules and guidelines for using the Hirenest platform.',
-        'https://www.hirenest.ai/terms-of-service',
+        'https://hirenest.ai/terms-of-service',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Terms of Service', url: 'https://www.hirenest.ai/terms-of-service' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Terms of Service', url: 'https://hirenest.ai/terms-of-service' }
         ],
         {
             image: imageSchema,

@@ -80,7 +80,7 @@ export const Block = () => {
                   borderColor: 'white',
                 }}
                 transition="all 0.3s"
-                onClick={() => window.open('https://www.hirenest.ai/', '_blank')}
+                onClick={() => window.open('https://hirenest.ai/', '_blank')}
               >
                 Start Skills-Based Hiring
               </Button>

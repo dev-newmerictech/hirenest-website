@@ -14,7 +14,7 @@ export function SkillAssessmentsStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/skill_assessments_hero.png',
+        'https://hirenest.ai/skill_assessments_hero.png',
         {
             name: 'Skill Assessments - Validate Your Expertise',
             description: 'Prove your skills with industry-standard assessments and earn verified badges.',
@@ -30,7 +30,7 @@ export function SkillAssessmentsStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Skill Assessments Demo',
         'Learn how to take skill assessments, earn badges, and showcase your expertise to potential employers.',
-        'https://www.hirenest.ai/skill_assessments_hero.png',
+        'https://hirenest.ai/skill_assessments_hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT3M30S',
@@ -43,10 +43,10 @@ export function SkillAssessmentsStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Skill Assessments - Validate Your Expertise',
         'Validate your expertise with 350+ industry-standard skill assessments. Earn verified badges in coding, soft skills, and more to stand out to top employers.',
-        'https://www.hirenest.ai/skill-assessments',
+        'https://hirenest.ai/skill-assessments',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Skill Assessments', url: 'https://www.hirenest.ai/skill-assessments' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Skill Assessments', url: 'https://hirenest.ai/skill-assessments' }
         ],
         {
             image: imageSchema,

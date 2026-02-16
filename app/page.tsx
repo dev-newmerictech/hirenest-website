@@ -34,10 +34,10 @@ export default function Home() {
   const webPageSchema = generateWebPageSchema(
     pageMetadata.home.title as string,
     pageMetadata.home.description as string,
-    'https://www.hirenest.ai',
-    [{ name: 'Home', url: 'https://www.hirenest.ai' }],
+    'https://hirenest.ai',
+    [{ name: 'Home', url: 'https://hirenest.ai' }],
     {
-      image: 'https://www.hirenest.ai/og-image.png',
+      image: 'https://hirenest.ai/og-image.png',
       datePublished: '2024-01-01T00:00:00.000Z',
       dateModified: new Date().toISOString()
     }
@@ -49,25 +49,25 @@ export default function Home() {
     '@type': 'Article',
     headline: pageMetadata.home.title as string,
     description: pageMetadata.home.description as string,
-    image: 'https://www.hirenest.ai/og-image.png',
+    image: 'https://hirenest.ai/og-image.png',
     author: {
       '@type': 'Organization',
       name: 'Hirenest',
-      url: 'https://www.hirenest.ai'
+      url: 'https://hirenest.ai'
     },
     publisher: {
       '@type': 'Organization',
       name: 'Hirenest',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.hirenest.ai/HpLogo.svg'
+        url: 'https://hirenest.ai/HpLogo.svg'
       }
     },
     datePublished: '2024-01-01T00:00:00.000Z',
     dateModified: new Date().toISOString(),
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://www.hirenest.ai'
+      '@id': 'https://hirenest.ai'
     }
   };
 

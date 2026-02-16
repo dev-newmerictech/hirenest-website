@@ -14,7 +14,7 @@ export function TeamCollaborationStructuredData() {
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         {
             name: 'Team Collaboration - Hire Together, Decide Smarter',
             description: 'Bring your entire hiring team together with tools designed for seamless collaboration and faster decision-making.',
@@ -30,7 +30,7 @@ export function TeamCollaborationStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Team Collaboration Demo',
         'Learn how to streamline your hiring process with shared pipelines, real-time chat, and collaborative decision-making tools.',
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT3M10S',
@@ -43,10 +43,10 @@ export function TeamCollaborationStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Team Collaboration - Hire Together, Decide Smarter',
         'Streamline your hiring process with Team Collaboration tools. Share feedback, rate candidates, and make hiring decisions together.',
-        'https://www.hirenest.ai/team-collaboration',
+        'https://hirenest.ai/team-collaboration',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Team Collaboration', url: 'https://www.hirenest.ai/team-collaboration' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Team Collaboration', url: 'https://hirenest.ai/team-collaboration' }
         ],
         {
             image: imageSchema,

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.hirenest.ai';
+    const baseUrl = 'https://hirenest.ai';
 
     // Return a sitemap index that points to individual sitemaps
     return [

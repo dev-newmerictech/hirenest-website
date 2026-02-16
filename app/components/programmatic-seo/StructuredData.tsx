@@ -1,9 +1,7 @@
-'use client'
-
 import { generateFAQSchema, generateWebPageSchema, generateBreadcrumbSchema } from '../../lib/structured-data'
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data'
 
-const baseUrl = 'https://www.hirenest.ai'
+const baseUrl = 'https://hirenest.ai'
 
 interface ProgrammaticSeoStructuredDataProps {
     jobTitle: string
@@ -20,7 +18,7 @@ export function ProgrammaticSeoStructuredData({
 }: ProgrammaticSeoStructuredDataProps) {
     const pageUrl = `${baseUrl}/${pageType}/${slug}`
 
-    // Generate page-specific FAQs
+    // Generate page-specific FAQs (simplified to reduce payload)
     const pageSpecificFAQs = pageType === 'interview-questions'
         ? [
             {
@@ -34,14 +32,6 @@ export function ProgrammaticSeoStructuredData({
             {
                 question: `What technical questions are asked in ${jobTitle} interviews?`,
                 answer: `${jobTitle} technical interviews typically cover core concepts, tools, and methodologies relevant to the role. Our guide includes common technical questions with detailed answers to help you demonstrate your expertise.`
-            },
-            {
-                question: `How do I answer behavioral questions for ${jobTitle} roles?`,
-                answer: `Use the STAR method (Situation, Task, Action, Result) to structure your behavioral answers. Prepare specific examples from your experience that highlight your ${jobTitle} skills and achievements. This guide includes practice questions and sample answers.`
-            },
-            {
-                question: `What are red flags to avoid in ${jobTitle} interviews?`,
-                answer: `Common mistakes include speaking negatively about past employers, giving vague answers, lack of preparation, not asking questions, and arrogance. Our guide details these pitfalls and how to avoid them to make a strong impression.`
             }
         ]
         : [
@@ -56,22 +46,11 @@ export function ProgrammaticSeoStructuredData({
             {
                 question: `What skills should I highlight on my ${jobTitle} resume?`,
                 answer: `Highlight technical skills specific to ${jobTitle} roles, soft skills like communication and problem-solving, relevant tools and software, and industry certifications. Our categorized keyword list helps you identify which skills to emphasize.`
-            },
-            {
-                question: `How many keywords should I use in my ${jobTitle} resume?`,
-                answer: `Use 10-15 relevant keywords throughout your ${jobTitle} resume, focusing on the most important skills for the specific role. Naturally incorporate them in your summary, skills section, and work experience. Quality and relevance matter more than quantity.`
-            },
-            {
-                question: `Where should I place keywords in my ${jobTitle} resume?`,
-                answer: `Place ${jobTitle} keywords strategically in your professional summary, skills section, and throughout your work experience bullet points. Use action verbs and specific skills that match the job description for maximum ATS optimization.`
             }
         ]
 
-    // Combine page-specific FAQs with general FAQs
-    const allFAQs = [...pageSpecificFAQs, ...faqs]
-
-    // Generate FAQ Schema
-    const faqSchema = generateFAQSchema(allFAQs)
+    // Use only page-specific FAQs (3 instead of 13 to reduce size)
+    const faqSchema = generateFAQSchema(pageSpecificFAQs)
 
     // Generate Article Schema for SEO
     const articleSchema = {

@@ -3671,7 +3671,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'platform-engineer',
         title: 'Platform Engineer',
-        slug: 'platform-engineer',
+        slug: 'platform-engineer-2',
         category: 'technology',
         aliases: ['Platform Developer', 'Infrastructure Platform Engineer'],
         averageSalary: 145000,
@@ -3680,7 +3680,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'site-reliability-engineer',
         title: 'Site Reliability Engineer',
-        slug: 'site-reliability-engineer',
+        slug: 'site-reliability-engineer-2',
         category: 'technology',
         aliases: ['SRE', 'Reliability Engineer'],
         averageSalary: 150000,
@@ -3698,7 +3698,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ai-engineer',
         title: 'AI Engineer',
-        slug: 'ai-engineer',
+        slug: 'ai-engineer-2',
         category: 'technology',
         aliases: ['Machine Learning Engineer', 'AI Developer'],
         averageSalary: 155000,
@@ -3763,7 +3763,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'growth-marketer',
         title: 'Growth Marketer',
-        slug: 'growth-marketer',
+        slug: 'growth-marketer-2',
         category: 'marketing',
         aliases: ['Growth Hacker', 'Growth Manager'],
         averageSalary: 95000,
@@ -3772,7 +3772,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'product-marketing-manager',
         title: 'Product Marketing Manager',
-        slug: 'product-marketing-manager',
+        slug: 'product-marketing-manager-2',
         category: 'marketing',
         aliases: ['PMM', 'Product Marketing'],
         averageSalary: 115000,
@@ -3781,7 +3781,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'marketing-analyst',
         title: 'Marketing Analyst',
-        slug: 'marketing-analyst',
+        slug: 'marketing-analyst-2',
         category: 'marketing',
         aliases: ['Marketing Data Analyst', 'Marketing Insights Analyst'],
         averageSalary: 75000,
@@ -3790,7 +3790,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'brand-manager',
         title: 'Brand Manager',
-        slug: 'brand-manager',
+        slug: 'brand-manager-2',
         category: 'marketing',
         aliases: ['Brand Marketing Manager', 'Product Brand Manager'],
         averageSalary: 105000,
@@ -3837,7 +3837,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-success-manager',
         title: 'Customer Success Manager',
-        slug: 'customer-success-manager',
+        slug: 'customer-success-manager-2',
         category: 'sales',
         aliases: ['CSM', 'Client Success Manager'],
         averageSalary: 85000,
@@ -3857,7 +3857,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'nurse-practitioner',
         title: 'Nurse Practitioner',
-        slug: 'nurse-practitioner',
+        slug: 'nurse-practitioner-2',
         category: 'healthcare',
         aliases: ['NP', 'Advanced Practice Nurse'],
         averageSalary: 120000,
@@ -3866,7 +3866,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'physician-assistant',
         title: 'Physician Assistant',
-        slug: 'physician-assistant',
+        slug: 'physician-assistant-2',
         category: 'healthcare',
         aliases: ['PA', 'Physician Associate'],
         averageSalary: 115000,
@@ -3875,7 +3875,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-technologist',
         title: 'Medical Technologist',
-        slug: 'medical-technologist',
+        slug: 'medical-technologist-2',
         category: 'healthcare',
         aliases: ['Clinical Laboratory Scientist', 'Medical Lab Tech'],
         averageSalary: 65000,
@@ -3904,7 +3904,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'finance-manager',
         title: 'Finance Manager',
-        slug: 'finance-manager',
+        slug: 'finance-manager-2',
         category: 'finance',
         aliases: ['Financial Manager', 'Finance Lead'],
         averageSalary: 115000,
@@ -3922,7 +3922,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'treasury-analyst',
         title: 'Treasury Analyst',
-        slug: 'treasury-analyst',
+        slug: 'treasury-analyst-2',
         category: 'finance',
         aliases: ['Treasury Specialist', 'Cash Management Analyst'],
         averageSalary: 80000,
@@ -3931,7 +3931,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'credit-analyst',
         title: 'Credit Analyst',
-        slug: 'credit-analyst',
+        slug: 'credit-analyst-2',
         category: 'finance',
         aliases: ['Credit Risk Analyst', 'Loan Analyst'],
         averageSalary: 70000,
@@ -3940,7 +3940,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'investment-analyst',
         title: 'Investment Analyst',
-        slug: 'investment-analyst',
+        slug: 'investment-analyst-2',
         category: 'finance',
         aliases: ['Investment Research Analyst', 'Securities Analyst'],
         averageSalary: 95000,
@@ -3951,7 +3951,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-business-partner',
         title: 'HR Business Partner',
-        slug: 'hr-business-partner',
+        slug: 'hr-business-partner-2',
         category: 'hr',
         aliases: ['HRBP', 'Strategic HR Partner'],
         averageSalary: 95000,
@@ -3960,7 +3960,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-manager',
         title: 'HR Manager',
-        slug: 'hr-manager',
+        slug: 'hr-manager-2',
         category: 'hr',
         aliases: ['Human Resources Manager', 'People Manager'],
         averageSalary: 85000,
@@ -4092,7 +4092,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'civil-engineer',
         title: 'Civil Engineer',
-        slug: 'civil-engineer',
+        slug: 'civil-engineer-2',
         category: 'engineering',
         aliases: ['Civil Engineering', 'Infrastructure Engineer'],
         averageSalary: 90000,
@@ -4110,7 +4110,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'electrical-engineer',
         title: 'Electrical Engineer',
-        slug: 'electrical-engineer',
+        slug: 'electrical-engineer-2',
         category: 'engineering',
         aliases: ['EE', 'Electrical Engineering'],
         averageSalary: 100000,
@@ -4119,7 +4119,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'chemical-engineer',
         title: 'Chemical Engineer',
-        slug: 'chemical-engineer',
+        slug: 'chemical-engineer-2',
         category: 'engineering',
         aliases: ['ChemE', 'Process Engineer Chemical'],
         averageSalary: 105000,
@@ -4128,7 +4128,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'biomedical-engineer',
         title: 'Biomedical Engineer',
-        slug: 'biomedical-engineer',
+        slug: 'biomedical-engineer-2',
         category: 'engineering',
         aliases: ['BME', 'Medical Device Engineer'],
         averageSalary: 100000,
@@ -4141,7 +4141,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'database-administrator',
         title: 'Database Administrator',
-        slug: 'database-administrator',
+        slug: 'database-administrator-2',
         category: 'technology',
         aliases: ['DBA', 'Database Engineer'],
         averageSalary: 105000,
@@ -4188,7 +4188,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'email-marketing-specialist',
         title: 'Email Marketing Specialist',
-        slug: 'email-marketing-specialist',
+        slug: 'email-marketing-specialist-2',
         category: 'marketing',
         aliases: ['Email Marketer', 'Email Campaign Manager'],
         averageSalary: 65000,
@@ -4215,7 +4215,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'seo-specialist',
         title: 'SEO Specialist',
-        slug: 'seo-specialist',
+        slug: 'seo-specialist-2',
         category: 'marketing',
         aliases: ['SEO Executive', 'Search Engine Specialist'],
         averageSalary: 60000,
@@ -4224,7 +4224,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ppc-specialist',
         title: 'PPC Specialist',
-        slug: 'ppc-specialist',
+        slug: 'ppc-specialist-2',
         category: 'marketing',
         aliases: ['Paid Search Specialist', 'SEM Specialist'],
         averageSalary: 65000,
@@ -4235,7 +4235,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'lead-generation-specialist',
         title: 'Lead Generation Specialist',
-        slug: 'lead-generation-specialist',
+        slug: 'lead-generation-specialist-2',
         category: 'sales',
         aliases: ['Lead Gen Specialist', 'Demand Generation Specialist'],
         averageSalary: 55000,
@@ -4253,7 +4253,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'business-development-manager',
         title: 'Business Development Manager',
-        slug: 'business-development-manager',
+        slug: 'business-development-manager-2',
         category: 'sales',
         aliases: ['BDM', 'Business Development'],
         averageSalary: 85000,
@@ -4282,7 +4282,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'dental-hygienist',
         title: 'Dental Hygienist',
-        slug: 'dental-hygienist',
+        slug: 'dental-hygienist-2',
         category: 'healthcare',
         aliases: ['Registered Dental Hygienist', 'RDH'],
         averageSalary: 82000,
@@ -4291,7 +4291,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-assistant',
         title: 'Medical Assistant',
-        slug: 'medical-assistant',
+        slug: 'medical-assistant-2',
         category: 'healthcare',
         aliases: ['Clinical Medical Assistant', 'MA'],
         averageSalary: 40000,
@@ -4300,7 +4300,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'pharmacy-technician',
         title: 'Pharmacy Technician',
-        slug: 'pharmacy-technician',
+        slug: 'pharmacy-technician-2',
         category: 'healthcare',
         aliases: ['Pharm Tech', 'Pharmacy Assistant'],
         averageSalary: 38000,
@@ -4347,7 +4347,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'bookkeeper',
         title: 'Bookkeeper',
-        slug: 'bookkeeper',
+        slug: 'bookkeeper-2',
         category: 'finance',
         aliases: ['Full Charge Bookkeeper', 'Accounting Clerk'],
         averageSalary: 43000,
@@ -4376,7 +4376,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-coordinator-2',
         title: 'HR Coordinator',
-        slug: 'hr-coordinator',
+        slug: 'hr-coordinator-2',
         category: 'hr',
         aliases: ['Human Resources Coordinator', 'HR Generalist'],
         averageSalary: 52000,
@@ -4385,7 +4385,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-generalist',
         title: 'HR Generalist',
-        slug: 'hr-generalist',
+        slug: 'hr-generalist-2',
         category: 'hr',
         aliases: ['Human Resources Generalist', 'HR Specialist'],
         averageSalary: 62000,
@@ -4394,7 +4394,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'recruiter-2',
         title: 'Recruiter',
-        slug: 'recruiter',
+        slug: 'recruiter-2',
         category: 'hr',
         aliases: ['Technical Recruiter', 'Corporate Recruiter'],
         averageSalary: 60000,
@@ -4423,7 +4423,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'executive-assistant',
         title: 'Executive Assistant',
-        slug: 'executive-assistant',
+        slug: 'executive-assistant-2',
         category: 'admin',
         aliases: ['EA', 'Executive Administrative Assistant'],
         averageSalary: 65000,
@@ -4432,7 +4432,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'personal-assistant',
         title: 'Personal Assistant',
-        slug: 'personal-assistant',
+        slug: 'personal-assistant-2',
         category: 'admin',
         aliases: ['PA', 'Executive Personal Assistant'],
         averageSalary: 55000,
@@ -4441,7 +4441,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'receptionist',
         title: 'Receptionist',
-        slug: 'receptionist',
+        slug: 'receptionist-2',
         category: 'admin',
         aliases: ['Front Desk Receptionist', 'Office Receptionist'],
         averageSalary: 35000,
@@ -4450,7 +4450,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'data-entry-clerk',
         title: 'Data Entry Clerk',
-        slug: 'data-entry-clerk',
+        slug: 'data-entry-clerk-2',
         category: 'admin',
         aliases: ['Data Entry Specialist', 'Typist'],
         averageSalary: 34000,
@@ -4459,7 +4459,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'file-clerk',
         title: 'File Clerk',
-        slug: 'file-clerk',
+        slug: 'file-clerk-2',
         category: 'admin',
         aliases: ['Filing Clerk', 'Records Clerk'],
         averageSalary: 32000,
@@ -4479,7 +4479,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-service-representative-2',
         title: 'Customer Service Representative',
-        slug: 'customer-service-representative',
+        slug: 'customer-service-representative-2',
         category: 'customer-service',
         aliases: ['CSR', 'Customer Service Agent'],
         averageSalary: 38000,
@@ -4526,7 +4526,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'visual-designer-2',
         title: 'Visual Designer',
-        slug: 'visual-designer',
+        slug: 'visual-designer-2',
         category: 'design',
         aliases: ['UI Visual Designer', 'Digital Designer'],
         averageSalary: 75000,
@@ -4535,7 +4535,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'product-designer-2',
         title: 'Product Designer',
-        slug: 'product-designer',
+        slug: 'product-designer-2',
         category: 'design',
         aliases: ['Digital Product Designer', 'UX/UI Designer'],
         averageSalary: 105000,
@@ -4544,7 +4544,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ui-designer-2',
         title: 'UI Designer',
-        slug: 'ui-designer',
+        slug: 'ui-designer-2',
         category: 'design',
         aliases: ['User Interface Designer', 'Interface Designer'],
         averageSalary: 90000,
@@ -4553,7 +4553,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ux-designer-2',
         title: 'UX Designer',
-        slug: 'ux-designer',
+        slug: 'ux-designer-2',
         category: 'design',
         aliases: ['User Experience Designer', 'Experience Designer'],
         averageSalary: 95000,
@@ -4564,7 +4564,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'industrial-engineer-2',
         title: 'Industrial Engineer',
-        slug: 'industrial-engineer',
+        slug: 'industrial-engineer-2',
         category: 'engineering',
         aliases: ['IE', 'Manufacturing Engineer'],
         averageSalary: 88000,
@@ -4573,7 +4573,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'environmental-engineer',
         title: 'Environmental Engineer',
-        slug: 'environmental-engineer',
+        slug: 'environmental-engineer-2',
         category: 'engineering',
         aliases: ['Environmental Engineering', 'Environmental Consultant'],
         averageSalary: 92000,
@@ -4582,7 +4582,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'aerospace-engineer',
         title: 'Aerospace Engineer',
-        slug: 'aerospace-engineer',
+        slug: 'aerospace-engineer-2',
         category: 'engineering',
         aliases: ['Aeronautical Engineer', 'Astronautical Engineer'],
         averageSalary: 120000,
@@ -4622,7 +4622,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ios-developer',
         title: 'iOS Developer',
-        slug: 'ios-developer',
+        slug: 'ios-developer-2',
         category: 'technology',
         aliases: ['iPhone Developer', 'Swift Developer'],
         averageSalary: 125000,
@@ -4631,7 +4631,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'android-developer',
         title: 'Android Developer',
-        slug: 'android-developer',
+        slug: 'android-developer-2',
         category: 'technology',
         aliases: ['Android Engineer', 'Kotlin Developer'],
         averageSalary: 120000,
@@ -4640,7 +4640,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'react-native-developer',
         title: 'React Native Developer',
-        slug: 'react-native-developer',
+        slug: 'react-native-developer-2',
         category: 'technology',
         aliases: ['React Native Engineer', 'Cross-Platform Mobile Developer'],
         averageSalary: 120000,
@@ -4649,7 +4649,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'flutter-developer',
         title: 'Flutter Developer',
-        slug: 'flutter-developer',
+        slug: 'flutter-developer-2',
         category: 'technology',
         aliases: ['Flutter Engineer', 'Dart Developer'],
         averageSalary: 115000,
@@ -4660,7 +4660,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'content-marketing-manager',
         title: 'Content Marketing Manager',
-        slug: 'content-marketing-manager',
+        slug: 'content-marketing-manager-2',
         category: 'marketing',
         aliases: ['Content Marketing', 'Content Strategy Manager'],
         averageSalary: 85000,
@@ -4696,7 +4696,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'social-media-manager',
         title: 'Social Media Manager',
-        slug: 'social-media-manager',
+        slug: 'social-media-manager-2',
         category: 'marketing',
         aliases: ['SMM', 'Social Media Marketing Manager'],
         averageSalary: 65000,
@@ -4716,7 +4716,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'regional-sales-manager',
         title: 'Regional Sales Manager',
-        slug: 'regional-sales-manager',
+        slug: 'regional-sales-manager-2',
         category: 'sales',
         aliases: ['Area Sales Manager', 'Regional Manager'],
         averageSalary: 105000,
@@ -4734,7 +4734,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'inside-sales-representative',
         title: 'Inside Sales Representative',
-        slug: 'inside-sales-representative',
+        slug: 'inside-sales-representative-2',
         category: 'sales',
         aliases: ['Inside Sales Rep', 'Remote Sales Representative'],
         averageSalary: 55000,
@@ -4743,7 +4743,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'outside-sales-representative',
         title: 'Outside Sales Representative',
-        slug: 'outside-sales-representative',
+        slug: 'outside-sales-representative-2',
         category: 'sales',
         aliases: ['Field Sales Representative', 'Outside Sales Rep'],
         averageSalary: 65000,
@@ -4828,7 +4828,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'budget-analyst',
         title: 'Budget Analyst',
-        slug: 'budget-analyst',
+        slug: 'budget-analyst-2',
         category: 'finance',
         aliases: ['Budget Coordinator', 'Budget Manager'],
         averageSalary: 72000,
@@ -4848,7 +4848,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'paralegal-2',
         title: 'Paralegal',
-        slug: 'paralegal',
+        slug: 'paralegal-2',
         category: 'legal',
         aliases: ['Legal Assistant', 'Paralegal Specialist'],
         averageSalary: 58000,
@@ -4857,7 +4857,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'legal-assistant',
         title: 'Legal Assistant',
-        slug: 'legal-assistant',
+        slug: 'legal-assistant-2',
         category: 'legal',
         aliases: ['Legal Secretary', 'Legal Admin'],
         averageSalary: 50000,
@@ -5038,7 +5038,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'software-architect-2',
         title: 'Software Architect',
-        slug: 'software-architect',
+        slug: 'software-architect-2',
         category: 'technology',
         aliases: ['Solutions Architect', 'Application Architect'],
         averageSalary: 155000,
@@ -5235,7 +5235,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'controller',
         title: 'Controller',
-        slug: 'controller',
+        slug: 'controller-2',
         category: 'finance',
         aliases: ['Corporate Controller', 'Financial Controller'],
         averageSalary: 135000,
@@ -5604,7 +5604,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'global-account-manager',
         title: 'Global Account Manager',
-        slug: 'global-account-manager',
+        slug: 'global-account-manager-2',
         category: 'sales',
         aliases: ['GAM', 'International Account Manager'],
         averageSalary: 140000,
@@ -5810,7 +5810,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'project-coordinator',
         title: 'Project Coordinator',
-        slug: 'project-coordinator',
+        slug: 'project-coordinator-2',
         category: 'admin',
         aliases: ['Project Admin', 'Project Support Coordinator'],
         averageSalary: 58000,
@@ -5828,7 +5828,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'virtual-assistant',
         title: 'Virtual Assistant',
-        slug: 'virtual-assistant',
+        slug: 'virtual-assistant-2',
         category: 'admin',
         aliases: ['VA', 'Remote Assistant'],
         averageSalary: 45000,
@@ -5982,7 +5982,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'game-developer',
         title: 'Game Developer',
-        slug: 'game-developer',
+        slug: 'game-developer-2',
         category: 'technology',
         aliases: ['Game Programmer', 'Game Dev'],
         averageSalary: 105000,
@@ -6009,7 +6009,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'blockchain-developer',
         title: 'Blockchain Developer',
-        slug: 'blockchain-developer',
+        slug: 'blockchain-developer-2',
         category: 'technology',
         aliases: ['Web3 Developer', 'Smart Contract Developer'],
         averageSalary: 145000,
@@ -6047,7 +6047,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-insights-manager',
         title: 'Customer Insights Manager',
-        slug: 'customer-insights-manager',
+        slug: 'customer-insights-manager-2',
         category: 'marketing',
         aliases: ['Consumer Insights Manager', 'Customer Analytics Manager'],
         averageSalary: 90000,
@@ -6123,7 +6123,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'occupational-therapist-2',
         title: 'Occupational Therapy Assistant',
-        slug: 'occupational-therapy-assistant',
+        slug: 'occupational-therapy-assistant-2',
         category: 'healthcare',
         aliases: ['OTA Assistant', 'OT Assistant'],
         averageSalary: 65000,
@@ -6329,7 +6329,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'commercial-real-estate-agent',
         title: 'Commercial Real Estate Agent',
-        slug: 'commercial-real-estate-agent',
+        slug: 'commercial-real-estate-agent-2',
         category: 'real-estate',
         aliases: ['Commercial Realtor', 'Commercial Property Sales'],
         averageSalary: 85000,
@@ -6454,7 +6454,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ai-engineer-2',
         title: 'AI Engineer',
-        slug: 'ai-engineer-2',
+        slug: 'ai-engineer-3',
         category: 'technology',
         aliases: ['Artificial Intelligence Engineer', 'ML Engineer'],
         averageSalary: 155000,
@@ -6510,7 +6510,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'product-marketing-manager-2',
         title: 'Product Marketing Manager',
-        slug: 'product-marketing-manager-2',
+        slug: 'product-marketing-manager-3',
         category: 'marketing',
         aliases: ['PMM', 'Product Marketing'],
         averageSalary: 110000,
@@ -6519,7 +6519,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'field-marketing-manager',
         title: 'Field Marketing Manager',
-        slug: 'field-marketing-manager',
+        slug: 'field-marketing-manager-2',
         category: 'marketing',
         aliases: ['Regional Marketing Manager', 'Field Marketing'],
         averageSalary: 95000,
@@ -6528,7 +6528,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'affiliate-marketing-manager',
         title: 'Affiliate Marketing Manager',
-        slug: 'affiliate-marketing-manager',
+        slug: 'affiliate-marketing-manager-2',
         category: 'marketing',
         aliases: ['Affiliate Manager', 'Partnership Marketing Manager'],
         averageSalary: 75000,
@@ -6548,7 +6548,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-operations-analyst',
         title: 'Sales Operations Analyst',
-        slug: 'sales-operations-analyst',
+        slug: 'sales-operations-analyst-2',
         category: 'sales',
         aliases: ['Sales Ops Analyst', 'Revenue Operations Analyst'],
         averageSalary: 75000,
@@ -6557,7 +6557,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-enablement-manager',
         title: 'Sales Enablement Manager',
-        slug: 'sales-enablement-manager',
+        slug: 'sales-enablement-manager-2',
         category: 'sales',
         aliases: ['Sales Training Manager', 'Sales Content Manager'],
         averageSalary: 95000,
@@ -6566,7 +6566,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'enterprise-account-executive',
         title: 'Enterprise Account Executive',
-        slug: 'enterprise-account-executive',
+        slug: 'enterprise-account-executive-3',
         category: 'sales',
         aliases: ['Enterprise AE', 'Enterprise Sales Executive'],
         averageSalary: 140000,
@@ -6575,7 +6575,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'inside-sales-representative',
         title: 'Inside Sales Representative',
-        slug: 'inside-sales-representative',
+        slug: 'inside-sales-representative-3',
         category: 'sales',
         aliases: ['Inside Sales Rep', 'Remote Sales Representative'],
         averageSalary: 55000,
@@ -6604,7 +6604,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'health-unit-coordinator',
         title: 'Health Unit Coordinator',
-        slug: 'health-unit-coordinator',
+        slug: 'health-unit-coordinator-2',
         category: 'healthcare',
         aliases: ['Unit Clerk', 'Ward Secretary'],
         averageSalary: 38000,
@@ -6631,7 +6631,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'patient-access-representative',
         title: 'Patient Access Representative',
-        slug: 'patient-access-representative',
+        slug: 'patient-access-representative-2',
         category: 'healthcare',
         aliases: ['Patient Registration', 'Admissions Representative'],
         averageSalary: 38000,
@@ -6642,7 +6642,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'credit-analyst',
         title: 'Credit Analyst',
-        slug: 'credit-analyst',
+        slug: 'credit-analyst-3',
         category: 'finance',
         aliases: ['Credit Risk Analyst', 'Loan Analyst'],
         averageSalary: 75000,
@@ -6651,7 +6651,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'budget-analyst',
         title: 'Budget Analyst',
-        slug: 'budget-analyst',
+        slug: 'budget-analyst-3',
         category: 'finance',
         aliases: ['Budget Manager', 'Financial Planning Analyst'],
         averageSalary: 80000,
@@ -6660,7 +6660,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'treasury-analyst',
         title: 'Treasury Analyst',
-        slug: 'treasury-analyst',
+        slug: 'treasury-analyst-3',
         category: 'finance',
         aliases: ['Treasury Specialist', 'Cash Management Analyst'],
         averageSalary: 85000,
@@ -6669,7 +6669,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'pricing-analyst',
         title: 'Pricing Analyst',
-        slug: 'pricing-analyst',
+        slug: 'pricing-analyst-2',
         category: 'finance',
         aliases: ['Pricing Specialist', 'Revenue Management Analyst'],
         averageSalary: 80000,
@@ -6689,7 +6689,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'compensation-analyst',
         title: 'Compensation Analyst',
-        slug: 'compensation-analyst',
+        slug: 'compensation-analyst-3',
         category: 'hr',
         aliases: ['Compensation Specialist', 'Salary Analyst'],
         averageSalary: 75000,
@@ -6698,7 +6698,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'benefits-administrator',
         title: 'Benefits Administrator',
-        slug: 'benefits-administrator',
+        slug: 'benefits-administrator-2',
         category: 'hr',
         aliases: ['Benefits Specialist', 'Employee Benefits Coordinator'],
         averageSalary: 60000,
@@ -6725,7 +6725,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'employee-relations-specialist',
         title: 'Employee Relations Specialist',
-        slug: 'employee-relations-specialist',
+        slug: 'employee-relations-specialist-2',
         category: 'hr',
         aliases: ['ER Specialist', 'Labor Relations Specialist'],
         averageSalary: 70000,
@@ -6745,7 +6745,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'administrative-coordinator',
         title: 'Administrative Coordinator',
-        slug: 'administrative-coordinator',
+        slug: 'administrative-coordinator-2',
         category: 'admin',
         aliases: ['Admin Coordinator', 'Office Coordinator'],
         averageSalary: 48000,
@@ -6754,7 +6754,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'document-specialist',
         title: 'Document Specialist',
-        slug: 'document-specialist',
+        slug: 'document-specialist-2',
         category: 'admin',
         aliases: ['Records Management Specialist', 'Documentation Clerk'],
         averageSalary: 42000,
@@ -6763,7 +6763,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'data-entry-clerk-2',
         title: 'Data Entry Clerk',
-        slug: 'data-entry-clerk-2',
+        slug: 'data-entry-clerk-3',
         category: 'admin',
         aliases: ['Data Entry Specialist', 'Data Input Clerk'],
         averageSalary: 36000,
@@ -6819,7 +6819,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'dispute-resolution-specialist',
         title: 'Dispute Resolution Specialist',
-        slug: 'dispute-resolution-specialist',
+        slug: 'dispute-resolution-specialist-2',
         category: 'customer-service',
         aliases: ['Claims Specialist', 'Dispute Analyst'],
         averageSalary: 48000,
@@ -6839,7 +6839,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'product-designer-2',
         title: 'Product Designer',
-        slug: 'product-designer-2',
+        slug: 'product-designer-3',
         category: 'design',
         aliases: ['Digital Product Designer', 'UX Product Designer'],
         averageSalary: 115000,
@@ -6879,7 +6879,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'site-reliability-engineer',
         title: 'Site Reliability Engineer',
-        slug: 'site-reliability-engineer',
+        slug: 'site-reliability-engineer-3',
         category: 'technology',
         aliases: ['SRE', 'Reliability Engineer'],
         averageSalary: 155000,
@@ -6888,7 +6888,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'devsecops-engineer',
         title: 'DevSecOps Engineer',
-        slug: 'devsecops-engineer',
+        slug: 'devsecops-engineer-2',
         category: 'technology',
         aliases: ['DevSecOps', 'Security DevOps Engineer'],
         averageSalary: 150000,
@@ -6897,7 +6897,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'platform-engineer',
         title: 'Platform Engineer',
-        slug: 'platform-engineer',
+        slug: 'platform-engineer-3',
         category: 'technology',
         aliases: ['Platform DevOps Engineer', 'Internal Developer Platform'],
         averageSalary: 150000,
@@ -6906,7 +6906,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'kubernetes-engineer',
         title: 'Kubernetes Engineer',
-        slug: 'kubernetes-engineer',
+        slug: 'kubernetes-engineer-2',
         category: 'technology',
         aliases: ['K8s Engineer', 'Container Orchestration Engineer'],
         averageSalary: 145000,
@@ -6926,7 +6926,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'growth-marketer',
         title: 'Growth Marketer',
-        slug: 'growth-marketer',
+        slug: 'growth-marketer-3',
         category: 'marketing',
         aliases: ['Growth Marketing Manager', 'Growth Hacker'],
         averageSalary: 95000,
@@ -6953,7 +6953,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'demand-generation-manager',
         title: 'Demand Generation Manager',
-        slug: 'demand-generation-manager',
+        slug: 'demand-generation-manager-2',
         category: 'marketing',
         aliases: ['Demand Gen Manager', 'Lead Generation Manager'],
         averageSalary: 95000,
@@ -6962,7 +6962,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'marketing-operations-manager',
         title: 'Marketing Operations Manager',
-        slug: 'marketing-operations-manager',
+        slug: 'marketing-operations-manager-2',
         category: 'marketing',
         aliases: ['Marketing Ops', 'MOps Manager'],
         averageSalary: 100000,
@@ -6973,7 +6973,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'revenue-operations-manager',
         title: 'Revenue Operations Manager',
-        slug: 'revenue-operations-manager',
+        slug: 'revenue-operations-manager-2',
         category: 'sales',
         aliases: ['RevOps Manager', 'Revenue Ops'],
         averageSalary: 110000,
@@ -6991,7 +6991,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'account-manager-2',
         title: 'Account Manager',
-        slug: 'account-manager-2',
+        slug: 'account-manager-3',
         category: 'sales',
         aliases: ['Client Account Manager', 'Customer Account Manager'],
         averageSalary: 70000,
@@ -7000,7 +7000,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-success-manager-2',
         title: 'Customer Success Manager',
-        slug: 'customer-success-manager-2',
+        slug: 'customer-success-manager-3',
         category: 'sales',
         aliases: ['CSM', 'Customer Success'],
         averageSalary: 80000,
@@ -7009,7 +7009,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'solutions-consultant',
         title: 'Solutions Consultant',
-        slug: 'solutions-consultant',
+        slug: 'solutions-consultant-2',
         category: 'sales',
         aliases: ['Solutions Architect', 'Presales Consultant'],
         averageSalary: 130000,
@@ -7038,7 +7038,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'patient-care-technician',
         title: 'Patient Care Technician',
-        slug: 'patient-care-technician',
+        slug: 'patient-care-technician-2',
         category: 'healthcare',
         aliases: ['PCT', 'Patient Care Assistant'],
         averageSalary: 35000,
@@ -7047,7 +7047,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-assistant-2',
         title: 'Medical Assistant',
-        slug: 'medical-assistant-2',
+        slug: 'medical-assistant-3',
         category: 'healthcare',
         aliases: ['MA', 'Clinical Medical Assistant'],
         averageSalary: 40000,
@@ -7056,7 +7056,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'health-information-technician',
         title: 'Health Information Technician',
-        slug: 'health-information-technician',
+        slug: 'health-information-technician-2',
         category: 'healthcare',
         aliases: ['HIT', 'Medical Records Technician'],
         averageSalary: 45000,
@@ -7094,7 +7094,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'financial-controller',
         title: 'Financial Controller',
-        slug: 'financial-controller',
+        slug: 'financial-controller-2',
         category: 'finance',
         aliases: ['Controller', 'Finance Controller'],
         averageSalary: 110000,
@@ -7114,7 +7114,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-coordinator-2',
         title: 'HR Coordinator',
-        slug: 'hr-coordinator-2',
+        slug: 'hr-coordinator-3',
         category: 'hr',
         aliases: ['Human Resources Coordinator', 'HR Admin'],
         averageSalary: 52000,
@@ -7123,7 +7123,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'recruiter-2',
         title: 'Recruiter',
-        slug: 'recruiter-2',
+        slug: 'recruiter-3',
         category: 'hr',
         aliases: ['Technical Recruiter', 'Corporate Recruiter'],
         averageSalary: 60000,
@@ -7161,7 +7161,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'legal-assistant',
         title: 'Legal Assistant',
-        slug: 'legal-assistant',
+        slug: 'legal-assistant-3',
         category: 'admin',
         aliases: ['Paralegal Assistant', 'Legal Admin'],
         averageSalary: 50000,
@@ -7179,7 +7179,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'receptionist-2',
         title: 'Receptionist',
-        slug: 'receptionist-2',
+        slug: 'receptionist-3',
         category: 'admin',
         aliases: ['Front Desk Receptionist', 'Office Receptionist'],
         averageSalary: 34000,
@@ -7188,7 +7188,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'file-clerk',
         title: 'File Clerk',
-        slug: 'file-clerk',
+        slug: 'file-clerk-3',
         category: 'admin',
         aliases: ['Records Clerk', 'Filing Clerk'],
         averageSalary: 32000,
@@ -7226,7 +7226,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'contact-center-agent',
         title: 'Contact Center Agent',
-        slug: 'contact-center-agent',
+        slug: 'contact-center-agent-2',
         category: 'customer-service',
         aliases: ['Contact Center Representative', 'Multichannel Agent'],
         averageSalary: 38000,
@@ -7255,7 +7255,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'visual-designer',
         title: 'Visual Designer',
-        slug: 'visual-designer',
+        slug: 'visual-designer-3',
         category: 'design',
         aliases: ['UI Visual Designer', 'Digital Visual Designer'],
         averageSalary: 85000,
@@ -7273,7 +7273,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'production-artist',
         title: 'Production Artist',
-        slug: 'production-artist',
+        slug: 'production-artist-2',
         category: 'design',
         aliases: ['Graphic Production Artist', 'Digital Artist'],
         averageSalary: 55000,
@@ -7282,7 +7282,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ux-writer',
         title: 'UX Writer',
-        slug: 'ux-writer',
+        slug: 'ux-writer-2',
         category: 'design',
         aliases: ['Content Designer', 'Product Content Writer'],
         averageSalary: 90000,
@@ -7291,7 +7291,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'content-designer',
         title: 'Content Designer',
-        slug: 'content-designer',
+        slug: 'content-designer-2',
         category: 'design',
         aliases: ['UX Content Designer', 'Product Content Designer'],
         averageSalary: 95000,
@@ -7304,7 +7304,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'embedded-systems-engineer',
         title: 'Embedded Systems Engineer',
-        slug: 'embedded-systems-engineer',
+        slug: 'embedded-systems-engineer-2',
         category: 'technology',
         aliases: ['Embedded Software Engineer', 'Firmware Engineer'],
         averageSalary: 125000,
@@ -7407,7 +7407,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'strategic-account-manager-2',
         title: 'Strategic Account Manager',
-        slug: 'strategic-account-manager-2',
+        slug: 'strategic-account-manager-3',
         category: 'sales',
         aliases: ['Strategic Accounts Manager', 'Key Account Manager'],
         averageSalary: 105000,
@@ -7416,7 +7416,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'global-account-manager-2',
         title: 'Global Account Manager',
-        slug: 'global-account-manager-2',
+        slug: 'global-account-manager-3',
         category: 'sales',
         aliases: ['International Account Manager', 'Global Accounts'],
         averageSalary: 130000,
@@ -7425,7 +7425,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-analyst',
         title: 'Sales Analyst',
-        slug: 'sales-analyst',
+        slug: 'sales-analyst-3',
         category: 'sales',
         aliases: ['Sales Data Analyst', 'Sales Intelligence Analyst'],
         averageSalary: 70000,
@@ -7454,7 +7454,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'radiologic-technologist',
         title: 'Radiologic Technologist',
-        slug: 'radiologic-technologist',
+        slug: 'radiologic-technologist-2',
         category: 'healthcare',
         aliases: ['Rad Tech', 'X-Ray Technician'],
         averageSalary: 65000,
@@ -7539,7 +7539,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'civil-engineer-2',
         title: 'Civil Engineer',
-        slug: 'civil-engineer-2',
+        slug: 'civil-engineer-3',
         category: 'engineering',
         aliases: ['Civil Engineering', 'Infrastructure Engineer'],
         averageSalary: 90000,
@@ -7548,7 +7548,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'structural-engineer',
         title: 'Structural Engineer',
-        slug: 'structural-engineer',
+        slug: 'structural-engineer-2',
         category: 'engineering',
         aliases: ['Structural Engineering', 'Building Engineer'],
         averageSalary: 95000,
@@ -7566,7 +7566,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'electrical-engineer-2',
         title: 'Electrical Engineer',
-        slug: 'electrical-engineer-2',
+        slug: 'electrical-engineer-3',
         category: 'engineering',
         aliases: ['EE', 'Electrical Engineering'],
         averageSalary: 100000,
@@ -7575,7 +7575,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'chemical-engineer',
         title: 'Chemical Engineer',
-        slug: 'chemical-engineer',
+        slug: 'chemical-engineer-3',
         category: 'engineering',
         aliases: ['ChE', 'Chemical Engineering'],
         averageSalary: 105000,
@@ -7586,7 +7586,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'substitute-teacher',
         title: 'Substitute Teacher',
-        slug: 'substitute-teacher',
+        slug: 'substitute-teacher-3',
         category: 'education',
         aliases: ['Sub Teacher', 'Supply Teacher'],
         averageSalary: 40000,
@@ -7595,7 +7595,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'teaching-assistant',
         title: 'Teaching Assistant',
-        slug: 'teaching-assistant',
+        slug: 'teaching-assistant-3',
         category: 'education',
         aliases: ['TA', 'Teacher Assistant'],
         averageSalary: 32000,
@@ -7604,7 +7604,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'curriculum-specialist',
         title: 'Curriculum Specialist',
-        slug: 'curriculum-specialist',
+        slug: 'curriculum-specialist-2',
         category: 'education',
         aliases: ['Curriculum Coordinator', 'Instructional Coordinator'],
         averageSalary: 65000,
@@ -7622,7 +7622,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'education-consultant',
         title: 'Education Consultant',
-        slug: 'education-consultant',
+        slug: 'education-consultant-2',
         category: 'education',
         aliases: ['Educational Consultant', 'EdTech Consultant'],
         averageSalary: 75000,
@@ -7709,7 +7709,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'cloud-security-engineer',
         title: 'Cloud Security Engineer',
-        slug: 'cloud-security-engineer',
+        slug: 'cloud-security-engineer-2',
         category: 'technology',
         aliases: ['Cloud Security Architect', 'Cloud Security Specialist'],
         averageSalary: 155000,
@@ -7729,7 +7729,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'email-copywriter',
         title: 'Email Copywriter',
-        slug: 'email-copywriter',
+        slug: 'email-copywriter-2',
         category: 'marketing',
         aliases: ['Email Writer', 'Email Marketing Copywriter'],
         averageSalary: 65000,
@@ -7738,7 +7738,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'conversion-copywriter',
         title: 'Conversion Copywriter',
-        slug: 'conversion-copywriter',
+        slug: 'conversion-copywriter-2',
         category: 'marketing',
         aliases: ['Direct Response Copywriter', 'CRO Copywriter'],
         averageSalary: 75000,
@@ -7785,7 +7785,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'territory-manager',
         title: 'Territory Manager',
-        slug: 'territory-manager',
+        slug: 'territory-manager-2',
         category: 'sales',
         aliases: ['Sales Territory Manager', 'Area Sales Manager'],
         averageSalary: 90000,
@@ -7794,7 +7794,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'regional-sales-manager',
         title: 'Regional Sales Manager',
-        slug: 'regional-sales-manager',
+        slug: 'regional-sales-manager-3',
         category: 'sales',
         aliases: ['RSM', 'Regional Sales Director'],
         averageSalary: 115000,
@@ -7803,7 +7803,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'national-sales-manager',
         title: 'National Sales Manager',
-        slug: 'national-sales-manager',
+        slug: 'national-sales-manager-2',
         category: 'sales',
         aliases: ['NSM', 'Country Sales Manager'],
         averageSalary: 145000,
@@ -7812,7 +7812,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'vp-of-sales',
         title: 'VP of Sales',
-        slug: 'vp-of-sales',
+        slug: 'vp-of-sales-2',
         category: 'sales',
         aliases: ['Vice President of Sales', 'Head of Sales'],
         averageSalary: 200000,
@@ -7870,7 +7870,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'financial-analyst-2',
         title: 'Financial Analyst',
-        slug: 'financial-analyst-2',
+        slug: 'financial-analyst-3',
         category: 'finance',
         aliases: ['Finance Analyst', 'Securities Analyst'],
         averageSalary: 85000,
@@ -7917,7 +7917,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'industrial-engineer',
         title: 'Industrial Engineer',
-        slug: 'industrial-engineer',
+        slug: 'industrial-engineer-3',
         category: 'engineering',
         aliases: ['IE', 'Industrial Engineering'],
         averageSalary: 92000,
@@ -7926,7 +7926,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'environmental-engineer',
         title: 'Environmental Engineer',
-        slug: 'environmental-engineer',
+        slug: 'environmental-engineer-3',
         category: 'engineering',
         aliases: ['Environmental Engineering', 'Environmental Consultant'],
         averageSalary: 88000,
@@ -7935,7 +7935,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'biomedical-engineer',
         title: 'Biomedical Engineer',
-        slug: 'biomedical-engineer',
+        slug: 'biomedical-engineer-3',
         category: 'engineering',
         aliases: ['BME', 'Biomedical Engineering'],
         averageSalary: 100000,
@@ -7944,7 +7944,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'aerospace-engineer',
         title: 'Aerospace Engineer',
-        slug: 'aerospace-engineer',
+        slug: 'aerospace-engineer-3',
         category: 'engineering',
         aliases: ['Aeronautical Engineer', 'Astronautical Engineer'],
         averageSalary: 120000,
@@ -8020,7 +8020,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'leasing-agent',
         title: 'Leasing Agent',
-        slug: 'leasing-agent',
+        slug: 'leasing-agent-2',
         category: 'real-estate',
         aliases: ['Leasing Consultant', 'Rental Agent'],
         averageSalary: 45000,
@@ -8038,7 +8038,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'title-examiner',
         title: 'Title Examiner',
-        slug: 'title-examiner',
+        slug: 'title-examiner-2',
         category: 'real-estate',
         aliases: ['Title Searcher', 'Title Abstractor'],
         averageSalary: 50000,
@@ -8047,7 +8047,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'escrow-officer',
         title: 'Escrow Officer',
-        slug: 'escrow-officer',
+        slug: 'escrow-officer-2',
         category: 'real-estate',
         aliases: ['Escrow Agent', 'Closing Officer'],
         averageSalary: 55000,
@@ -8058,7 +8058,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'freight-forwarder',
         title: 'Freight Forwarder',
-        slug: 'freight-forwarder',
+        slug: 'freight-forwarder-2',
         category: 'transportation',
         aliases: ['Freight Forwarding Agent', 'Cargo Forwarder'],
         averageSalary: 52000,
@@ -8085,7 +8085,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'delivery-driver-2',
         title: 'Delivery Driver',
-        slug: 'delivery-driver-2',
+        slug: 'delivery-driver-3',
         category: 'transportation',
         aliases: ['Delivery Driver', 'Package Delivery Driver'],
         averageSalary: 40000,
@@ -8143,7 +8143,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'react-native-developer',
         title: 'React Native Developer',
-        slug: 'react-native-developer',
+        slug: 'react-native-developer-3',
         category: 'technology',
         aliases: ['React Native Mobile Developer', 'RN Developer'],
         averageSalary: 120000,
@@ -8154,7 +8154,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'social-media-coordinator',
         title: 'Social Media Coordinator',
-        slug: 'social-media-coordinator',
+        slug: 'social-media-coordinator-2',
         category: 'marketing',
         aliases: ['Social Media Specialist', 'Social Content Coordinator'],
         averageSalary: 50000,
@@ -8181,7 +8181,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'marketing-analyst-2',
         title: 'Marketing Analyst',
-        slug: 'marketing-analyst-2',
+        slug: 'marketing-analyst-3',
         category: 'marketing',
         aliases: ['Marketing Data Analyst', 'Marketing Research Analyst'],
         averageSalary: 70000,
@@ -8190,7 +8190,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'brand-manager-2',
         title: 'Brand Manager',
-        slug: 'brand-manager-2',
+        slug: 'brand-manager-3',
         category: 'marketing',
         aliases: ['Brand Marketing Manager', 'Product Brand Manager'],
         averageSalary: 100000,
@@ -8210,7 +8210,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-trainer',
         title: 'Sales Trainer',
-        slug: 'sales-trainer',
+        slug: 'sales-trainer-2',
         category: 'sales',
         aliases: ['Sales Training Specialist', 'Sales Coach'],
         averageSalary: 70000,
@@ -8219,7 +8219,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'inside-sales-manager',
         title: 'Inside Sales Manager',
-        slug: 'inside-sales-manager',
+        slug: 'inside-sales-manager-2',
         category: 'sales',
         aliases: ['Inside Sales Team Lead', 'Remote Sales Manager'],
         averageSalary: 85000,
@@ -8248,7 +8248,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'nurse-practitioner',
         title: 'Nurse Practitioner',
-        slug: 'nurse-practitioner',
+        slug: 'nurse-practitioner-3',
         category: 'healthcare',
         aliases: ['NP', 'Advanced Practice Registered Nurse'],
         averageSalary: 115000,
@@ -8257,7 +8257,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'physician-assistant',
         title: 'Physician Assistant',
-        slug: 'physician-assistant',
+        slug: 'physician-assistant-3',
         category: 'healthcare',
         aliases: ['PA', 'Physician Associate'],
         averageSalary: 115000,
@@ -8266,7 +8266,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'clinical-nurse-specialist',
         title: 'Clinical Nurse Specialist',
-        slug: 'clinical-nurse-specialist',
+        slug: 'clinical-nurse-specialist-2',
         category: 'healthcare',
         aliases: ['CNS', 'Advanced Practice Nurse'],
         averageSalary: 105000,
@@ -8295,7 +8295,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'staff-accountant',
         title: 'Staff Accountant',
-        slug: 'staff-accountant',
+        slug: 'staff-accountant-2',
         category: 'finance',
         aliases: ['Junior Accountant', 'Accountant I'],
         averageSalary: 60000,
@@ -8304,7 +8304,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'senior-accountant',
         title: 'Senior Accountant',
-        slug: 'senior-accountant',
+        slug: 'senior-accountant-2',
         category: 'finance',
         aliases: ['Accountant II', 'Senior Accounting Specialist'],
         averageSalary: 75000,
@@ -8313,7 +8313,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'cost-accountant',
         title: 'Cost Accountant',
-        slug: 'cost-accountant',
+        slug: 'cost-accountant-2',
         category: 'finance',
         aliases: ['Cost Accounting Specialist', 'Manufacturing Accountant'],
         averageSalary: 72000,
@@ -8342,7 +8342,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-generalist',
         title: 'HR Generalist',
-        slug: 'hr-generalist',
+        slug: 'hr-generalist-3',
         category: 'hr',
         aliases: ['Human Resources Generalist', 'HR Generalist Specialist'],
         averageSalary: 65000,
@@ -8351,7 +8351,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-business-partner',
         title: 'HR Business Partner',
-        slug: 'hr-business-partner',
+        slug: 'hr-business-partner-3',
         category: 'hr',
         aliases: ['HRBP', 'Human Resources Business Partner'],
         averageSalary: 85000,
@@ -8398,7 +8398,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'administrative-specialist',
         title: 'Administrative Specialist',
-        slug: 'administrative-specialist',
+        slug: 'administrative-specialist-2',
         category: 'admin',
         aliases: ['Admin Specialist', 'Office Specialist'],
         averageSalary: 46000,
@@ -8445,7 +8445,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-service-lead',
         title: 'Customer Service Lead',
-        slug: 'customer-service-lead',
+        slug: 'customer-service-lead-2',
         category: 'customer-service',
         aliases: ['CS Lead', 'Customer Service Team Lead'],
         averageSalary: 52000,
@@ -8463,7 +8463,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'client-services-representative',
         title: 'Client Services Representative',
-        slug: 'client-services-representative',
+        slug: 'client-services-representative-2',
         category: 'customer-service',
         aliases: ['Client Services Rep', 'Client Support Representative'],
         averageSalary: 46000,
@@ -8483,7 +8483,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ui-designer-2',
         title: 'UI Designer',
-        slug: 'ui-designer-2',
+        slug: 'ui-designer-3',
         category: 'design',
         aliases: ['User Interface Designer', 'UI/UX Designer'],
         averageSalary: 95000,
@@ -8501,7 +8501,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'design-lead',
         title: 'Design Lead',
-        slug: 'design-lead',
+        slug: 'design-lead-2',
         category: 'design',
         aliases: ['Design Team Lead', 'Senior Designer Lead'],
         averageSalary: 120000,
@@ -8550,7 +8550,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'data-architect-2',
         title: 'Data Architect',
-        slug: 'data-architect-2',
+        slug: 'data-architect-3',
         category: 'technology',
         aliases: ['Data Architecture Lead', 'Enterprise Data Architect'],
         averageSalary: 145000,
@@ -8577,7 +8577,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'nlp-engineer',
         title: 'NLP Engineer',
-        slug: 'nlp-engineer',
+        slug: 'nlp-engineer-2',
         category: 'technology',
         aliases: ['Natural Language Processing Engineer', 'NLP Developer'],
         averageSalary: 145000,
@@ -8586,7 +8586,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'computer-vision-engineer',
         title: 'Computer Vision Engineer',
-        slug: 'computer-vision-engineer',
+        slug: 'computer-vision-engineer-2',
         category: 'technology',
         aliases: ['CV Engineer', 'Vision Systems Engineer'],
         averageSalary: 142000,
@@ -8622,7 +8622,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'data-warehouse-architect',
         title: 'Data Warehouse Architect',
-        slug: 'data-warehouse-architect',
+        slug: 'data-warehouse-architect-2',
         category: 'technology',
         aliases: ['DW Architect', 'Enterprise Data Warehouse Lead'],
         averageSalary: 135000,
@@ -8631,7 +8631,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'etl-developer',
         title: 'ETL Developer',
-        slug: 'etl-developer',
+        slug: 'etl-developer-3',
         category: 'technology',
         aliases: ['ETL Engineer', 'Data Integration Developer'],
         averageSalary: 98000,
@@ -8669,7 +8669,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'performance-marketing-manager',
         title: 'Performance Marketing Manager',
-        slug: 'performance-marketing-manager',
+        slug: 'performance-marketing-manager-2',
         category: 'marketing',
         aliases: ['Performance Marketer', 'Paid Media Manager'],
         averageSalary: 95000,
@@ -8687,7 +8687,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ppc-specialist-2',
         title: 'PPC Specialist',
-        slug: 'ppc-specialist-2',
+        slug: 'ppc-specialist-3',
         category: 'marketing',
         aliases: ['Pay-Per-Click Expert', 'Paid Search Specialist'],
         averageSalary: 72000,
@@ -8732,7 +8732,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'podcast-marketer',
         title: 'Podcast Marketer',
-        slug: 'podcast-marketer',
+        slug: 'podcast-marketer-2',
         category: 'marketing',
         aliases: ['Podcast Marketing Specialist', 'Audio Content Marketer'],
         averageSalary: 68000,
@@ -8741,7 +8741,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'affiliate-marketing-manager',
         title: 'Affiliate Marketing Manager',
-        slug: 'affiliate-marketing-manager',
+        slug: 'affiliate-marketing-manager-3',
         category: 'marketing',
         aliases: ['Affiliate Manager', 'Partnership Marketing Manager'],
         averageSalary: 82000,
@@ -8768,7 +8768,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'event-marketing-manager',
         title: 'Event Marketing Manager',
-        slug: 'event-marketing-manager',
+        slug: 'event-marketing-manager-2',
         category: 'marketing',
         aliases: ['Event Marketer', 'Events Marketing Lead'],
         averageSalary: 85000,
@@ -8779,7 +8779,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'enterprise-account-executive',
         title: 'Enterprise Account Executive',
-        slug: 'enterprise-account-executive',
+        slug: 'enterprise-account-executive-4',
         category: 'sales',
         aliases: ['Enterprise AE', 'Enterprise Sales Executive'],
         averageSalary: 145000,
@@ -8788,7 +8788,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'strategic-account-manager',
         title: 'Strategic Account Manager',
-        slug: 'strategic-account-manager',
+        slug: 'strategic-account-manager-4',
         category: 'sales',
         aliases: ['Strategic Accounts Lead', 'Key Account Manager'],
         averageSalary: 125000,
@@ -8797,7 +8797,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'solutions-consultant',
         title: 'Solutions Consultant',
-        slug: 'solutions-consultant',
+        slug: 'solutions-consultant-3',
         category: 'sales',
         aliases: ['Sales Consultant', 'Pre-Sales Consultant'],
         averageSalary: 115000,
@@ -8806,7 +8806,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-engineer-2',
         title: 'Sales Engineer',
-        slug: 'sales-engineer-2',
+        slug: 'sales-engineer-3',
         category: 'sales',
         aliases: ['Technical Sales Engineer', 'Solutions Engineer'],
         averageSalary: 120000,
@@ -8833,7 +8833,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'demand-generation-manager',
         title: 'Demand Generation Manager',
-        slug: 'demand-generation-manager',
+        slug: 'demand-generation-manager-3',
         category: 'sales',
         aliases: ['Demand Gen Manager', 'Lead Generation Manager'],
         averageSalary: 98000,
@@ -8842,7 +8842,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-operations-analyst-2',
         title: 'Sales Operations Analyst',
-        slug: 'sales-operations-analyst-2',
+        slug: 'sales-operations-analyst-3',
         category: 'sales',
         aliases: ['Sales Ops Analyst', 'Revenue Operations Analyst'],
         averageSalary: 82000,
@@ -8851,7 +8851,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-enablement-manager',
         title: 'Sales Enablement Manager',
-        slug: 'sales-enablement-manager',
+        slug: 'sales-enablement-manager-3',
         category: 'sales',
         aliases: ['Sales Enablement Lead', 'Sales Training Manager'],
         averageSalary: 105000,
@@ -8860,7 +8860,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'revenue-operations-manager',
         title: 'Revenue Operations Manager',
-        slug: 'revenue-operations-manager',
+        slug: 'revenue-operations-manager-3',
         category: 'sales',
         aliases: ['RevOps Manager', 'Revenue Ops Lead'],
         averageSalary: 110000,
@@ -8871,7 +8871,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'occupational-therapist-2',
         title: 'Occupational Therapist',
-        slug: 'occupational-therapist-2',
+        slug: 'occupational-therapist-4',
         category: 'healthcare',
         aliases: ['OT', 'Occupational Therapy Practitioner'],
         averageSalary: 92000,
@@ -8880,7 +8880,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'physical-therapist-assistant',
         title: 'Physical Therapist Assistant',
-        slug: 'physical-therapist-assistant',
+        slug: 'physical-therapist-assistant-2',
         category: 'healthcare',
         aliases: ['PTA', 'Physical Therapy Assistant'],
         averageSalary: 65000,
@@ -8898,7 +8898,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'radiologic-technologist',
         title: 'Radiologic Technologist',
-        slug: 'radiologic-technologist',
+        slug: 'radiologic-technologist-3',
         category: 'healthcare',
         aliases: ['Rad Tech', 'X-Ray Technician'],
         averageSalary: 65000,
@@ -8907,7 +8907,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'respiratory-therapist',
         title: 'Respiratory Therapist',
-        slug: 'respiratory-therapist',
+        slug: 'respiratory-therapist-2',
         category: 'healthcare',
         aliases: ['RT', 'Respiratory Care Practitioner'],
         averageSalary: 72000,
@@ -8916,7 +8916,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'speech-language-pathologist',
         title: 'Speech Language Pathologist',
-        slug: 'speech-language-pathologist',
+        slug: 'speech-language-pathologist-3',
         category: 'healthcare',
         aliases: ['SLP', 'Speech Therapist'],
         averageSalary: 85000,
@@ -8945,7 +8945,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'financial-planner-2',
         title: 'Financial Planner',
-        slug: 'financial-planner-2',
+        slug: 'financial-planner-3',
         category: 'finance',
         aliases: ['Financial Advisor', 'Wealth Manager'],
         averageSalary: 98000,
@@ -8954,7 +8954,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'investment-analyst-2',
         title: 'Investment Analyst',
-        slug: 'investment-analyst-2',
+        slug: 'investment-analyst-3',
         category: 'finance',
         aliases: ['Investment Research Analyst', 'Securities Analyst'],
         averageSalary: 95000,
@@ -8981,7 +8981,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'credit-analyst-2',
         title: 'Credit Analyst',
-        slug: 'credit-analyst-2',
+        slug: 'credit-analyst-4',
         category: 'finance',
         aliases: ['Credit Risk Analyst', 'Loan Officer'],
         averageSalary: 72000,
@@ -8990,7 +8990,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'financial-controller',
         title: 'Financial Controller',
-        slug: 'financial-controller',
+        slug: 'financial-controller-3',
         category: 'finance',
         aliases: ['Corporate Controller', 'Comptroller'],
         averageSalary: 125000,
@@ -8999,7 +8999,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'treasury-analyst',
         title: 'Treasury Analyst',
-        slug: 'treasury-analyst',
+        slug: 'treasury-analyst-4',
         category: 'finance',
         aliases: ['Treasury Specialist', 'Cash Management Analyst'],
         averageSalary: 88000,
@@ -9017,7 +9017,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'tax-manager',
         title: 'Tax Manager',
-        slug: 'tax-manager',
+        slug: 'tax-manager-2',
         category: 'finance',
         aliases: ['Taxation Manager', 'Tax Compliance Manager'],
         averageSalary: 115000,
@@ -9046,7 +9046,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'compensation-analyst',
         title: 'Compensation Analyst',
-        slug: 'compensation-analyst',
+        slug: 'compensation-analyst-4',
         category: 'hr',
         aliases: ['Comp and Benefits Analyst', 'Salary Analyst'],
         averageSalary: 78000,
@@ -9055,7 +9055,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'benefits-administrator',
         title: 'Benefits Administrator',
-        slug: 'benefits-administrator',
+        slug: 'benefits-administrator-3',
         category: 'hr',
         aliases: ['Benefits Coordinator', 'Employee Benefits Specialist'],
         averageSalary: 58000,
@@ -9064,7 +9064,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-coordinator-2',
         title: 'HR Coordinator',
-        slug: 'hr-coordinator-2',
+        slug: 'hr-coordinator-4',
         category: 'hr',
         aliases: ['Human Resources Coordinator', 'HR Admin'],
         averageSalary: 52000,
@@ -9073,7 +9073,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'talent-management-specialist',
         title: 'Talent Management Specialist',
-        slug: 'talent-management-specialist',
+        slug: 'talent-management-specialist-2',
         category: 'hr',
         aliases: ['Talent Development Specialist', 'Succession Planning Specialist'],
         averageSalary: 82000,
@@ -9082,7 +9082,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'diversity-inclusion-manager',
         title: 'Diversity Inclusion Manager',
-        slug: 'diversity-inclusion-manager',
+        slug: 'diversity-inclusion-manager-2',
         category: 'hr',
         aliases: ['DEI Manager', 'Diversity Equity Inclusion Lead'],
         averageSalary: 95000,
@@ -9091,7 +9091,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'employee-relations-specialist',
         title: 'Employee Relations Specialist',
-        slug: 'employee-relations-specialist',
+        slug: 'employee-relations-specialist-3',
         category: 'hr',
         aliases: ['ER Specialist', 'Labor Relations Specialist'],
         averageSalary: 75000,
@@ -9111,7 +9111,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'executive-assistant-2',
         title: 'Executive Assistant',
-        slug: 'executive-assistant-2',
+        slug: 'executive-assistant-3',
         category: 'admin',
         aliases: ['EA', 'Executive Administrative Assistant'],
         averageSalary: 72000,
@@ -9120,7 +9120,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'executive-secretary',
         title: 'Executive Secretary',
-        slug: 'executive-secretary',
+        slug: 'executive-secretary-2',
         category: 'admin',
         aliases: ['Corporate Secretary', 'Executive Office Secretary'],
         averageSalary: 68000,
@@ -9129,7 +9129,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'personal-assistant',
         title: 'Personal Assistant',
-        slug: 'personal-assistant',
+        slug: 'personal-assistant-3',
         category: 'admin',
         aliases: ['PA', 'Executive Personal Assistant'],
         averageSalary: 58000,
@@ -9138,7 +9138,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'administrative-manager',
         title: 'Administrative Manager',
-        slug: 'administrative-manager',
+        slug: 'administrative-manager-2',
         category: 'admin',
         aliases: ['Office Manager', 'Admin Services Manager'],
         averageSalary: 62000,
@@ -9147,7 +9147,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'receptionist-2',
         title: 'Receptionist',
-        slug: 'receptionist-2',
+        slug: 'receptionist-4',
         category: 'admin',
         aliases: ['Front Desk Receptionist', 'Office Receptionist'],
         averageSalary: 36000,
@@ -9156,7 +9156,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'virtual-assistant',
         title: 'Virtual Assistant',
-        slug: 'virtual-assistant',
+        slug: 'virtual-assistant-3',
         category: 'admin',
         aliases: ['VA', 'Remote Administrative Assistant'],
         averageSalary: 48000,
@@ -9165,7 +9165,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'file-clerk',
         title: 'File Clerk',
-        slug: 'file-clerk',
+        slug: 'file-clerk-4',
         category: 'admin',
         aliases: ['Records Clerk', 'File Management Clerk'],
         averageSalary: 32000,
@@ -9176,7 +9176,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-success-manager-2',
         title: 'Customer Success Manager',
-        slug: 'customer-success-manager-2',
+        slug: 'customer-success-manager-4',
         category: 'customer-service',
         aliases: ['CSM', 'Client Success Manager'],
         averageSalary: 82000,
@@ -9194,7 +9194,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-retention-specialist',
         title: 'Customer Retention Specialist',
-        slug: 'customer-retention-specialist',
+        slug: 'customer-retention-specialist-2',
         category: 'customer-service',
         aliases: ['Retention Specialist', 'Customer Churn Specialist'],
         averageSalary: 58000,
@@ -9203,7 +9203,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-experience-manager',
         title: 'Customer Experience Manager',
-        slug: 'customer-experience-manager',
+        slug: 'customer-experience-manager-2',
         category: 'customer-service',
         aliases: ['CX Manager', 'Client Experience Manager'],
         averageSalary: 95000,
@@ -9221,7 +9221,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-service-trainer',
         title: 'Customer Service Trainer',
-        slug: 'customer-service-trainer',
+        slug: 'customer-service-trainer-2',
         category: 'customer-service',
         aliases: ['CS Trainer', 'Support Training Specialist'],
         averageSalary: 62000,
@@ -9230,7 +9230,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'call-center-representative',
         title: 'Call Center Representative',
-        slug: 'call-center-representative',
+        slug: 'call-center-representative-3',
         category: 'customer-service',
         aliases: ['Call Center Agent', 'Inbound Call Representative'],
         averageSalary: 38000,
@@ -9239,7 +9239,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-service-quality-analyst',
         title: 'Customer Service Quality Analyst',
-        slug: 'customer-service-quality-analyst',
+        slug: 'customer-service-quality-analyst-2',
         category: 'customer-service',
         aliases: ['QA Analyst', 'Quality Assurance Specialist'],
         averageSalary: 52000,
@@ -9259,7 +9259,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'motion-graphics-designer',
         title: 'Motion Graphics Designer',
-        slug: 'motion-graphics-designer',
+        slug: 'motion-graphics-designer-2',
         category: 'design',
         aliases: ['Motion Designer', 'Animation Designer'],
         averageSalary: 75000,
@@ -9268,7 +9268,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'brand-identity-designer',
         title: 'Brand Identity Designer',
-        slug: 'brand-identity-designer',
+        slug: 'brand-identity-designer-2',
         category: 'design',
         aliases: ['Brand Designer', 'Identity Designer'],
         averageSalary: 72000,
@@ -9295,7 +9295,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'illustration-specialist',
         title: 'Illustration Specialist',
-        slug: 'illustration-specialist',
+        slug: 'illustration-specialist-2',
         category: 'design',
         aliases: ['Illustrator', 'Digital Illustrator'],
         averageSalary: 58000,
@@ -9304,7 +9304,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'design-systems-specialist',
         title: 'Design Systems Specialist',
-        slug: 'design-systems-specialist',
+        slug: 'design-systems-specialist-2',
         category: 'design',
         aliases: ['Design System Designer', 'Component Library Designer'],
         averageSalary: 105000,
@@ -9324,7 +9324,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'civil-engineer-2',
         title: 'Civil Engineer',
-        slug: 'civil-engineer-2',
+        slug: 'civil-engineer-4',
         category: 'engineering',
         aliases: ['Civil Engineering Engineer', 'Infrastructure Engineer'],
         averageSalary: 95000,
@@ -9333,7 +9333,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'mechanical-engineer-2',
         title: 'Mechanical Engineer',
-        slug: 'mechanical-engineer-2',
+        slug: 'mechanical-engineer-3',
         category: 'engineering',
         aliases: ['ME', 'Mechanical Engineering Engineer'],
         averageSalary: 98000,
@@ -9342,7 +9342,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'electrical-engineer-2',
         title: 'Electrical Engineer',
-        slug: 'electrical-engineer-2',
+        slug: 'electrical-engineer-4',
         category: 'engineering',
         aliases: ['EE', 'Electrical Engineering Engineer'],
         averageSalary: 102000,
@@ -9351,7 +9351,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'chemical-engineer',
         title: 'Chemical Engineer',
-        slug: 'chemical-engineer',
+        slug: 'chemical-engineer-4',
         category: 'engineering',
         aliases: ['ChemE', 'Process Engineer'],
         averageSalary: 108000,
@@ -9360,7 +9360,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'industrial-engineer',
         title: 'Industrial Engineer',
-        slug: 'industrial-engineer',
+        slug: 'industrial-engineer-4',
         category: 'engineering',
         aliases: ['IE', 'Manufacturing Engineer'],
         averageSalary: 92000,
@@ -9369,7 +9369,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'environmental-engineer',
         title: 'Environmental Engineer',
-        slug: 'environmental-engineer',
+        slug: 'environmental-engineer-4',
         category: 'engineering',
         aliases: ['Environmental Engineering Engineer', 'Green Engineer'],
         averageSalary: 98000,
@@ -9378,7 +9378,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'biomedical-engineer',
         title: 'Biomedical Engineer',
-        slug: 'biomedical-engineer',
+        slug: 'biomedical-engineer-4',
         category: 'engineering',
         aliases: ['BME', 'Medical Equipment Engineer'],
         averageSalary: 105000,
@@ -9387,7 +9387,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'aerospace-engineer',
         title: 'Aerospace Engineer',
-        slug: 'aerospace-engineer',
+        slug: 'aerospace-engineer-4',
         category: 'engineering',
         aliases: ['Aeronautical Engineer', 'Astronautical Engineer'],
         averageSalary: 125000,
@@ -9396,7 +9396,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'structural-engineer',
         title: 'Structural Engineer',
-        slug: 'structural-engineer',
+        slug: 'structural-engineer-3',
         category: 'engineering',
         aliases: ['Structural Engineering Engineer', 'Building Engineer'],
         averageSalary: 95000,
@@ -9405,7 +9405,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'project-engineer',
         title: 'Project Engineer',
-        slug: 'project-engineer',
+        slug: 'project-engineer-2',
         category: 'engineering',
         aliases: ['Engineering Project Manager', 'Project Engineering Manager'],
         averageSalary: 92000,
@@ -9452,7 +9452,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'paralegal-2',
         title: 'Paralegal',
-        slug: 'paralegal-2',
+        slug: 'paralegal-3',
         category: 'legal',
         aliases: ['Legal Assistant', 'Paralegal Assistant'],
         averageSalary: 58000,
@@ -9472,7 +9472,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'special-education-teacher',
         title: 'Special Education Teacher',
-        slug: 'special-education-teacher',
+        slug: 'special-education-teacher-3',
         category: 'education',
         aliases: ['SPED Teacher', 'Special Needs Teacher'],
         averageSalary: 62000,
@@ -9519,7 +9519,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-appraiser',
         title: 'Real Estate Appraiser',
-        slug: 'real-estate-appraiser',
+        slug: 'real-estate-appraiser-3',
         category: 'real-estate',
         aliases: ['Property Appraiser', 'Real Estate Valuer'],
         averageSalary: 62000,
@@ -9528,7 +9528,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'property-manager-2',
         title: 'Property Manager',
-        slug: 'property-manager-2',
+        slug: 'property-manager-3',
         category: 'real-estate',
         aliases: ['Real Estate Property Manager', 'Rental Property Manager'],
         averageSalary: 58000,
@@ -9537,7 +9537,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-broker-2',
         title: 'Real Estate Broker',
-        slug: 'real-estate-broker-2',
+        slug: 'real-estate-broker-3',
         category: 'real-estate',
         aliases: ['Real Estate Brokerage', 'Broker Associate'],
         averageSalary: 85000,
@@ -9546,7 +9546,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'leasing-agent',
         title: 'Leasing Agent',
-        slug: 'leasing-agent',
+        slug: 'leasing-agent-3',
         category: 'real-estate',
         aliases: ['Leasing Consultant', 'Rental Agent'],
         averageSalary: 42000,
@@ -9555,7 +9555,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-investor',
         title: 'Real Estate Investor',
-        slug: 'real-estate-investor',
+        slug: 'real-estate-investor-2',
         category: 'real-estate',
         aliases: ['Property Investor', 'Real Estate Entrepreneur'],
         averageSalary: 95000,
@@ -9566,7 +9566,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'electrician-2',
         title: 'Electrician',
-        slug: 'electrician-2',
+        slug: 'electrician-3',
         category: 'skilled-trades',
         aliases: ['Electrical Technician', 'Journeyman Electrician'],
         averageSalary: 62000,
@@ -9575,7 +9575,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'plumber-2',
         title: 'Plumber',
-        slug: 'plumber-2',
+        slug: 'plumber-3',
         category: 'skilled-trades',
         aliases: ['Plumbing Technician', 'Journeyman Plumber'],
         averageSalary: 58000,
@@ -9584,7 +9584,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hvac-technician-2',
         title: 'HVAC Technician',
-        slug: 'hvac-technician-2',
+        slug: 'hvac-technician-3',
         category: 'skilled-trades',
         aliases: ['HVAC Tech', 'Heating and Cooling Technician'],
         averageSalary: 55000,
@@ -9593,7 +9593,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'carpenter-2',
         title: 'Carpenter',
-        slug: 'carpenter-2',
+        slug: 'carpenter-3',
         category: 'skilled-trades',
         aliases: ['Construction Carpenter', 'Finish Carpenter'],
         averageSalary: 52000,
@@ -9602,7 +9602,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'welder-2',
         title: 'Welder',
-        slug: 'welder-2',
+        slug: 'welder-3',
         category: 'skilled-trades',
         aliases: ['Welding Technician', 'Certified Welder'],
         averageSalary: 48000,
@@ -9613,7 +9613,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'executive-chef',
         title: 'Executive Chef',
-        slug: 'executive-chef',
+        slug: 'executive-chef-2',
         category: 'hospitality',
         aliases: ['Head Chef', 'Kitchen Manager'],
         averageSalary: 68000,
@@ -9622,7 +9622,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sous-chef',
         title: 'Sous Chef',
-        slug: 'sous-chef',
+        slug: 'sous-chef-2',
         category: 'hospitality',
         aliases: ['Assistant Chef', 'Second Chef'],
         averageSalary: 52000,
@@ -9669,7 +9669,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'supply-chain-manager',
         title: 'Supply Chain Manager',
-        slug: 'supply-chain-manager',
+        slug: 'supply-chain-manager-3',
         category: 'transportation',
         aliases: ['Supply Chain Management', 'Logistics Manager'],
         averageSalary: 98000,
@@ -9678,7 +9678,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'freight-forwarder',
         title: 'Freight Forwarder',
-        slug: 'freight-forwarder',
+        slug: 'freight-forwarder-3',
         category: 'transportation',
         aliases: ['Freight Broker', 'Cargo Agent'],
         averageSalary: 58000,
@@ -9687,7 +9687,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'dispatcher',
         title: 'Dispatcher',
-        slug: 'dispatcher',
+        slug: 'dispatcher-3',
         category: 'transportation',
         aliases: ['Service Dispatcher', 'Transportation Dispatcher'],
         averageSalary: 42000,
@@ -9696,7 +9696,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'warehouse-manager',
         title: 'Warehouse Manager',
-        slug: 'warehouse-manager',
+        slug: 'warehouse-manager-3',
         category: 'transportation',
         aliases: ['Distribution Center Manager', 'Warehouse Supervisor'],
         averageSalary: 62000,
@@ -9754,7 +9754,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'terraform-engineer',
         title: 'Terraform Engineer',
-        slug: 'terraform-engineer',
+        slug: 'terraform-engineer-2',
         category: 'technology',
         aliases: ['Infrastructure as Code Engineer', 'IaC Developer'],
         averageSalary: 142000,
@@ -9763,7 +9763,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'site-reliability-engineer-2',
         title: 'Site Reliability Engineer',
-        slug: 'site-reliability-engineer-2',
+        slug: 'site-reliability-engineer-4',
         category: 'technology',
         aliases: ['SRE', 'Site Reliability Engineering'],
         averageSalary: 150000,
@@ -9772,7 +9772,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'devsecops-engineer',
         title: 'DevSecOps Engineer',
-        slug: 'devsecops-engineer',
+        slug: 'devsecops-engineer-3',
         category: 'technology',
         aliases: ['DevSecOps Specialist', 'Security DevOps Engineer'],
         averageSalary: 148000,
@@ -9781,7 +9781,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'cloud-security-engineer-2',
         title: 'Cloud Security Engineer',
-        slug: 'cloud-security-engineer-2',
+        slug: 'cloud-security-engineer-3',
         category: 'technology',
         aliases: ['Cloud Security Specialist', 'Cloud Security Architect'],
         averageSalary: 150000,
@@ -9799,7 +9799,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'platform-engineer',
         title: 'Platform Engineer',
-        slug: 'platform-engineer',
+        slug: 'platform-engineer-4',
         category: 'technology',
         aliases: ['Platform Development Engineer', 'Internal Developer Platform'],
         averageSalary: 145000,
@@ -9855,7 +9855,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'copy-editor',
         title: 'Copy Editor',
-        slug: 'copy-editor',
+        slug: 'copy-editor-2',
         category: 'marketing',
         aliases: ['Editor', 'Content Editor'],
         averageSalary: 58000,
@@ -9864,7 +9864,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'brand-manager-2',
         title: 'Brand Manager',
-        slug: 'brand-manager-2',
+        slug: 'brand-manager-4',
         category: 'marketing',
         aliases: ['Product Brand Manager', 'Brand Marketing Manager'],
         averageSalary: 105000,
@@ -9873,7 +9873,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'brand-ambassador',
         title: 'Brand Ambassador',
-        slug: 'brand-ambassador',
+        slug: 'brand-ambassador-3',
         category: 'marketing',
         aliases: ['Brand Representative', 'Brand Advocate'],
         averageSalary: 48000,
@@ -9911,7 +9911,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'channel-sales-manager',
         title: 'Channel Sales Manager',
-        slug: 'channel-sales-manager',
+        slug: 'channel-sales-manager-2',
         category: 'sales',
         aliases: ['Channel Partner Manager', 'Indirect Sales Manager'],
         averageSalary: 115000,
@@ -9947,7 +9947,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'regional-sales-manager-2',
         title: 'Regional Sales Manager',
-        slug: 'regional-sales-manager-2',
+        slug: 'regional-sales-manager-4',
         category: 'sales',
         aliases: ['RSM', 'Area Sales Manager'],
         averageSalary: 110000,
@@ -9956,7 +9956,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'national-sales-manager',
         title: 'National Sales Manager',
-        slug: 'national-sales-manager',
+        slug: 'national-sales-manager-3',
         category: 'sales',
         aliases: ['NSM', 'Country Sales Manager'],
         averageSalary: 145000,
@@ -9974,7 +9974,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'field-sales-manager',
         title: 'Field Sales Manager',
-        slug: 'field-sales-manager',
+        slug: 'field-sales-manager-2',
         category: 'sales',
         aliases: ['Outside Sales Manager', 'Field Sales Director'],
         averageSalary: 115000,
@@ -9985,7 +9985,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-assistant-2',
         title: 'Medical Assistant',
-        slug: 'medical-assistant-2',
+        slug: 'medical-assistant-4',
         category: 'healthcare',
         aliases: ['Certified Medical Assistant', 'Clinical Medical Assistant'],
         averageSalary: 42000,
@@ -9994,7 +9994,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'pharmacy-technician',
         title: 'Pharmacy Technician',
-        slug: 'pharmacy-technician',
+        slug: 'pharmacy-technician-3',
         category: 'healthcare',
         aliases: ['Pharmacy Tech', 'Certified Pharmacy Technician'],
         averageSalary: 40000,
@@ -10003,7 +10003,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-technologist',
         title: 'Medical Technologist',
-        slug: 'medical-technologist',
+        slug: 'medical-technologist-3',
         category: 'healthcare',
         aliases: ['Clinical Laboratory Scientist', 'Medical Lab Tech'],
         averageSalary: 58000,
@@ -10012,7 +10012,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'phlebotomist',
         title: 'Phlebotomist',
-        slug: 'phlebotomist',
+        slug: 'phlebotomist-2',
         category: 'healthcare',
         aliases: ['Phlebotomy Technician', 'Blood Draw Specialist'],
         averageSalary: 38000,
@@ -10021,7 +10021,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-lab-technician',
         title: 'Medical Lab Technician',
-        slug: 'medical-lab-technician',
+        slug: 'medical-lab-technician-2',
         category: 'healthcare',
         aliases: ['MLT', 'Clinical Laboratory Technician'],
         averageSalary: 48000,
@@ -10030,7 +10030,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'radiation-therapist',
         title: 'Radiation Therapist',
-        slug: 'radiation-therapist',
+        slug: 'radiation-therapist-2',
         category: 'healthcare',
         aliases: ['Radiation Therapy Technician', 'Radiation Oncology Therapist'],
         averageSalary: 92000,
@@ -10039,7 +10039,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'nuclear-medicine-technologist',
         title: 'Nuclear Medicine Technologist',
-        slug: 'nuclear-medicine-technologist',
+        slug: 'nuclear-medicine-technologist-2',
         category: 'healthcare',
         aliases: ['Nuclear Med Tech', 'Nuclear Medicine Technician'],
         averageSalary: 82000,
@@ -10048,7 +10048,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-records-technician',
         title: 'Medical Records Technician',
-        slug: 'medical-records-technician',
+        slug: 'medical-records-technician-2',
         category: 'healthcare',
         aliases: ['Health Information Technician', 'Medical Records Clerk'],
         averageSalary: 42000,
@@ -10068,7 +10068,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'mortgage-broker',
         title: 'Mortgage Broker',
-        slug: 'mortgage-broker',
+        slug: 'mortgage-broker-2',
         category: 'finance',
         aliases: ['Mortgage Loan Broker', 'Mortgage Originator'],
         averageSalary: 85000,
@@ -10113,7 +10113,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'claims-adjuster',
         title: 'Claims Adjuster',
-        slug: 'claims-adjuster',
+        slug: 'claims-adjuster-2',
         category: 'finance',
         aliases: ['Insurance Claims Adjuster', 'Claims Representative'],
         averageSalary: 62000,
@@ -10133,7 +10133,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'learning-development-manager',
         title: 'Learning Development Manager',
-        slug: 'learning-development-manager',
+        slug: 'learning-development-manager-2',
         category: 'hr',
         aliases: ['L&D Manager', 'Training and Development Manager'],
         averageSalary: 105000,
@@ -10151,7 +10151,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'training-specialist',
         title: 'Training Specialist',
-        slug: 'training-specialist',
+        slug: 'training-specialist-2',
         category: 'hr',
         aliases: ['Corporate Trainer', 'Training Coordinator'],
         averageSalary: 68000,
@@ -10189,7 +10189,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'data-entry-clerk',
         title: 'Data Entry Clerk',
-        slug: 'data-entry-clerk',
+        slug: 'data-entry-clerk-4',
         category: 'admin',
         aliases: ['Data Entry Specialist', 'Data Input Clerk'],
         averageSalary: 35000,
@@ -10254,7 +10254,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'call-center-agent',
         title: 'Call Center Agent',
-        slug: 'call-center-agent',
+        slug: 'call-center-agent-2',
         category: 'customer-service',
         aliases: ['Call Center Representative', 'Phone Agent'],
         averageSalary: 36000,
@@ -10346,7 +10346,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'production-artist',
         title: 'Production Artist',
-        slug: 'production-artist',
+        slug: 'production-artist-3',
         category: 'design',
         aliases: ['Graphic Production Artist', 'Pre-press Artist'],
         averageSalary: 52000,
@@ -10355,7 +10355,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'visual-designer-2',
         title: 'Visual Designer',
-        slug: 'visual-designer-2',
+        slug: 'visual-designer-4',
         category: 'design',
         aliases: ['Visual Design Specialist', 'UI Visual Designer'],
         averageSalary: 85000,
@@ -10373,7 +10373,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'product-designer-3',
         title: 'Product Designer',
-        slug: 'product-designer-3',
+        slug: 'product-designer-4',
         category: 'design',
         aliases: ['Digital Product Designer', 'Product Design Specialist'],
         averageSalary: 115000,
@@ -10382,7 +10382,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'design-researcher',
         title: 'Design Researcher',
-        slug: 'design-researcher',
+        slug: 'design-researcher-2',
         category: 'design',
         aliases: ['Design Research Specialist', 'User Research Designer'],
         averageSalary: 98000,
@@ -10393,7 +10393,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'software-architect-2',
         title: 'Software Architect',
-        slug: 'software-architect-2',
+        slug: 'software-architect-3',
         category: 'engineering',
         aliases: ['Application Architect', 'Solutions Architect'],
         averageSalary: 155000,
@@ -10402,7 +10402,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'solutions-architect-2',
         title: 'Solutions Architect',
-        slug: 'solutions-architect-2',
+        slug: 'solutions-architect-3',
         category: 'engineering',
         aliases: ['Solution Architecture', 'Technical Solutions Architect'],
         averageSalary: 150000,
@@ -10438,7 +10438,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ios-developer',
         title: 'iOS Developer',
-        slug: 'ios-developer',
+        slug: 'ios-developer-3',
         category: 'engineering',
         aliases: ['iPhone Developer', 'iPad Developer'],
         averageSalary: 130000,
@@ -10447,7 +10447,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'android-developer',
         title: 'Android Developer',
-        slug: 'android-developer',
+        slug: 'android-developer-3',
         category: 'engineering',
         aliases: ['Android App Developer', 'Mobile Android Developer'],
         averageSalary: 125000,
@@ -10456,7 +10456,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'game-developer-2',
         title: 'Game Developer',
-        slug: 'game-developer-2',
+        slug: 'game-developer-3',
         category: 'engineering',
         aliases: ['Game Programmer', 'Video Game Developer'],
         averageSalary: 115000,
@@ -10485,7 +10485,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'contracts-manager',
         title: 'Contracts Manager',
-        slug: 'contracts-manager',
+        slug: 'contracts-manager-2',
         category: 'legal',
         aliases: ['Contract Management', 'Commercial Contracts Manager'],
         averageSalary: 105000,
@@ -10512,7 +10512,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'legal-assistant-2',
         title: 'Legal Assistant',
-        slug: 'legal-assistant-2',
+        slug: 'legal-assistant-4',
         category: 'legal',
         aliases: ['Legal Administrative Assistant', 'Law Office Assistant'],
         averageSalary: 52000,
@@ -10521,7 +10521,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'legal-secretary',
         title: 'Legal Secretary',
-        slug: 'legal-secretary',
+        slug: 'legal-secretary-2',
         category: 'legal',
         aliases: ['Legal Administrative Secretary', 'Law Firm Secretary'],
         averageSalary: 48000,
@@ -10530,7 +10530,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'regulatory-affairs-specialist',
         title: 'Regulatory Affairs Specialist',
-        slug: 'regulatory-affairs-specialist',
+        slug: 'regulatory-affairs-specialist-2',
         category: 'legal',
         aliases: ['Regulatory Specialist', 'Compliance Regulatory Specialist'],
         averageSalary: 85000,
@@ -10541,7 +10541,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'academic-advisor',
         title: 'Academic Advisor',
-        slug: 'academic-advisor',
+        slug: 'academic-advisor-3',
         category: 'education',
         aliases: ['Student Advisor', 'College Advisor'],
         averageSalary: 52000,
@@ -10550,7 +10550,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'admissions-counselor',
         title: 'Admissions Counselor',
-        slug: 'admissions-counselor',
+        slug: 'admissions-counselor-2',
         category: 'education',
         aliases: ['College Admissions Counselor', 'Enrollment Counselor'],
         averageSalary: 48000,
@@ -10588,7 +10588,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'commercial-real-estate-agent',
         title: 'Commercial Real Estate Agent',
-        slug: 'commercial-real-estate-agent',
+        slug: 'commercial-real-estate-agent-3',
         category: 'real-estate',
         aliases: ['Commercial Realtor', 'Commercial Property Agent'],
         averageSalary: 95000,
@@ -10597,7 +10597,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-appraiser-2',
         title: 'Real Estate Appraiser',
-        slug: 'real-estate-appraiser-2',
+        slug: 'real-estate-appraiser-4',
         category: 'real-estate',
         aliases: ['Property Appraiser', 'Real Estate Valuer'],
         averageSalary: 65000,
@@ -10606,7 +10606,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'property-manager-3',
         title: 'Property Manager',
-        slug: 'property-manager-3',
+        slug: 'property-manager-4',
         category: 'real-estate',
         aliases: ['Real Estate Property Manager', 'Rental Manager'],
         averageSalary: 62000,
@@ -10653,7 +10653,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'construction-laborer',
         title: 'Construction Laborer',
-        slug: 'construction-laborer',
+        slug: 'construction-laborer-2',
         category: 'skilled-trades',
         aliases: ['Construction Worker', 'General Laborer'],
         averageSalary: 38000,
@@ -10662,7 +10662,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'heavy-equipment-operator',
         title: 'Heavy Equipment Operator',
-        slug: 'heavy-equipment-operator',
+        slug: 'heavy-equipment-operator-2',
         category: 'skilled-trades',
         aliases: ['Equipment Operator', 'Heavy Machine Operator'],
         averageSalary: 52000,
@@ -10747,7 +10747,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'delivery-driver-2',
         title: 'Delivery Driver',
-        slug: 'delivery-driver-2',
+        slug: 'delivery-driver-4',
         category: 'transportation',
         aliases: ['Package Delivery Driver', 'Courier Driver'],
         averageSalary: 38000,
@@ -10756,7 +10756,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'truck-driver',
         title: 'Truck Driver',
-        slug: 'truck-driver',
+        slug: 'truck-driver-2',
         category: 'transportation',
         aliases: ['Commercial Truck Driver', 'CDL Driver'],
         averageSalary: 52000,
@@ -10765,7 +10765,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'route-driver',
         title: 'Route Driver',
-        slug: 'route-driver',
+        slug: 'route-driver-2',
         category: 'transportation',
         aliases: ['Delivery Route Driver', 'Local Route Driver'],
         averageSalary: 42000,
@@ -10942,7 +10942,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'growth-marketer',
         title: 'Growth Marketer',
-        slug: 'growth-marketer',
+        slug: 'growth-marketer-4',
         category: 'marketing',
         aliases: ['Growth Hacker', 'Growth Marketing Specialist'],
         averageSalary: 95000,
@@ -10960,7 +10960,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'seo-specialist-2',
         title: 'SEO Specialist',
-        slug: 'seo-specialist-2',
+        slug: 'seo-specialist-3',
         category: 'marketing',
         aliases: ['Search Engine Optimization Specialist', 'SEO Expert'],
         averageSalary: 72000,
@@ -11059,7 +11059,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'community-manager-2',
         title: 'Community Manager',
-        slug: 'community-manager-2',
+        slug: 'community-manager-3',
         category: 'marketing',
         aliases: ['Online Community Manager', 'Social Community Manager'],
         averageSalary: 72000,
@@ -11079,7 +11079,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'inside-sales-representative-2',
         title: 'Inside Sales Representative',
-        slug: 'inside-sales-representative-2',
+        slug: 'inside-sales-representative-4',
         category: 'sales',
         aliases: ['Inside Sales Rep', 'Remote Sales Representative'],
         averageSalary: 52000,
@@ -11088,7 +11088,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'inside-sales-manager-2',
         title: 'Inside Sales Manager',
-        slug: 'inside-sales-manager-2',
+        slug: 'inside-sales-manager-3',
         category: 'sales',
         aliases: ['Inside Sales Team Lead', 'Remote Sales Manager'],
         averageSalary: 92000,
@@ -11097,7 +11097,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'outside-sales-representative-2',
         title: 'Outside Sales Representative',
-        slug: 'outside-sales-representative-2',
+        slug: 'outside-sales-representative-3',
         category: 'sales',
         aliases: ['Field Sales Representative', 'Outside Sales Rep'],
         averageSalary: 58000,
@@ -11106,7 +11106,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'field-sales-representative',
         title: 'Field Sales Representative',
-        slug: 'field-sales-representative',
+        slug: 'field-sales-representative-2',
         category: 'sales',
         aliases: ['Field Sales Rep', 'Territory Sales Representative'],
         averageSalary: 62000,
@@ -11115,7 +11115,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-support-administrator',
         title: 'Sales Support Administrator',
-        slug: 'sales-support-administrator',
+        slug: 'sales-support-administrator-2',
         category: 'sales',
         aliases: ['Sales Admin', 'Sales Support Specialist'],
         averageSalary: 48000,
@@ -11133,7 +11133,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'bid-manager',
         title: 'Bid Manager',
-        slug: 'bid-manager',
+        slug: 'bid-manager-2',
         category: 'sales',
         aliases: ['Proposal Manager', 'Bidding Manager'],
         averageSalary: 95000,
@@ -11169,7 +11169,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'lead-generation-specialist',
         title: 'Lead Generation Specialist',
-        slug: 'lead-generation-specialist',
+        slug: 'lead-generation-specialist-3',
         category: 'sales',
         aliases: ['Lead Gen Specialist', 'Lead Generation Rep'],
         averageSalary: 48000,
@@ -11198,7 +11198,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'licensed-practical-nurse',
         title: 'Licensed Practical Nurse',
-        slug: 'licensed-practical-nurse',
+        slug: 'licensed-practical-nurse-2',
         category: 'healthcare',
         aliases: ['LPN', 'Practical Nurse'],
         averageSalary: 54000,
@@ -11207,7 +11207,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'nurse-practitioner-2',
         title: 'Nurse Practitioner',
-        slug: 'nurse-practitioner-2',
+        slug: 'nurse-practitioner-4',
         category: 'healthcare',
         aliases: ['NP', 'Advanced Practice Nurse'],
         averageSalary: 125000,
@@ -11216,7 +11216,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'clinical-nurse-specialist-2',
         title: 'Clinical Nurse Specialist',
-        slug: 'clinical-nurse-specialist-2',
+        slug: 'clinical-nurse-specialist-3',
         category: 'healthcare',
         aliases: ['CNS', 'Advanced Practice Registered Nurse'],
         averageSalary: 115000,
@@ -11225,7 +11225,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'nurse-anesthetist',
         title: 'Nurse Anesthetist',
-        slug: 'nurse-anesthetist',
+        slug: 'nurse-anesthetist-2',
         category: 'healthcare',
         aliases: ['CRNA', 'Anesthesia Nurse'],
         averageSalary: 195000,
@@ -11243,7 +11243,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'travel-nurse',
         title: 'Travel Nurse',
-        slug: 'travel-nurse',
+        slug: 'travel-nurse-2',
         category: 'healthcare',
         aliases: ['Traveling Nurse', 'Contract Nurse'],
         averageSalary: 110000,
@@ -11252,7 +11252,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'home-health-nurse',
         title: 'Home Health Nurse',
-        slug: 'home-health-nurse',
+        slug: 'home-health-nurse-2',
         category: 'healthcare',
         aliases: ['Home Care Nurse', 'Visiting Nurse'],
         averageSalary: 72000,
@@ -11270,7 +11270,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'emergency-physician',
         title: 'Emergency Physician',
-        slug: 'emergency-physician',
+        slug: 'emergency-physician-2',
         category: 'healthcare',
         aliases: ['ER Doctor', 'Emergency Medicine Physician'],
         averageSalary: 320000,
@@ -11299,7 +11299,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'financial-analyst-2',
         title: 'Financial Analyst',
-        slug: 'financial-analyst-2',
+        slug: 'financial-analyst-4',
         category: 'finance',
         aliases: ['Corporate Financial Analyst', 'Finance Analyst'],
         averageSalary: 85000,
@@ -11308,7 +11308,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'finance-manager-2',
         title: 'Finance Manager',
-        slug: 'finance-manager-2',
+        slug: 'finance-manager-3',
         category: 'finance',
         aliases: ['Corporate Finance Manager', 'Financial Planning Manager'],
         averageSalary: 115000,
@@ -11326,7 +11326,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'controller-2',
         title: 'Controller',
-        slug: 'controller-2',
+        slug: 'controller-3',
         category: 'finance',
         aliases: ['Corporate Controller', 'Financial Controller'],
         averageSalary: 135000,
@@ -11335,7 +11335,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'chief-financial-officer-2',
         title: 'Chief Financial Officer',
-        slug: 'chief-financial-officer-2',
+        slug: 'chief-financial-officer-3',
         category: 'finance',
         aliases: ['CFO', 'Finance Director'],
         averageSalary: 285000,
@@ -11371,7 +11371,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'investment-banker',
         title: 'Investment Banker',
-        slug: 'investment-banker',
+        slug: 'investment-banker-2',
         category: 'finance',
         aliases: ['IB Analyst', 'Investment Banking Analyst'],
         averageSalary: 155000,
@@ -11418,7 +11418,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'executive-recruiter',
         title: 'Executive Recruiter',
-        slug: 'executive-recruiter',
+        slug: 'executive-recruiter-2',
         category: 'hr',
         aliases: ['Headhunter', 'Executive Search Consultant'],
         averageSalary: 105000,
@@ -11427,7 +11427,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'recruiter-2',
         title: 'Recruiter',
-        slug: 'recruiter-2',
+        slug: 'recruiter-4',
         category: 'hr',
         aliases: ['Talent Recruiter', 'Staffing Specialist'],
         averageSalary: 55000,
@@ -11445,7 +11445,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'recruiting-coordinator',
         title: 'Recruiting Coordinator',
-        slug: 'recruiting-coordinator',
+        slug: 'recruiting-coordinator-2',
         category: 'hr',
         aliases: ['Recruitment Coordinator', 'Staffing Coordinator'],
         averageSalary: 48000,
@@ -11454,7 +11454,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'talent-acquisition-specialist',
         title: 'Talent Acquisition Specialist',
-        slug: 'talent-acquisition-specialist',
+        slug: 'talent-acquisition-specialist-2',
         category: 'hr',
         aliases: ['TA Specialist', 'Sourcing Specialist'],
         averageSalary: 62000,
@@ -11463,7 +11463,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sourcing-specialist',
         title: 'Sourcing Specialist',
-        slug: 'sourcing-specialist',
+        slug: 'sourcing-specialist-2',
         category: 'hr',
         aliases: ['Candidate Sourcing Specialist', 'Talent Sourcing Specialist'],
         averageSalary: 58000,
@@ -11501,7 +11501,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'receptionist-3',
         title: 'Receptionist',
-        slug: 'receptionist-3',
+        slug: 'receptionist-5',
         category: 'admin',
         aliases: ['Front Desk Receptionist', 'Office Receptionist'],
         averageSalary: 35000,
@@ -11519,7 +11519,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'office-administrator',
         title: 'Office Administrator',
-        slug: 'office-administrator',
+        slug: 'office-administrator-2',
         category: 'admin',
         aliases: ['Office Admin', 'Administrative Coordinator'],
         averageSalary: 45000,
@@ -11528,7 +11528,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'administrative-coordinator',
         title: 'Administrative Coordinator',
-        slug: 'administrative-coordinator',
+        slug: 'administrative-coordinator-3',
         category: 'admin',
         aliases: ['Admin Coordinator', 'Office Support Coordinator'],
         averageSalary: 42000,
@@ -11546,7 +11546,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'file-clerk-2',
         title: 'File Clerk',
-        slug: 'file-clerk-2',
+        slug: 'file-clerk-5',
         category: 'admin',
         aliases: ['Records Clerk', 'Document Clerk'],
         averageSalary: 31000,
@@ -11611,7 +11611,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'inbound-sales-representative',
         title: 'Inbound Sales Representative',
-        slug: 'inbound-sales-representative',
+        slug: 'inbound-sales-representative-2',
         category: 'customer-service',
         aliases: ['Inbound Sales Agent', 'Inbound Sales Rep'],
         averageSalary: 42000,
@@ -11620,7 +11620,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'outbound-sales-representative',
         title: 'Outbound Sales Representative',
-        slug: 'outbound-sales-representative',
+        slug: 'outbound-sales-representative-2',
         category: 'customer-service',
         aliases: ['Outbound Sales Agent', 'Telesales Representative'],
         averageSalary: 42000,
@@ -11629,7 +11629,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-service-supervisor',
         title: 'Customer Service Supervisor',
-        slug: 'customer-service-supervisor',
+        slug: 'customer-service-supervisor-2',
         category: 'customer-service',
         aliases: ['CS Supervisor', 'Customer Support Supervisor'],
         averageSalary: 46000,
@@ -11656,7 +11656,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'contact-center-agent',
         title: 'Contact Center Agent',
-        slug: 'contact-center-agent',
+        slug: 'contact-center-agent-3',
         category: 'customer-service',
         aliases: ['Contact Centre Agent', 'Customer Contact Agent'],
         averageSalary: 36000,
@@ -11665,7 +11665,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-service-representative-2',
         title: 'Customer Service Representative',
-        slug: 'customer-service-representative-2',
+        slug: 'customer-service-representative-3',
         category: 'customer-service',
         aliases: ['CSR', 'Customer Service Rep'],
         averageSalary: 38000,
@@ -11730,7 +11730,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'senior-graphic-designer',
         title: 'Senior Graphic Designer',
-        slug: 'senior-graphic-designer',
+        slug: 'senior-graphic-designer-2',
         category: 'design',
         aliases: ['Lead Graphic Designer', 'Graphic Design Lead'],
         averageSalary: 82000,
@@ -11840,7 +11840,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'database-administrator-2',
         title: 'Database Administrator',
-        slug: 'database-administrator-2',
+        slug: 'database-administrator-3',
         category: 'engineering',
         aliases: ['DBA', 'Database Admin'],
         averageSalary: 105000,
@@ -12033,7 +12033,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'high-school-teacher',
         title: 'High School Teacher',
-        slug: 'high-school-teacher',
+        slug: 'high-school-teacher-2',
         category: 'education',
         aliases: ['Secondary Teacher', 'High School Educator'],
         averageSalary: 65000,
@@ -12042,7 +12042,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'substitute-teacher',
         title: 'Substitute Teacher',
-        slug: 'substitute-teacher',
+        slug: 'substitute-teacher-4',
         category: 'education',
         aliases: ['Sub Teacher', 'Supply Teacher'],
         averageSalary: 42000,
@@ -12051,7 +12051,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'teaching-assistant-2',
         title: 'Teaching Assistant',
-        slug: 'teaching-assistant-2',
+        slug: 'teaching-assistant-4',
         category: 'education',
         aliases: ['Teacher Aide', 'Classroom Assistant'],
         averageSalary: 32000,
@@ -12060,7 +12060,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'special-education-teacher-2',
         title: 'Special Education Teacher',
-        slug: 'special-education-teacher-2',
+        slug: 'special-education-teacher-4',
         category: 'education',
         aliases: ['SPED Teacher', 'Special Needs Teacher'],
         averageSalary: 62000,
@@ -12069,7 +12069,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'school-counselor',
         title: 'School Counselor',
-        slug: 'school-counselor',
+        slug: 'school-counselor-2',
         category: 'education',
         aliases: ['Guidance Counselor', 'Student Counselor'],
         averageSalary: 62000,
@@ -12107,7 +12107,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-assistant',
         title: 'Real Estate Assistant',
-        slug: 'real-estate-assistant',
+        slug: 'real-estate-assistant-3',
         category: 'real-estate',
         aliases: ['Real Estate Administrative Assistant', 'Realtor Assistant'],
         averageSalary: 45000,
@@ -12134,7 +12134,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'leasing-consultant',
         title: 'Leasing Consultant',
-        slug: 'leasing-consultant',
+        slug: 'leasing-consultant-2',
         category: 'real-estate',
         aliases: ['Leasing Agent', 'Apartment Leasing Consultant'],
         averageSalary: 42000,
@@ -12170,7 +12170,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hoa-manager',
         title: 'HOA Manager',
-        slug: 'hoa-manager',
+        slug: 'hoa-manager-2',
         category: 'real-estate',
         aliases: ['Homeowners Association Manager', 'Community Association Manager'],
         averageSalary: 62000,
@@ -12179,7 +12179,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'property-management-assistant',
         title: 'Property Management Assistant',
-        slug: 'property-management-assistant',
+        slug: 'property-management-assistant-2',
         category: 'real-estate',
         aliases: ['PM Assistant', 'Property Admin Assistant'],
         averageSalary: 42000,
@@ -12217,7 +12217,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'master-electrician',
         title: 'Master Electrician',
-        slug: 'master-electrician',
+        slug: 'master-electrician-2',
         category: 'skilled-trades',
         aliases: ['Licensed Electrician', 'Electrical Contractor'],
         averageSalary: 78000,
@@ -12226,7 +12226,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'industrial-electrician',
         title: 'Industrial Electrician',
-        slug: 'industrial-electrician',
+        slug: 'industrial-electrician-2',
         category: 'skilled-trades',
         aliases: ['Industrial Electrical Technician', 'Factory Electrician'],
         averageSalary: 72000,
@@ -12253,7 +12253,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'service-plumber',
         title: 'Service Plumber',
-        slug: 'service-plumber',
+        slug: 'service-plumber-2',
         category: 'skilled-trades',
         aliases: ['Residential Plumber', 'Home Service Plumber'],
         averageSalary: 62000,
@@ -12262,7 +12262,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'commercial-plumber',
         title: 'Commercial Plumber',
-        slug: 'commercial-plumber',
+        slug: 'commercial-plumber-2',
         category: 'skilled-trades',
         aliases: ['Industrial Plumber', 'Business Plumber'],
         averageSalary: 68000,
@@ -12289,7 +12289,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sheet-metal-worker',
         title: 'Sheet Metal Worker',
-        slug: 'sheet-metal-worker',
+        slug: 'sheet-metal-worker-2',
         category: 'skilled-trades',
         aliases: ['Sheet Metal Technician', 'Metal Fabricator'],
         averageSalary: 58000,
@@ -12327,7 +12327,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'line-cook',
         title: 'Line Cook',
-        slug: 'line-cook',
+        slug: 'line-cook-2',
         category: 'hospitality',
         aliases: ['Restaurant Cook', 'Prep Cook'],
         averageSalary: 38000,
@@ -12363,7 +12363,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'pastry-chef',
         title: 'Pastry Chef',
-        slug: 'pastry-chef',
+        slug: 'pastry-chef-2',
         category: 'hospitality',
         aliases: ['Pastry Chef', 'Dessert Chef'],
         averageSalary: 52000,
@@ -12417,7 +12417,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'host-hostess',
         title: 'Host Hostess',
-        slug: 'host-hostess',
+        slug: 'host-hostess-2',
         category: 'hospitality',
         aliases: ['Restaurant Host', 'Greeter'],
         averageSalary: 28000,
@@ -12437,7 +12437,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'logistics-manager-2',
         title: 'Logistics Manager',
-        slug: 'logistics-manager-2',
+        slug: 'logistics-manager-3',
         category: 'transportation',
         aliases: ['Logistics Management', 'Supply Chain Manager'],
         averageSalary: 92000,
@@ -12464,7 +12464,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'inventory-manager',
         title: 'Inventory Manager',
-        slug: 'inventory-manager',
+        slug: 'inventory-manager-2',
         category: 'transportation',
         aliases: ['Inventory Control Manager', 'Stock Manager'],
         averageSalary: 72000,
@@ -12518,7 +12518,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customs-broker',
         title: 'Customs Broker',
-        slug: 'customs-broker',
+        slug: 'customs-broker-2',
         category: 'transportation',
         aliases: ['Customs Clearance Broker', 'Import Broker'],
         averageSalary: 62000,
@@ -12549,7 +12549,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ai-engineer-2',
         title: 'AI Engineer',
-        slug: 'ai-engineer-2',
+        slug: 'ai-engineer-4',
         category: 'technology',
         aliases: ['Artificial Intelligence Engineer', 'AI Development Engineer'],
         averageSalary: 160000,
@@ -12720,7 +12720,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'edge-computing-engineer',
         title: 'Edge Computing Engineer',
-        slug: 'edge-computing-engineer',
+        slug: 'edge-computing-engineer-2',
         category: 'technology',
         aliases: ['Edge Engineer', 'IoT Edge Engineer'],
         averageSalary: 140000,
@@ -12776,7 +12776,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'content-marketing-manager-2',
         title: 'Content Marketing Manager',
-        slug: 'content-marketing-manager-2',
+        slug: 'content-marketing-manager-3',
         category: 'marketing',
         aliases: ['Content Marketing Lead', 'Content Strategy Manager'],
         averageSalary: 105000,
@@ -12803,7 +12803,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'field-marketing-manager',
         title: 'Field Marketing Manager',
-        slug: 'field-marketing-manager',
+        slug: 'field-marketing-manager-3',
         category: 'marketing',
         aliases: ['Regional Marketing Manager', 'Field Marketing Director'],
         averageSalary: 115000,
@@ -12913,7 +12913,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'vp-of-sales-2',
         title: 'VP of Sales',
-        slug: 'vp-of-sales-2',
+        slug: 'vp-of-sales-3',
         category: 'sales',
         aliases: ['Vice President of Sales', 'Sales VP'],
         averageSalary: 225000,
@@ -12958,7 +12958,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'commercial-director',
         title: 'Commercial Director',
-        slug: 'commercial-director',
+        slug: 'commercial-director-2',
         category: 'sales',
         aliases: ['Director of Commercial', 'Commercial VP'],
         averageSalary: 175000,
@@ -12994,7 +12994,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-success-director',
         title: 'Customer Success Director',
-        slug: 'customer-success-director',
+        slug: 'customer-success-director-2',
         category: 'sales',
         aliases: ['Director of Customer Success', 'CS Director'],
         averageSalary: 155000,
@@ -13021,7 +13021,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'global-account-manager',
         title: 'Global Account Manager',
-        slug: 'global-account-manager',
+        slug: 'global-account-manager-4',
         category: 'sales',
         aliases: ['GAM', 'Worldwide Account Manager'],
         averageSalary: 155000,
@@ -13039,7 +13039,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'territory-manager',
         title: 'Territory Manager',
-        slug: 'territory-manager',
+        slug: 'territory-manager-3',
         category: 'sales',
         aliases: ['Sales Territory Manager', 'Area Manager'],
         averageSalary: 105000,
@@ -13057,7 +13057,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-consultant',
         title: 'Sales Consultant',
-        slug: 'sales-consultant',
+        slug: 'sales-consultant-2',
         category: 'sales',
         aliases: ['Sales Advisor', 'Sales Solutions Consultant'],
         averageSalary: 85000,
@@ -13077,7 +13077,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'physician-assistant-2',
         title: 'Physician Assistant',
-        slug: 'physician-assistant-2',
+        slug: 'physician-assistant-4',
         category: 'healthcare',
         aliases: ['PA', 'Physician Associate'],
         averageSalary: 125000,
@@ -13113,7 +13113,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'patient-care-technician',
         title: 'Patient Care Technician',
-        slug: 'patient-care-technician',
+        slug: 'patient-care-technician-3',
         category: 'healthcare',
         aliases: ['PCT', 'Patient Care Assistant'],
         averageSalary: 38000,
@@ -13149,7 +13149,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-assistant-3',
         title: 'Medical Assistant',
-        slug: 'medical-assistant-3',
+        slug: 'medical-assistant-5',
         category: 'healthcare',
         aliases: ['MA', 'Clinical Medical Assistant'],
         averageSalary: 40000,
@@ -13176,7 +13176,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-biller',
         title: 'Medical Biller',
-        slug: 'medical-biller',
+        slug: 'medical-biller-2',
         category: 'healthcare',
         aliases: ['Medical Billing Specialist', 'Healthcare Biller'],
         averageSalary: 42000,
@@ -13194,7 +13194,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'health-unit-coordinator',
         title: 'Health Unit Coordinator',
-        slug: 'health-unit-coordinator',
+        slug: 'health-unit-coordinator-3',
         category: 'healthcare',
         aliases: ['HUC', 'Unit Clerk'],
         averageSalary: 38000,
@@ -13203,7 +13203,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sterile-processing-technician',
         title: 'Sterile Processing Technician',
-        slug: 'sterile-processing-technician',
+        slug: 'sterile-processing-technician-2',
         category: 'healthcare',
         aliases: ['Sterile Tech', 'Central Service Technician'],
         averageSalary: 42000,
@@ -13268,7 +13268,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'assistant-controller',
         title: 'Assistant Controller',
-        slug: 'assistant-controller',
+        slug: 'assistant-controller-3',
         category: 'finance',
         aliases: ['Assistant Comptroller', 'Deputy Controller'],
         averageSalary: 115000,
@@ -13322,7 +13322,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'finance-director',
         title: 'Finance Director',
-        slug: 'finance-director',
+        slug: 'finance-director-2',
         category: 'finance',
         aliases: ['Director of Finance', 'Financial Director'],
         averageSalary: 175000,
@@ -13340,7 +13340,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'treasury-analyst-2',
         title: 'Treasury Analyst',
-        slug: 'treasury-analyst-2',
+        slug: 'treasury-analyst-5',
         category: 'finance',
         aliases: ['Treasury Specialist', 'Treasury Operations Analyst'],
         averageSalary: 82000,
@@ -13432,7 +13432,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'talent-acquisition-director',
         title: 'Talent Acquisition Director',
-        slug: 'talent-acquisition-director',
+        slug: 'talent-acquisition-director-2',
         category: 'hr',
         aliases: ['Director of Talent Acquisition', 'TA Director'],
         averageSalary: 145000,
@@ -13486,7 +13486,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-information-systems-manager',
         title: 'HR Information Systems Manager',
-        slug: 'hr-information-systems-manager',
+        slug: 'hr-information-systems-manager-2',
         category: 'hr',
         aliases: ['HRIS Manager', 'HR Systems Manager'],
         averageSalary: 125000,
@@ -13569,7 +13569,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'executive-assistant-3',
         title: 'Executive Assistant',
-        slug: 'executive-assistant-3',
+        slug: 'executive-assistant-4',
         category: 'admin',
         aliases: ['C-Level EA', 'Executive Assistant to CEO'],
         averageSalary: 85000,
@@ -13641,7 +13641,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'contract-administrator',
         title: 'Contract Administrator',
-        slug: 'contract-administrator',
+        slug: 'contract-administrator-2',
         category: 'admin',
         aliases: ['Contracts Admin', 'Contract Specialist'],
         averageSalary: 62000,
@@ -13686,7 +13686,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'office-services-coordinator',
         title: 'Office Services Coordinator',
-        slug: 'office-services-coordinator',
+        slug: 'office-services-coordinator-2',
         category: 'admin',
         aliases: ['Office Services Coordinator', 'Facilities Coordinator'],
         averageSalary: 48000,
@@ -13733,7 +13733,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-success-director-2',
         title: 'Customer Success Director',
-        slug: 'customer-success-director-2',
+        slug: 'customer-success-director-3',
         category: 'customer-service',
         aliases: ['Director of Customer Success', 'CS Director'],
         averageSalary: 155000,
@@ -13796,7 +13796,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-insights-manager',
         title: 'Customer Insights Manager',
-        slug: 'customer-insights-manager',
+        slug: 'customer-insights-manager-3',
         category: 'customer-service',
         aliases: ['Customer Research Manager', 'Voice of Customer Manager'],
         averageSalary: 115000,
@@ -13814,7 +13814,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-loyalty-manager',
         title: 'Customer Loyalty Manager',
-        slug: 'customer-loyalty-manager',
+        slug: 'customer-loyalty-manager-2',
         category: 'customer-service',
         aliases: ['Loyalty Program Manager', 'Customer Loyalty Lead'],
         averageSalary: 98000,
@@ -13969,7 +13969,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ux-writer',
         title: 'UX Writer',
-        slug: 'ux-writer',
+        slug: 'ux-writer-3',
         category: 'design',
         aliases: ['Content Designer', 'UX Content Writer'],
         averageSalary: 115000,
@@ -14007,7 +14007,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'director-of-engineering',
         title: 'Director of Engineering',
-        slug: 'director-of-engineering',
+        slug: 'director-of-engineering-2',
         category: 'engineering',
         aliases: ['Engineering Director', 'Director of Software Engineering'],
         averageSalary: 195000,
@@ -14079,7 +14079,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'solutions-architect-3',
         title: 'Solutions Architect',
-        slug: 'solutions-architect-3',
+        slug: 'solutions-architect-4',
         category: 'engineering',
         aliases: ['Solution Architect', 'Enterprise Solutions Architect'],
         averageSalary: 175000,
@@ -14106,7 +14106,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'data-architect-3',
         title: 'Data Architect',
-        slug: 'data-architect-3',
+        slug: 'data-architect-4',
         category: 'engineering',
         aliases: ['Data Solution Architect', 'Enterprise Data Architect'],
         averageSalary: 165000,
@@ -14115,7 +14115,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'mobile-architect',
         title: 'Mobile Architect',
-        slug: 'mobile-architect',
+        slug: 'mobile-architect-2',
         category: 'engineering',
         aliases: ['Mobile Solutions Architect', 'App Architect'],
         averageSalary: 165000,
@@ -14124,7 +14124,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'frontend-architect',
         title: 'Frontend Architect',
-        slug: 'frontend-architect',
+        slug: 'frontend-architect-2',
         category: 'engineering',
         aliases: ['Frontend Solutions Architect', 'Client-Side Architect'],
         averageSalary: 165000,
@@ -14133,7 +14133,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'backend-architect',
         title: 'Backend Architect',
-        slug: 'backend-architect',
+        slug: 'backend-architect-2',
         category: 'engineering',
         aliases: ['Backend Solutions Architect', 'Server-Side Architect'],
         averageSalary: 170000,
@@ -14261,7 +14261,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-attorney-2',
         title: 'Real Estate Attorney',
-        slug: 'real-estate-attorney-2',
+        slug: 'real-estate-attorney-3',
         category: 'legal',
         aliases: ['Real Estate Lawyer', 'Property Attorney'],
         averageSalary: 125000,
@@ -14297,7 +14297,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'legal-operations-manager',
         title: 'Legal Operations Manager',
-        slug: 'legal-operations-manager',
+        slug: 'legal-operations-manager-2',
         category: 'legal',
         aliases: ['Legal Ops Manager', 'Legal Department Manager'],
         averageSalary: 125000,
@@ -14353,7 +14353,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'curriculum-director',
         title: 'Curriculum Director',
-        slug: 'curriculum-director',
+        slug: 'curriculum-director-2',
         category: 'education',
         aliases: ['Director of Curriculum', 'Curriculum Coordinator'],
         averageSalary: 115000,
@@ -14389,7 +14389,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'academic-advisor-2',
         title: 'Academic Advisor',
-        slug: 'academic-advisor-2',
+        slug: 'academic-advisor-4',
         category: 'education',
         aliases: ['College Advisor', 'Student Advisor'],
         averageSalary: 58000,
@@ -14436,7 +14436,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-broker-3',
         title: 'Real Estate Broker',
-        slug: 'real-estate-broker-3',
+        slug: 'real-estate-broker-4',
         category: 'real-estate',
         aliases: ['Real Estate Brokerage Owner', 'Broker Owner'],
         averageSalary: 115000,
@@ -14499,7 +14499,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-investor-2',
         title: 'Real Estate Investor',
-        slug: 'real-estate-investor-2',
+        slug: 'real-estate-investor-3',
         category: 'real-estate',
         aliases: ['Property Investor', 'Real Estate Entrepreneur'],
         averageSalary: 125000,
@@ -14508,7 +14508,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'property-developer',
         title: 'Property Developer',
-        slug: 'property-developer',
+        slug: 'property-developer-2',
         category: 'real-estate',
         aliases: ['Real Estate Developer', 'Property Development'],
         averageSalary: 145000,
@@ -14562,7 +14562,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'community-association-manager',
         title: 'Community Association Manager',
-        slug: 'community-association-manager',
+        slug: 'community-association-manager-2',
         category: 'real-estate',
         aliases: ['HOA Manager', 'Community Manager'],
         averageSalary: 78000,
@@ -14580,7 +14580,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-analyst',
         title: 'Real Estate Analyst',
-        slug: 'real-estate-analyst',
+        slug: 'real-estate-analyst-3',
         category: 'real-estate',
         aliases: ['Property Analyst', 'Real Estate Market Analyst'],
         averageSalary: 85000,
@@ -14609,7 +14609,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hvac-installation-technician',
         title: 'HVAC Installation Technician',
-        slug: 'hvac-installation-technician',
+        slug: 'hvac-installation-technician-2',
         category: 'skilled-trades',
         aliases: ['HVAC Installer', 'Heating Installer'],
         averageSalary: 58000,
@@ -14735,7 +14735,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'maintenance-technician',
         title: 'Maintenance Technician',
-        slug: 'maintenance-technician',
+        slug: 'maintenance-technician-2',
         category: 'skilled-trades',
         aliases: ['Facilities Maintenance', 'Building Maintenance Technician'],
         averageSalary: 48000,
@@ -14782,7 +14782,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'banquet-manager',
         title: 'Banquet Manager',
-        slug: 'banquet-manager',
+        slug: 'banquet-manager-2',
         category: 'hospitality',
         aliases: ['Banquet Captain', 'Events Banquet Manager'],
         averageSalary: 58000,
@@ -14827,7 +14827,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sous-chef-2',
         title: 'Sous Chef',
-        slug: 'sous-chef-2',
+        slug: 'sous-chef-3',
         category: 'hospitality',
         aliases: ['Second Chef', 'Assistant Executive Chef'],
         averageSalary: 62000,
@@ -14836,7 +14836,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'executive-chef-2',
         title: 'Executive Chef',
-        slug: 'executive-chef-2',
+        slug: 'executive-chef-3',
         category: 'hospitality',
         aliases: ['Head Chef', 'Executive Kitchen Chef'],
         averageSalary: 78000,
@@ -14854,7 +14854,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'pastry-chef-2',
         title: 'Pastry Chef',
-        slug: 'pastry-chef-2',
+        slug: 'pastry-chef-3',
         category: 'hospitality',
         aliases: ['Dessert Chef', 'Pastry Head Chef'],
         averageSalary: 58000,
@@ -14964,7 +14964,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'freight-forwarder-2',
         title: 'Freight Forwarder',
-        slug: 'freight-forwarder-2',
+        slug: 'freight-forwarder-4',
         category: 'transportation',
         aliases: ['Freight Forwarding', 'Cargo Forwarder'],
         averageSalary: 62000,
@@ -15027,7 +15027,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'shipping-receiver',
         title: 'Shipping Receiver',
-        slug: 'shipping-receiver',
+        slug: 'shipping-receiver-2',
         category: 'transportation',
         aliases: ['Receiving Clerk', 'Warehouse Receiver'],
         averageSalary: 36000,
@@ -15058,7 +15058,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'machine-learning-engineer-2',
         title: 'Machine Learning Engineer',
-        slug: 'machine-learning-engineer-2',
+        slug: 'machine-learning-engineer-3',
         category: 'technology',
         aliases: ['ML Engineer', 'Machine Learning Developer'],
         averageSalary: 165000,
@@ -15067,7 +15067,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'deep-learning-engineer',
         title: 'Deep Learning Engineer',
-        slug: 'deep-learning-engineer',
+        slug: 'deep-learning-engineer-2',
         category: 'technology',
         aliases: ['Deep Learning Developer', 'Neural Network Engineer'],
         averageSalary: 175000,
@@ -15076,7 +15076,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'computer-vision-engineer',
         title: 'Computer Vision Engineer',
-        slug: 'computer-vision-engineer',
+        slug: 'computer-vision-engineer-3',
         category: 'technology',
         aliases: ['CV Engineer', 'Visual AI Engineer'],
         averageSalary: 160000,
@@ -15114,7 +15114,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'community-manager-2',
         title: 'Community Manager',
-        slug: 'community-manager-2',
+        slug: 'community-manager-4',
         category: 'marketing',
         aliases: ['Online Community Manager', 'Community Lead'],
         averageSalary: 85000,
@@ -15123,7 +15123,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'demand-generation-manager',
         title: 'Demand Generation Manager',
-        slug: 'demand-generation-manager',
+        slug: 'demand-generation-manager-4',
         category: 'marketing',
         aliases: ['Demand Gen Manager', 'Revenue Marketing Manager'],
         averageSalary: 110000,
@@ -15132,7 +15132,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'product-marketing-manager-2',
         title: 'Product Marketing Manager',
-        slug: 'product-marketing-manager-2',
+        slug: 'product-marketing-manager-4',
         category: 'marketing',
         aliases: ['PMM', 'Product Marketing Specialist'],
         averageSalary: 120000,
@@ -15150,7 +15150,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'brand-manager-2',
         title: 'Brand Manager',
-        slug: 'brand-manager-2',
+        slug: 'brand-manager-5',
         category: 'marketing',
         aliases: ['Brand Marketing Manager', 'Product Brand Manager'],
         averageSalary: 115000,
@@ -15159,7 +15159,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'content-strategist-2',
         title: 'Content Strategist',
-        slug: 'content-strategist-2',
+        slug: 'content-strategist-3',
         category: 'marketing',
         aliases: ['Content Strategy Manager', 'Content Lead'],
         averageSalary: 95000,
@@ -15170,7 +15170,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-development-representative-2',
         title: 'Sales Development Representative',
-        slug: 'sales-development-representative-2',
+        slug: 'sales-development-representative-3',
         category: 'sales',
         aliases: ['SDR', 'Sales Development Rep'],
         averageSalary: 55000,
@@ -15188,7 +15188,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'inside-sales-representative-2',
         title: 'Inside Sales Representative',
-        slug: 'inside-sales-representative-2',
+        slug: 'inside-sales-representative-5',
         category: 'sales',
         aliases: ['Inside Sales Rep', 'Remote Sales Representative'],
         averageSalary: 58000,
@@ -15197,7 +15197,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'outside-sales-representative',
         title: 'Outside Sales Representative',
-        slug: 'outside-sales-representative',
+        slug: 'outside-sales-representative-4',
         category: 'sales',
         aliases: ['Field Sales Representative', 'External Sales Rep'],
         averageSalary: 65000,
@@ -15215,7 +15215,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'sales-coordinator-2',
         title: 'Sales Coordinator',
-        slug: 'sales-coordinator-2',
+        slug: 'sales-coordinator-3',
         category: 'sales',
         aliases: ['Sales Admin', 'Sales Support Coordinator'],
         averageSalary: 52000,
@@ -15226,7 +15226,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-assistant-2',
         title: 'Medical Assistant',
-        slug: 'medical-assistant-2',
+        slug: 'medical-assistant-6',
         category: 'healthcare',
         aliases: ['Certified Medical Assistant', 'Clinical Medical Assistant'],
         averageSalary: 42000,
@@ -15235,7 +15235,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'phlebotomist-2',
         title: 'Phlebotomist',
-        slug: 'phlebotomist-2',
+        slug: 'phlebotomist-3',
         category: 'healthcare',
         aliases: ['Phlebotomy Technician', 'Blood Draw Specialist'],
         averageSalary: 40000,
@@ -15244,7 +15244,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'medical-technologist',
         title: 'Medical Technologist',
-        slug: 'medical-technologist',
+        slug: 'medical-technologist-4',
         category: 'healthcare',
         aliases: ['Clinical Laboratory Technologist', 'Medical Lab Scientist'],
         averageSalary: 58000,
@@ -15253,7 +15253,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'radiologic-technologist',
         title: 'Radiologic Technologist',
-        slug: 'radiologic-technologist',
+        slug: 'radiologic-technologist-4',
         category: 'healthcare',
         aliases: ['Rad Tech', 'X-Ray Technologist'],
         averageSalary: 65000,
@@ -15271,7 +15271,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'occupational-therapist-2',
         title: 'Occupational Therapist',
-        slug: 'occupational-therapist-2',
+        slug: 'occupational-therapist-5',
         category: 'healthcare',
         aliases: ['OT', 'Occupational Therapy Practitioner'],
         averageSalary: 90000,
@@ -15291,7 +15291,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'investment-analyst',
         title: 'Investment Analyst',
-        slug: 'investment-analyst',
+        slug: 'investment-analyst-4',
         category: 'finance',
         aliases: ['Investment Research Analyst', 'Securities Analyst'],
         averageSalary: 95000,
@@ -15300,7 +15300,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'portfolio-manager-2',
         title: 'Portfolio Manager',
-        slug: 'portfolio-manager-2',
+        slug: 'portfolio-manager-3',
         category: 'finance',
         aliases: ['Investment Portfolio Manager', 'Fund Manager'],
         averageSalary: 135000,
@@ -15309,7 +15309,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'risk-manager-2',
         title: 'Risk Manager',
-        slug: 'risk-manager-2',
+        slug: 'risk-manager-3',
         category: 'finance',
         aliases: ['Enterprise Risk Manager', 'Risk Management Manager'],
         averageSalary: 120000,
@@ -15318,7 +15318,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'credit-analyst-2',
         title: 'Credit Analyst',
-        slug: 'credit-analyst-2',
+        slug: 'credit-analyst-5',
         category: 'finance',
         aliases: ['Credit Risk Analyst', 'Loan Analyst'],
         averageSalary: 70000,
@@ -15338,7 +15338,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-coordinator-2',
         title: 'HR Coordinator',
-        slug: 'hr-coordinator-2',
+        slug: 'hr-coordinator-5',
         category: 'hr',
         aliases: ['Human Resources Coordinator', 'HR Admin'],
         averageSalary: 50000,
@@ -15347,7 +15347,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'recruiter-3',
         title: 'Recruiter',
-        slug: 'recruiter-3',
+        slug: 'recruiter-5',
         category: 'hr',
         aliases: ['Technical Recruiter', 'Talent Acquisition Specialist'],
         averageSalary: 60000,
@@ -15356,7 +15356,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'technical-recruiter-2',
         title: 'Technical Recruiter',
-        slug: 'technical-recruiter-2',
+        slug: 'technical-recruiter-3',
         category: 'hr',
         aliases: ['IT Recruiter', 'Tech Recruiter'],
         averageSalary: 70000,
@@ -15365,7 +15365,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hr-business-partner-2',
         title: 'HR Business Partner',
-        slug: 'hr-business-partner-2',
+        slug: 'hr-business-partner-4',
         category: 'hr',
         aliases: ['HRBP', 'Strategic HR Partner'],
         averageSalary: 105000,
@@ -15383,7 +15383,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'compensation-analyst-2',
         title: 'Compensation Analyst',
-        slug: 'compensation-analyst-2',
+        slug: 'compensation-analyst-5',
         category: 'hr',
         aliases: ['Compensation and Benefits Analyst', 'Total Rewards Analyst'],
         averageSalary: 80000,
@@ -15394,7 +15394,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'administrative-assistant-3',
         title: 'Administrative Assistant',
-        slug: 'administrative-assistant-3',
+        slug: 'administrative-assistant-5',
         category: 'admin',
         aliases: ['Admin Assistant', 'Office Assistant'],
         averageSalary: 45000,
@@ -15403,7 +15403,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'receptionist-2',
         title: 'Receptionist',
-        slug: 'receptionist-2',
+        slug: 'receptionist-6',
         category: 'admin',
         aliases: ['Front Desk Receptionist', 'Office Receptionist'],
         averageSalary: 36000,
@@ -15412,7 +15412,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'data-entry-clerk-2',
         title: 'Data Entry Clerk',
-        slug: 'data-entry-clerk-2',
+        slug: 'data-entry-clerk-5',
         category: 'admin',
         aliases: ['Data Entry Specialist', 'Data Entry Operator'],
         averageSalary: 38000,
@@ -15421,7 +15421,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'virtual-assistant-2',
         title: 'Virtual Assistant',
-        slug: 'virtual-assistant-2',
+        slug: 'virtual-assistant-4',
         category: 'admin',
         aliases: ['VA', 'Online Administrative Assistant'],
         averageSalary: 48000,
@@ -15430,7 +15430,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'office-clerk',
         title: 'Office Clerk',
-        slug: 'office-clerk',
+        slug: 'office-clerk-2',
         category: 'admin',
         aliases: ['General Office Clerk', 'Administrative Clerk'],
         averageSalary: 38000,
@@ -15439,7 +15439,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'file-clerk',
         title: 'File Clerk',
-        slug: 'file-clerk',
+        slug: 'file-clerk-6',
         category: 'admin',
         aliases: ['Records Clerk', 'File Management Clerk'],
         averageSalary: 35000,
@@ -15450,7 +15450,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-service-representative-3',
         title: 'Customer Service Representative',
-        slug: 'customer-service-representative-3',
+        slug: 'customer-service-representative-4',
         category: 'customer-service',
         aliases: ['CSR', 'Customer Service Rep'],
         averageSalary: 40000,
@@ -15459,7 +15459,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'call-center-representative-2',
         title: 'Call Center Representative',
-        slug: 'call-center-representative-2',
+        slug: 'call-center-representative-4',
         category: 'customer-service',
         aliases: ['Call Center Agent', 'Phone Representative'],
         averageSalary: 38000,
@@ -15468,7 +15468,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-support-specialist',
         title: 'Customer Support Specialist',
-        slug: 'customer-support-specialist',
+        slug: 'customer-support-specialist-2',
         category: 'customer-service',
         aliases: ['Support Specialist', 'Customer Care Specialist'],
         averageSalary: 45000,
@@ -15486,7 +15486,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'customer-success-manager-2',
         title: 'Customer Success Manager',
-        slug: 'customer-success-manager-2',
+        slug: 'customer-success-manager-5',
         category: 'customer-service',
         aliases: ['CSM', 'Client Success Manager'],
         averageSalary: 85000,
@@ -15515,7 +15515,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'ui-designer-2',
         title: 'UI Designer',
-        slug: 'ui-designer-2',
+        slug: 'ui-designer-4',
         category: 'design',
         aliases: ['User Interface Designer', 'UI/UX Designer'],
         averageSalary: 85000,
@@ -15533,7 +15533,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'product-designer-2',
         title: 'Product Designer',
-        slug: 'product-designer-2',
+        slug: 'product-designer-5',
         category: 'design',
         aliases: ['Digital Product Designer', 'Product UX Designer'],
         averageSalary: 110000,
@@ -15542,7 +15542,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'visual-designer-2',
         title: 'Visual Designer',
-        slug: 'visual-designer-2',
+        slug: 'visual-designer-5',
         category: 'design',
         aliases: ['Digital Visual Designer', 'Brand Visual Designer'],
         averageSalary: 80000,
@@ -15551,7 +15551,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'motion-designer',
         title: 'Motion Designer',
-        slug: 'motion-designer',
+        slug: 'motion-designer-2',
         category: 'design',
         aliases: ['Motion Graphics Designer', 'Animation Designer'],
         averageSalary: 85000,
@@ -15607,7 +15607,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'devops-engineer-2',
         title: 'DevOps Engineer',
-        slug: 'devops-engineer-2',
+        slug: 'devops-engineer-4',
         category: 'engineering',
         aliases: ['DevOps Engineer II', 'Senior DevOps Engineer'],
         averageSalary: 140000,
@@ -15618,7 +15618,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'paralegal-2',
         title: 'Paralegal',
-        slug: 'paralegal-2',
+        slug: 'paralegal-4',
         category: 'legal',
         aliases: ['Legal Assistant', 'Paralegal Assistant'],
         averageSalary: 58000,
@@ -15627,7 +15627,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'legal-assistant-2',
         title: 'Legal Assistant',
-        slug: 'legal-assistant-2',
+        slug: 'legal-assistant-5',
         category: 'legal',
         aliases: ['Law Office Assistant', 'Legal Secretary'],
         averageSalary: 50000,
@@ -15636,7 +15636,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'contract-attorney',
         title: 'Contract Attorney',
-        slug: 'contract-attorney',
+        slug: 'contract-attorney-2',
         category: 'legal',
         aliases: ['Contract Lawyer', 'Freelance Attorney'],
         averageSalary: 95000,
@@ -15645,7 +15645,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'compliance-manager-2',
         title: 'Compliance Manager',
-        slug: 'compliance-manager-2',
+        slug: 'compliance-manager-3',
         category: 'legal',
         aliases: ['Regulatory Compliance Manager', 'Corporate Compliance Manager'],
         averageSalary: 110000,
@@ -15654,7 +15654,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'contracts-manager',
         title: 'Contracts Manager',
-        slug: 'contracts-manager',
+        slug: 'contracts-manager-3',
         category: 'legal',
         aliases: ['Contract Management Manager', 'Contract Administrator'],
         averageSalary: 95000,
@@ -15674,7 +15674,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'elementary-school-teacher',
         title: 'Elementary School Teacher',
-        slug: 'elementary-school-teacher',
+        slug: 'elementary-school-teacher-2',
         category: 'education',
         aliases: ['Primary School Teacher', 'Elementary Teacher'],
         averageSalary: 58000,
@@ -15683,7 +15683,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'high-school-teacher-2',
         title: 'High School Teacher',
-        slug: 'high-school-teacher-2',
+        slug: 'high-school-teacher-3',
         category: 'education',
         aliases: ['Secondary School Teacher', 'High School Educator'],
         averageSalary: 62000,
@@ -15692,7 +15692,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'special-education-teacher-2',
         title: 'Special Education Teacher',
-        slug: 'special-education-teacher-2',
+        slug: 'special-education-teacher-5',
         category: 'education',
         aliases: ['Special Ed Teacher', 'Exceptional Education Teacher'],
         averageSalary: 65000,
@@ -15701,7 +15701,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'teaching-assistant-2',
         title: 'Teaching Assistant',
-        slug: 'teaching-assistant-2',
+        slug: 'teaching-assistant-5',
         category: 'education',
         aliases: ['Teacher Assistant', 'Classroom Assistant'],
         averageSalary: 32000,
@@ -15710,7 +15710,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'substitute-teacher',
         title: 'Substitute Teacher',
-        slug: 'substitute-teacher',
+        slug: 'substitute-teacher-5',
         category: 'education',
         aliases: ['Sub Teacher', 'Supply Teacher'],
         averageSalary: 40000,
@@ -15721,7 +15721,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-agent-2',
         title: 'Real Estate Agent',
-        slug: 'real-estate-agent-2',
+        slug: 'real-estate-agent-3',
         category: 'real-estate',
         aliases: ['Realtor', 'Real Estate Sales Agent'],
         averageSalary: 55000,
@@ -15739,7 +15739,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'leasing-agent-2',
         title: 'Leasing Agent',
-        slug: 'leasing-agent-2',
+        slug: 'leasing-agent-4',
         category: 'real-estate',
         aliases: ['Leasing Consultant', 'Rental Agent'],
         averageSalary: 42000,
@@ -15748,7 +15748,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'property-manager-2',
         title: 'Property Manager',
-        slug: 'property-manager-2',
+        slug: 'property-manager-5',
         category: 'real-estate',
         aliases: ['Real Estate Property Manager', 'Rental Property Manager'],
         averageSalary: 65000,
@@ -15757,7 +15757,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'real-estate-appraiser-2',
         title: 'Real Estate Appraiser',
-        slug: 'real-estate-appraiser-2',
+        slug: 'real-estate-appraiser-5',
         category: 'real-estate',
         aliases: ['Property Appraiser', 'Real Estate Valuer'],
         averageSalary: 62000,
@@ -15766,7 +15766,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'title-examiner',
         title: 'Title Examiner',
-        slug: 'title-examiner',
+        slug: 'title-examiner-3',
         category: 'real-estate',
         aliases: ['Title Searcher', 'Title Analyst'],
         averageSalary: 52000,
@@ -15777,7 +15777,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'electrician-2',
         title: 'Electrician',
-        slug: 'electrician-2',
+        slug: 'electrician-4',
         category: 'skilled-trades',
         aliases: ['Electrical Contractor', 'Journeyman Electrician'],
         averageSalary: 60000,
@@ -15786,7 +15786,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'plumber-2',
         title: 'Plumber',
-        slug: 'plumber-2',
+        slug: 'plumber-4',
         category: 'skilled-trades',
         aliases: ['Plumbing Contractor', 'Journeyman Plumber'],
         averageSalary: 58000,
@@ -15795,7 +15795,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hvac-technician-2',
         title: 'HVAC Technician',
-        slug: 'hvac-technician-2',
+        slug: 'hvac-technician-4',
         category: 'skilled-trades',
         aliases: ['HVAC Tech', 'Heating and Cooling Technician'],
         averageSalary: 58000,
@@ -15804,7 +15804,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'carpenter-2',
         title: 'Carpenter',
-        slug: 'carpenter-2',
+        slug: 'carpenter-4',
         category: 'skilled-trades',
         aliases: ['Construction Carpenter', 'Finish Carpenter'],
         averageSalary: 55000,
@@ -15813,7 +15813,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'welder-2',
         title: 'Welder',
-        slug: 'welder-2',
+        slug: 'welder-4',
         category: 'skilled-trades',
         aliases: ['Welding Technician', 'Fabricator Welder'],
         averageSalary: 48000,
@@ -15833,7 +15833,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'hotel-manager-2',
         title: 'Hotel Manager',
-        slug: 'hotel-manager-2',
+        slug: 'hotel-manager-3',
         category: 'hospitality',
         aliases: ['Hotel General Manager', 'Hospitality Manager'],
         averageSalary: 65000,
@@ -15860,7 +15860,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'concierge-2',
         title: 'Concierge',
-        slug: 'concierge-2',
+        slug: 'concierge-3',
         category: 'hospitality',
         aliases: ['Hotel Concierge', 'Guest Services Agent'],
         averageSalary: 40000,
@@ -15869,7 +15869,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'restaurant-manager-2',
         title: 'Restaurant Manager',
-        slug: 'restaurant-manager-2',
+        slug: 'restaurant-manager-3',
         category: 'hospitality',
         aliases: ['Food Service Manager', 'Dining Manager'],
         averageSalary: 55000,
@@ -15878,7 +15878,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'bartender-2',
         title: 'Bartender',
-        slug: 'bartender-2',
+        slug: 'bartender-3',
         category: 'hospitality',
         aliases: ['Barkeeper', 'Mixologist'],
         averageSalary: 32000,
@@ -15889,7 +15889,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'delivery-driver-2',
         title: 'Delivery Driver',
-        slug: 'delivery-driver-2',
+        slug: 'delivery-driver-5',
         category: 'transportation',
         aliases: ['Package Delivery Driver', 'Courier Driver'],
         averageSalary: 40000,
@@ -15898,7 +15898,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'truck-driver-2',
         title: 'Truck Driver',
-        slug: 'truck-driver-2',
+        slug: 'truck-driver-3',
         category: 'transportation',
         aliases: ['Semi Truck Driver', 'CDL Driver'],
         averageSalary: 52000,
@@ -15916,7 +15916,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'dispatcher-2',
         title: 'Dispatcher',
-        slug: 'dispatcher-2',
+        slug: 'dispatcher-4',
         category: 'transportation',
         aliases: ['Fleet Dispatcher', 'Service Dispatcher'],
         averageSalary: 45000,
@@ -15925,7 +15925,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'route-driver',
         title: 'Route Driver',
-        slug: 'route-driver',
+        slug: 'route-driver-3',
         category: 'transportation',
         aliases: ['Delivery Route Driver', 'Regular Route Driver'],
         averageSalary: 42000,

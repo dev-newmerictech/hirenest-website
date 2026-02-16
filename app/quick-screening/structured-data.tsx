@@ -14,7 +14,7 @@ export function QuickScreeningStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/quick_screening_hero.png',
+        'https://hirenest.ai/quick_screening_hero.png',
         {
             name: 'Quick Screening - Screen Candidates in Minutes',
             description: 'Accelerate your hiring process with automated screening tools that filter out unqualified candidates instantly.',
@@ -30,7 +30,7 @@ export function QuickScreeningStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Quick Screening Demo',
         'Learn how to cut your screening time by 70% with our automated candidate filtering and shortlisting tools.',
-        'https://www.hirenest.ai/quick_screening_hero.png',
+        'https://hirenest.ai/quick_screening_hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT2M45S',
@@ -43,10 +43,10 @@ export function QuickScreeningStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Quick Screening - Accelerate Your Hiring',
         'Accelerate your hiring with Quick Screening. Use automated tools to filter candidates, screen in minutes not days, and fast-track the best talent.',
-        'https://www.hirenest.ai/quick-screening',
+        'https://hirenest.ai/quick-screening',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Quick Screening', url: 'https://www.hirenest.ai/quick-screening' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Quick Screening', url: 'https://hirenest.ai/quick-screening' }
         ],
         {
             image: imageSchema,

@@ -14,7 +14,7 @@ export function ProfileOptimizationStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/profile_optimization_hero.png',
+        'https://hirenest.ai/profile_optimization_hero.png',
         {
             name: 'Profile Optimization - Build a Brand That Recruiters Can\'t Ignore',
             description: 'Expert profile optimization services to help you stand out to hiring managers and recruiters.',
@@ -30,7 +30,7 @@ export function ProfileOptimizationStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Profile Optimization Demo',
         'Learn how our profile optimization services can help you attract more recruiters and land your dream job.',
-        'https://www.hirenest.ai/profile_optimization_hero.png',
+        'https://hirenest.ai/profile_optimization_hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT3M45S',
@@ -43,10 +43,10 @@ export function ProfileOptimizationStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Profile Optimization - Boost Your Visibility',
         'Transform your online presence with AI-powered profile optimization. Enhance your LinkedIn profile and portfolio to attract recruiters and land your dream job.',
-        'https://www.hirenest.ai/profile-optimization',
+        'https://hirenest.ai/profile-optimization',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Profile Optimization', url: 'https://www.hirenest.ai/profile-optimization' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Profile Optimization', url: 'https://hirenest.ai/profile-optimization' }
         ],
         {
             image: imageSchema,

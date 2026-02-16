@@ -198,10 +198,10 @@ Disallow: /
 # -----------------------------------------------------------------------------
 # SITEMAPS & FEEDS
 # -----------------------------------------------------------------------------
-Sitemap: https://www.hirenest.ai/sitemap.xml
+Sitemap: https://hirenest.ai/sitemap.xml
 
 # RSS Feed is discoverable via <link> tag in HTML
-# llms.xml is available at https://www.hirenest.ai/llms.txt
+# llms.xml is available at https://hirenest.ai/llms.txt
 
 # =============================================================================
 # END

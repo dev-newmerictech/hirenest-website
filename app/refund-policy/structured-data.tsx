@@ -13,7 +13,7 @@ export function RefundPolicyStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest Refund Policy',
             description: 'Information about refunds, cancellations, and money-back guarantees on Hirenest.',
@@ -29,10 +29,10 @@ export function RefundPolicyStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Refund Policy - Hirenest',
         'Read our Refund Policy to understand our terms regarding subscriptions, cancellations, and refunds.',
-        'https://www.hirenest.ai/refund-policy',
+        'https://hirenest.ai/refund-policy',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Refund Policy', url: 'https://www.hirenest.ai/refund-policy' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Refund Policy', url: 'https://hirenest.ai/refund-policy' }
         ],
         {
             image: imageSchema,

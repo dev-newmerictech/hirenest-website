@@ -14,7 +14,7 @@ export function VerifiedCandidatesStructuredData() {
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         {
             name: 'Verified Candidates - Hire With Confidence',
             description: 'Stop worrying about resume fraud and bad hires. Our verification process ensures every candidate is exactly who they say they are.',
@@ -30,7 +30,7 @@ export function VerifiedCandidatesStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Verified Candidates Demo',
         'See how our comprehensive background checks and skill verification process ensure you only hire trusted talent.',
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT2M50S',
@@ -43,10 +43,10 @@ export function VerifiedCandidatesStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Verified Candidates - Pre-Screened Talent Pool',
         'Hire with confidence using Verified Candidates. Access a pool of pre-screened talent with verified skills and background checks.',
-        'https://www.hirenest.ai/verified-candidates',
+        'https://hirenest.ai/verified-candidates',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Verified Candidates', url: 'https://www.hirenest.ai/verified-candidates' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Verified Candidates', url: 'https://hirenest.ai/verified-candidates' }
         ],
         {
             image: imageSchema,

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export async function GET() {
-    const baseUrl = 'https://www.hirenest.ai';
+    const baseUrl = 'https://hirenest.ai';
     const currentDate = new Date();
 
     // Main website pages (core pages, features, company, legal)
@@ -44,15 +44,15 @@ export async function GET() {
     const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes
-    .map(
-        (route) => `  <url>
+            .map(
+                (route) => `  <url>
     <loc>${baseUrl}${route.url}</loc>
     <lastmod>${route.lastModified.toISOString()}</lastmod>
     <changefreq>${route.changeFrequency}</changefreq>
     <priority>${route.priority}</priority>
   </url>`
-    )
-    .join('\n')}
+            )
+            .join('\n')}
 </urlset>`;
 
     return new Response(xmlContent, {

@@ -14,7 +14,7 @@ export function FastTrackApplicationsStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/fast_track_applications_hero.png',
+        'https://hirenest.ai/fast_track_applications_hero.png',
         {
             name: 'Fast-Track Applications - Skip the Queue & Get Hired Faster',
             description: 'Apply to hundreds of jobs instantly and get priority status with hiring managers.',
@@ -30,7 +30,7 @@ export function FastTrackApplicationsStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Fast-Track Applications Demo',
         'See how Fast-Track Applications can reduce your job search time by 90% and get you hired faster.',
-        'https://www.hirenest.ai/fast_track_applications_hero.png',
+        'https://hirenest.ai/fast_track_applications_hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT2M45S',
@@ -43,10 +43,10 @@ export function FastTrackApplicationsStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Fast-Track Applications - Simplify Applying',
         'Apply to hundreds of jobs instantly and get priority status with hiring managers. Improve candidate experience with Fast-Track Applications.',
-        'https://www.hirenest.ai/fast-track-applications',
+        'https://hirenest.ai/fast-track-applications',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Fast-Track Applications', url: 'https://www.hirenest.ai/fast-track-applications' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Fast-Track Applications', url: 'https://hirenest.ai/fast-track-applications' }
         ],
         {
             image: imageSchema,

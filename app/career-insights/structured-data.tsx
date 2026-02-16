@@ -12,7 +12,7 @@ export function CareerInsightsStructuredData() {
     const faqSchema = generateFAQSchema(faqs);
 
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/career_insights_hero.png',
+        'https://hirenest.ai/career_insights_hero.png',
         {
             name: 'Career Insights Dashboard - Data-Driven Career Decisions',
             description: 'AI-powered career insights dashboard with salary benchmarks and market trends',
@@ -27,7 +27,7 @@ export function CareerInsightsStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Career Insights Dashboard Demo',
         'Get personalized career insights, salary benchmarks, and market trends to advance your career with Hirenest.',
-        'https://www.hirenest.ai/career_insights_hero.png',
+        'https://hirenest.ai/career_insights_hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT4M00S',
@@ -39,10 +39,10 @@ export function CareerInsightsStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Career Insights - Data-Driven Career Decisions',
         'Get personalized AI-powered career insights, real-time salary benchmarks, and emerging market trends to make data-driven decisions and advance your career.',
-        'https://www.hirenest.ai/career-insights',
+        'https://hirenest.ai/career-insights',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Career Insights', url: 'https://www.hirenest.ai/career-insights' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Career Insights', url: 'https://hirenest.ai/career-insights' }
         ],
         {
             image: imageSchema,

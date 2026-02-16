@@ -13,7 +13,7 @@ export function LegalStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest Legal Information',
             description: 'Legal hub for Hirenest policies, terms, and compliance information.',
@@ -29,10 +29,10 @@ export function LegalStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Legal Information - Hirenest',
         'Access Hirenest legal documents, including Terms of Service, Privacy Policy, and other compliance information.',
-        'https://www.hirenest.ai/legal',
+        'https://hirenest.ai/legal',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Legal', url: 'https://www.hirenest.ai/legal' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Legal', url: 'https://hirenest.ai/legal' }
         ],
         {
             image: imageSchema,

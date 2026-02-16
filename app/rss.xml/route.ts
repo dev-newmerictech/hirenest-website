@@ -4,7 +4,7 @@ import { jobTitles } from '../lib/programmatic-seo/job-titles';
 export const dynamic = 'force-static';
 
 export async function GET() {
-    const baseUrl = 'https://www.hirenest.ai';
+    const baseUrl = 'https://hirenest.ai';
     const currentDate = new Date().toUTCString();
 
     // Main feature items

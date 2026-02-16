@@ -156,7 +156,7 @@ export interface VideoObjectSchema {
 }
 
 
-const baseUrl = 'https://www.hirenest.ai';
+const baseUrl = 'https://hirenest.ai';
 
 export const organizationSchema: OrganizationSchema = {
     '@context': 'https://schema.org',
@@ -254,7 +254,7 @@ export function generateWebPageSchema(
     schema.author = {
         '@type': 'Organization',
         name: authorName,
-        url: 'https://www.hirenest.ai'
+        url: 'https://hirenest.ai'
     };
 
     if (options?.datePublished) schema.datePublished = options.datePublished;

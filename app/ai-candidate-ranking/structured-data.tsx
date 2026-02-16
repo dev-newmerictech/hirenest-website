@@ -14,7 +14,7 @@ export function AICandidateRankingStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/ai_candidate_ranking_hero.png',
+        'https://hirenest.ai/ai_candidate_ranking_hero.png',
         {
             name: 'AI Candidate Ranking - Hire the Best, Ignore the Rest',
             description: 'Automatically rank and score candidates with AI to make data-driven hiring decisions.',
@@ -30,7 +30,7 @@ export function AICandidateRankingStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'AI Candidate Ranking Demo',
         'Learn how our AI Candidate Ranking system helps you identify top talent instantly and remove bias from your hiring process.',
-        'https://www.hirenest.ai/ai_candidate_ranking_hero.png',
+        'https://hirenest.ai/ai_candidate_ranking_hero.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT3M15S',
@@ -43,10 +43,10 @@ export function AICandidateRankingStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'AI Candidate Ranking - Smart Hiring Decisions',
         'Instantly identify top talent with AI Candidate Ranking. Our smart scoring system evaluates skills and fit for faster, data-driven hiring decisions.',
-        'https://www.hirenest.ai/ai-candidate-ranking',
+        'https://hirenest.ai/ai-candidate-ranking',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'AI Candidate Ranking', url: 'https://www.hirenest.ai/ai-candidate-ranking' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'AI Candidate Ranking', url: 'https://hirenest.ai/ai-candidate-ranking' }
         ],
         {
             image: imageSchema,

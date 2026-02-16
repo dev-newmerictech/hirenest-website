@@ -14,7 +14,7 @@ export function HiringAnalyticsStructuredData() {
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         {
             name: 'Hiring Analytics - Turn Data Into Hiring Success',
             description: 'Make smarter hiring decisions with powerful analytics that reveal what\'s working and what\'s not.',
@@ -30,7 +30,7 @@ export function HiringAnalyticsStructuredData() {
     const videoSchema = generateVideoObjectSchema(
         'Hiring Analytics Demo',
         'Learn how to track hiring metrics, identify bottlenecks, and optimize your recruitment process with Hiring Analytics.',
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         '2024-01-15T00:00:00.000Z',
         {
             duration: 'PT3M00S',
@@ -43,10 +43,10 @@ export function HiringAnalyticsStructuredData() {
     const webPageSchema = generateWebPageSchema(
         'Hiring Analytics - Data-Driven Recruitment',
         'Optimize your recruitment with comprehensive Hiring Analytics. Track metrics, identify bottlenecks, and improve your time-to-hire with real-time data.',
-        'https://www.hirenest.ai/hiring-analytics',
+        'https://hirenest.ai/hiring-analytics',
         [
-            { name: 'Home', url: 'https://www.hirenest.ai' },
-            { name: 'Hiring Analytics', url: 'https://www.hirenest.ai/hiring-analytics' }
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Hiring Analytics', url: 'https://hirenest.ai/hiring-analytics' }
         ],
         {
             image: imageSchema,

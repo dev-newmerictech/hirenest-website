@@ -43,6 +43,34 @@ export default function Home() {
     }
   );
 
+  // Generate Article Schema for SEO
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: pageMetadata.home.title as string,
+    description: pageMetadata.home.description as string,
+    image: 'https://www.hirenest.ai/og-image.png',
+    author: {
+      '@type': 'Organization',
+      name: 'Hirenest',
+      url: 'https://www.hirenest.ai'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Hirenest',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.hirenest.ai/HpLogo.svg'
+      }
+    },
+    datePublished: '2024-01-01T00:00:00.000Z',
+    dateModified: new Date().toISOString(),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://www.hirenest.ai'
+    }
+  };
+
   return (
     <>
       {/* Structured Data */}
@@ -53,6 +81,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
       <Box>

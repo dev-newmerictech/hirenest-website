@@ -53,6 +53,7 @@ const footerLinks = {
     links: [
       { label: 'About', href: '/about' },
       { label: 'Careers', href: '/careers' },
+      { label: 'AI Glossary', href: '/ai-glossary' },
     ],
   },
   legal: {

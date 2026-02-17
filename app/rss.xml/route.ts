@@ -73,7 +73,7 @@ export async function GET() {
     const interviewQuestionsIndexItem = {
         title: 'Interview Questions - All Jobs',
         link: `${baseUrl}/interview-questions`,
-        description: 'Prepare for your job interview with our comprehensive collection of interview questions and answers for 50+ job titles. Expert tips, behavioral questions, and technical interview prep.',
+        description: 'Prepare for your job interview with our comprehensive collection of interview questions and answers for 1700+ job titles. Expert tips, behavioral questions, and technical interview prep.',
         pubDate: currentDate,
         category: 'Interview Preparation',
     };
@@ -82,13 +82,40 @@ export async function GET() {
     const resumeKeywordsIndexItem = {
         title: 'Resume Keywords & Skills',
         link: `${baseUrl}/resume-keywords`,
-        description: 'Discover the best resume keywords and skills for your job. Optimize your resume for ATS and impress recruiters with our comprehensive guides covering 50+ job titles.',
+        description: 'Discover the best resume keywords and skills for your job. Optimize your resume for ATS and impress recruiters with our comprehensive guides covering 1700+ job titles.',
         pubDate: currentDate,
         category: 'Resume Writing',
     };
 
-    // Generate individual interview question items (top 20 most popular)
-    const interviewQuestionItems = jobTitles.slice(0, 20).map((job) => ({
+    // Job Descriptions items - Index page
+    const jobDescriptionsIndexItem = {
+        title: 'Job Description Templates',
+        link: `${baseUrl}/job-description`,
+        description: 'Download professionally crafted job description templates for 1700+ job titles. Attract top talent with clear, comprehensive job postings that set proper expectations.',
+        pubDate: currentDate,
+        category: 'HR Resources',
+    };
+
+    // Salary Guides items - Index page
+    const salaryGuidesIndexItem = {
+        title: 'Salary Guides & Compensation Data',
+        link: `${baseUrl}/salary`,
+        description: 'Access comprehensive salary guides and compensation data for 1700+ job titles. Make informed decisions with market-based salary benchmarks.',
+        pubDate: currentDate,
+        category: 'Compensation',
+    };
+
+    // Cover Letter Examples items - Index page
+    const coverLetterExamplesIndexItem = {
+        title: 'Cover Letter Examples & Templates',
+        link: `${baseUrl}/cover-letter`,
+        description: 'Browse professional cover letter examples and templates for 1700+ job titles. Create compelling cover letters that get you noticed by employers.',
+        pubDate: currentDate,
+        category: 'Resume Writing',
+    };
+
+    // Generate individual interview question items (all 1715 job titles)
+    const interviewQuestionItems = jobTitles.map((job) => ({
         title: `${job.title} Interview Questions & Answers`,
         link: `${baseUrl}/interview-questions/${job.slug}`,
         description: `Prepare for your ${job.title} interview with our comprehensive guide. Discover the most commonly asked questions, expert-approved answers, and proven strategies to ace your next job interview.`,
@@ -96,11 +123,38 @@ export async function GET() {
         category: 'Interview Preparation',
     }));
 
-    // Generate individual resume keyword items (top 20 most popular)
-    const resumeKeywordItems = jobTitles.slice(0, 20).map((job) => ({
+    // Generate individual resume keyword items (all 1715 job titles)
+    const resumeKeywordItems = jobTitles.map((job) => ({
         title: `${job.title} Resume Keywords & Skills`,
         link: `${baseUrl}/resume-keywords/${job.slug}`,
         description: `Discover the top ${job.title} resume keywords and skills that get past ATS scanners. Our comprehensive list includes hard skills, soft skills, and action verbs to make your resume stand out.`,
+        pubDate: currentDate,
+        category: 'Resume Writing',
+    }));
+
+    // Generate job description items (all 1715 job titles)
+    const jobDescriptionItems = jobTitles.map((job) => ({
+        title: `${job.title} Job Description Template`,
+        link: `${baseUrl}/job-description/${job.slug}`,
+        description: `Download our comprehensive ${job.title} job description template. Includes responsibilities, requirements, skills needed, and tips for attracting the best candidates.`,
+        pubDate: currentDate,
+        category: 'HR Resources',
+    }));
+
+    // Generate salary guide items (all 1715 job titles)
+    const salaryGuideItems = jobTitles.map((job) => ({
+        title: `${job.title} Salary Guide`,
+        link: `${baseUrl}/salary/${job.slug}`,
+        description: `Explore ${job.title} salary data, compensation trends, and factors affecting pay. Make informed decisions with our comprehensive salary benchmarking guide.`,
+        pubDate: currentDate,
+        category: 'Compensation',
+    }));
+
+    // Generate cover letter example items (all 1715 job titles)
+    const coverLetterItems = jobTitles.map((job) => ({
+        title: `${job.title} Cover Letter Example`,
+        link: `${baseUrl}/cover-letter/${job.slug}`,
+        description: `Review our professional ${job.title} cover letter example. Learn how to craft a compelling cover letter that showcases your skills and gets you noticed.`,
         pubDate: currentDate,
         category: 'Resume Writing',
     }));
@@ -110,8 +164,14 @@ export async function GET() {
         ...featureItems,
         interviewQuestionsIndexItem,
         resumeKeywordsIndexItem,
+        jobDescriptionsIndexItem,
+        salaryGuidesIndexItem,
+        coverLetterExamplesIndexItem,
         ...interviewQuestionItems,
         ...resumeKeywordItems,
+        ...jobDescriptionItems,
+        ...salaryGuideItems,
+        ...coverLetterItems,
     ];
 
     const rssItems = allItems

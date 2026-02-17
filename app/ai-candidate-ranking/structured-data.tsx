@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function AICandidateRankingStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'AI Candidate Ranking Demo',
-        'Learn how our AI Candidate Ranking system helps you identify top talent instantly and remove bias from your hiring process.',
-        'https://hirenest.ai/ai_candidate_ranking_hero.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT3M15S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'AI Candidate Ranking - Smart Hiring Decisions',
@@ -50,7 +36,6 @@ export function AICandidateRankingStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

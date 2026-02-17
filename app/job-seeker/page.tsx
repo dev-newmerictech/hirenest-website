@@ -12,8 +12,7 @@ import {
     generateWebPageSchema,
     generateSoftwareApplicationSchema,
     generateFAQSchema,
-    generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateImageObjectSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
@@ -37,19 +36,6 @@ export default function JobSeekerPage() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Hirenest for Job Seekers - Platform Demo',
-        'Learn how Hirenest helps job seekers find their dream job with AI-powered matching, resume building, and career insights.',
-        'https://hirenest.ai/job-seeker-og.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT4M15S', // 4 minutes 15 seconds
-            width: 1920,
-            height: 1080
-        }
-    );
-
     const webPageSchema = generateWebPageSchema(
         'For Job Seekers - Find Your Dream Job',
         'AI-powered job matching platform for job seekers. Create your profile, upload your resume, and get matched with opportunities.',
@@ -60,7 +46,6 @@ export default function JobSeekerPage() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

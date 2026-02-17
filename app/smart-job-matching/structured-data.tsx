@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function SmartJobMatchingStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Smart Job Matching Demo',
-        'See how Hirenest AI analyzes your profile to deliver perfect job opportunities directly to you. Stop scrolling endlessly and let our smart matching find your dream job.',
-        'https://hirenest.ai/smart_job_matching_hero.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT4M30S', // 4 minutes 30 seconds
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'Smart Job Matching - Find Perfect Opportunities',
@@ -50,7 +36,6 @@ export function SmartJobMatchingStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

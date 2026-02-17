@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function SkillAssessmentsStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Skill Assessments Demo',
-        'Learn how to take skill assessments, earn badges, and showcase your expertise to potential employers.',
-        'https://hirenest.ai/skill_assessments_hero.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT3M30S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'Skill Assessments - Validate Your Expertise',
@@ -50,7 +36,6 @@ export function SkillAssessmentsStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

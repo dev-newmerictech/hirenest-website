@@ -18,7 +18,7 @@ import { AICareerPartner } from './components/AICareerPartner';
 import { AIAssistantDemo } from './components/AIAssistantDemo';
 import { Testimonials } from './components/Testimonials';
 import { AIInterviewDemo } from './components/AIInterviewDemo';
-import { generateFAQSchema, generateWebPageSchema } from './lib/structured-data';
+import { generateFAQSchema, generateWebPageSchema, generateImageObjectSchema } from './lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
 // Force static generation for optimal performance
@@ -30,6 +30,20 @@ export default function Home() {
   // Generate FAQ Schema for SEO
   const faqSchema = generateFAQSchema(faqs);
 
+  // Generate Image Schema
+  const imageSchema = generateImageObjectSchema(
+    'https://hirenest.ai/og-image.png',
+    {
+      name: 'Hirenest - Connect Job Seekers with Employers',
+      description: 'AI-powered platform connecting job seekers with employers. Find your dream job or hire exceptional talent with smart matching technology.',
+      width: 1200,
+      height: 630,
+      encodingFormat: 'image/png',
+      uploadDate: '2024-01-01T00:00:00.000Z',
+      author: 'Hirenest Team'
+    }
+  );
+
   // Generate WebPage Schema
   const webPageSchema = generateWebPageSchema(
     pageMetadata.home.title as string,
@@ -37,7 +51,7 @@ export default function Home() {
     'https://hirenest.ai',
     [{ name: 'Home', url: 'https://hirenest.ai' }],
     {
-      image: 'https://hirenest.ai/og-image.png',
+      image: imageSchema,
       datePublished: '2024-01-01T00:00:00.000Z',
       dateModified: new Date().toISOString()
     }
@@ -77,6 +91,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
       />
       <script
         type="application/ld+json"

@@ -1,7 +1,16 @@
-# =============================================================================
+import { NextResponse } from 'next/server';
+
+// Force Node.js runtime to avoid edge runtime module loading issues
+export const runtime = 'nodejs';
+export const dynamic = 'force-static';
+
+export async function GET() {
+    const baseUrl = 'https://hirenest.ai';
+
+    const robotsTxt = `# =============================================================================
 # Robots.txt for HireNest
 # AI-Powered Recruitment Platform
-# Updated: February 2026
+# Updated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
 # =============================================================================
 
 # -----------------------------------------------------------------------------
@@ -24,10 +33,24 @@ Allow: /favicon.svg
 Crawl-delay: 1
 
 # -----------------------------------------------------------------------------
-# SITEMAP
+# SITEMAPS
 # -----------------------------------------------------------------------------
-Sitemap: https://hirenest.ai/sitemap.xml
+Sitemap: ${baseUrl}/sitemap.xml
+Sitemap: ${baseUrl}/interview-questions-sitemap.xml
+Sitemap: ${baseUrl}/resume-keywords-sitemap.xml
+Sitemap: ${baseUrl}/job-description-sitemap.xml
+Sitemap: ${baseUrl}/salary-sitemap.xml
+Sitemap: ${baseUrl}/cover-letter-sitemap.xml
 
 # =============================================================================
 # END
 # =============================================================================
+`;
+
+    return new NextResponse(robotsTxt, {
+        headers: {
+            'Content-Type': 'text/plain',
+            'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+        },
+    });
+}

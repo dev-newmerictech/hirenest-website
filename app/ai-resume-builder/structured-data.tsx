@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function AIResumeBuilderStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'AI Resume Builder Tutorial',
-        'Learn how to create a professional, ATS-optimized resume using Hirenest AI Resume Builder. Get personalized suggestions and stand out to employers.',
-        'https://hirenest.ai/resume-builder-hero.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT5M00S', // 5 minutes
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'AI Resume Builder - Create Professional Resumes',
@@ -50,7 +36,6 @@ export function AIResumeBuilderStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

@@ -11,13 +11,13 @@ export async function GET() {
     const urls = [
         {
             url: `${baseUrl}/interview-questions`,
-            lastModified: currentDate,
+            lastModified: '2026-02-17',
             changeFrequency: 'weekly',
             priority: 1,
         },
         ...jobTitles.map((job) => ({
             url: `${baseUrl}/interview-questions/${job.slug}`,
-            lastModified: currentDate,
+            lastModified: '2026-02-17',
             changeFrequency: 'monthly',
             priority: 0.8,
         })),
@@ -26,15 +26,15 @@ export async function GET() {
     const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
-    .map(
-        (url) => `  <url>
+            .map(
+                (url) => `  <url>
     <loc>${url.url}</loc>
-    <lastmod>${url.lastModified.toISOString()}</lastmod>
+    <lastmod>${url.lastModified}</lastmod>
     <changefreq>${url.changeFrequency}</changefreq>
     <priority>${url.priority}</priority>
   </url>`
-    )
-    .join('\n')}
+            )
+            .join('\n')}
 </urlset>`;
 
     return new NextResponse(xmlContent, {

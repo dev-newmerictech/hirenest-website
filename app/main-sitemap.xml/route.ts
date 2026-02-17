@@ -47,7 +47,7 @@ ${routes
             .map(
                 (route) => `  <url>
     <loc>${baseUrl}${route.url}</loc>
-    <lastmod>${route.lastModified.toISOString()}</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>${route.changeFrequency}</changefreq>
     <priority>${route.priority}</priority>
   </url>`

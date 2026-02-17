@@ -231,15 +231,15 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
                 <SeoCardGrid>
                     <SeoCard
                         title="Technical Expertise"
-                        description={`Demonstrate your proficiency in ${job.title}-specific tools, technologies, and methodologies. Share examples of projects where you applied these skills.`}
+                        description={`Demonstrate your proficiency in ${job.title} specific tools, technologies, and methodologies. Share examples of projects where you applied these skills.`}
                     />
                     <SeoCard
                         title="Problem-Solving"
-                        description="Employers value ${job.title} professionals who can analyze complex problems and develop effective solutions. Prepare examples that showcase your analytical thinking."
+                        description={`Employers value ${job.title} professionals who can analyze complex problems and develop effective solutions. Prepare examples that showcase your analytical thinking.`}
                     />
                     <SeoCard
                         title="Communication"
-                        description="Clearly explain your thought process and technical concepts to both technical and non-technical audiences. Strong communication is essential for ${job.title} roles."
+                        description={`Clearly explain your thought process and technical concepts to both technical and non-technical audiences. Strong communication is essential for ${job.title} roles.`}
                     />
                     <SeoCard
                         title="Adaptability"
@@ -247,7 +247,7 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
                     />
                     <SeoCard
                         title="Team Collaboration"
-                        description="Most ${job.title} positions require teamwork. Share examples of successful collaboration, conflict resolution, and how you contribute to team goals."
+                        description={`Most ${job.title} positions require teamwork. Share examples of successful collaboration, conflict resolution, and how you contribute to team goals.`}
                     />
                     <SeoCard
                         title="Attention to Detail"

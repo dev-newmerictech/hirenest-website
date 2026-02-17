@@ -1,11 +1,11 @@
 # =============================================================================
 # Robots.txt for HireNest
 # AI-Powered Recruitment Platform
-# Last Updated: February 2026
+# Updated: February 2026
 # =============================================================================
 
 # -----------------------------------------------------------------------------
-# UNIVERSAL RULES
+# GLOBAL RULES (All Crawlers)
 # -----------------------------------------------------------------------------
 User-agent: *
 Disallow: /api/
@@ -14,194 +14,19 @@ Disallow: /private/
 Disallow: /tmp/
 Disallow: /cdn-cgi/
 
-# Do NOT block Next.js assets (important for favicon & rendering)
+# Allow important assets (Next.js safe)
 Allow: /_next/static/
 Allow: /_next/image/
-
-# Allow essential assets
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.png$
-Allow: /*.gif$
-Allow: /*.svg$
-Allow: /*.webp$
-Allow: /*.ico$
-Allow: /*.woff$
-Allow: /*.woff2$
-
-# Explicit favicon access (critical for Google)
 Allow: /favicon.ico
 Allow: /favicon.svg
 
+# Optional crawl delay (ignored by Google but respected by some bots)
 Crawl-delay: 1
 
 # -----------------------------------------------------------------------------
-# GOOGLE
-# -----------------------------------------------------------------------------
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Googlebot-Mobile
-Allow: /
-
-# -----------------------------------------------------------------------------
-# OTHER SEARCH ENGINES
-# -----------------------------------------------------------------------------
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 2
-
-User-agent: Brave-Search-Bot
-Allow: /
-
-# -----------------------------------------------------------------------------
-# AI / LLM BOTS
-# -----------------------------------------------------------------------------
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: YouBot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-# -----------------------------------------------------------------------------
-# SEO TOOLS
-# -----------------------------------------------------------------------------
-User-agent: AhrefsBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: SemrushBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: MJ12bot
-Allow: /
-Crawl-delay: 2
-
-User-agent: rogerbot
-Allow: /
-
-# -----------------------------------------------------------------------------
-# SOCIAL MEDIA PREVIEW BOTS
-# -----------------------------------------------------------------------------
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: Pinterestbot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-User-agent: Slackbot
-Allow: /
-
-User-agent: Discordbot
-Allow: /
-
-# -----------------------------------------------------------------------------
-# BAD BOTS (BLOCK)
-# -----------------------------------------------------------------------------
-User-agent: HTTrack
-Disallow: /
-
-User-agent: WebCopier
-Disallow: /
-
-User-agent: Offline Explorer
-Disallow: /
-
-User-agent: EmailCollector
-Disallow: /
-
-User-agent: EmailSiphon
-Disallow: /
-
-User-agent: EmailWolf
-Disallow: /
-
-User-agent: ExtractorPro
-Disallow: /
-
-User-agent: CherryPicker
-Disallow: /
-
-User-agent: ChinaClaw
-Disallow: /
-
-User-agent: Grabber
-Disallow: /
-
-User-agent: Teleport
-Disallow: /
-
-User-agent: Wget
-Disallow: /
-
-
-
-
-# -----------------------------------------------------------------------------
-# SITEMAPS & FEEDS
+# SITEMAP
 # -----------------------------------------------------------------------------
 Sitemap: https://hirenest.ai/sitemap.xml
-
-# RSS Feed is discoverable via <link> tag in HTML
-# llms.xml is available at https://hirenest.ai/llms.txt
 
 # =============================================================================
 # END

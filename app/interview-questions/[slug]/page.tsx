@@ -12,7 +12,7 @@ import { getQuestionsForJob, getQuestionsByCategory } from '../../lib/programmat
 import { generatePageMetadata } from '../../lib/metadata'
 
 // Force static generation for optimal performance
-export const dynamic = 'force-static'
+export const dynamic = 'force-static';
 
 // Generate static params for all job titles
 export async function generateStaticParams() {

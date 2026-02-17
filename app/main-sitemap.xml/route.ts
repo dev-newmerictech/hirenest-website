@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next';
 
+// Force Node.js runtime to avoid edge runtime module loading issues
+export const runtime = 'nodejs';
+
 export async function GET() {
     const baseUrl = 'https://hirenest.ai';
     const currentDate = new Date();
@@ -29,6 +32,9 @@ export async function GET() {
         // Programmatic SEO Index Pages
         { url: '/interview-questions', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
         { url: '/resume-keywords', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
+        { url: '/job-description', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
+        { url: '/salary', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
+        { url: '/cover-letter', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
         // Company
         { url: '/about', lastModified: currentDate, changeFrequency: 'monthly', priority: 0.6 },
         { url: '/careers', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.6 },

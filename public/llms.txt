@@ -36,6 +36,30 @@ https://hirenest.ai
 - Cookie Policy: https://hirenest.ai/cookie-policy
 - Refund Policy: https://hirenest.ai/refund-policy
 
+### Programmatic SEO - Job Descriptions
+- Job Descriptions Index: https://hirenest.ai/job-description
+- Software Engineer Job Description: https://hirenest.ai/job-description/software-engineer
+- Data Scientist Job Description: https://hirenest.ai/job-description/data-scientist
+- Product Manager Job Description: https://hirenest.ai/job-description/product-manager
+- DevOps Engineer Job Description: https://hirenest.ai/job-description/devops-engineer
+- UX Designer Job Description: https://hirenest.ai/job-description/ux-designer
+- Digital Marketing Manager Job Description: https://hirenest.ai/job-description/digital-marketing-manager
+- Sales Representative Job Description: https://hirenest.ai/job-description/sales-representative
+- Registered Nurse Job Description: https://hirenest.ai/job-description/registered-nurse
+- Financial Analyst Job Description: https://hirenest.ai/job-description/financial-analyst
+
+### Programmatic SEO - Salary Guides
+- Salary Guides Index: https://hirenest.ai/salary
+- Software Engineer Salary: https://hirenest.ai/salary/software-engineer
+- Data Scientist Salary: https://hirenest.ai/salary/data-scientist
+- Product Manager Salary: https://hirenest.ai/salary/product-manager
+- DevOps Engineer Salary: https://hirenest.ai/salary/devops-engineer
+- UX Designer Salary: https://hirenest.ai/salary/ux-designer
+- Digital Marketing Manager Salary: https://hirenest.ai/salary/digital-marketing-manager
+- Sales Representative Salary: https://hirenest.ai/salary/sales-representative
+- Registered Nurse Salary: https://hirenest.ai/salary/registered-nurse
+- Financial Analyst Salary: https://hirenest.ai/salary/financial-analyst
+
 ### Programmatic SEO - Interview Questions
 - Interview Questions Index: https://hirenest.ai/interview-questions
 - Software Engineer Interview Questions: https://hirenest.ai/interview-questions/software-engineer
@@ -3659,6 +3683,7 @@ https://hirenest.ai
 - Interview Questions Sitemap: https://hirenest.ai/interview-questions-sitemap.xml
 - Resume Keywords Sitemap: https://hirenest.ai/resume-keywords-sitemap.xml
 - Job Descriptions Sitemap: https://hirenest.ai/job-description-sitemap.xml
+- Salary Guides Sitemap: https://hirenest.ai/salary-sitemap.xml
 
 ### Programmatic SEO - Job Descriptions
 - Software Engineer Job Description: https://hirenest.ai/job-description/software-engineer
@@ -3694,6 +3719,50 @@ https://hirenest.ai
 - Hotel Manager Job Description: https://hirenest.ai/job-description/hotel-manager
 - Truck Driver Job Description: https://hirenest.ai/job-description/truck-driver
 
+### Programmatic SEO - Cover Letter Examples
+- Cover Letter Examples Index: https://hirenest.ai/cover-letter
+- Software Engineer Cover Letter: https://hirenest.ai/cover-letter/software-engineer
+- Data Scientist Cover Letter: https://hirenest.ai/cover-letter/data-scientist
+- Product Manager Cover Letter: https://hirenest.ai/cover-letter/product-manager
+- DevOps Engineer Cover Letter: https://hirenest.ai/cover-letter/devops-engineer
+- UX Designer Cover Letter: https://hirenest.ai/cover-letter/ux-designer
+- Digital Marketing Manager Cover Letter: https://hirenest.ai/cover-letter/digital-marketing-manager
+- Sales Representative Cover Letter: https://hirenest.ai/cover-letter/sales-representative
+- Account Manager Cover Letter: https://hirenest.ai/cover-letter/account-manager
+- Business Development Manager Cover Letter: https://hirenest.ai/cover-letter/business-development-manager
+- Registered Nurse Cover Letter: https://hirenest.ai/cover-letter/registered-nurse
+- Medical Assistant Cover Letter: https://hirenest.ai/cover-letter/medical-assistant
+- Financial Analyst Cover Letter: https://hirenest.ai/cover-letter/financial-analyst
+- Accountant Cover Letter: https://hirenest.ai/cover-letter/accountant
+- HR Manager Cover Letter: https://hirenest.ai/cover-letter/hr-manager
+- Recruiter Cover Letter: https://hirenest.ai/cover-letter/recruiter
+- Administrative Assistant Cover Letter: https://hirenest.ai/cover-letter/administrative-assistant
+- Customer Service Representative Cover Letter: https://hirenest.ai/cover-letter/customer-service-representative
+- Executive Assistant Cover Letter: https://hirenest.ai/cover-letter/executive-assistant
+- Graphic Designer Cover Letter: https://hirenest.ai/cover-letter/graphic-designer
+- Marketing Manager Cover Letter: https://hirenest.ai/cover-letter/marketing-manager
+- Content Marketing Manager Cover Letter: https://hirenest.ai/cover-letter/content-marketing-manager
+- Sales Representative Cover Letter: https://hirenest.ai/cover-letter/sales-representative
+- Account Manager Cover Letter: https://hirenest.ai/cover-letter/account-manager
+- Business Development Manager Cover Letter: https://hirenest.ai/cover-letter/business-development-manager
+- Registered Nurse Cover Letter: https://hirenest.ai/cover-letter/registered-nurse
+- Medical Assistant Cover Letter: https://hirenest.ai/cover-letter/medical-assistant
+- Financial Analyst Cover Letter: https://hirenest.ai/cover-letter/financial-analyst
+- Accountant Cover Letter: https://hirenest.ai/cover-letter/accountant
+- HR Manager Cover Letter: https://hirenest.ai/cover-letter/hr-manager
+- Recruiter Cover Letter: https://hirenest.ai/cover-letter/recruiter
+- Administrative Assistant Cover Letter: https://hirenest.ai/cover-letter/administrative-assistant
+- Customer Service Representative Cover Letter: https://hirenest.ai/cover-letter/customer-service-representative
+- Graphic Designer Cover Letter: https://hirenest.ai/cover-letter/graphic-designer
+- Mechanical Engineer Cover Letter: https://hirenest.ai/cover-letter/mechanical-engineer
+- Paralegal Cover Letter: https://hirenest.ai/cover-letter/paralegal
+- Teacher Cover Letter: https://hirenest.ai/cover-letter/teacher
+- Real Estate Agent Cover Letter: https://hirenest.ai/cover-letter/real-estate-agent
+- Electrician Cover Letter: https://hirenest.ai/cover-letter/electrician
+- Plumber Cover Letter: https://hirenest.ai/cover-letter/plumber
+- Hotel Manager Cover Letter: https://hirenest.ai/cover-letter/hotel-manager
+- Truck Driver Cover Letter: https://hirenest.ai/cover-letter/truck-driver
+
 ## Description
 
 HireNest is an AI-driven recruitment platform that bridges the gap between talent and opportunity. Key features include:
@@ -3707,6 +3776,8 @@ HireNest is an AI-driven recruitment platform that bridges the gap between talen
 - Interview preparation resources for 1715 job titles
 - Resume keyword optimization for ATS systems with 16000+ keywords
 - Comprehensive job descriptions for 1715 job titles
+- Salary guides and compensation data for 1715 job titles
+- Professional cover letter examples and templates for 1715 job titles
 
 ## Target Audience
 

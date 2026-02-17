@@ -1,37 +1,26 @@
-import { jobTitles } from '../lib/programmatic-seo/job-titles';
+import { MetadataRoute } from 'next'
+import { jobTitles } from '../lib/programmatic-seo/job-titles'
 
-export async function GET() {
-    const baseUrl = 'https://hirenest.ai';
-    const currentDate = new Date();
+// Force Node.js runtime to avoid edge runtime module loading issues with large imports
+export const runtime = 'nodejs'
 
-    const routes = [
-        // Index page
-        { url: '/interview-questions', lastModified: currentDate },
-        // All job-specific pages
-        ...jobTitles.map((job) => ({
-            url: `/interview-questions/${job.slug}`,
-            lastModified: currentDate,
-        })),
-    ];
+export default function sitemap(): MetadataRoute.Sitemap {
+    const baseUrl = 'https://www.hirenest.ai'
 
-    const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes
-            .map(
-                (route) => `  <url>
-    <loc>${baseUrl}${route.url}</loc>
-    <lastmod>${route.lastModified.toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>`
-            )
-            .join('\n')}
-</urlset>`;
+    const jobUrls = jobTitles.map((job) => ({
+        url: `${baseUrl}/interview-questions/${job.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+    }))
 
-    return new Response(xmlContent, {
-        headers: {
-            'Content-Type': 'application/xml',
-            'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+    return [
+        {
+            url: `${baseUrl}/interview-questions`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 1,
         },
-    });
+        ...jobUrls,
+    ]
 }

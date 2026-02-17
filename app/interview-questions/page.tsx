@@ -8,8 +8,8 @@ import { jobTitles, getJobsByCategory } from '../lib/programmatic-seo/job-titles
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
 
-// Force static generation
-export const dynamic = 'force-static'
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
     title: 'Interview Questions & Answers for All Jobs (2026)',

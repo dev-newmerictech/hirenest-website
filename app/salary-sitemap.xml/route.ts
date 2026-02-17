@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.hirenest.ai'
 
     const jobUrls = jobTitles.map((job) => ({
-        url: `${baseUrl}/resume-keywords/${job.slug}`,
+        url: `${baseUrl}/salary/${job.slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: 0.8,
@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return [
         {
-            url: `${baseUrl}/resume-keywords`,
+            url: `${baseUrl}/salary`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 1,

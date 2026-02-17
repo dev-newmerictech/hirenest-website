@@ -13,7 +13,7 @@ import { generatePageMetadata } from '../../lib/metadata'
 import { Check, BookOpen, Wrench, Award } from 'lucide-react'
 
 // Force static generation for optimal performance
-export const dynamic = 'force-static'
+export const dynamic = 'force-static';
 
 // Generate static params for all job titles
 export async function generateStaticParams() {

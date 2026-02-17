@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 
+// Force Node.js runtime to avoid edge runtime module loading issues
+export const runtime = 'nodejs';
+
 export async function GET() {
   const baseUrl = 'https://hirenest.ai';
   const currentDate = new Date().toISOString();

@@ -9,7 +9,7 @@ import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
 import { generatePageMetadata } from '../../lib/metadata'
 
 // Force static generation for optimal performance
-export const dynamic = 'force-static'
+export const dynamic = 'force-static';
 
 // Generate static params for all job titles
 export async function generateStaticParams() {
@@ -206,18 +206,13 @@ export default async function JobDescriptionPage({ params }: PageProps) {
                         hours: 'Full-time'
                     }}
                 />
-
-                {/* Content Section */}
-                <Box bg="gray.50">
-                    <JobDescriptionContent
-                        jobTitle={job.title}
-                        category={job.category}
-                        averageSalary={job.averageSalary}
-                        growthRate={job.growthRate}
-                        aliases={job.aliases}
-                    />
-                </Box>
-
+                <JobDescriptionContent
+                    jobTitle={job.title}
+                    category={job.category}
+                    averageSalary={job.averageSalary}
+                    growthRate={job.growthRate}
+                    aliases={job.aliases}
+                />
                 {/* Final CTA */}
                 <CTA />
                 <FAQ />

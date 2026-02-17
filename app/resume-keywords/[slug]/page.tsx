@@ -13,7 +13,7 @@ import { generatePageMetadata } from '../../lib/metadata'
 import { Check, BookOpen, Wrench, Award } from 'lucide-react'
 
 // Force static generation for optimal performance
-export const dynamic = 'force-static'
+export const dynamic = 'force-static';
 
 // Generate static params for all job titles
 export async function generateStaticParams() {
@@ -37,8 +37,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const title = `$${job.title} Resume Keywords & Skills (2026)`
-    const description = `Discover the top $${job.title} resume keywords and skills that get past ATS scanners. Our comprehensive list includes hard skills, soft skills, and action verbs to make your $${job.title} resume stand out.`
+    const title = `${job.title} Resume Keywords & Skills`
+    const description = `Discover top ${job.title} resume keywords and skills that get past ATS scanners. Includes hard skills, soft skills, and action verbs for resumes.`
 
     return generatePageMetadata({
         title,

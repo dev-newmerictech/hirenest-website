@@ -1,34 +1,43 @@
+import { NextResponse } from 'next/server';
 import { jobTitles } from '../lib/programmatic-seo/job-titles';
 
+// Force Node.js runtime to avoid edge runtime module loading issues with large imports
+export const runtime = 'nodejs';
+
 export async function GET() {
-    const baseUrl = 'https://hirenest.ai';
+    const baseUrl = 'https://www.hirenest.ai';
     const currentDate = new Date();
 
-    const routes = [
-        // Index page
-        { url: '/resume-keywords', lastModified: currentDate },
-        // All job-specific pages
-        ...jobTitles.map((job) => ({
-            url: `/resume-keywords/${job.slug}`,
+    const urls = [
+        {
+            url: `${baseUrl}/resume-keywords`,
             lastModified: currentDate,
+            changeFrequency: 'weekly',
+            priority: 1,
+        },
+        ...jobTitles.map((job) => ({
+            url: `${baseUrl}/resume-keywords/${job.slug}`,
+            lastModified: currentDate,
+            changeFrequency: 'monthly',
+            priority: 0.8,
         })),
     ];
 
     const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes
-            .map(
-                (route) => `  <url>
-    <loc>${baseUrl}${route.url}</loc>
-    <lastmod>${route.lastModified.toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+${urls
+    .map(
+        (url) => `  <url>
+    <loc>${url.url}</loc>
+    <lastmod>${url.lastModified.toISOString()}</lastmod>
+    <changefreq>${url.changeFrequency}</changefreq>
+    <priority>${url.priority}</priority>
   </url>`
-            )
-            .join('\n')}
+    )
+    .join('\n')}
 </urlset>`;
 
-    return new Response(xmlContent, {
+    return new NextResponse(xmlContent, {
         headers: {
             'Content-Type': 'application/xml',
             'Cache-Control': 'public, max-age=3600, s-maxage=3600',

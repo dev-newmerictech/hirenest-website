@@ -59,6 +59,9 @@ const footerLinks = {
       { label: 'Careers', href: '/careers' },
       { label: 'Interview Questions', href: '/interview-questions' },
       { label: 'Resume Keywords', href: '/resume-keywords' },
+      { label: 'Job Descriptions', href: '/job-description' },
+      { label: 'Salary', href: '/salary' },
+      { label: 'Cover Letter', href: '/cover-letter' },
     ],
   },
   legal: {

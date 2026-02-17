@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next';
 
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://hirenest.ai';
 
@@ -15,6 +18,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${baseUrl}/resume-keywords-sitemap.xml`,
+            lastModified: new Date(),
+        },
+        {
+            url: `${baseUrl}/salary-sitemap.xml`,
+            lastModified: new Date(),
+        },
+        {
+            url: `${baseUrl}/cover-letter-sitemap.xml`,
+            lastModified: new Date(),
+        },
+        {
+            url: `${baseUrl}/job-description-sitemap.xml`,
             lastModified: new Date(),
         },
     ];

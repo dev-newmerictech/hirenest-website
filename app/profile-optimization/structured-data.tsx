@@ -63,6 +63,12 @@ export function ProfileOptimizationStructuredData() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
             />
 
+            {/* Structured Data - ImageObject */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"

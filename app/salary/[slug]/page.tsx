@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Box } from '@chakra-ui/react'
-import { JobDescriptionHero } from '../../components/programmatic-seo/JobDescriptionHero'
-import { JobDescriptionContent } from '../../components/programmatic-seo/JobDescriptionContent'
+import { SalaryHero } from '../../components/programmatic-seo/SalaryHero'
+import { SalaryContent } from '../../components/programmatic-seo/SalaryContent'
 import { ProgrammaticSeoStructuredData } from '../../components/programmatic-seo/StructuredData'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
@@ -34,32 +34,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const title = `${job.title} Job Description`
-    const description = `Explore ${job.title} job description with key responsibilities, requirements, salary, and career path. Learn what it takes to succeed.`
+    const title = `${job.title} Salary Guide & Pay Scale`
+    const description = `Check ${job.title} salary guide with average pay by experience, location, and industry. Get negotiation tips, job outlook, and career insights.`
 
     return generatePageMetadata({
         title,
         description,
-        path: `/job-description/${slug}`,
+        path: `/salary/${slug}`,
         keywords: [
-            `${job.title} job description`,
-            `${job.title} responsibilities`,
-            `${job.title} requirements`,
             `${job.title} salary`,
-            `${job.title} duties`,
-            `how to become a ${job.title}`,
-            `${job.title} career path`,
-            `what does a ${job.title} do`,
+            `${job.title} average salary`,
+            `${job.title} pay scale`,
+            `${job.title} compensation`,
+            `${job.title} salary by experience`,
+            `${job.title} salary by location`,
+            `how much does a ${job.title} make`,
+            `${job.title} salary negotiation`,
+            `${job.title} job outlook`,
             ...job.aliases.flatMap(alias => [
-                `${alias} job description`,
-                `${alias} responsibilities`,
-                `${alias} requirements`
+                `${alias} salary`,
+                `${alias} average salary`,
+                `${alias} pay`
             ])
         ]
     })
 }
 
-export default async function JobDescriptionPage({ params }: PageProps) {
+export default async function SalaryPage({ params }: PageProps) {
     const { slug } = await params
     const job = getJobBySlug(slug)
 
@@ -67,43 +68,44 @@ export default async function JobDescriptionPage({ params }: PageProps) {
         notFound()
     }
 
-    const formatSalary = (salary?: number) => {
-        if (!salary) return 'Varies'
-        return `$${(salary / 1000).toFixed(0)}k - $${((salary * 1.5) / 1000).toFixed(0)}k`
-    }
+    const salaryMin = job.averageSalary ? Math.round(job.averageSalary * 0.7) : undefined
+    const salaryMax = job.averageSalary ? Math.round(job.averageSalary * 1.5) : undefined
 
     return (
         <Box>
             {/* Structured Data - SEO */}
             <ProgrammaticSeoStructuredData
                 jobTitle={job.title}
-                pageType="job-description"
+                pageType="salary"
                 slug={slug}
-                description={`Explore comprehensive ${job.title} job description including key responsibilities, requirements, salary expectations, work environment, and career path.`}
+                description={`Comprehensive ${job.title} salary guide with average pay, experience-based salary ranges, location comparisons, and negotiation tips.`}
                 averageSalary={job.averageSalary}
                 growthRate={job.growthRate}
             />
 
             {/* Hero Section */}
-            <JobDescriptionHero
-                badge={`${job.title} Job Description`}
+            <SalaryHero
+                badge={`${job.title} Salary Guide`}
                 title={job.title}
-                titleHighlight="Job Overview"
-                description={`Discover everything you need to know about becoming a ${job.title}. Learn about responsibilities, requirements, salary expectations, and career growth opportunities.`}
+                titleHighlight="Salary & Compensation"
+                description={`Explore comprehensive salary data for ${job.title} roles. Find out how much you can earn based on experience, location, and industry. Get expert negotiation tips.`}
                 stats={{
-                    salary: formatSalary(job.averageSalary),
+                    salaryRange: salaryMin && salaryMax ? { min: salaryMin, max: salaryMax } : undefined,
+                    averageSalary: job.averageSalary,
                     growthRate: job.growthRate,
-                    education: 'Varies',
-                    hours: 'Full-time'
+                    category: job.category
                 }}
             />
-            <JobDescriptionContent
+
+            {/* Content Section */}
+            <SalaryContent
                 jobTitle={job.title}
                 category={job.category}
                 averageSalary={job.averageSalary}
                 growthRate={job.growthRate}
                 aliases={job.aliases}
             />
+
             {/* Final CTA */}
             <CTA />
             <FAQ />

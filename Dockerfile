@@ -16,7 +16,9 @@ RUN npm ci || (sleep 10 && npm ci) || (sleep 20 && npm ci)
 COPY . .
 
 # Build the app if needed (for e.g., Next.js, TS, etc.)
+# Increase Node memory and disable telemetry for faster builds
 ENV NODE_OPTIONS="--max-old-space-size=8192"
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
 # ---------- Production stage ----------

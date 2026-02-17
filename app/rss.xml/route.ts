@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { jobTitles } from '../lib/programmatic-seo/job-titles';
 
+// Force Node.js runtime to avoid edge runtime module loading issues with large imports
+export const runtime = 'nodejs';
 export const dynamic = 'force-static';
 
 export async function GET() {

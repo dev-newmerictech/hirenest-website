@@ -10,13 +10,13 @@ export async function GET() {
 
     const urls = [
         {
-            url: `${baseUrl}/interview-questions`,
+            url: `${baseUrl}/salary`,
             lastModified: currentDate,
             changeFrequency: 'weekly',
             priority: 1,
         },
         ...jobTitles.map((job) => ({
-            url: `${baseUrl}/interview-questions/${job.slug}`,
+            url: `${baseUrl}/salary/${job.slug}`,
             lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,

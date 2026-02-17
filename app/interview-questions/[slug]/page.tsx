@@ -12,7 +12,7 @@ import { getQuestionsForJob, getQuestionsByCategory } from '../../lib/programmat
 import { generatePageMetadata } from '../../lib/metadata'
 
 // Force static generation for optimal performance
-export const dynamic = 'force-static'
+export const dynamic = 'force-static';
 
 // Generate static params for all job titles
 export async function generateStaticParams() {
@@ -36,8 +36,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const title = `${job.title} Interview Questions & Answers (2026)`
-    const description = `Prepare for your ${job.title} interview with our comprehensive guide. Explore commonly asked ${job.title} interview questions with expert answers, tips, and strategies to ace your next job interview.`
+    const title = `${job.title} Interview Questions`
+    const description = `Prepare for your ${job.title} interview with commonly asked questions and expert answers. Get proven strategies and tips to ace your interview.`
 
     return generatePageMetadata({
         title,
@@ -77,10 +77,10 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
         <Box>
             {/* Structured Data - SEO */}
             <ProgrammaticSeoStructuredData
-                jobTitle={job.title}
+                jobTitle={job.title?.slice(0, 55)}
                 pageType="interview-questions"
                 slug={slug}
-                description={`Prepare for your ${job.title} interview with our comprehensive guide. Explore commonly asked ${job.title} interview questions with expert answers, tips, and strategies to ace your next job interview.`}
+                description={`Prepare for your ${job.title} interview with our comprehensive guide. Explore commonly asked ${job.title} interview questions.`}
             />
 
             {/* Hero Section */}
@@ -231,15 +231,15 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
                 <SeoCardGrid>
                     <SeoCard
                         title="Technical Expertise"
-                        description={`Demonstrate your proficiency in ${job.title}-specific tools, technologies, and methodologies. Share examples of projects where you applied these skills.`}
+                        description={`Demonstrate your proficiency in ${job.title} specific tools, technologies, and methodologies. Share examples of projects where you applied these skills.`}
                     />
                     <SeoCard
                         title="Problem-Solving"
-                        description="Employers value ${job.title} professionals who can analyze complex problems and develop effective solutions. Prepare examples that showcase your analytical thinking."
+                        description={`Employers value ${job.title} professionals who can analyze complex problems and develop effective solutions. Prepare examples that showcase your analytical thinking.`}
                     />
                     <SeoCard
                         title="Communication"
-                        description="Clearly explain your thought process and technical concepts to both technical and non-technical audiences. Strong communication is essential for ${job.title} roles."
+                        description={`Clearly explain your thought process and technical concepts to both technical and non-technical audiences. Strong communication is essential for ${job.title} roles.`}
                     />
                     <SeoCard
                         title="Adaptability"
@@ -247,7 +247,7 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
                     />
                     <SeoCard
                         title="Team Collaboration"
-                        description="Most ${job.title} positions require teamwork. Share examples of successful collaboration, conflict resolution, and how you contribute to team goals."
+                        description={`Most ${job.title} positions require teamwork. Share examples of successful collaboration, conflict resolution, and how you contribute to team goals.`}
                     />
                     <SeoCard
                         title="Attention to Detail"

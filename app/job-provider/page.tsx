@@ -83,6 +83,12 @@ export default function JobProviderPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
             />
 
+            {/* Structured Data - ImageObject */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
+            />
+
             {/* Structured Data - FAQ */}
             <script
                 type="application/ld+json"

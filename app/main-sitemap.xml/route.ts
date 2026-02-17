@@ -29,12 +29,6 @@ export async function GET() {
         { url: '/hiring-analytics', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
         { url: '/team-collaboration', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
         { url: '/fast-track-applications', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
-        // Programmatic SEO Index Pages
-        { url: '/interview-questions', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
-        { url: '/resume-keywords', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
-        { url: '/job-description', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
-        { url: '/salary', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
-        { url: '/cover-letter', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
         // Company
         { url: '/about', lastModified: currentDate, changeFrequency: 'monthly', priority: 0.6 },
         { url: '/careers', lastModified: currentDate, changeFrequency: 'weekly', priority: 0.6 },

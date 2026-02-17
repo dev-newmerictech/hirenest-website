@@ -1,26 +1,46 @@
-import { MetadataRoute } from 'next'
-import { jobTitles } from '../lib/programmatic-seo/job-titles'
+import { NextResponse } from 'next/server';
+import { jobTitles } from '../lib/programmatic-seo/job-titles';
 
 // Force Node.js runtime to avoid edge runtime module loading issues with large imports
-export const runtime = 'nodejs'
+export const runtime = 'nodejs';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.hirenest.ai'
+export async function GET() {
+    const baseUrl = 'https://www.hirenest.ai';
+    const currentDate = new Date();
 
-    const jobUrls = jobTitles.map((job) => ({
-        url: `${baseUrl}/interview-questions/${job.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-    }))
-
-    return [
+    const urls = [
         {
             url: `${baseUrl}/interview-questions`,
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: 'weekly',
             priority: 1,
         },
-        ...jobUrls,
-    ]
+        ...jobTitles.map((job) => ({
+            url: `${baseUrl}/interview-questions/${job.slug}`,
+            lastModified: currentDate,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        })),
+    ];
+
+    const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+    .map(
+        (url) => `  <url>
+    <loc>${url.url}</loc>
+    <lastmod>${url.lastModified.toISOString()}</lastmod>
+    <changefreq>${url.changeFrequency}</changefreq>
+    <priority>${url.priority}</priority>
+  </url>`
+    )
+    .join('\n')}
+</urlset>`;
+
+    return new NextResponse(xmlContent, {
+        headers: {
+            'Content-Type': 'application/xml',
+            'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+        },
+    });
 }

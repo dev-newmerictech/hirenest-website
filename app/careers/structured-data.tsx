@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function CareersStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Life at Hirenest',
-        'Get a glimpse of our culture, values, and the people building the future of recruitment at Hirenest.',
-        'https://hirenest.ai/careers-hero.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT2M30S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'Careers at Hirenest - Join Our Team',
@@ -50,7 +36,6 @@ export function CareersStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

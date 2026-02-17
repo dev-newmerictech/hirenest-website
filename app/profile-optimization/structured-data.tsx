@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function ProfileOptimizationStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Profile Optimization Demo',
-        'Learn how our profile optimization services can help you attract more recruiters and land your dream job.',
-        'https://hirenest.ai/profile_optimization_hero.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT3M45S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'Profile Optimization - Boost Your Visibility',
@@ -50,7 +36,6 @@ export function ProfileOptimizationStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

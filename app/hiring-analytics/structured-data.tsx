@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function HiringAnalyticsStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Hiring Analytics Demo',
-        'Learn how to track hiring metrics, identify bottlenecks, and optimize your recruitment process with Hiring Analytics.',
-        'https://hirenest.ai/job-provider-og.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT3M00S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'Hiring Analytics - Data-Driven Recruitment',
@@ -50,7 +36,6 @@ export function HiringAnalyticsStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function AboutStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'About Hirenest',
-        'Discover the story behind Hirenest and our mission to transform the recruitment industry with AI.',
-        'https://hirenest.ai/about-hero.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT2M00S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'About Us - Hirenest',
@@ -50,7 +36,6 @@ export function AboutStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

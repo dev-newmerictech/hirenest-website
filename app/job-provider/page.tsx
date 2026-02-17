@@ -14,7 +14,6 @@ import { pageMetadata } from '../lib/metadata';
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -25,7 +24,6 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = pageMetadata.jobProvider;
 
 export default function JobProviderPage() {
-    // Generate FAQ Schema
     // Generate Image Schema for the OG image
     const imageSchema = generateImageObjectSchema(
         'https://hirenest.ai/job-provider-og.png',
@@ -40,22 +38,6 @@ export default function JobProviderPage() {
         }
     );
 
-    // Generate Video Schema (example - replace with actual video if you have one)
-    const videoSchema = generateVideoObjectSchema(
-        'Hirenest for Employers - Platform Demo',
-        'See how Hirenest helps employers find and hire top talent with AI-powered candidate matching, screening tools, and comprehensive analytics.',
-        'https://hirenest.ai/job-provider-og.png', // Using OG image as thumbnail
-        '2024-01-15T00:00:00.000Z',
-        {
-            // Add actual video URLs when available
-            // embedUrl: 'https://youtube.com/embed/your-video-id',
-            // contentUrl: 'https://hirenest.ai/videos/employer-demo.mp4',
-            duration: 'PT3M30S', // 3 minutes 30 seconds
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'For Employers - Hire Top Talent',
@@ -67,7 +49,6 @@ export default function JobProviderPage() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

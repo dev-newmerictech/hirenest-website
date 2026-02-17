@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function CustomAssessmentsStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Custom Assessments Demo',
-        'See how easily you can create custom technical and soft skill assessments to find the perfect candidate.',
-        'https://hirenest.ai/job-provider-og.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT3M30S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'Custom Assessments - Tailored Hiring Tests',
@@ -50,7 +36,6 @@ export function CustomAssessmentsStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

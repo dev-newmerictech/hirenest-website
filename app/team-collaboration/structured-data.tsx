@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function TeamCollaborationStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Team Collaboration Demo',
-        'Learn how to streamline your hiring process with shared pipelines, real-time chat, and collaborative decision-making tools.',
-        'https://hirenest.ai/job-provider-og.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT3M10S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'Team Collaboration - Hire Together, Decide Smarter',
@@ -50,7 +36,6 @@ export function TeamCollaborationStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

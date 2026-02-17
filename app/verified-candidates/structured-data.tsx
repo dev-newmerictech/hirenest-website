@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function VerifiedCandidatesStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Verified Candidates Demo',
-        'See how our comprehensive background checks and skill verification process ensure you only hire trusted talent.',
-        'https://hirenest.ai/job-provider-og.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT2M50S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'Verified Candidates - Pre-Screened Talent Pool',
@@ -50,7 +36,6 @@ export function VerifiedCandidatesStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

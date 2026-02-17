@@ -3,7 +3,6 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema,
     generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
@@ -26,19 +25,6 @@ export function QuickScreeningStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Quick Screening Demo',
-        'Learn how to cut your screening time by 70% with our automated candidate filtering and shortlisting tools.',
-        'https://hirenest.ai/quick_screening_hero.png',
-        '2024-01-15T00:00:00.000Z',
-        {
-            duration: 'PT2M45S',
-            width: 1920,
-            height: 1080
-        }
-    );
-
     // Generate WebPage Schema
     const webPageSchema = generateWebPageSchema(
         'Quick Screening - Accelerate Your Hiring',
@@ -50,7 +36,6 @@ export function QuickScreeningStructuredData() {
         ],
         {
             image: imageSchema,
-            video: videoSchema,
             author: 'Hirenest Team'
         }
     );

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Box, VStack, HStack, Text, Badge, SimpleGrid } from '@chakra-ui/react'
 import { SeoHero } from '../components/programmatic-seo/SeoHero'
 import { SeoContentSection } from '../components/programmatic-seo/SeoContentSection'
+import { IndexPageStructuredData } from '../components/programmatic-seo/StructuredData'
 import { getJobsByCategory, getJobBySlug } from '../lib/programmatic-seo/job-titles'
 import { generatePageMetadata } from '../lib/metadata'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
@@ -12,8 +13,8 @@ import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headl
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
-    title: 'Salary Guides - Explore Pay Scales for 1,715+ Jobs (2026)',
-    description: 'Browse comprehensive salary guides for thousands of job titles. Find average salaries by experience level, location, and industry. Get expert negotiation tips.',
+    title: 'Salary Guides for All Jobs & Industries',
+    description: 'Compare salary guides by experience, location. Get negotiation tips for your career.',
     path: '/salary',
     keywords: [
         'salary guides',
@@ -82,6 +83,9 @@ export default async function SalaryGuidesPage() {
 
     return (
         <Box>
+            {/* Structured Data - SEO */}
+            <IndexPageStructuredData pageType="salary" />
+
             {/* Hero Section */}
             <SeoHero
                 badge="Career Compensation"

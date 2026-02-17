@@ -3,6 +3,7 @@ import { Box, Heading, Text, SimpleGrid } from '@chakra-ui/react'
 import Link from 'next/link'
 import { SeoHero } from '../components/programmatic-seo/SeoHero'
 import { SeoContentSection } from '../components/programmatic-seo/SeoContentSection'
+import { IndexPageStructuredData } from '../components/programmatic-seo/StructuredData'
 import { generatePageMetadata } from '../lib/metadata'
 import { jobTitles, getJobsByCategory } from '../lib/programmatic-seo/job-titles'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
@@ -12,8 +13,8 @@ import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headl
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
-    title: 'Interview Questions & Answers for All Jobs (2026)',
-    description: 'Prepare for your job interview with our comprehensive collection of interview questions and answers. Expert tips, behavioral question.',
+    title: 'Interview Questions & Answers for All Jobs',
+    description: 'Ace your job interview with expert questions, answers, and tips. 50+ roles covered with proven strategies.',
     path: '/interview-questions',
     keywords: [
         'interview questions',
@@ -42,6 +43,9 @@ const categories = [
 export default function InterviewQuestionsIndexPage() {
     return (
         <Box>
+            {/* Structured Data - SEO */}
+            <IndexPageStructuredData pageType="interview-questions" />
+
             {/* Hero Section */}
             <SeoHero
                 badge="Interview Preparation"

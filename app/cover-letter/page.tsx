@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Box, VStack, HStack, Text, Badge, SimpleGrid } from '@chakra-ui/react'
 import { SeoHero } from '../components/programmatic-seo/SeoHero'
 import { SeoContentSection } from '../components/programmatic-seo/SeoContentSection'
+import { IndexPageStructuredData } from '../components/programmatic-seo/StructuredData'
 import { getJobsByCategory } from '../lib/programmatic-seo/job-titles'
 import { generatePageMetadata } from '../lib/metadata'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
@@ -12,8 +13,8 @@ import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headl
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
-    title: 'Cover Letter Examples - 1,715+ Professional Templates (2026)',
-    description: 'Browse cover letter examples and templates for 1,715+ job titles. Get proven cover letter samples, writing tips, and templates for every industry and experience level.',
+    title: 'Cover Letter Examples & Templates for All Jobs',
+    description: 'Browse 1,715+ cover letter examples and templates. Get proven samples, tips for every industry.',
     path: '/cover-letter',
     keywords: [
         'cover letter examples',
@@ -95,6 +96,9 @@ export default async function CoverLetterExamplesPage() {
 
     return (
         <Box>
+            {/* Structured Data - SEO */}
+            <IndexPageStructuredData pageType="cover-letter" />
+
             {/* Hero Section */}
             <SeoHero
                 badge="Job Application Success"

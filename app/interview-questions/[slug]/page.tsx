@@ -36,8 +36,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const title = `${job.title} Interview Questions & Answers (2026)`
-    const description = `Prepare for your ${job.title} interview with our comprehensive guide. Explore commonly asked ${job.title} interview questions with expert answers, tips, and strategies to ace your next job interview.`
+    const title = `${job.title} Interview Questions`
+    const description = `Prepare for your ${job.title} interview with commonly asked questions and expert answers. Get proven strategies and tips to ace your interview.`
 
     return generatePageMetadata({
         title,
@@ -77,10 +77,10 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
         <Box>
             {/* Structured Data - SEO */}
             <ProgrammaticSeoStructuredData
-                jobTitle={job.title}
+                jobTitle={job.title?.slice(0, 55)}
                 pageType="interview-questions"
                 slug={slug}
-                description={`Prepare for your ${job.title} interview with our comprehensive guide. Explore commonly asked ${job.title} interview questions with expert answers, tips, and strategies to ace your next job interview.`}
+                description={`Prepare for your ${job.title} interview with our comprehensive guide. Explore commonly asked ${job.title} interview questions.`}
             />
 
             {/* Hero Section */}

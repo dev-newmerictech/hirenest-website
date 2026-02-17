@@ -37,8 +37,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const title = `$${job.title} Resume Keywords & Skills (2026)`
-    const description = `Discover the top $${job.title} resume keywords and skills that get past ATS scanners. Our comprehensive list includes hard skills, soft skills, and action verbs to make your $${job.title} resume stand out.`
+    const title = `${job.title} Resume Keywords & Skills`
+    const description = `Discover top ${job.title} resume keywords and skills that get past ATS scanners. Includes hard skills, soft skills, and action verbs for resumes.`
 
     return generatePageMetadata({
         title,

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Box, VStack, HStack, Text, Badge, SimpleGrid } from '@chakra-ui/react'
 import { SeoHero } from '../components/programmatic-seo/SeoHero'
 import { SeoContentSection } from '../components/programmatic-seo/SeoContentSection'
+import { IndexPageStructuredData } from '../components/programmatic-seo/StructuredData'
 import { getJobsByCategory } from '../lib/programmatic-seo/job-titles'
 import { generatePageMetadata } from '../lib/metadata'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
@@ -12,8 +13,8 @@ import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headl
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
-    title: 'Job Descriptions - Explore Career Opportunities (2026)',
-    description: 'Browse comprehensive job descriptions for thousands of career paths. Find detailed information about responsibilities, requirements, salary expectations, and career growth for your dream job.',
+    title: 'Job Descriptions for All Career Paths',
+    description: 'Explore job descriptions with responsibilities, requirements, salary. Find your dream career path today.',
     path: '/job-description',
     keywords: [
         'job descriptions',
@@ -59,6 +60,9 @@ export default async function JobDescriptionsPage() {
 
     return (
         <Box>
+            {/* Structured Data - SEO */}
+            <IndexPageStructuredData pageType="job-description" />
+
             {/* Hero Section */}
             <SeoHero
                 badge="Career Explorer"

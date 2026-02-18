@@ -5,7 +5,7 @@ import { jobTitles } from '../lib/programmatic-seo/job-titles';
 export const runtime = 'nodejs';
 
 export async function GET() {
-    const baseUrl = 'https://www.hirenest.ai';
+    const baseUrl = 'https://hirenest.ai';
     const currentDate = new Date();
 
     const urls = [

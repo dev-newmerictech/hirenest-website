@@ -34,7 +34,7 @@ export const CoverLetterHero = ({
         {/* Background Pattern */}
         {/* Background Pattern - Simple gradient instead of complex SVG */}
 
-        <Container pt={{ base: '28', lg: '32' }} pb={{ base: '16', md: '20' }} maxW="7xl" position="relative">
+        <Container pt={{ base: '28', lg: '32' }} maxW="7xl" position="relative">
             <VStack alignItems="center" gap={6} textAlign="center">
                 <Box>
                     <Text

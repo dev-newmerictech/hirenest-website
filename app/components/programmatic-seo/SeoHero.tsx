@@ -34,7 +34,7 @@ export const SeoHero = ({
         bgGradient="linear(to-br, rgba(66, 65, 255, 0.05), rgba(248, 248, 248, 1))"
         overflow="hidden"
     >
-        <Container pt={{ base: '32', lg: '40' }} pb={{ base: '12', md: '16' }} maxW="7xl" position="relative">
+        <Container pt={{ base: '32', lg: '40' }} maxW="7xl" position="relative">
             <Grid
                 templateColumns={{ base: '1fr', lg: '1fr 1fr' }}
                 gap={{ base: 8, lg: 16 }}

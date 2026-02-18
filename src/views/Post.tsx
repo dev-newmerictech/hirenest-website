@@ -358,15 +358,6 @@ export default function Post({
                   )}
               </article>
             </main>
-
-            {/* Right sidebar - Table of Contents (always show if headings exist) */}
-            {hasLeftSidebar && (
-              <aside className="hirenest-sidebar-right">
-                <div className="hirenest-sidebar-sticky">
-                  <PageSidebar headings={headings} activeId={activeId} />
-                </div>
-              </aside>
-            )}
           </div>
 
           {/* Full footer with internal links - shown below content for pages */}

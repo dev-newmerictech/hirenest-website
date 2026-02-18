@@ -1924,10 +1924,11 @@ export const getSitemapPostsBatch = query({
     isDone: v.boolean(),
   }),
   handler: async (ctx, args) => {
-    // We use the default index (creation time) for maximum reliability
+    // We use the by_published_date index to match the counting logic and ensure efficiency
     const result = await ctx.db
       .query("posts")
-      .order("desc")
+      .withIndex("by_published_date", (q) => q.eq("published", true))
+      .order("desc") // Most recent first
       .paginate({ cursor: args.cursor, numItems: args.numItems });
 
     return {
@@ -1948,30 +1949,23 @@ export const getSitemapPostsCount = query({
   args: {},
   returns: v.number(),
   handler: async (ctx) => {
-    // Try to get count from cache
-    const existing = await ctx.db
-      .query("siteConfig")
-      .withIndex("by_key", (q: any) => q.eq("key", "postCount"))
-      .first();
-
-    if (existing) {
-      return existing.value as number;
-    }
-
-    // Fallback: count published non-unlisted posts in batches of 20
+    // Always count published non-unlisted posts dynamically to ensure accuracy
+    // We count in batches of 50 to ensure we don't hit memory limits with large datasets
     let count = 0;
-    let cursor: any = null;
+    let cursor: string | null = null;
     let isDone = false;
+
     while (!isDone) {
-      const batch = await ctx.db
+      const batch: { page: any[]; continueCursor: string; isDone: boolean } = await ctx.db
         .query("posts")
         .withIndex("by_published_date", (q: any) => q.eq("published", true))
-        .paginate({ cursor, numItems: 20 });
+        .paginate({ cursor, numItems: 50 });
+
       count += batch.page.filter((p: any) => !p.unlisted).length;
-      cursor = batch.continueCursor;
+      cursor = batch.continueCursor as string; // Explicit cast since paginate returns string
       isDone = batch.isDone;
     }
-    console.warn(`[Sitemap] Using fallback count (${count}) because cache is missing. Sync posts to update.`);
+
     return count;
   },
 });

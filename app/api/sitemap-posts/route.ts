@@ -4,7 +4,7 @@ import { api } from "@/convex/_generated/api";
 export const dynamic = "force-dynamic";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai";
-const POSTS_PER_PAGE = 20;
+const POSTS_PER_PAGE = 1000;
 
 function getClient(): ConvexHttpClient {
     const url = process.env.NEXT_PUBLIC_CONVEX_URL;

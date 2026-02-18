@@ -19,6 +19,13 @@ COPY . .
 # Increase Node memory and disable telemetry for faster builds
 ENV NODE_OPTIONS="--max-old-space-size=8192"
 ENV NEXT_TELEMETRY_DISABLED=1
+
+# Environment Variables
+ENV NEXT_PUBLIC_SITE_URL="https://hirenest.ai"
+ENV NEXT_PUBLIC_SITE_NAME="HireNest"
+ENV NEXT_PUBLIC_CONVEX_URL="https://clever-clownfish-86.convex.cloud"
+ENV NEXT_PUBLIC_CONVEX_SITE_URL="https://clever-clownfish-86.convex.site"
+ENV CONVEX_DEPLOYMENT="dev:clever-clownfish-86"
 RUN npm run build
 
 # ---------- Production stage ----------

@@ -100,41 +100,44 @@ export default async function SalaryGuidesPage() {
                     { value: '2026', label: 'Updated' }
                 ]}
             />
+            <Box mt={16}>
 
-            {/* Why Salary Research Matters */}
-            <SeoContentSection
-                badge="Know Your Worth"
-                title="Why Research Salary Before Applying?"
-                description="Understanding salary ranges helps you negotiate better compensation and make informed career decisions."
-                bgColor="white"
-            >
-                <SimpleGrid columns={{ base: 1, md: 3 }} gap={6}>
-                    <Box>
-                        <Badge bg="green.100" color="green.700" mb={3} fontSize="sm" fontWeight="600">
-                            Negotiate Better
-                        </Badge>
-                        <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
-                            Knowing market rates gives you leverage when negotiating job offers and raises.
-                        </Text>
-                    </Box>
-                    <Box>
-                        <Badge bg="blue.100" color="blue.700" mb={3} fontSize="sm" fontWeight="600">
-                            Career Planning
-                        </Badge>
-                        <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
-                            Salary data helps you choose career paths with strong earning potential.
-                        </Text>
-                    </Box>
-                    <Box>
-                        <Badge bg="purple.100" color="purple.700" mb={3} fontSize="sm" fontWeight="600">
-                            Relocation Decisions
-                        </Badge>
-                        <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
-                            Compare cost of living with salary data when considering moving to a new city.
-                        </Text>
-                    </Box>
-                </SimpleGrid>
-            </SeoContentSection>
+                {/* Why Salary Research Matters */}
+                <SeoContentSection
+                    badge="Know Your Worth"
+                    title="Why Research Salary Before Applying?"
+                    description="Understanding salary ranges helps you negotiate better compensation and make informed career decisions."
+                    bgColor="white"
+                >
+                    <SimpleGrid columns={{ base: 1, md: 3 }} gap={6}>
+                        <Box>
+                            <Badge bg="green.100" color="green.700" mb={3} fontSize="sm" fontWeight="600">
+                                Negotiate Better
+                            </Badge>
+                            <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
+                                Knowing market rates gives you leverage when negotiating job offers and raises.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Badge bg="blue.100" color="blue.700" mb={3} fontSize="sm" fontWeight="600">
+                                Career Planning
+                            </Badge>
+                            <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
+                                Salary data helps you choose career paths with strong earning potential.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Badge bg="purple.100" color="purple.700" mb={3} fontSize="sm" fontWeight="600">
+                                Relocation Decisions
+                            </Badge>
+                            <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
+                                Compare cost of living with salary data when considering moving to a new city.
+                            </Text>
+                        </Box>
+                    </SimpleGrid>
+                </SeoContentSection>
+            </Box>
+
 
             {/* Highest Paying Jobs */}
             <SeoContentSection

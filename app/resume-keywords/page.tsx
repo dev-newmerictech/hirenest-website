@@ -60,56 +60,58 @@ export default function ResumeKeywordsIndexPage() {
                     { value: 'ATS', label: 'Optimized' }
                 ]}
             />
+            <Box mt={16}>
 
-            {/* Categories Section */}
-            <SeoContentSection
-                badge="Browse by Category"
-                title="Resume Keywords by Industry"
-                description="Find resume keywords and skills specific to your industry and target role."
-                bgColor="white"
-            >
-                <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={6}>
-                    {categories.map((category) => {
-                        const jobs = getJobsByCategory(category.id)
-                        return (
-                            <Link
-                                key={category.id}
-                                href={`#${category.id}`}
-                                style={{ textDecoration: 'none' }}
-                            >
-                                <Box
-                                    bg="rgba(66, 65, 255, 0.03)"
-                                    p={6}
-                                    borderRadius="xl"
-                                    borderWidth="1px"
-                                    borderColor="rgba(66, 65, 255, 0.1)"
-                                    _hover={{
-                                        borderColor: 'rgba(66, 65, 255, 0.3)',
-                                        transform: 'translateY(-2px)',
-                                        boxShadow: 'lg'
-                                    }}
-                                    transition="all 0.3s"
-                                    cursor="pointer"
+                <SeoContentSection
+                    badge="Browse by Category"
+                    title="Resume Keywords by Industry"
+                    description="Find resume keywords and skills specific to your industry and target role."
+                    bgColor="white"
+                >
+                    <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={6}>
+                        {categories.map((category) => {
+                            const jobs = getJobsByCategory(category.id)
+                            return (
+                                <Link
+                                    key={category.id}
+                                    href={`#${category.id}`}
+                                    style={{ textDecoration: 'none' }}
                                 >
-                                    <Text fontSize="3xl" mb={3}>{category.icon}</Text>
-                                    <Heading
-                                        as="h3"
-                                        fontSize="lg"
-                                        fontWeight="700"
-                                        color="#1d1d1f"
-                                        mb={2}
+                                    <Box
+                                        bg="rgba(66, 65, 255, 0.03)"
+                                        p={6}
+                                        borderRadius="xl"
+                                        borderWidth="1px"
+                                        borderColor="rgba(66, 65, 255, 0.1)"
+                                        _hover={{
+                                            borderColor: 'rgba(66, 65, 255, 0.3)',
+                                            transform: 'translateY(-2px)',
+                                            boxShadow: 'lg'
+                                        }}
+                                        transition="all 0.3s"
+                                        cursor="pointer"
                                     >
-                                        {category.name}
-                                    </Heading>
-                                    <Text fontSize="sm" color="#6e6e73">
-                                        {jobs.length} roles
-                                    </Text>
-                                </Box>
-                            </Link>
-                        )
-                    })}
-                </SimpleGrid>
-            </SeoContentSection>
+                                        <Text fontSize="3xl" mb={3}>{category.icon}</Text>
+                                        <Heading
+                                            as="h3"
+                                            fontSize="lg"
+                                            fontWeight="700"
+                                            color="#1d1d1f"
+                                            mb={2}
+                                        >
+                                            {category.name}
+                                        </Heading>
+                                        <Text fontSize="sm" color="#6e6e73">
+                                            {jobs.length} roles
+                                        </Text>
+                                    </Box>
+                                </Link>
+                            )
+                        })}
+                    </SimpleGrid>
+                </SeoContentSection>
+            </Box>
+            {/* Categories Section */}
 
             {/* All Jobs Section */}
             {categories.map((category) => {

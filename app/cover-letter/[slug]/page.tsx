@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Box } from '@chakra-ui/react'
+import {
+    Box, HStack, Text,
+    Link as ChakraLink,
+} from '@chakra-ui/react'
 import { CoverLetterHero } from '../../components/programmatic-seo/CoverLetterHero'
 import { CoverLetterContent } from '../../components/programmatic-seo/CoverLetterContent'
 import { ProgrammaticSeoStructuredData } from '../../components/programmatic-seo/StructuredData'
@@ -8,6 +11,7 @@ import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
 import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
 import { generatePageMetadata } from '../../lib/metadata'
+import Link from 'next/link'
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -94,6 +98,15 @@ export default async function CoverLetterPage({ params }: PageProps) {
                 ]}
             />
 
+            <HStack justifyContent="center" gap={2} mt={6} fontSize="sm" color="gray.500" flexWrap="wrap" pb={{ base: '16', md: '20' }}>
+                <ChakraLink as={Link} href="/" display="flex" alignItems="center" gap={1} color="gray.500">
+                    Home
+                </ChakraLink>
+                <Text>/</Text>
+                <ChakraLink as={Link} href="/cover-letter" color="gray.500">Cover Letters</ChakraLink>
+                <Text>/</Text>
+                <Text color="#4241ff" fontWeight="600">{job.title}</Text>
+            </HStack>
             {/* Content Section */}
             <CoverLetterContent
                 jobTitle={job.title}

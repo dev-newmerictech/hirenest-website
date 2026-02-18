@@ -24,7 +24,7 @@ export function JobDescriptionHero({
     return (
         <Box
             bg="transparent"
-            py={{ base: '16', md: '20' }}
+            pt={{ base: '16', md: '20' }}
             px={{ base: '4', md: '8' }}
         >
             <Box maxW="6xl" mx="auto" textAlign="center">

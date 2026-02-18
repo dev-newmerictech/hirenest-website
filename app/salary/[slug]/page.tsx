@@ -1,6 +1,10 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Box } from '@chakra-ui/react'
+import {
+    Box, HStack,
+    Link as ChakraLink,
+    Text,
+} from '@chakra-ui/react'
 import { SalaryHero } from '../../components/programmatic-seo/SalaryHero'
 import { SalaryContent } from '../../components/programmatic-seo/SalaryContent'
 import { ProgrammaticSeoStructuredData } from '../../components/programmatic-seo/StructuredData'
@@ -8,6 +12,7 @@ import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
 import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
 import { generatePageMetadata } from '../../lib/metadata'
+import Link from 'next/link'
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -96,6 +101,17 @@ export default async function SalaryPage({ params }: PageProps) {
                     category: job.category
                 }}
             />
+
+
+            <HStack justifyContent="center" gap={2} mt={6} fontSize="sm" color="gray.500" flexWrap="wrap" pb={{ base: '16', md: '20' }}>
+                <ChakraLink as={Link} href="/" display="flex" alignItems="center" gap={1} color="gray.500">
+                    Home
+                </ChakraLink>
+                <Text>/</Text>
+                <ChakraLink as={Link} href="/salary" color="gray.500">Salary</ChakraLink>
+                <Text>/</Text>
+                <Text color="#4241ff" fontWeight="600">{job.title}</Text>
+            </HStack>
 
             {/* Content Section */}
             <SalaryContent

@@ -114,40 +114,42 @@ export default async function CoverLetterExamplesPage() {
                 ]}
             />
 
-            {/* Why Cover Letters Matter */}
-            <SeoContentSection
-                badge="Stand Out"
-                title="Why a Great Cover Letter Matters"
-                description="A well-written cover letter can be the difference between getting an interview and being passed over."
-                bgColor="white"
-            >
-                <SimpleGrid columns={{ base: 1, md: 3 }} gap={6}>
-                    <Box>
-                        <Badge bg="purple.100" color="purple.700" mb={3} fontSize="sm" fontWeight="600">
-                            Tell Your Story
-                        </Badge>
-                        <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
-                            Cover letters let you explain gaps, career changes, and unique qualifications that resumes can't capture.
-                        </Text>
-                    </Box>
-                    <Box>
-                        <Badge bg="blue.100" color="blue.700" mb={3} fontSize="sm" fontWeight="600">
-                            Show Personality
-                        </Badge>
-                        <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
-                            Demonstrate your enthusiasm, communication style, and cultural fit before you even meet the team.
-                        </Text>
-                    </Box>
-                    <Box>
-                        <Badge bg="green.100" color="green.700" mb={3} fontSize="sm" fontWeight="600">
-                            More Interviews
-                        </Badge>
-                        <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
-                            Candidates with tailored cover letters receive 40% more interview requests than those without.
-                        </Text>
-                    </Box>
-                </SimpleGrid>
-            </SeoContentSection>
+            <Box mt={16}>
+                {/* Why Cover Letters Matter */}
+                <SeoContentSection
+                    badge="Stand Out"
+                    title="Why a Great Cover Letter Matters"
+                    description="A well-written cover letter can be the difference between getting an interview and being passed over."
+                    bgColor="white"
+                >
+                    <SimpleGrid columns={{ base: 1, md: 3 }} gap={6}>
+                        <Box>
+                            <Badge bg="purple.100" color="purple.700" mb={3} fontSize="sm" fontWeight="600">
+                                Tell Your Story
+                            </Badge>
+                            <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
+                                Cover letters let you explain gaps, career changes, and unique qualifications that resumes can't capture.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Badge bg="blue.100" color="blue.700" mb={3} fontSize="sm" fontWeight="600">
+                                Show Personality
+                            </Badge>
+                            <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
+                                Demonstrate your enthusiasm, communication style, and cultural fit before you even meet the team.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Badge bg="green.100" color="green.700" mb={3} fontSize="sm" fontWeight="600">
+                                More Interviews
+                            </Badge>
+                            <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
+                                Candidates with tailored cover letters receive 40% more interview requests than those without.
+                            </Text>
+                        </Box>
+                    </SimpleGrid>
+                </SeoContentSection>
+            </Box>
 
             {/* Most Popular Cover Letters */}
             <SeoContentSection

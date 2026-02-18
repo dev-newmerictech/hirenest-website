@@ -78,34 +78,36 @@ export default async function JobDescriptionsPage() {
                 ]}
             />
 
-            {/* Why Job Descriptions Matter */}
-            <SeoContentSection
-                badge="Career Research"
-                title="Why Read Job Descriptions Before Applying?"
-                description="Understanding job descriptions helps you make informed career decisions and prepare better for interviews."
-                bgColor="white"
-            >
-                <SimpleGrid columns={{ base: 1, md: 3 }} gap={6}>
-                    <Box>
-                        <Badge bg="blue.100" fontSize={'md'} color="blue.700" mb={3}>Know What to Expect</Badge>
-                        <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
-                            Learn about day-to-day responsibilities and work environment before committing to a career path.
-                        </Text>
-                    </Box>
-                    <Box>
-                        <Badge bg="green.100" fontSize={'md'} color="green.700" mb={3}>Prepare Better</Badge>
-                        <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
-                            Understand the skills and qualifications employers are looking for to tailor your application.
-                        </Text>
-                    </Box>
-                    <Box>
-                        <Badge bg="purple.100" fontSize={'md'} color="purple.700" mb={3}>Salary Insights</Badge>
-                        <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
-                            Get realistic expectations about compensation and growth potential in your chosen field.
-                        </Text>
-                    </Box>
-                </SimpleGrid>
-            </SeoContentSection>
+            <Box mt={16}>
+                {/* Why Job Descriptions Matter */}
+                <SeoContentSection
+                    badge="Career Research"
+                    title="Why Read Job Descriptions Before Applying?"
+                    description="Understanding job descriptions helps you make informed career decisions and prepare better for interviews."
+                    bgColor="white"
+                >
+                    <SimpleGrid columns={{ base: 1, md: 3 }} gap={6}>
+                        <Box>
+                            <Badge bg="blue.100" fontSize={'md'} color="blue.700" mb={3}>Know What to Expect</Badge>
+                            <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
+                                Learn about day-to-day responsibilities and work environment before committing to a career path.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Badge bg="green.100" fontSize={'md'} color="green.700" mb={3}>Prepare Better</Badge>
+                            <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
+                                Understand the skills and qualifications employers are looking for to tailor your application.
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Badge bg="purple.100" fontSize={'md'} color="purple.700" mb={3}>Salary Insights</Badge>
+                            <Text fontSize={{ base: 'lg', lg: 'xl' }} color="#424245" lineHeight="1.7">
+                                Get realistic expectations about compensation and growth potential in your chosen field.
+                            </Text>
+                        </Box>
+                    </SimpleGrid>
+                </SeoContentSection>
+            </Box>
 
             {/* Categories Grid */}
             <SeoContentSection

@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Box } from '@chakra-ui/react'
+import {
+    Box, HStack, Text,
+    Link as ChakraLink,
+} from '@chakra-ui/react'
 import { JobDescriptionHero } from '../../components/programmatic-seo/JobDescriptionHero'
 import { JobDescriptionContent } from '../../components/programmatic-seo/JobDescriptionContent'
 import { ProgrammaticSeoStructuredData } from '../../components/programmatic-seo/StructuredData'
@@ -8,6 +11,7 @@ import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
 import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
 import { generatePageMetadata } from '../../lib/metadata'
+import Link from 'next/link'
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -83,7 +87,6 @@ export default async function JobDescriptionPage({ params }: PageProps) {
                 averageSalary={job.averageSalary}
                 growthRate={job.growthRate}
             />
-
             {/* Hero Section */}
             <JobDescriptionHero
                 badge={`${job.title} Job Description`}
@@ -97,6 +100,15 @@ export default async function JobDescriptionPage({ params }: PageProps) {
                     hours: 'Full-time'
                 }}
             />
+            <HStack justifyContent="center" gap={2} mt={6} fontSize="sm" color="gray.500" flexWrap="wrap" pb={{ base: '16', md: '20' }}>
+                <ChakraLink as={Link} href="/" display="flex" alignItems="center" gap={1} color="gray.500">
+                    Home
+                </ChakraLink>
+                <Text>/</Text>
+                <ChakraLink as={Link} href="/job-description" color="gray.500">Job Descriptions</ChakraLink>
+                <Text>/</Text>
+                <Text color="#4241ff" fontWeight="600">{job.title}</Text>
+            </HStack>
             <JobDescriptionContent
                 jobTitle={job.title}
                 category={job.category}

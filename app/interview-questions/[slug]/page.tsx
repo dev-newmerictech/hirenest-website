@@ -1,7 +1,10 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { Box, Text } from '@chakra-ui/react'
+import {
+    Box, Text, HStack,
+    Link as ChakraLink,
+} from '@chakra-ui/react'
 import { SeoHero } from '../../components/programmatic-seo/SeoHero'
 import { SeoContentSection, SeoListItem, SeoCardGrid, SeoCard } from '../../components/programmatic-seo/SeoContentSection'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
@@ -98,6 +101,16 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
                 ]}
             />
 
+
+            <HStack justifyContent="center" gap={2} mt={6} fontSize="sm" color="gray.500" flexWrap="wrap" pb={{ base: '16', md: '20' }}>
+                <ChakraLink as={Link} href="/" display="flex" alignItems="center" gap={1} color="gray.500">
+                    Home
+                </ChakraLink>
+                <Text>/</Text>
+                <ChakraLink as={Link} href="/interview-questions" color="gray.500">Interview Questions</ChakraLink>
+                <Text>/</Text>
+                <Text color="#4241ff" fontWeight="600">{job.title}</Text>
+            </HStack>
             {/* Common Questions Section */}
             <SeoContentSection
                 badge="Most Asked"

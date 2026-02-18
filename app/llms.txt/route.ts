@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { ConvexHttpClient } from "convex/browser";
+import { api } from "@/convex/_generated/api";
 
 // Force Node.js runtime to avoid edge runtime module loading issues
 export const runtime = 'nodejs';
@@ -7,8 +9,27 @@ export async function GET() {
   const baseUrl = 'https://hirenest.ai';
   const currentDate = new Date().toISOString();
 
+  // Fetch recent blog posts for LLM context
+  const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+  let blogPages: any[] = [];
+
+  try {
+    const posts = await client.query(api.posts.getAllPosts);
+    blogPages = posts
+      .slice(0, 50)
+      .map((post: any) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        title: post.title,
+        description: post.description,
+        type: 'blog-post',
+      }));
+  } catch (error) {
+    console.error("Failed to fetch blog posts for LLMs:", error);
+  }
+
   // LLM-optimized content structure
   const llmsContent = {
+    // ... existing metadata ...
     metadata: {
       name: 'Hirenest',
       description: 'AI-powered platform connecting job seekers with employers through intelligent matching, resume building, and comprehensive hiring tools',
@@ -28,6 +49,7 @@ export async function GET() {
         'talent acquisition',
       ],
     },
+    // ... features ...
     features: {
       forJobSeekers: [
         {
@@ -137,6 +159,7 @@ export async function GET() {
         description: 'Information about our security practices and data protection',
         type: 'legal',
       },
+      ...blogPages, // Append dynamic blog pages
     ],
     technology: {
       stack: ['Next.js 15', 'React 19', 'TypeScript', 'Chakra UI', 'AI/ML'],

@@ -79,7 +79,7 @@ export const TeamSection = () => {
 
                 {/* Join Team CTA */}
                 <Box
-                    bg="linear-gradient(135deg, #023E8A 0%, #4241ff 100%)"
+                    bg="linear-gradient(135deg, #4241ff 0%, #4241ff 100%)"
                     borderRadius="2xl"
                     p={{ base: 8, md: 12 }}
                     textAlign="center"
@@ -105,7 +105,7 @@ export const TeamSection = () => {
                     <Button
                         size={{ base: 'lg', md: 'xl' }}
                         bg="white"
-                        color="#023E8A"
+                        color="#4241ff"
                         borderRadius="full"
                         _hover={{
                             bg: 'gray.100',

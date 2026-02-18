@@ -10,27 +10,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
             url: `${baseUrl}/main-sitemap.xml`,
-            lastModified: '2026-02-17',
+            lastModified: '2026-02-18',
+        },
+        {
+            url: `${baseUrl}/sitemap-posts.xml`,
+            lastModified: '2026-02-18',
         },
         {
             url: `${baseUrl}/interview-questions-sitemap.xml`,
-            lastModified: '2026-02-17',
+            lastModified: '2026-02-18',
         },
         {
             url: `${baseUrl}/resume-keywords-sitemap.xml`,
-            lastModified: '2026-02-17',
+            lastModified: '2026-02-18',
         },
         {
             url: `${baseUrl}/salary-sitemap.xml`,
-            lastModified: '2026-02-17',
+            lastModified: '2026-02-18',
         },
         {
             url: `${baseUrl}/cover-letter-sitemap.xml`,
-            lastModified: '2026-02-17',
+            lastModified: '2026-02-18',
         },
         {
             url: `${baseUrl}/job-description-sitemap.xml`,
-            lastModified: '2026-02-17',
+            lastModified: '2026-02-18',
         },
     ];
 }

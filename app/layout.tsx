@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import "./styles/global.css";
+import "./styles/hirenest-post.css";
 import { Provider } from "@/components/ui/provider";
 import { Box } from "@chakra-ui/react";
 import { Block as Navbar } from '@/src/components/blocks/marketing-navbars/navbar-island/block';
 import { Block as Footer } from '@/src/components/blocks/footers/footer-with-four-columns/block';
-import { organizationSchema, websiteSchema } from './lib/structured-data';
+import StructuredDataWrapper from "./StructuredDataWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,6 +17,14 @@ const inter = Inter({
 });
 
 
+import { ConvexClientProvider } from "@/src/providers/ConvexClientProvider";
+
+const FIXED_DATE = "2024-01-01T00:00:00.000Z";
+
+import { ThemeProvider } from "@/src/context/ThemeContext";
+import { FontProvider } from "@/src/context/FontContext";
+import { SupabaseAuthProvider } from "@/src/context/SupabaseAuthContext";
+import { ConditionalLayout } from "./ConditionalLayout";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hirenest.ai'),
@@ -107,13 +117,13 @@ export const metadata: Metadata = {
   other: {
     // Open Graph article dates (for compatibility)
     'article:published_time': "2024-01-01T00:00:00.000Z",
-    'article:modified_time': new Date().toISOString(),
+    'article:modified_time': FIXED_DATE,
     // Standard meta tags for dates
     'published_time': "2024-01-01T00:00:00.000Z",
-    'modified_time': new Date().toISOString(),
+    'modified_time': FIXED_DATE,
     // Additional date formats for better SEO
     'date': "2024-01-01T00:00:00.000Z",
-    'last-modified': new Date().toISOString(),
+    'last-modified': FIXED_DATE,
     // Ahrefs site verification
     'ahrefs-site-verification': '9d53d325e70fb9a019b6bebdb98c427aded20a7491d6ba73f31efad3358b6622',
   },
@@ -126,6 +136,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* ... head ... */}
       <head>
         <link
           rel="alternate"
@@ -140,23 +151,7 @@ export default function RootLayout({
           href="https://hirenest.ai/llms.txt"
         />
         {/* Structured Data - Combined Organization & Website */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@graph': [
-                // Remove @context from individual schemas when using @graph
-                { ...organizationSchema, '@context': undefined },
-                { ...websiteSchema, '@context': undefined },
-              ].map(schema => {
-                // Clean up undefined values
-                const { '@context': _, ...rest } = schema;
-                return rest;
-              }),
-            }),
-          }}
-        />
+        <StructuredDataWrapper />
 
         {/* Ahrefs Analytics */}
         <Script
@@ -167,13 +162,21 @@ export default function RootLayout({
 
       </head>
       <body className={`${inter.variable} antialiased`}>
-        <Provider>
-          <Box bg="gray.100">
-            <Navbar />
-            {children}
-            <Footer />
-          </Box>
-        </Provider>
+        <ConvexClientProvider>
+          <ThemeProvider>
+            <FontProvider>
+              <SupabaseAuthProvider>
+                <Provider>
+                  <Box bg="gray.100">
+                    <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
+                      {children}
+                    </ConditionalLayout>
+                  </Box>
+                </Provider>
+              </SupabaseAuthProvider>
+            </FontProvider>
+          </ThemeProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );

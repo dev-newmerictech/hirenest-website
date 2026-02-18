@@ -43,6 +43,30 @@ const nextConfig: NextConfig = {
   // Build optimizations
   // Exclude unused locales for faster i18n builds
   i18n: undefined,
+  async rewrites() {
+    return [
+      // PostHog Reverse Proxy
+      {
+        source: '/ingest/static/:path*',
+        destination: 'https://us-assets.i.posthog.com/static/:path*',
+      },
+      {
+        source: '/ingest/:path*',
+        destination: 'https://us.i.posthog.com/:path*',
+      },
+      // Meta/Facebook Pixel Reverse Proxy
+      {
+        source: '/meta/fbevents.js',
+        destination: 'https://connect.facebook.net/en_US/fbevents.js',
+      },
+      // SEO URL rewrites to internal API handlers
+      // /raw/:slug is now handled by app/raw/[slug]/page.tsx (proper HTML with SEO meta tags)
+      { source: '/llms.txt', destination: '/api/llms' },
+      { source: '/sitemap-posts.xml', destination: '/api/sitemap-posts' },
+      { source: '/sitemap-post.xml', destination: '/api/sitemap-posts' },
+      { source: '/sitemap-posts-:page(\\d+).xml', destination: '/api/sitemap-posts-page?page=:page' },
+    ];
+  },
   async redirects() {
     return [
       {

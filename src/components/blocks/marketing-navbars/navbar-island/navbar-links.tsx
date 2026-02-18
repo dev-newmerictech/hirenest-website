@@ -8,7 +8,8 @@ export const NavbarLinks = (props: StackProps) => {
 
   const links = [
     { label: 'Find Jobs', href: '/job-seeker' },
-    { label: 'Find Talents', href: '/job-provider' }
+    { label: 'Find Talents', href: '/job-provider' },
+    { label: 'Blog', href: '/blog' }
   ]
 
   return (

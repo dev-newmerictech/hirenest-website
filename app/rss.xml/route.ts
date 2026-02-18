@@ -1,13 +1,51 @@
 import { NextResponse } from 'next/server';
 import { jobTitles } from '../lib/programmatic-seo/job-titles';
-
+import { ConvexHttpClient } from "convex/browser";
+import { api } from "@/convex/_generated/api";
 // Force Node.js runtime to avoid edge runtime module loading issues with large imports
 export const runtime = 'nodejs';
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
     const baseUrl = 'https://hirenest.ai';
     const currentDate = new Date().toUTCString();
+    const SITE_TITLE = "Hirenest.ai";
+    const SITE_DESCRIPTION =
+        "Get 30 SEO-optimized articles published automatically each month, with your authentic brand voice intact.";
+
+    function escapeXml(text: string): string {
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&apos;");
+    }
+
+    // Initialize Convex client
+    const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+    let blogItems: any[] = [];
+
+    try {
+        const posts = await client.query(api.posts.getAllPosts);
+        blogItems = posts
+            .slice(0, 50) // Limit to recent 50 posts
+            .map((post) => {
+                const url = `${baseUrl}/blog/${post.slug}`;
+                const pubDate = new Date(post.date).toUTCString();
+                const category = post.tags?.[0] || 'Blog';
+
+                return {
+                    title: post.title,
+                    link: url,
+                    description: post.description,
+                    pubDate: pubDate,
+                    category: category,
+                };
+            });
+    } catch (error) {
+        console.error("Failed to fetch blog posts for RSS:", error);
+    }
 
     // Main feature items
     const featureItems = [
@@ -161,6 +199,7 @@ export async function GET() {
 
     // Combine all items
     const allItems = [
+        ...blogItems,
         ...featureItems,
         interviewQuestionsIndexItem,
         resumeKeywordsIndexItem,
@@ -178,9 +217,9 @@ export async function GET() {
         .map(
             (item) => `
     <item>
-      <title><![CDATA[${item.title}]]></title>
+      <title>${escapeXml(item.title)}</title>
       <link>${item.link}</link>
-      <description><![CDATA[${item.description}]]></description>
+      <description>${escapeXml(item.description)}</description>
       <pubDate>${item.pubDate}</pubDate>
       <category>${item.category}</category>
       <guid isPermaLink="true">${item.link}</guid>

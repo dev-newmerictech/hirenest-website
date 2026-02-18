@@ -1,3 +1,4 @@
+
 import { NextResponse } from 'next/server';
 
 // Force Node.js runtime to avoid edge runtime module loading issues
@@ -29,8 +30,7 @@ Allow: /_next/image/
 Allow: /favicon.ico
 Allow: /favicon.svg
 
-# Optional crawl delay (ignored by Google but respected by some bots)
-Crawl-delay: 1
+
 
 # -----------------------------------------------------------------------------
 # SITEMAPS

@@ -1,0 +1,263 @@
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { fetchPostBySlug, fetchAllPostSlugs } from "@/lib/convex-server";
+import { extractFAQs } from "@/src/utils/extractFAQs";
+import { extractHeadings } from "@/src/utils/extractHeadings";
+import PostClient from "./post-client";
+import { organizationSchema, websiteSchema } from '@/app/lib/structured-data';
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai";
+const SITE_NAME = "Hirenest AI";
+const DEFAULT_OG_IMAGE = "/images/data.webp";
+
+/** Truncate title to ~60 chars for SEO */
+function truncateTitle(title: string, maxChars = 60): string {
+    const full = `${title} | ${SITE_NAME}`;
+    if (full.length <= maxChars) return full;
+    const suffix = ` | ${SITE_NAME}`;
+    const available = maxChars - suffix.length;
+    if (available < 15) return title.substring(0, maxChars - 3) + "...";
+    return `${title.substring(0, available - 3)}...${suffix}`;
+}
+
+interface PageProps {
+    params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const post = await fetchPostBySlug(slug);
+
+    if (!post) {
+        return { title: "Post Not Found" };
+    }
+
+    const postUrl = `${SITE_URL}/blog/${post.slug}`;
+    const ogImage = post.image
+        ? post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`
+        : `${SITE_URL}${DEFAULT_OG_IMAGE}`;
+    const metaDescription = post.description.length > 160
+        ? post.description.substring(0, 157) + "..."
+        : post.description;
+
+    return {
+        title: truncateTitle(post.title),
+        description: metaDescription,
+        robots: "index, follow, max-snippet:-1, max-image-preview:large",
+        alternates: {
+            canonical: postUrl,
+            languages: { "en-US": postUrl, "x-default": postUrl },
+        },
+        openGraph: {
+            title: truncateTitle(post.title),
+            description: metaDescription,
+            url: postUrl,
+            type: "article",
+            siteName: SITE_NAME,
+            locale: "en_US",
+            images: [{ url: `${SITE_URL}/about-hero.png`, width: 1200, height: 630 }],
+            publishedTime: new Date(post.date).toISOString(),
+            modifiedTime: new Date(post.date).toISOString(),
+            ...(post.authorName && { authors: [post.authorName] }),
+        },
+        twitter: {
+            card: "summary_large_image",
+            site: "@hirenest",
+            creator: "@hirenest",
+            title: truncateTitle(post.title),
+            description: metaDescription,
+            images: [`${SITE_URL}/about-hero.png`],
+        },
+    };
+}
+
+/** Build all JSON-LD schemas for a blog post */
+function buildPostJsonLd(post: NonNullable<Awaited<ReturnType<typeof fetchPostBySlug>>>) {
+    const postUrl = `${SITE_URL}/blog/${post.slug}`;
+    const ogImage = post.image
+        ? post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`
+        : `${SITE_URL}${DEFAULT_OG_IMAGE}`;
+
+    const schemas: object[] = [];
+
+    // BlogPosting schema
+    schemas.push({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        datePublished: post.date,
+        dateModified: post.date,
+        image: { "@type": "ImageObject", url: ogImage, width: 1200, height: 630 },
+        author: {
+            "@type": "Person",
+            name: post.authorName || "Hirenest Team",
+            url: post.authorName
+                ? `${SITE_URL}/blog/author/${post.authorName.toLowerCase().replace(/\s+/g, "-")}`
+                : `${SITE_URL}/about-us`,
+        },
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".blog-post-content"] },
+        publisher: {
+            "@type": "Organization",
+            name: "Hirenest AI",
+            url: "https://hirenest.ai",
+            logo: { "@type": "ImageObject", url: "https://hirenest.ai/logo.svg", width: 250, height: 60 },
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+        url: postUrl,
+        articleSection: post.tags?.[0] || "Recruitment",
+        keywords: post.tags?.join(", ") || "",
+    });
+
+    // BreadcrumbList
+    schemas.push({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+            { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
+        ],
+    });
+
+    // TOC schema
+    const headings = extractHeadings(post.content);
+    if (headings.length > 0) {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "Table",
+            about: { "@type": "Article", name: post.title },
+            hasPart: headings.map((h, i) => ({
+                "@type": "WebPageElement",
+                name: h.text,
+                url: `${postUrl}#${h.id}`,
+                position: i + 1,
+            })),
+        });
+    }
+
+    // FAQ schema
+    const faqs = extractFAQs(post.content);
+    if (faqs) {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        });
+    }
+
+    // Video schema (YouTube embeds)
+    const videoRegex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/gi;
+    const videos: string[] = [];
+    let match;
+    while ((match = videoRegex.exec(post.content)) !== null) {
+        videos.push(match[1]);
+    }
+    if (videos.length > 0) {
+        schemas.push(
+            ...videos.map((id) => ({
+                "@context": "https://schema.org",
+                "@type": "VideoObject",
+                name: `Video: ${post.title}`,
+                description: `Video content for ${post.title}`,
+                thumbnailUrl: `https://img.youtube.com/vi/${id}/maxresdefault.jpg`,
+                uploadDate: post.date,
+                contentUrl: `https://www.youtube.com/watch?v=${id}`,
+                embedUrl: `https://www.youtube.com/embed/${id}`,
+            })),
+        );
+    }
+
+    return schemas;
+}
+
+/** Pre-render all published blog posts at build time for ISR */
+export async function generateStaticParams() {
+    const slugs = await fetchAllPostSlugs();
+    return slugs.map((slug) => ({ slug }));
+}
+
+/**
+ * Server-rendered article content for SEO crawlers.
+ * The client component (PostClient, ssr:false) replaces this on hydration.
+ * This ensures article text, headings, and links are in the initial HTML.
+ */
+function ServerArticle({ post }: { post: NonNullable<Awaited<ReturnType<typeof fetchPostBySlug>>> }) {
+    const postUrl = `${SITE_URL}/blog/${post.slug}`;
+
+    return (
+        <article
+            className="hirenest-article blog-post-content ssr-article-fallback"
+            itemScope
+            itemType="https://schema.org/BlogPosting"
+        >
+            <meta itemProp="url" content={postUrl} />
+            <meta itemProp="datePublished" content={post.date} />
+            <meta itemProp="dateModified" content={post.date} />
+            {post.image && <meta itemProp="image" content={post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`} />}
+            <span itemProp="author" itemScope itemType="https://schema.org/Person">
+                <meta itemProp="name" content={post.authorName || "Hirenest Team"} />
+            </span>
+
+            <h1 itemProp="headline">{post.title}</h1>
+            <p itemProp="description">{post.description}</p>
+            <div itemProp="articleBody">{post.content}</div>
+
+            {post.tags && post.tags.length > 0 && (
+                <nav aria-label="Post tags">
+                    {post.tags.map((tag) => (
+                        <a key={tag} href={`/blog/tag/${encodeURIComponent(tag.toLowerCase())}`}>
+                            {tag}
+                        </a>
+                    ))}
+                </nav>
+            )}
+        </article>
+    );
+}
+
+export default async function BlogPostPage({ params }: PageProps) {
+    const { slug } = await params;
+    const post = await fetchPostBySlug(slug);
+
+    if (!post) notFound();
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@graph': [
+                            // Remove @context from individual schemas when using @graph
+                            { ...organizationSchema, '@context': undefined },
+                            { ...websiteSchema, '@context': undefined },
+                        ].map(schema => {
+                            // Clean up undefined values
+                            // @ts-ignore
+                            const { '@context': _, ...rest } = schema;
+                            return rest;
+                        }),
+                    }),
+                }}
+            />
+            {buildPostJsonLd(post).map((schema, i) => (
+                <script
+                    key={i}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+            ))}
+            {/* Server-rendered content for SEO — hidden after client hydration */}
+            {/* <ServerArticle post={post} /> */}
+            <PostClient initialPost={post} />
+        </>
+    );
+}
+
+export const revalidate = 3600;

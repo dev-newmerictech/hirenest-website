@@ -14,7 +14,7 @@ export default function SecurityPage() {
             <SecurityStructuredData />
             <Container maxW="4xl">
                 <VStack alignItems="flex-start" gap={8}>
-                    <Heading as="h1" fontWeight="800" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">
+                    <Heading as="h1" fontWeight="800" fontSize={{ base: '3xl', md: '4xl' }} color="#4241ff">
                         Security
                     </Heading>
 
@@ -24,7 +24,7 @@ export default function SecurityPage() {
 
                     <VStack alignItems="flex-start" gap={6}>
                         <Box>
-                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3}>
                                 Our Commitment to Security
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -35,7 +35,7 @@ export default function SecurityPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3}>
                                 Data Encryption
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -46,7 +46,7 @@ export default function SecurityPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3}>
                                 Access Controls
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -57,7 +57,7 @@ export default function SecurityPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3}>
                                 Regular Security Audits
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -68,7 +68,7 @@ export default function SecurityPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3}>
                                 Secure Infrastructure
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -79,7 +79,7 @@ export default function SecurityPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3}>
                                 Your Responsibility
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -90,7 +90,7 @@ export default function SecurityPage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontWeight="800" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3}>
                                 Reporting Security Issues
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">

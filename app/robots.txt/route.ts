@@ -11,36 +11,30 @@ export async function GET() {
     const robotsTxt = `# =============================================================================
 # Robots.txt for HireNest
 # AI-Powered Recruitment Platform
-# Updated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+# Updated: February 2026
 # =============================================================================
 
-# -----------------------------------------------------------------------------
-# GLOBAL RULES (All Crawlers)
-# -----------------------------------------------------------------------------
 User-agent: *
+
+# Block system & private routes
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /tmp/
 Disallow: /cdn-cgi/
 
-# Allow important assets (Next.js safe)
-Allow: /_next/static/
-Allow: /_next/image/
-Allow: /favicon.ico
-Allow: /favicon.svg
-
-
+# Block query parameter URLs to protect crawl budget
+Disallow: /*?*
 
 # -----------------------------------------------------------------------------
 # SITEMAPS
 # -----------------------------------------------------------------------------
-Sitemap: ${baseUrl}/sitemap.xml
-Sitemap: ${baseUrl}/interview-questions-sitemap.xml
-Sitemap: ${baseUrl}/resume-keywords-sitemap.xml
-Sitemap: ${baseUrl}/job-description-sitemap.xml
-Sitemap: ${baseUrl}/salary-sitemap.xml
-Sitemap: ${baseUrl}/cover-letter-sitemap.xml
+Sitemap: https://hirenest.ai/sitemap.xml
+Sitemap: https://hirenest.ai/interview-questions-sitemap.xml
+Sitemap: https://hirenest.ai/resume-keywords-sitemap.xml
+Sitemap: https://hirenest.ai/job-description-sitemap.xml
+Sitemap: https://hirenest.ai/salary-sitemap.xml
+Sitemap: https://hirenest.ai/cover-letter-sitemap.xml
 
 # =============================================================================
 # END

@@ -9,10 +9,14 @@ import { SeoHero } from '../../components/programmatic-seo/SeoHero'
 import { SeoContentSection, SeoListItem, SeoCardGrid, SeoCard } from '../../components/programmatic-seo/SeoContentSection'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
-import { ProgrammaticSeoStructuredData } from '../../components/programmatic-seo/StructuredData'
 import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
-import { getQuestionsForJob, getQuestionsByCategory } from '../../lib/programmatic-seo/interview-questions'
+import { getQuestionsForJob } from '../../lib/programmatic-seo/interview-questions'
 import { generatePageMetadata } from '../../lib/metadata'
+// New SEO components
+import { JsonLdSchema, BreadcrumbNav, InternalLinking } from '../../components/seo'
+import { getRelatedPages, getCrossTemplateLinks, getBreadcrumbItems } from '../../lib/seo/helpers'
+import { buildPageSchemas } from '../../lib/seo/core/schema-builder-factory'
+import { SEO_CONFIG } from '../../lib/seo/core/constants'
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -76,15 +80,30 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
     const companyQuestions = questions.filter(q => q.category === 'company-fit')
     const situationalQuestions = questions.filter(q => q.category === 'situational')
 
+    // Get related pages for internal linking
+    const relatedPages = getRelatedPages(slug, 'interview-questions', 6)
+    const crossTemplateLinks = getCrossTemplateLinks(slug, job.title)
+    const breadcrumbItems = getBreadcrumbItems('interview-questions', job.title, slug)
+
+    // Build schema.org structured data
+    const pageUrl = `${SEO_CONFIG.BASE_URL}/interview-questions/${slug}`
+    const faqItems = questions.slice(0, 10).map(q => ({
+        question: q.question,
+        answer: q.answer
+    }))
+    const schemas = buildPageSchemas({
+        title: `${job.title} Interview Questions`,
+        description: `Prepare for your ${job.title} interview with commonly asked questions and expert answers. Get proven strategies and tips to ace your interview.`,
+        url: pageUrl,
+        faqs: faqItems,
+        breadcrumbs: breadcrumbItems,
+        dateModified: new Date().toISOString()
+    })
+
     return (
         <Box>
-            {/* Structured Data - SEO */}
-            <ProgrammaticSeoStructuredData
-                jobTitle={job.title?.slice(0, 55)}
-                pageType="interview-questions"
-                slug={slug}
-                description={`Prepare for your ${job.title} interview with our comprehensive guide. Explore commonly asked ${job.title} interview questions.`}
-            />
+            {/* Structured Data - SEO (New Schema Builder) */}
+            <JsonLdSchema schemas={schemas} />
 
             {/* Hero Section */}
             <SeoHero
@@ -101,21 +120,22 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
                 ]}
             />
 
-
-            <HStack justifyContent="center" gap={2} mt={6} fontSize="sm" color="gray.500" flexWrap="wrap" pb={{ base: '16', md: '20' }}>
-                <ChakraLink as={Link} href="/" display="flex" alignItems="center" gap={1} color="gray.500">
-                    Home
-                </ChakraLink>
-                <Text>/</Text>
-                <ChakraLink as={Link} href="/interview-questions" color="gray.500">Interview Questions</ChakraLink>
-                <Text>/</Text>
-                <Text color="#4241ff" fontWeight="600">{job.title}</Text>
-            </HStack>
+            {/* Breadcrumb Navigation - New Component */}
+            <Box justifyContent="center" display="flex" py={6} px={4}>
+                <BreadcrumbNav
+                    items={breadcrumbItems.map(item => ({
+                        name: item.name,
+                        url: item.url,
+                        position: 0
+                    }))}
+                    separator="chevron"
+                />
+            </Box>
             {/* Common Questions Section */}
             <SeoContentSection
                 badge="Most Asked"
                 title={`Common ${job.title} Interview Questions`}
-                description="These are the most frequently asked questions in ${job.title} interviews. Prepare well-thought-out answers to make a strong first impression."
+                description={`These are the most frequently asked questions in ${job.title} interviews. Prepare well-thought-out answers to make a strong first impression.`}
                 bgColor="white"
             >
                 <SeoCardGrid columns={{ base: '1fr', md: 'repeat(2, 1fr)' }}>
@@ -312,46 +332,29 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
                 </SeoCardGrid>
             </SeoContentSection>
 
-            {/* Related Roles */}
-            {/* <SeoContentSection
-                badge="Explore More"
-                title="Related Interview Questions"
-                description="Prepare for interviews in similar roles with our comprehensive guides."
-                bgColor="gray.50"
-            >
-                <SeoCardGrid>
-                    {job.aliases.slice(0, 6).map((alias, index) => (
-                        <Link
-                            key={index}
-                            href={`/interview-questions/${alias.toLowerCase().replace(/ /g, '-')}`}
-                            style={{ textDecoration: 'none' }}
-                        >
-                            <Box
-                                bg="white"
-                                p={6}
-                                borderRadius="lg"
-                                borderWidth="1px"
-                                borderColor="gray.200"
-                                _hover={{
-                                    borderColor: 'rgba(66, 65, 255, 0.3)',
-                                    boxShadow: 'md',
-                                    transform: 'translateY(-2px)'
-                                }}
-                                transition="all 0.2s"
-                                cursor="pointer"
-                            >
-                                <Text
-                                    fontSize="md"
-                                    fontWeight="600"
-                                    color="#1d1d1f"
-                                >
-                                    {alias} Interview Questions
-                                </Text>
-                            </Box>
-                        </Link>
-                    ))}
-                </SeoCardGrid>
-            </SeoContentSection> */}
+            {/* Related Roles - Internal Linking */}
+            {relatedPages.length > 0 && (
+                <InternalLinking
+                    title="Related Interview Questions"
+                    description="Prepare for interviews in similar roles with our comprehensive guides."
+                    links={relatedPages}
+                    columns={3}
+                    variant="card"
+                    maxLinks={6}
+                />
+            )}
+
+            {/* Cross-Template Links - Same Job, Different Templates */}
+            {crossTemplateLinks.length > 0 && (
+                <InternalLinking
+                    title={`More Resources for ${job.title}`}
+                    description={`Explore additional resources and guides specifically for ${job.title} positions.`}
+                    links={crossTemplateLinks}
+                    columns={3}
+                    variant="card"
+                    maxLinks={6}
+                />
+            )}
 
             {/* Final CTA */}
             <CTA />

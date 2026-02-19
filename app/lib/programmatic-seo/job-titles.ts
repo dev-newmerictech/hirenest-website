@@ -1,7 +1,6 @@
 import { JobTitle } from './types'
 
 export const jobTitles: JobTitle[] = [
-    // Technology
     {
         id: 'software-engineer',
         title: 'Software Engineer',
@@ -92,8 +91,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 110000,
         growthRate: 20
     },
-
-    // Marketing
     {
         id: 'digital-marketing-manager',
         title: 'Digital Marketing Manager',
@@ -148,8 +145,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 62000,
         growthRate: 10
     },
-
-    // Sales
     {
         id: 'sales-representative',
         title: 'Sales Representative',
@@ -186,8 +181,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 110000,
         growthRate: 10
     },
-
-    // HR
     {
         id: 'hr-manager',
         title: 'HR Manager',
@@ -224,8 +217,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 50000,
         growthRate: 10
     },
-
-    // Finance
     {
         id: 'financial-analyst',
         title: 'Financial Analyst',
@@ -262,8 +253,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 90000,
         growthRate: 12
     },
-
-    // Healthcare
     {
         id: 'registered-nurse',
         title: 'Registered Nurse',
@@ -300,8 +289,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 38000,
         growthRate: 8
     },
-
-    // Admin
     {
         id: 'executive-assistant',
         title: 'Executive Assistant',
@@ -338,8 +325,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 35000,
         growthRate: 4
     },
-
-    // Customer Service
     {
         id: 'customer-service-representative',
         title: 'Customer Service Representative',
@@ -367,8 +352,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 75000,
         growthRate: 20
     },
-
-    // Design
     {
         id: 'graphic-designer',
         title: 'Graphic Designer',
@@ -387,10 +370,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 90000,
         growthRate: 15
     },
-
-    // ========== 50 MORE JOB TONES ========== //
-
-    // Technology - Additional
     {
         id: 'data-engineer',
         title: 'Data Engineer',
@@ -562,8 +541,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 140000,
         growthRate: 38
     },
-
-    // Marketing - Additional
     {
         id: 'brand-manager',
         title: 'Brand Manager',
@@ -627,8 +604,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 110000,
         growthRate: 16
     },
-
-    // Sales - Additional
     {
         id: 'sales-engineer',
         title: 'Sales Engineer',
@@ -701,8 +676,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 55000,
         growthRate: 14
     },
-
-    // HR - Additional
     {
         id: 'hr-director',
         title: 'HR Director',
@@ -775,8 +748,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 90000,
         growthRate: 12
     },
-
-    // Finance - Additional
     {
         id: 'finance-manager',
         title: 'Finance Manager',
@@ -849,8 +820,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 85000,
         growthRate: 12
     },
-
-    // Healthcare - Additional
     {
         id: 'nurse-practitioner',
         title: 'Nurse Practitioner',
@@ -941,8 +910,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 40000,
         growthRate: 15
     },
-
-    // Admin - Additional
     {
         id: 'personal-assistant',
         title: 'Personal Assistant',
@@ -997,8 +964,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 35000,
         growthRate: 3
     },
-
-    // Customer Service - Additional
     {
         id: 'technical-support-specialist',
         title: 'Technical Support Specialist',
@@ -1035,8 +1000,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 45000,
         growthRate: 8
     },
-
-    // Design - Additional
     {
         id: 'web-designer',
         title: 'Web Designer',
@@ -1082,8 +1045,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 80000,
         growthRate: 10
     },
-
-    // Engineering - Additional
     {
         id: 'mechanical-engineer',
         title: 'Mechanical Engineer',
@@ -1156,8 +1117,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 120000,
         growthRate: 10
     },
-
-    // Legal
     {
         id: 'paralegal',
         title: 'Paralegal',
@@ -1176,10 +1135,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 52000,
         growthRate: 8
     },
-
-    // ========== 50 MORE JOB TITLES (Batch 2) ========== //
-
-    // Technology - Additional Batch 2
     {
         id: 'security-engineer',
         title: 'Security Engineer',
@@ -1288,8 +1243,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 100000,
         growthRate: 18
     },
-
-    // Marketing - Additional Batch 2
     {
         id: 'chief-marketing-officer',
         title: 'Chief Marketing Officer',
@@ -1389,8 +1342,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 130000,
         growthRate: 10
     },
-
-    // Sales - Additional Batch 2
     {
         id: 'chief-revenue-officer',
         title: 'Chief Revenue Officer',
@@ -1481,8 +1432,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 140000,
         growthRate: 20
     },
-
-    // Healthcare - Additional Batch 2
     {
         id: 'medical-doctor',
         title: 'Medical Doctor',
@@ -1573,8 +1522,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 65000,
         growthRate: 12
     },
-
-    // Education
     {
         id: 'teacher',
         title: 'Teacher',
@@ -1665,8 +1612,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 55000,
         growthRate: 12
     },
-
-    // Real Estate
     {
         id: 'real-estate-agent',
         title: 'Real Estate Agent',
@@ -1757,8 +1702,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 70000,
         growthRate: 10
     },
-
-    // Skilled Trades
     {
         id: 'electrician',
         title: 'Electrician',
@@ -1849,10 +1792,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 48000,
         growthRate: 10
     },
-
-    // ========== 50 MORE JOB TITLES (Batch 3) ========== //
-
-    // Technology - Additional Batch 3
     {
         id: 'mobile-architect',
         title: 'Mobile Architect',
@@ -1961,8 +1900,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 95000,
         growthRate: 18
     },
-
-    // Marketing - Additional Batch 3
     {
         id: 'digital-specialist',
         title: 'Digital Marketing Specialist',
@@ -2062,8 +1999,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 75000,
         growthRate: 14
     },
-
-    // Sales - Additional Batch 3
     {
         id: 'business-development-rep',
         title: 'Business Development Rep',
@@ -2154,8 +2089,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 140000,
         growthRate: 14
     },
-
-    // Healthcare - Additional Batch 3
     {
         id: 'emergency-room-nurse',
         title: 'ER Nurse',
@@ -2246,8 +2179,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 105000,
         growthRate: 20
     },
-
-    // Education - Additional Batch 3
     {
         id: 'college-professor',
         title: 'College Professor',
@@ -2338,8 +2269,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 70000,
         growthRate: 10
     },
-
-    // Real Estate - Additional Batch 3
     {
         id: 'real-estate-vice-president',
         title: 'Real Estate VP',
@@ -2430,8 +2359,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 55000,
         growthRate: 8
     },
-
-    // Skilled Trades - Additional Batch 3
     {
         id: 'master-electrician',
         title: 'Master Electrician',
@@ -2522,8 +2449,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 55000,
         growthRate: 10
     },
-
-    // Hospitality & Food Service
     {
         id: 'hotel-manager',
         title: 'Hotel Manager',
@@ -2614,8 +2539,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 35000,
         growthRate: 10
     },
-
-    // Transportation & Logistics
     {
         id: 'truck-driver',
         title: 'Truck Driver',
@@ -2706,10 +2629,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 60000,
         growthRate: 10
     },
-
-    // ========== 50 MORE JOB TITLES (Batch 4) ========== //
-
-    // Technology - Additional Batch 4
     {
         id: 'backend-team-lead',
         title: 'Backend Team Lead',
@@ -2818,8 +2737,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 150000,
         growthRate: 22
     },
-
-    // Marketing - Additional Batch 4
     {
         id: 'brand-manager-senior',
         title: 'Senior Brand Manager',
@@ -2919,8 +2836,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 90000,
         growthRate: 20
     },
-
-    // Sales - Additional Batch 4
     {
         id: 'inside-sales-manager',
         title: 'Inside Sales Manager',
@@ -3011,8 +2926,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 100000,
         growthRate: 14
     },
-
-    // Healthcare - Additional Batch 4
     {
         id: 'nurse-anesthetist',
         title: 'Nurse Anesthetist',
@@ -3112,8 +3025,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 280000,
         growthRate: 12
     },
-
-    // HR - Additional Batch 2
     {
         id: 'talent-acquisition-director',
         title: 'Talent Acquisition Director',
@@ -3204,8 +3115,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 62000,
         growthRate: 10
     },
-
-    // Finance - Additional Batch 2
     {
         id: 'financial-controller',
         title: 'Financial Controller',
@@ -3296,8 +3205,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 70000,
         growthRate: 10
     },
-
-    // Admin - Additional Batch 2
     {
         id: 'office-administrator',
         title: 'Office Administrator',
@@ -3388,8 +3295,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 55000,
         growthRate: 8
     },
-
-    // Customer Service - Additional Batch 2
     {
         id: 'customer-service-lead',
         title: 'Customer Service Lead',
@@ -3465,7 +3370,7 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'technical-support-engineer',
         title: 'Technical Support Engineer',
-        slug: 'technical-support-engineer-2',
+        slug: 'technical-support-engineer',
         category: 'customer-service',
         aliases: ['TSE', 'IT Support Engineer II'],
         averageSalary: 65000,
@@ -3480,8 +3385,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 50000,
         growthRate: 18
     },
-
-    // Design - Additional Batch 2
     {
         id: 'senior-graphic-designer',
         title: 'Senior Graphic Designer',
@@ -3572,8 +3475,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 100000,
         growthRate: 20
     },
-
-    // Engineering - Additional Batch 2
     {
         id: 'project-engineer',
         title: 'Project Engineer',
@@ -3664,45 +3565,14 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 82000,
         growthRate: 12
     },
-
-    // ========== BATCH 5: Additional Jobs ==========
-
-    // Technology - Batch 5
     {
-        id: 'platform-engineer',
-        title: 'Platform Engineer',
-        slug: 'platform-engineer-2',
-        category: 'technology',
-        aliases: ['Platform Developer', 'Infrastructure Platform Engineer'],
-        averageSalary: 145000,
-        growthRate: 22
-    },
-    {
-        id: 'site-reliability-engineer',
-        title: 'Site Reliability Engineer',
-        slug: 'site-reliability-engineer-2',
-        category: 'technology',
-        aliases: ['SRE', 'Reliability Engineer'],
-        averageSalary: 150000,
-        growthRate: 24
-    },
-    {
-        id: 'cloud-architect-2',
+        id: 'cloud-architect',
         title: 'Cloud Solutions Architect',
         slug: 'cloud-solutions-architect',
         category: 'technology',
         aliases: ['Cloud Architect', 'AWS Solutions Architect'],
         averageSalary: 160000,
         growthRate: 20
-    },
-    {
-        id: 'ai-engineer',
-        title: 'AI Engineer',
-        slug: 'ai-engineer-2',
-        category: 'technology',
-        aliases: ['Machine Learning Engineer', 'AI Developer'],
-        averageSalary: 155000,
-        growthRate: 28
     },
     {
         id: 'ml-engineer',
@@ -3714,7 +3584,7 @@ export const jobTitles: JobTitle[] = [
         growthRate: 26
     },
     {
-        id: 'data-engineer-2',
+        id: 'data-engineer',
         title: 'Senior Data Engineer',
         slug: 'senior-data-engineer',
         category: 'technology',
@@ -3758,44 +3628,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 175000,
         growthRate: 20
     },
-
-    // Marketing - Batch 5
-    {
-        id: 'growth-marketer',
-        title: 'Growth Marketer',
-        slug: 'growth-marketer-2',
-        category: 'marketing',
-        aliases: ['Growth Hacker', 'Growth Manager'],
-        averageSalary: 95000,
-        growthRate: 18
-    },
-    {
-        id: 'product-marketing-manager',
-        title: 'Product Marketing Manager',
-        slug: 'product-marketing-manager-2',
-        category: 'marketing',
-        aliases: ['PMM', 'Product Marketing'],
-        averageSalary: 115000,
-        growthRate: 16
-    },
-    {
-        id: 'marketing-analyst',
-        title: 'Marketing Analyst',
-        slug: 'marketing-analyst-2',
-        category: 'marketing',
-        aliases: ['Marketing Data Analyst', 'Marketing Insights Analyst'],
-        averageSalary: 75000,
-        growthRate: 16
-    },
-    {
-        id: 'brand-manager',
-        title: 'Brand Manager',
-        slug: 'brand-manager-2',
-        category: 'marketing',
-        aliases: ['Brand Marketing Manager', 'Product Brand Manager'],
-        averageSalary: 105000,
-        growthRate: 14
-    },
     {
         id: 'field-marketing-manager',
         title: 'Field Marketing Manager',
@@ -3805,8 +3637,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 100000,
         growthRate: 14
     },
-
-    // Sales - Batch 5
     {
         id: 'sales-operations-manager',
         title: 'Sales Operations Manager',
@@ -3826,24 +3656,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 18
     },
     {
-        id: 'enterprise-account-executive',
-        title: 'Enterprise Account Executive',
-        slug: 'enterprise-account-executive-2',
-        category: 'sales',
-        aliases: ['Enterprise Sales Executive', 'Strategic Account Executive'],
-        averageSalary: 120000,
-        growthRate: 16
-    },
-    {
-        id: 'customer-success-manager',
-        title: 'Customer Success Manager',
-        slug: 'customer-success-manager-2',
-        category: 'sales',
-        aliases: ['CSM', 'Client Success Manager'],
-        averageSalary: 85000,
-        growthRate: 20
-    },
-    {
         id: 'revenue-operations-manager',
         title: 'Revenue Operations Manager',
         slug: 'revenue-operations-manager',
@@ -3851,35 +3663,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['RevOps Manager', 'Revenue Operations Lead'],
         averageSalary: 100000,
         growthRate: 20
-    },
-
-    // Healthcare - Batch 5
-    {
-        id: 'nurse-practitioner',
-        title: 'Nurse Practitioner',
-        slug: 'nurse-practitioner-2',
-        category: 'healthcare',
-        aliases: ['NP', 'Advanced Practice Nurse'],
-        averageSalary: 120000,
-        growthRate: 18
-    },
-    {
-        id: 'physician-assistant',
-        title: 'Physician Assistant',
-        slug: 'physician-assistant-2',
-        category: 'healthcare',
-        aliases: ['PA', 'Physician Associate'],
-        averageSalary: 115000,
-        growthRate: 20
-    },
-    {
-        id: 'medical-technologist',
-        title: 'Medical Technologist',
-        slug: 'medical-technologist-2',
-        category: 'healthcare',
-        aliases: ['Clinical Laboratory Scientist', 'Medical Lab Tech'],
-        averageSalary: 65000,
-        growthRate: 10
     },
     {
         id: 'radiology-technologist',
@@ -3891,26 +3674,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'occupational-therapist',
-        title: 'Occupational Therapist',
-        slug: 'occupational-therapist-2',
-        category: 'healthcare',
-        aliases: ['OT', 'Occupational Therapy Practitioner'],
-        averageSalary: 90000,
-        growthRate: 16
-    },
-
-    // Finance - Batch 5
-    {
-        id: 'finance-manager',
-        title: 'Finance Manager',
-        slug: 'finance-manager-2',
-        category: 'finance',
-        aliases: ['Financial Manager', 'Finance Lead'],
-        averageSalary: 115000,
-        growthRate: 14
-    },
-    {
         id: 'corporate-finance-analyst',
         title: 'Corporate Finance Analyst',
         slug: 'corporate-finance-analyst',
@@ -3918,62 +3681,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Finance Analyst', 'Corporate Finance'],
         averageSalary: 85000,
         growthRate: 14
-    },
-    {
-        id: 'treasury-analyst',
-        title: 'Treasury Analyst',
-        slug: 'treasury-analyst-2',
-        category: 'finance',
-        aliases: ['Treasury Specialist', 'Cash Management Analyst'],
-        averageSalary: 80000,
-        growthRate: 12
-    },
-    {
-        id: 'credit-analyst',
-        title: 'Credit Analyst',
-        slug: 'credit-analyst-2',
-        category: 'finance',
-        aliases: ['Credit Risk Analyst', 'Loan Analyst'],
-        averageSalary: 70000,
-        growthRate: 10
-    },
-    {
-        id: 'investment-analyst',
-        title: 'Investment Analyst',
-        slug: 'investment-analyst-2',
-        category: 'finance',
-        aliases: ['Investment Research Analyst', 'Securities Analyst'],
-        averageSalary: 95000,
-        growthRate: 16
-    },
-
-    // HR - Batch 5
-    {
-        id: 'hr-business-partner',
-        title: 'HR Business Partner',
-        slug: 'hr-business-partner-2',
-        category: 'hr',
-        aliases: ['HRBP', 'Strategic HR Partner'],
-        averageSalary: 95000,
-        growthRate: 14
-    },
-    {
-        id: 'hr-manager',
-        title: 'HR Manager',
-        slug: 'hr-manager-2',
-        category: 'hr',
-        aliases: ['Human Resources Manager', 'People Manager'],
-        averageSalary: 85000,
-        growthRate: 12
-    },
-    {
-        id: 'compensation-analyst-hr',
-        title: 'Compensation Analyst',
-        slug: 'compensation-analyst-2',
-        category: 'hr',
-        aliases: ['Total Rewards Analyst', 'Compensation Specialist'],
-        averageSalary: 75000,
-        growthRate: 12
     },
     {
         id: 'hr-information-systems',
@@ -3993,8 +3700,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 90000,
         growthRate: 16
     },
-
-    // Customer Service - Batch 5
     {
         id: 'customer-experience-manager',
         title: 'Customer Experience Manager',
@@ -4040,8 +3745,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 95000,
         growthRate: 16
     },
-
-    // Design - Batch 5
     {
         id: 'design-researcher',
         title: 'Design Researcher',
@@ -4087,17 +3790,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 80000,
         growthRate: 14
     },
-
-    // Engineering - Batch 5
-    {
-        id: 'civil-engineer',
-        title: 'Civil Engineer',
-        slug: 'civil-engineer-2',
-        category: 'engineering',
-        aliases: ['Civil Engineering', 'Infrastructure Engineer'],
-        averageSalary: 90000,
-        growthRate: 8
-    },
     {
         id: 'structural-engineer',
         title: 'Structural Engineer',
@@ -4108,65 +3800,16 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'electrical-engineer',
-        title: 'Electrical Engineer',
-        slug: 'electrical-engineer-2',
-        category: 'engineering',
-        aliases: ['EE', 'Electrical Engineering'],
-        averageSalary: 100000,
-        growthRate: 10
-    },
-    {
-        id: 'chemical-engineer',
-        title: 'Chemical Engineer',
-        slug: 'chemical-engineer-2',
-        category: 'engineering',
-        aliases: ['ChemE', 'Process Engineer Chemical'],
-        averageSalary: 105000,
-        growthRate: 12
-    },
-    {
-        id: 'biomedical-engineer',
-        title: 'Biomedical Engineer',
-        slug: 'biomedical-engineer-2',
-        category: 'engineering',
-        aliases: ['BME', 'Medical Device Engineer'],
-        averageSalary: 100000,
-        growthRate: 16
-    },
-
-    // ========== BATCH 6: Additional Jobs ==========
-
-    // Technology - Batch 6
-    {
-        id: 'database-administrator',
-        title: 'Database Administrator',
-        slug: 'database-administrator-2',
-        category: 'technology',
-        aliases: ['DBA', 'Database Engineer'],
-        averageSalary: 105000,
-        growthRate: 12
-    },
-    {
-        id: 'etl-developer-2',
-        title: 'ETL Developer',
-        slug: 'etl-developer-2',
-        category: 'technology',
-        aliases: ['Data Integration Developer', 'ETL Engineer'],
-        averageSalary: 95000,
-        growthRate: 16
-    },
-    {
-        id: 'business-intelligence-developer-2',
+        id: 'business-intelligence-developer',
         title: 'Business Intelligence Developer',
-        slug: 'business-intelligence-developer-2',
+        slug: 'business-intelligence-developer',
         category: 'technology',
         aliases: ['BI Developer', 'Analytics Engineer'],
         averageSalary: 100000,
         growthRate: 18
     },
     {
-        id: 'data-analyst-2',
+        id: 'data-analyst',
         title: 'Senior Data Analyst',
         slug: 'senior-data-analyst',
         category: 'technology',
@@ -4182,17 +3825,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['ML Scientist', 'Applied Scientist'],
         averageSalary: 165000,
         growthRate: 28
-    },
-
-    // Marketing - Batch 6
-    {
-        id: 'email-marketing-specialist',
-        title: 'Email Marketing Specialist',
-        slug: 'email-marketing-specialist-2',
-        category: 'marketing',
-        aliases: ['Email Marketer', 'Email Campaign Manager'],
-        averageSalary: 65000,
-        growthRate: 14
     },
     {
         id: 'social-media-coordinator',
@@ -4213,51 +3845,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'seo-specialist',
-        title: 'SEO Specialist',
-        slug: 'seo-specialist-2',
-        category: 'marketing',
-        aliases: ['SEO Executive', 'Search Engine Specialist'],
-        averageSalary: 60000,
-        growthRate: 16
-    },
-    {
-        id: 'ppc-specialist',
-        title: 'PPC Specialist',
-        slug: 'ppc-specialist-2',
-        category: 'marketing',
-        aliases: ['Paid Search Specialist', 'SEM Specialist'],
-        averageSalary: 65000,
-        growthRate: 16
-    },
-
-    // Sales - Batch 6
-    {
-        id: 'lead-generation-specialist',
-        title: 'Lead Generation Specialist',
-        slug: 'lead-generation-specialist-2',
-        category: 'sales',
-        aliases: ['Lead Gen Specialist', 'Demand Generation Specialist'],
-        averageSalary: 55000,
-        growthRate: 16
-    },
-    {
-        id: 'sales-development-representative-2',
+        id: 'sales-development-representative',
         title: 'Sales Development Representative',
-        slug: 'sales-development-representative-2',
+        slug: 'sales-development-representative',
         category: 'sales',
         aliases: ['SDR', 'Lead Development Rep'],
         averageSalary: 50000,
         growthRate: 14
-    },
-    {
-        id: 'business-development-manager',
-        title: 'Business Development Manager',
-        slug: 'business-development-manager-2',
-        category: 'sales',
-        aliases: ['BDM', 'Business Development'],
-        averageSalary: 85000,
-        growthRate: 16
     },
     {
         id: 'channel-sales-manager',
@@ -4277,35 +3871,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 75000,
         growthRate: 12
     },
-
-    // Healthcare - Batch 6
-    {
-        id: 'dental-hygienist',
-        title: 'Dental Hygienist',
-        slug: 'dental-hygienist-2',
-        category: 'healthcare',
-        aliases: ['Registered Dental Hygienist', 'RDH'],
-        averageSalary: 82000,
-        growthRate: 14
-    },
-    {
-        id: 'medical-assistant',
-        title: 'Medical Assistant',
-        slug: 'medical-assistant-2',
-        category: 'healthcare',
-        aliases: ['Clinical Medical Assistant', 'MA'],
-        averageSalary: 40000,
-        growthRate: 16
-    },
-    {
-        id: 'pharmacy-technician',
-        title: 'Pharmacy Technician',
-        slug: 'pharmacy-technician-2',
-        category: 'healthcare',
-        aliases: ['Pharm Tech', 'Pharmacy Assistant'],
-        averageSalary: 38000,
-        growthRate: 10
-    },
     {
         id: 'medical-coder',
         title: 'Medical Coder',
@@ -4324,8 +3889,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 45000,
         growthRate: 14
     },
-
-    // Finance - Batch 6
     {
         id: 'accounts-payable-specialist',
         title: 'Accounts Payable Specialist',
@@ -4345,15 +3908,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 8
     },
     {
-        id: 'bookkeeper',
-        title: 'Bookkeeper',
-        slug: 'bookkeeper-2',
-        category: 'finance',
-        aliases: ['Full Charge Bookkeeper', 'Accounting Clerk'],
-        averageSalary: 43000,
-        growthRate: 6
-    },
-    {
         id: 'staff-accountant',
         title: 'Staff Accountant',
         slug: 'staff-accountant',
@@ -4370,35 +3924,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Cost Analyst', 'Cost Accounting Manager'],
         averageSalary: 70000,
         growthRate: 10
-    },
-
-    // HR - Batch 6
-    {
-        id: 'hr-coordinator-2',
-        title: 'HR Coordinator',
-        slug: 'hr-coordinator-2',
-        category: 'hr',
-        aliases: ['Human Resources Coordinator', 'HR Generalist'],
-        averageSalary: 52000,
-        growthRate: 10
-    },
-    {
-        id: 'hr-generalist',
-        title: 'HR Generalist',
-        slug: 'hr-generalist-2',
-        category: 'hr',
-        aliases: ['Human Resources Generalist', 'HR Specialist'],
-        averageSalary: 62000,
-        growthRate: 12
-    },
-    {
-        id: 'recruiter-2',
-        title: 'Recruiter',
-        slug: 'recruiter-2',
-        category: 'hr',
-        aliases: ['Technical Recruiter', 'Corporate Recruiter'],
-        averageSalary: 60000,
-        growthRate: 14
     },
     {
         id: 'training-specialist',
@@ -4418,55 +3943,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 70000,
         growthRate: 12
     },
-
-    // Admin - Batch 6
-    {
-        id: 'executive-assistant',
-        title: 'Executive Assistant',
-        slug: 'executive-assistant-2',
-        category: 'admin',
-        aliases: ['EA', 'Executive Administrative Assistant'],
-        averageSalary: 65000,
-        growthRate: 10
-    },
-    {
-        id: 'personal-assistant',
-        title: 'Personal Assistant',
-        slug: 'personal-assistant-2',
-        category: 'admin',
-        aliases: ['PA', 'Executive Personal Assistant'],
-        averageSalary: 55000,
-        growthRate: 8
-    },
-    {
-        id: 'receptionist',
-        title: 'Receptionist',
-        slug: 'receptionist-2',
-        category: 'admin',
-        aliases: ['Front Desk Receptionist', 'Office Receptionist'],
-        averageSalary: 35000,
-        growthRate: 6
-    },
-    {
-        id: 'data-entry-clerk',
-        title: 'Data Entry Clerk',
-        slug: 'data-entry-clerk-2',
-        category: 'admin',
-        aliases: ['Data Entry Specialist', 'Typist'],
-        averageSalary: 34000,
-        growthRate: 4
-    },
-    {
-        id: 'file-clerk',
-        title: 'File Clerk',
-        slug: 'file-clerk-2',
-        category: 'admin',
-        aliases: ['Filing Clerk', 'Records Clerk'],
-        averageSalary: 32000,
-        growthRate: 4
-    },
-
-    // Customer Service - Batch 6
     {
         id: 'call-center-representative',
         title: 'Call Center Representative',
@@ -4474,15 +3950,6 @@ export const jobTitles: JobTitle[] = [
         category: 'customer-service',
         aliases: ['Call Center Agent', 'Phone Representative'],
         averageSalary: 36000,
-        growthRate: 8
-    },
-    {
-        id: 'customer-service-representative-2',
-        title: 'Customer Service Representative',
-        slug: 'customer-service-representative-2',
-        category: 'customer-service',
-        aliases: ['CSR', 'Customer Service Agent'],
-        averageSalary: 38000,
         growthRate: 8
     },
     {
@@ -4512,8 +3979,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 45000,
         growthRate: 10
     },
-
-    // Design - Batch 6
     {
         id: 'production-artist',
         title: 'Production Artist',
@@ -4522,71 +3987,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Graphic Production Artist', 'Digital Artist'],
         averageSalary: 55000,
         growthRate: 8
-    },
-    {
-        id: 'visual-designer-2',
-        title: 'Visual Designer',
-        slug: 'visual-designer-2',
-        category: 'design',
-        aliases: ['UI Visual Designer', 'Digital Designer'],
-        averageSalary: 75000,
-        growthRate: 14
-    },
-    {
-        id: 'product-designer-2',
-        title: 'Product Designer',
-        slug: 'product-designer-2',
-        category: 'design',
-        aliases: ['Digital Product Designer', 'UX/UI Designer'],
-        averageSalary: 105000,
-        growthRate: 18
-    },
-    {
-        id: 'ui-designer-2',
-        title: 'UI Designer',
-        slug: 'ui-designer-2',
-        category: 'design',
-        aliases: ['User Interface Designer', 'Interface Designer'],
-        averageSalary: 90000,
-        growthRate: 16
-    },
-    {
-        id: 'ux-designer-2',
-        title: 'UX Designer',
-        slug: 'ux-designer-2',
-        category: 'design',
-        aliases: ['User Experience Designer', 'Experience Designer'],
-        averageSalary: 95000,
-        growthRate: 18
-    },
-
-    // Engineering - Batch 6
-    {
-        id: 'industrial-engineer-2',
-        title: 'Industrial Engineer',
-        slug: 'industrial-engineer-2',
-        category: 'engineering',
-        aliases: ['IE', 'Manufacturing Engineer'],
-        averageSalary: 88000,
-        growthRate: 12
-    },
-    {
-        id: 'environmental-engineer',
-        title: 'Environmental Engineer',
-        slug: 'environmental-engineer-2',
-        category: 'engineering',
-        aliases: ['Environmental Engineering', 'Environmental Consultant'],
-        averageSalary: 92000,
-        growthRate: 14
-    },
-    {
-        id: 'aerospace-engineer',
-        title: 'Aerospace Engineer',
-        slug: 'aerospace-engineer-2',
-        category: 'engineering',
-        aliases: ['Aeronautical Engineer', 'Astronautical Engineer'],
-        averageSalary: 120000,
-        growthRate: 10
     },
     {
         id: 'materials-engineer',
@@ -4606,10 +4006,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 58000,
         growthRate: 8
     },
-
-    // ========== BATCH 7: Additional Jobs ==========
-
-    // Technology - Batch 7
     {
         id: 'mobile-app-developer',
         title: 'Mobile App Developer',
@@ -4618,62 +4014,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Mobile Developer', 'App Developer'],
         averageSalary: 115000,
         growthRate: 22
-    },
-    {
-        id: 'ios-developer',
-        title: 'iOS Developer',
-        slug: 'ios-developer-2',
-        category: 'technology',
-        aliases: ['iPhone Developer', 'Swift Developer'],
-        averageSalary: 125000,
-        growthRate: 22
-    },
-    {
-        id: 'android-developer',
-        title: 'Android Developer',
-        slug: 'android-developer-2',
-        category: 'technology',
-        aliases: ['Android Engineer', 'Kotlin Developer'],
-        averageSalary: 120000,
-        growthRate: 20
-    },
-    {
-        id: 'react-native-developer',
-        title: 'React Native Developer',
-        slug: 'react-native-developer-2',
-        category: 'technology',
-        aliases: ['React Native Engineer', 'Cross-Platform Mobile Developer'],
-        averageSalary: 120000,
-        growthRate: 22
-    },
-    {
-        id: 'flutter-developer',
-        title: 'Flutter Developer',
-        slug: 'flutter-developer-2',
-        category: 'technology',
-        aliases: ['Flutter Engineer', 'Dart Developer'],
-        averageSalary: 115000,
-        growthRate: 24
-    },
-
-    // Marketing - Batch 7
-    {
-        id: 'content-marketing-manager',
-        title: 'Content Marketing Manager',
-        slug: 'content-marketing-manager-2',
-        category: 'marketing',
-        aliases: ['Content Marketing', 'Content Strategy Manager'],
-        averageSalary: 85000,
-        growthRate: 16
-    },
-    {
-        id: 'brand-ambassador-2',
-        title: 'Brand Ambassador',
-        slug: 'brand-ambassador-2',
-        category: 'marketing',
-        aliases: ['Brand Representative', 'Brand Advocate'],
-        averageSalary: 45000,
-        growthRate: 12
     },
     {
         id: 'trade-show-manager',
@@ -4694,35 +4034,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 8
     },
     {
-        id: 'social-media-manager',
-        title: 'Social Media Manager',
-        slug: 'social-media-manager-2',
-        category: 'marketing',
-        aliases: ['SMM', 'Social Media Marketing Manager'],
-        averageSalary: 65000,
-        growthRate: 14
-    },
-
-    // Sales - Batch 7
-    {
-        id: 'account-manager-2',
-        title: 'Account Manager',
-        slug: 'account-manager-2',
-        category: 'sales',
-        aliases: ['Client Account Manager', 'Customer Account Manager'],
-        averageSalary: 70000,
-        growthRate: 12
-    },
-    {
-        id: 'regional-sales-manager',
-        title: 'Regional Sales Manager',
-        slug: 'regional-sales-manager-2',
-        category: 'sales',
-        aliases: ['Area Sales Manager', 'Regional Manager'],
-        averageSalary: 105000,
-        growthRate: 12
-    },
-    {
         id: 'national-account-manager',
         title: 'National Account Manager',
         slug: 'national-account-manager',
@@ -4732,27 +4043,7 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'inside-sales-representative',
-        title: 'Inside Sales Representative',
-        slug: 'inside-sales-representative-2',
-        category: 'sales',
-        aliases: ['Inside Sales Rep', 'Remote Sales Representative'],
-        averageSalary: 55000,
-        growthRate: 12
-    },
-    {
-        id: 'outside-sales-representative',
-        title: 'Outside Sales Representative',
-        slug: 'outside-sales-representative-2',
-        category: 'sales',
-        aliases: ['Field Sales Representative', 'Outside Sales Rep'],
-        averageSalary: 65000,
-        growthRate: 10
-    },
-
-    // Healthcare - Batch 7
-    {
-        id: 'medical-assistant-2',
+        id: 'medical-assistant',
         title: 'Certified Medical Assistant',
         slug: 'certified-medical-assistant',
         category: 'healthcare',
@@ -4796,8 +4087,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 30000,
         growthRate: 8
     },
-
-    // Finance - Batch 7
     {
         id: 'payroll-specialist',
         title: 'Payroll Specialist',
@@ -4817,24 +4106,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 6
     },
     {
-        id: 'financial-analyst-2',
-        title: 'Financial Analyst',
-        slug: 'financial-analyst-2',
-        category: 'finance',
-        aliases: ['Junior Financial Analyst', 'Finance Analyst'],
-        averageSalary: 75000,
-        growthRate: 12
-    },
-    {
-        id: 'budget-analyst',
-        title: 'Budget Analyst',
-        slug: 'budget-analyst-2',
-        category: 'finance',
-        aliases: ['Budget Coordinator', 'Budget Manager'],
-        averageSalary: 72000,
-        growthRate: 10
-    },
-    {
         id: 'pricing-analyst',
         title: 'Pricing Analyst',
         slug: 'pricing-analyst',
@@ -4842,26 +4113,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Pricing Specialist', 'Revenue Analyst'],
         averageSalary: 78000,
         growthRate: 14
-    },
-
-    // Legal - Batch 7
-    {
-        id: 'paralegal-2',
-        title: 'Paralegal',
-        slug: 'paralegal-2',
-        category: 'legal',
-        aliases: ['Legal Assistant', 'Paralegal Specialist'],
-        averageSalary: 58000,
-        growthRate: 12
-    },
-    {
-        id: 'legal-assistant',
-        title: 'Legal Assistant',
-        slug: 'legal-assistant-2',
-        category: 'legal',
-        aliases: ['Legal Secretary', 'Legal Admin'],
-        averageSalary: 50000,
-        growthRate: 10
     },
     {
         id: 'legal-secretary',
@@ -4880,35 +4131,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Compliance Manager', 'Compliance Specialist'],
         averageSalary: 80000,
         growthRate: 14
-    },
-    {
-        id: 'contract-administrator-legal',
-        title: 'Contract Administrator',
-        slug: 'contract-administrator-legal',
-        category: 'legal',
-        aliases: ['Contracts Administrator', 'Contract Specialist'],
-        averageSalary: 72000,
-        growthRate: 12
-    },
-
-    // Education - Batch 7
-    {
-        id: 'substitute-teacher-2',
-        title: 'Substitute Teacher',
-        slug: 'substitute-teacher-2',
-        category: 'education',
-        aliases: ['Sub Teacher', 'Supply Teacher'],
-        averageSalary: 38000,
-        growthRate: 6
-    },
-    {
-        id: 'teaching-assistant-2',
-        title: 'Teaching Assistant',
-        slug: 'teaching-assistant-2',
-        category: 'education',
-        aliases: ['Teacher Aide', 'Classroom Assistant'],
-        averageSalary: 32000,
-        growthRate: 8
     },
     {
         id: 'education-assistant',
@@ -4936,17 +4158,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Admissions Officer', 'Enrollment Counselor'],
         averageSalary: 48000,
         growthRate: 12
-    },
-
-    // Real Estate - Batch 7
-    {
-        id: 'real-estate-assistant-2',
-        title: 'Real Estate Assistant',
-        slug: 'real-estate-assistant-2',
-        category: 'real-estate',
-        aliases: ['Real Estate Administrative Assistant', 'RE Assistant'],
-        averageSalary: 45000,
-        growthRate: 10
     },
     {
         id: 'leasing-agent',
@@ -4984,8 +4195,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 55000,
         growthRate: 10
     },
-
-    // Skilled Trades - Batch 7
     {
         id: 'maintenance-technician',
         title: 'Maintenance Technician',
@@ -5031,57 +4240,24 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 35000,
         growthRate: 10
     },
-
-    // ========== BATCH 8: Additional Jobs ==========
-
-    // Technology - Batch 8
     {
-        id: 'software-architect-2',
-        title: 'Software Architect',
-        slug: 'software-architect-2',
-        category: 'technology',
-        aliases: ['Solutions Architect', 'Application Architect'],
-        averageSalary: 155000,
-        growthRate: 18
-    },
-    {
-        id: 'solution-architect-2',
-        title: 'Solutions Architect',
-        slug: 'solutions-architect-2',
-        category: 'technology',
-        aliases: ['Solution Architect', 'Enterprise Architect'],
-        averageSalary: 160000,
-        growthRate: 20
-    },
-    {
-        id: 'data-architect-2',
+        id: 'data-architect',
         title: 'Data Architect',
-        slug: 'data-architect-2',
+        slug: 'data-architect',
         category: 'technology',
         aliases: ['Data Architecture Lead', 'Enterprise Data Architect'],
         averageSalary: 150000,
         growthRate: 22
     },
     {
-        id: 'cloud-engineer-2',
+        id: 'cloud-engineer',
         title: 'Cloud Engineer',
-        slug: 'cloud-engineer-2',
+        slug: 'cloud-engineer',
         category: 'technology',
         aliases: ['Cloud Infrastructure Engineer', 'AWS Engineer'],
         averageSalary: 135000,
         growthRate: 24
     },
-    {
-        id: 'devops-engineer-2',
-        title: 'DevOps Engineer',
-        slug: 'devops-engineer-2',
-        category: 'technology',
-        aliases: ['DevOps Engineer II', 'Senior DevOps'],
-        averageSalary: 130000,
-        growthRate: 22
-    },
-
-    // Marketing - Batch 8
     {
         id: 'digital-marketing-coordinator',
         title: 'Digital Marketing Coordinator',
@@ -5127,8 +4303,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 62000,
         growthRate: 14
     },
-
-    // Sales - Batch 8
     {
         id: 'sales-support-administrator',
         title: 'Sales Support Administrator',
@@ -5137,15 +4311,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Sales Support Specialist', 'Sales Admin'],
         averageSalary: 48000,
         growthRate: 10
-    },
-    {
-        id: 'sales-analyst-2',
-        title: 'Sales Analyst',
-        slug: 'sales-analyst-2',
-        category: 'sales',
-        aliases: ['Sales Data Analyst', 'Sales Reporting Analyst'],
-        averageSalary: 70000,
-        growthRate: 14
     },
     {
         id: 'bid-manager',
@@ -5174,8 +4339,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 150000,
         growthRate: 14
     },
-
-    // Healthcare - Batch 8
     {
         id: 'health-unit-coordinator',
         title: 'Health Unit Coordinator',
@@ -5221,8 +4384,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 35000,
         growthRate: 10
     },
-
-    // Finance - Batch 8
     {
         id: 'finance-director',
         title: 'Finance Director',
@@ -5231,24 +4392,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Director of Finance', 'Financial Director'],
         averageSalary: 145000,
         growthRate: 14
-    },
-    {
-        id: 'controller',
-        title: 'Controller',
-        slug: 'controller-2',
-        category: 'finance',
-        aliases: ['Corporate Controller', 'Financial Controller'],
-        averageSalary: 135000,
-        growthRate: 12
-    },
-    {
-        id: 'assistant-controller-2',
-        title: 'Assistant Controller',
-        slug: 'assistant-controller-2',
-        category: 'finance',
-        aliases: ['Assistant Financial Controller', 'Deputy Controller'],
-        averageSalary: 95000,
-        growthRate: 12
     },
     {
         id: 'senior-accountant',
@@ -5268,8 +4411,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 65000,
         growthRate: 10
     },
-
-    // Legal - Batch 8
     {
         id: 'legal-intern',
         title: 'Legal Intern',
@@ -5315,8 +4456,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 105000,
         growthRate: 16
     },
-
-    // Education - Batch 8
     {
         id: 'education-consultant',
         title: 'Education Consultant',
@@ -5354,26 +4493,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'academic-advisor-2',
-        title: 'Academic Advisor',
-        slug: 'academic-advisor-2',
-        category: 'education',
-        aliases: ['Academic Counselor', 'Student Advisor'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-
-    // Real Estate - Batch 8
-    {
-        id: 'real-estate-analyst-2',
-        title: 'Real Estate Analyst',
-        slug: 'real-estate-analyst-2',
-        category: 'real-estate',
-        aliases: ['Property Analyst', 'Real Estate Investment Analyst'],
-        averageSalary: 75000,
-        growthRate: 14
-    },
-    {
         id: 'title-company-representative',
         title: 'Title Company Representative',
         slug: 'title-company-representative',
@@ -5409,8 +4528,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 65000,
         growthRate: 14
     },
-
-    // Hospitality - Batch 8
     {
         id: 'event-coordinator-hospitality',
         title: 'Event Coordinator',
@@ -5456,17 +4573,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 55000,
         growthRate: 12
     },
-
-    // Transportation - Batch 8
-    {
-        id: 'delivery-driver-2',
-        title: 'Delivery Driver',
-        slug: 'delivery-driver-2',
-        category: 'transportation',
-        aliases: ['Package Delivery Driver', 'Courier Driver'],
-        averageSalary: 40000,
-        growthRate: 10
-    },
     {
         id: 'shuttle-driver',
         title: 'Shuttle Driver',
@@ -5503,14 +4609,10 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 48000,
         growthRate: 10
     },
-
-    // ========== BATCH 9: Additional Jobs ==========
-
-    // Technology - Batch 9
     {
-        id: 'quality-assurance-engineer-2',
+        id: 'quality-assurance-engineer',
         title: 'Quality Assurance Engineer',
-        slug: 'quality-assurance-engineer-2',
+        slug: 'quality-assurance-engineer',
         category: 'technology',
         aliases: ['QA Engineer II', 'Senior QA Engineer'],
         averageSalary: 105000,
@@ -5544,29 +4646,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 24
     },
     {
-        id: 'cybersecurity-analyst-2',
-        title: 'Cybersecurity Analyst',
-        slug: 'cybersecurity-analyst-2',
-        category: 'technology',
-        aliases: ['Security Analyst', 'Information Security Analyst'],
-        averageSalary: 110000,
-        growthRate: 26
-    },
-
-    // Marketing - Batch 9
-    {
-        id: 'creative-director-2',
-        title: 'Creative Director',
-        slug: 'creative-director-2',
-        category: 'marketing',
-        aliases: ['Design Director', 'Creative Lead'],
-        averageSalary: 140000,
-        growthRate: 14
-    },
-    {
-        id: 'art-director-2',
+        id: 'art-director',
         title: 'Art Director',
-        slug: 'art-director-2',
+        slug: 'art-director',
         category: 'marketing',
         aliases: ['Creative Art Director', 'Design Art Director'],
         averageSalary: 105000,
@@ -5591,51 +4673,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'chief-marketing-officer-2',
-        title: 'Chief Marketing Officer',
-        slug: 'chief-marketing-officer-2',
-        category: 'marketing',
-        aliases: ['CMO', 'Head of Marketing'],
-        averageSalary: 220000,
-        growthRate: 18
-    },
-
-    // Sales - Batch 9
-    {
-        id: 'global-account-manager',
-        title: 'Global Account Manager',
-        slug: 'global-account-manager-2',
-        category: 'sales',
-        aliases: ['GAM', 'International Account Manager'],
-        averageSalary: 140000,
-        growthRate: 16
-    },
-    {
-        id: 'strategic-account-manager-2',
-        title: 'Strategic Account Manager',
-        slug: 'strategic-account-manager-2',
-        category: 'sales',
-        aliases: ['SAM', 'Enterprise Strategic Account Manager'],
-        averageSalary: 125000,
-        growthRate: 16
-    },
-    {
-        id: 'sales-director-2',
+        id: 'sales-director',
         title: 'Sales Director',
-        slug: 'sales-director-2',
+        slug: 'sales-director',
         category: 'sales',
         aliases: ['Director of Sales', 'Head of Sales'],
         averageSalary: 150000,
         growthRate: 14
-    },
-    {
-        id: 'chief-revenue-officer-2',
-        title: 'Chief Revenue Officer',
-        slug: 'chief-revenue-officer-2',
-        category: 'sales',
-        aliases: ['CRO', 'Head of Revenue'],
-        averageSalary: 225000,
-        growthRate: 20
     },
     {
         id: 'client-partner-manager',
@@ -5646,8 +4690,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 100000,
         growthRate: 14
     },
-
-    // Healthcare - Batch 9
     {
         id: 'chief-medical-officer',
         title: 'Chief Medical Officer',
@@ -5667,22 +4709,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'nurse-manager-2',
+        id: 'nurse-manager',
         title: 'Nurse Manager',
-        slug: 'nurse-manager-2',
+        slug: 'nurse-manager',
         category: 'healthcare',
         aliases: ['RN Manager', 'Nursing Unit Manager'],
         averageSalary: 95000,
         growthRate: 14
-    },
-    {
-        id: 'charge-nurse-2',
-        title: 'Charge Nurse',
-        slug: 'charge-nurse-2',
-        category: 'healthcare',
-        aliases: ['Team Leader Nurse', 'Shift Charge Nurse'],
-        averageSalary: 80000,
-        growthRate: 12
     },
     {
         id: 'triage-nurse',
@@ -5693,12 +4726,10 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 78000,
         growthRate: 14
     },
-
-    // Finance - Batch 9
     {
-        id: 'chief-financial-officer-2',
+        id: 'chief-financial-officer',
         title: 'Chief Financial Officer',
-        slug: 'chief-financial-officer-2',
+        slug: 'chief-financial-officer',
         category: 'finance',
         aliases: ['CFO', 'Finance Chief Executive'],
         averageSalary: 250000,
@@ -5723,25 +4754,23 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'investment-manager-2',
+        id: 'investment-manager',
         title: 'Investment Manager',
-        slug: 'investment-manager-2',
+        slug: 'investment-manager',
         category: 'finance',
         aliases: ['Investment Fund Manager', 'Portfolio Manager'],
         averageSalary: 135000,
         growthRate: 18
     },
     {
-        id: 'portfolio-manager-2',
+        id: 'portfolio-manager',
         title: 'Portfolio Manager',
-        slug: 'portfolio-manager-2',
+        slug: 'portfolio-manager',
         category: 'finance',
         aliases: ['Investment Portfolio Manager', 'Fund Manager'],
         averageSalary: 145000,
         growthRate: 16
     },
-
-    // HR - Batch 9
     {
         id: 'chief-human-resources-officer',
         title: 'Chief Human Resources Officer',
@@ -5761,18 +4790,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'hr-director-2',
-        title: 'HR Director',
-        slug: 'hr-director-2',
-        category: 'hr',
-        aliases: ['Director of HR', 'Human Resources Director'],
-        averageSalary: 125000,
-        growthRate: 14
-    },
-    {
-        id: 'talent-acquisition-manager-2',
+        id: 'talent-acquisition-manager',
         title: 'Talent Acquisition Manager',
-        slug: 'talent-acquisition-manager-2',
+        slug: 'talent-acquisition-manager',
         category: 'hr',
         aliases: ['Recruitment Manager', 'Head of Talent Acquisition'],
         averageSalary: 95000,
@@ -5787,17 +4807,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 105000,
         growthRate: 18
     },
-
-    // Admin - Batch 9
-    {
-        id: 'office-manager-2',
-        title: 'Office Manager',
-        slug: 'office-manager-2',
-        category: 'admin',
-        aliases: ['Office Manager Senior', 'Office Supervisor'],
-        averageSalary: 60000,
-        growthRate: 10
-    },
     {
         id: 'administrative-manager',
         title: 'Administrative Manager',
@@ -5808,15 +4817,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'project-coordinator',
-        title: 'Project Coordinator',
-        slug: 'project-coordinator-2',
-        category: 'admin',
-        aliases: ['Project Admin', 'Project Support Coordinator'],
-        averageSalary: 58000,
-        growthRate: 14
-    },
-    {
         id: 'team-assistant',
         title: 'Team Assistant',
         slug: 'team-assistant',
@@ -5825,17 +4825,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 50000,
         growthRate: 10
     },
-    {
-        id: 'virtual-assistant',
-        title: 'Virtual Assistant',
-        slug: 'virtual-assistant-2',
-        category: 'admin',
-        aliases: ['VA', 'Remote Assistant'],
-        averageSalary: 45000,
-        growthRate: 18
-    },
-
-    // Customer Service - Batch 9
     {
         id: 'customer-service-director',
         title: 'Customer Service Director',
@@ -5881,39 +4870,10 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 90000,
         growthRate: 14
     },
-
-    // Design - Batch 9
     {
-        id: 'creative-director-design',
-        title: 'Creative Director',
-        slug: 'creative-director-design',
-        category: 'design',
-        aliases: ['Design Creative Director', 'Visual Creative Director'],
-        averageSalary: 145000,
-        growthRate: 16
-    },
-    {
-        id: 'art-director-design',
-        title: 'Art Director',
-        slug: 'art-director-design',
-        category: 'design',
-        aliases: ['Design Art Director', 'Visual Art Director'],
-        averageSalary: 110000,
-        growthRate: 14
-    },
-    {
-        id: 'design-manager-2',
-        title: 'Design Manager',
-        slug: 'design-manager-2',
-        category: 'design',
-        aliases: ['UX Design Manager', 'Design Team Manager'],
-        averageSalary: 130000,
-        growthRate: 18
-    },
-    {
-        id: 'design-director-2',
+        id: 'design-director',
         title: 'Design Director',
-        slug: 'design-director-2',
+        slug: 'design-director',
         category: 'design',
         aliases: ['Director of Design', 'Head of Design'],
         averageSalary: 160000,
@@ -5927,17 +4887,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Lead Principal Designer', 'Staff Principal Designer'],
         averageSalary: 175000,
         growthRate: 20
-    },
-
-    // Engineering - Batch 9
-    {
-        id: 'engineering-manager-2',
-        title: 'Engineering Manager',
-        slug: 'engineering-manager-2',
-        category: 'engineering',
-        aliases: ['Manager of Engineering', 'Engineering Team Manager'],
-        averageSalary: 145000,
-        growthRate: 16
     },
     {
         id: 'director-of-engineering',
@@ -5975,19 +4924,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 120000,
         growthRate: 14
     },
-
-    // ========== BATCH 10: Additional Jobs ==========
-
-    // Technology - Batch 10
-    {
-        id: 'game-developer',
-        title: 'Game Developer',
-        slug: 'game-developer-2',
-        category: 'technology',
-        aliases: ['Game Programmer', 'Game Dev'],
-        averageSalary: 105000,
-        growthRate: 16
-    },
     {
         id: 'unity-developer',
         title: 'Unity Developer',
@@ -6007,15 +4943,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 18
     },
     {
-        id: 'blockchain-developer',
-        title: 'Blockchain Developer',
-        slug: 'blockchain-developer-2',
-        category: 'technology',
-        aliases: ['Web3 Developer', 'Smart Contract Developer'],
-        averageSalary: 145000,
-        growthRate: 26
-    },
-    {
         id: 'vr-developer',
         title: 'VR Developer',
         slug: 'vr-developer',
@@ -6024,8 +4951,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 125000,
         growthRate: 22
     },
-
-    // Marketing - Batch 10
     {
         id: 'influencer-coordinator',
         title: 'Influencer Coordinator',
@@ -6033,24 +4958,6 @@ export const jobTitles: JobTitle[] = [
         category: 'marketing',
         aliases: ['Influencer Marketing Coordinator', 'Influencer Relations'],
         averageSalary: 55000,
-        growthRate: 16
-    },
-    {
-        id: 'community-manager-2',
-        title: 'Community Manager',
-        slug: 'community-manager-2',
-        category: 'marketing',
-        aliases: ['Online Community Manager', 'Discord Manager'],
-        averageSalary: 70000,
-        growthRate: 18
-    },
-    {
-        id: 'customer-insights-manager',
-        title: 'Customer Insights Manager',
-        slug: 'customer-insights-manager-2',
-        category: 'marketing',
-        aliases: ['Consumer Insights Manager', 'Customer Analytics Manager'],
-        averageSalary: 90000,
         growthRate: 16
     },
     {
@@ -6071,8 +4978,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 75000,
         growthRate: 14
     },
-
-    // Sales - Batch 10
     {
         id: 'strategic-alliances-manager',
         title: 'Strategic Alliances Manager',
@@ -6118,17 +5023,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 130000,
         growthRate: 20
     },
-
-    // Healthcare - Batch 10
-    {
-        id: 'occupational-therapist-2',
-        title: 'Occupational Therapy Assistant',
-        slug: 'occupational-therapy-assistant-2',
-        category: 'healthcare',
-        aliases: ['OTA Assistant', 'OT Assistant'],
-        averageSalary: 65000,
-        growthRate: 18
-    },
     {
         id: 'physical-therapist-assistant',
         title: 'Physical Therapy Assistant',
@@ -6148,7 +5042,7 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'respiratory-therapist-2',
+        id: 'respiratory-therapist',
         title: 'Respiratory Therapy Assistant',
         slug: 'respiratory-therapy-assistant',
         category: 'healthcare',
@@ -6157,7 +5051,7 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'pharmacy-technician-2',
+        id: 'pharmacy-technician',
         title: 'Pharmacy Technician Trainee',
         slug: 'pharmacy-technician-trainee',
         category: 'healthcare',
@@ -6165,8 +5059,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 35000,
         growthRate: 10
     },
-
-    // Finance - Batch 10
     {
         id: 'private-equity-analyst',
         title: 'Private Equity Analyst',
@@ -6188,16 +5080,16 @@ export const jobTitles: JobTitle[] = [
     {
         id: 'equity-research-analyst',
         title: 'Equity Research Analyst',
-        slug: 'equity-research-analyst-2',
+        slug: 'equity-research-analyst',
         category: 'finance',
         aliases: ['Equity Analyst', 'Securities Analyst'],
         averageSalary: 110000,
         growthRate: 14
     },
     {
-        id: 'fixed-income-analyst-2',
+        id: 'fixed-income-analyst',
         title: 'Fixed Income Analyst',
-        slug: 'fixed-income-analyst-2',
+        slug: 'fixed-income-analyst',
         category: 'finance',
         aliases: ['Bond Analyst', 'Fixed Income Specialist'],
         averageSalary: 95000,
@@ -6212,8 +5104,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 115000,
         growthRate: 14
     },
-
-    // Legal - Batch 10
     {
         id: 'corporate-counsel',
         title: 'Corporate Counsel',
@@ -6259,17 +5149,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 65000,
         growthRate: 12
     },
-
-    // Education - Batch 10
-    {
-        id: 'special-education-teacher-2',
-        title: 'Special Education Teacher',
-        slug: 'special-education-teacher-2',
-        category: 'education',
-        aliases: ['SPED Teacher', 'Special Ed Teacher'],
-        averageSalary: 58000,
-        growthRate: 12
-    },
     {
         id: 'gifted-education-teacher',
         title: 'Gifted Education Teacher',
@@ -6306,17 +5185,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 58000,
         growthRate: 12
     },
-
-    // Real Estate - Batch 10
-    {
-        id: 'real-estate-broker-2',
-        title: 'Real Estate Broker',
-        slug: 'real-estate-broker-2',
-        category: 'real-estate',
-        aliases: ['Broker', 'Real Estate Brokerage Owner'],
-        averageSalary: 75000,
-        growthRate: 10
-    },
     {
         id: 'sales-agent-real-estate',
         title: 'Real Estate Sales Agent',
@@ -6327,15 +5195,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'commercial-real-estate-agent',
-        title: 'Commercial Real Estate Agent',
-        slug: 'commercial-real-estate-agent-2',
-        category: 'real-estate',
-        aliases: ['Commercial Realtor', 'Commercial Property Sales'],
-        averageSalary: 85000,
-        growthRate: 12
-    },
-    {
         id: 'mortgage-loan-officer',
         title: 'Mortgage Loan Officer',
         slug: 'mortgage-loan-officer',
@@ -6344,17 +5203,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 75000,
         growthRate: 14
     },
-    {
-        id: 'real-estate-appraiser-2',
-        title: 'Real Estate Appraiser',
-        slug: 'real-estate-appraiser-2',
-        category: 'real-estate',
-        aliases: ['Property Appraiser', 'Real Estate Valuer'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-
-    // Hospitality - Batch 10
     {
         id: 'general-manager-hotel',
         title: 'Hotel General Manager',
@@ -6383,9 +5231,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'concierge-2',
+        id: 'concierge',
         title: 'Concierge',
-        slug: 'concierge-2',
+        slug: 'concierge',
         category: 'hospitality',
         aliases: ['Hotel Concierge', 'Guest Services Concierge'],
         averageSalary: 40000,
@@ -6400,39 +5248,19 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 52000,
         growthRate: 12
     },
-
-    // Transportation - Batch 10
     {
-        id: 'logistics-manager-2',
+        id: 'logistics-manager',
         title: 'Logistics Manager',
-        slug: 'logistics-manager-2',
+        slug: 'logistics-manager',
         category: 'transportation',
         aliases: ['Logistics Manager', 'Supply Chain Manager'],
         averageSalary: 85000,
         growthRate: 14
     },
     {
-        id: 'warehouse-manager-2',
-        title: 'Warehouse Manager',
-        slug: 'warehouse-manager-2',
-        category: 'transportation',
-        aliases: ['Distribution Center Manager', 'Warehouse Operations Manager'],
-        averageSalary: 70000,
-        growthRate: 10
-    },
-    {
-        id: 'supply-chain-manager-2',
-        title: 'Supply Chain Manager',
-        slug: 'supply-chain-manager-2',
-        category: 'transportation',
-        aliases: ['SCM', 'Supply Chain Director'],
-        averageSalary: 95000,
-        growthRate: 14
-    },
-    {
-        id: 'fleet-manager-2',
+        id: 'fleet-manager',
         title: 'Fleet Manager',
-        slug: 'fleet-manager-2',
+        slug: 'fleet-manager',
         category: 'transportation',
         aliases: ['Vehicle Fleet Manager', 'Transportation Manager'],
         averageSalary: 75000,
@@ -6446,19 +5274,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Delivery Route Manager', 'Transportation Route Manager'],
         averageSalary: 65000,
         growthRate: 12
-    },
-
-    // ========== BATCH 11: Additional Jobs ==========
-
-    // Technology - Batch 11
-    {
-        id: 'ai-engineer-2',
-        title: 'AI Engineer',
-        slug: 'ai-engineer-3',
-        category: 'technology',
-        aliases: ['Artificial Intelligence Engineer', 'ML Engineer'],
-        averageSalary: 155000,
-        growthRate: 28
     },
     {
         id: 'nlp-engineer',
@@ -6496,8 +5311,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 150000,
         growthRate: 30
     },
-
-    // Marketing - Batch 11
     {
         id: 'marketing-automation-specialist',
         title: 'Marketing Automation Specialist',
@@ -6508,33 +5321,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 18
     },
     {
-        id: 'product-marketing-manager-2',
-        title: 'Product Marketing Manager',
-        slug: 'product-marketing-manager-3',
-        category: 'marketing',
-        aliases: ['PMM', 'Product Marketing'],
-        averageSalary: 110000,
-        growthRate: 16
-    },
-    {
-        id: 'field-marketing-manager',
-        title: 'Field Marketing Manager',
-        slug: 'field-marketing-manager-2',
-        category: 'marketing',
-        aliases: ['Regional Marketing Manager', 'Field Marketing'],
-        averageSalary: 95000,
-        growthRate: 14
-    },
-    {
-        id: 'affiliate-marketing-manager',
-        title: 'Affiliate Marketing Manager',
-        slug: 'affiliate-marketing-manager-2',
-        category: 'marketing',
-        aliases: ['Affiliate Manager', 'Partnership Marketing Manager'],
-        averageSalary: 75000,
-        growthRate: 16
-    },
-    {
         id: 'marketing-data-analyst',
         title: 'Marketing Data Analyst',
         slug: 'marketing-data-analyst',
@@ -6543,55 +5329,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 75000,
         growthRate: 20
     },
-
-    // Sales - Batch 11
-    {
-        id: 'sales-operations-analyst',
-        title: 'Sales Operations Analyst',
-        slug: 'sales-operations-analyst-2',
-        category: 'sales',
-        aliases: ['Sales Ops Analyst', 'Revenue Operations Analyst'],
-        averageSalary: 75000,
-        growthRate: 16
-    },
-    {
-        id: 'sales-enablement-manager',
-        title: 'Sales Enablement Manager',
-        slug: 'sales-enablement-manager-2',
-        category: 'sales',
-        aliases: ['Sales Training Manager', 'Sales Content Manager'],
-        averageSalary: 95000,
-        growthRate: 18
-    },
-    {
-        id: 'enterprise-account-executive',
-        title: 'Enterprise Account Executive',
-        slug: 'enterprise-account-executive-3',
-        category: 'sales',
-        aliases: ['Enterprise AE', 'Enterprise Sales Executive'],
-        averageSalary: 140000,
-        growthRate: 18
-    },
-    {
-        id: 'inside-sales-representative',
-        title: 'Inside Sales Representative',
-        slug: 'inside-sales-representative-3',
-        category: 'sales',
-        aliases: ['Inside Sales Rep', 'Remote Sales Representative'],
-        averageSalary: 55000,
-        growthRate: 12
-    },
-    {
-        id: 'sales-engineer-2',
-        title: 'Sales Engineer',
-        slug: 'sales-engineer-2',
-        category: 'sales',
-        aliases: ['Solutions Engineer', 'Pre-Sales Engineer'],
-        averageSalary: 125000,
-        growthRate: 16
-    },
-
-    // Healthcare - Batch 11
     {
         id: 'medical-records-technician',
         title: 'Medical Records Technician',
@@ -6600,15 +5337,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Health Information Technician', 'Medical Records Clerk'],
         averageSalary: 42000,
         growthRate: 12
-    },
-    {
-        id: 'health-unit-coordinator',
-        title: 'Health Unit Coordinator',
-        slug: 'health-unit-coordinator-2',
-        category: 'healthcare',
-        aliases: ['Unit Clerk', 'Ward Secretary'],
-        averageSalary: 38000,
-        growthRate: 10
     },
     {
         id: 'dietetic-technician',
@@ -6629,79 +5357,12 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'patient-access-representative',
-        title: 'Patient Access Representative',
-        slug: 'patient-access-representative-2',
-        category: 'healthcare',
-        aliases: ['Patient Registration', 'Admissions Representative'],
-        averageSalary: 38000,
-        growthRate: 12
-    },
-
-    // Finance - Batch 11
-    {
-        id: 'credit-analyst',
-        title: 'Credit Analyst',
-        slug: 'credit-analyst-3',
-        category: 'finance',
-        aliases: ['Credit Risk Analyst', 'Loan Analyst'],
-        averageSalary: 75000,
-        growthRate: 10
-    },
-    {
-        id: 'budget-analyst',
-        title: 'Budget Analyst',
-        slug: 'budget-analyst-3',
-        category: 'finance',
-        aliases: ['Budget Manager', 'Financial Planning Analyst'],
-        averageSalary: 80000,
-        growthRate: 10
-    },
-    {
-        id: 'treasury-analyst',
-        title: 'Treasury Analyst',
-        slug: 'treasury-analyst-3',
-        category: 'finance',
-        aliases: ['Treasury Specialist', 'Cash Management Analyst'],
-        averageSalary: 85000,
-        growthRate: 12
-    },
-    {
-        id: 'pricing-analyst',
-        title: 'Pricing Analyst',
-        slug: 'pricing-analyst-2',
-        category: 'finance',
-        aliases: ['Pricing Specialist', 'Revenue Management Analyst'],
-        averageSalary: 80000,
-        growthRate: 14
-    },
-    {
         id: 'tax-associate',
         title: 'Tax Associate',
         slug: 'tax-associate',
         category: 'finance',
         aliases: ['Tax Analyst', 'Tax Preparation Associate'],
         averageSalary: 70000,
-        growthRate: 10
-    },
-
-    // HR - Batch 11
-    {
-        id: 'compensation-analyst',
-        title: 'Compensation Analyst',
-        slug: 'compensation-analyst-3',
-        category: 'hr',
-        aliases: ['Compensation Specialist', 'Salary Analyst'],
-        averageSalary: 75000,
-        growthRate: 12
-    },
-    {
-        id: 'benefits-administrator',
-        title: 'Benefits Administrator',
-        slug: 'benefits-administrator-2',
-        category: 'hr',
-        aliases: ['Benefits Specialist', 'Employee Benefits Coordinator'],
-        averageSalary: 60000,
         growthRate: 10
     },
     {
@@ -6723,17 +5384,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'employee-relations-specialist',
-        title: 'Employee Relations Specialist',
-        slug: 'employee-relations-specialist-2',
-        category: 'hr',
-        aliases: ['ER Specialist', 'Labor Relations Specialist'],
-        averageSalary: 70000,
-        growthRate: 10
-    },
-
-    // Admin - Batch 11
-    {
         id: 'executive-administrator',
         title: 'Executive Administrator',
         slug: 'executive-administrator',
@@ -6741,33 +5391,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Executive Admin', 'Executive Office Manager'],
         averageSalary: 65000,
         growthRate: 10
-    },
-    {
-        id: 'administrative-coordinator',
-        title: 'Administrative Coordinator',
-        slug: 'administrative-coordinator-2',
-        category: 'admin',
-        aliases: ['Admin Coordinator', 'Office Coordinator'],
-        averageSalary: 48000,
-        growthRate: 10
-    },
-    {
-        id: 'document-specialist',
-        title: 'Document Specialist',
-        slug: 'document-specialist-2',
-        category: 'admin',
-        aliases: ['Records Management Specialist', 'Documentation Clerk'],
-        averageSalary: 42000,
-        growthRate: 8
-    },
-    {
-        id: 'data-entry-clerk-2',
-        title: 'Data Entry Clerk',
-        slug: 'data-entry-clerk-3',
-        category: 'admin',
-        aliases: ['Data Entry Specialist', 'Data Input Clerk'],
-        averageSalary: 36000,
-        growthRate: -6
     },
     {
         id: 'office-services-coordinator',
@@ -6778,8 +5401,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 50000,
         growthRate: 10
     },
-
-    // Customer Service - Batch 11
     {
         id: 'technical-support-representative',
         title: 'Technical Support Representative',
@@ -6817,17 +5438,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 8
     },
     {
-        id: 'dispute-resolution-specialist',
-        title: 'Dispute Resolution Specialist',
-        slug: 'dispute-resolution-specialist-2',
-        category: 'customer-service',
-        aliases: ['Claims Specialist', 'Dispute Analyst'],
-        averageSalary: 48000,
-        growthRate: 10
-    },
-
-    // Design - Batch 11
-    {
         id: 'motion-graphics-designer',
         title: 'Motion Graphics Designer',
         slug: 'motion-graphics-designer',
@@ -6835,15 +5445,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Motion Designer', 'Animation Designer'],
         averageSalary: 75000,
         growthRate: 16
-    },
-    {
-        id: 'product-designer-2',
-        title: 'Product Designer',
-        slug: 'product-designer-3',
-        category: 'design',
-        aliases: ['Digital Product Designer', 'UX Product Designer'],
-        averageSalary: 115000,
-        growthRate: 18
     },
     {
         id: 'brand-identity-designer',
@@ -6872,46 +5473,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 95000,
         growthRate: 20
     },
-
-    // ========== BATCH 12: Additional Jobs ==========
-
-    // Technology - Batch 12
-    {
-        id: 'site-reliability-engineer',
-        title: 'Site Reliability Engineer',
-        slug: 'site-reliability-engineer-3',
-        category: 'technology',
-        aliases: ['SRE', 'Reliability Engineer'],
-        averageSalary: 155000,
-        growthRate: 24
-    },
-    {
-        id: 'devsecops-engineer',
-        title: 'DevSecOps Engineer',
-        slug: 'devsecops-engineer-2',
-        category: 'technology',
-        aliases: ['DevSecOps', 'Security DevOps Engineer'],
-        averageSalary: 150000,
-        growthRate: 26
-    },
-    {
-        id: 'platform-engineer',
-        title: 'Platform Engineer',
-        slug: 'platform-engineer-3',
-        category: 'technology',
-        aliases: ['Platform DevOps Engineer', 'Internal Developer Platform'],
-        averageSalary: 150000,
-        growthRate: 28
-    },
-    {
-        id: 'kubernetes-engineer',
-        title: 'Kubernetes Engineer',
-        slug: 'kubernetes-engineer-2',
-        category: 'technology',
-        aliases: ['K8s Engineer', 'Container Orchestration Engineer'],
-        averageSalary: 145000,
-        growthRate: 26
-    },
     {
         id: 'data-infrastructure-engineer',
         title: 'Data Infrastructure Engineer',
@@ -6920,17 +5481,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Data Platform Engineer', 'Data Engineering Lead'],
         averageSalary: 150000,
         growthRate: 24
-    },
-
-    // Marketing - Batch 12
-    {
-        id: 'growth-marketer',
-        title: 'Growth Marketer',
-        slug: 'growth-marketer-3',
-        category: 'marketing',
-        aliases: ['Growth Marketing Manager', 'Growth Hacker'],
-        averageSalary: 95000,
-        growthRate: 20
     },
     {
         id: 'performance-marketer',
@@ -6951,35 +5501,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'demand-generation-manager',
-        title: 'Demand Generation Manager',
-        slug: 'demand-generation-manager-2',
-        category: 'marketing',
-        aliases: ['Demand Gen Manager', 'Lead Generation Manager'],
-        averageSalary: 95000,
-        growthRate: 18
-    },
-    {
-        id: 'marketing-operations-manager',
-        title: 'Marketing Operations Manager',
-        slug: 'marketing-operations-manager-2',
-        category: 'marketing',
-        aliases: ['Marketing Ops', 'MOps Manager'],
-        averageSalary: 100000,
-        growthRate: 18
-    },
-
-    // Sales - Batch 12
-    {
-        id: 'revenue-operations-manager',
-        title: 'Revenue Operations Manager',
-        slug: 'revenue-operations-manager-2',
-        category: 'sales',
-        aliases: ['RevOps Manager', 'Revenue Ops'],
-        averageSalary: 110000,
-        growthRate: 20
-    },
-    {
         id: 'business-development-representative',
         title: 'Business Development Representative',
         slug: 'business-development-representative',
@@ -6988,35 +5509,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 55000,
         growthRate: 14
     },
-    {
-        id: 'account-manager-2',
-        title: 'Account Manager',
-        slug: 'account-manager-3',
-        category: 'sales',
-        aliases: ['Client Account Manager', 'Customer Account Manager'],
-        averageSalary: 70000,
-        growthRate: 12
-    },
-    {
-        id: 'customer-success-manager-2',
-        title: 'Customer Success Manager',
-        slug: 'customer-success-manager-3',
-        category: 'sales',
-        aliases: ['CSM', 'Customer Success'],
-        averageSalary: 80000,
-        growthRate: 16
-    },
-    {
-        id: 'solutions-consultant',
-        title: 'Solutions Consultant',
-        slug: 'solutions-consultant-2',
-        category: 'sales',
-        aliases: ['Solutions Architect', 'Presales Consultant'],
-        averageSalary: 130000,
-        growthRate: 16
-    },
-
-    // Healthcare - Batch 12
     {
         id: 'medical-lab-technician',
         title: 'Medical Laboratory Technician',
@@ -7036,38 +5528,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'patient-care-technician',
-        title: 'Patient Care Technician',
-        slug: 'patient-care-technician-2',
-        category: 'healthcare',
-        aliases: ['PCT', 'Patient Care Assistant'],
-        averageSalary: 35000,
-        growthRate: 10
-    },
-    {
-        id: 'medical-assistant-2',
-        title: 'Medical Assistant',
-        slug: 'medical-assistant-3',
-        category: 'healthcare',
-        aliases: ['MA', 'Clinical Medical Assistant'],
-        averageSalary: 40000,
-        growthRate: 14
-    },
-    {
-        id: 'health-information-technician',
-        title: 'Health Information Technician',
-        slug: 'health-information-technician-2',
-        category: 'healthcare',
-        aliases: ['HIT', 'Medical Records Technician'],
-        averageSalary: 45000,
-        growthRate: 12
-    },
-
-    // Finance - Batch 12
-    {
-        id: 'financial-planner-2',
+        id: 'financial-planner',
         title: 'Financial Planner',
-        slug: 'financial-planner-2',
+        slug: 'financial-planner',
         category: 'finance',
         aliases: ['Financial Advisor', 'Wealth Manager'],
         averageSalary: 90000,
@@ -7092,15 +5555,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'financial-controller',
-        title: 'Financial Controller',
-        slug: 'financial-controller-2',
-        category: 'finance',
-        aliases: ['Controller', 'Finance Controller'],
-        averageSalary: 110000,
-        growthRate: 12
-    },
-    {
         id: 'fp-and-a-manager',
         title: 'FP&A Manager',
         slug: 'fp-and-a-manager',
@@ -7108,26 +5562,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Financial Planning Manager', 'FP&A Analyst'],
         averageSalary: 115000,
         growthRate: 14
-    },
-
-    // HR - Batch 12
-    {
-        id: 'hr-coordinator-2',
-        title: 'HR Coordinator',
-        slug: 'hr-coordinator-3',
-        category: 'hr',
-        aliases: ['Human Resources Coordinator', 'HR Admin'],
-        averageSalary: 52000,
-        growthRate: 10
-    },
-    {
-        id: 'recruiter-2',
-        title: 'Recruiter',
-        slug: 'recruiter-3',
-        category: 'hr',
-        aliases: ['Technical Recruiter', 'Corporate Recruiter'],
-        averageSalary: 60000,
-        growthRate: 12
     },
     {
         id: 'sourcing-specialist',
@@ -7156,17 +5590,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 54000,
         growthRate: 10
     },
-
-    // Admin - Batch 12
-    {
-        id: 'legal-assistant',
-        title: 'Legal Assistant',
-        slug: 'legal-assistant-3',
-        category: 'admin',
-        aliases: ['Paralegal Assistant', 'Legal Admin'],
-        averageSalary: 50000,
-        growthRate: 8
-    },
     {
         id: 'executive-secretary',
         title: 'Executive Secretary',
@@ -7177,24 +5600,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 6
     },
     {
-        id: 'receptionist-2',
-        title: 'Receptionist',
-        slug: 'receptionist-3',
-        category: 'admin',
-        aliases: ['Front Desk Receptionist', 'Office Receptionist'],
-        averageSalary: 34000,
-        growthRate: 4
-    },
-    {
-        id: 'file-clerk',
-        title: 'File Clerk',
-        slug: 'file-clerk-3',
-        category: 'admin',
-        aliases: ['Records Clerk', 'Filing Clerk'],
-        averageSalary: 32000,
-        growthRate: -6
-    },
-    {
         id: 'mailroom-clerk',
         title: 'Mailroom Clerk',
         slug: 'mailroom-clerk',
@@ -7203,17 +5608,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 31000,
         growthRate: -4
     },
-
-    // Customer Service - Batch 12
-    {
-        id: 'call-center-representative-2',
-        title: 'Call Center Representative',
-        slug: 'call-center-representative-2',
-        category: 'customer-service',
-        aliases: ['Call Center Agent', 'Inbound Sales Representative'],
-        averageSalary: 36000,
-        growthRate: 6
-    },
     {
         id: 'customer-support-representative',
         title: 'Customer Support Representative',
@@ -7221,15 +5615,6 @@ export const jobTitles: JobTitle[] = [
         category: 'customer-service',
         aliases: ['CSR', 'Customer Service Rep'],
         averageSalary: 40000,
-        growthRate: 8
-    },
-    {
-        id: 'contact-center-agent',
-        title: 'Contact Center Agent',
-        slug: 'contact-center-agent-2',
-        category: 'customer-service',
-        aliases: ['Contact Center Representative', 'Multichannel Agent'],
-        averageSalary: 38000,
         growthRate: 8
     },
     {
@@ -7250,65 +5635,14 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 60000,
         growthRate: 14
     },
-
-    // Design - Batch 12
     {
-        id: 'visual-designer',
-        title: 'Visual Designer',
-        slug: 'visual-designer-3',
-        category: 'design',
-        aliases: ['UI Visual Designer', 'Digital Visual Designer'],
-        averageSalary: 85000,
-        growthRate: 16
-    },
-    {
-        id: 'designer-2',
+        id: 'designer',
         title: 'Designer',
-        slug: 'designer-2',
+        slug: 'designer',
         category: 'design',
         aliases: ['Graphic Artist', 'Visual Designer'],
         averageSalary: 65000,
         growthRate: 12
-    },
-    {
-        id: 'production-artist',
-        title: 'Production Artist',
-        slug: 'production-artist-2',
-        category: 'design',
-        aliases: ['Graphic Production Artist', 'Digital Artist'],
-        averageSalary: 55000,
-        growthRate: 8
-    },
-    {
-        id: 'ux-writer',
-        title: 'UX Writer',
-        slug: 'ux-writer-2',
-        category: 'design',
-        aliases: ['Content Designer', 'Product Content Writer'],
-        averageSalary: 90000,
-        growthRate: 18
-    },
-    {
-        id: 'content-designer',
-        title: 'Content Designer',
-        slug: 'content-designer-2',
-        category: 'design',
-        aliases: ['UX Content Designer', 'Product Content Designer'],
-        averageSalary: 95000,
-        growthRate: 20
-    },
-
-    // ========== BATCH 13: Additional Jobs ==========
-
-    // Technology - Batch 13
-    {
-        id: 'embedded-systems-engineer',
-        title: 'Embedded Systems Engineer',
-        slug: 'embedded-systems-engineer-2',
-        category: 'technology',
-        aliases: ['Embedded Software Engineer', 'Firmware Engineer'],
-        averageSalary: 125000,
-        growthRate: 14
     },
     {
         id: 'iot-engineer',
@@ -7346,8 +5680,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 160000,
         growthRate: 30
     },
-
-    // Marketing - Batch 13
     {
         id: 'viral-marketer',
         title: 'Viral Marketing Specialist',
@@ -7393,8 +5725,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 60000,
         growthRate: 20
     },
-
-    // Sales - Batch 13
     {
         id: 'technical-account-manager',
         title: 'Technical Account Manager',
@@ -7405,33 +5735,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'strategic-account-manager-2',
-        title: 'Strategic Account Manager',
-        slug: 'strategic-account-manager-3',
-        category: 'sales',
-        aliases: ['Strategic Accounts Manager', 'Key Account Manager'],
-        averageSalary: 105000,
-        growthRate: 14
-    },
-    {
-        id: 'global-account-manager-2',
-        title: 'Global Account Manager',
-        slug: 'global-account-manager-3',
-        category: 'sales',
-        aliases: ['International Account Manager', 'Global Accounts'],
-        averageSalary: 130000,
-        growthRate: 16
-    },
-    {
-        id: 'sales-analyst',
-        title: 'Sales Analyst',
-        slug: 'sales-analyst-3',
-        category: 'sales',
-        aliases: ['Sales Data Analyst', 'Sales Intelligence Analyst'],
-        averageSalary: 70000,
-        growthRate: 14
-    },
-    {
         id: 'sales-coordinator',
         title: 'Sales Coordinator',
         slug: 'sales-coordinator',
@@ -7440,8 +5743,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 48000,
         growthRate: 10
     },
-
-    // Healthcare - Batch 13
     {
         id: 'diagnostic-medical-sonographer',
         title: 'Diagnostic Medical Sonographer',
@@ -7450,15 +5751,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Ultrasound Technician', 'Sonographer'],
         averageSalary: 75000,
         growthRate: 14
-    },
-    {
-        id: 'radiologic-technologist',
-        title: 'Radiologic Technologist',
-        slug: 'radiologic-technologist-2',
-        category: 'healthcare',
-        aliases: ['Rad Tech', 'X-Ray Technician'],
-        averageSalary: 65000,
-        growthRate: 10
     },
     {
         id: 'mri-technologist',
@@ -7487,8 +5779,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 82000,
         growthRate: 10
     },
-
-    // Finance - Batch 13
     {
         id: 'actuary',
         title: 'Actuary',
@@ -7526,89 +5816,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'risk-manager-2',
+        id: 'risk-manager',
         title: 'Risk Manager',
-        slug: 'risk-manager-2',
+        slug: 'risk-manager',
         category: 'finance',
         aliases: ['Enterprise Risk Manager', 'Risk Management Specialist'],
         averageSalary: 110000,
         growthRate: 14
-    },
-
-    // Engineering - Batch 13
-    {
-        id: 'civil-engineer-2',
-        title: 'Civil Engineer',
-        slug: 'civil-engineer-3',
-        category: 'engineering',
-        aliases: ['Civil Engineering', 'Infrastructure Engineer'],
-        averageSalary: 90000,
-        growthRate: 8
-    },
-    {
-        id: 'structural-engineer',
-        title: 'Structural Engineer',
-        slug: 'structural-engineer-2',
-        category: 'engineering',
-        aliases: ['Structural Engineering', 'Building Engineer'],
-        averageSalary: 95000,
-        growthRate: 10
-    },
-    {
-        id: 'mechanical-engineer-2',
-        title: 'Mechanical Engineer',
-        slug: 'mechanical-engineer-2',
-        category: 'engineering',
-        aliases: ['ME', 'Mechanical Engineering'],
-        averageSalary: 95000,
-        growthRate: 10
-    },
-    {
-        id: 'electrical-engineer-2',
-        title: 'Electrical Engineer',
-        slug: 'electrical-engineer-3',
-        category: 'engineering',
-        aliases: ['EE', 'Electrical Engineering'],
-        averageSalary: 100000,
-        growthRate: 10
-    },
-    {
-        id: 'chemical-engineer',
-        title: 'Chemical Engineer',
-        slug: 'chemical-engineer-3',
-        category: 'engineering',
-        aliases: ['ChE', 'Chemical Engineering'],
-        averageSalary: 105000,
-        growthRate: 12
-    },
-
-    // Education - Batch 13
-    {
-        id: 'substitute-teacher',
-        title: 'Substitute Teacher',
-        slug: 'substitute-teacher-3',
-        category: 'education',
-        aliases: ['Sub Teacher', 'Supply Teacher'],
-        averageSalary: 40000,
-        growthRate: 6
-    },
-    {
-        id: 'teaching-assistant',
-        title: 'Teaching Assistant',
-        slug: 'teaching-assistant-3',
-        category: 'education',
-        aliases: ['TA', 'Teacher Assistant'],
-        averageSalary: 32000,
-        growthRate: 8
-    },
-    {
-        id: 'curriculum-specialist',
-        title: 'Curriculum Specialist',
-        slug: 'curriculum-specialist-2',
-        category: 'education',
-        aliases: ['Curriculum Coordinator', 'Instructional Coordinator'],
-        averageSalary: 65000,
-        growthRate: 10
     },
     {
         id: 'instructional-coach',
@@ -7620,66 +5834,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'education-consultant',
-        title: 'Education Consultant',
-        slug: 'education-consultant-2',
-        category: 'education',
-        aliases: ['Educational Consultant', 'EdTech Consultant'],
-        averageSalary: 75000,
-        growthRate: 14
-    },
-
-    // Skilled Trades - Batch 13
-    {
-        id: 'electrician-2',
-        title: 'Electrician',
-        slug: 'electrician-2',
-        category: 'skilled-trades',
-        aliases: ['Journeyman Electrician', 'Electrical Tradesman'],
-        averageSalary: 60000,
-        growthRate: 10
-    },
-    {
-        id: 'plumber-2',
-        title: 'Plumber',
-        slug: 'plumber-2',
-        category: 'skilled-trades',
-        aliases: ['Journeyman Plumber', 'Pipefitter'],
-        averageSalary: 58000,
-        growthRate: 10
-    },
-    {
-        id: 'hvac-technician-2',
-        title: 'HVAC Technician',
-        slug: 'hvac-technician-2',
-        category: 'skilled-trades',
-        aliases: ['HVAC Tech', 'Heating and Cooling Technician'],
-        averageSalary: 55000,
-        growthRate: 12
-    },
-    {
-        id: 'welder-2',
-        title: 'Welder',
-        slug: 'welder-2',
-        category: 'skilled-trades',
-        aliases: ['Welding Technician', 'Fabrication Welder'],
-        averageSalary: 48000,
-        growthRate: 8
-    },
-    {
-        id: 'carpenter-2',
-        title: 'Carpenter',
-        slug: 'carpenter-2',
-        category: 'skilled-trades',
-        aliases: ['Journeyman Carpenter', 'Finish Carpenter'],
-        averageSalary: 52000,
-        growthRate: 8
-    },
-
-    // ========== BATCH 14: Additional Jobs ==========
-
-    // Technology - Batch 14
-    {
         id: 'azure-engineer',
         title: 'Azure Engineer',
         slug: 'azure-engineer',
@@ -7689,9 +5843,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 24
     },
     {
-        id: 'aws-engineer-2',
+        id: 'aws-engineer',
         title: 'AWS Engineer',
-        slug: 'aws-engineer-2',
+        slug: 'aws-engineer',
         category: 'technology',
         aliases: ['Amazon Web Services Engineer', 'AWS Cloud Engineer'],
         averageSalary: 145000,
@@ -7707,15 +5861,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 26
     },
     {
-        id: 'cloud-security-engineer',
-        title: 'Cloud Security Engineer',
-        slug: 'cloud-security-engineer-2',
-        category: 'technology',
-        aliases: ['Cloud Security Architect', 'Cloud Security Specialist'],
-        averageSalary: 155000,
-        growthRate: 28
-    },
-    {
         id: 'database-architect',
         title: 'Database Architect',
         slug: 'database-architect',
@@ -7723,26 +5868,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Data Architect', 'DBA Architect'],
         averageSalary: 140000,
         growthRate: 18
-    },
-
-    // Marketing - Batch 14
-    {
-        id: 'email-copywriter',
-        title: 'Email Copywriter',
-        slug: 'email-copywriter-2',
-        category: 'marketing',
-        aliases: ['Email Writer', 'Email Marketing Copywriter'],
-        averageSalary: 65000,
-        growthRate: 14
-    },
-    {
-        id: 'conversion-copywriter',
-        title: 'Conversion Copywriter',
-        slug: 'conversion-copywriter-2',
-        category: 'marketing',
-        aliases: ['Direct Response Copywriter', 'CRO Copywriter'],
-        averageSalary: 75000,
-        growthRate: 16
     },
     {
         id: 'seo-copywriter',
@@ -7771,8 +5896,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 70000,
         growthRate: 12
     },
-
-    // Sales - Batch 14
     {
         id: 'field-sales-representative',
         title: 'Field Sales Representative',
@@ -7783,97 +5906,12 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'territory-manager',
-        title: 'Territory Manager',
-        slug: 'territory-manager-2',
-        category: 'sales',
-        aliases: ['Sales Territory Manager', 'Area Sales Manager'],
-        averageSalary: 90000,
-        growthRate: 14
-    },
-    {
-        id: 'regional-sales-manager',
-        title: 'Regional Sales Manager',
-        slug: 'regional-sales-manager-3',
-        category: 'sales',
-        aliases: ['RSM', 'Regional Sales Director'],
-        averageSalary: 115000,
-        growthRate: 14
-    },
-    {
-        id: 'national-sales-manager',
-        title: 'National Sales Manager',
-        slug: 'national-sales-manager-2',
-        category: 'sales',
-        aliases: ['NSM', 'Country Sales Manager'],
-        averageSalary: 145000,
-        growthRate: 16
-    },
-    {
-        id: 'vp-of-sales',
-        title: 'VP of Sales',
-        slug: 'vp-of-sales-2',
-        category: 'sales',
-        aliases: ['Vice President of Sales', 'Head of Sales'],
-        averageSalary: 200000,
-        growthRate: 18
-    },
-
-    // Healthcare - Batch 14
-    {
-        id: 'physical-therapist-3',
-        title: 'Physical Therapist',
-        slug: 'physical-therapist-3',
-        category: 'healthcare',
-        aliases: ['PT', 'Physiotherapist'],
-        averageSalary: 95000,
-        growthRate: 18
-    },
-    {
-        id: 'occupational-therapist-3',
-        title: 'Occupational Therapist',
-        slug: 'occupational-therapist-3',
-        category: 'healthcare',
-        aliases: ['OT', 'Occupational Therapy'],
-        averageSalary: 90000,
-        growthRate: 16
-    },
-    {
-        id: 'speech-language-pathologist-2',
-        title: 'Speech Language Pathologist',
-        slug: 'speech-language-pathologist-2',
-        category: 'healthcare',
-        aliases: ['SLP', 'Speech Therapist'],
-        averageSalary: 85000,
-        growthRate: 18
-    },
-    {
-        id: 'respiratory-therapist-3',
-        title: 'Respiratory Therapist',
-        slug: 'respiratory-therapist-3',
-        category: 'healthcare',
-        aliases: ['RT', 'Respiratory Therapy'],
-        averageSalary: 70000,
-        growthRate: 14
-    },
-    {
         id: 'radiation-therapist',
         title: 'Radiation Therapist',
         slug: 'radiation-therapist',
         category: 'healthcare',
         aliases: ['Radiation Therapy', 'Medical Radiation Therapist'],
         averageSalary: 90000,
-        growthRate: 12
-    },
-
-    // Finance - Batch 14
-    {
-        id: 'financial-analyst-2',
-        title: 'Financial Analyst',
-        slug: 'financial-analyst-3',
-        category: 'finance',
-        aliases: ['Finance Analyst', 'Securities Analyst'],
-        averageSalary: 85000,
         growthRate: 12
     },
     {
@@ -7912,44 +5950,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 75000,
         growthRate: 8
     },
-
-    // Engineering - Batch 14
-    {
-        id: 'industrial-engineer',
-        title: 'Industrial Engineer',
-        slug: 'industrial-engineer-3',
-        category: 'engineering',
-        aliases: ['IE', 'Industrial Engineering'],
-        averageSalary: 92000,
-        growthRate: 12
-    },
-    {
-        id: 'environmental-engineer',
-        title: 'Environmental Engineer',
-        slug: 'environmental-engineer-3',
-        category: 'engineering',
-        aliases: ['Environmental Engineering', 'Environmental Consultant'],
-        averageSalary: 88000,
-        growthRate: 14
-    },
-    {
-        id: 'biomedical-engineer',
-        title: 'Biomedical Engineer',
-        slug: 'biomedical-engineer-3',
-        category: 'engineering',
-        aliases: ['BME', 'Biomedical Engineering'],
-        averageSalary: 100000,
-        growthRate: 16
-    },
-    {
-        id: 'aerospace-engineer',
-        title: 'Aerospace Engineer',
-        slug: 'aerospace-engineer-3',
-        category: 'engineering',
-        aliases: ['Aeronautical Engineer', 'Astronautical Engineer'],
-        averageSalary: 120000,
-        growthRate: 12
-    },
     {
         id: 'petroleum-engineer',
         title: 'Petroleum Engineer',
@@ -7959,8 +5959,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 130000,
         growthRate: 8
     },
-
-    // Legal - Batch 14
     {
         id: 'contract-attorney',
         title: 'Contract Attorney',
@@ -7989,9 +5987,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'real-estate-attorney-2',
+        id: 'real-estate-attorney',
         title: 'Real Estate Attorney',
-        slug: 'real-estate-attorney-2',
+        slug: 'real-estate-attorney',
         category: 'legal',
         aliases: ['Property Lawyer', 'Real Estate Lawyer'],
         averageSalary: 115000,
@@ -8006,26 +6004,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 110000,
         growthRate: 14
     },
-
-    // Real Estate - Batch 14
-    {
-        id: 'property-manager-2',
-        title: 'Property Manager',
-        slug: 'property-manager-2',
-        category: 'real-estate',
-        aliases: ['Real Estate Property Manager', 'Rental Property Manager'],
-        averageSalary: 60000,
-        growthRate: 10
-    },
-    {
-        id: 'leasing-agent',
-        title: 'Leasing Agent',
-        slug: 'leasing-agent-2',
-        category: 'real-estate',
-        aliases: ['Leasing Consultant', 'Rental Agent'],
-        averageSalary: 45000,
-        growthRate: 10
-    },
     {
         id: 'property-developer',
         title: 'Property Developer',
@@ -8034,35 +6012,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Real Estate Developer', 'Property Development'],
         averageSalary: 95000,
         growthRate: 12
-    },
-    {
-        id: 'title-examiner',
-        title: 'Title Examiner',
-        slug: 'title-examiner-2',
-        category: 'real-estate',
-        aliases: ['Title Searcher', 'Title Abstractor'],
-        averageSalary: 50000,
-        growthRate: 8
-    },
-    {
-        id: 'escrow-officer',
-        title: 'Escrow Officer',
-        slug: 'escrow-officer-2',
-        category: 'real-estate',
-        aliases: ['Escrow Agent', 'Closing Officer'],
-        averageSalary: 55000,
-        growthRate: 10
-    },
-
-    // Transportation - Batch 14
-    {
-        id: 'freight-forwarder',
-        title: 'Freight Forwarder',
-        slug: 'freight-forwarder-2',
-        category: 'transportation',
-        aliases: ['Freight Forwarding Agent', 'Cargo Forwarder'],
-        averageSalary: 52000,
-        growthRate: 10
     },
     {
         id: 'customs-broker',
@@ -8083,31 +6032,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 6
     },
     {
-        id: 'delivery-driver-2',
-        title: 'Delivery Driver',
-        slug: 'delivery-driver-3',
-        category: 'transportation',
-        aliases: ['Delivery Driver', 'Package Delivery Driver'],
-        averageSalary: 40000,
-        growthRate: 10
-    },
-    {
-        id: 'dispatcher-2',
-        title: 'Dispatcher',
-        slug: 'dispatcher-2',
-        category: 'transportation',
-        aliases: ['Service Dispatcher', 'Transportation Dispatcher'],
-        averageSalary: 45000,
-        growthRate: 8
-    },
-
-    // ========== BATCH 15: Additional Jobs ==========
-
-    // Technology - Batch 15
-    {
-        id: 'fullstack-developer-2',
+        id: 'fullstack-developer',
         title: 'Fullstack Developer',
-        slug: 'fullstack-developer-2',
+        slug: 'fullstack-developer',
         category: 'technology',
         aliases: ['Full Stack Developer', 'Full-Stack Engineer'],
         averageSalary: 125000,
@@ -8141,26 +6068,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 24
     },
     {
-        id: 'react-native-developer',
-        title: 'React Native Developer',
-        slug: 'react-native-developer-3',
-        category: 'technology',
-        aliases: ['React Native Mobile Developer', 'RN Developer'],
-        averageSalary: 120000,
-        growthRate: 20
-    },
-
-    // Marketing - Batch 15
-    {
-        id: 'social-media-coordinator',
-        title: 'Social Media Coordinator',
-        slug: 'social-media-coordinator-2',
-        category: 'marketing',
-        aliases: ['Social Media Specialist', 'Social Content Coordinator'],
-        averageSalary: 50000,
-        growthRate: 14
-    },
-    {
         id: 'content-manager-marketing',
         title: 'Content Manager',
         slug: 'content-manager-marketing',
@@ -8179,26 +6086,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 18
     },
     {
-        id: 'marketing-analyst-2',
-        title: 'Marketing Analyst',
-        slug: 'marketing-analyst-3',
-        category: 'marketing',
-        aliases: ['Marketing Data Analyst', 'Marketing Research Analyst'],
-        averageSalary: 70000,
-        growthRate: 16
-    },
-    {
-        id: 'brand-manager-2',
-        title: 'Brand Manager',
-        slug: 'brand-manager-3',
-        category: 'marketing',
-        aliases: ['Brand Marketing Manager', 'Product Brand Manager'],
-        averageSalary: 100000,
-        growthRate: 14
-    },
-
-    // Sales - Batch 15
-    {
         id: 'sales-associate',
         title: 'Sales Associate',
         slug: 'sales-associate',
@@ -8206,24 +6093,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Retail Sales Associate', 'Sales Assistant'],
         averageSalary: 40000,
         growthRate: 8
-    },
-    {
-        id: 'sales-trainer',
-        title: 'Sales Trainer',
-        slug: 'sales-trainer-2',
-        category: 'sales',
-        aliases: ['Sales Training Specialist', 'Sales Coach'],
-        averageSalary: 70000,
-        growthRate: 14
-    },
-    {
-        id: 'inside-sales-manager',
-        title: 'Inside Sales Manager',
-        slug: 'inside-sales-manager-2',
-        category: 'sales',
-        aliases: ['Inside Sales Team Lead', 'Remote Sales Manager'],
-        averageSalary: 85000,
-        growthRate: 14
     },
     {
         id: 'outbound-sales-manager',
@@ -8243,35 +6112,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 80000,
         growthRate: 16
     },
-
-    // Healthcare - Batch 15
-    {
-        id: 'nurse-practitioner',
-        title: 'Nurse Practitioner',
-        slug: 'nurse-practitioner-3',
-        category: 'healthcare',
-        aliases: ['NP', 'Advanced Practice Registered Nurse'],
-        averageSalary: 115000,
-        growthRate: 26
-    },
-    {
-        id: 'physician-assistant',
-        title: 'Physician Assistant',
-        slug: 'physician-assistant-3',
-        category: 'healthcare',
-        aliases: ['PA', 'Physician Associate'],
-        averageSalary: 115000,
-        growthRate: 28
-    },
-    {
-        id: 'clinical-nurse-specialist',
-        title: 'Clinical Nurse Specialist',
-        slug: 'clinical-nurse-specialist-2',
-        category: 'healthcare',
-        aliases: ['CNS', 'Advanced Practice Nurse'],
-        averageSalary: 105000,
-        growthRate: 20
-    },
     {
         id: 'nurse-midwife',
         title: 'Nurse Midwife',
@@ -8290,35 +6130,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 45000,
         growthRate: 14
     },
-
-    // Finance - Batch 15
-    {
-        id: 'staff-accountant',
-        title: 'Staff Accountant',
-        slug: 'staff-accountant-2',
-        category: 'finance',
-        aliases: ['Junior Accountant', 'Accountant I'],
-        averageSalary: 60000,
-        growthRate: 10
-    },
-    {
-        id: 'senior-accountant',
-        title: 'Senior Accountant',
-        slug: 'senior-accountant-2',
-        category: 'finance',
-        aliases: ['Accountant II', 'Senior Accounting Specialist'],
-        averageSalary: 75000,
-        growthRate: 10
-    },
-    {
-        id: 'cost-accountant',
-        title: 'Cost Accountant',
-        slug: 'cost-accountant-2',
-        category: 'finance',
-        aliases: ['Cost Accounting Specialist', 'Manufacturing Accountant'],
-        averageSalary: 72000,
-        growthRate: 10
-    },
     {
         id: 'tax-accountant',
         title: 'Tax Accountant',
@@ -8336,26 +6147,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Auditor', 'Internal Auditor'],
         averageSalary: 72000,
         growthRate: 12
-    },
-
-    // HR - Batch 15
-    {
-        id: 'hr-generalist',
-        title: 'HR Generalist',
-        slug: 'hr-generalist-3',
-        category: 'hr',
-        aliases: ['Human Resources Generalist', 'HR Generalist Specialist'],
-        averageSalary: 65000,
-        growthRate: 12
-    },
-    {
-        id: 'hr-business-partner',
-        title: 'HR Business Partner',
-        slug: 'hr-business-partner-3',
-        category: 'hr',
-        aliases: ['HRBP', 'Human Resources Business Partner'],
-        averageSalary: 85000,
-        growthRate: 14
     },
     {
         id: 'talent-acquisition-lead',
@@ -8384,8 +6175,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 85000,
         growthRate: 16
     },
-
-    // Admin - Batch 15
     {
         id: 'project-assistant',
         title: 'Project Assistant',
@@ -8396,18 +6185,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'administrative-specialist',
-        title: 'Administrative Specialist',
-        slug: 'administrative-specialist-2',
-        category: 'admin',
-        aliases: ['Admin Specialist', 'Office Specialist'],
-        averageSalary: 46000,
-        growthRate: 8
-    },
-    {
-        id: 'office-assistant-2',
+        id: 'office-assistant',
         title: 'Office Assistant',
-        slug: 'office-assistant-2',
+        slug: 'office-assistant',
         category: 'admin',
         aliases: ['Office Support Assistant', 'Administrative Assistant II'],
         averageSalary: 40000,
@@ -8431,8 +6211,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 38000,
         growthRate: -4
     },
-
-    // Customer Service - Batch 15
     {
         id: 'customer-liaison',
         title: 'Customer Liaison',
@@ -8443,33 +6221,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'customer-service-lead',
-        title: 'Customer Service Lead',
-        slug: 'customer-service-lead-2',
-        category: 'customer-service',
-        aliases: ['CS Lead', 'Customer Service Team Lead'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-    {
-        id: 'customer-advocate-2',
-        title: 'Customer Advocate',
-        slug: 'customer-advocate-2',
-        category: 'customer-service',
-        aliases: ['Customer Advocate Representative', 'Client Advocate'],
-        averageSalary: 48000,
-        growthRate: 12
-    },
-    {
-        id: 'client-services-representative',
-        title: 'Client Services Representative',
-        slug: 'client-services-representative-2',
-        category: 'customer-service',
-        aliases: ['Client Services Rep', 'Client Support Representative'],
-        averageSalary: 46000,
-        growthRate: 10
-    },
-    {
         id: 'customer-support-lead',
         title: 'Customer Support Lead',
         slug: 'customer-support-lead',
@@ -8477,35 +6228,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Support Team Lead', 'Customer Support Supervisor'],
         averageSalary: 58000,
         growthRate: 12
-    },
-
-    // Design - Batch 15
-    {
-        id: 'ui-designer-2',
-        title: 'UI Designer',
-        slug: 'ui-designer-3',
-        category: 'design',
-        aliases: ['User Interface Designer', 'UI/UX Designer'],
-        averageSalary: 95000,
-        growthRate: 18
-    },
-    {
-        id: 'ux-researcher-2',
-        title: 'UX Researcher',
-        slug: 'ux-researcher-2',
-        category: 'design',
-        aliases: ['User Researcher', 'User Experience Researcher'],
-        averageSalary: 95000,
-        growthRate: 20
-    },
-    {
-        id: 'design-lead',
-        title: 'Design Lead',
-        slug: 'design-lead-2',
-        category: 'design',
-        aliases: ['Design Team Lead', 'Senior Designer Lead'],
-        averageSalary: 120000,
-        growthRate: 16
     },
     {
         id: 'senior-designer',
@@ -8525,10 +6247,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 45000,
         growthRate: 12
     },
-
-    // ========== BATCH 16: 100 New Jobs ==========
-
-    // Technology - AI & Data (15 jobs)
     {
         id: 'ai-ethics-officer',
         title: 'AI Ethics Officer',
@@ -8537,24 +6255,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['AI Ethicist', 'Ethics Compliance Officer'],
         averageSalary: 135000,
         growthRate: 25
-    },
-    {
-        id: 'machine-learning-engineer-2',
-        title: 'Machine Learning Engineer',
-        slug: 'machine-learning-engineer-2',
-        category: 'technology',
-        aliases: ['ML Engineer', 'Machine Learning Developer'],
-        averageSalary: 150000,
-        growthRate: 28
-    },
-    {
-        id: 'data-architect-2',
-        title: 'Data Architect',
-        slug: 'data-architect-3',
-        category: 'technology',
-        aliases: ['Data Architecture Lead', 'Enterprise Data Architect'],
-        averageSalary: 145000,
-        growthRate: 20
     },
     {
         id: 'data-analytics-lead',
@@ -8575,33 +6275,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 26
     },
     {
-        id: 'nlp-engineer',
-        title: 'NLP Engineer',
-        slug: 'nlp-engineer-2',
-        category: 'technology',
-        aliases: ['Natural Language Processing Engineer', 'NLP Developer'],
-        averageSalary: 145000,
-        growthRate: 30
-    },
-    {
-        id: 'computer-vision-engineer',
-        title: 'Computer Vision Engineer',
-        slug: 'computer-vision-engineer-2',
-        category: 'technology',
-        aliases: ['CV Engineer', 'Vision Systems Engineer'],
-        averageSalary: 142000,
-        growthRate: 28
-    },
-    {
-        id: 'ml-ops-engineer-2',
-        title: 'MLOps Engineer',
-        slug: 'ml-ops-engineer-2',
-        category: 'technology',
-        aliases: ['Machine Learning Operations', 'ML DevOps Engineer'],
-        averageSalary: 148000,
-        growthRate: 32
-    },
-    {
         id: 'data-governance-analyst',
         title: 'Data Governance Analyst',
         slug: 'data-governance-analyst',
@@ -8609,33 +6282,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Data Compliance Analyst', 'Data Policy Analyst'],
         averageSalary: 95000,
         growthRate: 18
-    },
-    {
-        id: 'business-intelligence-developer',
-        title: 'BI Developer',
-        slug: 'business-intelligence-developer',
-        category: 'technology',
-        aliases: ['Business Intelligence Developer', 'BI Engineer'],
-        averageSalary: 105000,
-        growthRate: 16
-    },
-    {
-        id: 'data-warehouse-architect',
-        title: 'Data Warehouse Architect',
-        slug: 'data-warehouse-architect-2',
-        category: 'technology',
-        aliases: ['DW Architect', 'Enterprise Data Warehouse Lead'],
-        averageSalary: 135000,
-        growthRate: 18
-    },
-    {
-        id: 'etl-developer',
-        title: 'ETL Developer',
-        slug: 'etl-developer-3',
-        category: 'technology',
-        aliases: ['ETL Engineer', 'Data Integration Developer'],
-        averageSalary: 98000,
-        growthRate: 14
     },
     {
         id: 'data-quality-analyst',
@@ -8664,17 +6310,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 145000,
         growthRate: 20
     },
-
-    // Marketing - Digital & Performance (12 jobs)
-    {
-        id: 'performance-marketing-manager',
-        title: 'Performance Marketing Manager',
-        slug: 'performance-marketing-manager-2',
-        category: 'marketing',
-        aliases: ['Performance Marketer', 'Paid Media Manager'],
-        averageSalary: 95000,
-        growthRate: 20
-    },
     {
         id: 'conversion-rate-optimizer',
         title: 'CRO Specialist',
@@ -8683,15 +6318,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Conversion Rate Optimization Expert', 'CRO Manager'],
         averageSalary: 88000,
         growthRate: 22
-    },
-    {
-        id: 'ppc-specialist-2',
-        title: 'PPC Specialist',
-        slug: 'ppc-specialist-3',
-        category: 'marketing',
-        aliases: ['Pay-Per-Click Expert', 'Paid Search Specialist'],
-        averageSalary: 72000,
-        growthRate: 16
     },
     {
         id: 'display-advertising-manager',
@@ -8730,24 +6356,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 20
     },
     {
-        id: 'podcast-marketer',
-        title: 'Podcast Marketer',
-        slug: 'podcast-marketer-2',
-        category: 'marketing',
-        aliases: ['Podcast Marketing Specialist', 'Audio Content Marketer'],
-        averageSalary: 68000,
-        growthRate: 22
-    },
-    {
-        id: 'affiliate-marketing-manager',
-        title: 'Affiliate Marketing Manager',
-        slug: 'affiliate-marketing-manager-3',
-        category: 'marketing',
-        aliases: ['Affiliate Manager', 'Partnership Marketing Manager'],
-        averageSalary: 82000,
-        growthRate: 16
-    },
-    {
         id: 'influencer-marketing-coordinator',
         title: 'Influencer Marketing Coordinator',
         slug: 'influencer-marketing-coordinator',
@@ -8766,160 +6374,12 @@ export const jobTitles: JobTitle[] = [
         growthRate: 18
     },
     {
-        id: 'event-marketing-manager',
-        title: 'Event Marketing Manager',
-        slug: 'event-marketing-manager-2',
-        category: 'marketing',
-        aliases: ['Event Marketer', 'Events Marketing Lead'],
-        averageSalary: 85000,
-        growthRate: 14
-    },
-
-    // Sales - B2B & Enterprise (10 jobs)
-    {
-        id: 'enterprise-account-executive',
-        title: 'Enterprise Account Executive',
-        slug: 'enterprise-account-executive-4',
-        category: 'sales',
-        aliases: ['Enterprise AE', 'Enterprise Sales Executive'],
-        averageSalary: 145000,
-        growthRate: 18
-    },
-    {
-        id: 'strategic-account-manager',
-        title: 'Strategic Account Manager',
-        slug: 'strategic-account-manager-4',
-        category: 'sales',
-        aliases: ['Strategic Accounts Lead', 'Key Account Manager'],
-        averageSalary: 125000,
-        growthRate: 16
-    },
-    {
-        id: 'solutions-consultant',
-        title: 'Solutions Consultant',
-        slug: 'solutions-consultant-3',
-        category: 'sales',
-        aliases: ['Sales Consultant', 'Pre-Sales Consultant'],
-        averageSalary: 115000,
-        growthRate: 18
-    },
-    {
-        id: 'sales-engineer-2',
-        title: 'Sales Engineer',
-        slug: 'sales-engineer-3',
-        category: 'sales',
-        aliases: ['Technical Sales Engineer', 'Solutions Engineer'],
-        averageSalary: 120000,
-        growthRate: 20
-    },
-    {
-        id: 'business-development-rep-2',
-        title: 'Business Development Rep',
-        slug: 'business-development-rep-2',
-        category: 'sales',
-        aliases: ['BDR', 'Business Development Representative'],
-        averageSalary: 55000,
-        growthRate: 14
-    },
-    {
-        id: 'sales-development-rep-2',
-        title: 'Sales Development Rep',
-        slug: 'sales-development-rep-2',
-        category: 'sales',
-        aliases: ['SDR', 'Sales Development Representative'],
-        averageSalary: 52000,
-        growthRate: 14
-    },
-    {
-        id: 'demand-generation-manager',
-        title: 'Demand Generation Manager',
-        slug: 'demand-generation-manager-3',
-        category: 'sales',
-        aliases: ['Demand Gen Manager', 'Lead Generation Manager'],
-        averageSalary: 98000,
-        growthRate: 18
-    },
-    {
-        id: 'sales-operations-analyst-2',
-        title: 'Sales Operations Analyst',
-        slug: 'sales-operations-analyst-3',
-        category: 'sales',
-        aliases: ['Sales Ops Analyst', 'Revenue Operations Analyst'],
-        averageSalary: 82000,
-        growthRate: 16
-    },
-    {
-        id: 'sales-enablement-manager',
-        title: 'Sales Enablement Manager',
-        slug: 'sales-enablement-manager-3',
-        category: 'sales',
-        aliases: ['Sales Enablement Lead', 'Sales Training Manager'],
-        averageSalary: 105000,
-        growthRate: 18
-    },
-    {
-        id: 'revenue-operations-manager',
-        title: 'Revenue Operations Manager',
-        slug: 'revenue-operations-manager-3',
-        category: 'sales',
-        aliases: ['RevOps Manager', 'Revenue Ops Lead'],
-        averageSalary: 110000,
-        growthRate: 22
-    },
-
-    // Healthcare - Specialized (8 jobs)
-    {
-        id: 'occupational-therapist-2',
-        title: 'Occupational Therapist',
-        slug: 'occupational-therapist-4',
-        category: 'healthcare',
-        aliases: ['OT', 'Occupational Therapy Practitioner'],
-        averageSalary: 92000,
-        growthRate: 16
-    },
-    {
-        id: 'physical-therapist-assistant',
-        title: 'Physical Therapist Assistant',
-        slug: 'physical-therapist-assistant-2',
-        category: 'healthcare',
-        aliases: ['PTA', 'Physical Therapy Assistant'],
-        averageSalary: 65000,
-        growthRate: 20
-    },
-    {
         id: 'medical-sonographer',
         title: 'Medical Sonographer',
         slug: 'medical-sonographer',
         category: 'healthcare',
         aliases: ['Ultrasound Technician', 'Diagnostic Medical Sonographer'],
         averageSalary: 78000,
-        growthRate: 18
-    },
-    {
-        id: 'radiologic-technologist',
-        title: 'Radiologic Technologist',
-        slug: 'radiologic-technologist-3',
-        category: 'healthcare',
-        aliases: ['Rad Tech', 'X-Ray Technician'],
-        averageSalary: 65000,
-        growthRate: 12
-    },
-    {
-        id: 'respiratory-therapist',
-        title: 'Respiratory Therapist',
-        slug: 'respiratory-therapist-2',
-        category: 'healthcare',
-        aliases: ['RT', 'Respiratory Care Practitioner'],
-        averageSalary: 72000,
-        growthRate: 16
-    },
-    {
-        id: 'speech-language-pathologist',
-        title: 'Speech Language Pathologist',
-        slug: 'speech-language-pathologist-3',
-        category: 'healthcare',
-        aliases: ['SLP', 'Speech Therapist'],
-        averageSalary: 85000,
         growthRate: 18
     },
     {
@@ -8940,35 +6400,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 95000,
         growthRate: 24
     },
-
-    // Finance - Investment & Planning (10 jobs)
-    {
-        id: 'financial-planner-2',
-        title: 'Financial Planner',
-        slug: 'financial-planner-3',
-        category: 'finance',
-        aliases: ['Financial Advisor', 'Wealth Manager'],
-        averageSalary: 98000,
-        growthRate: 14
-    },
-    {
-        id: 'investment-analyst-2',
-        title: 'Investment Analyst',
-        slug: 'investment-analyst-3',
-        category: 'finance',
-        aliases: ['Investment Research Analyst', 'Securities Analyst'],
-        averageSalary: 95000,
-        growthRate: 12
-    },
-    {
-        id: 'portfolio-manager',
-        title: 'Portfolio Manager',
-        slug: 'portfolio-manager',
-        category: 'finance',
-        aliases: ['Investment Portfolio Manager', 'Fund Manager'],
-        averageSalary: 135000,
-        growthRate: 10
-    },
     {
         id: 'risk-management-analyst',
         title: 'Risk Management Analyst',
@@ -8977,33 +6408,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Risk Analyst', 'Enterprise Risk Manager'],
         averageSalary: 92000,
         growthRate: 16
-    },
-    {
-        id: 'credit-analyst-2',
-        title: 'Credit Analyst',
-        slug: 'credit-analyst-4',
-        category: 'finance',
-        aliases: ['Credit Risk Analyst', 'Loan Officer'],
-        averageSalary: 72000,
-        growthRate: 10
-    },
-    {
-        id: 'financial-controller',
-        title: 'Financial Controller',
-        slug: 'financial-controller-3',
-        category: 'finance',
-        aliases: ['Corporate Controller', 'Comptroller'],
-        averageSalary: 125000,
-        growthRate: 10
-    },
-    {
-        id: 'treasury-analyst',
-        title: 'Treasury Analyst',
-        slug: 'treasury-analyst-4',
-        category: 'finance',
-        aliases: ['Treasury Specialist', 'Cash Management Analyst'],
-        averageSalary: 88000,
-        growthRate: 12
     },
     {
         id: 'fp-and-a-analyst',
@@ -9015,26 +6419,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'tax-manager',
-        title: 'Tax Manager',
-        slug: 'tax-manager-2',
-        category: 'finance',
-        aliases: ['Taxation Manager', 'Tax Compliance Manager'],
-        averageSalary: 115000,
-        growthRate: 12
-    },
-    {
-        id: 'actuary-2',
-        title: 'Actuary',
-        slug: 'actuary-2',
-        category: 'finance',
-        aliases: ['Actuarial Analyst', 'Risk Actuary'],
-        averageSalary: 115000,
-        growthRate: 18
-    },
-
-    // HR - People & Talent (8 jobs)
-    {
         id: 'hr-analyst',
         title: 'HR Analyst',
         slug: 'hr-analyst',
@@ -9044,58 +6428,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'compensation-analyst',
-        title: 'Compensation Analyst',
-        slug: 'compensation-analyst-4',
-        category: 'hr',
-        aliases: ['Comp and Benefits Analyst', 'Salary Analyst'],
-        averageSalary: 78000,
-        growthRate: 14
-    },
-    {
-        id: 'benefits-administrator',
-        title: 'Benefits Administrator',
-        slug: 'benefits-administrator-3',
-        category: 'hr',
-        aliases: ['Benefits Coordinator', 'Employee Benefits Specialist'],
-        averageSalary: 58000,
-        growthRate: 10
-    },
-    {
-        id: 'hr-coordinator-2',
-        title: 'HR Coordinator',
-        slug: 'hr-coordinator-4',
-        category: 'hr',
-        aliases: ['Human Resources Coordinator', 'HR Admin'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-    {
-        id: 'talent-management-specialist',
-        title: 'Talent Management Specialist',
-        slug: 'talent-management-specialist-2',
-        category: 'hr',
-        aliases: ['Talent Development Specialist', 'Succession Planning Specialist'],
-        averageSalary: 82000,
-        growthRate: 16
-    },
-    {
-        id: 'diversity-inclusion-manager',
+        id: 'diversity-inclusion-manager-2',
         title: 'Diversity Inclusion Manager',
         slug: 'diversity-inclusion-manager-2',
         category: 'hr',
         aliases: ['DEI Manager', 'Diversity Equity Inclusion Lead'],
         averageSalary: 95000,
         growthRate: 18
-    },
-    {
-        id: 'employee-relations-specialist',
-        title: 'Employee Relations Specialist',
-        slug: 'employee-relations-specialist-3',
-        category: 'hr',
-        aliases: ['ER Specialist', 'Labor Relations Specialist'],
-        averageSalary: 75000,
-        growthRate: 12
     },
     {
         id: 'organizational-development-manager',
@@ -9105,82 +6444,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['OD Manager', 'Organizational Effectiveness Manager'],
         averageSalary: 105000,
         growthRate: 14
-    },
-
-    // Admin - Executive Support (7 jobs)
-    {
-        id: 'executive-assistant-2',
-        title: 'Executive Assistant',
-        slug: 'executive-assistant-3',
-        category: 'admin',
-        aliases: ['EA', 'Executive Administrative Assistant'],
-        averageSalary: 72000,
-        growthRate: 8
-    },
-    {
-        id: 'executive-secretary',
-        title: 'Executive Secretary',
-        slug: 'executive-secretary-2',
-        category: 'admin',
-        aliases: ['Corporate Secretary', 'Executive Office Secretary'],
-        averageSalary: 68000,
-        growthRate: 6
-    },
-    {
-        id: 'personal-assistant',
-        title: 'Personal Assistant',
-        slug: 'personal-assistant-3',
-        category: 'admin',
-        aliases: ['PA', 'Executive Personal Assistant'],
-        averageSalary: 58000,
-        growthRate: 8
-    },
-    {
-        id: 'administrative-manager',
-        title: 'Administrative Manager',
-        slug: 'administrative-manager-2',
-        category: 'admin',
-        aliases: ['Office Manager', 'Admin Services Manager'],
-        averageSalary: 62000,
-        growthRate: 8
-    },
-    {
-        id: 'receptionist-2',
-        title: 'Receptionist',
-        slug: 'receptionist-4',
-        category: 'admin',
-        aliases: ['Front Desk Receptionist', 'Office Receptionist'],
-        averageSalary: 36000,
-        growthRate: 4
-    },
-    {
-        id: 'virtual-assistant',
-        title: 'Virtual Assistant',
-        slug: 'virtual-assistant-3',
-        category: 'admin',
-        aliases: ['VA', 'Remote Administrative Assistant'],
-        averageSalary: 48000,
-        growthRate: 14
-    },
-    {
-        id: 'file-clerk',
-        title: 'File Clerk',
-        slug: 'file-clerk-4',
-        category: 'admin',
-        aliases: ['Records Clerk', 'File Management Clerk'],
-        averageSalary: 32000,
-        growthRate: -4
-    },
-
-    // Customer Service - Support Ops (8 jobs)
-    {
-        id: 'customer-success-manager-2',
-        title: 'Customer Success Manager',
-        slug: 'customer-success-manager-4',
-        category: 'customer-service',
-        aliases: ['CSM', 'Client Success Manager'],
-        averageSalary: 82000,
-        growthRate: 18
     },
     {
         id: 'customer-onboarding-specialist',
@@ -9192,86 +6455,12 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'customer-retention-specialist',
-        title: 'Customer Retention Specialist',
-        slug: 'customer-retention-specialist-2',
-        category: 'customer-service',
-        aliases: ['Retention Specialist', 'Customer Churn Specialist'],
-        averageSalary: 58000,
-        growthRate: 14
-    },
-    {
-        id: 'customer-experience-manager',
-        title: 'Customer Experience Manager',
-        slug: 'customer-experience-manager-2',
-        category: 'customer-service',
-        aliases: ['CX Manager', 'Client Experience Manager'],
-        averageSalary: 95000,
-        growthRate: 20
-    },
-    {
         id: 'technical-customer-support',
         title: 'Technical Customer Support',
         slug: 'technical-customer-support',
         category: 'customer-service',
         aliases: ['Technical Support Representative', 'IT Support Specialist'],
         averageSalary: 55000,
-        growthRate: 14
-    },
-    {
-        id: 'customer-service-trainer',
-        title: 'Customer Service Trainer',
-        slug: 'customer-service-trainer-2',
-        category: 'customer-service',
-        aliases: ['CS Trainer', 'Support Training Specialist'],
-        averageSalary: 62000,
-        growthRate: 12
-    },
-    {
-        id: 'call-center-representative',
-        title: 'Call Center Representative',
-        slug: 'call-center-representative-3',
-        category: 'customer-service',
-        aliases: ['Call Center Agent', 'Inbound Call Representative'],
-        averageSalary: 38000,
-        growthRate: 6
-    },
-    {
-        id: 'customer-service-quality-analyst',
-        title: 'Customer Service Quality Analyst',
-        slug: 'customer-service-quality-analyst-2',
-        category: 'customer-service',
-        aliases: ['QA Analyst', 'Quality Assurance Specialist'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-
-    // Design - Visual & Creative (8 jobs)
-    {
-        id: 'graphic-designer-2',
-        title: 'Graphic Designer',
-        slug: 'graphic-designer-2',
-        category: 'design',
-        aliases: ['Graphics Designer', 'Visual Designer'],
-        averageSalary: 58000,
-        growthRate: 10
-    },
-    {
-        id: 'motion-graphics-designer',
-        title: 'Motion Graphics Designer',
-        slug: 'motion-graphics-designer-2',
-        category: 'design',
-        aliases: ['Motion Designer', 'Animation Designer'],
-        averageSalary: 75000,
-        growthRate: 16
-    },
-    {
-        id: 'brand-identity-designer',
-        title: 'Brand Identity Designer',
-        slug: 'brand-identity-designer-2',
-        category: 'design',
-        aliases: ['Brand Designer', 'Identity Designer'],
-        averageSalary: 72000,
         growthRate: 14
     },
     {
@@ -9293,24 +6482,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 8
     },
     {
-        id: 'illustration-specialist',
-        title: 'Illustration Specialist',
-        slug: 'illustration-specialist-2',
-        category: 'design',
-        aliases: ['Illustrator', 'Digital Illustrator'],
-        averageSalary: 58000,
-        growthRate: 10
-    },
-    {
-        id: 'design-systems-specialist',
-        title: 'Design Systems Specialist',
-        slug: 'design-systems-specialist-2',
-        category: 'design',
-        aliases: ['Design System Designer', 'Component Library Designer'],
-        averageSalary: 105000,
-        growthRate: 20
-    },
-    {
         id: 'creative-art-director',
         title: 'Creative Art Director',
         slug: 'creative-art-director',
@@ -9319,100 +6490,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 125000,
         growthRate: 12
     },
-
-    // Engineering - Technical (10 jobs)
-    {
-        id: 'civil-engineer-2',
-        title: 'Civil Engineer',
-        slug: 'civil-engineer-4',
-        category: 'engineering',
-        aliases: ['Civil Engineering Engineer', 'Infrastructure Engineer'],
-        averageSalary: 95000,
-        growthRate: 8
-    },
-    {
-        id: 'mechanical-engineer-2',
-        title: 'Mechanical Engineer',
-        slug: 'mechanical-engineer-3',
-        category: 'engineering',
-        aliases: ['ME', 'Mechanical Engineering Engineer'],
-        averageSalary: 98000,
-        growthRate: 10
-    },
-    {
-        id: 'electrical-engineer-2',
-        title: 'Electrical Engineer',
-        slug: 'electrical-engineer-4',
-        category: 'engineering',
-        aliases: ['EE', 'Electrical Engineering Engineer'],
-        averageSalary: 102000,
-        growthRate: 10
-    },
-    {
-        id: 'chemical-engineer',
-        title: 'Chemical Engineer',
-        slug: 'chemical-engineer-4',
-        category: 'engineering',
-        aliases: ['ChemE', 'Process Engineer'],
-        averageSalary: 108000,
-        growthRate: 10
-    },
-    {
-        id: 'industrial-engineer',
-        title: 'Industrial Engineer',
-        slug: 'industrial-engineer-4',
-        category: 'engineering',
-        aliases: ['IE', 'Manufacturing Engineer'],
-        averageSalary: 92000,
-        growthRate: 12
-    },
-    {
-        id: 'environmental-engineer',
-        title: 'Environmental Engineer',
-        slug: 'environmental-engineer-4',
-        category: 'engineering',
-        aliases: ['Environmental Engineering Engineer', 'Green Engineer'],
-        averageSalary: 98000,
-        growthRate: 14
-    },
-    {
-        id: 'biomedical-engineer',
-        title: 'Biomedical Engineer',
-        slug: 'biomedical-engineer-4',
-        category: 'engineering',
-        aliases: ['BME', 'Medical Equipment Engineer'],
-        averageSalary: 105000,
-        growthRate: 16
-    },
-    {
-        id: 'aerospace-engineer',
-        title: 'Aerospace Engineer',
-        slug: 'aerospace-engineer-4',
-        category: 'engineering',
-        aliases: ['Aeronautical Engineer', 'Astronautical Engineer'],
-        averageSalary: 125000,
-        growthRate: 10
-    },
-    {
-        id: 'structural-engineer',
-        title: 'Structural Engineer',
-        slug: 'structural-engineer-3',
-        category: 'engineering',
-        aliases: ['Structural Engineering Engineer', 'Building Engineer'],
-        averageSalary: 95000,
-        growthRate: 8
-    },
-    {
-        id: 'project-engineer',
-        title: 'Project Engineer',
-        slug: 'project-engineer-2',
-        category: 'engineering',
-        aliases: ['Engineering Project Manager', 'Project Engineering Manager'],
-        averageSalary: 92000,
-        growthRate: 12
-    },
-
-    // Legal - Corporate & Compliance (6 jobs)
     {
         id: 'corporate-lawyer',
         title: 'Corporate Lawyer',
@@ -9421,15 +6498,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Corporate Attorney', 'Business Lawyer'],
         averageSalary: 155000,
         growthRate: 10
-    },
-    {
-        id: 'compliance-officer-2',
-        title: 'Compliance Officer',
-        slug: 'compliance-officer-2',
-        category: 'legal',
-        aliases: ['Compliance Manager', 'Regulatory Compliance Officer'],
-        averageSalary: 95000,
-        growthRate: 14
     },
     {
         id: 'contracts-administrator',
@@ -9450,15 +6518,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'paralegal-2',
-        title: 'Paralegal',
-        slug: 'paralegal-3',
-        category: 'legal',
-        aliases: ['Legal Assistant', 'Paralegal Assistant'],
-        averageSalary: 58000,
-        growthRate: 12
-    },
-    {
         id: 'intellectual-property-specialist',
         title: 'Intellectual Property Specialist',
         slug: 'intellectual-property-specialist',
@@ -9467,30 +6526,19 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 105000,
         growthRate: 14
     },
-
-    // Education - Teaching & Training (5 jobs)
     {
-        id: 'special-education-teacher',
-        title: 'Special Education Teacher',
-        slug: 'special-education-teacher-3',
-        category: 'education',
-        aliases: ['SPED Teacher', 'Special Needs Teacher'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-    {
-        id: 'curriculum-developer-2',
+        id: 'curriculum-developer',
         title: 'Curriculum Developer',
-        slug: 'curriculum-developer-2',
+        slug: 'curriculum-developer',
         category: 'education',
         aliases: ['Instructional Coordinator', 'Curriculum Designer'],
         averageSalary: 72000,
         growthRate: 12
     },
     {
-        id: 'instructional-designer-2',
+        id: 'instructional-designer',
         title: 'Instructional Designer',
-        slug: 'instructional-designer-2',
+        slug: 'instructional-designer',
         category: 'education',
         aliases: ['Learning Designer', 'Training Developer'],
         averageSalary: 78000,
@@ -9506,206 +6554,14 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'corporate-trainer-2',
+        id: 'corporate-trainer',
         title: 'Corporate Trainer',
-        slug: 'corporate-trainer-2',
+        slug: 'corporate-trainer',
         category: 'education',
         aliases: ['Professional Development Trainer', 'Business Trainer'],
         averageSalary: 68000,
         growthRate: 14
     },
-
-    // Real Estate - Property & Sales (5 jobs)
-    {
-        id: 'real-estate-appraiser',
-        title: 'Real Estate Appraiser',
-        slug: 'real-estate-appraiser-3',
-        category: 'real-estate',
-        aliases: ['Property Appraiser', 'Real Estate Valuer'],
-        averageSalary: 62000,
-        growthRate: 8
-    },
-    {
-        id: 'property-manager-2',
-        title: 'Property Manager',
-        slug: 'property-manager-3',
-        category: 'real-estate',
-        aliases: ['Real Estate Property Manager', 'Rental Property Manager'],
-        averageSalary: 58000,
-        growthRate: 10
-    },
-    {
-        id: 'real-estate-broker-2',
-        title: 'Real Estate Broker',
-        slug: 'real-estate-broker-3',
-        category: 'real-estate',
-        aliases: ['Real Estate Brokerage', 'Broker Associate'],
-        averageSalary: 85000,
-        growthRate: 10
-    },
-    {
-        id: 'leasing-agent',
-        title: 'Leasing Agent',
-        slug: 'leasing-agent-3',
-        category: 'real-estate',
-        aliases: ['Leasing Consultant', 'Rental Agent'],
-        averageSalary: 42000,
-        growthRate: 10
-    },
-    {
-        id: 'real-estate-investor',
-        title: 'Real Estate Investor',
-        slug: 'real-estate-investor-2',
-        category: 'real-estate',
-        aliases: ['Property Investor', 'Real Estate Entrepreneur'],
-        averageSalary: 95000,
-        growthRate: 12
-    },
-
-    // Skilled Trades - Construction (5 jobs)
-    {
-        id: 'electrician-2',
-        title: 'Electrician',
-        slug: 'electrician-3',
-        category: 'skilled-trades',
-        aliases: ['Electrical Technician', 'Journeyman Electrician'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-    {
-        id: 'plumber-2',
-        title: 'Plumber',
-        slug: 'plumber-3',
-        category: 'skilled-trades',
-        aliases: ['Plumbing Technician', 'Journeyman Plumber'],
-        averageSalary: 58000,
-        growthRate: 8
-    },
-    {
-        id: 'hvac-technician-2',
-        title: 'HVAC Technician',
-        slug: 'hvac-technician-3',
-        category: 'skilled-trades',
-        aliases: ['HVAC Tech', 'Heating and Cooling Technician'],
-        averageSalary: 55000,
-        growthRate: 10
-    },
-    {
-        id: 'carpenter-2',
-        title: 'Carpenter',
-        slug: 'carpenter-3',
-        category: 'skilled-trades',
-        aliases: ['Construction Carpenter', 'Finish Carpenter'],
-        averageSalary: 52000,
-        growthRate: 8
-    },
-    {
-        id: 'welder-2',
-        title: 'Welder',
-        slug: 'welder-3',
-        category: 'skilled-trades',
-        aliases: ['Welding Technician', 'Certified Welder'],
-        averageSalary: 48000,
-        growthRate: 6
-    },
-
-    // Hospitality - Food & Beverage (5 jobs)
-    {
-        id: 'executive-chef',
-        title: 'Executive Chef',
-        slug: 'executive-chef-2',
-        category: 'hospitality',
-        aliases: ['Head Chef', 'Kitchen Manager'],
-        averageSalary: 68000,
-        growthRate: 10
-    },
-    {
-        id: 'sous-chef',
-        title: 'Sous Chef',
-        slug: 'sous-chef-2',
-        category: 'hospitality',
-        aliases: ['Assistant Chef', 'Second Chef'],
-        averageSalary: 52000,
-        growthRate: 10
-    },
-    {
-        id: 'restaurant-manager-2',
-        title: 'Restaurant Manager',
-        slug: 'restaurant-manager-2',
-        category: 'hospitality',
-        aliases: ['Restaurant General Manager', 'Food Service Manager'],
-        averageSalary: 58000,
-        growthRate: 12
-    },
-    {
-        id: 'hotel-manager-2',
-        title: 'Hotel Manager',
-        slug: 'hotel-manager-2',
-        category: 'hospitality',
-        aliases: ['Hotel General Manager', 'Hospitality Manager'],
-        averageSalary: 65000,
-        growthRate: 10
-    },
-    {
-        id: 'event-coordinator-2',
-        title: 'Event Coordinator',
-        slug: 'event-coordinator-2',
-        category: 'hospitality',
-        aliases: ['Event Planning Coordinator', 'Events Coordinator'],
-        averageSalary: 48000,
-        growthRate: 14
-    },
-
-    // Transportation - Logistics (5 jobs)
-    {
-        id: 'logistics-coordinator-2',
-        title: 'Logistics Coordinator',
-        slug: 'logistics-coordinator-2',
-        category: 'transportation',
-        aliases: ['Logistics Planner', 'Supply Chain Coordinator'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-    {
-        id: 'supply-chain-manager',
-        title: 'Supply Chain Manager',
-        slug: 'supply-chain-manager-3',
-        category: 'transportation',
-        aliases: ['Supply Chain Management', 'Logistics Manager'],
-        averageSalary: 98000,
-        growthRate: 16
-    },
-    {
-        id: 'freight-forwarder',
-        title: 'Freight Forwarder',
-        slug: 'freight-forwarder-3',
-        category: 'transportation',
-        aliases: ['Freight Broker', 'Cargo Agent'],
-        averageSalary: 58000,
-        growthRate: 10
-    },
-    {
-        id: 'dispatcher',
-        title: 'Dispatcher',
-        slug: 'dispatcher-3',
-        category: 'transportation',
-        aliases: ['Service Dispatcher', 'Transportation Dispatcher'],
-        averageSalary: 42000,
-        growthRate: 8
-    },
-    {
-        id: 'warehouse-manager',
-        title: 'Warehouse Manager',
-        slug: 'warehouse-manager-3',
-        category: 'transportation',
-        aliases: ['Distribution Center Manager', 'Warehouse Supervisor'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-
-    // ========== BATCH 17: 100 New Jobs ==========
-
-    // Technology - Cloud & DevOps (12 jobs)
     {
         id: 'aws-cloud-architect',
         title: 'AWS Cloud Architect',
@@ -9752,58 +6608,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 22
     },
     {
-        id: 'terraform-engineer',
-        title: 'Terraform Engineer',
-        slug: 'terraform-engineer-2',
-        category: 'technology',
-        aliases: ['Infrastructure as Code Engineer', 'IaC Developer'],
-        averageSalary: 142000,
-        growthRate: 24
-    },
-    {
-        id: 'site-reliability-engineer-2',
-        title: 'Site Reliability Engineer',
-        slug: 'site-reliability-engineer-4',
-        category: 'technology',
-        aliases: ['SRE', 'Site Reliability Engineering'],
-        averageSalary: 150000,
-        growthRate: 26
-    },
-    {
-        id: 'devsecops-engineer',
-        title: 'DevSecOps Engineer',
-        slug: 'devsecops-engineer-3',
-        category: 'technology',
-        aliases: ['DevSecOps Specialist', 'Security DevOps Engineer'],
-        averageSalary: 148000,
-        growthRate: 28
-    },
-    {
-        id: 'cloud-security-engineer-2',
-        title: 'Cloud Security Engineer',
-        slug: 'cloud-security-engineer-3',
-        category: 'technology',
-        aliases: ['Cloud Security Specialist', 'Cloud Security Architect'],
-        averageSalary: 150000,
-        growthRate: 28
-    },
-    {
-        id: 'infrastructure-engineer-2',
+        id: 'infrastructure-engineer',
         title: 'Infrastructure Engineer',
-        slug: 'infrastructure-engineer-2',
+        slug: 'infrastructure-engineer',
         category: 'technology',
         aliases: ['IT Infrastructure Engineer', 'Infrastructure Specialist'],
         averageSalary: 125000,
         growthRate: 18
-    },
-    {
-        id: 'platform-engineer',
-        title: 'Platform Engineer',
-        slug: 'platform-engineer-4',
-        category: 'technology',
-        aliases: ['Platform Development Engineer', 'Internal Developer Platform'],
-        averageSalary: 145000,
-        growthRate: 30
     },
     {
         id: 'chaos-engineer',
@@ -9814,8 +6625,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 148000,
         growthRate: 28
     },
-
-    // Marketing - Content & Brand (10 jobs)
     {
         id: 'content-marketing-director',
         title: 'Content Marketing Director',
@@ -9835,54 +6644,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'content-writer-2',
-        title: 'Content Writer',
-        slug: 'content-writer-2',
-        category: 'marketing',
-        aliases: ['Web Content Writer', 'Digital Content Writer'],
-        averageSalary: 65000,
-        growthRate: 14
-    },
-    {
-        id: 'technical-writer-2',
-        title: 'Technical Writer',
-        slug: 'technical-writer-2',
-        category: 'marketing',
-        aliases: ['Technical Documentation Writer', 'Technical Communicator'],
-        averageSalary: 82000,
-        growthRate: 12
-    },
-    {
-        id: 'copy-editor',
-        title: 'Copy Editor',
-        slug: 'copy-editor-2',
-        category: 'marketing',
-        aliases: ['Editor', 'Content Editor'],
-        averageSalary: 58000,
-        growthRate: 8
-    },
-    {
-        id: 'brand-manager-2',
-        title: 'Brand Manager',
-        slug: 'brand-manager-4',
-        category: 'marketing',
-        aliases: ['Product Brand Manager', 'Brand Marketing Manager'],
-        averageSalary: 105000,
-        growthRate: 14
-    },
-    {
-        id: 'brand-ambassador',
-        title: 'Brand Ambassador',
-        slug: 'brand-ambassador-3',
-        category: 'marketing',
-        aliases: ['Brand Representative', 'Brand Advocate'],
-        averageSalary: 48000,
-        growthRate: 12
-    },
-    {
-        id: 'public-relations-specialist-2',
+        id: 'public-relations-specialist',
         title: 'Public Relations Specialist',
-        slug: 'public-relations-specialist-2',
+        slug: 'public-relations-specialist',
         category: 'marketing',
         aliases: ['PR Specialist', 'Public Relations Coordinator'],
         averageSalary: 68000,
@@ -9898,24 +6662,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'content-strategist-2',
+        id: 'content-strategist',
         title: 'Content Strategist',
-        slug: 'content-strategist-2',
+        slug: 'content-strategist',
         category: 'marketing',
         aliases: ['Content Strategy Manager', 'Digital Content Strategist'],
         averageSalary: 95000,
         growthRate: 18
-    },
-
-    // Sales - Channel & Partnerships (8 jobs)
-    {
-        id: 'channel-sales-manager',
-        title: 'Channel Sales Manager',
-        slug: 'channel-sales-manager-2',
-        category: 'sales',
-        aliases: ['Channel Partner Manager', 'Indirect Sales Manager'],
-        averageSalary: 115000,
-        growthRate: 14
     },
     {
         id: 'partnership-manager',
@@ -9945,24 +6698,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'regional-sales-manager-2',
-        title: 'Regional Sales Manager',
-        slug: 'regional-sales-manager-4',
-        category: 'sales',
-        aliases: ['RSM', 'Area Sales Manager'],
-        averageSalary: 110000,
-        growthRate: 12
-    },
-    {
-        id: 'national-sales-manager',
-        title: 'National Sales Manager',
-        slug: 'national-sales-manager-3',
-        category: 'sales',
-        aliases: ['NSM', 'Country Sales Manager'],
-        averageSalary: 145000,
-        growthRate: 12
-    },
-    {
         id: 'international-sales-manager',
         title: 'International Sales Manager',
         slug: 'international-sales-manager',
@@ -9972,54 +6707,7 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'field-sales-manager',
-        title: 'Field Sales Manager',
-        slug: 'field-sales-manager-2',
-        category: 'sales',
-        aliases: ['Outside Sales Manager', 'Field Sales Director'],
-        averageSalary: 115000,
-        growthRate: 12
-    },
-
-    // Healthcare - Allied Health (8 jobs)
-    {
-        id: 'medical-assistant-2',
-        title: 'Medical Assistant',
-        slug: 'medical-assistant-4',
-        category: 'healthcare',
-        aliases: ['Certified Medical Assistant', 'Clinical Medical Assistant'],
-        averageSalary: 42000,
-        growthRate: 18
-    },
-    {
-        id: 'pharmacy-technician',
-        title: 'Pharmacy Technician',
-        slug: 'pharmacy-technician-3',
-        category: 'healthcare',
-        aliases: ['Pharmacy Tech', 'Certified Pharmacy Technician'],
-        averageSalary: 40000,
-        growthRate: 10
-    },
-    {
-        id: 'medical-technologist',
-        title: 'Medical Technologist',
-        slug: 'medical-technologist-3',
-        category: 'healthcare',
-        aliases: ['Clinical Laboratory Scientist', 'Medical Lab Tech'],
-        averageSalary: 58000,
-        growthRate: 12
-    },
-    {
-        id: 'phlebotomist',
-        title: 'Phlebotomist',
-        slug: 'phlebotomist-2',
-        category: 'healthcare',
-        aliases: ['Phlebotomy Technician', 'Blood Draw Specialist'],
-        averageSalary: 38000,
-        growthRate: 14
-    },
-    {
-        id: 'medical-lab-technician',
+        id: 'medical-lab-technician-2',
         title: 'Medical Lab Technician',
         slug: 'medical-lab-technician-2',
         category: 'healthcare',
@@ -10028,35 +6716,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'radiation-therapist',
-        title: 'Radiation Therapist',
-        slug: 'radiation-therapist-2',
-        category: 'healthcare',
-        aliases: ['Radiation Therapy Technician', 'Radiation Oncology Therapist'],
-        averageSalary: 92000,
-        growthRate: 14
-    },
-    {
-        id: 'nuclear-medicine-technologist',
-        title: 'Nuclear Medicine Technologist',
-        slug: 'nuclear-medicine-technologist-2',
-        category: 'healthcare',
-        aliases: ['Nuclear Med Tech', 'Nuclear Medicine Technician'],
-        averageSalary: 82000,
-        growthRate: 12
-    },
-    {
-        id: 'medical-records-technician',
-        title: 'Medical Records Technician',
-        slug: 'medical-records-technician-2',
-        category: 'healthcare',
-        aliases: ['Health Information Technician', 'Medical Records Clerk'],
-        averageSalary: 42000,
-        growthRate: 14
-    },
-
-    // Finance - Banking & Lending (8 jobs)
-    {
         id: 'loan-officer',
         title: 'Loan Officer',
         slug: 'loan-officer',
@@ -10064,15 +6723,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Mortgage Loan Officer', 'Lending Officer'],
         averageSalary: 68000,
         growthRate: 10
-    },
-    {
-        id: 'mortgage-broker',
-        title: 'Mortgage Broker',
-        slug: 'mortgage-broker-2',
-        category: 'finance',
-        aliases: ['Mortgage Loan Broker', 'Mortgage Originator'],
-        averageSalary: 85000,
-        growthRate: 12
     },
     {
         id: 'bank-teller',
@@ -10102,24 +6752,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 8
     },
     {
-        id: 'underwriter-2',
-        title: 'Underwriter',
-        slug: 'underwriter-2',
-        category: 'finance',
-        aliases: ['Insurance Underwriter', 'Loan Underwriter'],
-        averageSalary: 72000,
-        growthRate: 6
-    },
-    {
-        id: 'claims-adjuster',
-        title: 'Claims Adjuster',
-        slug: 'claims-adjuster-2',
-        category: 'finance',
-        aliases: ['Insurance Claims Adjuster', 'Claims Representative'],
-        averageSalary: 62000,
-        growthRate: 6
-    },
-    {
         id: 'insurance-agent',
         title: 'Insurance Agent',
         slug: 'insurance-agent',
@@ -10128,34 +6760,14 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 58000,
         growthRate: 8
     },
-
-    // HR - Learning & Development (6 jobs)
     {
-        id: 'learning-development-manager',
+        id: 'learning-development-manager-2',
         title: 'Learning Development Manager',
         slug: 'learning-development-manager-2',
         category: 'hr',
         aliases: ['L&D Manager', 'Training and Development Manager'],
         averageSalary: 105000,
         growthRate: 16
-    },
-    {
-        id: 'instructional-designer-3',
-        title: 'Instructional Designer',
-        slug: 'instructional-designer-3',
-        category: 'hr',
-        aliases: ['Learning Experience Designer', 'eLearning Developer'],
-        averageSalary: 82000,
-        growthRate: 18
-    },
-    {
-        id: 'training-specialist',
-        title: 'Training Specialist',
-        slug: 'training-specialist-2',
-        category: 'hr',
-        aliases: ['Corporate Trainer', 'Training Coordinator'],
-        averageSalary: 68000,
-        growthRate: 14
     },
     {
         id: 'learning-analyst',
@@ -10184,17 +6796,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 95000,
         growthRate: 16
     },
-
-    // Admin - Clerical (6 jobs)
-    {
-        id: 'data-entry-clerk',
-        title: 'Data Entry Clerk',
-        slug: 'data-entry-clerk-4',
-        category: 'admin',
-        aliases: ['Data Entry Specialist', 'Data Input Clerk'],
-        averageSalary: 35000,
-        growthRate: -6
-    },
     {
         id: 'word-processor',
         title: 'Word Processor',
@@ -10203,15 +6804,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Document Processor', 'Typist'],
         averageSalary: 38000,
         growthRate: -8
-    },
-    {
-        id: 'administrative-assistant-3',
-        title: 'Administrative Assistant',
-        slug: 'administrative-assistant-3',
-        category: 'admin',
-        aliases: ['Admin Assistant', 'Office Assistant'],
-        averageSalary: 42000,
-        growthRate: 6
     },
     {
         id: 'office-clerk',
@@ -10240,24 +6832,13 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 34000,
         growthRate: -6
     },
-
-    // Customer Service - Support (8 jobs)
     {
-        id: 'customer-service-rep-2',
+        id: 'customer-service-rep',
         title: 'Customer Service Rep',
-        slug: 'customer-service-rep-2',
+        slug: 'customer-service-rep',
         category: 'customer-service',
         aliases: ['CSR', 'Customer Service Representative'],
         averageSalary: 38000,
-        growthRate: 6
-    },
-    {
-        id: 'call-center-agent',
-        title: 'Call Center Agent',
-        slug: 'call-center-agent-2',
-        category: 'customer-service',
-        aliases: ['Call Center Representative', 'Phone Agent'],
-        averageSalary: 36000,
         growthRate: 6
     },
     {
@@ -10279,18 +6860,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 8
     },
     {
-        id: 'service-desk-analyst-2',
-        title: 'Service Desk Analyst',
-        slug: 'service-desk-analyst-2',
-        category: 'customer-service',
-        aliases: ['Service Desk Specialist', 'IT Service Desk'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-    {
-        id: 'customer-support-rep-2',
+        id: 'customer-support-rep',
         title: 'Customer Support Rep',
-        slug: 'customer-support-rep-2',
+        slug: 'customer-support-rep',
         category: 'customer-service',
         aliases: ['Customer Support Representative', 'Support Agent'],
         averageSalary: 40000,
@@ -10314,17 +6886,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 48000,
         growthRate: 12
     },
-
-    // Design - Digital & Web (8 jobs)
-    {
-        id: 'web-designer-2',
-        title: 'Web Designer',
-        slug: 'web-designer-2',
-        category: 'design',
-        aliases: ['Website Designer', 'Web Design Specialist'],
-        averageSalary: 65000,
-        growthRate: 14
-    },
     {
         id: 'digital-designer',
         title: 'Digital Designer',
@@ -10344,24 +6905,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'production-artist',
-        title: 'Production Artist',
-        slug: 'production-artist-3',
-        category: 'design',
-        aliases: ['Graphic Production Artist', 'Pre-press Artist'],
-        averageSalary: 52000,
-        growthRate: 6
-    },
-    {
-        id: 'visual-designer-2',
-        title: 'Visual Designer',
-        slug: 'visual-designer-4',
-        category: 'design',
-        aliases: ['Visual Design Specialist', 'UI Visual Designer'],
-        averageSalary: 85000,
-        growthRate: 18
-    },
-    {
         id: 'interaction-designer',
         title: 'Interaction Designer',
         slug: 'interaction-designer',
@@ -10371,96 +6914,22 @@ export const jobTitles: JobTitle[] = [
         growthRate: 20
     },
     {
-        id: 'product-designer-3',
-        title: 'Product Designer',
-        slug: 'product-designer-4',
-        category: 'design',
-        aliases: ['Digital Product Designer', 'Product Design Specialist'],
-        averageSalary: 115000,
-        growthRate: 22
-    },
-    {
-        id: 'design-researcher',
-        title: 'Design Researcher',
-        slug: 'design-researcher-2',
-        category: 'design',
-        aliases: ['Design Research Specialist', 'User Research Designer'],
-        averageSalary: 98000,
-        growthRate: 20
-    },
-
-    // Engineering - Software (10 jobs)
-    {
-        id: 'software-architect-2',
-        title: 'Software Architect',
-        slug: 'software-architect-3',
-        category: 'engineering',
-        aliases: ['Application Architect', 'Solutions Architect'],
-        averageSalary: 155000,
-        growthRate: 18
-    },
-    {
-        id: 'solutions-architect-2',
-        title: 'Solutions Architect',
-        slug: 'solutions-architect-3',
-        category: 'engineering',
-        aliases: ['Solution Architecture', 'Technical Solutions Architect'],
-        averageSalary: 150000,
-        growthRate: 18
-    },
-    {
-        id: 'backend-engineer-2',
+        id: 'backend-engineer',
         title: 'Backend Engineer',
-        slug: 'backend-engineer-2',
+        slug: 'backend-engineer',
         category: 'engineering',
         aliases: ['Backend Developer', 'Server-Side Engineer'],
         averageSalary: 135000,
         growthRate: 20
     },
     {
-        id: 'frontend-engineer-2',
+        id: 'frontend-engineer',
         title: 'Frontend Engineer',
-        slug: 'frontend-engineer-2',
+        slug: 'frontend-engineer',
         category: 'engineering',
         aliases: ['Frontend Developer', 'Client-Side Engineer'],
         averageSalary: 130000,
         growthRate: 20
-    },
-    {
-        id: 'mobile-app-developer-2',
-        title: 'Mobile App Developer',
-        slug: 'mobile-app-developer-2',
-        category: 'engineering',
-        aliases: ['Mobile Developer', 'App Developer'],
-        averageSalary: 125000,
-        growthRate: 22
-    },
-    {
-        id: 'ios-developer',
-        title: 'iOS Developer',
-        slug: 'ios-developer-3',
-        category: 'engineering',
-        aliases: ['iPhone Developer', 'iPad Developer'],
-        averageSalary: 130000,
-        growthRate: 22
-    },
-    {
-        id: 'android-developer',
-        title: 'Android Developer',
-        slug: 'android-developer-3',
-        category: 'engineering',
-        aliases: ['Android App Developer', 'Mobile Android Developer'],
-        averageSalary: 125000,
-        growthRate: 20
-    },
-    {
-        id: 'game-developer-2',
-        title: 'Game Developer',
-        slug: 'game-developer-3',
-        category: 'engineering',
-        aliases: ['Game Programmer', 'Video Game Developer'],
-        averageSalary: 115000,
-        growthRate: 18
     },
     {
         id: 'embedded-software-engineer',
@@ -10472,26 +6941,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'qa-engineer-2',
-        title: 'QA Engineer',
-        slug: 'qa-engineer-2',
-        category: 'engineering',
-        aliases: ['Quality Assurance Engineer', 'Test Engineer'],
-        averageSalary: 95000,
-        growthRate: 16
-    },
-
-    // Legal - Corporate (6 jobs)
-    {
-        id: 'contracts-manager',
-        title: 'Contracts Manager',
-        slug: 'contracts-manager-2',
-        category: 'legal',
-        aliases: ['Contract Management', 'Commercial Contracts Manager'],
-        averageSalary: 105000,
-        growthRate: 14
-    },
-    {
         id: 'legal-counsel',
         title: 'Legal Counsel',
         slug: 'legal-counsel',
@@ -10501,60 +6950,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'compliance-manager-2',
+        id: 'compliance-manager',
         title: 'Compliance Manager',
-        slug: 'compliance-manager-2',
+        slug: 'compliance-manager',
         category: 'legal',
         aliases: ['Corporate Compliance Manager', 'Regulatory Affairs Manager'],
         averageSalary: 115000,
         growthRate: 16
-    },
-    {
-        id: 'legal-assistant-2',
-        title: 'Legal Assistant',
-        slug: 'legal-assistant-4',
-        category: 'legal',
-        aliases: ['Legal Administrative Assistant', 'Law Office Assistant'],
-        averageSalary: 52000,
-        growthRate: 10
-    },
-    {
-        id: 'legal-secretary',
-        title: 'Legal Secretary',
-        slug: 'legal-secretary-2',
-        category: 'legal',
-        aliases: ['Legal Administrative Secretary', 'Law Firm Secretary'],
-        averageSalary: 48000,
-        growthRate: 6
-    },
-    {
-        id: 'regulatory-affairs-specialist',
-        title: 'Regulatory Affairs Specialist',
-        slug: 'regulatory-affairs-specialist-2',
-        category: 'legal',
-        aliases: ['Regulatory Specialist', 'Compliance Regulatory Specialist'],
-        averageSalary: 85000,
-        growthRate: 14
-    },
-
-    // Education - Higher Ed (4 jobs)
-    {
-        id: 'academic-advisor',
-        title: 'Academic Advisor',
-        slug: 'academic-advisor-3',
-        category: 'education',
-        aliases: ['Student Advisor', 'College Advisor'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-    {
-        id: 'admissions-counselor',
-        title: 'Admissions Counselor',
-        slug: 'admissions-counselor-2',
-        category: 'education',
-        aliases: ['College Admissions Counselor', 'Enrollment Counselor'],
-        averageSalary: 48000,
-        growthRate: 10
     },
     {
         id: 'student-affairs-coordinator',
@@ -10574,44 +6976,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 52000,
         growthRate: 12
     },
-
-    // Real Estate - Sales & Leasing (6 jobs)
-    {
-        id: 'real-estate-agent-2',
-        title: 'Real Estate Agent',
-        slug: 'real-estate-agent-2',
-        category: 'real-estate',
-        aliases: ['Real Estate Sales Agent', 'Realtor'],
-        averageSalary: 55000,
-        growthRate: 10
-    },
-    {
-        id: 'commercial-real-estate-agent',
-        title: 'Commercial Real Estate Agent',
-        slug: 'commercial-real-estate-agent-3',
-        category: 'real-estate',
-        aliases: ['Commercial Realtor', 'Commercial Property Agent'],
-        averageSalary: 95000,
-        growthRate: 12
-    },
-    {
-        id: 'real-estate-appraiser-2',
-        title: 'Real Estate Appraiser',
-        slug: 'real-estate-appraiser-4',
-        category: 'real-estate',
-        aliases: ['Property Appraiser', 'Real Estate Valuer'],
-        averageSalary: 65000,
-        growthRate: 8
-    },
-    {
-        id: 'property-manager-3',
-        title: 'Property Manager',
-        slug: 'property-manager-4',
-        category: 'real-estate',
-        aliases: ['Real Estate Property Manager', 'Rental Manager'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
     {
         id: 'facility-manager',
         title: 'Facility Manager',
@@ -10630,8 +6994,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 85000,
         growthRate: 14
     },
-
-    // Skilled Trades - Construction (6 jobs)
     {
         id: 'construction-manager',
         title: 'Construction Manager',
@@ -10648,24 +7010,6 @@ export const jobTitles: JobTitle[] = [
         category: 'skilled-trades',
         aliases: ['Site Supervisor', 'Construction Foreman'],
         averageSalary: 72000,
-        growthRate: 10
-    },
-    {
-        id: 'construction-laborer',
-        title: 'Construction Laborer',
-        slug: 'construction-laborer-2',
-        category: 'skilled-trades',
-        aliases: ['Construction Worker', 'General Laborer'],
-        averageSalary: 38000,
-        growthRate: 8
-    },
-    {
-        id: 'heavy-equipment-operator',
-        title: 'Heavy Equipment Operator',
-        slug: 'heavy-equipment-operator-2',
-        category: 'skilled-trades',
-        aliases: ['Equipment Operator', 'Heavy Machine Operator'],
-        averageSalary: 52000,
         growthRate: 10
     },
     {
@@ -10686,8 +7030,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 85000,
         growthRate: 10
     },
-
-    // Hospitality - Travel & Tourism (6 jobs)
     {
         id: 'travel-agent',
         title: 'Travel Agent',
@@ -10703,15 +7045,6 @@ export const jobTitles: JobTitle[] = [
         slug: 'tour-guide',
         category: 'hospitality',
         aliases: ['Tour Manager', 'Tour Director'],
-        averageSalary: 38000,
-        growthRate: 10
-    },
-    {
-        id: 'concierge',
-        title: 'Concierge',
-        slug: 'concierge',
-        category: 'hospitality',
-        aliases: ['Hotel Concierge', 'Guest Services Agent'],
         averageSalary: 38000,
         growthRate: 10
     },
@@ -10742,35 +7075,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 68000,
         growthRate: 14
     },
-
-    // Transportation - Delivery & Driving (6 jobs)
-    {
-        id: 'delivery-driver-2',
-        title: 'Delivery Driver',
-        slug: 'delivery-driver-4',
-        category: 'transportation',
-        aliases: ['Package Delivery Driver', 'Courier Driver'],
-        averageSalary: 38000,
-        growthRate: 6
-    },
-    {
-        id: 'truck-driver',
-        title: 'Truck Driver',
-        slug: 'truck-driver-2',
-        category: 'transportation',
-        aliases: ['Commercial Truck Driver', 'CDL Driver'],
-        averageSalary: 52000,
-        growthRate: 8
-    },
-    {
-        id: 'route-driver',
-        title: 'Route Driver',
-        slug: 'route-driver-2',
-        category: 'transportation',
-        aliases: ['Delivery Route Driver', 'Local Route Driver'],
-        averageSalary: 42000,
-        growthRate: 6
-    },
     {
         id: 'bus-driver',
         title: 'Bus Driver',
@@ -10798,19 +7102,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 48000,
         growthRate: 6
     },
-
-    // ========== BATCH 18: 200 New Jobs ==========
-
-    // Technology - Cybersecurity & Data (15 jobs)
-    {
-        id: 'cybersecurity-analyst-3',
-        title: 'Cybersecurity Analyst',
-        slug: 'cybersecurity-analyst-3',
-        category: 'technology',
-        aliases: ['Information Security Analyst', 'Cyber Security Specialist'],
-        averageSalary: 115000,
-        growthRate: 28
-    },
     {
         id: 'security-architect',
         title: 'Security Architect',
@@ -10828,15 +7119,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Ethical Hacker', 'Pen Test Engineer'],
         averageSalary: 125000,
         growthRate: 30
-    },
-    {
-        id: 'security-consultant-2',
-        title: 'Security Consultant',
-        slug: 'security-consultant-2',
-        category: 'technology',
-        aliases: ['Information Security Consultant', 'Cybersecurity Consultant'],
-        averageSalary: 135000,
-        growthRate: 26
     },
     {
         id: 'information-security-manager',
@@ -10875,27 +7157,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 28
     },
     {
-        id: 'data-engineer-3',
-        title: 'Data Engineer',
-        slug: 'data-engineer-3',
-        category: 'technology',
-        aliases: ['Big Data Engineer', 'Data Pipeline Engineer'],
-        averageSalary: 135000,
-        growthRate: 30
-    },
-    {
-        id: 'data-scientist-3',
-        title: 'Data Scientist',
-        slug: 'data-scientist-3',
-        category: 'technology',
-        aliases: ['Data Science Specialist', 'Machine Learning Scientist'],
-        averageSalary: 145000,
-        growthRate: 32
-    },
-    {
-        id: 'statistician-2',
+        id: 'statistician',
         title: 'Statistician',
-        slug: 'statistician-2',
+        slug: 'statistician',
         category: 'technology',
         aliases: ['Biostatistician', 'Applied Statistician'],
         averageSalary: 98000,
@@ -10937,17 +7201,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 175000,
         growthRate: 28
     },
-
-    // Marketing - Growth & Digital (15 jobs)
-    {
-        id: 'growth-marketer',
-        title: 'Growth Marketer',
-        slug: 'growth-marketer-4',
-        category: 'marketing',
-        aliases: ['Growth Hacker', 'Growth Marketing Specialist'],
-        averageSalary: 95000,
-        growthRate: 24
-    },
     {
         id: 'growth-manager',
         title: 'Growth Manager',
@@ -10958,18 +7211,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 26
     },
     {
-        id: 'seo-specialist-2',
-        title: 'SEO Specialist',
-        slug: 'seo-specialist-3',
-        category: 'marketing',
-        aliases: ['Search Engine Optimization Specialist', 'SEO Expert'],
-        averageSalary: 72000,
-        growthRate: 18
-    },
-    {
-        id: 'seo-manager-2',
+        id: 'seo-manager',
         title: 'SEO Manager',
-        slug: 'seo-manager-2',
+        slug: 'seo-manager',
         category: 'marketing',
         aliases: ['Search Engine Optimization Manager', 'Head of SEO'],
         averageSalary: 98000,
@@ -10985,27 +7229,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'digital-marketing-specialist-2',
-        title: 'Digital Marketing Specialist',
-        slug: 'digital-marketing-specialist-2',
-        category: 'marketing',
-        aliases: ['Online Marketing Specialist', 'Internet Marketing Specialist'],
-        averageSalary: 65000,
-        growthRate: 16
-    },
-    {
-        id: 'digital-marketing-manager-2',
-        title: 'Digital Marketing Manager',
-        slug: 'digital-marketing-manager-2',
-        category: 'marketing',
-        aliases: ['Online Marketing Manager', 'Internet Marketing Manager'],
-        averageSalary: 95000,
-        growthRate: 18
-    },
-    {
-        id: 'ecommerce-manager-2',
+        id: 'ecommerce-manager',
         title: 'Ecommerce Manager',
-        slug: 'ecommerce-manager-2',
+        slug: 'ecommerce-manager',
         category: 'marketing',
         aliases: ['E-commerce Manager', 'Online Store Manager'],
         averageSalary: 98000,
@@ -11057,15 +7283,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'community-manager-2',
-        title: 'Community Manager',
-        slug: 'community-manager-3',
-        category: 'marketing',
-        aliases: ['Online Community Manager', 'Social Community Manager'],
-        averageSalary: 72000,
-        growthRate: 18
-    },
-    {
         id: 'user-acquisition-specialist',
         title: 'User Acquisition Specialist',
         slug: 'user-acquisition-specialist',
@@ -11073,71 +7290,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['UA Specialist', 'User Acquisition Manager'],
         averageSalary: 92000,
         growthRate: 22
-    },
-
-    // Sales - Inside & Field (12 jobs)
-    {
-        id: 'inside-sales-representative-2',
-        title: 'Inside Sales Representative',
-        slug: 'inside-sales-representative-4',
-        category: 'sales',
-        aliases: ['Inside Sales Rep', 'Remote Sales Representative'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-    {
-        id: 'inside-sales-manager-2',
-        title: 'Inside Sales Manager',
-        slug: 'inside-sales-manager-3',
-        category: 'sales',
-        aliases: ['Inside Sales Team Lead', 'Remote Sales Manager'],
-        averageSalary: 92000,
-        growthRate: 14
-    },
-    {
-        id: 'outside-sales-representative-2',
-        title: 'Outside Sales Representative',
-        slug: 'outside-sales-representative-3',
-        category: 'sales',
-        aliases: ['Field Sales Representative', 'Outside Sales Rep'],
-        averageSalary: 58000,
-        growthRate: 10
-    },
-    {
-        id: 'field-sales-representative',
-        title: 'Field Sales Representative',
-        slug: 'field-sales-representative-2',
-        category: 'sales',
-        aliases: ['Field Sales Rep', 'Territory Sales Representative'],
-        averageSalary: 62000,
-        growthRate: 12
-    },
-    {
-        id: 'sales-support-administrator',
-        title: 'Sales Support Administrator',
-        slug: 'sales-support-administrator-2',
-        category: 'sales',
-        aliases: ['Sales Admin', 'Sales Support Specialist'],
-        averageSalary: 48000,
-        growthRate: 10
-    },
-    {
-        id: 'sales-coordinator-2',
-        title: 'Sales Coordinator',
-        slug: 'sales-coordinator-2',
-        category: 'sales',
-        aliases: ['Sales Administration Coordinator', 'Sales Support Coordinator'],
-        averageSalary: 46000,
-        growthRate: 10
-    },
-    {
-        id: 'bid-manager',
-        title: 'Bid Manager',
-        slug: 'bid-manager-2',
-        category: 'sales',
-        aliases: ['Proposal Manager', 'Bidding Manager'],
-        averageSalary: 95000,
-        growthRate: 14
     },
     {
         id: 'proposal-writer',
@@ -11158,24 +7310,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'sales-associate-2',
-        title: 'Sales Associate',
-        slug: 'sales-associate-2',
-        category: 'sales',
-        aliases: ['Retail Sales Associate', 'Sales Clerk'],
-        averageSalary: 38000,
-        growthRate: 8
-    },
-    {
-        id: 'lead-generation-specialist',
-        title: 'Lead Generation Specialist',
-        slug: 'lead-generation-specialist-3',
-        category: 'sales',
-        aliases: ['Lead Gen Specialist', 'Lead Generation Rep'],
-        averageSalary: 48000,
-        growthRate: 14
-    },
-    {
         id: 'sales-veteran',
         title: 'Sales Veteran',
         slug: 'sales-veteran',
@@ -11183,80 +7317,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Experienced Sales Rep', 'Senior Sales Representative'],
         averageSalary: 72000,
         growthRate: 10
-    },
-
-    // Healthcare - Medical & Nursing (12 jobs)
-    {
-        id: 'registered-nurse-2',
-        title: 'Registered Nurse',
-        slug: 'registered-nurse-2',
-        category: 'healthcare',
-        aliases: ['RN', 'Staff Nurse'],
-        averageSalary: 82000,
-        growthRate: 12
-    },
-    {
-        id: 'licensed-practical-nurse',
-        title: 'Licensed Practical Nurse',
-        slug: 'licensed-practical-nurse-2',
-        category: 'healthcare',
-        aliases: ['LPN', 'Practical Nurse'],
-        averageSalary: 54000,
-        growthRate: 10
-    },
-    {
-        id: 'nurse-practitioner-2',
-        title: 'Nurse Practitioner',
-        slug: 'nurse-practitioner-4',
-        category: 'healthcare',
-        aliases: ['NP', 'Advanced Practice Nurse'],
-        averageSalary: 125000,
-        growthRate: 28
-    },
-    {
-        id: 'clinical-nurse-specialist-2',
-        title: 'Clinical Nurse Specialist',
-        slug: 'clinical-nurse-specialist-3',
-        category: 'healthcare',
-        aliases: ['CNS', 'Advanced Practice Registered Nurse'],
-        averageSalary: 115000,
-        growthRate: 24
-    },
-    {
-        id: 'nurse-anesthetist',
-        title: 'Nurse Anesthetist',
-        slug: 'nurse-anesthetist-2',
-        category: 'healthcare',
-        aliases: ['CRNA', 'Anesthesia Nurse'],
-        averageSalary: 195000,
-        growthRate: 26
-    },
-    {
-        id: 'nurse-midwife-2',
-        title: 'Nurse Midwife',
-        slug: 'nurse-midwife-2',
-        category: 'healthcare',
-        aliases: ['CNM', 'Certified Nurse Midwife'],
-        averageSalary: 115000,
-        growthRate: 22
-    },
-    {
-        id: 'travel-nurse',
-        title: 'Travel Nurse',
-        slug: 'travel-nurse-2',
-        category: 'healthcare',
-        aliases: ['Traveling Nurse', 'Contract Nurse'],
-        averageSalary: 110000,
-        growthRate: 20
-    },
-    {
-        id: 'home-health-nurse',
-        title: 'Home Health Nurse',
-        slug: 'home-health-nurse-2',
-        category: 'healthcare',
-        aliases: ['Home Care Nurse', 'Visiting Nurse'],
-        averageSalary: 72000,
-        growthRate: 16
     },
     {
         id: 'hospitalist',
@@ -11266,15 +7326,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Hospital Medicine Physician', 'Inpatient Physician'],
         averageSalary: 215000,
         growthRate: 18
-    },
-    {
-        id: 'emergency-physician',
-        title: 'Emergency Physician',
-        slug: 'emergency-physician-2',
-        category: 'healthcare',
-        aliases: ['ER Doctor', 'Emergency Medicine Physician'],
-        averageSalary: 320000,
-        growthRate: 16
     },
     {
         id: 'primary-care-physician',
@@ -11294,26 +7345,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 285000,
         growthRate: 16
     },
-
-    // Finance - Corporate & Investment (12 jobs)
-    {
-        id: 'financial-analyst-2',
-        title: 'Financial Analyst',
-        slug: 'financial-analyst-4',
-        category: 'finance',
-        aliases: ['Corporate Financial Analyst', 'Finance Analyst'],
-        averageSalary: 85000,
-        growthRate: 12
-    },
-    {
-        id: 'finance-manager-2',
-        title: 'Finance Manager',
-        slug: 'finance-manager-3',
-        category: 'finance',
-        aliases: ['Corporate Finance Manager', 'Financial Planning Manager'],
-        averageSalary: 115000,
-        growthRate: 14
-    },
     {
         id: 'corporate-treasurer',
         title: 'Corporate Treasurer',
@@ -11324,72 +7355,18 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'controller-2',
-        title: 'Controller',
-        slug: 'controller-3',
-        category: 'finance',
-        aliases: ['Corporate Controller', 'Financial Controller'],
-        averageSalary: 135000,
-        growthRate: 10
-    },
-    {
-        id: 'chief-financial-officer-2',
-        title: 'Chief Financial Officer',
-        slug: 'chief-financial-officer-3',
-        category: 'finance',
-        aliases: ['CFO', 'Finance Director'],
-        averageSalary: 285000,
-        growthRate: 12
-    },
-    {
-        id: 'equity-research-analyst',
-        title: 'Equity Research Analyst',
-        slug: 'equity-research-analyst',
-        category: 'finance',
-        aliases: ['Stock Research Analyst', 'Securities Analyst'],
-        averageSalary: 115000,
-        growthRate: 14
-    },
-    {
-        id: 'fixed-income-analyst',
-        title: 'Fixed Income Analyst',
-        slug: 'fixed-income-analyst',
-        category: 'finance',
-        aliases: ['Bond Analyst', 'Credit Research Analyst'],
-        averageSalary: 105000,
-        growthRate: 12
-    },
-    {
-        id: 'trader-2',
+        id: 'trader',
         title: 'Trader',
-        slug: 'trader-2',
+        slug: 'trader',
         category: 'finance',
         aliases: ['Securities Trader', 'Equity Trader'],
         averageSalary: 125000,
         growthRate: 10
     },
     {
-        id: 'investment-banker',
-        title: 'Investment Banker',
-        slug: 'investment-banker-2',
-        category: 'finance',
-        aliases: ['IB Analyst', 'Investment Banking Analyst'],
-        averageSalary: 155000,
-        growthRate: 12
-    },
-    {
-        id: 'wealth-manager-2',
-        title: 'Wealth Manager',
-        slug: 'wealth-manager-2',
-        category: 'finance',
-        aliases: ['Private Wealth Manager', 'Wealth Advisor'],
-        averageSalary: 135000,
-        growthRate: 14
-    },
-    {
-        id: 'private-banker-2',
+        id: 'private-banker',
         title: 'Private Banker',
-        slug: 'private-banker-2',
+        slug: 'private-banker',
         category: 'finance',
         aliases: ['Private Banking Advisor', 'High Net Worth Banker'],
         averageSalary: 125000,
@@ -11404,35 +7381,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 165000,
         growthRate: 12
     },
-
-    // HR - Recruitment & Staffing (10 jobs)
-    {
-        id: 'technical-recruiter-2',
-        title: 'Technical Recruiter',
-        slug: 'technical-recruiter-2',
-        category: 'hr',
-        aliases: ['Tech Recruiter', 'IT Recruiter'],
-        averageSalary: 68000,
-        growthRate: 16
-    },
-    {
-        id: 'executive-recruiter',
-        title: 'Executive Recruiter',
-        slug: 'executive-recruiter-2',
-        category: 'hr',
-        aliases: ['Headhunter', 'Executive Search Consultant'],
-        averageSalary: 105000,
-        growthRate: 14
-    },
-    {
-        id: 'recruiter-2',
-        title: 'Recruiter',
-        slug: 'recruiter-4',
-        category: 'hr',
-        aliases: ['Talent Recruiter', 'Staffing Specialist'],
-        averageSalary: 55000,
-        growthRate: 14
-    },
     {
         id: 'senior-recruiter',
         title: 'Senior Recruiter',
@@ -11441,33 +7389,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Lead Recruiter', 'Principal Recruiter'],
         averageSalary: 72000,
         growthRate: 14
-    },
-    {
-        id: 'recruiting-coordinator',
-        title: 'Recruiting Coordinator',
-        slug: 'recruiting-coordinator-2',
-        category: 'hr',
-        aliases: ['Recruitment Coordinator', 'Staffing Coordinator'],
-        averageSalary: 48000,
-        growthRate: 12
-    },
-    {
-        id: 'talent-acquisition-specialist',
-        title: 'Talent Acquisition Specialist',
-        slug: 'talent-acquisition-specialist-2',
-        category: 'hr',
-        aliases: ['TA Specialist', 'Sourcing Specialist'],
-        averageSalary: 62000,
-        growthRate: 16
-    },
-    {
-        id: 'sourcing-specialist',
-        title: 'Sourcing Specialist',
-        slug: 'sourcing-specialist-2',
-        category: 'hr',
-        aliases: ['Candidate Sourcing Specialist', 'Talent Sourcing Specialist'],
-        averageSalary: 58000,
-        growthRate: 18
     },
     {
         id: 'campus-recruiter',
@@ -11496,17 +7417,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 92000,
         growthRate: 18
     },
-
-    // Admin - Clerical Support (10 jobs)
-    {
-        id: 'receptionist-3',
-        title: 'Receptionist',
-        slug: 'receptionist-5',
-        category: 'admin',
-        aliases: ['Front Desk Receptionist', 'Office Receptionist'],
-        averageSalary: 35000,
-        growthRate: 4
-    },
     {
         id: 'front-desk-coordinator',
         title: 'Front Desk Coordinator',
@@ -11517,40 +7427,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 6
     },
     {
-        id: 'office-administrator',
-        title: 'Office Administrator',
-        slug: 'office-administrator-2',
-        category: 'admin',
-        aliases: ['Office Admin', 'Administrative Coordinator'],
-        averageSalary: 45000,
-        growthRate: 6
-    },
-    {
-        id: 'administrative-coordinator',
-        title: 'Administrative Coordinator',
-        slug: 'administrative-coordinator-3',
-        category: 'admin',
-        aliases: ['Admin Coordinator', 'Office Support Coordinator'],
-        averageSalary: 42000,
-        growthRate: 6
-    },
-    {
-        id: 'clerk-2',
+        id: 'clerk',
         title: 'Clerk',
-        slug: 'clerk-2',
+        slug: 'clerk',
         category: 'admin',
         aliases: ['Office Clerk', 'Administrative Clerk'],
         averageSalary: 32000,
         growthRate: 4
-    },
-    {
-        id: 'file-clerk-2',
-        title: 'File Clerk',
-        slug: 'file-clerk-5',
-        category: 'admin',
-        aliases: ['Records Clerk', 'Document Clerk'],
-        averageSalary: 31000,
-        growthRate: -4
     },
     {
         id: 'scanner-operator',
@@ -11588,12 +7471,10 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 36000,
         growthRate: 4
     },
-
-    // Customer Service - Call Center (12 jobs)
     {
-        id: 'call-center-manager-2',
+        id: 'call-center-manager',
         title: 'Call Center Manager',
-        slug: 'call-center-manager-2',
+        slug: 'call-center-manager',
         category: 'customer-service',
         aliases: ['Contact Center Manager', 'Call Centre Manager'],
         averageSalary: 72000,
@@ -11606,33 +7487,6 @@ export const jobTitles: JobTitle[] = [
         category: 'customer-service',
         aliases: ['Call Center Team Lead', 'Contact Center Supervisor'],
         averageSalary: 48000,
-        growthRate: 10
-    },
-    {
-        id: 'inbound-sales-representative',
-        title: 'Inbound Sales Representative',
-        slug: 'inbound-sales-representative-2',
-        category: 'customer-service',
-        aliases: ['Inbound Sales Agent', 'Inbound Sales Rep'],
-        averageSalary: 42000,
-        growthRate: 8
-    },
-    {
-        id: 'outbound-sales-representative',
-        title: 'Outbound Sales Representative',
-        slug: 'outbound-sales-representative-2',
-        category: 'customer-service',
-        aliases: ['Outbound Sales Agent', 'Telesales Representative'],
-        averageSalary: 42000,
-        growthRate: 6
-    },
-    {
-        id: 'customer-service-supervisor',
-        title: 'Customer Service Supervisor',
-        slug: 'customer-service-supervisor-2',
-        category: 'customer-service',
-        aliases: ['CS Supervisor', 'Customer Support Supervisor'],
-        averageSalary: 46000,
         growthRate: 10
     },
     {
@@ -11652,24 +7506,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Support Coordinator', 'CS Coordinator'],
         averageSalary: 42000,
         growthRate: 10
-    },
-    {
-        id: 'contact-center-agent',
-        title: 'Contact Center Agent',
-        slug: 'contact-center-agent-3',
-        category: 'customer-service',
-        aliases: ['Contact Centre Agent', 'Customer Contact Agent'],
-        averageSalary: 36000,
-        growthRate: 6
-    },
-    {
-        id: 'customer-service-representative-2',
-        title: 'Customer Service Representative',
-        slug: 'customer-service-representative-3',
-        category: 'customer-service',
-        aliases: ['CSR', 'Customer Service Rep'],
-        averageSalary: 38000,
-        growthRate: 6
     },
     {
         id: 'client-services-coordinator',
@@ -11698,48 +7534,10 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 38000,
         growthRate: 14
     },
-
-    // Design - Creative & Visual (12 jobs)
     {
-        id: 'creative-director-3',
-        title: 'Creative Director',
-        slug: 'creative-director-3',
-        category: 'design',
-        aliases: ['CD', 'Creative Design Director'],
-        averageSalary: 145000,
-        growthRate: 12
-    },
-    {
-        id: 'design-director-3',
-        title: 'Design Director',
-        slug: 'design-director-3',
-        category: 'design',
-        aliases: ['Director of Design', 'Design Head'],
-        averageSalary: 155000,
-        growthRate: 14
-    },
-    {
-        id: 'art-director-3',
-        title: 'Art Director',
-        slug: 'art-director-3',
-        category: 'design',
-        aliases: ['Creative Art Director', 'Visual Art Director'],
-        averageSalary: 115000,
-        growthRate: 12
-    },
-    {
-        id: 'senior-graphic-designer',
-        title: 'Senior Graphic Designer',
-        slug: 'senior-graphic-designer-2',
-        category: 'design',
-        aliases: ['Lead Graphic Designer', 'Graphic Design Lead'],
-        averageSalary: 82000,
-        growthRate: 12
-    },
-    {
-        id: 'junior-designer-2',
+        id: 'junior-designer',
         title: 'Junior Designer',
-        slug: 'junior-designer-2',
+        slug: 'junior-designer',
         category: 'design',
         aliases: ['Entry Level Designer', 'Assistant Designer'],
         averageSalary: 48000,
@@ -11808,42 +7606,13 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 68000,
         growthRate: 10
     },
-
-    // Engineering - IT & Network (12 jobs)
     {
-        id: 'network-engineer-2',
-        title: 'Network Engineer',
-        slug: 'network-engineer-2',
-        category: 'engineering',
-        aliases: ['Network Infrastructure Engineer', 'Network Support Engineer'],
-        averageSalary: 105000,
-        growthRate: 14
-    },
-    {
-        id: 'network-administrator-2',
+        id: 'network-administrator',
         title: 'Network Administrator',
-        slug: 'network-administrator-2',
+        slug: 'network-administrator',
         category: 'engineering',
         aliases: ['Network Admin', 'System Administrator'],
         averageSalary: 85000,
-        growthRate: 12
-    },
-    {
-        id: 'systems-administrator-2',
-        title: 'Systems Administrator',
-        slug: 'systems-administrator-2',
-        category: 'engineering',
-        aliases: ['SysAdmin', 'System Admin'],
-        averageSalary: 88000,
-        growthRate: 12
-    },
-    {
-        id: 'database-administrator-2',
-        title: 'Database Administrator',
-        slug: 'database-administrator-3',
-        category: 'engineering',
-        aliases: ['DBA', 'Database Admin'],
-        averageSalary: 105000,
         growthRate: 12
     },
     {
@@ -11874,15 +7643,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'it-manager-2',
-        title: 'IT Manager',
-        slug: 'it-manager-2',
-        category: 'engineering',
-        aliases: ['Information Technology Manager', 'IT Department Manager'],
-        averageSalary: 125000,
-        growthRate: 12
-    },
-    {
         id: 'it-director',
         title: 'IT Director',
         slug: 'it-director',
@@ -11901,15 +7661,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'devops-engineer-3',
-        title: 'DevOps Engineer',
-        slug: 'devops-engineer-3',
-        category: 'engineering',
-        aliases: ['Development Operations Engineer', 'DevOps Specialist'],
-        averageSalary: 135000,
-        growthRate: 24
-    },
-    {
         id: 'release-engineer',
         title: 'Release Engineer',
         slug: 'release-engineer',
@@ -11918,8 +7669,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 115000,
         growthRate: 18
     },
-
-    // Legal - Government & Public (10 jobs)
     {
         id: 'assistant-district-attorney',
         title: 'Assistant District Attorney',
@@ -12002,17 +7751,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'law-clerk-2',
-        title: 'Law Clerk',
-        slug: 'law-clerk-2',
-        category: 'legal',
-        aliases: ['Judicial Clerk', 'Legal Judicial Clerk'],
-        averageSalary: 55000,
-        growthRate: 8
-    },
-
-    // Education - K-12 & Special Ed (10 jobs)
-    {
         id: 'elementary-school-teacher',
         title: 'Elementary School Teacher',
         slug: 'elementary-school-teacher',
@@ -12031,51 +7769,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 8
     },
     {
-        id: 'high-school-teacher',
-        title: 'High School Teacher',
-        slug: 'high-school-teacher-2',
-        category: 'education',
-        aliases: ['Secondary Teacher', 'High School Educator'],
-        averageSalary: 65000,
-        growthRate: 8
-    },
-    {
-        id: 'substitute-teacher',
-        title: 'Substitute Teacher',
-        slug: 'substitute-teacher-4',
-        category: 'education',
-        aliases: ['Sub Teacher', 'Supply Teacher'],
-        averageSalary: 42000,
-        growthRate: 6
-    },
-    {
-        id: 'teaching-assistant-2',
-        title: 'Teaching Assistant',
-        slug: 'teaching-assistant-4',
-        category: 'education',
-        aliases: ['Teacher Aide', 'Classroom Assistant'],
-        averageSalary: 32000,
-        growthRate: 8
-    },
-    {
-        id: 'special-education-teacher-2',
-        title: 'Special Education Teacher',
-        slug: 'special-education-teacher-4',
-        category: 'education',
-        aliases: ['SPED Teacher', 'Special Needs Teacher'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-    {
-        id: 'school-counselor',
-        title: 'School Counselor',
-        slug: 'school-counselor-2',
-        category: 'education',
-        aliases: ['Guidance Counselor', 'Student Counselor'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-    {
         id: 'school-psychologist',
         title: 'School Psychologist',
         slug: 'school-psychologist',
@@ -12085,32 +7778,12 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'principal-2',
-        title: 'Principal',
-        slug: 'principal-2',
-        category: 'education',
-        aliases: ['School Principal', 'Headmaster'],
-        averageSalary: 105000,
-        growthRate: 10
-    },
-    {
         id: 'vice-principal',
         title: 'Vice Principal',
         slug: 'vice-principal',
         category: 'education',
         aliases: ['Assistant Principal', 'Deputy Principal'],
         averageSalary: 92000,
-        growthRate: 10
-    },
-
-    // Real Estate - Property Management (12 jobs)
-    {
-        id: 'real-estate-assistant',
-        title: 'Real Estate Assistant',
-        slug: 'real-estate-assistant-3',
-        category: 'real-estate',
-        aliases: ['Real Estate Administrative Assistant', 'Realtor Assistant'],
-        averageSalary: 45000,
         growthRate: 10
     },
     {
@@ -12128,15 +7801,6 @@ export const jobTitles: JobTitle[] = [
         slug: 'showing-assistant',
         category: 'real-estate',
         aliases: ['Property Showing Assistant', 'Real Estate Showing Agent'],
-        averageSalary: 42000,
-        growthRate: 10
-    },
-    {
-        id: 'leasing-consultant',
-        title: 'Leasing Consultant',
-        slug: 'leasing-consultant-2',
-        category: 'real-estate',
-        aliases: ['Leasing Agent', 'Apartment Leasing Consultant'],
         averageSalary: 42000,
         growthRate: 10
     },
@@ -12168,24 +7832,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'hoa-manager',
-        title: 'HOA Manager',
-        slug: 'hoa-manager-2',
-        category: 'real-estate',
-        aliases: ['Homeowners Association Manager', 'Community Association Manager'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-    {
-        id: 'property-management-assistant',
-        title: 'Property Management Assistant',
-        slug: 'property-management-assistant-2',
-        category: 'real-estate',
-        aliases: ['PM Assistant', 'Property Admin Assistant'],
-        averageSalary: 42000,
-        growthRate: 10
-    },
-    {
         id: 'real-estate-transaction-coordinator',
         title: 'Real Estate Transaction Coordinator',
         slug: 'real-estate-transaction-coordinator',
@@ -12212,26 +7858,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 55000,
         growthRate: 10
     },
-
-    // Skilled Trades - Specialized (12 jobs)
-    {
-        id: 'master-electrician',
-        title: 'Master Electrician',
-        slug: 'master-electrician-2',
-        category: 'skilled-trades',
-        aliases: ['Licensed Electrician', 'Electrical Contractor'],
-        averageSalary: 78000,
-        growthRate: 12
-    },
-    {
-        id: 'industrial-electrician',
-        title: 'Industrial Electrician',
-        slug: 'industrial-electrician-2',
-        category: 'skilled-trades',
-        aliases: ['Industrial Electrical Technician', 'Factory Electrician'],
-        averageSalary: 72000,
-        growthRate: 12
-    },
     {
         id: 'commercial-electrician',
         title: 'Commercial Electrician',
@@ -12248,24 +7874,6 @@ export const jobTitles: JobTitle[] = [
         category: 'skilled-trades',
         aliases: ['Home Electrician', 'House Wiring Electrician'],
         averageSalary: 58000,
-        growthRate: 10
-    },
-    {
-        id: 'service-plumber',
-        title: 'Service Plumber',
-        slug: 'service-plumber-2',
-        category: 'skilled-trades',
-        aliases: ['Residential Plumber', 'Home Service Plumber'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-    {
-        id: 'commercial-plumber',
-        title: 'Commercial Plumber',
-        slug: 'commercial-plumber-2',
-        category: 'skilled-trades',
-        aliases: ['Industrial Plumber', 'Business Plumber'],
-        averageSalary: 68000,
         growthRate: 10
     },
     {
@@ -12287,15 +7895,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'sheet-metal-worker',
-        title: 'Sheet Metal Worker',
-        slug: 'sheet-metal-worker-2',
-        category: 'skilled-trades',
-        aliases: ['Sheet Metal Technician', 'Metal Fabricator'],
-        averageSalary: 58000,
-        growthRate: 8
-    },
-    {
         id: 'ironworker',
         title: 'Ironworker',
         slug: 'ironworker',
@@ -12312,26 +7911,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Glass Installer', 'Window Installer'],
         averageSalary: 52000,
         growthRate: 8
-    },
-    {
-        id: 'roofer-2',
-        title: 'Roofer',
-        slug: 'roofer-2',
-        category: 'skilled-trades',
-        aliases: ['Roofing Contractor', 'Roofing Technician'],
-        averageSalary: 48000,
-        growthRate: 8
-    },
-
-    // Hospitality - Food Service (12 jobs)
-    {
-        id: 'line-cook',
-        title: 'Line Cook',
-        slug: 'line-cook-2',
-        category: 'hospitality',
-        aliases: ['Restaurant Cook', 'Prep Cook'],
-        averageSalary: 38000,
-        growthRate: 10
     },
     {
         id: 'prep-cook',
@@ -12361,18 +7940,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'pastry-chef',
-        title: 'Pastry Chef',
-        slug: 'pastry-chef-2',
-        category: 'hospitality',
-        aliases: ['Pastry Chef', 'Dessert Chef'],
-        averageSalary: 52000,
-        growthRate: 10
-    },
-    {
-        id: 'baker-2',
+        id: 'baker',
         title: 'Baker',
-        slug: 'baker-2',
+        slug: 'baker',
         category: 'hospitality',
         aliases: ['Baker', 'Pastry Baker'],
         averageSalary: 32000,
@@ -12388,24 +7958,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 4
     },
     {
-        id: 'server-2',
-        title: 'Server',
-        slug: 'server-2',
-        category: 'hospitality',
-        aliases: ['Waiter', 'Waitress'],
-        averageSalary: 32000,
-        growthRate: 8
-    },
-    {
-        id: 'bartender-2',
-        title: 'Bartender',
-        slug: 'bartender-2',
-        category: 'hospitality',
-        aliases: ['Barkeeper', 'Mixologist'],
-        averageSalary: 35000,
-        growthRate: 8
-    },
-    {
         id: 'barista',
         title: 'Barista',
         slug: 'barista',
@@ -12415,7 +7967,7 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'host-hostess',
+        id: 'host-hostess-2',
         title: 'Host Hostess',
         slug: 'host-hostess-2',
         category: 'hospitality',
@@ -12431,17 +7983,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Food Service Worker', 'Restaurant Server'],
         averageSalary: 30000,
         growthRate: 6
-    },
-
-    // Transportation - Logistics & Supply Chain (12 jobs)
-    {
-        id: 'logistics-manager-2',
-        title: 'Logistics Manager',
-        slug: 'logistics-manager-3',
-        category: 'transportation',
-        aliases: ['Logistics Management', 'Supply Chain Manager'],
-        averageSalary: 92000,
-        growthRate: 16
     },
     {
         id: 'transportation-manager',
@@ -12462,15 +8003,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'inventory-manager',
-        title: 'Inventory Manager',
-        slug: 'inventory-manager-2',
-        category: 'transportation',
-        aliases: ['Inventory Control Manager', 'Stock Manager'],
-        averageSalary: 72000,
-        growthRate: 12
-    },
-    {
         id: 'procurement-specialist',
         title: 'Procurement Specialist',
         slug: 'procurement-specialist',
@@ -12489,9 +8021,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'buyer-2',
+        id: 'buyer',
         title: 'Buyer',
-        slug: 'buyer-2',
+        slug: 'buyer',
         category: 'transportation',
         aliases: ['Retail Buyer', 'Merchandise Buyer'],
         averageSalary: 62000,
@@ -12516,15 +8048,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'customs-broker',
-        title: 'Customs Broker',
-        slug: 'customs-broker-2',
-        category: 'transportation',
-        aliases: ['Customs Clearance Broker', 'Import Broker'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-    {
         id: 'freight-agent',
         title: 'Freight Agent',
         slug: 'freight-agent',
@@ -12541,19 +8064,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Freight Load Planner', 'Transportation Planner'],
         averageSalary: 58000,
         growthRate: 12
-    },
-
-    // ========== BATCH 19: 300 New Jobs ==========
-
-    // Technology - Emerging Tech & Analytics (20 jobs)
-    {
-        id: 'ai-engineer-2',
-        title: 'AI Engineer',
-        slug: 'ai-engineer-4',
-        category: 'technology',
-        aliases: ['Artificial Intelligence Engineer', 'AI Development Engineer'],
-        averageSalary: 160000,
-        growthRate: 32
     },
     {
         id: 'generative-ai-specialist',
@@ -12718,17 +8228,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 28
     },
     {
-        id: 'edge-computing-engineer',
-        title: 'Edge Computing Engineer',
-        slug: 'edge-computing-engineer-2',
-        category: 'technology',
-        aliases: ['Edge Engineer', 'IoT Edge Engineer'],
-        averageSalary: 140000,
-        growthRate: 26
-    },
-
-    // Marketing - Advanced Digital & Growth (20 jobs)
-    {
         id: 'head-of-growth',
         title: 'Head of Growth',
         slug: 'head-of-growth',
@@ -12738,22 +8237,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 28
     },
     {
-        id: 'vp-of-marketing-2',
+        id: 'vp-of-marketing',
         title: 'VP of Marketing',
-        slug: 'vp-of-marketing-2',
+        slug: 'vp-of-marketing',
         category: 'marketing',
         aliases: ['Vice President of Marketing', 'Marketing VP'],
         averageSalary: 195000,
         growthRate: 18
-    },
-    {
-        id: 'chief-marketing-officer-3',
-        title: 'Chief Marketing Officer',
-        slug: 'chief-marketing-officer-3',
-        category: 'marketing',
-        aliases: ['CMO', 'Chief Marketing Officer'],
-        averageSalary: 285000,
-        growthRate: 16
     },
     {
         id: 'performance-marketing-director',
@@ -12763,24 +8253,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Director of Performance Marketing', 'Paid Media Director'],
         averageSalary: 135000,
         growthRate: 22
-    },
-    {
-        id: 'digital-marketing-director-2',
-        title: 'Digital Marketing Director',
-        slug: 'digital-marketing-director-2',
-        category: 'marketing',
-        aliases: ['Director of Digital Marketing', 'Online Marketing Director'],
-        averageSalary: 145000,
-        growthRate: 20
-    },
-    {
-        id: 'content-marketing-manager-2',
-        title: 'Content Marketing Manager',
-        slug: 'content-marketing-manager-3',
-        category: 'marketing',
-        aliases: ['Content Marketing Lead', 'Content Strategy Manager'],
-        averageSalary: 105000,
-        growthRate: 18
     },
     {
         id: 'brand-director',
@@ -12799,15 +8271,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Director of Product Marketing', 'Product Marketing VP'],
         averageSalary: 165000,
         growthRate: 18
-    },
-    {
-        id: 'field-marketing-manager',
-        title: 'Field Marketing Manager',
-        slug: 'field-marketing-manager-3',
-        category: 'marketing',
-        aliases: ['Regional Marketing Manager', 'Field Marketing Director'],
-        averageSalary: 115000,
-        growthRate: 16
     },
     {
         id: 'trade-marketing-manager',
@@ -12908,26 +8371,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 108000,
         growthRate: 24
     },
-
-    // Sales - Enterprise & Strategic (18 jobs)
-    {
-        id: 'vp-of-sales-2',
-        title: 'VP of Sales',
-        slug: 'vp-of-sales-3',
-        category: 'sales',
-        aliases: ['Vice President of Sales', 'Sales VP'],
-        averageSalary: 225000,
-        growthRate: 18
-    },
-    {
-        id: 'chief-revenue-officer-3',
-        title: 'Chief Revenue Officer',
-        slug: 'chief-revenue-officer-3',
-        category: 'sales',
-        aliases: ['CRO', 'Chief Revenue Officer'],
-        averageSalary: 285000,
-        growthRate: 20
-    },
     {
         id: 'sales-vice-president',
         title: 'Sales Vice President',
@@ -12954,15 +8397,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Director of Enterprise Sales', 'Enterprise Sales VP'],
         averageSalary: 185000,
         growthRate: 18
-    },
-    {
-        id: 'commercial-director',
-        title: 'Commercial Director',
-        slug: 'commercial-director-2',
-        category: 'sales',
-        aliases: ['Director of Commercial', 'Commercial VP'],
-        averageSalary: 175000,
-        growthRate: 16
     },
     {
         id: 'business-development-director',
@@ -12992,15 +8426,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 24
     },
     {
-        id: 'customer-success-director',
-        title: 'Customer Success Director',
-        slug: 'customer-success-director-2',
-        category: 'sales',
-        aliases: ['Director of Customer Success', 'CS Director'],
-        averageSalary: 155000,
-        growthRate: 20
-    },
-    {
         id: 'vp-of-customer-success',
         title: 'VP of Customer Success',
         slug: 'vp-of-customer-success',
@@ -13008,42 +8433,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Vice President Customer Success', 'Customer Success VP'],
         averageSalary: 215000,
         growthRate: 22
-    },
-    {
-        id: 'key-account-manager-2',
-        title: 'Key Account Manager',
-        slug: 'key-account-manager-2',
-        category: 'sales',
-        aliases: ['KAM', 'Key Accounts Manager'],
-        averageSalary: 125000,
-        growthRate: 16
-    },
-    {
-        id: 'global-account-manager',
-        title: 'Global Account Manager',
-        slug: 'global-account-manager-4',
-        category: 'sales',
-        aliases: ['GAM', 'Worldwide Account Manager'],
-        averageSalary: 155000,
-        growthRate: 18
-    },
-    {
-        id: 'sales-director-3',
-        title: 'Sales Director',
-        slug: 'sales-director-3',
-        category: 'sales',
-        aliases: ['Director of Sales', 'Sales Division Director'],
-        averageSalary: 165000,
-        growthRate: 16
-    },
-    {
-        id: 'territory-manager',
-        title: 'Territory Manager',
-        slug: 'territory-manager-3',
-        category: 'sales',
-        aliases: ['Sales Territory Manager', 'Area Manager'],
-        averageSalary: 105000,
-        growthRate: 14
     },
     {
         id: 'vertical-sales-manager',
@@ -13055,15 +8444,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'sales-consultant',
-        title: 'Sales Consultant',
-        slug: 'sales-consultant-2',
-        category: 'sales',
-        aliases: ['Sales Advisor', 'Sales Solutions Consultant'],
-        averageSalary: 85000,
-        growthRate: 14
-    },
-    {
         id: 'revenue-assurance-manager',
         title: 'Revenue Assurance Manager',
         slug: 'revenue-assurance-manager',
@@ -13071,17 +8451,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Revenue Protection Manager', 'Revenue Analyst'],
         averageSalary: 105000,
         growthRate: 16
-    },
-
-    // Healthcare - Medical & Allied (18 jobs)
-    {
-        id: 'physician-assistant-2',
-        title: 'Physician Assistant',
-        slug: 'physician-assistant-4',
-        category: 'healthcare',
-        aliases: ['PA', 'Physician Associate'],
-        averageSalary: 125000,
-        growthRate: 28
     },
     {
         id: 'clinical-nurse-leader',
@@ -13093,15 +8462,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 20
     },
     {
-        id: 'nurse-educator-2',
-        title: 'Nurse Educator',
-        slug: 'nurse-educator-2',
-        category: 'healthcare',
-        aliases: ['Nursing Education Specialist', 'Nurse Instructor'],
-        averageSalary: 92000,
-        growthRate: 18
-    },
-    {
         id: 'nurse-administrator',
         title: 'Nurse Administrator',
         slug: 'nurse-administrator',
@@ -13111,18 +8471,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'patient-care-technician',
-        title: 'Patient Care Technician',
-        slug: 'patient-care-technician-3',
-        category: 'healthcare',
-        aliases: ['PCT', 'Patient Care Assistant'],
-        averageSalary: 38000,
-        growthRate: 14
-    },
-    {
-        id: 'certified-nursing-assistant-2',
+        id: 'certified-nursing-assistant',
         title: 'Certified Nursing Assistant',
-        slug: 'certified-nursing-assistant-2',
+        slug: 'certified-nursing-assistant',
         category: 'healthcare',
         aliases: ['CNA', 'Nursing Assistant'],
         averageSalary: 36000,
@@ -13147,24 +8498,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 18
     },
     {
-        id: 'medical-assistant-3',
-        title: 'Medical Assistant',
-        slug: 'medical-assistant-5',
-        category: 'healthcare',
-        aliases: ['MA', 'Clinical Medical Assistant'],
-        averageSalary: 40000,
-        growthRate: 16
-    },
-    {
-        id: 'emedical-records-technician-2',
-        title: 'Medical Records Technician',
-        slug: 'emedical-records-technician-2',
-        category: 'healthcare',
-        aliases: ['Health Information Technician', 'Medical Records Clerk'],
-        averageSalary: 42000,
-        growthRate: 14
-    },
-    {
         id: 'health-information-manager',
         title: 'Health Information Manager',
         slug: 'health-information-manager',
@@ -13174,15 +8507,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'medical-biller',
-        title: 'Medical Biller',
-        slug: 'medical-biller-2',
-        category: 'healthcare',
-        aliases: ['Medical Billing Specialist', 'Healthcare Biller'],
-        averageSalary: 42000,
-        growthRate: 12
-    },
-    {
         id: 'medical-coding-specialist',
         title: 'Medical Coding Specialist',
         slug: 'medical-coding-specialist',
@@ -13190,24 +8514,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Medical Coder', 'Healthcare Coding Specialist'],
         averageSalary: 52000,
         growthRate: 14
-    },
-    {
-        id: 'health-unit-coordinator',
-        title: 'Health Unit Coordinator',
-        slug: 'health-unit-coordinator-3',
-        category: 'healthcare',
-        aliases: ['HUC', 'Unit Clerk'],
-        averageSalary: 38000,
-        growthRate: 12
-    },
-    {
-        id: 'sterile-processing-technician',
-        title: 'Sterile Processing Technician',
-        slug: 'sterile-processing-technician-2',
-        category: 'healthcare',
-        aliases: ['Sterile Tech', 'Central Service Technician'],
-        averageSalary: 42000,
-        growthRate: 12
     },
     {
         id: 'surgical-technologist',
@@ -13236,8 +8542,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 72000,
         growthRate: 16
     },
-
-    // Finance - Corporate Finance & Accounting (18 jobs)
     {
         id: 'fp-and-a-director',
         title: 'FP&A Director',
@@ -13257,22 +8561,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'corporate-controller-2',
+        id: 'corporate-controller',
         title: 'Corporate Controller',
-        slug: 'corporate-controller-2',
+        slug: 'corporate-controller',
         category: 'finance',
         aliases: ['Assistant Controller', 'Corporate Controlling'],
         averageSalary: 145000,
         growthRate: 12
-    },
-    {
-        id: 'assistant-controller',
-        title: 'Assistant Controller',
-        slug: 'assistant-controller-3',
-        category: 'finance',
-        aliases: ['Assistant Comptroller', 'Deputy Controller'],
-        averageSalary: 115000,
-        growthRate: 10
     },
     {
         id: 'chief-accounting-officer',
@@ -13320,30 +8615,12 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'finance-director',
-        title: 'Finance Director',
-        slug: 'finance-director-2',
-        category: 'finance',
-        aliases: ['Director of Finance', 'Financial Director'],
-        averageSalary: 175000,
-        growthRate: 14
-    },
-    {
         id: 'treasury-director',
         title: 'Treasury Director',
         slug: 'treasury-director',
         category: 'finance',
         aliases: ['Director of Treasury', 'Head of Treasury'],
         averageSalary: 155000,
-        growthRate: 12
-    },
-    {
-        id: 'treasury-analyst-2',
-        title: 'Treasury Analyst',
-        slug: 'treasury-analyst-5',
-        category: 'finance',
-        aliases: ['Treasury Specialist', 'Treasury Operations Analyst'],
-        averageSalary: 82000,
         growthRate: 12
     },
     {
@@ -13392,51 +8669,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'external-auditor-2',
-        title: 'External Auditor',
-        slug: 'external-auditor-2',
-        category: 'finance',
-        aliases: ['Statutory Auditor', 'Public Auditor'],
-        averageSalary: 85000,
-        growthRate: 10
-    },
-
-    // HR - Leadership & Development (16 jobs)
-    {
-        id: 'chief-human-resources-officer-2',
-        title: 'Chief Human Resources Officer',
-        slug: 'chief-human-resources-officer-2',
-        category: 'hr',
-        aliases: ['CHRO', 'Chief People Officer'],
-        averageSalary: 285000,
-        growthRate: 16
-    },
-    {
-        id: 'vp-of-human-resources-2',
+        id: 'vp-of-human-resources',
         title: 'VP of Human Resources',
-        slug: 'vp-of-human-resources-2',
+        slug: 'vp-of-human-resources',
         category: 'hr',
         aliases: ['Vice President of HR', 'HR VP'],
         averageSalary: 195000,
         growthRate: 16
-    },
-    {
-        id: 'hr-director-3',
-        title: 'HR Director',
-        slug: 'hr-director-3',
-        category: 'hr',
-        aliases: ['Director of HR', 'Human Resources Director'],
-        averageSalary: 135000,
-        growthRate: 14
-    },
-    {
-        id: 'talent-acquisition-director',
-        title: 'Talent Acquisition Director',
-        slug: 'talent-acquisition-director-2',
-        category: 'hr',
-        aliases: ['Director of Talent Acquisition', 'TA Director'],
-        averageSalary: 145000,
-        growthRate: 18
     },
     {
         id: 'head-of-talent-acquisition',
@@ -13482,15 +8721,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Director of Benefits', 'Employee Benefits Director'],
         averageSalary: 145000,
         growthRate: 14
-    },
-    {
-        id: 'hr-information-systems-manager',
-        title: 'HR Information Systems Manager',
-        slug: 'hr-information-systems-manager-2',
-        category: 'hr',
-        aliases: ['HRIS Manager', 'HR Systems Manager'],
-        averageSalary: 125000,
-        growthRate: 18
     },
     {
         id: 'hr-analytics-manager',
@@ -13555,8 +8785,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 125000,
         growthRate: 16
     },
-
-    // Admin - Executive Support (14 jobs)
     {
         id: 'chief-of-staff',
         title: 'Chief of Staff',
@@ -13565,15 +8793,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['COS', 'Executive Chief of Staff'],
         averageSalary: 185000,
         growthRate: 18
-    },
-    {
-        id: 'executive-assistant-3',
-        title: 'Executive Assistant',
-        slug: 'executive-assistant-4',
-        category: 'admin',
-        aliases: ['C-Level EA', 'Executive Assistant to CEO'],
-        averageSalary: 85000,
-        growthRate: 10
     },
     {
         id: 'senior-executive-assistant',
@@ -13592,15 +8811,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Director of Administration', 'Admin Director'],
         averageSalary: 95000,
         growthRate: 12
-    },
-    {
-        id: 'office-manager-3',
-        title: 'Office Manager',
-        slug: 'office-manager-3',
-        category: 'admin',
-        aliases: ['Office Manager Lead', 'Senior Office Manager'],
-        averageSalary: 68000,
-        growthRate: 10
     },
     {
         id: 'department-assistant',
@@ -13639,15 +8849,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'contract-administrator',
-        title: 'Contract Administrator',
-        slug: 'contract-administrator-2',
-        category: 'admin',
-        aliases: ['Contracts Admin', 'Contract Specialist'],
-        averageSalary: 62000,
-        growthRate: 12
-    },
-    {
         id: 'document-controller',
         title: 'Document Controller',
         slug: 'document-controller',
@@ -13657,9 +8858,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'records-manager-2',
+        id: 'records-manager',
         title: 'Records Manager',
-        slug: 'records-manager-2',
+        slug: 'records-manager',
         category: 'admin',
         aliases: ['Records Management', 'Document Records Manager'],
         averageSalary: 65000,
@@ -13675,26 +8876,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 8
     },
     {
-        id: 'administrative-assistant-4',
-        title: 'Administrative Assistant',
-        slug: 'administrative-assistant-4',
-        category: 'admin',
-        aliases: ['Admin Assistant', 'Administrative Aid'],
-        averageSalary: 44000,
-        growthRate: 6
-    },
-    {
-        id: 'office-services-coordinator',
-        title: 'Office Services Coordinator',
-        slug: 'office-services-coordinator-2',
-        category: 'admin',
-        aliases: ['Office Services Coordinator', 'Facilities Coordinator'],
-        averageSalary: 48000,
-        growthRate: 8
-    },
-
-    // Customer Service - Leadership (14 jobs)
-    {
         id: 'vp-of-customer-service',
         title: 'VP of Customer Service',
         slug: 'vp-of-customer-service',
@@ -13702,15 +8883,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Vice President Customer Service', 'Customer Service VP'],
         averageSalary: 195000,
         growthRate: 16
-    },
-    {
-        id: 'customer-service-director-2',
-        title: 'Customer Service Director',
-        slug: 'customer-service-director-2',
-        category: 'customer-service',
-        aliases: ['Director of Customer Service', 'CS Director'],
-        averageSalary: 135000,
-        growthRate: 14
     },
     {
         id: 'director-of-customer-experience',
@@ -13731,15 +8903,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 18
     },
     {
-        id: 'customer-success-director-2',
-        title: 'Customer Success Director',
-        slug: 'customer-success-director-3',
-        category: 'customer-service',
-        aliases: ['Director of Customer Success', 'CS Director'],
-        averageSalary: 155000,
-        growthRate: 20
-    },
-    {
         id: 'customer-support-director',
         title: 'Customer Support Director',
         slug: 'customer-support-director',
@@ -13758,18 +8921,18 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'customer-service-manager-3',
+        id: 'customer-service-manager',
         title: 'Customer Service Manager',
-        slug: 'customer-service-manager-3',
+        slug: 'customer-service-manager',
         category: 'customer-service',
         aliases: ['CS Manager', 'Service Manager'],
         averageSalary: 78000,
         growthRate: 12
     },
     {
-        id: 'customer-support-manager-2',
+        id: 'customer-support-manager',
         title: 'Customer Support Manager',
-        slug: 'customer-support-manager-2',
+        slug: 'customer-support-manager',
         category: 'customer-service',
         aliases: ['Support Manager', 'Technical Support Manager'],
         averageSalary: 82000,
@@ -13794,15 +8957,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 16
     },
     {
-        id: 'customer-insights-manager',
-        title: 'Customer Insights Manager',
-        slug: 'customer-insights-manager-3',
-        category: 'customer-service',
-        aliases: ['Customer Research Manager', 'Voice of Customer Manager'],
-        averageSalary: 115000,
-        growthRate: 18
-    },
-    {
         id: 'customer-retention-director',
         title: 'Customer Retention Director',
         slug: 'customer-retention-director',
@@ -13810,15 +8964,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Director of Retention', 'Retention Marketing Director'],
         averageSalary: 135000,
         growthRate: 18
-    },
-    {
-        id: 'customer-loyalty-manager',
-        title: 'Customer Loyalty Manager',
-        slug: 'customer-loyalty-manager-2',
-        category: 'customer-service',
-        aliases: ['Loyalty Program Manager', 'Customer Loyalty Lead'],
-        averageSalary: 98000,
-        growthRate: 16
     },
     {
         id: 'complaint-resolution-manager',
@@ -13829,34 +8974,14 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 88000,
         growthRate: 14
     },
-
-    // Design - Leadership & Creative (16 jobs)
     {
-        id: 'chief-creative-officer-2',
+        id: 'chief-creative-officer',
         title: 'Chief Creative Officer',
-        slug: 'chief-creative-officer-2',
+        slug: 'chief-creative-officer',
         category: 'design',
         aliases: ['CCO', 'Executive Creative Director'],
         averageSalary: 245000,
         growthRate: 14
-    },
-    {
-        id: 'design-director-4',
-        title: 'Design Director',
-        slug: 'design-director-4',
-        category: 'design',
-        aliases: ['Creative Design Director', 'Design Leadership'],
-        averageSalary: 165000,
-        growthRate: 14
-    },
-    {
-        id: 'creative-director-4',
-        title: 'Creative Director',
-        slug: 'creative-director-4',
-        category: 'design',
-        aliases: ['CD Creative', 'Creative Design Director'],
-        averageSalary: 155000,
-        growthRate: 12
     },
     {
         id: 'ux-director',
@@ -13893,15 +9018,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['UX Writing Lead', 'Content Strategy Design'],
         averageSalary: 145000,
         growthRate: 20
-    },
-    {
-        id: 'service-designer-2',
-        title: 'Service Designer',
-        slug: 'service-designer-2',
-        category: 'design',
-        aliases: ['Service Design Specialist', 'Service Experience Designer'],
-        averageSalary: 125000,
-        growthRate: 22
     },
     {
         id: 'experience-designer',
@@ -13949,31 +9065,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 18
     },
     {
-        id: 'information-architect-2',
+        id: 'information-architect',
         title: 'Information Architect',
-        slug: 'information-architect-2',
+        slug: 'information-architect',
         category: 'design',
         aliases: ['IA Specialist', 'Information Architecture Lead'],
         averageSalary: 115000,
         growthRate: 18
-    },
-    {
-        id: 'industrial-designer-2',
-        title: 'Industrial Designer',
-        slug: 'industrial-designer-2',
-        category: 'design',
-        aliases: ['Product Industrial Designer', 'Manufacturing Designer'],
-        averageSalary: 95000,
-        growthRate: 12
-    },
-    {
-        id: 'ux-writer',
-        title: 'UX Writer',
-        slug: 'ux-writer-3',
-        category: 'design',
-        aliases: ['Content Designer', 'UX Content Writer'],
-        averageSalary: 115000,
-        growthRate: 22
     },
     {
         id: 'design-research-lead',
@@ -13984,33 +9082,22 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 135000,
         growthRate: 22
     },
-
-    // Engineering - Leadership & Architecture (18 jobs)
     {
-        id: 'chief-technology-officer-3',
+        id: 'chief-technology-officer',
         title: 'Chief Technology Officer',
-        slug: 'chief-technology-officer-3',
+        slug: 'chief-technology-officer',
         category: 'engineering',
         aliases: ['CTO', 'Chief Technology Officer'],
         averageSalary: 295000,
         growthRate: 16
     },
     {
-        id: 'vp-of-engineering-2',
+        id: 'vp-of-engineering',
         title: 'VP of Engineering',
-        slug: 'vp-of-engineering-2',
+        slug: 'vp-of-engineering',
         category: 'engineering',
         aliases: ['Vice President of Engineering', 'Engineering VP'],
         averageSalary: 245000,
-        growthRate: 18
-    },
-    {
-        id: 'director-of-engineering',
-        title: 'Director of Engineering',
-        slug: 'director-of-engineering-2',
-        category: 'engineering',
-        aliases: ['Engineering Director', 'Director of Software Engineering'],
-        averageSalary: 195000,
         growthRate: 18
     },
     {
@@ -14020,15 +9107,6 @@ export const jobTitles: JobTitle[] = [
         category: 'engineering',
         aliases: ['Engineering Head', 'Lead of Engineering'],
         averageSalary: 215000,
-        growthRate: 20
-    },
-    {
-        id: 'principal-engineer-2',
-        title: 'Principal Engineer',
-        slug: 'principal-engineer-2',
-        category: 'engineering',
-        aliases: ['Staff Engineer', 'Principal Software Engineer'],
-        averageSalary: 195000,
         growthRate: 20
     },
     {
@@ -14059,85 +9137,22 @@ export const jobTitles: JobTitle[] = [
         growthRate: 18
     },
     {
-        id: 'technical-lead-2',
-        title: 'Technical Lead',
-        slug: 'technical-lead-2',
-        category: 'engineering',
-        aliases: ['Tech Lead', 'Team Lead'],
-        averageSalary: 165000,
-        growthRate: 18
-    },
-    {
-        id: 'staff-engineer-2',
+        id: 'staff-engineer',
         title: 'Staff Engineer',
-        slug: 'staff-engineer-2',
+        slug: 'staff-engineer',
         category: 'engineering',
         aliases: ['Staff Software Engineer', 'Senior Staff Engineer'],
         averageSalary: 235000,
         growthRate: 22
     },
     {
-        id: 'solutions-architect-3',
-        title: 'Solutions Architect',
-        slug: 'solutions-architect-4',
-        category: 'engineering',
-        aliases: ['Solution Architect', 'Enterprise Solutions Architect'],
-        averageSalary: 175000,
-        growthRate: 20
-    },
-    {
-        id: 'enterprise-architect-2',
+        id: 'enterprise-architect',
         title: 'Enterprise Architect',
-        slug: 'enterprise-architect-2',
+        slug: 'enterprise-architect',
         category: 'engineering',
         aliases: ['Enterprise Solutions Architect', 'EA'],
         averageSalary: 185000,
         growthRate: 18
-    },
-    {
-        id: 'cloud-architect-2',
-        title: 'Cloud Architect',
-        slug: 'cloud-architect-2',
-        category: 'engineering',
-        aliases: ['Cloud Solutions Architect', 'Cloud Infrastructure Architect'],
-        averageSalary: 175000,
-        growthRate: 26
-    },
-    {
-        id: 'data-architect-3',
-        title: 'Data Architect',
-        slug: 'data-architect-4',
-        category: 'engineering',
-        aliases: ['Data Solution Architect', 'Enterprise Data Architect'],
-        averageSalary: 165000,
-        growthRate: 24
-    },
-    {
-        id: 'mobile-architect',
-        title: 'Mobile Architect',
-        slug: 'mobile-architect-2',
-        category: 'engineering',
-        aliases: ['Mobile Solutions Architect', 'App Architect'],
-        averageSalary: 165000,
-        growthRate: 24
-    },
-    {
-        id: 'frontend-architect',
-        title: 'Frontend Architect',
-        slug: 'frontend-architect-2',
-        category: 'engineering',
-        aliases: ['Frontend Solutions Architect', 'Client-Side Architect'],
-        averageSalary: 165000,
-        growthRate: 22
-    },
-    {
-        id: 'backend-architect',
-        title: 'Backend Architect',
-        slug: 'backend-architect-2',
-        category: 'engineering',
-        aliases: ['Backend Solutions Architect', 'Server-Side Architect'],
-        averageSalary: 170000,
-        growthRate: 22
     },
     {
         id: 'devops-architect',
@@ -14147,17 +9162,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['DevOps Solution Architect', 'DevOps Infrastructure Architect'],
         averageSalary: 175000,
         growthRate: 26
-    },
-
-    // Legal - Corporate & Specialized (16 jobs)
-    {
-        id: 'general-counsel-2',
-        title: 'General Counsel',
-        slug: 'general-counsel-2',
-        category: 'legal',
-        aliases: ['GC', 'Chief Legal Officer'],
-        averageSalary: 245000,
-        growthRate: 14
     },
     {
         id: 'chief-legal-officer',
@@ -14169,9 +9173,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'corporate-secretary-2',
+        id: 'corporate-secretary',
         title: 'Corporate Secretary',
-        slug: 'corporate-secretary-2',
+        slug: 'corporate-secretary',
         category: 'legal',
         aliases: ['Assistant Corporate Secretary', 'Corporate Secretary Officer'],
         averageSalary: 185000,
@@ -14259,31 +9263,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'real-estate-attorney-2',
-        title: 'Real Estate Attorney',
-        slug: 'real-estate-attorney-3',
-        category: 'legal',
-        aliases: ['Real Estate Lawyer', 'Property Attorney'],
-        averageSalary: 125000,
-        growthRate: 12
-    },
-    {
-        id: 'tax-attorney-2',
+        id: 'tax-attorney',
         title: 'Tax Attorney',
-        slug: 'tax-attorney-2',
+        slug: 'tax-attorney',
         category: 'legal',
         aliases: ['Tax Lawyer', 'Taxation Attorney'],
         averageSalary: 155000,
         growthRate: 12
-    },
-    {
-        id: 'patent-attorney-2',
-        title: 'Patent Attorney',
-        slug: 'patent-attorney-2',
-        category: 'legal',
-        aliases: ['Patent Lawyer', 'Intellectual Property Attorney'],
-        averageSalary: 165000,
-        growthRate: 14
     },
     {
         id: 'litigation-director',
@@ -14294,17 +9280,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 175000,
         growthRate: 12
     },
-    {
-        id: 'legal-operations-manager',
-        title: 'Legal Operations Manager',
-        slug: 'legal-operations-manager-2',
-        category: 'legal',
-        aliases: ['Legal Ops Manager', 'Legal Department Manager'],
-        averageSalary: 125000,
-        growthRate: 14
-    },
-
-    // Education - Higher Ed Administration (14 jobs)
     {
         id: 'university-president',
         title: 'University President',
@@ -14351,15 +9326,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'curriculum-director',
-        title: 'Curriculum Director',
-        slug: 'curriculum-director-2',
-        category: 'education',
-        aliases: ['Director of Curriculum', 'Curriculum Coordinator'],
-        averageSalary: 115000,
-        growthRate: 14
-    },
-    {
         id: 'director-of-admissions',
         title: 'Director of Admissions',
         slug: 'director-of-admissions',
@@ -14385,15 +9351,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Academic Registrar', 'College Registrar'],
         averageSalary: 88000,
         growthRate: 10
-    },
-    {
-        id: 'academic-advisor-2',
-        title: 'Academic Advisor',
-        slug: 'academic-advisor-4',
-        category: 'education',
-        aliases: ['College Advisor', 'Student Advisor'],
-        averageSalary: 58000,
-        growthRate: 12
     },
     {
         id: 'financial-aid-director',
@@ -14430,17 +9387,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Online Learning Director', 'E-Learning Director'],
         averageSalary: 115000,
         growthRate: 18
-    },
-
-    // Real Estate - Sales & Management (16 jobs)
-    {
-        id: 'real-estate-broker-3',
-        title: 'Real Estate Broker',
-        slug: 'real-estate-broker-4',
-        category: 'real-estate',
-        aliases: ['Real Estate Brokerage Owner', 'Broker Owner'],
-        averageSalary: 115000,
-        growthRate: 12
     },
     {
         id: 'broker-owner',
@@ -14497,24 +9443,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'real-estate-investor-2',
-        title: 'Real Estate Investor',
-        slug: 'real-estate-investor-3',
-        category: 'real-estate',
-        aliases: ['Property Investor', 'Real Estate Entrepreneur'],
-        averageSalary: 125000,
-        growthRate: 14
-    },
-    {
-        id: 'property-developer',
-        title: 'Property Developer',
-        slug: 'property-developer-2',
-        category: 'real-estate',
-        aliases: ['Real Estate Developer', 'Property Development'],
-        averageSalary: 145000,
-        growthRate: 14
-    },
-    {
         id: 'real-estate-wholesaler',
         title: 'Real Estate Wholesaler',
         slug: 'real-estate-wholesaler',
@@ -14560,15 +9488,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'community-association-manager',
-        title: 'Community Association Manager',
-        slug: 'community-association-manager-2',
-        category: 'real-estate',
-        aliases: ['HOA Manager', 'Community Manager'],
-        averageSalary: 78000,
-        growthRate: 12
-    },
-    {
         id: 'leasing-director',
         title: 'Leasing Director',
         slug: 'leasing-director',
@@ -14577,17 +9496,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 115000,
         growthRate: 14
     },
-    {
-        id: 'real-estate-analyst',
-        title: 'Real Estate Analyst',
-        slug: 'real-estate-analyst-3',
-        category: 'real-estate',
-        aliases: ['Property Analyst', 'Real Estate Market Analyst'],
-        averageSalary: 85000,
-        growthRate: 14
-    },
-
-    // Skilled Trades - Specializations (16 jobs)
     {
         id: 'solar-panel-installer',
         title: 'Solar Panel Installer',
@@ -14607,22 +9515,13 @@ export const jobTitles: JobTitle[] = [
         growthRate: 28
     },
     {
-        id: 'hvac-installation-technician',
+        id: 'hvac-installation-technician-2',
         title: 'HVAC Installation Technician',
         slug: 'hvac-installation-technician-2',
         category: 'skilled-trades',
         aliases: ['HVAC Installer', 'Heating Installer'],
         averageSalary: 58000,
         growthRate: 14
-    },
-    {
-        id: 'refrigeration-technician-2',
-        title: 'Refrigeration Technician',
-        slug: 'refrigeration-technician-2',
-        category: 'skilled-trades',
-        aliases: ['Refrigeration Tech', 'Cooling Systems Technician'],
-        averageSalary: 56000,
-        growthRate: 12
     },
     {
         id: 'fire-protection-technician',
@@ -14679,15 +9578,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'landscaper-2',
-        title: 'Landscaper',
-        slug: 'landscaper-2',
-        category: 'skilled-trades',
-        aliases: ['Landscaping Technician', 'Groundskeeper'],
-        averageSalary: 38000,
-        growthRate: 10
-    },
-    {
         id: 'tree-surgeon',
         title: 'Tree Surgeon',
         slug: 'tree-surgeon',
@@ -14697,9 +9587,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'groundskeeper-2',
+        id: 'groundskeeper',
         title: 'Groundskeeper',
-        slug: 'groundskeeper-2',
+        slug: 'groundskeeper',
         category: 'skilled-trades',
         aliases: ['Grounds Maintenance', 'Landscape Maintenance'],
         averageSalary: 35000,
@@ -14715,38 +9605,27 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'janitor-2',
+        id: 'janitor',
         title: 'Janitor',
-        slug: 'janitor-2',
+        slug: 'janitor',
         category: 'skilled-trades',
         aliases: ['Custodian', 'Cleaning Technician'],
         averageSalary: 32000,
         growthRate: 6
     },
     {
-        id: 'custodian-2',
+        id: 'custodian',
         title: 'Custodian',
-        slug: 'custodian-2',
+        slug: 'custodian',
         category: 'skilled-trades',
         aliases: ['Building Custodian', 'School Custodian'],
         averageSalary: 34000,
         growthRate: 6
     },
     {
-        id: 'maintenance-technician',
-        title: 'Maintenance Technician',
-        slug: 'maintenance-technician-2',
-        category: 'skilled-trades',
-        aliases: ['Facilities Maintenance', 'Building Maintenance Technician'],
-        averageSalary: 48000,
-        growthRate: 10
-    },
-
-    // Hospitality - Events & Services (16 jobs)
-    {
-        id: 'event-manager-2',
+        id: 'event-manager',
         title: 'Event Manager',
-        slug: 'event-manager-2',
+        slug: 'event-manager',
         category: 'hospitality',
         aliases: ['Events Manager', 'Event Planning Manager'],
         averageSalary: 68000,
@@ -14762,15 +9641,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'event-coordinator-3',
-        title: 'Event Coordinator',
-        slug: 'event-coordinator-3',
-        category: 'hospitality',
-        aliases: ['Events Coordinator', 'Event Planning Coordinator'],
-        averageSalary: 48000,
-        growthRate: 14
-    },
-    {
         id: 'conference-services-manager',
         title: 'Conference Services Manager',
         slug: 'conference-services-manager',
@@ -14778,15 +9648,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Conference Manager', 'Events Services Manager'],
         averageSalary: 62000,
         growthRate: 14
-    },
-    {
-        id: 'banquet-manager',
-        title: 'Banquet Manager',
-        slug: 'banquet-manager-2',
-        category: 'hospitality',
-        aliases: ['Banquet Captain', 'Events Banquet Manager'],
-        averageSalary: 58000,
-        growthRate: 12
     },
     {
         id: 'catering-manager',
@@ -14798,9 +9659,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'food-service-manager-2',
+        id: 'food-service-manager',
         title: 'Food Service Manager',
-        slug: 'food-service-manager-2',
+        slug: 'food-service-manager',
         category: 'hospitality',
         aliases: ['Food Service Director', 'Dining Services Manager'],
         averageSalary: 62000,
@@ -14816,66 +9677,12 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'kitchen-manager-2',
+        id: 'kitchen-manager',
         title: 'Kitchen Manager',
-        slug: 'kitchen-manager-2',
+        slug: 'kitchen-manager',
         category: 'hospitality',
         aliases: ['Kitchen Head', 'Back of House Manager'],
         averageSalary: 58000,
-        growthRate: 12
-    },
-    {
-        id: 'sous-chef-2',
-        title: 'Sous Chef',
-        slug: 'sous-chef-3',
-        category: 'hospitality',
-        aliases: ['Second Chef', 'Assistant Executive Chef'],
-        averageSalary: 62000,
-        growthRate: 12
-    },
-    {
-        id: 'executive-chef-2',
-        title: 'Executive Chef',
-        slug: 'executive-chef-3',
-        category: 'hospitality',
-        aliases: ['Head Chef', 'Executive Kitchen Chef'],
-        averageSalary: 78000,
-        growthRate: 12
-    },
-    {
-        id: 'head-chef-2',
-        title: 'Head Chef',
-        slug: 'head-chef-2',
-        category: 'hospitality',
-        aliases: ['Kitchen Head', 'Lead Chef'],
-        averageSalary: 72000,
-        growthRate: 12
-    },
-    {
-        id: 'pastry-chef-2',
-        title: 'Pastry Chef',
-        slug: 'pastry-chef-3',
-        category: 'hospitality',
-        aliases: ['Dessert Chef', 'Pastry Head Chef'],
-        averageSalary: 58000,
-        growthRate: 12
-    },
-    {
-        id: 'baker-3',
-        title: 'Baker',
-        slug: 'baker-3',
-        category: 'hospitality',
-        aliases: ['Bakery Baker', 'Pastry Baker'],
-        averageSalary: 36000,
-        growthRate: 8
-    },
-    {
-        id: 'barista-2',
-        title: 'Barista',
-        slug: 'barista-2',
-        category: 'hospitality',
-        aliases: ['Coffee Barista', 'Coffee Shop Barista'],
-        averageSalary: 32000,
         growthRate: 12
     },
     {
@@ -14896,8 +9703,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 62000,
         growthRate: 14
     },
-
-    // Transportation - Specialized (16 jobs)
     {
         id: 'logistics-director',
         title: 'Logistics Director',
@@ -14935,15 +9740,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 20
     },
     {
-        id: 'logistics-coordinator-3',
-        title: 'Logistics Coordinator',
-        slug: 'logistics-coordinator-3',
-        category: 'transportation',
-        aliases: ['Logistics Coordination', 'Shipping Coordinator'],
-        averageSalary: 55000,
-        growthRate: 14
-    },
-    {
         id: 'export-coordinator',
         title: 'Export Coordinator',
         slug: 'export-coordinator',
@@ -14962,18 +9758,9 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'freight-forwarder-2',
-        title: 'Freight Forwarder',
-        slug: 'freight-forwarder-4',
-        category: 'transportation',
-        aliases: ['Freight Forwarding', 'Cargo Forwarder'],
-        averageSalary: 62000,
-        growthRate: 12
-    },
-    {
-        id: 'shipping-coordinator-2',
+        id: 'shipping-coordinator',
         title: 'Shipping Coordinator',
-        slug: 'shipping-coordinator-2',
+        slug: 'shipping-coordinator',
         category: 'transportation',
         aliases: ['Shipping Manager', 'Export Shipping Coordinator'],
         averageSalary: 54000,
@@ -15025,15 +9812,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 10
     },
     {
-        id: 'shipping-receiver',
-        title: 'Shipping Receiver',
-        slug: 'shipping-receiver-2',
-        category: 'transportation',
-        aliases: ['Receiving Clerk', 'Warehouse Receiver'],
-        averageSalary: 36000,
-        growthRate: 10
-    },
-    {
         id: 'quality-control-inspector',
         title: 'Quality Control Inspector',
         slug: 'quality-control-inspector',
@@ -15050,37 +9828,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Logistics Traffic Manager', 'Transportation Traffic Manager'],
         averageSalary: 68000,
         growthRate: 12
-    },
-
-    // ==================== BATCH 20 - 100 New Jobs ====================
-
-    // Technology - Batch 20 (6 jobs)
-    {
-        id: 'machine-learning-engineer-2',
-        title: 'Machine Learning Engineer',
-        slug: 'machine-learning-engineer-3',
-        category: 'technology',
-        aliases: ['ML Engineer', 'Machine Learning Developer'],
-        averageSalary: 165000,
-        growthRate: 35
-    },
-    {
-        id: 'deep-learning-engineer',
-        title: 'Deep Learning Engineer',
-        slug: 'deep-learning-engineer-2',
-        category: 'technology',
-        aliases: ['Deep Learning Developer', 'Neural Network Engineer'],
-        averageSalary: 175000,
-        growthRate: 38
-    },
-    {
-        id: 'computer-vision-engineer',
-        title: 'Computer Vision Engineer',
-        slug: 'computer-vision-engineer-3',
-        category: 'technology',
-        aliases: ['CV Engineer', 'Visual AI Engineer'],
-        averageSalary: 160000,
-        growthRate: 32
     },
     {
         id: 'natural-language-processing-engineer',
@@ -15109,35 +9856,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 145000,
         growthRate: 28
     },
-
-    // Marketing - Batch 20 (6 jobs)
-    {
-        id: 'community-manager-2',
-        title: 'Community Manager',
-        slug: 'community-manager-4',
-        category: 'marketing',
-        aliases: ['Online Community Manager', 'Community Lead'],
-        averageSalary: 85000,
-        growthRate: 20
-    },
-    {
-        id: 'demand-generation-manager',
-        title: 'Demand Generation Manager',
-        slug: 'demand-generation-manager-4',
-        category: 'marketing',
-        aliases: ['Demand Gen Manager', 'Revenue Marketing Manager'],
-        averageSalary: 110000,
-        growthRate: 22
-    },
-    {
-        id: 'product-marketing-manager-2',
-        title: 'Product Marketing Manager',
-        slug: 'product-marketing-manager-4',
-        category: 'marketing',
-        aliases: ['PMM', 'Product Marketing Specialist'],
-        averageSalary: 120000,
-        growthRate: 20
-    },
     {
         id: 'growth-marketing-manager',
         title: 'Growth Marketing Manager',
@@ -15148,516 +9866,21 @@ export const jobTitles: JobTitle[] = [
         growthRate: 24
     },
     {
-        id: 'brand-manager-2',
-        title: 'Brand Manager',
-        slug: 'brand-manager-5',
-        category: 'marketing',
-        aliases: ['Brand Marketing Manager', 'Product Brand Manager'],
-        averageSalary: 115000,
-        growthRate: 16
-    },
-    {
-        id: 'content-strategist-2',
-        title: 'Content Strategist',
-        slug: 'content-strategist-3',
-        category: 'marketing',
-        aliases: ['Content Strategy Manager', 'Content Lead'],
-        averageSalary: 95000,
-        growthRate: 18
-    },
-
-    // Sales - Batch 20 (6 jobs)
-    {
-        id: 'sales-development-representative-2',
-        title: 'Sales Development Representative',
-        slug: 'sales-development-representative-3',
-        category: 'sales',
-        aliases: ['SDR', 'Sales Development Rep'],
-        averageSalary: 55000,
-        growthRate: 18
-    },
-    {
-        id: 'business-development-representative-2',
-        title: 'Business Development Representative',
-        slug: 'business-development-representative-2',
-        category: 'sales',
-        aliases: ['BDR', 'Business Development Rep'],
-        averageSalary: 55000,
-        growthRate: 18
-    },
-    {
-        id: 'inside-sales-representative-2',
-        title: 'Inside Sales Representative',
-        slug: 'inside-sales-representative-5',
-        category: 'sales',
-        aliases: ['Inside Sales Rep', 'Remote Sales Representative'],
-        averageSalary: 58000,
-        growthRate: 16
-    },
-    {
-        id: 'outside-sales-representative',
-        title: 'Outside Sales Representative',
-        slug: 'outside-sales-representative-4',
-        category: 'sales',
-        aliases: ['Field Sales Representative', 'External Sales Rep'],
-        averageSalary: 65000,
-        growthRate: 14
-    },
-    {
-        id: 'account-executive-3',
-        title: 'Account Executive',
-        slug: 'account-executive-3',
-        category: 'sales',
-        aliases: ['Sales Executive', 'Account Manager Sales'],
-        averageSalary: 85000,
-        growthRate: 18
-    },
-    {
-        id: 'sales-coordinator-2',
-        title: 'Sales Coordinator',
-        slug: 'sales-coordinator-3',
-        category: 'sales',
-        aliases: ['Sales Admin', 'Sales Support Coordinator'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-
-    // Healthcare - Batch 20 (6 jobs)
-    {
-        id: 'medical-assistant-2',
-        title: 'Medical Assistant',
-        slug: 'medical-assistant-6',
-        category: 'healthcare',
-        aliases: ['Certified Medical Assistant', 'Clinical Medical Assistant'],
-        averageSalary: 42000,
-        growthRate: 18
-    },
-    {
-        id: 'phlebotomist-2',
-        title: 'Phlebotomist',
-        slug: 'phlebotomist-3',
-        category: 'healthcare',
-        aliases: ['Phlebotomy Technician', 'Blood Draw Specialist'],
-        averageSalary: 40000,
-        growthRate: 16
-    },
-    {
-        id: 'medical-technologist',
-        title: 'Medical Technologist',
-        slug: 'medical-technologist-4',
-        category: 'healthcare',
-        aliases: ['Clinical Laboratory Technologist', 'Medical Lab Scientist'],
-        averageSalary: 58000,
-        growthRate: 14
-    },
-    {
-        id: 'radiologic-technologist',
-        title: 'Radiologic Technologist',
-        slug: 'radiologic-technologist-4',
-        category: 'healthcare',
-        aliases: ['Rad Tech', 'X-Ray Technologist'],
-        averageSalary: 65000,
-        growthRate: 12
-    },
-    {
-        id: 'sonographer-2',
+        id: 'sonographer',
         title: 'Sonographer',
-        slug: 'sonographer-2',
+        slug: 'sonographer',
         category: 'healthcare',
         aliases: ['Ultrasound Technician', 'Ultrasound Technologist'],
         averageSalary: 75000,
         growthRate: 14
     },
     {
-        id: 'occupational-therapist-2',
-        title: 'Occupational Therapist',
-        slug: 'occupational-therapist-5',
-        category: 'healthcare',
-        aliases: ['OT', 'Occupational Therapy Practitioner'],
-        averageSalary: 90000,
-        growthRate: 16
-    },
-
-    // Finance - Batch 20 (6 jobs)
-    {
-        id: 'financial-advisor-2',
-        title: 'Financial Advisor',
-        slug: 'financial-advisor-2',
-        category: 'finance',
-        aliases: ['Wealth Manager', 'Financial Consultant'],
-        averageSalary: 95000,
-        growthRate: 14
-    },
-    {
-        id: 'investment-analyst',
-        title: 'Investment Analyst',
-        slug: 'investment-analyst-4',
-        category: 'finance',
-        aliases: ['Investment Research Analyst', 'Securities Analyst'],
-        averageSalary: 95000,
-        growthRate: 16
-    },
-    {
-        id: 'portfolio-manager-2',
-        title: 'Portfolio Manager',
-        slug: 'portfolio-manager-3',
-        category: 'finance',
-        aliases: ['Investment Portfolio Manager', 'Fund Manager'],
-        averageSalary: 135000,
-        growthRate: 14
-    },
-    {
-        id: 'risk-manager-2',
-        title: 'Risk Manager',
-        slug: 'risk-manager-3',
-        category: 'finance',
-        aliases: ['Enterprise Risk Manager', 'Risk Management Manager'],
-        averageSalary: 120000,
-        growthRate: 16
-    },
-    {
-        id: 'credit-analyst-2',
-        title: 'Credit Analyst',
-        slug: 'credit-analyst-5',
-        category: 'finance',
-        aliases: ['Credit Risk Analyst', 'Loan Analyst'],
-        averageSalary: 70000,
-        growthRate: 12
-    },
-    {
-        id: 'treasury-manager-2',
+        id: 'treasury-manager',
         title: 'Treasury Manager',
-        slug: 'treasury-manager-2',
+        slug: 'treasury-manager',
         category: 'finance',
         aliases: ['Corporate Treasury Manager', 'Treasury Operations Manager'],
         averageSalary: 115000,
-        growthRate: 14
-    },
-
-    // HR - Batch 20 (6 jobs)
-    {
-        id: 'hr-coordinator-2',
-        title: 'HR Coordinator',
-        slug: 'hr-coordinator-5',
-        category: 'hr',
-        aliases: ['Human Resources Coordinator', 'HR Admin'],
-        averageSalary: 50000,
-        growthRate: 14
-    },
-    {
-        id: 'recruiter-3',
-        title: 'Recruiter',
-        slug: 'recruiter-5',
-        category: 'hr',
-        aliases: ['Technical Recruiter', 'Talent Acquisition Specialist'],
-        averageSalary: 60000,
-        growthRate: 18
-    },
-    {
-        id: 'technical-recruiter-2',
-        title: 'Technical Recruiter',
-        slug: 'technical-recruiter-3',
-        category: 'hr',
-        aliases: ['IT Recruiter', 'Tech Recruiter'],
-        averageSalary: 70000,
-        growthRate: 20
-    },
-    {
-        id: 'hr-business-partner-2',
-        title: 'HR Business Partner',
-        slug: 'hr-business-partner-4',
-        category: 'hr',
-        aliases: ['HRBP', 'Strategic HR Partner'],
-        averageSalary: 105000,
-        growthRate: 16
-    },
-    {
-        id: 'training-and-development-manager',
-        title: 'Training and Development Manager',
-        slug: 'training-and-development-manager',
-        category: 'hr',
-        aliases: ['Learning and Development Manager', 'Training Manager'],
-        averageSalary: 85000,
-        growthRate: 16
-    },
-    {
-        id: 'compensation-analyst-2',
-        title: 'Compensation Analyst',
-        slug: 'compensation-analyst-5',
-        category: 'hr',
-        aliases: ['Compensation and Benefits Analyst', 'Total Rewards Analyst'],
-        averageSalary: 80000,
-        growthRate: 14
-    },
-
-    // Admin - Batch 20 (6 jobs)
-    {
-        id: 'administrative-assistant-3',
-        title: 'Administrative Assistant',
-        slug: 'administrative-assistant-5',
-        category: 'admin',
-        aliases: ['Admin Assistant', 'Office Assistant'],
-        averageSalary: 45000,
-        growthRate: 10
-    },
-    {
-        id: 'receptionist-2',
-        title: 'Receptionist',
-        slug: 'receptionist-6',
-        category: 'admin',
-        aliases: ['Front Desk Receptionist', 'Office Receptionist'],
-        averageSalary: 36000,
-        growthRate: 8
-    },
-    {
-        id: 'data-entry-clerk-2',
-        title: 'Data Entry Clerk',
-        slug: 'data-entry-clerk-5',
-        category: 'admin',
-        aliases: ['Data Entry Specialist', 'Data Entry Operator'],
-        averageSalary: 38000,
-        growthRate: 8
-    },
-    {
-        id: 'virtual-assistant-2',
-        title: 'Virtual Assistant',
-        slug: 'virtual-assistant-4',
-        category: 'admin',
-        aliases: ['VA', 'Online Administrative Assistant'],
-        averageSalary: 48000,
-        growthRate: 16
-    },
-    {
-        id: 'office-clerk',
-        title: 'Office Clerk',
-        slug: 'office-clerk-2',
-        category: 'admin',
-        aliases: ['General Office Clerk', 'Administrative Clerk'],
-        averageSalary: 38000,
-        growthRate: 8
-    },
-    {
-        id: 'file-clerk',
-        title: 'File Clerk',
-        slug: 'file-clerk-6',
-        category: 'admin',
-        aliases: ['Records Clerk', 'File Management Clerk'],
-        averageSalary: 35000,
-        growthRate: 6
-    },
-
-    // Customer Service - Batch 20 (6 jobs)
-    {
-        id: 'customer-service-representative-3',
-        title: 'Customer Service Representative',
-        slug: 'customer-service-representative-4',
-        category: 'customer-service',
-        aliases: ['CSR', 'Customer Service Rep'],
-        averageSalary: 40000,
-        growthRate: 10
-    },
-    {
-        id: 'call-center-representative-2',
-        title: 'Call Center Representative',
-        slug: 'call-center-representative-4',
-        category: 'customer-service',
-        aliases: ['Call Center Agent', 'Phone Representative'],
-        averageSalary: 38000,
-        growthRate: 10
-    },
-    {
-        id: 'customer-support-specialist',
-        title: 'Customer Support Specialist',
-        slug: 'customer-support-specialist-2',
-        category: 'customer-service',
-        aliases: ['Support Specialist', 'Customer Care Specialist'],
-        averageSalary: 45000,
-        growthRate: 14
-    },
-    {
-        id: 'technical-support-specialist-2',
-        title: 'Technical Support Specialist',
-        slug: 'technical-support-specialist-2',
-        category: 'customer-service',
-        aliases: ['Tech Support Specialist', 'IT Support Specialist'],
-        averageSalary: 55000,
-        growthRate: 16
-    },
-    {
-        id: 'customer-success-manager-2',
-        title: 'Customer Success Manager',
-        slug: 'customer-success-manager-5',
-        category: 'customer-service',
-        aliases: ['CSM', 'Client Success Manager'],
-        averageSalary: 85000,
-        growthRate: 20
-    },
-    {
-        id: 'help-desk-technician-2',
-        title: 'Help Desk Technician',
-        slug: 'help-desk-technician-2',
-        category: 'customer-service',
-        aliases: ['Help Desk Specialist', 'Service Desk Technician'],
-        averageSalary: 50000,
-        growthRate: 14
-    },
-
-    // Design - Batch 20 (6 jobs)
-    {
-        id: 'graphic-designer-3',
-        title: 'Graphic Designer',
-        slug: 'graphic-designer-3',
-        category: 'design',
-        aliases: ['Graphics Designer', 'Visual Designer'],
-        averageSalary: 58000,
-        growthRate: 14
-    },
-    {
-        id: 'ui-designer-2',
-        title: 'UI Designer',
-        slug: 'ui-designer-4',
-        category: 'design',
-        aliases: ['User Interface Designer', 'UI/UX Designer'],
-        averageSalary: 85000,
-        growthRate: 18
-    },
-    {
-        id: 'ux-designer-3',
-        title: 'UX Designer',
-        slug: 'ux-designer-3',
-        category: 'design',
-        aliases: ['User Experience Designer', 'Experience Designer'],
-        averageSalary: 95000,
-        growthRate: 20
-    },
-    {
-        id: 'product-designer-2',
-        title: 'Product Designer',
-        slug: 'product-designer-5',
-        category: 'design',
-        aliases: ['Digital Product Designer', 'Product UX Designer'],
-        averageSalary: 110000,
-        growthRate: 22
-    },
-    {
-        id: 'visual-designer-2',
-        title: 'Visual Designer',
-        slug: 'visual-designer-5',
-        category: 'design',
-        aliases: ['Digital Visual Designer', 'Brand Visual Designer'],
-        averageSalary: 80000,
-        growthRate: 16
-    },
-    {
-        id: 'motion-designer',
-        title: 'Motion Designer',
-        slug: 'motion-designer-2',
-        category: 'design',
-        aliases: ['Motion Graphics Designer', 'Animation Designer'],
-        averageSalary: 85000,
-        growthRate: 20
-    },
-
-    // Engineering - Batch 20 (6 jobs)
-    {
-        id: 'software-engineer-3',
-        title: 'Software Engineer',
-        slug: 'software-engineer-3',
-        category: 'engineering',
-        aliases: ['Software Developer', 'Application Developer'],
-        averageSalary: 120000,
-        growthRate: 22
-    },
-    {
-        id: 'frontend-developer-2',
-        title: 'Frontend Developer',
-        slug: 'frontend-developer-2',
-        category: 'engineering',
-        aliases: ['Front-End Developer', 'Client-Side Developer'],
-        averageSalary: 115000,
-        growthRate: 20
-    },
-    {
-        id: 'backend-developer-2',
-        title: 'Backend Developer',
-        slug: 'backend-developer-2',
-        category: 'engineering',
-        aliases: ['Back-End Developer', 'Server-Side Developer'],
-        averageSalary: 120000,
-        growthRate: 22
-    },
-    {
-        id: 'full-stack-developer-2',
-        title: 'Full Stack Developer',
-        slug: 'full-stack-developer-2',
-        category: 'engineering',
-        aliases: ['Fullstack Developer', 'Full-Stack Engineer'],
-        averageSalary: 135000,
-        growthRate: 24
-    },
-    {
-        id: 'mobile-developer-2',
-        title: 'Mobile Developer',
-        slug: 'mobile-developer-2',
-        category: 'engineering',
-        aliases: ['Mobile App Developer', 'iOS/Android Developer'],
-        averageSalary: 125000,
-        growthRate: 22
-    },
-    {
-        id: 'devops-engineer-2',
-        title: 'DevOps Engineer',
-        slug: 'devops-engineer-4',
-        category: 'engineering',
-        aliases: ['DevOps Engineer II', 'Senior DevOps Engineer'],
-        averageSalary: 140000,
-        growthRate: 24
-    },
-
-    // Legal - Batch 20 (6 jobs)
-    {
-        id: 'paralegal-2',
-        title: 'Paralegal',
-        slug: 'paralegal-4',
-        category: 'legal',
-        aliases: ['Legal Assistant', 'Paralegal Assistant'],
-        averageSalary: 58000,
-        growthRate: 12
-    },
-    {
-        id: 'legal-assistant-2',
-        title: 'Legal Assistant',
-        slug: 'legal-assistant-5',
-        category: 'legal',
-        aliases: ['Law Office Assistant', 'Legal Secretary'],
-        averageSalary: 50000,
-        growthRate: 10
-    },
-    {
-        id: 'contract-attorney',
-        title: 'Contract Attorney',
-        slug: 'contract-attorney-2',
-        category: 'legal',
-        aliases: ['Contract Lawyer', 'Freelance Attorney'],
-        averageSalary: 95000,
-        growthRate: 12
-    },
-    {
-        id: 'compliance-manager-2',
-        title: 'Compliance Manager',
-        slug: 'compliance-manager-3',
-        category: 'legal',
-        aliases: ['Regulatory Compliance Manager', 'Corporate Compliance Manager'],
-        averageSalary: 110000,
-        growthRate: 16
-    },
-    {
-        id: 'contracts-manager',
-        title: 'Contracts Manager',
-        slug: 'contracts-manager-3',
-        category: 'legal',
-        aliases: ['Contract Management Manager', 'Contract Administrator'],
-        averageSalary: 95000,
         growthRate: 14
     },
     {
@@ -15669,64 +9892,6 @@ export const jobTitles: JobTitle[] = [
         averageSalary: 70000,
         growthRate: 12
     },
-
-    // Education - Batch 20 (5 jobs)
-    {
-        id: 'elementary-school-teacher',
-        title: 'Elementary School Teacher',
-        slug: 'elementary-school-teacher-2',
-        category: 'education',
-        aliases: ['Primary School Teacher', 'Elementary Teacher'],
-        averageSalary: 58000,
-        growthRate: 8
-    },
-    {
-        id: 'high-school-teacher-2',
-        title: 'High School Teacher',
-        slug: 'high-school-teacher-3',
-        category: 'education',
-        aliases: ['Secondary School Teacher', 'High School Educator'],
-        averageSalary: 62000,
-        growthRate: 8
-    },
-    {
-        id: 'special-education-teacher-2',
-        title: 'Special Education Teacher',
-        slug: 'special-education-teacher-5',
-        category: 'education',
-        aliases: ['Special Ed Teacher', 'Exceptional Education Teacher'],
-        averageSalary: 65000,
-        growthRate: 10
-    },
-    {
-        id: 'teaching-assistant-2',
-        title: 'Teaching Assistant',
-        slug: 'teaching-assistant-5',
-        category: 'education',
-        aliases: ['Teacher Assistant', 'Classroom Assistant'],
-        averageSalary: 32000,
-        growthRate: 10
-    },
-    {
-        id: 'substitute-teacher',
-        title: 'Substitute Teacher',
-        slug: 'substitute-teacher-5',
-        category: 'education',
-        aliases: ['Sub Teacher', 'Supply Teacher'],
-        averageSalary: 40000,
-        growthRate: 8
-    },
-
-    // Real Estate - Batch 20 (6 jobs)
-    {
-        id: 'real-estate-agent-2',
-        title: 'Real Estate Agent',
-        slug: 'real-estate-agent-3',
-        category: 'real-estate',
-        aliases: ['Realtor', 'Real Estate Sales Agent'],
-        averageSalary: 55000,
-        growthRate: 14
-    },
     {
         id: 'real-estate-salesperson',
         title: 'Real Estate Salesperson',
@@ -15737,201 +9902,28 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'leasing-agent-2',
-        title: 'Leasing Agent',
-        slug: 'leasing-agent-4',
-        category: 'real-estate',
-        aliases: ['Leasing Consultant', 'Rental Agent'],
-        averageSalary: 42000,
-        growthRate: 14
-    },
-    {
-        id: 'property-manager-2',
-        title: 'Property Manager',
-        slug: 'property-manager-5',
-        category: 'real-estate',
-        aliases: ['Real Estate Property Manager', 'Rental Property Manager'],
-        averageSalary: 65000,
-        growthRate: 14
-    },
-    {
-        id: 'real-estate-appraiser-2',
-        title: 'Real Estate Appraiser',
-        slug: 'real-estate-appraiser-5',
-        category: 'real-estate',
-        aliases: ['Property Appraiser', 'Real Estate Valuer'],
-        averageSalary: 62000,
-        growthRate: 10
-    },
-    {
-        id: 'title-examiner',
-        title: 'Title Examiner',
-        slug: 'title-examiner-3',
-        category: 'real-estate',
-        aliases: ['Title Searcher', 'Title Analyst'],
-        averageSalary: 52000,
-        growthRate: 8
-    },
-
-    // Skilled Trades - Batch 20 (6 jobs)
-    {
-        id: 'electrician-2',
-        title: 'Electrician',
-        slug: 'electrician-4',
-        category: 'skilled-trades',
-        aliases: ['Electrical Contractor', 'Journeyman Electrician'],
-        averageSalary: 60000,
-        growthRate: 14
-    },
-    {
-        id: 'plumber-2',
-        title: 'Plumber',
-        slug: 'plumber-4',
-        category: 'skilled-trades',
-        aliases: ['Plumbing Contractor', 'Journeyman Plumber'],
-        averageSalary: 58000,
-        growthRate: 12
-    },
-    {
-        id: 'hvac-technician-2',
-        title: 'HVAC Technician',
-        slug: 'hvac-technician-4',
-        category: 'skilled-trades',
-        aliases: ['HVAC Tech', 'Heating and Cooling Technician'],
-        averageSalary: 58000,
-        growthRate: 16
-    },
-    {
-        id: 'carpenter-2',
-        title: 'Carpenter',
-        slug: 'carpenter-4',
-        category: 'skilled-trades',
-        aliases: ['Construction Carpenter', 'Finish Carpenter'],
-        averageSalary: 55000,
-        growthRate: 10
-    },
-    {
-        id: 'welder-2',
-        title: 'Welder',
-        slug: 'welder-4',
-        category: 'skilled-trades',
-        aliases: ['Welding Technician', 'Fabricator Welder'],
-        averageSalary: 48000,
-        growthRate: 10
-    },
-    {
-        id: 'automotive-technician-2',
+        id: 'automotive-technician',
         title: 'Automotive Technician',
-        slug: 'automotive-technician-2',
+        slug: 'automotive-technician',
         category: 'skilled-trades',
         aliases: ['Auto Mechanic', 'Car Mechanic'],
         averageSalary: 48000,
         growthRate: 10
     },
-
-    // Hospitality - Batch 20 (6 jobs)
     {
-        id: 'hotel-manager-2',
-        title: 'Hotel Manager',
-        slug: 'hotel-manager-3',
-        category: 'hospitality',
-        aliases: ['Hotel General Manager', 'Hospitality Manager'],
-        averageSalary: 65000,
-        growthRate: 12
-    },
-    {
-        id: 'front-desk-agent-2',
-        title: 'Front Desk Agent',
-        slug: 'front-desk-agent-2',
-        category: 'hospitality',
-        aliases: ['Hotel Front Desk Agent', 'Hotel Receptionist'],
-        averageSalary: 36000,
-        growthRate: 10
-    },
-    {
-        id: 'housekeeper-2',
+        id: 'housekeeper',
         title: 'Housekeeper',
-        slug: 'housekeeper-2',
+        slug: 'housekeeper',
         category: 'hospitality',
         aliases: ['Hotel Housekeeper', 'Room Attendant'],
         averageSalary: 32000,
         growthRate: 10
-    },
-    {
-        id: 'concierge-2',
-        title: 'Concierge',
-        slug: 'concierge-3',
-        category: 'hospitality',
-        aliases: ['Hotel Concierge', 'Guest Services Agent'],
-        averageSalary: 40000,
-        growthRate: 12
-    },
-    {
-        id: 'restaurant-manager-2',
-        title: 'Restaurant Manager',
-        slug: 'restaurant-manager-3',
-        category: 'hospitality',
-        aliases: ['Food Service Manager', 'Dining Manager'],
-        averageSalary: 55000,
-        growthRate: 14
-    },
-    {
-        id: 'bartender-2',
-        title: 'Bartender',
-        slug: 'bartender-3',
-        category: 'hospitality',
-        aliases: ['Barkeeper', 'Mixologist'],
-        averageSalary: 32000,
-        growthRate: 12
-    },
-
-    // Transportation - Batch 20 (5 jobs)
-    {
-        id: 'delivery-driver-2',
-        title: 'Delivery Driver',
-        slug: 'delivery-driver-5',
-        category: 'transportation',
-        aliases: ['Package Delivery Driver', 'Courier Driver'],
-        averageSalary: 40000,
-        growthRate: 14
-    },
-    {
-        id: 'truck-driver-2',
-        title: 'Truck Driver',
-        slug: 'truck-driver-3',
-        category: 'transportation',
-        aliases: ['Semi Truck Driver', 'CDL Driver'],
-        averageSalary: 52000,
-        growthRate: 12
-    },
-    {
-        id: 'bus-driver-2',
-        title: 'Bus Driver',
-        slug: 'bus-driver-2',
-        category: 'transportation',
-        aliases: ['Transit Bus Driver', 'School Bus Driver'],
-        averageSalary: 42000,
-        growthRate: 10
-    },
-    {
-        id: 'dispatcher-2',
-        title: 'Dispatcher',
-        slug: 'dispatcher-4',
-        category: 'transportation',
-        aliases: ['Fleet Dispatcher', 'Service Dispatcher'],
-        averageSalary: 45000,
-        growthRate: 10
-    },
-    {
-        id: 'route-driver',
-        title: 'Route Driver',
-        slug: 'route-driver-3',
-        category: 'transportation',
-        aliases: ['Delivery Route Driver', 'Regular Route Driver'],
-        averageSalary: 42000,
-        growthRate: 10
     }
-]
+];
+
+;
+
+
 
 
 // Helper function to get job by slug
@@ -15952,3 +9944,5 @@ export function searchJobs(query: string): JobTitle[] {
         job.aliases.some(alias => alias.toLowerCase().includes(lowerQuery))
     )
 }
+
+

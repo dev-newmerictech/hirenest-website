@@ -3,38 +3,59 @@ import { MetadataRoute } from 'next';
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
 
+/**
+ * Sitemap Index
+ * This file exports a function that generates a sitemap index.
+ * However, Next.js automatically generates sitemap.xml at the root.
+ * We need to create a custom route handler instead.
+ */
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://hirenest.ai';
 
-    // Return a sitemap index that points to individual sitemaps
+    // Return main site URLs - the programmatic SEO sitemaps are handled separately
     return [
         {
-            url: `${baseUrl}/main-sitemap.xml`,
-            lastModified: '2026-02-18',
+            url: baseUrl,
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 1,
         },
         {
-            url: `${baseUrl}/sitemap-posts.xml`,
-            lastModified: '2026-02-18',
+            url: `${baseUrl}/blog`,
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 0.9,
         },
         {
-            url: `${baseUrl}/interview-questions-sitemap.xml`,
-            lastModified: '2026-02-18',
+            url: `${baseUrl}/interview-questions`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
         },
         {
-            url: `${baseUrl}/resume-keywords-sitemap.xml`,
-            lastModified: '2026-02-18',
+            url: `${baseUrl}/resume-keywords`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
         },
         {
-            url: `${baseUrl}/salary-sitemap.xml`,
-            lastModified: '2026-02-18',
+            url: `${baseUrl}/salary`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
         },
         {
-            url: `${baseUrl}/cover-letter-sitemap.xml`,
-            lastModified: '2026-02-18',
+            url: `${baseUrl}/cover-letter`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
         },
         {
-            url: `${baseUrl}/job-description-sitemap.xml`,
-            lastModified: '2026-02-18',
+            url: `${baseUrl}/job-description`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
         },
     ];
 }

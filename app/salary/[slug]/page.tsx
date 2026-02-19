@@ -7,12 +7,16 @@ import {
 } from '@chakra-ui/react'
 import { SalaryHero } from '../../components/programmatic-seo/SalaryHero'
 import { SalaryContent } from '../../components/programmatic-seo/SalaryContent'
-import { ProgrammaticSeoStructuredData } from '../../components/programmatic-seo/StructuredData'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
 import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
 import { generatePageMetadata } from '../../lib/metadata'
 import Link from 'next/link'
+// New SEO components
+import { JsonLdSchema, BreadcrumbNav, InternalLinking } from '../../components/seo'
+import { getRelatedPages, getCrossTemplateLinks, getBreadcrumbItems } from '../../lib/seo/helpers'
+import { buildPageSchemas } from '../../lib/seo/core/schema-builder-factory'
+import { SEO_CONFIG } from '../../lib/seo/core/constants'
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -76,17 +80,31 @@ export default async function SalaryPage({ params }: PageProps) {
     const salaryMin = job.averageSalary ? Math.round(job.averageSalary * 0.7) : undefined
     const salaryMax = job.averageSalary ? Math.round(job.averageSalary * 1.5) : undefined
 
+    // Get related pages for internal linking
+    const relatedPages = getRelatedPages(slug, 'salary', 6)
+    const crossTemplateLinks = getCrossTemplateLinks(slug, job.title)
+    const breadcrumbItems = getBreadcrumbItems('salary', job.title, slug)
+
+    // Build schema.org structured data
+    const pageUrl = `${SEO_CONFIG.BASE_URL}/salary/${slug}`
+    const faqItems = [
+        { question: `What is the average salary for a ${job.title}?`, answer: `The average salary for a ${job.title} ranges from ${salaryMin || '$50,000'} to ${salaryMax || '$100,000'} depending on experience, location, and industry.` },
+        { question: `How does experience affect ${job.title} salary?`, answer: `Entry-level ${job.title} positions typically start lower, with significant increases at mid-level and senior roles. Experience is the primary factor in salary determination.` },
+        { question: `What factors affect ${job.title} compensation?`, answer: `Key factors include location, industry, company size, education level, certifications, and specialized skills that are in high demand.` }
+    ]
+    const schemas = buildPageSchemas({
+        title: `${job.title} Salary Guide & Pay Scale`,
+        description: `Check ${job.title} salary guide with average pay by experience, location, and industry. Get negotiation tips, job outlook, and career insights.`,
+        url: pageUrl,
+        faqs: faqItems,
+        breadcrumbs: breadcrumbItems,
+        dateModified: new Date().toISOString()
+    })
+
     return (
         <Box>
-            {/* Structured Data - SEO */}
-            <ProgrammaticSeoStructuredData
-                jobTitle={job.title}
-                pageType="salary"
-                slug={slug}
-                description={`Comprehensive ${job.title} salary guide with average pay, experience-based salary ranges, location comparisons, and negotiation tips.`}
-                averageSalary={job.averageSalary}
-                growthRate={job.growthRate}
-            />
+            {/* Structured Data - SEO (New Schema Builder) */}
+            <JsonLdSchema schemas={schemas} />
 
             {/* Hero Section */}
             <SalaryHero
@@ -102,16 +120,17 @@ export default async function SalaryPage({ params }: PageProps) {
                 }}
             />
 
-
-            <HStack justifyContent="center" gap={2} mt={6} fontSize="sm" color="gray.500" flexWrap="wrap" pb={{ base: '16', md: '20' }}>
-                <ChakraLink as={Link} href="/" display="flex" alignItems="center" gap={1} color="gray.500">
-                    Home
-                </ChakraLink>
-                <Text>/</Text>
-                <ChakraLink as={Link} href="/salary" color="gray.500">Salary</ChakraLink>
-                <Text>/</Text>
-                <Text color="#4241ff" fontWeight="600">{job.title}</Text>
-            </HStack>
+            {/* Breadcrumb Navigation - New Component */}
+            <Box justifyContent="center" display="flex" py={6} px={4}>
+                <BreadcrumbNav
+                    items={breadcrumbItems.map(item => ({
+                        name: item.name,
+                        url: item.url,
+                        position: 0
+                    }))}
+                    separator="chevron"
+                />
+            </Box>
 
             {/* Content Section */}
             <SalaryContent
@@ -121,6 +140,30 @@ export default async function SalaryPage({ params }: PageProps) {
                 growthRate={job.growthRate}
                 aliases={job.aliases}
             />
+
+            {/* Related Roles - Internal Linking */}
+            {relatedPages.length > 0 && (
+                <InternalLinking
+                    title="Related Salary Guides"
+                    description="Explore salary information for similar roles."
+                    links={relatedPages}
+                    columns={3}
+                    variant="card"
+                    maxLinks={6}
+                />
+            )}
+
+            {/* Cross-Template Links - Same Job, Different Templates */}
+            {crossTemplateLinks.length > 0 && (
+                <InternalLinking
+                    title={`More Resources for ${job.title}`}
+                    description={`Explore additional resources and guides specifically for ${job.title} positions.`}
+                    links={crossTemplateLinks}
+                    columns={3}
+                    variant="card"
+                    maxLinks={6}
+                />
+            )}
 
             {/* Final CTA */}
             <CTA />

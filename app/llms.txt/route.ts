@@ -5,6 +5,16 @@ import { api } from "@/convex/_generated/api";
 // Force Node.js runtime to avoid edge runtime module loading issues
 export const runtime = 'nodejs';
 
+// Escape XML special characters
+function escapeXml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 export async function GET() {
   const baseUrl = 'https://hirenest.ai';
   const currentDate = new Date().toISOString();
@@ -19,8 +29,8 @@ export async function GET() {
       .slice(0, 50)
       .map((post: any) => ({
         url: `${baseUrl}/blog/${post.slug}`,
-        title: post.title,
-        description: post.description,
+        title: escapeXml(post.title || ''),
+        description: escapeXml(post.description || ''),
         type: 'blog-post',
       }));
   } catch (error) {
@@ -188,74 +198,74 @@ export async function GET() {
   const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <llms-metadata>
   <metadata>
-    <name>${llmsContent.metadata.name}</name>
-    <description>${llmsContent.metadata.description}</description>
-    <url>${llmsContent.metadata.url}</url>
-    <lastUpdated>${llmsContent.metadata.lastUpdated}</lastUpdated>
-    <version>${llmsContent.metadata.version}</version>
-    <language>${llmsContent.metadata.language}</language>
-    <category>${llmsContent.metadata.category}</category>
+    <name>${escapeXml(llmsContent.metadata.name)}</name>
+    <description>${escapeXml(llmsContent.metadata.description)}</description>
+    <url>${escapeXml(llmsContent.metadata.url)}</url>
+    <lastUpdated>${escapeXml(llmsContent.metadata.lastUpdated)}</lastUpdated>
+    <version>${escapeXml(llmsContent.metadata.version)}</version>
+    <language>${escapeXml(llmsContent.metadata.language)}</language>
+    <category>${escapeXml(llmsContent.metadata.category)}</category>
     <keywords>
-      ${llmsContent.metadata.keywords.map(keyword => `<keyword>${keyword}</keyword>`).join('\n      ')}
+      ${llmsContent.metadata.keywords.map(keyword => `<keyword>${escapeXml(keyword)}</keyword>`).join('\n      ')}
     </keywords>
   </metadata>
-  
+
   <features>
     <jobSeekerFeatures>
       ${llmsContent.features.forJobSeekers.map(feature => `
       <feature>
-        <name>${feature.name}</name>
-        <url>${feature.url}</url>
-        <description>${feature.description}</description>
+        <name>${escapeXml(feature.name)}</name>
+        <url>${escapeXml(feature.url)}</url>
+        <description>${escapeXml(feature.description)}</description>
         <capabilities>
-          ${feature.capabilities.map(cap => `<capability>${cap}</capability>`).join('\n          ')}
+          ${feature.capabilities.map(cap => `<capability>${escapeXml(cap)}</capability>`).join('\n          ')}
         </capabilities>
       </feature>`).join('')}
     </jobSeekerFeatures>
-    
+
     <employerFeatures>
       ${llmsContent.features.forEmployers.map(feature => `
       <feature>
-        <name>${feature.name}</name>
-        <url>${feature.url}</url>
-        <description>${feature.description}</description>
+        <name>${escapeXml(feature.name)}</name>
+        <url>${escapeXml(feature.url)}</url>
+        <description>${escapeXml(feature.description)}</description>
         <capabilities>
-          ${feature.capabilities.map(cap => `<capability>${cap}</capability>`).join('\n          ')}
+          ${feature.capabilities.map(cap => `<capability>${escapeXml(cap)}</capability>`).join('\n          ')}
         </capabilities>
       </feature>`).join('')}
     </employerFeatures>
   </features>
-  
+
   <pages>
     ${llmsContent.pages.map(page => `
     <page>
-      <url>${page.url}</url>
-      <title>${page.title}</title>
-      <description>${page.description}</description>
-      <type>${page.type}</type>
+      <url>${escapeXml(page.url)}</url>
+      <title>${escapeXml(page.title)}</title>
+      <description>${escapeXml(page.description)}</description>
+      <type>${escapeXml(page.type)}</type>
     </page>`).join('')}
   </pages>
-  
+
   <technology>
     <stack>
-      ${llmsContent.technology.stack.map(tech => `<item>${tech}</item>`).join('\n      ')}
+      ${llmsContent.technology.stack.map(tech => `<item>${escapeXml(tech)}</item>`).join('\n      ')}
     </stack>
     <aiCapabilities>
-      ${llmsContent.technology.aiCapabilities.map(cap => `<capability>${cap}</capability>`).join('\n      ')}
+      ${llmsContent.technology.aiCapabilities.map(cap => `<capability>${escapeXml(cap)}</capability>`).join('\n      ')}
     </aiCapabilities>
   </technology>
-  
+
   <contact>
-    <website>${llmsContent.contact.website}</website>
-    <supportEmail>${llmsContent.contact.supportEmail}</supportEmail>
-    <salesEmail>${llmsContent.contact.salesEmail}</salesEmail>
+    <website>${escapeXml(llmsContent.contact.website)}</website>
+    <supportEmail>${escapeXml(llmsContent.contact.supportEmail)}</supportEmail>
+    <salesEmail>${escapeXml(llmsContent.contact.salesEmail)}</salesEmail>
   </contact>
-  
+
   <legal>
-    <privacyPolicy>${llmsContent.legal.privacyPolicy}</privacyPolicy>
-    <termsOfService>${llmsContent.legal.termsOfService}</termsOfService>
-    <cookiePolicy>${llmsContent.legal.cookiePolicy}</cookiePolicy>
-    <refundPolicy>${llmsContent.legal.refundPolicy}</refundPolicy>
+    <privacyPolicy>${escapeXml(llmsContent.legal.privacyPolicy)}</privacyPolicy>
+    <termsOfService>${escapeXml(llmsContent.legal.termsOfService)}</termsOfService>
+    <cookiePolicy>${escapeXml(llmsContent.legal.cookiePolicy)}</cookiePolicy>
+    <refundPolicy>${escapeXml(llmsContent.legal.refundPolicy)}</refundPolicy>
   </legal>
 </llms-metadata>`;
 

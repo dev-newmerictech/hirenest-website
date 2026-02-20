@@ -6,18 +6,18 @@ export const runtime = 'nodejs';
 
 export async function GET() {
     const baseUrl = 'https://hirenest.ai';
-    const currentDate = new Date();
+    const currentDate = new Date().toISOString().split('T')[0];
 
     const urls = [
         {
             url: `${baseUrl}/resume-keywords`,
-            lastModified: '2026-02-17',
+            lastModified: currentDate,
             changeFrequency: 'weekly',
             priority: 1,
         },
         ...jobTitles.map((job) => ({
             url: `${baseUrl}/resume-keywords/${job.slug}`,
-            lastModified: '2026-02-17',
+            lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,
         })),

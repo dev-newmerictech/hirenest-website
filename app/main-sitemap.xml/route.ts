@@ -5,7 +5,7 @@ export const runtime = 'nodejs';
 
 export async function GET() {
     const baseUrl = 'https://hirenest.ai';
-    const currentDate = new Date();
+    const currentDate = new Date().toISOString().split('T')[0];
 
     // Main website pages (core pages, features, company, legal)
     const routes = [
@@ -47,7 +47,7 @@ ${routes
             .map(
                 (route) => `  <url>
     <loc>${baseUrl}${route.url}</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>${currentDate}</lastmod>
     <changefreq>${route.changeFrequency}</changefreq>
     <priority>${route.priority}</priority>
   </url>`

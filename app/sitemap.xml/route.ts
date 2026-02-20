@@ -4,7 +4,7 @@ export const dynamic = 'force-static'
 
 export async function GET() {
     const baseUrl = 'https://hirenest.ai'
-    const lastMod = '2026-02-19'
+    const lastMod = new Date().toISOString().split('T')[0]
 
     // Build the sitemap index XML
     const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>

@@ -9,6 +9,7 @@ import { Box } from "@chakra-ui/react";
 import { Block as Navbar } from '@/src/components/blocks/marketing-navbars/navbar-island/block';
 import { Block as Footer } from '@/src/components/blocks/footers/footer-with-four-columns/block';
 import StructuredDataWrapper from "./StructuredDataWrapper";
+import { SeoHiddenLinksServer } from "./components/SeoHiddenLinksServer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -195,6 +196,8 @@ export default function RootLayout({
               <SupabaseAuthProvider>
                 <Provider>
                   <Box bg="gray.100">
+                    {/* SEO Hidden Links - Internal links for all programmatic pages */}
+                    <SeoHiddenLinksServer />
                     <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
                       {children}
                     </ConditionalLayout>

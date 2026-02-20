@@ -4,18 +4,13 @@ import Link from 'next/link';
 import { useQuery } from 'convex/react';
 import { api } from '../../convex/_generated/api';
 import siteConfig from '@/src/config/siteConfig';
-import { SeoHiddenLinks } from './SeoHiddenLinks';
 
 export default function Footer() {
   const recentPosts = useQuery(api.posts.getRecentPosts, { limit: 5 });
 
   return (
-    <>
-      {/* SEO Hidden Links - For search engine discovery */}
-      <SeoHiddenLinks />
-
-      <footer className="border-t bg-background">
-        <div className="container py-12 md:py-16">
+    <footer className="border-t bg-background">
+      <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
@@ -94,6 +89,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-    </>
   );
 }

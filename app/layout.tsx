@@ -152,7 +152,7 @@ export default function RootLayout({
         />
         {/* Structured Data - Combined Organization & Website */}
         <StructuredDataWrapper />
-
+        <meta name="linksindexer-site-verification" content="f4e5bfc7cf21ea2ab5130cf9f64b50c13b10e7603a78a51e098525db8969c1a3"></meta>
         {/* Ahrefs Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"

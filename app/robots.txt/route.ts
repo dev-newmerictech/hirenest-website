@@ -1,4 +1,3 @@
-
 import { NextResponse } from 'next/server';
 
 // Force Node.js runtime to avoid edge runtime module loading issues
@@ -6,35 +5,243 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-static';
 
 export async function GET() {
-    const baseUrl = 'https://hirenest.ai';
-
     const robotsTxt = `# =============================================================================
-# Robots.txt for HireNest
+# Robots.txt for HireNest.ai
 # AI-Powered Recruitment Platform
-# Updated: February 2026
+# Last Updated: February 2026
 # =============================================================================
 
-# Allow LinksIndexerBot for automated indexing
-User-agent: LinksIndexerBot
-Allow: /
-
-# Default for all other bots
+# -----------------------------------------------------------------------------
+# UNIVERSAL RULES
+# -----------------------------------------------------------------------------
 User-agent: *
-
-# Block system & private routes
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /tmp/
 Disallow: /cdn-cgi/
 
-# Block query parameter URLs to protect crawl budget
-Disallow: /*?*
+# Do NOT block Next.js assets (important for favicon & rendering)
+Allow: /_next/static/
+Allow: /_next/image/
+
+# Allow essential assets
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.ico$
+Allow: /*.woff$
+Allow: /*.woff2$
+
+# Explicit favicon access (critical for Google)
+Allow: /images/favicon.ico
+Allow: /favicon.svg
+
+Crawl-delay: 1
 
 # -----------------------------------------------------------------------------
-# SITEMAPS
+# GOOGLE
+# -----------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# -----------------------------------------------------------------------------
+# OTHER SEARCH ENGINES
+# -----------------------------------------------------------------------------
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: Brave-Search-Bot
+Allow: /
+
+# -----------------------------------------------------------------------------
+# AI / LLM BOTS
+# -----------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# -----------------------------------------------------------------------------
+# SEO & AUDIT BOTS
+# -----------------------------------------------------------------------------
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: AhrefsSiteAudit
+Allow: /
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 2
+
+User-agent: rogerbot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+User-agent: ScreamingFrogSEOSpider
+Allow: /
+
+# -----------------------------------------------------------------------------
+# INDEXING BOTS
+# -----------------------------------------------------------------------------
+User-agent: LinksIndexerBot
+Allow: /
+
+# -----------------------------------------------------------------------------
+# SOCIAL MEDIA PREVIEW BOTS
+# -----------------------------------------------------------------------------
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# -----------------------------------------------------------------------------
+# BAD BOTS (BLOCK)
+# -----------------------------------------------------------------------------
+User-agent: HTTrack
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: Offline Explorer
+Disallow: /
+
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: EmailWolf
+Disallow: /
+
+User-agent: ExtractorPro
+Disallow: /
+
+User-agent: CherryPicker
+Disallow: /
+
+User-agent: ChinaClaw
+Disallow: /
+
+User-agent: Grabber
+Disallow: /
+
+User-agent: Teleport
+Disallow: /
+
+User-agent: Wget
+Disallow: /
+
+User-agent: SiteSnagger
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: WWW-Collector-E
+Disallow: /
+
+User-agent: LinkWalker
+Disallow: /
+
+# -----------------------------------------------------------------------------
+# CANONICAL HOST (for Yandex and other search engines)
+# -----------------------------------------------------------------------------
+Host: https://hirenest.ai
+
+# -----------------------------------------------------------------------------
+# CLEAN PARAMS (strip tracking parameters from URLs)
+# -----------------------------------------------------------------------------
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&ref&fbclid&gclid&msclkid
+
+# -----------------------------------------------------------------------------
+# SITEMAPS & FEEDS
 # -----------------------------------------------------------------------------
 Sitemap: https://hirenest.ai/sitemap.xml
+Sitemap: https://hirenest.ai/main-sitemap.xml
 Sitemap: https://hirenest.ai/interview-questions-sitemap.xml
 Sitemap: https://hirenest.ai/resume-keywords-sitemap.xml
 Sitemap: https://hirenest.ai/job-description-sitemap.xml

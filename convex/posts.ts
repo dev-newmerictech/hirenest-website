@@ -1945,28 +1945,21 @@ export const getSitemapPostsBatch = query({
 });
 
 // Get total count of published posts for sitemap index
+// Note: Convex only allows a single paginated query per function, so we fetch up to 1000 posts
+// This is practical for sitemaps as we don't need more than 50 pages of 20 posts each
 export const getSitemapPostsCount = query({
   args: {},
   returns: v.number(),
   handler: async (ctx) => {
-    // Always count published non-unlisted posts dynamically to ensure accuracy
-    // We count in batches of 50 to ensure we don't hit memory limits with large datasets
-    let count = 0;
-    let cursor: string | null = null;
-    let isDone = false;
+    // Fetch a large batch in a single pagination call
+    const batch = await ctx.db
+      .query("posts")
+      .withIndex("by_published_date", (q) => q.eq("published", true))
+      .order("desc")
+      .paginate({ cursor: null, numItems: 1000 });
 
-    while (!isDone) {
-      const batch: { page: any[]; continueCursor: string; isDone: boolean } = await ctx.db
-        .query("posts")
-        .withIndex("by_published_date", (q: any) => q.eq("published", true))
-        .paginate({ cursor, numItems: 50 });
-
-      count += batch.page.filter((p: any) => !p.unlisted).length;
-      cursor = batch.continueCursor as string; // Explicit cast since paginate returns string
-      isDone = batch.isDone;
-    }
-
-    return count;
+    // Count only non-unlisted posts
+    return batch.page.filter((p: any) => !p.unlisted).length;
   },
 });
 

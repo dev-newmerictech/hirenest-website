@@ -6,12 +6,16 @@ import {
 } from '@chakra-ui/react'
 import { CoverLetterHero } from '../../components/programmatic-seo/CoverLetterHero'
 import { CoverLetterContent } from '../../components/programmatic-seo/CoverLetterContent'
-import { ProgrammaticSeoStructuredData } from '../../components/programmatic-seo/StructuredData'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
 import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
 import { generatePageMetadata } from '../../lib/metadata'
 import Link from 'next/link'
+// New SEO components
+import { JsonLdSchema, BreadcrumbNav, InternalLinking } from '../../components/seo'
+import { getRelatedPages, getCrossTemplateLinks, getBreadcrumbItems } from '../../lib/seo/helpers'
+import { buildPageSchemas } from '../../lib/seo/core/schema-builder-factory'
+import { SEO_CONFIG } from '../../lib/seo/core/constants'
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -73,15 +77,31 @@ export default async function CoverLetterPage({ params }: PageProps) {
         notFound()
     }
 
+    // Get related pages for internal linking
+    const relatedPages = getRelatedPages(slug, 'cover-letter', 6)
+    const crossTemplateLinks = getCrossTemplateLinks(slug, job.title)
+    const breadcrumbItems = getBreadcrumbItems('cover-letter', job.title, slug)
+
+    // Build schema.org structured data
+    const pageUrl = `${SEO_CONFIG.BASE_URL}/cover-letter/${slug}`
+    const faqItems = [
+        { question: `How do I write a cover letter for a ${job.title} position?`, answer: `Focus on your relevant experience, skills that match the job requirements, and your enthusiasm for the role. Use specific examples from your background that demonstrate your fit for the ${job.title} position.` },
+        { question: `What should I include in my ${job.title} cover letter?`, answer: `Include your contact information, a professional greeting, a compelling opening paragraph, 2-3 body paragraphs highlighting relevant qualifications, and a strong closing with call to action.` },
+        { question: `How long should a ${job.title} cover letter be?`, answer: `Keep it concise - typically 3-4 short paragraphs or about 250-350 words. Recruiters spend little time scanning cover letters, so make every sentence count.` }
+    ]
+    const schemas = buildPageSchemas({
+        title: `${job.title} Cover Letter Examples`,
+        description: `Browse professional ${job.title} cover letter examples and templates for all experience levels. Learn to write a winning cover letter with tips.`,
+        url: pageUrl,
+        faqs: faqItems,
+        breadcrumbs: breadcrumbItems,
+        dateModified: new Date().toISOString()
+    })
+
     return (
         <Box>
-            {/* Structured Data - SEO */}
-            <ProgrammaticSeoStructuredData
-                jobTitle={job.title}
-                pageType="cover-letter"
-                slug={slug}
-                description={`Professional ${job.title} cover letter examples and templates for all experience levels. Write a winning cover letter with our proven samples and tips.`}
-            />
+            {/* Structured Data - SEO (New Schema Builder) */}
+            <JsonLdSchema schemas={schemas} />
 
             {/* Hero Section */}
             <CoverLetterHero
@@ -98,21 +118,47 @@ export default async function CoverLetterPage({ params }: PageProps) {
                 ]}
             />
 
-            <HStack justifyContent="center" gap={2} mt={6} fontSize="sm" color="gray.500" flexWrap="wrap" pb={{ base: '16', md: '20' }}>
-                <ChakraLink as={Link} href="/" display="flex" alignItems="center" gap={1} color="gray.500">
-                    Home
-                </ChakraLink>
-                <Text>/</Text>
-                <ChakraLink as={Link} href="/cover-letter" color="gray.500">Cover Letters</ChakraLink>
-                <Text>/</Text>
-                <Text color="#4241ff" fontWeight="600">{job.title}</Text>
-            </HStack>
+            {/* Breadcrumb Navigation - New Component */}
+            <Box justifyContent="center" display="flex" py={6} px={4}>
+                <BreadcrumbNav
+                    items={breadcrumbItems.map(item => ({
+                        name: item.name,
+                        url: item.url,
+                        position: 0
+                    }))}
+                    separator="chevron"
+                />
+            </Box>
             {/* Content Section */}
             <CoverLetterContent
                 jobTitle={job.title}
                 category={job.category}
                 aliases={job.aliases}
             />
+
+            {/* Related Roles - Internal Linking */}
+            {relatedPages.length > 0 && (
+                <InternalLinking
+                    title="Related Cover Letters"
+                    description="Explore cover letter examples for similar roles."
+                    links={relatedPages}
+                    columns={3}
+                    variant="card"
+                    maxLinks={6}
+                />
+            )}
+
+            {/* Cross-Template Links - Same Job, Different Templates */}
+            {crossTemplateLinks.length > 0 && (
+                <InternalLinking
+                    title={`More Resources for ${job.title}`}
+                    description={`Explore additional resources and guides specifically for ${job.title} positions.`}
+                    links={crossTemplateLinks}
+                    columns={3}
+                    variant="card"
+                    maxLinks={6}
+                />
+            )}
 
             {/* Final CTA */}
             <CTA />

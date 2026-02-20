@@ -11,24 +11,26 @@ export default function StructuredDataWrapper() {
         return null;
     }
 
+    // Extract the actual schema objects (without @context) for @graph array
+    const { '@context': _orgCtx, ...orgSchema } = organizationSchema;
+    const { '@context': _webCtx, ...webSchema } = websiteSchema;
+
     return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                    '@context': 'https://schema.org',
-                    '@graph': [
-                        // Remove @context from individual schemas when using @graph
-                        { ...organizationSchema, '@context': undefined },
-                        { ...websiteSchema, '@context': undefined },
-                    ].map(schema => {
-                        // Clean up undefined values
-                        // @ts-ignore
-                        const { '@context': _, ...rest } = schema;
-                        return rest;
-                    }),
-                }),
-            }}
-        />
+        <>
+            {/* Organization Schema */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(organizationSchema),
+                }}
+            />
+            {/* WebSite Schema */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(websiteSchema),
+                }}
+            />
+        </>
     );
 }

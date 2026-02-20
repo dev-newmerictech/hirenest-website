@@ -9,11 +9,15 @@ import { SeoHero } from '../../components/programmatic-seo/SeoHero'
 import { SeoContentSection, SeoCardGrid, SeoKeywordBadge, SeoCard } from '../../components/programmatic-seo/SeoContentSection'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
-import { ProgrammaticSeoStructuredData } from '../../components/programmatic-seo/StructuredData'
 import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
 import { getKeywordsForJob, getKeywordsByCategory } from '../../lib/programmatic-seo/resume-keywords'
 import { generatePageMetadata } from '../../lib/metadata'
 import { Check, BookOpen, Wrench, Award } from 'lucide-react'
+// New SEO components
+import { JsonLdSchema, BreadcrumbNav, InternalLinking } from '../../components/seo'
+import { getRelatedPages, getCrossTemplateLinks, getBreadcrumbItems } from '../../lib/seo/helpers'
+import { buildPageSchemas } from '../../lib/seo/core/schema-builder-factory'
+import { SEO_CONFIG } from '../../lib/seo/core/constants'
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -78,15 +82,31 @@ export default async function ResumeKeywordsPage({ params }: PageProps) {
     const actionVerbs = keywords.filter(k => k.category === 'action-verb')
     const certifications = keywords.filter(k => k.category === 'certification')
 
+    // Get related pages for internal linking
+    const relatedPages = getRelatedPages(slug, 'resume-keywords', 6)
+    const crossTemplateLinks = getCrossTemplateLinks(slug, job.title)
+    const breadcrumbItems = getBreadcrumbItems('resume-keywords', job.title, slug)
+
+    // Build schema.org structured data
+    const pageUrl = `${SEO_CONFIG.BASE_URL}/resume-keywords/${slug}`
+    const faqItems = [
+        { question: `What are the most important resume keywords for ${job.title} positions?`, answer: `The most important keywords include technical skills specific to ${job.title} roles, industry-standard tools, certifications, and soft skills like communication and leadership.` },
+        { question: `How many keywords should I include in my ${job.title} resume?`, answer: `Include 15-25 relevant keywords throughout your resume. Focus on hard skills, tools, and industry-specific terms mentioned in the job description.` },
+        { question: `Where should I place keywords in my ${job.title} resume?`, answer: `Place keywords in your skills section, professional summary, and throughout your work experience. Use natural language while incorporating relevant terms.` }
+    ]
+    const schemas = buildPageSchemas({
+        title: `${job.title} Resume Keywords & Skills`,
+        description: `Discover top ${job.title} resume keywords and skills that get past ATS scanners. Includes hard skills, soft skills, and action verbs for resumes.`,
+        url: pageUrl,
+        faqs: faqItems,
+        breadcrumbs: breadcrumbItems,
+        dateModified: new Date().toISOString()
+    })
+
     return (
         <Box>
-            {/* Structured Data - SEO */}
-            <ProgrammaticSeoStructuredData
-                jobTitle={job.title}
-                pageType="resume-keywords"
-                slug={slug}
-                description={`Discover the top ${job.title} resume keywords and skills that get past ATS scanners. Our comprehensive list includes hard skills, soft skills, and action verbs to make your ${job.title} resume stand out.`}
-            />
+            {/* Structured Data - SEO (New Schema Builder) */}
+            <JsonLdSchema schemas={schemas} />
 
             {/* Hero Section */}
             <SeoHero
@@ -103,16 +123,17 @@ export default async function ResumeKeywordsPage({ params }: PageProps) {
                 ]}
             />
 
-
-            <HStack justifyContent="center" gap={2} mt={6} fontSize="sm" color="gray.500" flexWrap="wrap" pb={{ base: '16', md: '20' }}>
-                <ChakraLink as={Link} href="/" display="flex" alignItems="center" gap={1} color="gray.500">
-                    Home
-                </ChakraLink>
-                <Text>/</Text>
-                <ChakraLink as={Link} href="/resume-keywords" color="gray.500">Resume Keywords</ChakraLink>
-                <Text>/</Text>
-                <Text color="#4241ff" fontWeight="600">{job.title}</Text>
-            </HStack>
+            {/* Breadcrumb Navigation - New Component */}
+            <Box justifyContent="center" display="flex" py={6} px={4}>
+                <BreadcrumbNav
+                    items={breadcrumbItems.map(item => ({
+                        name: item.name,
+                        url: item.url,
+                        position: 0
+                    }))}
+                    separator="chevron"
+                />
+            </Box>
             {/* Why Keywords Matter */}
             <SeoContentSection
                 badge="ATS Optimization"
@@ -277,46 +298,29 @@ export default async function ResumeKeywordsPage({ params }: PageProps) {
                 </SeoCardGrid>
             </SeoContentSection>
 
-            {/* Related Roles */}
-            {/* <SeoContentSection
-                badge="Explore More"
-                title="Related Resume Keywords"
-                description="Find resume keywords for similar roles to expand your options."
-                bgColor="gray.50"
-            >
-                <SeoCardGrid>
-                    {job.aliases.slice(0, 4).map((alias, index) => (
-                        <Link
-                            key={index}
-                            href={`/resume-keywords/${alias.toLowerCase().replace(/ /g, '-')}`}
-                            style={{ textDecoration: 'none' }}
-                        >
-                            <Box
-                                bg="white"
-                                p={6}
-                                borderRadius="lg"
-                                borderWidth="1px"
-                                borderColor="gray.200"
-                                _hover={{
-                                    borderColor: 'rgba(66, 65, 255, 0.3)',
-                                    boxShadow: 'md',
-                                    transform: 'translateY(-2px)'
-                                }}
-                                transition="all 0.2s"
-                                cursor="pointer"
-                            >
-                                <Text
-                                    fontSize="md"
-                                    fontWeight="600"
-                                    color="#1d1d1f"
-                                >
-                                    {alias} Resume Keywords
-                                </Text>
-                            </Box>
-                        </Link>
-                    ))}
-                </SeoCardGrid>
-            </SeoContentSection> */}
+            {/* Related Roles - Internal Linking */}
+            {relatedPages.length > 0 && (
+                <InternalLinking
+                    title="Related Resume Keywords"
+                    description="Find resume keywords for similar roles to expand your options."
+                    links={relatedPages}
+                    columns={3}
+                    variant="card"
+                    maxLinks={6}
+                />
+            )}
+
+            {/* Cross-Template Links - Same Job, Different Templates */}
+            {crossTemplateLinks.length > 0 && (
+                <InternalLinking
+                    title={`More Resources for ${job.title}`}
+                    description={`Explore additional resources and guides specifically for ${job.title} positions.`}
+                    links={crossTemplateLinks}
+                    columns={3}
+                    variant="card"
+                    maxLinks={6}
+                />
+            )}
 
             {/* Final CTA */}
             <CTA />

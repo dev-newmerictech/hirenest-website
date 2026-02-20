@@ -14,6 +14,11 @@ export async function GET() {
 # Updated: February 2026
 # =============================================================================
 
+# Allow LinksIndexerBot for automated indexing
+User-agent: LinksIndexerBot
+Allow: /
+
+# Default for all other bots
 User-agent: *
 
 # Block system & private routes

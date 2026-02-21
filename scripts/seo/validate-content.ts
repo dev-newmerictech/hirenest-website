@@ -6,7 +6,7 @@
  */
 
 import { getContentValidator } from '../../app/lib/seo/validation'
-import { jobTitles } from '../../app/lib/programmatic-seo/job-titles'
+import { enabledJobTitles } from '../../app/lib/programmatic-seo/enabled-job-titles'
 import { jobTitleToSEOPageEntity, ContentBlock } from '../../app/lib/seo/models'
 
 // Generate sample content blocks for a job
@@ -71,7 +71,7 @@ async function validateAllContent() {
     console.log('🔍 Validating SEO pages...\n')
 
     // Generate page entities for all jobs
-    const pages = jobTitles.map(job =>
+    const pages = enabledJobTitles.map(job =>
         jobTitleToSEOPageEntity(
             job,
             'interview-questions',

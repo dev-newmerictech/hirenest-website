@@ -8,7 +8,7 @@ import { JobDescriptionHero } from '../../components/programmatic-seo/JobDescrip
 import { JobDescriptionContent } from '../../components/programmatic-seo/JobDescriptionContent'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
-import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
+import { getJobBySlug, enabledJobTitles } from '../../lib/programmatic-seo/enabled-job-titles'
 import { generatePageMetadata } from '../../lib/metadata'
 import Link from 'next/link'
 // New SEO components
@@ -20,10 +20,9 @@ import { SEO_CONFIG } from '../../lib/seo/core/constants'
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
 
-// Generate static params for all job titles
+// Generate static params only for enabled job titles (that have content)
 export async function generateStaticParams() {
-    const { jobTitles } = await import('../../lib/programmatic-seo/job-titles')
-    return jobTitles.map((job) => ({
+    return enabledJobTitles.map((job) => ({
         slug: job.slug,
     }))
 }
@@ -42,8 +41,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const title = `${job.title} Job Description`
-    const description = `Explore ${job.title} job description with key responsibilities, requirements, salary, and career path. Learn what it takes to succeed.`
+    // Title: max 55 characters
+    const title = `${job.title} Job Description`.slice(0, 55)
+
+    // Description: max 150 characters
+    const description = `${job.title} job description: responsibilities, requirements, salary info, and career path. Learn what it takes to succeed.`
+        .slice(0, 150)
 
     return generatePageMetadata({
         title,

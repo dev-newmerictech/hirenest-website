@@ -4,7 +4,7 @@ import { Box, VStack, HStack, Text, Badge, SimpleGrid } from '@chakra-ui/react'
 import { SeoHero } from '../components/programmatic-seo/SeoHero'
 import { SeoContentSection } from '../components/programmatic-seo/SeoContentSection'
 import { IndexPageStructuredData } from '../components/programmatic-seo/StructuredData'
-import { getJobsByCategory, getJobBySlug } from '../lib/programmatic-seo/job-titles'
+import { getJobsByCategory, getJobBySlug } from '../lib/programmatic-seo/enabled-job-titles'
 import { generatePageMetadata } from '../lib/metadata'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
@@ -14,7 +14,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
     title: 'Salary Guides for All Jobs & Industries',
-    description: 'Compare salary guides by experience, location. Get negotiation tips for your career.',
+    description: 'Compare salary guides by experience level and location. Get expert negotiation tips and comprehensive pay data for your career advancement.',
     path: '/salary',
     keywords: [
         'salary guides',

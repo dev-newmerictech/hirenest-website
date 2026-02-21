@@ -9,7 +9,7 @@ import { SeoHero } from '../../components/programmatic-seo/SeoHero'
 import { SeoContentSection, SeoListItem, SeoCardGrid, SeoCard } from '../../components/programmatic-seo/SeoContentSection'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
-import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
+import { getJobBySlug, enabledJobTitles } from '../../lib/programmatic-seo/enabled-job-titles'
 import { getQuestionsForJob } from '../../lib/programmatic-seo/interview-questions'
 import { generatePageMetadata } from '../../lib/metadata'
 // New SEO components
@@ -21,10 +21,9 @@ import { SEO_CONFIG } from '../../lib/seo/core/constants'
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
 
-// Generate static params for all job titles
+// Generate static params only for enabled job titles (that have content)
 export async function generateStaticParams() {
-    const { jobTitles } = await import('../../lib/programmatic-seo/job-titles')
-    return jobTitles.map((job) => ({
+    return enabledJobTitles.map((job) => ({
         slug: job.slug,
     }))
 }
@@ -43,8 +42,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const title = `${job.title} Interview Questions`
-    const description = `Prepare for your ${job.title} interview with commonly asked questions and expert answers. Get proven strategies and tips to ace your interview.`
+    // Title: max 55 characters
+    const title = `${job.title} Interview Questions`.slice(0, 55)
+
+    // Description: max 150 characters
+    const description = `Prepare for your ${job.title} interview with 10+ questions and expert answers. Ace your interview with proven strategies.`
+        .slice(0, 150)
 
     return generatePageMetadata({
         title,

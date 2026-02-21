@@ -84,6 +84,31 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* SEO Resources */}
+        <div className="mt-8 pt-6 border-t">
+          <h3 className="font-semibold text-sm mb-3">Career Resources</h3>
+          <div className="flex flex-wrap gap-3 text-sm">
+            <Link href="/interview-questions" className="text-muted-foreground hover:text-foreground">
+              Interview Questions
+            </Link>
+            <Link href="/resume-keywords" className="text-muted-foreground hover:text-foreground">
+              Resume Keywords
+            </Link>
+            <Link href="/salary" className="text-muted-foreground hover:text-foreground">
+              Salary Guides
+            </Link>
+            <Link href="/cover-letter" className="text-muted-foreground hover:text-foreground">
+              Cover Letters
+            </Link>
+            <Link href="/job-description" className="text-muted-foreground hover:text-foreground">
+              Job Descriptions
+            </Link>
+            <Link href="/seo-sitemap" className="text-muted-foreground hover:text-foreground">
+              Site Map
+            </Link>
+          </div>
+        </div>
+
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
         </div>

@@ -5,7 +5,7 @@ import { SeoHero } from '../components/programmatic-seo/SeoHero'
 import { SeoContentSection } from '../components/programmatic-seo/SeoContentSection'
 import { IndexPageStructuredData } from '../components/programmatic-seo/StructuredData'
 import { generatePageMetadata } from '../lib/metadata'
-import { jobTitles, getJobsByCategory } from '../lib/programmatic-seo/job-titles'
+import { enabledJobTitles, getJobsByCategory } from '../lib/programmatic-seo/enabled-job-titles'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
 
@@ -14,7 +14,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
     title: 'Interview Questions & Answers for All Jobs',
-    description: 'Ace your job interview with expert questions, answers, and tips. 50+ roles covered with proven strategies.',
+    description: 'Ace your job interview with 1,100+ expert questions and answers. Get proven strategies, tips, and advice for 50+ job roles to land your dream position.',
     path: '/interview-questions',
     keywords: [
         'interview questions',
@@ -185,7 +185,7 @@ export default function InterviewQuestionsIndexPage() {
                 bgColor="white"
             >
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={4}>
-                    {jobTitles.slice(0, 9).map((job) => (
+                    {enabledJobTitles.slice(0, 9).map((job) => (
                         <Link
                             key={job.id}
                             href={`/interview-questions/${job.slug}`}

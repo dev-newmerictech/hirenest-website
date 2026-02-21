@@ -49,6 +49,7 @@ export function JobDescriptionHero({
                         color="black"
                         lineHeight="1.1"
                         letterSpacing="tight"
+                        as={'h1'}
                     >
                         {title}{' '}
                         <Text as="span" color="#4241ff">

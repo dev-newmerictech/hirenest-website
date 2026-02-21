@@ -5,7 +5,7 @@ import { SeoHero } from '../components/programmatic-seo/SeoHero'
 import { SeoContentSection } from '../components/programmatic-seo/SeoContentSection'
 import { IndexPageStructuredData } from '../components/programmatic-seo/StructuredData'
 import { generatePageMetadata } from '../lib/metadata'
-import { jobTitles, getJobsByCategory } from '../lib/programmatic-seo/job-titles'
+import { enabledJobTitles, getJobsByCategory } from '../lib/programmatic-seo/enabled-job-titles'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
 
@@ -14,7 +14,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
     title: 'Resume Keywords & Skills for All Jobs',
-    description: 'Optimize your resume with ATS-friendly keywords. Get past scanners and impress recruiters with proven skills.',
+    description: 'Optimize your resume with ATS-friendly keywords for 1,100+ jobs. Get past scanners and impress recruiters with our proven skills and action verbs.',
     path: '/resume-keywords',
     keywords: [
         'resume keywords',
@@ -185,7 +185,7 @@ export default function ResumeKeywordsIndexPage() {
                 bgColor="white"
             >
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={4}>
-                    {jobTitles.slice(0, 9).map((job) => (
+                    {enabledJobTitles.slice(0, 9).map((job) => (
                         <Link
                             key={job.id}
                             href={`/resume-keywords/${job.slug}`}

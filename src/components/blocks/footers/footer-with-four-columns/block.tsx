@@ -183,6 +183,14 @@ export function Block() {
                     {link.label}
                   </Link>
                 ))}
+                <Link
+                  href="/seo-sitemap"
+                  fontSize={{ base: 'md' }}
+                  color="fg.muted"
+                  _hover={{ color: 'brand.500' }}
+                >
+                  Sitemap
+                </Link>
               </Stack>
             </VStack>
           </SimpleGrid>

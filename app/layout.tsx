@@ -9,7 +9,6 @@ import { Box } from "@chakra-ui/react";
 import { Block as Navbar } from '@/src/components/blocks/marketing-navbars/navbar-island/block';
 import { Block as Footer } from '@/src/components/blocks/footers/footer-with-four-columns/block';
 import StructuredDataWrapper from "./StructuredDataWrapper";
-import { jobTitles } from "./lib/programmatic-seo/job-titles";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -196,61 +195,6 @@ export default function RootLayout({
               <SupabaseAuthProvider>
                 <Provider>
                   <Box bg="gray.100">
-                    {/* SEO Hidden Links - Internal links for all programmatic pages */}
-                    <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="true">
-                      <nav aria-label="Site navigation for crawlers">
-                        <div>
-                          <h2>Interview Questions</h2>
-                          <ul>
-                            {jobTitles.map((job) => (
-                              <li key={`iq-${job.slug}`}>
-                                <a href={`/interview-questions/${job.slug}`}>{job.title} Interview Questions</a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h2>Resume Keywords</h2>
-                          <ul>
-                            {jobTitles.map((job) => (
-                              <li key={`rk-${job.slug}`}>
-                                <a href={`/resume-keywords/${job.slug}`}>{job.title} Resume Keywords</a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h2>Salary Guides</h2>
-                          <ul>
-                            {jobTitles.map((job) => (
-                              <li key={`sal-${job.slug}`}>
-                                <a href={`/salary/${job.slug}`}>{job.title} Salary</a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h2>Cover Letters</h2>
-                          <ul>
-                            {jobTitles.map((job) => (
-                              <li key={`cl-${job.slug}`}>
-                                <a href={`/cover-letter/${job.slug}`}>{job.title} Cover Letter</a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h2>Job Descriptions</h2>
-                          <ul>
-                            {jobTitles.map((job) => (
-                              <li key={`jd-${job.slug}`}>
-                                <a href={`/job-description/${job.slug}`}>{job.title} Job Description</a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </nav>
-                    </div>
                     <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
                       {children}
                     </ConditionalLayout>

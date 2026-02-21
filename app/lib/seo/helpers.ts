@@ -5,7 +5,7 @@
  * Provides utilities to get internal links and related pages
  */
 
-import { jobTitles } from '../programmatic-seo/job-titles'
+import { enabledJobTitles } from '../programmatic-seo/enabled-job-titles'
 import { SEO_CONFIG } from './core/constants'
 
 export interface RelatedPage {
@@ -17,32 +17,43 @@ export interface RelatedPage {
 
 /**
  * Get related pages for a job based on category and aliases
+ * Only links to job titles that exist in jobTitles database (no 404s)
  */
 export function getRelatedPages(
     jobSlug: string,
     template: 'interview-questions' | 'resume-keywords' | 'salary' | 'cover-letter' | 'job-description' = 'interview-questions',
     limit: number = 6
 ): RelatedPage[] {
-    const job = jobTitles.find(j => j.slug === jobSlug)
+    const job = enabledJobTitles.find(j => j.slug === jobSlug)
     if (!job) return []
 
     const related: RelatedPage[] = []
 
-    // Add pages for aliases (same template)
+    // Add pages for aliases that exist as actual job titles (no 404s)
     for (const alias of job.aliases) {
         if (related.length >= limit) break
-        const aliasSlug = alias.toLowerCase().replace(/ /g, '-')
-        related.push({
-            url: `${SEO_CONFIG.BASE_URL}/${template}/${aliasSlug}`,
-            title: `${alias} ${formatTemplateName(template)}`,
-            description: `Prepare for your ${alias} interview with our comprehensive guide.`,
-            category: job.category
-        })
+
+        // Find if this alias maps to an actual job title
+        const matchingJob = enabledJobTitles.find(j =>
+            j.title.toLowerCase() === alias.toLowerCase() ||
+            j.slug === alias.toLowerCase().replace(/ /g, '-')
+        )
+
+        if (matchingJob) {
+            related.push({
+                url: `${SEO_CONFIG.BASE_URL}/${template}/${matchingJob.slug}`,
+                title: `${matchingJob.title} ${formatTemplateName(template)}`,
+                description: `Prepare for your ${matchingJob.title} interview with our comprehensive guide.`,
+                category: matchingJob.category
+            })
+        }
     }
 
-    // Add pages from same category
-    const sameCategory = jobTitles.filter(j =>
-        j.category === job.category && j.slug !== jobSlug && !job.aliases.some(a => a.toLowerCase() === j.title.toLowerCase())
+    // Add pages from same category (excluding current job)
+    const sameCategory = enabledJobTitles.filter(j =>
+        j.category === job.category &&
+        j.slug !== jobSlug &&
+        !job.aliases.some(a => a.toLowerCase() === j.title.toLowerCase())
     )
 
     for (const relatedJob of sameCategory) {
@@ -60,6 +71,7 @@ export function getRelatedPages(
 
 /**
  * Get cross-template links for the same job
+ * All links use the same jobSlug, so they will all return 200
  */
 export function getCrossTemplateLinks(
     jobSlug: string,
@@ -92,7 +104,7 @@ export function getPopularPages(
     limit: number = 10
 ): RelatedPage[] {
     // Sort by growth rate and salary as proxy for popularity
-    const sorted = [...jobTitles]
+    const sorted = [...enabledJobTitles]
         .sort((a, b) => {
             const scoreA = (a.growthRate || 0) + (a.averageSalary ? a.averageSalary / 10000 : 0)
             const scoreB = (b.growthRate || 0) + (b.averageSalary ? b.averageSalary / 10000 : 0)

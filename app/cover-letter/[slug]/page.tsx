@@ -8,7 +8,7 @@ import { CoverLetterHero } from '../../components/programmatic-seo/CoverLetterHe
 import { CoverLetterContent } from '../../components/programmatic-seo/CoverLetterContent'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
-import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
+import { getJobBySlug, enabledJobTitles } from '../../lib/programmatic-seo/enabled-job-titles'
 import { generatePageMetadata } from '../../lib/metadata'
 import Link from 'next/link'
 // New SEO components
@@ -20,10 +20,9 @@ import { SEO_CONFIG } from '../../lib/seo/core/constants'
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
 
-// Generate static params for all job titles
+// Generate static params only for enabled job titles (that have content)
 export async function generateStaticParams() {
-    const { jobTitles } = await import('../../lib/programmatic-seo/job-titles')
-    return jobTitles.map((job) => ({
+    return enabledJobTitles.map((job) => ({
         slug: job.slug,
     }))
 }
@@ -42,8 +41,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const title = `${job.title} Cover Letter Examples`
-    const description = `Browse professional ${job.title} cover letter examples and templates for all experience levels. Learn to write a winning cover letter with tips.`
+    // Title: max 55 characters
+    const title = `${job.title} Cover Letter`.slice(0, 55)
+
+    // Description: max 150 characters
+    const description = `Professional ${job.title} cover letter examples and templates. Write a winning cover letter with our expert tips and samples.`
+        .slice(0, 150)
 
     return generatePageMetadata({
         title,

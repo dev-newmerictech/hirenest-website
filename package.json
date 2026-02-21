@@ -11,7 +11,10 @@
     "turbo:dev": "turbo run dev",
     "turbo:build": "turbo run build",
     "turbo:start": "turbo run start",
-    "turbo:lint": "turbo run lint"
+    "turbo:lint": "turbo run lint",
+    "test:urls": "npx tsx scripts/extract-urls.ts && npx tsx scripts/test-urls.ts",
+    "test:internal-links": "npx tsx scripts/test-internal-links.ts",
+    "test:all": "npm run build && npm run test:urls && npm run test:internal-links"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",

@@ -4,7 +4,7 @@ import { Box, VStack, HStack, Text, Badge, SimpleGrid } from '@chakra-ui/react'
 import { SeoHero } from '../components/programmatic-seo/SeoHero'
 import { SeoContentSection } from '../components/programmatic-seo/SeoContentSection'
 import { IndexPageStructuredData } from '../components/programmatic-seo/StructuredData'
-import { getJobsByCategory } from '../lib/programmatic-seo/job-titles'
+import { getJobsByCategory } from '../lib/programmatic-seo/enabled-job-titles'
 import { generatePageMetadata } from '../lib/metadata'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
@@ -14,7 +14,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
     title: 'Job Descriptions for All Career Paths',
-    description: 'Explore job descriptions with responsibilities, requirements, salary. Find your dream career path today.',
+    description: 'Explore 1,100+ job descriptions with key responsibilities, requirements, and salary info. Find your ideal career path and succeed in your job search.',
     path: '/job-description',
     keywords: [
         'job descriptions',

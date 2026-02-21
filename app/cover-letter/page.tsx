@@ -4,7 +4,7 @@ import { Box, VStack, HStack, Text, Badge, SimpleGrid } from '@chakra-ui/react'
 import { SeoHero } from '../components/programmatic-seo/SeoHero'
 import { SeoContentSection } from '../components/programmatic-seo/SeoContentSection'
 import { IndexPageStructuredData } from '../components/programmatic-seo/StructuredData'
-import { getJobsByCategory } from '../lib/programmatic-seo/job-titles'
+import { getJobsByCategory } from '../lib/programmatic-seo/enabled-job-titles'
 import { generatePageMetadata } from '../lib/metadata'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
@@ -14,7 +14,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = generatePageMetadata({
     title: 'Cover Letter Examples & Templates for All Jobs',
-    description: 'Browse 1,715+ cover letter examples and templates. Get proven samples, tips for every industry.',
+    description: 'Browse 1,100+ cover letter examples and templates for every job. Get proven samples, writing tips, and industry-specific advice to land your dream job.',
     path: '/cover-letter',
     keywords: [
         'cover letter examples',

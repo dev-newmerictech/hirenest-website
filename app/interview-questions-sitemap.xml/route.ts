@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { jobTitles } from '../lib/programmatic-seo/job-titles';
+import { enabledJobTitles } from '../lib/programmatic-seo/enabled-job-titles';
 
 // Force Node.js runtime to avoid edge runtime module loading issues with large imports
 export const runtime = 'nodejs';
@@ -9,8 +9,8 @@ const PAGE_SIZE = 50000;
 
 /**
  * Generate paginated sitemap for interview questions
+ * Only includes job titles that have actual content pages
  * Supports pagination via ?page=N query parameter
- * Automatically creates multiple sitemaps when URL count exceeds 50K
  */
 export async function GET(request: Request) {
     const url = new URL(request.url);
@@ -21,8 +21,8 @@ export async function GET(request: Request) {
 
     // Calculate pagination
     const offset = page * PAGE_SIZE;
-    const paginatedJobs = jobTitles.slice(offset, offset + PAGE_SIZE);
-    const totalPages = Math.ceil(jobTitles.length / PAGE_SIZE);
+    const paginatedJobs = enabledJobTitles.slice(offset, offset + PAGE_SIZE);
+    const totalPages = Math.ceil(enabledJobTitles.length / PAGE_SIZE);
 
     // Build URLs
     const urls = [

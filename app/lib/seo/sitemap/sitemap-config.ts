@@ -1,6 +1,6 @@
 // app/lib/seo/sitemap/sitemap-config.ts
 
-import { jobTitles } from '../../programmatic-seo/job-titles'
+import { enabledJobTitles } from '../../programmatic-seo/enabled-job-titles'
 import { PageTemplate } from '../models/link-graph'
 
 const BASE_URL = 'https://hirenest.ai'
@@ -52,10 +52,10 @@ export function createTemplateSitemapConfig(
         pageSize,
         priority,
         changeFrequency,
-        totalCount: jobTitles.length,
+        totalCount: enabledJobTitles.length,
         getContent: async (page: number, limit: number) => {
             const offset = page * limit
-            const jobs = jobTitles.slice(offset, offset + limit)
+            const jobs = enabledJobTitles.slice(offset, offset + limit)
 
             return jobs.map(job => ({
                 url: `${BASE_URL}${path}/${job.slug}`,
@@ -79,10 +79,10 @@ export const hirenestSitemapConfig: SitemapConfig = {
             pageSize: 50000,
             priority: '0.8',
             changeFrequency: 'monthly',
-            totalCount: jobTitles.length,
+            totalCount: enabledJobTitles.length,
             getContent: async (page: number, limit: number) => {
                 const offset = page * limit
-                const jobs = jobTitles.slice(offset, offset + limit)
+                const jobs = enabledJobTitles.slice(offset, offset + limit)
 
                 return jobs.map(job => ({
                     url: `${BASE_URL}/interview-questions/${job.slug}`,
@@ -98,10 +98,10 @@ export const hirenestSitemapConfig: SitemapConfig = {
             pageSize: 50000,
             priority: '0.8',
             changeFrequency: 'monthly',
-            totalCount: jobTitles.length,
+            totalCount: enabledJobTitles.length,
             getContent: async (page: number, limit: number) => {
                 const offset = page * limit
-                const jobs = jobTitles.slice(offset, offset + limit)
+                const jobs = enabledJobTitles.slice(offset, offset + limit)
 
                 return jobs.map(job => ({
                     url: `${BASE_URL}/resume-keywords/${job.slug}`,
@@ -117,10 +117,10 @@ export const hirenestSitemapConfig: SitemapConfig = {
             pageSize: 50000,
             priority: '0.7',
             changeFrequency: 'weekly',
-            totalCount: jobTitles.length,
+            totalCount: enabledJobTitles.length,
             getContent: async (page: number, limit: number) => {
                 const offset = page * limit
-                const jobs = jobTitles.slice(offset, offset + limit)
+                const jobs = enabledJobTitles.slice(offset, offset + limit)
 
                 return jobs.map(job => ({
                     url: `${BASE_URL}/salary/${job.slug}`,
@@ -136,10 +136,10 @@ export const hirenestSitemapConfig: SitemapConfig = {
             pageSize: 50000,
             priority: '0.7',
             changeFrequency: 'monthly',
-            totalCount: jobTitles.length,
+            totalCount: enabledJobTitles.length,
             getContent: async (page: number, limit: number) => {
                 const offset = page * limit
-                const jobs = jobTitles.slice(offset, offset + limit)
+                const jobs = enabledJobTitles.slice(offset, offset + limit)
 
                 return jobs.map(job => ({
                     url: `${BASE_URL}/cover-letter/${job.slug}`,
@@ -155,10 +155,10 @@ export const hirenestSitemapConfig: SitemapConfig = {
             pageSize: 50000,
             priority: '0.7',
             changeFrequency: 'monthly',
-            totalCount: jobTitles.length,
+            totalCount: enabledJobTitles.length,
             getContent: async (page: number, limit: number) => {
                 const offset = page * limit
-                const jobs = jobTitles.slice(offset, offset + limit)
+                const jobs = enabledJobTitles.slice(offset, offset + limit)
 
                 return jobs.map(job => ({
                     url: `${BASE_URL}/job-description/${job.slug}`,

@@ -139,7 +139,7 @@ export const Testimonials = () => {
                         letterSpacing="tight"
                     >Our Impact</Heading>
 
-                    <SimpleGrid columns={{ base: 2, md: 5 }} gap={10} textAlign="center">
+                    <SimpleGrid columns={{ base: 2, md: 3 }} gap={10} textAlign="center">
                         {stats.map((stat, i) => (
                             <Box key={i}>
                                 <Text fontSize={{ base: '2xl', md: '4xl' }} fontWeight="700" color="#4241ff">

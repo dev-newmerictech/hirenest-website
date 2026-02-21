@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "@/convex/_generated/api";
+import { enabledJobTitles } from '@/app/lib/programmatic-seo/enabled-job-titles';
 
 // Force Node.js runtime to avoid edge runtime module loading issues
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 // Escape XML special characters
 function escapeXml(text: string): string {
@@ -37,235 +39,272 @@ export async function GET() {
     console.error("Failed to fetch blog posts for LLMs:", error);
   }
 
-  // LLM-optimized content structure
-  const llmsContent = {
-    // ... existing metadata ...
-    metadata: {
-      name: 'Hirenest',
-      description: 'AI-powered platform connecting job seekers with employers through intelligent matching, resume building, and comprehensive hiring tools',
+  // Generate programmatic SEO pages (only enabled job titles that return 200)
+  const programmaticPages = enabledJobTitles.flatMap((job) => [
+    {
+      url: `${baseUrl}/interview-questions/${job.slug}`,
+      title: `${job.title} Interview Questions & Answers`,
+      description: `Prepare for your ${job.title} interview with commonly asked questions, expert-approved answers, and proven strategies.`,
+      type: 'interview-questions',
+    },
+    {
+      url: `${baseUrl}/resume-keywords/${job.slug}`,
+      title: `${job.title} Resume Keywords & Skills`,
+      description: `Discover the best ${job.title} resume keywords and skills to optimize your resume for ATS and impress recruiters.`,
+      type: 'resume-keywords',
+    },
+    {
+      url: `${baseUrl}/salary/${job.slug}`,
+      title: `${job.title} Salary Guide`,
+      description: `Explore ${job.title} salary data, compensation trends, and factors affecting pay in the current market.`,
+      type: 'salary-guide',
+    },
+    {
+      url: `${baseUrl}/cover-letter/${job.slug}`,
+      title: `${job.title} Cover Letter Example`,
+      description: `Professional ${job.title} cover letter example and template to help you craft a compelling application.`,
+      type: 'cover-letter',
+    },
+    {
+      url: `${baseUrl}/job-description/${job.slug}`,
+      title: `${job.title} Job Description Template`,
+      description: `Comprehensive ${job.title} job description template with responsibilities, requirements, and qualifications.`,
+      type: 'job-description',
+    },
+  ]);
+
+  // Core website pages
+  const corePages = [
+    {
       url: baseUrl,
-      lastUpdated: currentDate,
-      version: '1.0',
-      language: 'en',
-      category: 'Jobs and Recruitment Platform',
-      keywords: [
-        'job search',
-        'recruitment',
-        'AI hiring',
-        'resume builder',
-        'candidate matching',
-        'skill assessment',
-        'career development',
-        'talent acquisition',
-      ],
+      title: 'Home',
+      description: 'Main landing page connecting job seekers with employers through AI-powered recruitment platform',
+      type: 'homepage',
     },
-    // ... features ...
-    features: {
-      forJobSeekers: [
-        {
-          name: 'AI Resume Builder',
-          url: `${baseUrl}/ai-resume-builder`,
-          description: 'Create ATS-optimized resumes with AI assistance. Get personalized suggestions and formatting to stand out to employers.',
-          capabilities: ['AI-powered content suggestions', 'ATS optimization', 'Multiple templates', 'Real-time preview'],
-        },
-        {
-          name: 'Smart Job Matching',
-          url: `${baseUrl}/smart-job-matching`,
-          description: 'AI-driven job matching algorithm that analyzes your skills, experience, and preferences to recommend the most suitable positions.',
-          capabilities: ['Intelligent matching', 'Personalized recommendations', 'Skill-based filtering', 'Career path suggestions'],
-        },
-        {
-          name: 'Career Insights',
-          url: `${baseUrl}/career-insights`,
-          description: 'Get data-driven career insights, salary benchmarks, and market trends to make informed career decisions.',
-          capabilities: ['Market analytics', 'Salary insights', 'Career path analysis', 'Industry trends'],
-        },
-        {
-          name: 'Profile Optimization',
-          url: `${baseUrl}/profile-optimization`,
-          description: 'AI-powered profile optimization to increase visibility and attract better job opportunities.',
-          capabilities: ['Profile analysis', 'Optimization suggestions', 'Visibility scoring', 'Keyword optimization'],
-        },
-        {
-          name: 'Skill Assessments',
-          url: `${baseUrl}/skill-assessments`,
-          description: 'Validate your skills through comprehensive assessments and earn verified badges to showcase to employers.',
-          capabilities: ['Multiple skill domains', 'Verified certifications', 'Performance analytics', 'Skill gap analysis'],
-        },
-      ],
-      forEmployers: [
-        {
-          name: 'AI Candidate Ranking',
-          url: `${baseUrl}/ai-candidate-ranking`,
-          description: 'Automatically rank and score candidates based on job requirements using advanced AI algorithms.',
-          capabilities: ['Automated ranking', 'Skill matching', 'Experience analysis', 'Cultural fit assessment'],
-        },
-        {
-          name: 'Quick Screening',
-          url: `${baseUrl}/quick-screening`,
-          description: 'Streamline candidate screening with automated tools and AI-powered initial assessments.',
-          capabilities: ['Automated screening', 'Custom questionnaires', 'Video interviews', 'Instant feedback'],
-        },
-        {
-          name: 'Custom Assessments',
-          url: `${baseUrl}/custom-assessments`,
-          description: 'Create tailored assessments specific to your job requirements and company needs.',
-          capabilities: ['Custom test creation', 'Multiple question types', 'Automated grading', 'Analytics dashboard'],
-        },
-        {
-          name: 'Hiring Analytics',
-          url: `${baseUrl}/hiring-analytics`,
-          description: 'Comprehensive analytics and insights to optimize your recruitment process and make data-driven decisions.',
-          capabilities: ['Recruitment metrics', 'Time-to-hire tracking', 'Source effectiveness', 'Candidate pipeline analytics'],
-        },
-        {
-          name: 'Team Collaboration',
-          url: `${baseUrl}/team-collaboration`,
-          description: 'Collaborate with your hiring team through shared feedback, notes, and decision-making tools.',
-          capabilities: ['Shared candidate reviews', 'Team feedback', 'Interview scheduling', 'Decision tracking'],
-        },
-        {
-          name: 'Verified Candidates',
-          url: `${baseUrl}/verified-candidates`,
-          description: 'Access a pool of pre-verified candidates with validated skills and backgrounds.',
-          capabilities: ['Background verification', 'Skill validation', 'Reference checks', 'Quality assurance'],
-        },
-      ],
+    {
+      url: `${baseUrl}/job-seeker`,
+      title: 'For Job Seekers',
+      description: 'Comprehensive tools and features for job seekers including AI resume builder, job matching, and career insights',
+      type: 'product-page',
     },
-    pages: [
-      {
-        url: baseUrl,
-        title: 'Home',
-        description: 'Main landing page connecting job seekers with employers',
-        type: 'homepage',
-      },
-      {
-        url: `${baseUrl}/job-seeker`,
-        title: 'For Job Seekers',
-        description: 'Comprehensive tools and features for job seekers to find their dream job',
-        type: 'product-page',
-      },
-      {
-        url: `${baseUrl}/job-provider`,
-        title: 'For Employers',
-        description: 'Complete hiring solution for employers to find and recruit top talent',
-        type: 'product-page',
-      },
-      {
-        url: `${baseUrl}/about`,
-        title: 'About Us',
-        description: 'Learn about Hirenest mission, vision, and team',
-        type: 'company-info',
-      },
-      {
-        url: `${baseUrl}/careers`,
-        title: 'Careers',
-        description: 'Join the Hirenest team and help shape the future of recruitment',
-        type: 'careers',
-      },
-      {
-        url: `${baseUrl}/security`,
-        title: 'Security',
-        description: 'Information about our security practices and data protection',
-        type: 'legal',
-      },
-      ...blogPages, // Append dynamic blog pages
-    ],
-    technology: {
-      stack: ['Next.js 15', 'React 19', 'TypeScript', 'Chakra UI', 'AI/ML'],
-      aiCapabilities: [
-        'Resume optimization',
-        'Job matching algorithms',
-        'Candidate ranking',
-        'Skill assessment',
-        'Career path prediction',
-        'Market insights analysis',
-      ],
+    {
+      url: `${baseUrl}/job-provider`,
+      title: 'For Employers',
+      description: 'Complete hiring solution for employers with AI candidate ranking, screening tools, and hiring analytics',
+      type: 'product-page',
     },
-    contact: {
-      website: baseUrl,
-      supportEmail: 'support@hirenest.com',
-      salesEmail: 'sales@hirenest.com',
+    {
+      url: `${baseUrl}/about`,
+      title: 'About Us',
+      description: 'Learn about Hirenest mission to revolutionize recruitment with AI, our story, values, and team',
+      type: 'company-info',
     },
-    legal: {
-      privacyPolicy: `${baseUrl}/privacy-policy`,
-      termsOfService: `${baseUrl}/terms-of-service`,
-      cookiePolicy: `${baseUrl}/cookie-policy`,
-      refundPolicy: `${baseUrl}/refund-policy`,
+    {
+      url: `${baseUrl}/careers`,
+      title: 'Careers',
+      description: 'Join the Hirenest team and help shape the future of AI-powered recruitment technology',
+      type: 'careers',
     },
+    {
+      url: `${baseUrl}/security`,
+      title: 'Security',
+      description: 'Information about enterprise-grade security practices, data protection, and privacy measures',
+      type: 'legal',
+    },
+    {
+      url: `${baseUrl}/ai-resume-builder`,
+      title: 'AI Resume Builder',
+      description: 'Create ATS-optimized resumes with AI assistance, personalized suggestions, and professional formatting',
+      type: 'feature',
+    },
+    {
+      url: `${baseUrl}/ai-candidate-ranking`,
+      title: 'AI Candidate Ranking',
+      description: 'Automatically rank and score candidates based on job requirements using advanced AI algorithms',
+      type: 'feature',
+    },
+    {
+      url: `${baseUrl}/smart-job-matching`,
+      title: 'Smart Job Matching',
+      description: 'AI-driven job matching that analyzes skills and preferences to recommend suitable positions',
+      type: 'feature',
+    },
+    {
+      url: `${baseUrl}/skill-assessments`,
+      title: 'Skill Assessments',
+      description: 'Validate skills with 350+ industry-standard assessments and earn verified badges',
+      type: 'feature',
+    },
+    {
+      url: `${baseUrl}/interview-questions`,
+      title: 'Interview Questions',
+      description: `Comprehensive interview questions and answers for ${enabledJobTitles.length}+ job titles`,
+      type: 'hub-page',
+    },
+    {
+      url: `${baseUrl}/resume-keywords`,
+      title: 'Resume Keywords',
+      description: `ATS-friendly resume keywords and skills for ${enabledJobTitles.length}+ job titles`,
+      type: 'hub-page',
+    },
+    {
+      url: `${baseUrl}/salary`,
+      title: 'Salary Guides',
+      description: `Salary data and compensation guides for ${enabledJobTitles.length}+ job titles`,
+      type: 'hub-page',
+    },
+    {
+      url: `${baseUrl}/cover-letter`,
+      title: 'Cover Letter Examples',
+      description: `Professional cover letter templates and examples for ${enabledJobTitles.length}+ job titles`,
+      type: 'hub-page',
+    },
+    {
+      url: `${baseUrl}/job-description`,
+      title: 'Job Descriptions',
+      description: `Job description templates and resources for ${enabledJobTitles.length}+ job titles`,
+      type: 'hub-page',
+    },
+    {
+      url: `${baseUrl}/blog`,
+      title: 'Blog',
+      description: 'Career advice, hiring tips, and industry insights from recruitment experts',
+      type: 'blog-index',
+    },
+    {
+      url: `${baseUrl}/seo-sitemap`,
+      title: 'Site Map',
+      description: `Complete index of all ${enabledJobTitles.length * 5}+ pages on Hirenest`,
+      type: 'sitemap',
+    },
+  ];
+
+  // Combine all pages - deduplicated by URL
+  const allPages = [...corePages, ...blogPages, ...programmaticPages];
+
+  // Group by category for better LLM understanding
+  const pagesByCategory = {
+    core: corePages,
+    blog: blogPages,
+    interviewQuestions: programmaticPages.filter(p => p.type === 'interview-questions'),
+    resumeKeywords: programmaticPages.filter(p => p.type === 'resume-keywords'),
+    salaryGuides: programmaticPages.filter(p => p.type === 'salary-guide'),
+    coverLetters: programmaticPages.filter(p => p.type === 'cover-letter'),
+    jobDescriptions: programmaticPages.filter(p => p.type === 'job-description'),
   };
 
   const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <llms-metadata>
   <metadata>
-    <name>${escapeXml(llmsContent.metadata.name)}</name>
-    <description>${escapeXml(llmsContent.metadata.description)}</description>
-    <url>${escapeXml(llmsContent.metadata.url)}</url>
-    <lastUpdated>${escapeXml(llmsContent.metadata.lastUpdated)}</lastUpdated>
-    <version>${escapeXml(llmsContent.metadata.version)}</version>
-    <language>${escapeXml(llmsContent.metadata.language)}</language>
-    <category>${escapeXml(llmsContent.metadata.category)}</category>
+    <name>Hirenest</name>
+    <description>AI-powered platform connecting job seekers with employers through intelligent matching, resume building, and comprehensive hiring tools</description>
+    <url>${escapeXml(baseUrl)}</url>
+    <lastUpdated>${escapeXml(currentDate)}</lastUpdated>
+    <version>1.0</version>
+    <language>en</language>
+    <category>Jobs and Recruitment Platform</category>
+    <totalPages>${allPages.length}</totalPages>
+    <programmaticPages>${programmaticPages.length}</programmaticPages>
+    <jobTitles>${enabledJobTitles.length}</jobTitles>
     <keywords>
-      ${llmsContent.metadata.keywords.map(keyword => `<keyword>${escapeXml(keyword)}</keyword>`).join('\n      ')}
+      <keyword>job search</keyword>
+      <keyword>recruitment</keyword>
+      <keyword>AI hiring</keyword>
+      <keyword>resume builder</keyword>
+      <keyword>candidate matching</keyword>
+      <keyword>skill assessment</keyword>
+      <keyword>career development</keyword>
+      <keyword>talent acquisition</keyword>
+      <keyword>interview preparation</keyword>
+      <keyword>salary data</keyword>
     </keywords>
   </metadata>
 
-  <features>
-    <jobSeekerFeatures>
-      ${llmsContent.features.forJobSeekers.map(feature => `
-      <feature>
-        <name>${escapeXml(feature.name)}</name>
-        <url>${escapeXml(feature.url)}</url>
-        <description>${escapeXml(feature.description)}</description>
-        <capabilities>
-          ${feature.capabilities.map(cap => `<capability>${escapeXml(cap)}</capability>`).join('\n          ')}
-        </capabilities>
-      </feature>`).join('')}
-    </jobSeekerFeatures>
-
-    <employerFeatures>
-      ${llmsContent.features.forEmployers.map(feature => `
-      <feature>
-        <name>${escapeXml(feature.name)}</name>
-        <url>${escapeXml(feature.url)}</url>
-        <description>${escapeXml(feature.description)}</description>
-        <capabilities>
-          ${feature.capabilities.map(cap => `<capability>${escapeXml(cap)}</capability>`).join('\n          ')}
-        </capabilities>
-      </feature>`).join('')}
-    </employerFeatures>
-  </features>
-
-  <pages>
-    ${llmsContent.pages.map(page => `
+  <corePages>
+    ${corePages.map(page => `
     <page>
       <url>${escapeXml(page.url)}</url>
       <title>${escapeXml(page.title)}</title>
       <description>${escapeXml(page.description)}</description>
       <type>${escapeXml(page.type)}</type>
     </page>`).join('')}
-  </pages>
+  </corePages>
+
+  <blogPages>
+    <count>${blogPages.length}</count>
+    ${blogPages.map(page => `
+    <page>
+      <url>${escapeXml(page.url)}</url>
+      <title>${escapeXml(page.title)}</title>
+      <description>${escapeXml(page.description)}</description>
+      <type>blog-post</type>
+    </page>`).join('')}
+  </blogPages>
+
+  <programmaticSEOPages>
+    <totalCount>${programmaticPages.length}</totalCount>
+    <categories>
+      <category>
+        <name>Interview Questions</name>
+        <count>${pagesByCategory.interviewQuestions.length}</count>
+        <indexUrl>${escapeXml(baseUrl)}/interview-questions</indexUrl>
+      </category>
+      <category>
+        <name>Resume Keywords</name>
+        <count>${pagesByCategory.resumeKeywords.length}</count>
+        <indexUrl>${escapeXml(baseUrl)}/resume-keywords</indexUrl>
+      </category>
+      <category>
+        <name>Salary Guides</name>
+        <count>${pagesByCategory.salaryGuides.length}</count>
+        <indexUrl>${escapeXml(baseUrl)}/salary</indexUrl>
+      </category>
+      <category>
+        <name>Cover Letters</name>
+        <count>${pagesByCategory.coverLetters.length}</count>
+        <indexUrl>${escapeXml(baseUrl)}/cover-letter</indexUrl>
+      </category>
+      <category>
+        <name>Job Descriptions</name>
+        <count>${pagesByCategory.jobDescriptions.length}</count>
+        <indexUrl>${escapeXml(baseUrl)}/job-description</indexUrl>
+      </category>
+    </categories>
+    <sampleUrls>
+      ${pagesByCategory.interviewQuestions.slice(0, 3).map(p => `<url type="interview-questions">${escapeXml(p.url)}</url>`).join('\n      ')}
+      ${pagesByCategory.salaryGuides.slice(0, 3).map(p => `<url type="salary">${escapeXml(p.url)}</url>`).join('\n      ')}
+    </sampleUrls>
+  </programmaticSEOPages>
 
   <technology>
     <stack>
-      ${llmsContent.technology.stack.map(tech => `<item>${escapeXml(tech)}</item>`).join('\n      ')}
+      <item>Next.js 15</item>
+      <item>React 19</item>
+      <item>TypeScript</item>
+      <item>Chakra UI</item>
+      <item>AI/ML</item>
     </stack>
     <aiCapabilities>
-      ${llmsContent.technology.aiCapabilities.map(cap => `<capability>${escapeXml(cap)}</capability>`).join('\n      ')}
+      <capability>Resume optimization</capability>
+      <capability>Job matching algorithms</capability>
+      <capability>Candidate ranking</capability>
+      <capability>Skill assessment</capability>
+      <capability>Career path prediction</capability>
+      <capability>Market insights analysis</capability>
     </aiCapabilities>
   </technology>
 
   <contact>
-    <website>${escapeXml(llmsContent.contact.website)}</website>
-    <supportEmail>${escapeXml(llmsContent.contact.supportEmail)}</supportEmail>
-    <salesEmail>${escapeXml(llmsContent.contact.salesEmail)}</salesEmail>
+    <website>${escapeXml(baseUrl)}</website>
+    <supportEmail>support@hirenest.com</supportEmail>
+    <salesEmail>sales@hirenest.com</salesEmail>
   </contact>
 
   <legal>
-    <privacyPolicy>${escapeXml(llmsContent.legal.privacyPolicy)}</privacyPolicy>
-    <termsOfService>${escapeXml(llmsContent.legal.termsOfService)}</termsOfService>
-    <cookiePolicy>${escapeXml(llmsContent.legal.cookiePolicy)}</cookiePolicy>
-    <refundPolicy>${escapeXml(llmsContent.legal.refundPolicy)}</refundPolicy>
+    <privacyPolicy>${escapeXml(baseUrl)}/privacy-policy</privacyPolicy>
+    <termsOfService>${escapeXml(baseUrl)}/terms-of-service</termsOfService>
+    <cookiePolicy>${escapeXml(baseUrl)}/cookie-policy</cookiePolicy>
+    <refundPolicy>${escapeXml(baseUrl)}/refund-policy</refundPolicy>
   </legal>
 </llms-metadata>`;
 

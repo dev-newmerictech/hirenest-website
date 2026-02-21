@@ -9,7 +9,7 @@ import { SeoHero } from '../../components/programmatic-seo/SeoHero'
 import { SeoContentSection, SeoCardGrid, SeoKeywordBadge, SeoCard } from '../../components/programmatic-seo/SeoContentSection'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headline/block'
-import { getJobBySlug } from '../../lib/programmatic-seo/job-titles'
+import { getJobBySlug, enabledJobTitles } from '../../lib/programmatic-seo/enabled-job-titles'
 import { getKeywordsForJob, getKeywordsByCategory } from '../../lib/programmatic-seo/resume-keywords'
 import { generatePageMetadata } from '../../lib/metadata'
 import { Check, BookOpen, Wrench, Award } from 'lucide-react'
@@ -22,10 +22,9 @@ import { SEO_CONFIG } from '../../lib/seo/core/constants'
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
 
-// Generate static params for all job titles
+// Generate static params only for enabled job titles (that have content)
 export async function generateStaticParams() {
-    const { jobTitles } = await import('../../lib/programmatic-seo/job-titles')
-    return jobTitles.map((job) => ({
+    return enabledJobTitles.map((job) => ({
         slug: job.slug,
     }))
 }
@@ -44,21 +43,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const title = `${job.title} Resume Keywords & Skills`
-    const description = `Discover top ${job.title} resume keywords and skills that get past ATS scanners. Includes hard skills, soft skills, and action verbs for resumes.`
+    const keywords = getKeywordsForJob(slug)
+
+    // Title: max 55 characters
+    const title = `${job.title} Resume Keywords`.slice(0, 55)
+
+    // Description: max 150 characters
+    const description = `Top ${job.title} resume keywords to pass ATS. ${keywords.length}+ skills and action verbs for your resume.`
+        .slice(0, 150)
 
     return generatePageMetadata({
         title,
         description,
         path: `/resume-keywords/${slug}`,
         keywords: [
-            `$${job.title} resume keywords`,
-            `$${job.title} skills for resume`,
-            `$${job.title} resume keywords 2026`,
-            `ATS resume keywords $${job.title}`,
-            `$${job.title} resume skills`,
-            `best keywords for $${job.title} resume`,
-            `$${job.title} resume examples`,
+            `${job.title} resume keywords`,
+            `${job.title} skills for resume`,
+            `${job.title} resume keywords 2026`,
+            `ATS resume keywords ${job.title}`,
+            `${job.title} resume skills`,
+            `best keywords for ${job.title} resume`,
+            `${job.title} resume examples`,
             ...job.aliases.flatMap(alias => [
                 `${alias} resume keywords`,
                 `${alias} skills for resume`

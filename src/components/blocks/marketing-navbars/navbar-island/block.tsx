@@ -98,7 +98,7 @@ export const Block = () => {
       left="0"
       right="0"
       bg={'transparent'}
-      {/* backdropFilter="blur(44px)" */}
+      //backdropFilter="blur(44px)" 
       pt={{ base: '4' }}
       transition="background-color 0.2s ease"
     >

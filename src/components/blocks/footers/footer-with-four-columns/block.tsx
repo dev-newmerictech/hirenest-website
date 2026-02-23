@@ -57,6 +57,7 @@ const footerLinks = {
     links: [
       { label: 'About', href: '/about' },
       { label: 'Careers', href: '/careers' },
+      { label: 'All Jobs', href: '/jobs' },
       { label: 'Interview Questions', href: '/interview-questions' },
       { label: 'Resume Keywords', href: '/resume-keywords' },
       { label: 'Job Descriptions', href: '/job-description' },

@@ -12,13 +12,11 @@ const HOST = 'hirenest.ai';
 const KEY_LOCATION = `https://${HOST}/${API_KEY}.txt`;
 
 const SITEMAPS = [
-    'https://hirenest.ai/main-sitemap.xml',
-    'https://hirenest.ai/sitemap-posts.xml',
+    'https://hirenest.ai/job-description-sitemap.xml',
     'https://hirenest.ai/interview-questions-sitemap.xml',
     'https://hirenest.ai/resume-keywords-sitemap.xml',
     'https://hirenest.ai/salary-sitemap.xml',
     'https://hirenest.ai/cover-letter-sitemap.xml',
-    'https://hirenest.ai/job-description-sitemap.xml'
 ];
 
 const ENDPOINTS = [

@@ -2,6 +2,7 @@
 
 import { enabledJobTitles } from '../../programmatic-seo/enabled-job-titles'
 import { PageTemplate } from '../models/link-graph'
+import { LOCATION_JOB_BOARDS } from '../../programmatic-seo/job-board'
 
 const BASE_URL = 'https://hirenest.ai'
 
@@ -73,6 +74,35 @@ export function createTemplateSitemapConfig(
 export const hirenestSitemapConfig: SitemapConfig = {
     baseUrl: BASE_URL,
     sitemaps: [
+        {
+            name: 'jobs',
+            path: '/jobs-sitemap',
+            pageSize: 50000,
+            priority: '0.9',
+            changeFrequency: 'daily',
+            totalCount: enabledJobTitles.length + LOCATION_JOB_BOARDS.length,
+            getContent: async (page: number, limit: number) => {
+                const offset = page * limit
+
+                // Combine regular job pages and location-specific pages
+                const jobPages = enabledJobTitles.map(job => ({
+                    url: `${BASE_URL}/jobs/${job.slug}`,
+                    lastModified: new Date(),
+                    changeFreq: 'daily' as const,
+                    priority: 0.9
+                }))
+
+                const locationPages = LOCATION_JOB_BOARDS.map(loc => ({
+                    url: `${BASE_URL}/jobs/${loc.jobSlug}/${loc.locationSlug}`,
+                    lastModified: new Date(),
+                    changeFreq: 'daily' as const,
+                    priority: 0.8
+                }))
+
+                const allPages = [...jobPages, ...locationPages]
+                return allPages.slice(offset, offset + limit)
+            }
+        },
         {
             name: 'interview-questions',
             path: '/interview-questions-sitemap',

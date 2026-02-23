@@ -7,13 +7,11 @@ const axios = require('axios');
 const SERVICE_ACCOUNT_FILE = './service_account.json';
 
 const SITEMAPS = [
-  'https://hirenest.ai/main-sitemap.xml',
-  'https://hirenest.ai/sitemap-posts.xml',
+  'https://hirenest.ai/job-description-sitemap.xml',
   'https://hirenest.ai/interview-questions-sitemap.xml',
   'https://hirenest.ai/resume-keywords-sitemap.xml',
   'https://hirenest.ai/salary-sitemap.xml',
   'https://hirenest.ai/cover-letter-sitemap.xml',
-  'https://hirenest.ai/job-description-sitemap.xml'
 ];
 
 const DELAY_MS = 500;

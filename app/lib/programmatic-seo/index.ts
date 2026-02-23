@@ -9,6 +9,20 @@ export {
     getQuestionsByCategory
 } from './interview-questions'
 
+// Job board module
+export {
+    getJobListingsBySlug,
+    getFilteredJobListings,
+    getJobStatistics,
+    getFeaturedJobs,
+    getAllJobBoardPages,
+    getJobBoardPageBySlug,
+    getJobBoardPagesByCategory,
+    LOCATION_JOB_BOARDS,
+    INDUSTRY_JOB_BOARDS,
+    SUPPORTED_LOCATIONS
+} from './job-board'
+
 export type {
     JobTitle,
     JobCategory,
@@ -18,5 +32,16 @@ export type {
     ResumeKeyword,
     KeywordCategory,
     CareerComparison,
-    PageMetadata
+    PageMetadata,
+    JobListing,
+    JobLocation,
+    SalaryRange,
+    JobType,
+    ExperienceLevel,
+    JobFilters,
+    JobListingsResponse,
+    JobBoardPage,
+    LocationJobBoard,
+    IndustryJobBoard,
+    JobStatistics
 } from './types'

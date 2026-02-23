@@ -70,6 +70,14 @@ export function generateSitemapXML(
     <priority>1.0</priority>
   </url>`,
 
+    // Jobs Board
+    `  <url>
+    <loc>${SITE_URL}/jobs</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>`,
+
     // Posts
     ...posts
       .filter((post) => post.published)

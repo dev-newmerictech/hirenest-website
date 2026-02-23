@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { Box, Container, Heading, Text, SimpleGrid, Link, Badge, VStack, HStack, Tabs } from '@chakra-ui/react';
 import { ConvexHttpClient } from 'convex/browser';
 import { api } from '@/convex/_generated/api';
+import { getAllJobBoardPages, LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '@/app/lib/programmatic-seo/job-board';
 
 export const dynamic = 'force-dynamic';
 
@@ -64,6 +65,7 @@ const sections = [
 // Core pages to include
 const corePages = [
   { title: 'Home', href: '/' },
+  { title: 'Job Board', href: '/jobs' },
   { title: 'Job Seekers', href: '/job-seeker' },
   { title: 'Employers', href: '/job-provider' },
   { title: 'About Us', href: '/about' },
@@ -108,6 +110,17 @@ async function getBlogPosts() {
 export default async function SeoSitemapPage() {
   const blogPosts = await getBlogPosts();
   const totalEnabledPages = enabledJobTitles.length * sections.length;
+  const allJobPages = getAllJobBoardPages();
+
+  // Get unique job+location combinations
+  const locationJobPages = LOCATION_JOB_BOARDS.map(loc => ({
+    jobSlug: loc.jobSlug,
+    locationSlug: loc.locationSlug,
+    jobTitle: loc.jobTitle,
+    locationName: loc.locationName,
+    url: `/jobs/${loc.locationSlug}/${loc.jobSlug}`,
+    title: `${loc.jobTitle} Jobs in ${loc.locationName}`
+  }));
 
   return (
     <Box bg="gray.50" minH="100vh" py={12}>
@@ -130,6 +143,12 @@ export default async function SeoSitemapPage() {
             <Badge colorPalette="green" size="md" px={3} py={1} borderRadius="full">
               {blogPosts.length} Blog Posts
             </Badge>
+            <Badge colorPalette="red" size="md" px={3} py={1} borderRadius="full">
+              {allJobPages.length} Job Board Pages
+            </Badge>
+            <Badge colorPalette="orange" size="md" px={3} py={1} borderRadius="full">
+              {locationJobPages.length} Location Pages
+            </Badge>
           </HStack>
         </VStack>
 
@@ -137,6 +156,8 @@ export default async function SeoSitemapPage() {
         <Tabs.Root defaultValue="core" mb={12}>
           <Tabs.List mb={6}>
             <Tabs.Trigger value="core">Core Pages</Tabs.Trigger>
+            <Tabs.Trigger value="jobs">Job Board</Tabs.Trigger>
+            <Tabs.Trigger value="locations">Location Pages</Tabs.Trigger>
             <Tabs.Trigger value="seo">Programmatic SEO</Tabs.Trigger>
             <Tabs.Trigger value="blog">Blog</Tabs.Trigger>
           </Tabs.List>
@@ -194,6 +215,175 @@ export default async function SeoSitemapPage() {
                     </SimpleGrid>
                   </Box>
                 </VStack>
+              </Box>
+            </Tabs.Content>
+
+            {/* Job Board Panel */}
+            <Tabs.Content value="jobs">
+              <Box bg="white" borderRadius="2xl" boxShadow="sm" border="1px" borderColor="gray.200" overflow="hidden">
+                {/* Section Header */}
+                <Box
+                  px={8}
+                  py={5}
+                  borderBottom="1px solid"
+                  borderColor="gray.100"
+                  bg="red.50"
+                >
+                  <HStack justify="space-between" align="center">
+                    <VStack align="start" gap={0}>
+                      <Heading as="h2" size="lg" color="red.700" fontWeight="700">
+                        Job Board
+                      </Heading>
+                      <Text fontSize="sm" color="gray.600">Browse thousands of job openings with AI-powered matching</Text>
+                    </VStack>
+                    <Badge
+                      colorPalette="red"
+                      variant="subtle"
+                      fontSize="sm"
+                      px={3}
+                      py={1}
+                      borderRadius="full"
+                    >
+                      {allJobPages.length} pages
+                    </Badge>
+                  </HStack>
+                </Box>
+
+                {/* Index Link */}
+                <Box px={8} py={3} borderBottom="1px" borderColor="gray.100" bg="gray.50">
+                  <Link href="/jobs" fontSize="sm" fontWeight="medium" color="red.600" _hover={{ textDecoration: 'underline' }}>
+                    View Job Board →
+                  </Link>
+                </Box>
+
+                {/* Links Grid */}
+                <Box p={8}>
+                  <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} gap={2}>
+                    {allJobPages.map((job) => (
+                      <Link
+                        key={`jobs-${job.slug}`}
+                        href={`/jobs/roles/${job.slug}`}
+                        fontSize="sm"
+                        color="gray.600"
+                        _hover={{ color: 'red.600', textDecoration: 'underline' }}
+                        py={1}
+                        display="block"
+                        truncate
+                      >
+                        {job.title} Jobs
+                      </Link>
+                    ))}
+                  </SimpleGrid>
+                </Box>
+              </Box>
+            </Tabs.Content>
+
+            {/* Location Pages Panel */}
+            <Tabs.Content value="locations">
+              <Box bg="white" borderRadius="2xl" boxShadow="sm" border="1px" borderColor="gray.200" overflow="hidden">
+                {/* Section Header */}
+                <Box
+                  px={8}
+                  py={5}
+                  borderBottom="1px solid"
+                  borderColor="gray.100"
+                  bg="orange.50"
+                >
+                  <HStack justify="space-between" align="center">
+                    <VStack align="start" gap={0}>
+                      <Heading as="h2" size="lg" color="orange.700" fontWeight="700">
+                        Location-Specific Job Pages
+                      </Heading>
+                      <Text fontSize="sm" color="gray.600">Job pages optimized for India, Dubai, and US locations</Text>
+                    </VStack>
+                    <Badge
+                      colorPalette="orange"
+                      variant="subtle"
+                      fontSize="sm"
+                      px={3}
+                      py={1}
+                      borderRadius="full"
+                    >
+                      {locationJobPages.length} pages
+                    </Badge>
+                  </HStack>
+                </Box>
+
+                {/* Location Grouping */}
+                <Box p={8}>
+                  <VStack gap={8} align="stretch">
+                    {/* India Locations */}
+                    <Box>
+                      <Heading as="h3" size="md" mb={4} color="gray.700">🇮🇳 India</Heading>
+                      <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} gap={2}>
+                        {locationJobPages
+                          .filter(p => p.locationName.includes('India'))
+                          .slice(0, 30)
+                          .map((page) => (
+                            <Link
+                              key={page.url}
+                              href={page.url}
+                              fontSize="sm"
+                              color="gray.600"
+                              _hover={{ color: 'orange.600', textDecoration: 'underline' }}
+                              py={1}
+                              display="block"
+                              truncate
+                            >
+                              {page.title}
+                            </Link>
+                          ))}
+                      </SimpleGrid>
+                    </Box>
+
+                    {/* Dubai / UAE Locations */}
+                    <Box>
+                      <Heading as="h3" size="md" mb={4} color="gray.700">🇦🇪 Dubai / UAE</Heading>
+                      <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} gap={2}>
+                        {locationJobPages
+                          .filter(p => p.locationName.includes('UAE') || p.locationName.includes('Dubai'))
+                          .map((page) => (
+                            <Link
+                              key={page.url}
+                              href={page.url}
+                              fontSize="sm"
+                              color="gray.600"
+                              _hover={{ color: 'orange.600', textDecoration: 'underline' }}
+                              py={1}
+                              display="block"
+                              truncate
+                            >
+                              {page.title}
+                            </Link>
+                          ))}
+                      </SimpleGrid>
+                    </Box>
+
+                    {/* US Locations */}
+                    <Box>
+                      <Heading as="h3" size="md" mb={4} color="gray.700">🇺🇸 United States</Heading>
+                      <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} gap={2}>
+                        {locationJobPages
+                          .filter(p => !p.locationName.includes('India') && !p.locationName.includes('UAE') && !p.locationName.includes('Dubai'))
+                          .slice(0, 30)
+                          .map((page) => (
+                            <Link
+                              key={page.url}
+                              href={page.url}
+                              fontSize="sm"
+                              color="gray.600"
+                              _hover={{ color: 'orange.600', textDecoration: 'underline' }}
+                              py={1}
+                              display="block"
+                              truncate
+                            >
+                              {page.title}
+                            </Link>
+                          ))}
+                      </SimpleGrid>
+                    </Box>
+                  </VStack>
+                </Box>
               </Box>
             </Tabs.Content>
 

@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "@/convex/_generated/api";
 import { enabledJobTitles } from '@/app/lib/programmatic-seo/enabled-job-titles';
+import { LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '@/app/lib/programmatic-seo/job-board';
 
 // Force Node.js runtime to avoid edge runtime module loading issues
 export const runtime = 'nodejs';
@@ -71,7 +72,29 @@ export async function GET() {
       description: `Comprehensive ${job.title} job description template with responsibilities, requirements, and qualifications.`,
       type: 'job-description',
     },
+    {
+      url: `${baseUrl}/jobs/roles/${job.slug}`,
+      title: `${job.title} Jobs`,
+      description: `Browse ${job.title} jobs hiring now. Find remote and local ${job.title} jobs from top companies.`,
+      type: 'job-board',
+    },
   ]);
+
+  // Generate location hub pages
+  const locationHubPages = SUPPORTED_LOCATIONS.map((location) => ({
+    url: `${baseUrl}/jobs/${location.slug}`,
+    title: `Jobs in ${location.name}`,
+    description: `Browse all job openings in ${location.name}. Find jobs in technology, marketing, sales, healthcare, and more from top companies hiring now.`,
+    type: 'location-hub',
+  }));
+
+  // Generate location+job combination pages (sample only to avoid file bloat)
+  const locationJobPages = LOCATION_JOB_BOARDS.slice(0, 100).map((locJob) => ({
+    url: `${baseUrl}/jobs/${locJob.locationSlug}/${locJob.jobSlug}`,
+    title: `${locJob.jobTitle} Jobs in ${locJob.locationName}`,
+    description: `Find ${locJob.totalJobs}+ ${locJob.jobTitle} jobs in ${locJob.locationName}. Browse active openings, competitive salaries, and apply directly to top companies.`,
+    type: 'location-job',
+  }));
 
   // Core website pages
   const corePages = [
@@ -177,10 +200,16 @@ export async function GET() {
       description: `Complete index of all ${enabledJobTitles.length * 5}+ pages on Hirenest`,
       type: 'sitemap',
     },
+    {
+      url: `${baseUrl}/jobs-sitemap.xml`,
+      title: 'Jobs Sitemap',
+      description: `Complete index of all ${enabledJobTitles.length * 5}+ job pages on Hirenest`,
+      type: 'sitemap',
+    },
   ];
 
   // Combine all pages - deduplicated by URL
-  const allPages = [...corePages, ...blogPages, ...programmaticPages];
+  const allPages = [...corePages, ...blogPages, ...programmaticPages, ...locationHubPages, ...locationJobPages];
 
   // Group by category for better LLM understanding
   const pagesByCategory = {
@@ -191,6 +220,9 @@ export async function GET() {
     salaryGuides: programmaticPages.filter(p => p.type === 'salary-guide'),
     coverLetters: programmaticPages.filter(p => p.type === 'cover-letter'),
     jobDescriptions: programmaticPages.filter(p => p.type === 'job-description'),
+    jobBoard: programmaticPages.filter(p => p.type === 'job-board'),
+    locationHubs: locationHubPages,
+    locationJobs: locationJobPages,
   };
 
   const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
@@ -242,7 +274,7 @@ export async function GET() {
   </blogPages>
 
   <programmaticSEOPages>
-    <totalCount>${programmaticPages.length}</totalCount>
+    <totalCount>${programmaticPages.length + locationHubPages.length + locationJobPages.length}</totalCount>
     <categories>
       <category>
         <name>Interview Questions</name>
@@ -253,6 +285,11 @@ export async function GET() {
         <name>Resume Keywords</name>
         <count>${pagesByCategory.resumeKeywords.length}</count>
         <indexUrl>${escapeXml(baseUrl)}/resume-keywords</indexUrl>
+      </category>
+      <category>
+        <name>Location Job Hubs</name>
+        <count>${pagesByCategory.locationHubs.length}</count>
+        <indexUrl>${escapeXml(baseUrl)}/jobs</indexUrl>
       </category>
       <category>
         <name>Salary Guides</name>
@@ -268,6 +305,11 @@ export async function GET() {
         <name>Job Descriptions</name>
         <count>${pagesByCategory.jobDescriptions.length}</count>
         <indexUrl>${escapeXml(baseUrl)}/job-description</indexUrl>
+      </category>
+      <category>
+        <name>Job Board</name>
+        <count>${pagesByCategory.jobBoard.length}</count>
+        <indexUrl>${escapeXml(baseUrl)}/jobs</indexUrl>
       </category>
     </categories>
     <sampleUrls>

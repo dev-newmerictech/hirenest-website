@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { enabledJobTitles } from '../lib/programmatic-seo/enabled-job-titles';
+import { LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '../lib/programmatic-seo/job-board';
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "@/convex/_generated/api";
 // Force Node.js runtime to avoid edge runtime module loading issues with large imports
@@ -105,6 +106,13 @@ export async function GET() {
             pubDate: currentDate,
             category: 'Analytics',
         },
+        {
+            title: 'Job Board',
+            link: `${baseUrl}/jobs`,
+            description: 'Browse thousands of job openings with AI-powered matching. Find remote, full-time, and contract positions from top companies hiring now.',
+            pubDate: currentDate,
+            category: 'Job Board',
+        },
     ];
 
     // Interview Questions items - Index page
@@ -197,6 +205,33 @@ export async function GET() {
         category: 'Resume Writing',
     }));
 
+    // Generate job board items (only enabled job titles)
+    const jobBoardItems = enabledJobTitles.map((job) => ({
+        title: `${job.title} Job Board`,
+        link: `${baseUrl}/jobs/roles/${job.slug}`,
+        description: `Browse ${job.title} jobs hiring now. Find remote and local ${job.title} jobs from top companies.`,
+        pubDate: currentDate,
+        category: 'Job Board',
+    }));
+
+    // Generate location-specific job board items (top combinations only to avoid RSS bloat)
+    const locationJobBoardItems = LOCATION_JOB_BOARDS.slice(0, 50).map((locJob) => ({
+        title: `${locJob.jobTitle} Jobs in ${locJob.locationName}`,
+        link: `${baseUrl}/jobs/${locJob.locationSlug}/${locJob.jobSlug}`,
+        description: `Find ${locJob.totalJobs}+ ${locJob.jobTitle} jobs in ${locJob.locationName}. Browse active openings, competitive salaries, and apply directly to top companies.`,
+        pubDate: currentDate,
+        category: 'Job Board',
+    }));
+
+    // Generate location hub pages
+    const locationHubItems = SUPPORTED_LOCATIONS.map((location) => ({
+        title: `Jobs in ${location.name}`,
+        link: `${baseUrl}/jobs/${location.slug}`,
+        description: `Browse all job openings in ${location.name}. Find jobs in technology, marketing, sales, healthcare, and more from top companies hiring now.`,
+        pubDate: currentDate,
+        category: 'Job Board',
+    }));
+
     // Combine all items
     const allItems = [
         ...blogItems,
@@ -211,6 +246,9 @@ export async function GET() {
         ...jobDescriptionItems,
         ...salaryGuideItems,
         ...coverLetterItems,
+        ...locationHubItems,
+        ...jobBoardItems,
+        ...locationJobBoardItems.slice(0, 30), // Limit to avoid RSS bloat
     ];
 
     const rssItems = allItems

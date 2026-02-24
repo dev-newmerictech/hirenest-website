@@ -14,6 +14,7 @@ const HOST = 'hirenest.ai';
 
 // Individual sitemaps containing actual page URLs
 const SITEMAPS = [
+    'https://hirenest.ai/jobs-sitemap.xml',
     'https://hirenest.ai/interview-questions-sitemap.xml',
     'https://hirenest.ai/resume-keywords-sitemap.xml',
     'https://hirenest.ai/salary-sitemap.xml',

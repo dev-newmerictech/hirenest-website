@@ -7,6 +7,7 @@ const axios = require('axios');
 const SERVICE_ACCOUNT_FILE = './service_account.json';
 
 const SITEMAPS = [
+  'https://hirenest.ai/jobs-sitemap.xml',
   'https://hirenest.ai/job-description-sitemap.xml',
   'https://hirenest.ai/interview-questions-sitemap.xml',
   'https://hirenest.ai/resume-keywords-sitemap.xml',

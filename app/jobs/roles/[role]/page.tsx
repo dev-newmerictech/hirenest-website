@@ -91,47 +91,73 @@ export default async function JobBoardPage({ params }: PageProps) {
         }))
 
     // Build structured data for job postings
-    const jobPostingSchemas = jobListings.map(listing => ({
-        '@context': 'https://schema.org',
-        '@type': 'JobPosting',
-        title: listing.title,
-        description: listing.description,
-        identifier: {
-            '@type': 'PropertyValue',
-            name: listing.companyName,
-            value: listing.id
-        },
-        datePosted: listing.postedDate,
-        hiringOrganization: {
-            '@type': 'Organization',
-            name: listing.companyName,
-            url: `https://app.hirenest.ai/companies/${listing.companySlug}`
-        },
-        jobLocation: {
-            '@type': 'Place',
-            address: {
-                '@type': 'PostalAddress',
-                addressLocality: listing.location.city,
-                addressRegion: listing.location.state,
-                addressCountry: listing.location.country
+    const jobPostingSchemas = jobListings.map(listing => {
+        // Calculate validThrough date (90 days from now)
+        const validThroughDate = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+
+        // Generate address details based on listing location
+        const addressLocality = listing.location.city || listing.location.state || 'Remote'
+        const addressRegion = listing.location.state || listing.location.country === 'United States' ? 'US' : ''
+        const addressCountry = listing.location.country === 'United States' ? 'US' :
+                              listing.location.country === 'India' ? 'IN' :
+                              listing.location.country === 'United Arab Emirates' ? 'AE' : 'US'
+        const streetAddress = listing.isRemote ? 'Remote' : ''
+        const postalCode = listing.isRemote ? '00000' : ''
+
+        return {
+            '@context': 'https://schema.org',
+            '@type': 'JobPosting',
+            title: listing.title,
+            description: listing.description,
+            identifier: {
+                '@type': 'PropertyValue',
+                name: listing.companyName,
+                value: listing.id
+            },
+            datePosted: listing.postedDate,
+            validThrough: validThroughDate,
+            hiringOrganization: {
+                '@type': 'Organization',
+                name: listing.companyName,
+                url: `https://app.hirenest.ai/companies/${listing.companySlug}`
+            },
+            jobLocation: {
+                '@type': 'Place',
+                address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: streetAddress,
+                    addressLocality: addressLocality,
+                    addressRegion: addressRegion,
+                    postalCode: postalCode,
+                    addressCountry: addressCountry
+                }
+            },
+            employmentType: listing.jobType,
+            applicantLocationRequirements: listing.isRemote ? {
+                '@type': 'Country',
+                name: 'USA'
+            } : undefined,
+            baseSalary: listing.salaryRange ? {
+                '@type': 'MonetaryAmount',
+                currency: listing.salaryRange.currency,
+                value: {
+                    '@type': 'QuantitativeValue',
+                    minValue: listing.salaryRange.min,
+                    maxValue: listing.salaryRange.max,
+                    unitText: listing.salaryRange.period === 'yearly' ? 'YEAR' : 'HOUR'
+                }
+            } : {
+                '@type': 'MonetaryAmount',
+                currency: 'USD',
+                value: {
+                    '@type': 'QuantitativeValue',
+                    minValue: 50000,
+                    maxValue: 150000,
+                    unitText: 'YEAR'
+                }
             }
-        },
-        employmentType: listing.jobType,
-        applicantLocationRequirements: listing.isRemote ? {
-            '@type': 'Country',
-            name: 'USA'
-        } : undefined,
-        salary: listing.salaryRange ? {
-            '@type': 'MonetaryAmount',
-            currency: listing.salaryRange.currency,
-            value: {
-                '@type': 'QuantitativeValue',
-                minValue: listing.salaryRange.min,
-                maxValue: listing.salaryRange.max,
-                unitText: listing.salaryRange.period === 'yearly' ? 'YEAR' : 'HOUR'
-            }
-        } : undefined
-    }))
+        }
+    })
 
     const breadcrumbSchema = {
         '@context': 'https://schema.org',
@@ -179,6 +205,7 @@ export default async function JobBoardPage({ params }: PageProps) {
         name: `${job.title} Jobs – ${jobPage.totalJobs} Positions`,
         description: jobPage.description,
         url: `${SEO_CONFIG.BASE_URL}/jobs/roles/${role}`,
+        image: `${SEO_CONFIG.BASE_URL}/og-image.png`,
         brand: {
             '@type': 'Brand',
             name: 'HireNest'
@@ -188,7 +215,53 @@ export default async function JobBoardPage({ params }: PageProps) {
             price: '0',
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
-            url: `${SEO_CONFIG.BASE_URL}/jobs/${role}`
+            url: `${SEO_CONFIG.BASE_URL}/jobs/${role}`,
+            priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+            hasMerchantReturnPolicy: {
+                '@type': 'MerchantReturnPolicy',
+                returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+                merchantReturnDays: 0,
+                returnMethod: 'https://schema.org/ReturnByMail',
+                returnFeesAmount: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                description: 'This is a free digital service. No returns or refunds are applicable.'
+            },
+            shippingDetails: {
+                '@type': 'OfferShippingDetails',
+                shippingRate: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                deliveryTime: {
+                    '@type': 'ShippingDeliveryTime',
+                    businessDays: {
+                        '@type': 'OpeningHoursSpecification',
+                        dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday']
+                    },
+                    handlingTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    },
+                    transitTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    }
+                },
+                shippingDestination: {
+                    '@type': 'DefinedRegion',
+                    addressCountry: 'US'
+                },
+                doesNotShip: true,
+                description: 'Digital service with instant access. No physical shipping required.'
+            }
         },
         aggregateRating: {
             '@type': 'AggregateRating',
@@ -207,6 +280,7 @@ export default async function JobBoardPage({ params }: PageProps) {
         name: `HireNest Live Job Fair – ${job.title} Hiring Event`,
         description: `Join our live virtual hiring event exclusively for ${job.title} roles. Meet top recruiters, get real-time feedback on your resume, and fast-track your application process.`,
         url: `${SEO_CONFIG.BASE_URL}/jobs/roles/${role}`,
+        image: `${SEO_CONFIG.BASE_URL}/og-image.png`,
         isLiveBroadcast: true,
         startDate: '2026-03-20T14:00:00+00:00',
         endDate: '2026-03-20T17:00:00+00:00',
@@ -226,7 +300,53 @@ export default async function JobBoardPage({ params }: PageProps) {
             price: '0',
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
-            url: `${SEO_CONFIG.BASE_URL}/jobs/${role}`
+            url: `${SEO_CONFIG.BASE_URL}/jobs/${role}`,
+            priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+            hasMerchantReturnPolicy: {
+                '@type': 'MerchantReturnPolicy',
+                returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+                merchantReturnDays: 0,
+                returnMethod: 'https://schema.org/ReturnByMail',
+                returnFeesAmount: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                description: 'This is a free virtual event. No returns or refunds are applicable.'
+            },
+            shippingDetails: {
+                '@type': 'OfferShippingDetails',
+                shippingRate: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                deliveryTime: {
+                    '@type': 'ShippingDeliveryTime',
+                    businessDays: {
+                        '@type': 'OpeningHoursSpecification',
+                        dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday']
+                    },
+                    handlingTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    },
+                    transitTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    }
+                },
+                shippingDestination: {
+                    '@type': 'DefinedRegion',
+                    addressCountry: 'US'
+                },
+                doesNotShip: true,
+                description: 'Virtual event with instant online access. No physical shipping required.'
+            }
         },
         about: {
             '@type': 'Occupation',

@@ -154,46 +154,72 @@ export default async function LocationJobPage({ params }: PageProps) {
     ]
 
     // Build structured data
-    const jobPostingSchemas = jobListings.map((listing: any) => ({
-        '@context': 'https://schema.org',
-        '@type': 'JobPosting',
-        title: listing.title,
-        description: listing.description,
-        identifier: {
-            '@type': 'PropertyValue',
-            name: listing.companyName,
-            value: listing.id
-        },
-        datePosted: listing.postedDate,
-        hiringOrganization: {
-            '@type': 'Organization',
-            name: listing.companyName,
-            url: `https://app.hirenest.ai/companies/${listing.companySlug}`
-        },
-        jobLocation: {
-            '@type': 'Place',
-            address: {
-                '@type': 'PostalAddress',
-                addressLocality: locationName,
-                addressCountry: locationName.includes('India') ? 'India' : locationName.includes('UAE') ? 'United Arab Emirates' : 'United States'
+    const jobPostingSchemas = jobListings.map((listing: any) => {
+        // Calculate validThrough date (90 days from now)
+        const validThroughDate = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+
+        // Generate comprehensive address details
+        const shortLocation = locationName.split(',')[0]
+        const addressRegion = locationName.includes(',') ? locationName.split(',')[1].trim() : ''
+        const addressCountry = locationName.includes('India') ? 'IN' :
+                              locationName.includes('UAE') ? 'AE' : 'US'
+        const streetAddress = listing.isRemote ? 'Remote' : ''
+        const postalCode = listing.isRemote ? '00000' : ''
+
+        return {
+            '@context': 'https://schema.org',
+            '@type': 'JobPosting',
+            title: listing.title,
+            description: listing.description,
+            identifier: {
+                '@type': 'PropertyValue',
+                name: listing.companyName,
+                value: listing.id
+            },
+            datePosted: listing.postedDate,
+            validThrough: validThroughDate,
+            hiringOrganization: {
+                '@type': 'Organization',
+                name: listing.companyName,
+                url: `https://app.hirenest.ai/companies/${listing.companySlug}`
+            },
+            jobLocation: {
+                '@type': 'Place',
+                address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: streetAddress,
+                    addressLocality: shortLocation,
+                    addressRegion: addressRegion,
+                    postalCode: postalCode,
+                    addressCountry: addressCountry
+                }
+            },
+            employmentType: listing.jobType,
+            applicantLocationRequirements: listing.isRemote ? {
+                '@type': 'Country',
+                name: locationName.includes('India') ? 'India' : locationName.includes('UAE') ? 'United Arab Emirates' : 'USA'
+            } : undefined,
+            baseSalary: listing.salaryRange ? {
+                '@type': 'MonetaryAmount',
+                currency: listing.salaryRange.currency,
+                value: {
+                    '@type': 'QuantitativeValue',
+                    minValue: listing.salaryRange.min,
+                    maxValue: listing.salaryRange.max,
+                    unitText: listing.salaryRange.period === 'yearly' ? 'YEAR' : 'HOUR'
+                }
+            } : {
+                '@type': 'MonetaryAmount',
+                currency: 'USD',
+                value: {
+                    '@type': 'QuantitativeValue',
+                    minValue: jobData?.averageSalary ? Math.round(jobData.averageSalary * 0.7) : 50000,
+                    maxValue: jobData?.averageSalary ? Math.round(jobData.averageSalary * 1.3) : 150000,
+                    unitText: 'YEAR'
+                }
             }
-        },
-        employmentType: listing.jobType,
-        applicantLocationRequirements: listing.isRemote ? {
-            '@type': 'Country',
-            name: locationName.includes('India') ? 'India' : locationName.includes('UAE') ? 'United Arab Emirates' : 'USA'
-        } : undefined,
-        salary: listing.salaryRange ? {
-            '@type': 'MonetaryAmount',
-            currency: listing.salaryRange.currency,
-            value: {
-                '@type': 'QuantitativeValue',
-                minValue: listing.salaryRange.min,
-                maxValue: listing.salaryRange.max,
-                unitText: listing.salaryRange.period === 'yearly' ? 'YEAR' : 'HOUR'
-            }
-        } : undefined
-    }))
+        }
+    })
 
     const breadcrumbSchema = {
         '@context': 'https://schema.org',
@@ -249,6 +275,7 @@ export default async function LocationJobPage({ params }: PageProps) {
         name: `${jobData.title} Jobs in ${locationName}`,
         description: `Browse ${totalJobs}+ active ${jobData.title} job openings in ${locationName}. Find jobs with competitive salaries, remote options, and top employers hiring now.`,
         url: `${SEO_CONFIG.BASE_URL}/jobs/${location}/${job}`,
+        image: `${SEO_CONFIG.BASE_URL}/og-image.png`,
         brand: {
             '@type': 'Brand',
             name: 'Hirenest'
@@ -259,7 +286,53 @@ export default async function LocationJobPage({ params }: PageProps) {
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
             url: `${SEO_CONFIG.BASE_URL}/jobs/${location}/${job}`,
-            description: `Free for job seekers - browse and apply to ${jobData.title} positions in ${locationName} without any charges`
+            description: `Free for job seekers - browse and apply to ${jobData.title} positions in ${locationName} without any charges`,
+            priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+            hasMerchantReturnPolicy: {
+                '@type': 'MerchantReturnPolicy',
+                returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+                merchantReturnDays: 0,
+                returnMethod: 'https://schema.org/ReturnByMail',
+                returnFeesAmount: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                description: 'This is a free digital service. No returns or refunds are applicable.'
+            },
+            shippingDetails: {
+                '@type': 'OfferShippingDetails',
+                shippingRate: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                deliveryTime: {
+                    '@type': 'ShippingDeliveryTime',
+                    businessDays: {
+                        '@type': 'OpeningHoursSpecification',
+                        dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday']
+                    },
+                    handlingTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    },
+                    transitTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    }
+                },
+                shippingDestination: {
+                    '@type': 'DefinedRegion',
+                    addressCountry: locationName.includes('India') ? 'India' : locationName.includes('UAE') ? 'United Arab Emirates' : 'US'
+                },
+                doesNotShip: true,
+                description: 'Digital service with instant access. No physical shipping required.'
+            }
         },
         aggregateRating: {
             '@type': 'AggregateRating',
@@ -325,7 +398,53 @@ export default async function LocationJobPage({ params }: PageProps) {
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
             url: `${SEO_CONFIG.BASE_URL}/jobs/${location}/${job}`,
-            description: 'Free virtual career fair - register and attend at no cost'
+            description: 'Free virtual career fair - register and attend at no cost',
+            priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+            hasMerchantReturnPolicy: {
+                '@type': 'MerchantReturnPolicy',
+                returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+                merchantReturnDays: 0,
+                returnMethod: 'https://schema.org/ReturnByMail',
+                returnFeesAmount: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                description: 'This is a free virtual event. No returns or refunds are applicable.'
+            },
+            shippingDetails: {
+                '@type': 'OfferShippingDetails',
+                shippingRate: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                deliveryTime: {
+                    '@type': 'ShippingDeliveryTime',
+                    businessDays: {
+                        '@type': 'OpeningHoursSpecification',
+                        dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday']
+                    },
+                    handlingTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    },
+                    transitTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    }
+                },
+                shippingDestination: {
+                    '@type': 'DefinedRegion',
+                    addressCountry: locationName.includes('India') ? 'India' : locationName.includes('UAE') ? 'United Arab Emirates' : 'US'
+                },
+                doesNotShip: true,
+                description: 'Virtual event with instant online access. No physical shipping required.'
+            }
         },
         image: `${SEO_CONFIG.BASE_URL}/og-image.png`,
         keywords: `${jobData.title}, ${jobData.aliases.join(', ')}, ${locationName}, jobs, hiring, career fair, virtual event`

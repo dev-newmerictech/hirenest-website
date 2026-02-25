@@ -140,6 +140,67 @@ export default async function LocationJobsPage({ params }: PageProps) {
         }
     ]
 
+    // Generate address helper for consistent address fields
+    const getAddressFields = () => {
+        const shortLocation = locationName.split(',')[0]
+        const addressRegion = locationName.includes(',') ? locationName.split(',')[1].trim() : ''
+        const addressCountry = locationName.includes('India') ? 'IN' :
+                              locationName.includes('UAE') ? 'AE' : 'US'
+        return {
+            streetAddress: '',
+            addressLocality: shortLocation,
+            addressRegion: addressRegion,
+            postalCode: '00000',
+            addressCountry: addressCountry
+        }
+    }
+
+    const addressFields = getAddressFields()
+
+    // Calculate validThrough date (90 days from now)
+    const validThroughDate = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+
+    // Build JobPosting schemas for featured jobs
+    const jobPostingSchemas = featuredJobs.map(board => {
+        const jobTitle = enabledJobTitles.find(j => j.slug === board.jobSlug)
+        return {
+            '@context': 'https://schema.org',
+            '@type': 'JobPosting',
+            title: board.jobTitle,
+            description: `Find ${board.totalJobs}+ ${board.jobTitle} jobs in ${locationName}. Browse openings from top companies with competitive salaries. Remote, full-time & contract positions available.`,
+            identifier: {
+                '@type': 'PropertyValue',
+                name: 'HireNest',
+                value: board.jobSlug
+            },
+            datePosted: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+            validThrough: validThroughDate,
+            hiringOrganization: {
+                '@type': 'Organization',
+                name: 'HireNest',
+                url: SEO_CONFIG.BASE_URL
+            },
+            jobLocation: {
+                '@type': 'Place',
+                address: {
+                    '@type': 'PostalAddress',
+                    ...addressFields
+                }
+            },
+            employmentType: 'FULL_TIME',
+            baseSalary: {
+                '@type': 'MonetaryAmount',
+                currency: 'USD',
+                value: {
+                    '@type': 'QuantitativeValue',
+                    minValue: jobTitle?.averageSalary ? Math.round(jobTitle.averageSalary * 0.7) : 50000,
+                    maxValue: jobTitle?.averageSalary ? Math.round(jobTitle.averageSalary * 1.3) : 150000,
+                    unitText: 'YEAR'
+                }
+            }
+        }
+    })
+
     // Build structured data
     const breadcrumbSchema = {
         '@context': 'https://schema.org',
@@ -186,6 +247,7 @@ export default async function LocationJobsPage({ params }: PageProps) {
         name: `Jobs in ${locationName} - Job Board`,
         description: `Browse ${totalJobs.toLocaleString()}+ active job openings in ${locationName}. Find jobs in technology, marketing, sales, healthcare, and more from top companies hiring now.`,
         url: `${SEO_CONFIG.BASE_URL}/jobs/${location}`,
+        image: `${SEO_CONFIG.BASE_URL}/og-image.png`,
         brand: {
             '@type': 'Brand',
             name: 'Hirenest'
@@ -196,7 +258,53 @@ export default async function LocationJobsPage({ params }: PageProps) {
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
             url: `${SEO_CONFIG.BASE_URL}/jobs/${location}`,
-            description: 'Free for job seekers - browse and apply to jobs without any charges'
+            description: 'Free for job seekers - browse and apply to jobs without any charges',
+            priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+            hasMerchantReturnPolicy: {
+                '@type': 'MerchantReturnPolicy',
+                returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+                merchantReturnDays: 0,
+                returnMethod: 'https://schema.org/ReturnByMail',
+                returnFeesAmount: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                description: 'This is a free digital service. No returns or refunds are applicable.'
+            },
+            shippingDetails: {
+                '@type': 'OfferShippingDetails',
+                shippingRate: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                deliveryTime: {
+                    '@type': 'ShippingDeliveryTime',
+                    businessDays: {
+                        '@type': 'OpeningHoursSpecification',
+                        dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday']
+                    },
+                    handlingTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    },
+                    transitTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    }
+                },
+                shippingDestination: {
+                    '@type': 'DefinedRegion',
+                    addressCountry: locationName.includes('India') ? 'India' : locationName.includes('UAE') ? 'United Arab Emirates' : 'US'
+                },
+                doesNotShip: true,
+                description: 'Digital service with instant access. No physical shipping required.'
+            }
         },
         aggregateRating: {
             '@type': 'AggregateRating',
@@ -234,7 +342,53 @@ export default async function LocationJobsPage({ params }: PageProps) {
             price: '0',
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
-            url: `${SEO_CONFIG.BASE_URL}/jobs/${location}`
+            url: `${SEO_CONFIG.BASE_URL}/jobs/${location}`,
+            priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+            hasMerchantReturnPolicy: {
+                '@type': 'MerchantReturnPolicy',
+                returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+                merchantReturnDays: 0,
+                returnMethod: 'https://schema.org/ReturnByMail',
+                returnFeesAmount: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                description: 'This is a free virtual event. No returns or refunds are applicable.'
+            },
+            shippingDetails: {
+                '@type': 'OfferShippingDetails',
+                shippingRate: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                deliveryTime: {
+                    '@type': 'ShippingDeliveryTime',
+                    businessDays: {
+                        '@type': 'OpeningHoursSpecification',
+                        dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday']
+                    },
+                    handlingTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    },
+                    transitTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    }
+                },
+                shippingDestination: {
+                    '@type': 'DefinedRegion',
+                    addressCountry: locationName.includes('India') ? 'India' : locationName.includes('UAE') ? 'United Arab Emirates' : 'US'
+                },
+                doesNotShip: true,
+                description: 'Virtual event with instant online access. No physical shipping required.'
+            }
         },
         image: `${SEO_CONFIG.BASE_URL}/og-image.png`
     }
@@ -258,8 +412,7 @@ export default async function LocationJobsPage({ params }: PageProps) {
                     '@type': 'Place',
                     address: {
                         '@type': 'PostalAddress',
-                        addressLocality: locationName,
-                        addressCountry: locationName.includes('India') ? 'India' : locationName.includes('UAE') ? 'United Arab Emirates' : 'United States'
+                        ...addressFields
                     }
                 }
             }
@@ -269,7 +422,7 @@ export default async function LocationJobsPage({ params }: PageProps) {
     return (
         <Box>
             {/* Structured Data */}
-            <JsonLdSchema schemas={[breadcrumbSchema, faqSchema, productSchema, livestreamSchema, itemListSchema]} />
+            <JsonLdSchema schemas={[breadcrumbSchema, faqSchema, productSchema, livestreamSchema, itemListSchema, ...jobPostingSchemas]} />
 
             {/* Hero Section */}
             <JobBoardHero

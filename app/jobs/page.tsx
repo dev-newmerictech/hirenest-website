@@ -283,7 +283,53 @@ export default async function JobsPage() {
             price: '0',
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
-            url: `${SEO_CONFIG.BASE_URL}/jobs`
+            url: `${SEO_CONFIG.BASE_URL}/jobs`,
+            priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+            hasMerchantReturnPolicy: {
+                '@type': 'MerchantReturnPolicy',
+                returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+                merchantReturnDays: 0,
+                returnMethod: 'https://schema.org/ReturnByMail',
+                returnFeesAmount: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                description: 'This is a free virtual event. No returns or refunds are applicable.'
+            },
+            shippingDetails: {
+                '@type': 'OfferShippingDetails',
+                shippingRate: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                deliveryTime: {
+                    '@type': 'ShippingDeliveryTime',
+                    businessDays: {
+                        '@type': 'OpeningHoursSpecification',
+                        dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday']
+                    },
+                    handlingTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    },
+                    transitTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    }
+                },
+                shippingDestination: {
+                    '@type': 'DefinedRegion',
+                    addressCountry: 'US'
+                },
+                doesNotShip: true,
+                description: 'Virtual event with instant online access. No physical shipping required.'
+            }
         },
         image: `${SEO_CONFIG.BASE_URL}/og-image.jpg`
     }
@@ -295,6 +341,7 @@ export default async function JobsPage() {
         name: 'HireNest Job Board',
         description: `AI-powered job board with ${totalJobs.toLocaleString()}+ active listings across ${enabledJobTitles.length}+ career categories. Free for job seekers.`,
         url: `${SEO_CONFIG.BASE_URL}/jobs`,
+        image: `${SEO_CONFIG.BASE_URL}/og-image.png`,
         brand: {
             '@type': 'Brand',
             name: 'HireNest'
@@ -304,7 +351,53 @@ export default async function JobsPage() {
             price: '0',
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
-            url: `${SEO_CONFIG.BASE_URL}/jobs`
+            url: `${SEO_CONFIG.BASE_URL}/jobs`,
+            priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+            hasMerchantReturnPolicy: {
+                '@type': 'MerchantReturnPolicy',
+                returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+                merchantReturnDays: 0,
+                returnMethod: 'https://schema.org/ReturnByMail',
+                returnFeesAmount: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                description: 'This is a free digital service. No returns or refunds are applicable.'
+            },
+            shippingDetails: {
+                '@type': 'OfferShippingDetails',
+                shippingRate: {
+                    '@type': 'MonetaryAmount',
+                    currency: 'USD',
+                    value: '0'
+                },
+                deliveryTime: {
+                    '@type': 'ShippingDeliveryTime',
+                    businessDays: {
+                        '@type': 'OpeningHoursSpecification',
+                        dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday']
+                    },
+                    handlingTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    },
+                    transitTime: {
+                        '@type': 'QuantitativeValue',
+                        minValue: 0,
+                        maxValue: 0,
+                        unitCode: 'DAY'
+                    }
+                },
+                shippingDestination: {
+                    '@type': 'DefinedRegion',
+                    addressCountry: 'US'
+                },
+                doesNotShip: true,
+                description: 'Digital service with instant access. No physical shipping required.'
+            }
         },
         aggregateRating: {
             '@type': 'AggregateRating',

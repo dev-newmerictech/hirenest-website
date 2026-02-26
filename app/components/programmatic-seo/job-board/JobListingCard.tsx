@@ -111,7 +111,7 @@ export function JobListingCard({ job, showFeatured = true }: JobListingCardProps
                 {/* Header */}
                 <HStack justify="space-between" align="flex-start">
                     <VStack align="stretch" gap={1} flex={1}>
-                        <Link href={`/jobs/${job.slug}`} passHref legacyBehavior>
+                        <Link href={'https://app.hirenest.ai'} passHref legacyBehavior>
                             <ChakraLink _hover={{ textDecoration: 'none' }}>
                                 <Heading
                                     as="h3"

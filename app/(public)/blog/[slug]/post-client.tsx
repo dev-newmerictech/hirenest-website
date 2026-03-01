@@ -1,14 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
-import SkeletonLoader from "@/app/components/SkeletonLoader";
 import type { PostMetadata } from "@/lib/convex-server";
-
-const Post = dynamic(() => import("@/src/views/Post"), {
-    ssr: false,
-    loading: () => <SkeletonLoader type="post" />,
-});
+import Post from "@/src/views/Post";
 
 interface PostClientProps {
     initialPost?: PostMetadata | null;

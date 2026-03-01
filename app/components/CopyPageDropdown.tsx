@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
 import {
     Copy,
     Check,
@@ -7,6 +7,7 @@ import {
     Sparkles,
     FileText,
     Globe2,
+    ChevronDown,
 } from "lucide-react";
 import siteConfig from "@/src/config/siteConfig";
 import { FilePdf } from "@phosphor-icons/react";
@@ -170,15 +171,12 @@ function isUrlTooLong(url: string): boolean {
 type FeedbackState = "idle" | "copied" | "error" | "url-too-long";
 
 export default function CopyPageDropdown(props: CopyPageDropdownProps) {
-    const { title } = props;
+    const { title, slug } = props;
 
-    const [isOpen, setIsOpen] = useState(false);
     const [feedback, setFeedback] = useState<FeedbackState>("idle");
     const [feedbackMessage, setFeedbackMessage] = useState("");
-    const dropdownRef = useRef<HTMLDivElement>(null);
-    const menuRef = useRef<HTMLDivElement>(null);
-    const triggerRef = useRef<HTMLButtonElement>(null);
-    const firstItemRef = useRef<HTMLButtonElement>(null);
+    const detailsRef = useRef<HTMLDetailsElement>(null);
+    const summaryRef = useRef<HTMLElement>(null);
 
     // Clear feedback after delay
     const clearFeedback = useCallback(() => {
@@ -188,82 +186,26 @@ export default function CopyPageDropdown(props: CopyPageDropdownProps) {
         }, 2000);
     }, []);
 
-    // Close dropdown when clicking outside
+    // Close dropdown when clicking outside (JS enhancement)
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (
-                dropdownRef.current &&
-                !dropdownRef.current.contains(event.target as Node)
+                detailsRef.current &&
+                !detailsRef.current.contains(event.target as Node)
             ) {
-                setIsOpen(false);
+                detailsRef.current.open = false;
             }
         }
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    // Handle keyboard navigation
-    useEffect(() => {
-        if (!isOpen || !menuRef.current) return;
-
-        function handleKeyDown(event: KeyboardEvent) {
-            const menu = menuRef.current;
-            if (!menu) return;
-
-            const items = menu.querySelectorAll<HTMLButtonElement>(".copy-page-item");
-            const currentIndex = Array.from(items).findIndex(
-                (item) => item === document.activeElement,
-            );
-
-            switch (event.key) {
-                case "Escape":
-                    setIsOpen(false);
-                    triggerRef.current?.focus();
-                    break;
-                case "ArrowDown":
-                    event.preventDefault();
-                    if (currentIndex < items.length - 1) {
-                        items[currentIndex + 1].focus();
-                    } else {
-                        items[0].focus();
-                    }
-                    break;
-                case "ArrowUp":
-                    event.preventDefault();
-                    if (currentIndex > 0) {
-                        items[currentIndex - 1].focus();
-                    } else {
-                        items[items.length - 1].focus();
-                    }
-                    break;
-                case "Home":
-                    event.preventDefault();
-                    items[0]?.focus();
-                    break;
-                case "End":
-                    event.preventDefault();
-                    items[items.length - 1]?.focus();
-                    break;
-                case "Tab":
-                    // Close dropdown on tab out
-                    if (!event.shiftKey && currentIndex === items.length - 1) {
-                        setIsOpen(false);
-                    }
-                    break;
-            }
+    // Close details element after action (JS enhancement)
+    const closeDetails = useCallback(() => {
+        if (detailsRef.current) {
+            detailsRef.current.open = false;
         }
-
-        document.addEventListener("keydown", handleKeyDown);
-        return () => document.removeEventListener("keydown", handleKeyDown);
-    }, [isOpen]);
-
-    // Focus first item when dropdown opens
-    useEffect(() => {
-        if (isOpen && firstItemRef.current) {
-            // Small delay to ensure menu is rendered
-            setTimeout(() => firstItemRef.current?.focus(), 10);
-        }
-    }, [isOpen]);
+    }, []);
 
     // Safe clipboard write with error handling
     const writeToClipboard = async (text: string): Promise<boolean> => {
@@ -303,14 +245,7 @@ export default function CopyPageDropdown(props: CopyPageDropdownProps) {
         }
 
         clearFeedback();
-        setTimeout(() => setIsOpen(false), 1500);
-    };
-
-    // View raw markdown in a new tab using the app's /raw route
-    const handleViewAsMarkdown = () => {
-        const rawPath = `/raw/${props.slug}`;
-        window.open(rawPath, "_blank", "noopener,noreferrer");
-        setIsOpen(false);
+        setTimeout(() => closeDetails(), 1500);
     };
 
     // Handle download skill file (Anthropic Agent Skills format)
@@ -335,14 +270,14 @@ export default function CopyPageDropdown(props: CopyPageDropdownProps) {
         setFeedback("copied");
         setFeedbackMessage("Downloaded!");
         clearFeedback();
-        setTimeout(() => setIsOpen(false), 1500);
+        setTimeout(() => closeDetails(), 1500);
     };
 
     // Handle export as PDF (triggers browser print dialog)
     const handleExportPDF = () => {
         const printData = formatForPrint(props);
         const printWindow = window.open("", "_blank");
-        if (!printWindow) { setIsOpen(false); return; }
+        if (!printWindow) { return; }
 
         const escapeHtml = (str: string) =>
             str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -409,8 +344,9 @@ export default function CopyPageDropdown(props: CopyPageDropdownProps) {
 </html>`);
         printWindow.document.close();
         printWindow.print();
-        setIsOpen(false);
+        closeDetails();
     };
+
     // Get feedback icon
     const getFeedbackIcon = () => {
         switch (feedback) {
@@ -427,238 +363,197 @@ export default function CopyPageDropdown(props: CopyPageDropdownProps) {
         }
     };
 
+    // Generate URLs for external links
+    const blogUrl = typeof window !== "undefined"
+        ? `${window.location.origin}/blog/${slug}`
+        : `/blog/${slug}`;
+
+    const rawMarkdownUrl = typeof window !== "undefined"
+        ? `${window.location.origin}/raw/${slug}`
+        : `/raw/${slug}`;
+
+    const chatGptUrl = `https://chatgpt.com/?q=${encodeURIComponent(`${AI_READ_PROMPT} ${blogUrl}`)}`;
+    const claudeUrl = `https://claude.ai/new?q=${encodeURIComponent(`${AI_READ_PROMPT} ${blogUrl}`)}`;
+    const perplexityUrl = `https://www.perplexity.ai/search?q=${encodeURIComponent(`${AI_READ_PROMPT} ${blogUrl}`)}`;
+
     // Suppress unused variable warnings for functions that may be used later
     void isUrlTooLong;
     void MAX_URL_LENGTH;
 
     return (
-        <div className="copy-page-dropdown" ref={dropdownRef}>
-            {/* Trigger button with ARIA attributes */}
-            <button
-                ref={triggerRef}
+        <details className="copy-page-dropdown" ref={detailsRef}>
+            {/* Native summary element works without JavaScript */}
+            <summary
+                ref={summaryRef}
                 className="copy-page-trigger"
-                onClick={() => setIsOpen(!isOpen)}
-                aria-expanded={isOpen}
-                aria-haspopup="menu"
-                aria-controls="copy-page-menu"
                 aria-label={`Copy or share: ${title}`}
             >
                 <Copy size={14} aria-hidden="true" />
                 <span>Copy page</span>
-                <svg
-                    className={`dropdown-chevron ${isOpen ? "open" : ""}`}
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
+                <ChevronDown size={14} className="dropdown-chevron" aria-hidden="true" />
+            </summary>
+
+            {/* Dropdown menu - rendered natively by <details> element */}
+            <div className="copy-page-menu" role="menu" aria-label="Copy and share options">
+                {/* Copy page option (requires JS) */}
+                <button
+                    className="copy-page-item js-only"
+                    onClick={handleCopyPage}
+                    role="menuitem"
+                    tabIndex={0}
+                    type="button"
                 >
-                    <path
-                        d="M2.5 4L5 6.5L7.5 4"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                    {getFeedbackIcon()}
+                    <div className="copy-page-item-content">
+                        <span className="copy-page-item-title">
+                            {feedback !== "idle" ? feedbackMessage : "Copy page"}
+                        </span>
+                        <span className="copy-page-item-desc">
+                            Copy page as Markdown for LLMs
+                        </span>
+                    </div>
+                </button>
+
+                {/* View as Markdown (works without JS - uses href) */}
+                <a
+                    className="copy-page-item"
+                    href={rawMarkdownUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    role="menuitem"
+                    onClick={closeDetails}
+                >
+                    <FileText size={16} className="copy-page-icon" aria-hidden="true" />
+                    <div className="copy-page-item-content">
+                        <span className="copy-page-item-title">
+                            View as Markdown
+                            <span className="external-arrow" aria-hidden="true">
+                                ↗
+                            </span>
+                        </span>
+                        <span className="copy-page-item-desc">Open raw .md file</span>
+                    </div>
+                </a>
+
+                {/* Download as SKILL.md (requires JS) */}
+                <button
+                    className="copy-page-item js-only"
+                    onClick={handleDownloadSkill}
+                    role="menuitem"
+                    tabIndex={0}
+                    type="button"
+                >
+                    <Sparkles
+                        size={20}
+                        className="copy-page-icon"
+                        aria-hidden="true"
                     />
-                </svg>
-            </button>
+                    <div className="copy-page-item-content">
+                        <span className="copy-page-item-title">Download as {slug}.md</span>
+                        <span className="copy-page-item-desc">
+                            Export as Anthropic Agent Skill file
+                        </span>
+                    </div>
+                </button>
 
-            {/* Dropdown menu with ARIA role */}
-            {isOpen && (
-                <div
-                    ref={menuRef}
-                    id="copy-page-menu"
-                    className="copy-page-menu"
-                    role="menu"
-                    aria-label="Copy and share options"
+                {/* Open in ChatGPT (works without JS - uses href) */}
+                <a
+                    className="copy-page-item"
+                    href={chatGptUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    role="menuitem"
+                    onClick={closeDetails}
                 >
-                    {/* Copy page option */}
-                    <button
-                        ref={firstItemRef}
-                        className="copy-page-item"
-                        onClick={handleCopyPage}
-                        role="menuitem"
-                        tabIndex={0}
-                    >
-                        {getFeedbackIcon()}
-                        <div className="copy-page-item-content">
-                            <span className="copy-page-item-title">
-                                {feedback !== "idle" ? feedbackMessage : "Copy page"}
+                    <MessageSquare
+                        size={20}
+                        className="copy-page-icon"
+                        aria-hidden="true"
+                    />
+                    <div className="copy-page-item-content">
+                        <span className="copy-page-item-title">
+                            Open in ChatGPT
+                            <span className="external-arrow" aria-hidden="true">
+                                ↗
                             </span>
-                            <span className="copy-page-item-desc">
-                                Copy page as Markdown for LLMs
-                            </span>
-                        </div>
-                    </button>
+                        </span>
+                        <span className="copy-page-item-desc">
+                            Ask questions about this page
+                        </span>
+                    </div>
+                </a>
 
-                    {/* View as Markdown (raw view in this app) */}
-                    <button
-                        className="copy-page-item"
-                        onClick={() => {
-                            // Build absolute URL using current origin for consistency
-                            const rawMarkdownUrl = new URL(
-                                `/raw/${props.slug}`,
-                                window.location.origin,
-                            ).toString();
-                            window.open(rawMarkdownUrl, "_blank");
-                            setIsOpen(false);
-                        }}
-                        role="menuitem"
-                        tabIndex={0}
-                    >
-                        <FileText size={16} className="copy-page-icon" aria-hidden="true" />
-                        <div className="copy-page-item-content">
-                            <span className="copy-page-item-title">
-                                View as Markdown
-                                <span className="external-arrow" aria-hidden="true">
-                                    ↗
-                                </span>
+                {/* Open in Claude (works without JS - uses href) */}
+                <a
+                    className="copy-page-item"
+                    href={claudeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    role="menuitem"
+                    onClick={closeDetails}
+                >
+                    <Sparkles
+                        size={20}
+                        className="copy-page-icon"
+                        aria-hidden="true"
+                    />
+                    <div className="copy-page-item-content">
+                        <span className="copy-page-item-title">
+                            Open in Claude
+                            <span className="external-arrow" aria-hidden="true">
+                                ↗
                             </span>
-                            <span className="copy-page-item-desc">Open raw .md file</span>
-                        </div>
-                    </button>
+                        </span>
+                        <span className="copy-page-item-desc">
+                            Ask questions about this page
+                        </span>
+                    </div>
+                </a>
 
-                    {/* Download as SKILL.md (Anthropic Agent Skill format) */}
-                    <button
-                        className="copy-page-item"
-                        onClick={handleDownloadSkill}
-                        role="menuitem"
-                        tabIndex={0}
-                    >
-                        <Sparkles
-                            size={20}
-                            className="copy-page-icon"
-                            aria-hidden="true"
-                        />
-                        <div className="copy-page-item-content">
-                            <span className="copy-page-item-title">Download as {props.slug}.md</span>
-                            <span className="copy-page-item-desc">
-                                Export as Anthropic Agent Skill file
+                {/* Open in Perplexity (works without JS - uses href) */}
+                <a
+                    className="copy-page-item"
+                    href={perplexityUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    role="menuitem"
+                    onClick={closeDetails}
+                >
+                    <Globe2
+                        size={20}
+                        className="copy-page-icon"
+                        aria-hidden="true"
+                    />
+                    <div className="copy-page-item-content">
+                        <span className="copy-page-item-title">
+                            Open in Perplexity
+                            <span className="external-arrow" aria-hidden="true">
+                                ↗
                             </span>
-                        </div>
-                    </button>
+                        </span>
+                        <span className="copy-page-item-desc">
+                            Ask questions about this page
+                        </span>
+                    </div>
+                </a>
 
-                    {/* Open in ChatGPT */}
-                    <button
-                        className="copy-page-item"
-                        onClick={() => {
-                            const url = `${window.location.origin}/blog/${props.slug}`;
-                            const prompt = encodeURIComponent(`${AI_READ_PROMPT} ${url}`);
-                            window.open(
-                                `https://chatgpt.com/?q=${prompt}`,
-                                "_blank",
-                                "noopener,noreferrer",
-                            );
-                            setIsOpen(false);
-                        }}
-                        role="menuitem"
-                        tabIndex={0}
-                    >
-                        <MessageSquare
-                            size={20}
-                            className="copy-page-icon"
-                            aria-hidden="true"
-                        />
-                        <div className="copy-page-item-content">
-                            <span className="copy-page-item-title">
-                                Open in ChatGPT
-                                <span className="external-arrow" aria-hidden="true">
-                                    ↗
-                                </span>
-                            </span>
-                            <span className="copy-page-item-desc">
-                                Ask questions about this page
-                            </span>
-                        </div>
-                    </button>
-
-                    {/* Open in Claude */}
-                    <button
-                        className="copy-page-item"
-                        onClick={() => {
-                            const url = `${window.location.origin}/blog/${props.slug}`;
-                            const prompt = encodeURIComponent(`${AI_READ_PROMPT} ${url}`);
-                            window.open(
-                                `https://claude.ai/new?q=${prompt}`,
-                                "_blank",
-                                "noopener,noreferrer",
-                            );
-                            setIsOpen(false);
-                        }}
-                        role="menuitem"
-                        tabIndex={0}
-                    >
-                        <Sparkles
-                            size={20}
-                            className="copy-page-icon"
-                            aria-hidden="true"
-                        />
-                        <div className="copy-page-item-content">
-                            <span className="copy-page-item-title">
-                                Open in Claude
-                                <span className="external-arrow" aria-hidden="true">
-                                    ↗
-                                </span>
-                            </span>
-                            <span className="copy-page-item-desc">
-                                Ask questions about this page
-                            </span>
-                        </div>
-                    </button>
-
-                    {/* Open in Perplexity */}
-                    <button
-                        className="copy-page-item"
-                        onClick={() => {
-                            const url = `${window.location.origin}/blog/${props.slug}`;
-                            window.open(
-                                `https://www.perplexity.ai/search?q=${encodeURIComponent(
-                                    `${AI_READ_PROMPT} ${url}`,
-                                )}`,
-                                "_blank",
-                                "noopener,noreferrer",
-                            );
-                            setIsOpen(false);
-                        }}
-                        role="menuitem"
-                        tabIndex={0}
-                    >
-                        <Globe2
-                            size={20}
-                            className="copy-page-icon"
-                            aria-hidden="true"
-                        />
-                        <div className="copy-page-item-content">
-                            <span className="copy-page-item-title">
-                                Open in Perplexity
-                                <span className="external-arrow" aria-hidden="true">
-                                    ↗
-                                </span>
-                            </span>
-                            <span className="copy-page-item-desc">
-                                Ask questions about this page
-                            </span>
-                        </div>
-                    </button>
-
-                    {/* Export as PDF option */}
-                    <button
-                        className="copy-page-item"
-                        onClick={handleExportPDF}
-                        role="menuitem"
-                        tabIndex={0}
-                    >
-                        <FilePdf size={16} className="copy-page-icon" aria-hidden="true" />
-                        <div className="copy-page-item-content">
-                            <span className="copy-page-item-title">Export as PDF</span>
-                            <span className="copy-page-item-desc">
-                                Print or save as PDF
-                            </span>
-                        </div>
-                    </button>
-                </div>
-            )}
-        </div>
+                {/* Export as PDF (requires JS) */}
+                <button
+                    className="copy-page-item js-only"
+                    onClick={handleExportPDF}
+                    role="menuitem"
+                    tabIndex={0}
+                    type="button"
+                >
+                    <FilePdf size={16} className="copy-page-icon" aria-hidden="true" />
+                    <div className="copy-page-item-content">
+                        <span className="copy-page-item-title">Export as PDF</span>
+                        <span className="copy-page-item-desc">
+                            Print or save as PDF
+                        </span>
+                    </div>
+                </button>
+            </div>
+        </details>
     );
 }

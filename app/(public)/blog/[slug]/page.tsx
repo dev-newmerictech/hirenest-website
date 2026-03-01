@@ -181,45 +181,6 @@ export async function generateStaticParams() {
     return slugs.map((slug) => ({ slug }));
 }
 
-/**
- * Server-rendered article content for SEO crawlers.
- * The client component (PostClient, ssr:false) replaces this on hydration.
- * This ensures article text, headings, and links are in the initial HTML.
- */
-function ServerArticle({ post }: { post: NonNullable<Awaited<ReturnType<typeof fetchPostBySlug>>> }) {
-    const postUrl = `${SITE_URL}/blog/${post.slug}`;
-
-    return (
-        <article
-            className="hirenest-article blog-post-content ssr-article-fallback"
-            itemScope
-            itemType="https://schema.org/BlogPosting"
-        >
-            <meta itemProp="url" content={postUrl} />
-            <meta itemProp="datePublished" content={post.date} />
-            <meta itemProp="dateModified" content={post.date} />
-            {post.image && <meta itemProp="image" content={post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`} />}
-            <span itemProp="author" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content={post.authorName || "Hirenest Team"} />
-            </span>
-
-            <h1 itemProp="headline">{post.title}</h1>
-            <p itemProp="description">{post.description}</p>
-            <div itemProp="articleBody">{post.content}</div>
-
-            {post.tags && post.tags.length > 0 && (
-                <nav aria-label="Post tags">
-                    {post.tags.map((tag) => (
-                        <a key={tag} href={`/blog/tag/${encodeURIComponent(tag.toLowerCase())}`}>
-                            {tag}
-                        </a>
-                    ))}
-                </nav>
-            )}
-        </article>
-    );
-}
-
 export default async function BlogPostPage({ params }: PageProps) {
     const { slug } = await params;
     const post = await fetchPostBySlug(slug);
@@ -253,8 +214,6 @@ export default async function BlogPostPage({ params }: PageProps) {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
                 />
             ))}
-            {/* Server-rendered content for SEO — hidden after client hydration */}
-            {/* <ServerArticle post={post} /> */}
             <PostClient initialPost={post} />
         </>
     );

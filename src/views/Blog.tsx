@@ -164,6 +164,11 @@ export default function Blog({ initialPosts }: BlogProps = {}) {
     ? allRegularPosts.filter((p: any) => !featuredIds.has(p._id))
     : allRegularPosts;
 
+  const isServerRender = typeof window === "undefined";
+  const displayPosts = isServerRender && initialPosts
+    ? initialPosts
+    : regularPosts;
+
   // Only show skeleton on initial load, not when loading more pages
   // Skip skeleton if we have server-provided initialPosts
   const isDataLoading = initialPosts?.length
@@ -206,7 +211,7 @@ export default function Blog({ initialPosts }: BlogProps = {}) {
               <SkeletonLoader type="blog" />
             ) : (
               <>
-                {regularPosts.length === 0 ? (
+                {displayPosts.length === 0 ? (
                   <div style={{ textAlign: "center", padding: "4rem 2rem", background: "var(--bg-subtle)", borderRadius: "var(--radius-lg)" }}>
                     <h3 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1rem" }}>
                       We don't have any blog available now
@@ -217,7 +222,7 @@ export default function Blog({ initialPosts }: BlogProps = {}) {
                   </div>
                 ) : (
                   <PostList
-                    posts={regularPosts}
+                    posts={displayPosts}
                     viewMode={viewMode}
                     columns={3}
                   />

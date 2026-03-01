@@ -150,6 +150,14 @@ export default function RootLayout({
           title="Hirenest LLM Metadata"
           href="https://hirenest.ai/llms.txt"
         />
+        {/* JS Detection: Add class when JavaScript is enabled
+             This allows CSS to hide SSR fallback content after hydration,
+             while keeping it visible for SEO crawlers and users with JS disabled */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.classList.add('js-loaded', 'js-available');`
+          }}
+        />
         {/* Structured Data - Combined Organization & Website */}
         <StructuredDataWrapper />
         <meta name="linksindexer-site-verification" content="f4e5bfc7cf21ea2ab5130cf9f64b50c13b10e7603a78a51e098525db8969c1a3"></meta>

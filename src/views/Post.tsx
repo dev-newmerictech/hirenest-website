@@ -19,7 +19,6 @@ import { ArrowLeft } from "lucide-react";
 import { useEffect, useCallback, useState } from "react";
 import siteConfig from "@/src/config/siteConfig";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
-import SkeletonLoader from "@/app/components/SkeletonLoader";
 
 // Local storage key for related posts view mode preference
 const RELATED_POSTS_VIEW_MODE_KEY = "related-posts-view-mode";
@@ -53,6 +52,16 @@ interface PostProps {
   };
 }
 
+// Helper functions (must be defined before use)
+const normalizeSlug = (slug: string | undefined): string | undefined => {
+  if (!slug) return undefined;
+  // Remove /raw/ prefix if present
+  let normalized = slug.startsWith("raw/") ? slug.slice(4) : slug;
+  // Remove .md extension if present
+  normalized = normalized.endsWith(".md") ? normalized.slice(0, -3) : normalized;
+  return normalized;
+};
+
 export default function Post({
   slug: propSlug,
   initialPost,
@@ -60,6 +69,9 @@ export default function Post({
   const { slug: routeSlug } = useParams<{ slug: string }>();
   const pathname = usePathname();
   const { setHeadings, setActiveId, activeId } = useSidebar();
+  // For SSR/JS-disabled: use slug from initialPost if available
+  // For CSR: use slug from route params
+  const effectiveSlug = initialPost?.slug || normalizeSlug(propSlug || routeSlug);
 
   // State for related posts view mode toggle (list or thumbnails)
   const [relatedPostsViewMode, setRelatedPostsViewMode] = useState<"list" | "thumbnails">(
@@ -86,16 +98,6 @@ export default function Post({
   // Check if this is a raw markdown request
   const isRawRequest = pathname.startsWith("/raw/");
 
-  // Normalize slug: remove /raw/ prefix and .md extension if present
-  const normalizeSlug = (slug: string | undefined): string | undefined => {
-    if (!slug) return undefined;
-    // Remove /raw/ prefix if present
-    let normalized = slug.startsWith("raw/") ? slug.slice(4) : slug;
-    // Remove .md extension if present
-    normalized = normalized.endsWith(".md") ? normalized.slice(0, -3) : normalized;
-    return normalized;
-  };
-
   // For raw requests, parse slug from pathname; otherwise use route param
   const getRawSlugFromPath = (): string | undefined => {
     if (!isRawRequest) return undefined;
@@ -105,7 +107,7 @@ export default function Post({
   };
 
   // Use prop slug if provided (for homepage), otherwise use route slug or parse from path
-  const slug = normalizeSlug(propSlug || routeSlug || getRawSlugFromPath());
+  const slug = effectiveSlug || getRawSlugFromPath();
 
   // Check for page first, then post
   // Skip redundant Convex queries when server-fetched initialPost is available
@@ -212,14 +214,6 @@ export default function Post({
     },
     [setActiveId],
   );
-
-  // Show loading skeleton while fetching data
-  // Skip skeleton if we have server-provided initialPost data
-  if (!initialPost && (page === undefined || post === undefined)) {
-    return (
-      <SkeletonLoader type="post" />
-    );
-  }
 
   // Display raw markdown for /raw/ routes
   if (isRawRequest) {

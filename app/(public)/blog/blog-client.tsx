@@ -1,14 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
-import SkeletonLoader from "@/app/components/SkeletonLoader";
 import type { PostSummary } from "@/lib/convex-server";
-
-const Blog = dynamic(() => import("@/src/views/Blog"), {
-    ssr: false,
-    loading: () => <SkeletonLoader type="blog" />,
-});
+import Blog from "@/src/views/Blog";
 
 interface BlogClientProps {
     initialPosts?: PostSummary[];

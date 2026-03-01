@@ -18,6 +18,22 @@
    - 4xl: 32px  (mobile home name)
    - 5xl: 36px  (home name, stats title)
    ============================================ */
+
+   .copy-page-details {
+  display: inline-block;
+}
+
+/* Remove default summary styling */
+.copy-page-details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.copy-page-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+
 :root {
   /* Colors */
   --red-500: #ef4444;
@@ -752,6 +768,15 @@
   position: relative;
 }
 
+/* Remove default summary marker and styling */
+.copy-page-dropdown > summary {
+  list-style: none;
+}
+
+.copy-page-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
 .copy-page-trigger {
   display: inline-flex;
   align-items: center;
@@ -765,6 +790,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
+  user-select: none;
 }
 
 .copy-page-trigger:hover {
@@ -777,8 +803,23 @@
   transition: transform 0.15s ease;
 }
 
-.dropdown-chevron.open {
+details[open] .dropdown-chevron {
   transform: rotate(180deg);
+}
+
+/* Hide menu by default for no-JS fallback */
+.copy-page-dropdown:not([open]) .copy-page-menu {
+  display: none;
+}
+
+/* Hide elements that require JavaScript by default */
+.js-only {
+  display: none !important;
+}
+
+/* Show JS-only elements when JavaScript is available */
+html.js-available .js-only {
+  display: flex !important;
 }
 
 .copy-page-menu {
@@ -836,10 +877,17 @@
   text-align: left;
   cursor: pointer;
   transition: background-color 0.1s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .copy-page-item:hover {
   background-color: #e5ebf3;
+}
+
+/* For anchor tags in the dropdown, remove underline */
+.copy-page-item[href] {
+  text-decoration: none;
 }
 
 .copy-page-icon {
@@ -1722,7 +1770,7 @@
 }
 
 .blog-post-content details>*:not(summary) {
-  padding: 0 16px;
+  /* padding: 0 16px; */
 }
 
 .blog-post-content details>p:first-of-type {
@@ -4157,8 +4205,23 @@
   margin-bottom: 0;
 }
 
+
 /* View toggle button */
 .view-toggle-button {
+  display: none;
+}
+
+/* Hide elements that require JavaScript */
+.js-only {
+  display: none !important;
+}
+
+/* Show JS-only elements when JavaScript is loaded */
+html.js-loaded .js-only {
+  display: flex !important;
+}
+
+html.js-loaded .view-toggle-button {
   display: flex;
   align-items: center;
   justify-content: center;

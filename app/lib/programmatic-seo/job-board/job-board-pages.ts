@@ -214,7 +214,6 @@ export const LOCATION_JOB_BOARDS: LocationJobBoard[] = [
     { locationSlug: 'jaipur', locationName: 'Jaipur, India', jobSlug: 'digital-marketing-manager', jobTitle: 'Digital Marketing Manager', totalJobs: 55 },
     { locationSlug: 'jaipur', locationName: 'Jaipur, India', jobSlug: 'frontend-developer', jobTitle: 'Frontend Developer', totalJobs: 65 },
     { locationSlug: 'jaipur', locationName: 'Jaipur, India', jobSlug: 'backend-developer', jobTitle: 'Backend Developer', totalJobs: 60 },
-    { locationSlug: 'jaipur', locationName: 'Jaipur, India', jobSlug: 'web-developer', jobTitle: 'Web Developer', totalJobs: 70 },
 
     // Bangalore - More jobs
     { locationSlug: 'bangalore', locationName: 'Bangalore, India', jobSlug: 'frontend-developer', jobTitle: 'Frontend Developer', totalJobs: 180 },
@@ -236,7 +235,6 @@ export const LOCATION_JOB_BOARDS: LocationJobBoard[] = [
     { locationSlug: 'kolkata', locationName: 'Kolkata, India', jobSlug: 'full-stack-developer', jobTitle: 'Full Stack Developer', totalJobs: 82 },
     { locationSlug: 'kolkata', locationName: 'Kolkata, India', jobSlug: 'frontend-developer', jobTitle: 'Frontend Developer', totalJobs: 75 },
     { locationSlug: 'kolkata', locationName: 'Kolkata, India', jobSlug: 'backend-developer', jobTitle: 'Backend Developer', totalJobs: 70 },
-    { locationSlug: 'kolkata', locationName: 'Kolkata, India', jobSlug: 'web-developer', jobTitle: 'Web Developer', totalJobs: 68 },
 
     // Ahmedabad, India
     { locationSlug: 'ahmedabad', locationName: 'Ahmedabad, India', jobSlug: 'software-engineer', jobTitle: 'Software Engineer', totalJobs: 75 },
@@ -282,7 +280,6 @@ export const LOCATION_JOB_BOARDS: LocationJobBoard[] = [
     { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'digital-marketing-manager', jobTitle: 'Digital Marketing Manager', totalJobs: 80 },
     { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'sales-representative', jobTitle: 'Sales Representative', totalJobs: 90 },
     { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'business-analyst', jobTitle: 'Business Analyst', totalJobs: 75 },
-    { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'project-manager', jobTitle: 'Project Manager', totalJobs: 85 },
     { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'finance-manager', jobTitle: 'Finance Manager', totalJobs: 65 },
     { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'devops-engineer', jobTitle: 'DevOps Engineer', totalJobs: 78 },
     { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'cloud-engineer', jobTitle: 'Cloud Engineer', totalJobs: 82 },
@@ -296,8 +293,6 @@ export const LOCATION_JOB_BOARDS: LocationJobBoard[] = [
     { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'graphic-designer', jobTitle: 'Graphic Designer', totalJobs: 48 },
     { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'content-writer', jobTitle: 'Content Writer', totalJobs: 52 },
     { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'social-media-manager', jobTitle: 'Social Media Manager', totalJobs: 58 },
-    { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'customer-service', jobTitle: 'Customer Service', totalJobs: 95 },
-    { locationSlug: 'dubai', locationName: 'Dubai, UAE', jobSlug: 'operations-manager', jobTitle: 'Operations Manager', totalJobs: 48 },
 
     // Abu Dhabi, UAE - Extended with more jobs
     { locationSlug: 'abu-dhabi', locationName: 'Abu Dhabi, UAE', jobSlug: 'software-engineer', jobTitle: 'Software Engineer', totalJobs: 85 },
@@ -307,7 +302,6 @@ export const LOCATION_JOB_BOARDS: LocationJobBoard[] = [
     { locationSlug: 'abu-dhabi', locationName: 'Abu Dhabi, UAE', jobSlug: 'frontend-developer', jobTitle: 'Frontend Developer', totalJobs: 60 },
     { locationSlug: 'abu-dhabi', locationName: 'Abu Dhabi, UAE', jobSlug: 'backend-developer', jobTitle: 'Backend Developer', totalJobs: 58 },
     { locationSlug: 'abu-dhabi', locationName: 'Abu Dhabi, UAE', jobSlug: 'devops-engineer', jobTitle: 'DevOps Engineer', totalJobs: 52 },
-    { locationSlug: 'abu-dhabi', locationName: 'Abu Dhabi, UAE', jobSlug: 'project-manager', jobTitle: 'Project Manager', totalJobs: 48 },
     { locationSlug: 'abu-dhabi', locationName: 'Abu Dhabi, UAE', jobSlug: 'business-analyst', jobTitle: 'Business Analyst', totalJobs: 45 },
     { locationSlug: 'abu-dhabi', locationName: 'Abu Dhabi, UAE', jobSlug: 'sales-representative', jobTitle: 'Sales Representative', totalJobs: 55 },
     { locationSlug: 'abu-dhabi', locationName: 'Abu Dhabi, UAE', jobSlug: 'cloud-engineer', jobTitle: 'Cloud Engineer', totalJobs: 50 },
@@ -521,7 +515,7 @@ export function getLocationJobsListings(jobSlug: string, locationSlug: string) {
             city: locationName.split(',')[0],
             state: locationName.includes(',') ? locationName.split(', ')[1] : '',
             country: locationName.includes('India') ? 'India' :
-                   locationName.includes('UAE') ? 'United Arab Emirates' : 'United States'
+                locationName.includes('UAE') ? 'United Arab Emirates' : 'United States'
         },
         // Adjust featured status based on location demand
         featured: listing.featured || Math.random() > 0.6

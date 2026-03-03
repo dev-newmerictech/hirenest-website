@@ -18,22 +18,26 @@ import { JobBoardHero } from '../../../components/programmatic-seo/job-board'
 import { JobListingCard } from '../../../components/programmatic-seo/job-board'
 import { RelatedJobRoles } from '../../../components/programmatic-seo/job-board'
 import { getJobBySlug, enabledJobTitles } from '../../../lib/programmatic-seo/enabled-job-titles'
-import { getLocationJobBoard, getLocationJobsListings, SUPPORTED_LOCATIONS } from '../../../lib/programmatic-seo/job-board'
+import { getLocationJobBoard, getLocationJobsListings, LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '../../../lib/programmatic-seo/job-board'
 import { generatePageMetadata } from '../../../lib/metadata'
 import { JsonLdSchema } from '../../../components/seo'
 import { SEO_CONFIG } from '../../../lib/seo/core/constants'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import FaqSection from '@/app/components/FaqSection'
 
-// Force static generation
-export const dynamic = 'force-static'
+// ISR: Revalidate pages every 24 hours
+export const revalidate = 86400; // 24 hours in seconds
 
-// Generate static params for all job + location combinations
+// On-Demand ISR: Allow dynamic generation for non-prebuilt pages
+export const dynamicParams = true;
+
+// Generate static params for top job+location combinations at build time (rest generate on first visit)
 export async function generateStaticParams() {
     const params: Array<{ location: string; job: string }> = []
+    const topJobs = enabledJobTitles.slice(0, 100) // Only top 100 jobs
 
     for (const location of SUPPORTED_LOCATIONS) {
-        for (const job of enabledJobTitles) {
+        for (const job of topJobs) {
             // Only include if we have data for this job+location combination
             const hasData = getLocationJobBoard(job.slug, location.slug)
             if (hasData) {
@@ -162,7 +166,7 @@ export default async function LocationJobPage({ params }: PageProps) {
         const shortLocation = locationName.split(',')[0]
         const addressRegion = locationName.includes(',') ? locationName.split(',')[1].trim() : ''
         const addressCountry = locationName.includes('India') ? 'IN' :
-                              locationName.includes('UAE') ? 'AE' : 'US'
+            locationName.includes('UAE') ? 'AE' : 'US'
         const streetAddress = listing.isRemote ? 'Remote' : ''
         const postalCode = listing.isRemote ? '00000' : ''
 
@@ -583,7 +587,10 @@ export default async function LocationJobPage({ params }: PageProps) {
                         Other Locations for {jobData.title} Jobs
                     </Heading>
                     <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 6 }} gap={3}>
-                        {SUPPORTED_LOCATIONS.slice(0, 12).map((loc) => (
+                        {SUPPORTED_LOCATIONS.filter(loc =>
+                            // Only show locations where this job actually exists
+                            LOCATION_JOB_BOARDS.some(board => board.locationSlug === loc.slug && board.jobSlug === job)
+                        ).map((loc) => (
                             <Link
                                 key={loc.slug}
                                 href={`/jobs/${loc.slug}/${job}`}

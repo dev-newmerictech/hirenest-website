@@ -26,12 +26,15 @@ import { SEO_CONFIG } from '../../../lib/seo/core/constants'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import FaqSection from '@/app/components/FaqSection'
 
-// Force static generation
-export const dynamic = 'force-static'
+// ISR: Revalidate pages every 24 hours
+export const revalidate = 86400; // 24 hours in seconds
 
-// Generate static params for all job titles
+// On-Demand ISR: Allow dynamic generation for non-prebuilt pages
+export const dynamicParams = true;
+
+// Generate static params for top 100 job roles at build time (rest generate on first visit)
 export async function generateStaticParams() {
-    return enabledJobTitles.map((job) => ({
+    return enabledJobTitles.slice(0, 100).map((job) => ({
         role: job.slug,
     }))
 }

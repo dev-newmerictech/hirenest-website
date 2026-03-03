@@ -2471,15 +2471,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 12
     },
     {
-        id: 'executive-chef',
-        title: 'Executive Chef',
-        slug: 'executive-chef',
-        category: 'hospitality',
-        aliases: ['Head Chef', 'Kitchen Manager'],
-        averageSalary: 65000,
-        growthRate: 10
-    },
-    {
         id: 'sous-chef',
         title: 'Sous Chef',
         slug: 'sous-chef',
@@ -4395,15 +4386,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['Director of Finance', 'Financial Director'],
         averageSalary: 145000,
         growthRate: 14
-    },
-    {
-        id: 'senior-accountant',
-        title: 'Senior Accountant',
-        slug: 'senior-accountant',
-        category: 'finance',
-        aliases: ['Accountant II', 'Senior Accounting'],
-        averageSalary: 75000,
-        growthRate: 10
     },
     {
         id: 'general-accountant',
@@ -8742,15 +8724,6 @@ export const jobTitles: JobTitle[] = [
         aliases: ['DEI Director', 'Director of Diversity'],
         averageSalary: 155000,
         growthRate: 20
-    },
-    {
-        id: 'employee-relations-director',
-        title: 'Employee Relations Director',
-        slug: 'employee-relations-director',
-        category: 'hr',
-        aliases: ['ER Director', 'Director of Employee Relations'],
-        averageSalary: 135000,
-        growthRate: 14
     },
     {
         id: 'talent-development-director',

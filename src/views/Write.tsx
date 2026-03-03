@@ -390,6 +390,17 @@ export default function Write() {
         unlisted: frontmatter.unlisted,
       });
 
+      // Clear server cache and revalidate
+      try {
+        await fetch('/api/blog-post/revalidate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug: frontmatter.slug }),
+        });
+      } catch (revalidateError) {
+        console.warn('Failed to revalidate cache:', revalidateError);
+      }
+
       setSaveSuccess(true);
       setIsSaving(false);
 

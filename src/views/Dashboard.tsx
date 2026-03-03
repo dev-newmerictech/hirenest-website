@@ -627,6 +627,17 @@ export function DashboardContent({ initialSection = "posts" }: { initialSection?
           unlisted: item.unlisted,
         });
 
+        // Clear server cache and revalidate
+        try {
+          await fetch('/api/blog-post/revalidate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ slug: item.slug }),
+          });
+        } catch (revalidateError) {
+          console.warn('Failed to revalidate cache:', revalidateError);
+        }
+
         if (shouldPublish) {
           // Update local state to reflect published status
           setEditingItem({ ...item, published: true });
@@ -2575,6 +2586,17 @@ function WriteSection({ contentType, setActiveSection: _setActiveSection }: { co
         contactForm: frontmatter.contactForm,
         unlisted: frontmatter.unlisted,
       });
+
+      // Clear server cache and revalidate
+      try {
+        await fetch('/api/blog-post/revalidate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug: frontmatter.slug }),
+        });
+      } catch (revalidateError) {
+        console.warn('Failed to revalidate cache:', revalidateError);
+      }
 
       setSaveSuccess(true);
       setIsSaving(false);

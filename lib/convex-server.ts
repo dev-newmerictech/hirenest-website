@@ -1,14 +1,75 @@
 /**
- * Server-side Convex data fetching for generateMetadata, generateStaticParams,
- * and Server Components. Uses ConvexHttpClient to query Convex functions
- * directly (bypasses HTTP action routes which may 404 on self-hosted).
+ * Server-side Convex data fetching with in-memory caching.
+ * Reduces Convex bandwidth usage through intelligent caching.
  */
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "@/convex/_generated/api";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai";
 
-/** Lazy-initialized Convex HTTP client (queries the backend directly) */
+/** Cache TTL configuration */
+const CACHE_TTL = {
+  SHORT: 60 * 1000,          // 1 minute - for post details
+  MEDIUM: 48 * 60 * 60 * 1000, // 48 hours - for blog listing
+  LONG: 15 * 60 * 1000,       // 15 minutes - for slugs, tags, authors
+};
+
+/** In-memory cache store */
+interface CacheEntry<T> {
+  data: T;
+  expires: number;
+}
+
+const cache = new Map<string, CacheEntry<any>>();
+
+/** Get cached data or fetch fresh */
+async function withCache<T>(
+  key: string,
+  ttl: number,
+  fetcher: () => Promise<T>
+): Promise<T> {
+  const now = Date.now();
+  const cached = cache.get(key);
+
+  if (cached && cached.expires > now) {
+    console.log(`[cache HIT] ${key}`);
+    return cached.data as T;
+  }
+
+  console.log(`[cache MISS] ${key}`);
+  const data = await fetcher();
+  cache.set(key, { data, expires: now + ttl });
+
+  // Cleanup expired entries periodically
+  if (cache.size > 100) {
+    for (const [k, v] of cache.entries()) {
+      if (v.expires <= now) {
+        cache.delete(k);
+      }
+    }
+  }
+
+  return data;
+}
+
+/** Clear cache for a specific key pattern (call after post updates) */
+export function clearConvexCache(pattern?: string): void {
+  if (!pattern) {
+    cache.clear();
+    console.log("[cache] Cleared all cache");
+    return;
+  }
+  let cleared = 0;
+  for (const key of cache.keys()) {
+    if (key.includes(pattern)) {
+      cache.delete(key);
+      cleared++;
+    }
+  }
+  console.log(`[cache] Cleared ${cleared} entries matching "${pattern}"`);
+}
+
+/** Lazy-initialized Convex HTTP client */
 let _client: ConvexHttpClient | null = null;
 function getClient(): ConvexHttpClient {
   if (!_client) {
@@ -40,7 +101,6 @@ export interface PostMetadata {
   showSocialFooter?: boolean;
 }
 
-/** Summary post for blog listing (no full content) */
 export interface PostSummary {
   title: string;
   slug: string;
@@ -52,11 +112,10 @@ export interface PostSummary {
 }
 
 /**
- * Fetch all published blog posts for the listing page.
- * Returns summaries only (no full content) for lightweight SSR.
+ * Fetch all published blog posts with caching.
  */
 export async function fetchBlogPosts(): Promise<PostSummary[]> {
-  try {
+  return withCache("blog-posts", CACHE_TTL.MEDIUM, async () => {
     const client = getClient();
     const posts = await client.query(api.posts.getAllPosts);
 
@@ -69,48 +128,37 @@ export async function fetchBlogPosts(): Promise<PostSummary[]> {
       tags: post.tags,
       url: `${SITE_URL}/blog/${post.slug}`,
     }));
-  } catch (error) {
-    console.error("[convex-server] Failed to fetch blog posts:", error);
-    return [];
-  }
+  });
 }
 
 /**
- * Fetch all post slugs for generateStaticParams (ISR).
+ * Fetch all post slugs with caching.
  */
 export async function fetchAllPostSlugs(): Promise<string[]> {
-  try {
-    const posts = await fetchBlogPosts();
-    if (posts.length === 0) {
-      console.warn("[generateStaticParams] No blog posts returned — pages will use ISR on first request");
-    } else {
-      console.log(`[generateStaticParams] Pre-rendering ${posts.length} blog posts`);
-    }
-    return posts.map((p) => p.slug);
-  } catch (error) {
-    console.error("[generateStaticParams] Failed to fetch blog slugs:", error);
-    return [];
+  const posts = await fetchBlogPosts();
+  if (posts.length === 0) {
+    console.warn("[generateStaticParams] No blog posts returned");
+  } else {
+    console.log(`[generateStaticParams] Pre-rendering ${posts.length} blog posts`);
   }
+  return posts.map((p) => p.slug);
 }
 
 /**
- * Fetch all unique tags for generateStaticParams.
+ * Fetch all unique tags with caching.
  */
 export async function fetchAllTags(): Promise<{ tag: string; count: number }[]> {
-  try {
+  return withCache("blog-tags", CACHE_TTL.LONG, async () => {
     const client = getClient();
     return await client.query(api.posts.getAllTags);
-  } catch (error) {
-    console.error("[convex-server] Failed to fetch tags:", error);
-    return [];
-  }
+  });
 }
 
 /**
- * Fetch posts filtered by tag for server-rendered fallback.
+ * Fetch posts by tag with caching.
  */
 export async function fetchPostsByTag(tag: string): Promise<PostSummary[]> {
-  try {
+  return withCache(`blog-posts-by-tag-${tag}`, CACHE_TTL.MEDIUM, async () => {
     const client = getClient();
     const posts = await client.query(api.posts.getPostsByTag, { tag });
     return posts.map((post) => ({
@@ -122,30 +170,24 @@ export async function fetchPostsByTag(tag: string): Promise<PostSummary[]> {
       tags: post.tags,
       url: `${SITE_URL}/blog/${post.slug}`,
     }));
-  } catch (error) {
-    console.error(`[convex-server] Failed to fetch posts for tag "${tag}":`, error);
-    return [];
-  }
+  });
 }
 
 /**
- * Fetch all unique authors for generateStaticParams.
+ * Fetch all authors with caching.
  */
 export async function fetchAllAuthors(): Promise<{ name: string; slug: string; postCount: number }[]> {
-  try {
+  return withCache("blog-authors", CACHE_TTL.LONG, async () => {
     const client = getClient();
     return await client.query(api.posts.getAllAuthors);
-  } catch (error) {
-    console.error("[convex-server] Failed to fetch authors:", error);
-    return [];
-  }
+  });
 }
 
 /**
- * Fetch posts by author slug for server-rendered fallback.
+ * Fetch posts by author with caching.
  */
 export async function fetchPostsByAuthor(authorSlug: string): Promise<PostSummary[]> {
-  try {
+  return withCache(`blog-posts-by-author-${authorSlug}`, CACHE_TTL.MEDIUM, async () => {
     const client = getClient();
     const result = await client.query(api.posts.getPostsByAuthorPaginated, {
       authorSlug,
@@ -161,26 +203,19 @@ export async function fetchPostsByAuthor(authorSlug: string): Promise<PostSummar
       tags: post.tags,
       url: `${SITE_URL}/blog/${post.slug}`,
     }));
-  } catch (error) {
-    console.error(`[convex-server] Failed to fetch posts for author "${authorSlug}":`, error);
-    return [];
-  }
+  });
 }
 
 /**
- * Fetch a published blog post by slug.
- * Returns null if not found or unpublished.
+ * Fetch a single post by slug with caching.
  */
 export async function fetchPostBySlug(slug: string): Promise<PostMetadata | null> {
-  try {
+  return withCache(`blog-post-${slug}`, CACHE_TTL.SHORT, async () => {
     const client = getClient();
     const post = await client.query(api.posts.getPostBySlug, { slug });
 
     if (!post) return null;
 
     return post as unknown as PostMetadata;
-  } catch (error) {
-    console.error(`[convex-server] Failed to fetch post "${slug}":`, error);
-    return null;
-  }
+  });
 }

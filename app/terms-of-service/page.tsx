@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import { pageMetadata } from '../lib/metadata';
 import { TermsOfServiceStructuredData } from './structured-data';
+import Link from 'next/link';
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -95,9 +96,9 @@ export default function TermsOfServicePage() {
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
                                 If you have any questions about these Terms of Service, please contact us at{' '}
-                                <Text as="a" href="mailto:legal@hirenest.ai" color="blue.500" hover="blue.600">
+                                <Link href="mailto:legal@hirenest.ai" color="blue.500">
                                     legal@hirenest.ai
-                                </Text>
+                                </Link>
                             </Text>
                         </Box>
                     </VStack>

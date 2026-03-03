@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import { pageMetadata } from '../lib/metadata';
 import { RefundPolicyStructuredData } from './structured-data';
+import Link from 'next/link';
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -40,9 +41,9 @@ export default function RefundPolicyPage() {
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
                                 To request a refund, please contact our support team at{' '}
-                                <Text as="a" href="mailto:support@hirenest.ai" color="blue.500" hover="blue.600">
+                                <Link href="mailto:support@hirenest.ai" color="blue.500">
                                     support@hirenest.ai
-                                </Text> with your account details and reason for the refund request. We will process your request within
+                                </Link> with your account details and reason for the refund request. We will process your request within
                                 5-7 business days.
                             </Text>
                         </Box>
@@ -86,9 +87,9 @@ export default function RefundPolicyPage() {
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
                                 If you have any questions about our refund policy, please contact us at{' '}
-                                <Text as="a" href="mailto:support@hirenest.ai" color="blue.500" hover="blue.600">
+                                <Link href="mailto:support@hirenest.ai" color="blue.500">
                                     support@hirenest.ai
-                                </Text>
+                                </Link>
                             </Text>
                         </Box>
                     </VStack>

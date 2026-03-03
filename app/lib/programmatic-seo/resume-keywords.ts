@@ -4782,7 +4782,6 @@ export const resumeKeywords: ResumeKeyword[] = [
     { id: 'hris-leadership', keyword: 'HRIS Leadership', category: 'soft-skill', jobTitles: ['hr-information-systems-manager'], context: 'HRIS leadership' },
     { id: 'people-analytics-leadership', keyword: 'People Analytics Leadership', category: 'soft-skill', jobTitles: ['hr-analytics-manager'], context: 'People analytics leadership' },
     { id: 'dei-leadership', keyword: 'DEI Leadership', category: 'soft-skill', jobTitles: ['diversity-equity-inclusion-director'], context: 'DEI leadership' },
-    { id: 'employee-relations-leadership', keyword: 'Employee Relations Leadership', category: 'soft-skill', jobTitles: ['employee-relations-director'], context: 'Employee relations leadership' },
     { id: 'talent-development-leadership', keyword: 'Talent Development Leadership', category: 'soft-skill', jobTitles: ['talent-development-director'], context: 'Talent development leadership' },
     { id: 'university-relations', keyword: 'University Relations', category: 'hard-skill', jobTitles: ['university-relations-manager'], context: 'University relations' },
     { id: 'employer-branding-adv', keyword: 'Employer Branding', category: 'hard-skill', jobTitles: ['employer-branding-manager'], context: 'Employer branding' },

@@ -81,4 +81,7 @@ export default async function AuthorPageRoute({ params }: PageProps) {
     );
 }
 
-export const revalidate = 3600;
+export const revalidate = 86400; // 24 hours
+
+// Only generate static pages for defined params (404 for others)
+export const dynamicParams = false;

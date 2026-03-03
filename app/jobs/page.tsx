@@ -410,7 +410,7 @@ export default async function JobsPage() {
     }
 
     // Pre-filter locations by region to avoid repeated filtering in JSX
-    const indiaLocations = SUPPORTED_LOCATIONS.filter(l => l.name.includes('India')).slice(0, 12)
+    const indiaLocations = SUPPORTED_LOCATIONS.filter(l => l.name.includes('India'))
     const uaeLocations = SUPPORTED_LOCATIONS.filter(l => l.name.includes('UAE'))
     const usLocations = SUPPORTED_LOCATIONS.filter(l => !l.name.includes('India') && !l.name.includes('UAE') && l.slug !== 'remote')
 

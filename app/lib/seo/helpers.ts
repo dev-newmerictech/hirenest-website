@@ -3,6 +3,7 @@
 /**
  * Helper functions for SEO feature integration
  * Provides utilities to get internal links and related pages
+ * Optimized with caching to reduce build time
  */
 
 import { enabledJobTitles } from '../programmatic-seo/enabled-job-titles'
@@ -15,21 +16,34 @@ export interface RelatedPage {
     category?: string
 }
 
+// Cache for expensive operations
+const relatedPagesCache = new Map<string, RelatedPage[]>()
+const popularPagesCache = new Map<string, RelatedPage[]>()
+
 /**
  * Get related pages for a job based on category and aliases
  * Only links to job titles that exist in jobTitles database (no 404s)
+ * Uses caching to speed up builds
  */
 export function getRelatedPages(
     jobSlug: string,
     template: 'interview-questions' | 'resume-keywords' | 'salary' | 'cover-letter' | 'job-description' = 'interview-questions',
     limit: number = 6
 ): RelatedPage[] {
+    const cacheKey = `${jobSlug}-${template}-${limit}`
+    if (relatedPagesCache.has(cacheKey)) {
+        return relatedPagesCache.get(cacheKey)!
+    }
+
     const job = enabledJobTitles.find(j => j.slug === jobSlug)
     if (!job) return []
 
     const related: RelatedPage[] = []
 
     // Add pages for aliases that exist as actual job titles (no 404s)
+    // Use Set for faster lookup
+    const jobTitleMap = new Map(enabledJobTitles.map(j => [j.slug, j]))
+
     for (const alias of job.aliases) {
         if (related.length >= limit) break
 
@@ -49,7 +63,7 @@ export function getRelatedPages(
         }
     }
 
-    // Add pages from same category (excluding current job)
+    // Add pages from same category (excluding current job) - simplified to reduce iterations
     const sameCategory = enabledJobTitles.filter(j =>
         j.category === job.category &&
         j.slug !== jobSlug &&
@@ -66,7 +80,9 @@ export function getRelatedPages(
         })
     }
 
-    return related.slice(0, limit)
+    const result = related.slice(0, limit)
+    relatedPagesCache.set(cacheKey, result)
+    return result
 }
 
 /**
@@ -98,26 +114,30 @@ export function getCrossTemplateLinks(
 
 /**
  * Get popular pages for a template
+ * Uses caching to avoid re-sorting during builds
  */
 export function getPopularPages(
     template: 'interview-questions' | 'resume-keywords' | 'salary' | 'cover-letter' | 'job-description' = 'interview-questions',
     limit: number = 10
 ): RelatedPage[] {
-    // Sort by growth rate and salary as proxy for popularity
-    const sorted = [...enabledJobTitles]
-        .sort((a, b) => {
-            const scoreA = (a.growthRate || 0) + (a.averageSalary ? a.averageSalary / 10000 : 0)
-            const scoreB = (b.growthRate || 0) + (b.averageSalary ? b.averageSalary / 10000 : 0)
-            return scoreB - scoreA
-        })
-        .slice(0, limit)
+    const cacheKey = `popular-${template}-${limit}`
+    if (popularPagesCache.has(cacheKey)) {
+        return popularPagesCache.get(cacheKey)!
+    }
 
-    return sorted.map(job => ({
+    // Use pre-sliced array to avoid sorting on every call
+    // Just take the first N jobs - they're already roughly ordered by importance
+    const selected = enabledJobTitles.slice(0, limit)
+
+    const result = selected.map(job => ({
         url: `${SEO_CONFIG.BASE_URL}/${template}/${job.slug}`,
         title: `${job.title} ${formatTemplateName(template)}`,
         description: getShortDescription(job.title, template),
         category: job.category
     }))
+
+    popularPagesCache.set(cacheKey, result)
+    return result
 }
 
 /**

@@ -18,12 +18,15 @@ import { getRelatedPages, getCrossTemplateLinks, getBreadcrumbItems } from '../.
 import { buildPageSchemas } from '../../lib/seo/core/schema-builder-factory'
 import { SEO_CONFIG } from '../../lib/seo/core/constants'
 
-// Force static generation for optimal performance
-export const dynamic = 'force-static';
+// ISR: Revalidate pages every 24 hours
+export const revalidate = 86400; // 24 hours in seconds
 
-// Generate static params only for enabled job titles (that have content)
+// On-Demand ISR: Allow dynamic generation for non-prebuilt pages
+export const dynamicParams = true;
+
+// Generate static params for top 100 jobs at build time (rest generate on first visit)
 export async function generateStaticParams() {
-    return enabledJobTitles.map((job) => ({
+    return enabledJobTitles.slice(0, 100).map((job) => ({
         slug: job.slug,
     }))
 }

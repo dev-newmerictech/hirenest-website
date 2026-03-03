@@ -8915,15 +8915,6 @@ export const jobTitles: JobTitle[] = [
         growthRate: 14
     },
     {
-        id: 'client-services-director',
-        title: 'Client Services Director',
-        slug: 'client-services-director',
-        category: 'customer-service',
-        aliases: ['Director of Client Services', 'Client Service Director'],
-        averageSalary: 125000,
-        growthRate: 14
-    },
-    {
         id: 'customer-advocacy-manager',
         title: 'Customer Advocacy Manager',
         slug: 'customer-advocacy-manager',

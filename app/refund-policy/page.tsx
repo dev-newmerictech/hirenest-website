@@ -39,8 +39,10 @@ export default function RefundPolicyPage() {
                                 2. How to Request a Refund
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                To request a refund, please contact our support team at support@hirenest.com with your
-                                account details and reason for the refund request. We will process your request within
+                                To request a refund, please contact our support team at{' '}
+                                <Text as="a" href="mailto:support@hirenest.ai" color="blue.500" hover="blue.600">
+                                    support@hirenest.ai
+                                </Text> with your account details and reason for the refund request. We will process your request within
                                 5-7 business days.
                             </Text>
                         </Box>
@@ -83,8 +85,10 @@ export default function RefundPolicyPage() {
                                 6. Contact Us
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                If you have any questions about our refund policy, please contact us at
-                                support@hirenest.com
+                                If you have any questions about our refund policy, please contact us at{' '}
+                                <Text as="a" href="mailto:support@hirenest.ai" color="blue.500" hover="blue.600">
+                                    support@hirenest.ai
+                                </Text>
                             </Text>
                         </Box>
                     </VStack>

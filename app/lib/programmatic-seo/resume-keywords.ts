@@ -4810,7 +4810,6 @@ export const resumeKeywords: ResumeKeyword[] = [
     { id: 'customer-success-leadership', keyword: 'Customer Success Leadership', category: 'soft-skill', jobTitles: ['customer-success-director'], context: 'Customer success leadership' },
     { id: 'contact-center-leadership', keyword: 'Contact Center Leadership', category: 'soft-skill', jobTitles: ['contact-center-director'], context: 'Contact center leadership' },
     { id: 'service-management', keyword: 'Service Management', category: 'hard-skill', jobTitles: ['customer-service-manager', 'customer-support-manager'], context: 'Service management' },
-    { id: 'client-services-leadership', keyword: 'Client Services Leadership', category: 'soft-skill', jobTitles: ['client-services-director'], context: 'Client services leadership' },
     { id: 'customer-advocacy', keyword: 'Customer Advocacy', category: 'hard-skill', jobTitles: ['customer-advocacy-manager'], context: 'Customer advocacy' },
     { id: 'customer-insights', keyword: 'Customer Insights', category: 'hard-skill', jobTitles: ['customer-insights-manager'], context: 'Customer insights' },
     { id: 'retention-leadership', keyword: 'Retention Leadership', category: 'soft-skill', jobTitles: ['customer-retention-director'], context: 'Retention leadership' },

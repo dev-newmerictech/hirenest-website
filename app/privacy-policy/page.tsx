@@ -83,8 +83,10 @@ export default function PrivacyPolicyPage() {
                                 6. Contact Us
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                If you have any questions about this Privacy Policy, please contact us at
-                                privacy@hirenest.com
+                                If you have any questions about this Privacy Policy, please contact us at{' '}
+                                <Text as="a" href="mailto:privacy@hirenest.ai" color="blue.500" hover="blue.600">
+                                    privacy@hirenest.ai
+                                </Text>
                             </Text>
                         </Box>
                     </VStack>

@@ -95,7 +95,10 @@ export default function SecurityPage() {
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
                                 If you discover a security vulnerability or have concerns about the security of your
-                                data, please contact our security team immediately at security@hirenest.com
+                                data, please contact our security team at{' '}
+                                <Text as="a" href="mailto:security@hirenest.ai" color="blue.500" hover="blue.600">
+                                    security@hirenest.ai
+                                </Text>
                             </Text>
                         </Box>
                     </VStack>

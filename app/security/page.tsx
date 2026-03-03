@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import { pageMetadata } from '../lib/metadata';
 import { SecurityStructuredData } from './structured-data';
+import Link from 'next/link';
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -96,9 +97,9 @@ export default function SecurityPage() {
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
                                 If you discover a security vulnerability or have concerns about the security of your
                                 data, please contact our security team at{' '}
-                                <Text as="a" href="mailto:security@hirenest.ai" color="blue.500" hover="blue.600">
+                                <Link href="mailto:security@hirenest.ai" color="blue.500">
                                     security@hirenest.ai
-                                </Text>
+                                </Link>
                             </Text>
                         </Box>
                     </VStack>

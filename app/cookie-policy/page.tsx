@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import { pageMetadata } from '../lib/metadata';
 import { CookiePolicyStructuredData } from './structured-data';
+import Link from 'next/link';
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -88,9 +89,9 @@ export default function CookiePolicyPage() {
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
                                 If you have any questions about our use of cookies, please contact us at{' '}
-                                <Text as="a" href="mailto:privacy@hirenest.ai" color="blue.500" hover="blue.600">
+                                <Link href="mailto:privacy@hirenest.ai" color="blue.500">
                                     privacy@hirenest.ai
-                                </Text>
+                                </Link>
                             </Text>
                         </Box>
                     </VStack>

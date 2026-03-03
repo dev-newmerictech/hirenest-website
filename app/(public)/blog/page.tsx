@@ -84,4 +84,6 @@ export default async function BlogPage() {
     );
 }
 
-export const revalidate = 3600;
+// Revalidate every 48 hours
+export const revalidate = 172800; // 48 hours
+

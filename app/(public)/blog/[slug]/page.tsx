@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { fetchPostBySlug, fetchAllPostSlugs } from "@/lib/convex-server";
+import { fetchPostBySlug } from "@/lib/convex-server";
 import { extractFAQs } from "@/src/utils/extractFAQs";
 import { extractHeadings } from "@/src/utils/extractHeadings";
 import PostClient from "./post-client";
@@ -175,11 +175,6 @@ function buildPostJsonLd(post: NonNullable<Awaited<ReturnType<typeof fetchPostBy
     return schemas;
 }
 
-/** Pre-render all published blog posts at build time for ISR */
-export async function generateStaticParams() {
-    const slugs = await fetchAllPostSlugs();
-    return slugs.map((slug) => ({ slug }));
-}
 
 export default async function BlogPostPage({ params }: PageProps) {
     const { slug } = await params;
@@ -219,7 +214,6 @@ export default async function BlogPostPage({ params }: PageProps) {
     );
 }
 
-export const revalidate = 86400; // 24 hours
+// Revalidate every 48 hours
+export const revalidate = 172800; // 48 hours
 
-// Only generate static pages for defined params (404 for others)
-export const dynamicParams = false;

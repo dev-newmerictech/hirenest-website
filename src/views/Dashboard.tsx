@@ -96,6 +96,9 @@ const USERS = [
   { email: "amrutsankpal9420@gmail.com", password: "Amrut@12345" },
   { email: "sushant.pingale@newmerictech.com", password: "sushant.pingale@2026" },
   { email: "dipakp@newmerictech.com", password: "dipakp@2026" },
+  { email: "divy.parekh@newmerictech.com", password: "divy.parekh@2026" },
+  { email: "veeral.saxena@newmerictech.com", password: "veeral.saxena@2026" },
+  { email: "naren.samanta@newmerictech.com", password: "naren.samanta@2026" },
 ];
 const AUTH_STORAGE_KEY = "dashboard_auth_token";
 

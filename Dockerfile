@@ -23,9 +23,9 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # Environment Variables
 ENV NEXT_PUBLIC_SITE_URL="https://hirenest.ai"
 ENV NEXT_PUBLIC_SITE_NAME="HireNest"
-ENV NEXT_PUBLIC_CONVEX_URL="https://harmless-squid-632.convex.cloud"
-ENV NEXT_PUBLIC_CONVEX_SITE_URL="https://harmless-squid-632.convex.site"
-ENV CONVEX_DEPLOYMENT="prod:harmless-squid-632"
+ENV NEXT_PUBLIC_CONVEX_URL="https://different-aardvark-542.convex.cloud"
+ENV NEXT_PUBLIC_CONVEX_SITE_URL="https://different-aardvark-542.convex.site"
+ENV CONVEX_DEPLOYMENT="different-aardvark-542"
 RUN npm run build
 
 # ---------- Production stage ----------

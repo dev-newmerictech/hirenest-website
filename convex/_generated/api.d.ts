@@ -21,6 +21,7 @@ import type * as embeddingsQueries from "../embeddingsQueries.js";
 import type * as files from "../files.js";
 import type * as fs from "../fs.js";
 import type * as http from "../http.js";
+import type * as import_ from "../import.js";
 import type * as llmsTxt from "../llmsTxt.js";
 import type * as newsletter from "../newsletter.js";
 import type * as newsletterActions from "../newsletterActions.js";
@@ -54,6 +55,7 @@ declare const fullApi: ApiFromModules<{
   files: typeof files;
   fs: typeof fs;
   http: typeof http;
+  import: typeof import_;
   llmsTxt: typeof llmsTxt;
   newsletter: typeof newsletter;
   newsletterActions: typeof newsletterActions;

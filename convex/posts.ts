@@ -88,11 +88,75 @@ export const listAll = query({
       fetchSize = offset + limit;
     }
 
-    // Fetch posts using date-based pagination in batches
-    let allFetchedPosts: Doc<"posts">[] = [];
+    // BANDWIDTH OPTIMIZATION: Use postSummaries table (no content field)
+    // This reduces bandwidth from ~50KB per post to ~1KB per post
+    const summariesExist = await ctx.db
+      .query("postSummaries")
+      .first();
+
+    let allFetchedPosts: any[] = [];
+
+    if (summariesExist) {
+      // Use lightweight postSummaries table (~1KB per post vs ~50KB)
+      let lastTime: number | null = null;
+      const batchSize = 50;
+      const maxIterations = 50;
+      let iterations = 0;
+
+      while (allFetchedPosts.length < fetchSize && iterations < maxIterations) {
+        iterations++;
+        let batch: any[];
+        const remaining = fetchSize - allFetchedPosts.length;
+        const currentBatchSize = Math.min(batchSize, remaining);
+
+        if (lastTime === null) {
+          batch = await ctx.db
+            .query("postSummaries")
+            .order("desc")
+            .take(currentBatchSize);
+        } else {
+          batch = await ctx.db
+            .query("postSummaries")
+            .order("desc")
+            .filter((q) => q.lt(q.field("_creationTime"), lastTime as number))
+            .take(currentBatchSize);
+        }
+
+        if (batch.length === 0) break;
+
+        allFetchedPosts.push(...batch);
+
+        if (batch.length < currentBatchSize) break;
+
+        lastTime = batch[batch.length - 1]._creationTime;
+      }
+
+      // Map summary format to expected return format
+      return allFetchedPosts
+        .slice(offset, offset + limit)
+        .map((post) => ({
+          _id: post.postId,
+          _creationTime: 0,
+          slug: post.slug,
+          title: post.title,
+          description: post.description,
+          date: post.date,
+          published: post.published,
+          tags: post.tags,
+          readTime: post.readTime,
+          image: post.image,
+          excerpt: post.excerpt,
+          featured: post.featured,
+          featuredOrder: post.featuredOrder,
+          authorName: post.authorName,
+          authorImage: post.authorImage,
+        }));
+    }
+
+    // Fallback: fetch from posts table (uses more bandwidth)
     let lastDate: string | null = null;
-    const batchSize = 50; // Fetch in batches of 50 to avoid byte limit
-    const maxIterations = 50; // Safety limit
+    const batchSize = 50;
+    const maxIterations = 50;
     let iterations = 0;
 
     while (allFetchedPosts.length < fetchSize && iterations < maxIterations) {
@@ -102,14 +166,12 @@ export const listAll = query({
       const currentBatchSize = Math.min(batchSize, remaining);
 
       if (lastDate === null) {
-        // First batch
         batch = await ctx.db
           .query("posts")
           .withIndex("by_date")
           .order("desc")
           .take(currentBatchSize);
       } else {
-        // Subsequent batches
         const dateFilter = lastDate;
         batch = await ctx.db
           .query("posts")
@@ -118,15 +180,11 @@ export const listAll = query({
           .take(currentBatchSize);
       }
 
-      if (batch.length === 0) {
-        break; // No more posts
-      }
+      if (batch.length === 0) break;
 
       allFetchedPosts.push(...batch);
 
-      if (batch.length < currentBatchSize) {
-        break; // Got all available posts
-      }
+      if (batch.length < currentBatchSize) break;
 
       lastDate = batch[batch.length - 1].date;
     }
@@ -134,14 +192,12 @@ export const listAll = query({
     // Slice to get the requested page
     let paginatedPosts: Doc<"posts">[];
     if (offset === 0) {
-      // First page: return all 160 posts
       paginatedPosts = allFetchedPosts;
     } else {
-      // Subsequent pages: return 15 posts starting from offset
       paginatedPosts = allFetchedPosts.slice(offset, offset + limit);
     }
 
-    // Return without content for list view (content is the largest field)
+    // Return without content for list view
     return paginatedPosts.map((post) => ({
       _id: post._id,
       _creationTime: post._creationTime,

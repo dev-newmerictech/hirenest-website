@@ -14,7 +14,9 @@
     "turbo:lint": "turbo run lint",
     "test:urls": "npx tsx scripts/extract-urls.ts && npx tsx scripts/test-urls.ts",
     "test:internal-links": "npx tsx scripts/test-internal-links.ts",
-    "test:all": "npm run build && npm run test:urls && npm run test:internal-links"
+    "test:all": "npm run build && npm run test:urls && npm run test:internal-links",
+    "backup:blog": "node scripts/backup-blog-posts.js",
+    "import:blog": "node scripts/import-blog-backup.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",

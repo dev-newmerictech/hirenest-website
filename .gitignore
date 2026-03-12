@@ -34,7 +34,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
+import-blog-backup.js
+backup-blog-posts.js
+blog-backups
 # env files (can opt-in for committing if needed)
 .env*
 

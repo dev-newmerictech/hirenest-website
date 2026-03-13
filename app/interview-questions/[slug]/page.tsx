@@ -85,16 +85,16 @@ export default async function InterviewQuestionsPage({ params }: PageProps) {
     const questions = getQuestionsForJob(slug)
 
     // Use unique questions if available, otherwise fall back to template questions
-    const commonQuestions = uniqueContent?.questions?.common.length > 0
+    const commonQuestions = uniqueContent && uniqueContent?.questions && uniqueContent?.questions?.common?.length > 0
         ? uniqueContent.questions.common
         : questions.filter(q => q.category === 'background' || q.category === 'behavioral')
-    const technicalQuestions = uniqueContent?.questions?.technical.length > 0
+    const technicalQuestions = uniqueContent && uniqueContent?.questions && uniqueContent?.questions?.technical?.length > 0
         ? uniqueContent.questions.technical
         : questions.filter(q => q.category === 'technical')
-    const companyQuestions = uniqueContent?.questions?.companyFit.length > 0
+    const companyQuestions = uniqueContent && uniqueContent?.questions && uniqueContent?.questions?.companyFit?.length > 0
         ? uniqueContent.questions.companyFit
         : questions.filter(q => q.category === 'company-fit')
-    const situationalQuestions = uniqueContent?.questions?.situational.length > 0
+    const situationalQuestions = uniqueContent && uniqueContent?.questions && uniqueContent?.questions?.situational?.length > 0
         ? uniqueContent.questions.situational
         : questions.filter(q => q.category === 'situational')
 

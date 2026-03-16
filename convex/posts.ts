@@ -32,17 +32,40 @@ export async function getAllPublishedPostsFromDB(ctx: { db: any }) {
 }
 
 // Get total count of all posts (for dashboard pagination)
-// Returns cached count from siteConfig
+// Counts dynamically from postSummaries if available, otherwise from posts table
 export const getTotalCount = query({
   args: {},
   returns: v.number(),
   handler: async (ctx) => {
-    // Get total count (all posts) from cache
-    const cachedCount = await ctx.db
-      .query("siteConfig")
-      .withIndex("by_key", (q) => q.eq("key", "totalPostCount"))
-      .first();
-    return cachedCount?.value as number ?? 500;
+    // Try postSummaries first (lightweight, no content)
+    const summariesExist = await ctx.db.query("postSummaries").first();
+
+    if (summariesExist) {
+      // Count all summaries (fast, no content field)
+      const allSummaries = await ctx.db.query("postSummaries").collect();
+      return allSummaries.length;
+    }
+
+    // Fallback: count from posts table using pagination
+    let count = 0;
+    let lastTime: number | null = null;
+    while (true) {
+      let batch;
+      if (lastTime === null) {
+        batch = await ctx.db.query("posts").order("desc").take(100);
+      } else {
+        batch = await ctx.db
+          .query("posts")
+          .order("desc")
+          .filter((q) => q.lt(q.field("_creationTime"), lastTime as number))
+          .take(100);
+      }
+      if (batch.length === 0) break;
+      count += batch.length;
+      if (batch.length < 100) break;
+      lastTime = batch[batch.length - 1]._creationTime;
+    }
+    return count;
   },
 });
 
@@ -408,6 +431,9 @@ export const getAllPosts = query({
 
       const listedPosts = allSummaries.filter((p) => !p.unlisted);
 
+      // Sort by date descending (newest first) for consistent ordering
+      listedPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
       return listedPosts.map((post) => ({
         _id: post.postId,
         _creationTime: 0,
@@ -457,6 +483,9 @@ export const getAllPosts = query({
     }
 
     const listedPosts = allPosts.filter((p) => !p.unlisted);
+
+    // Sort by date descending (newest first) for consistent ordering
+    listedPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     return listedPosts.map((post) => ({
       _id: post._id,
@@ -1283,6 +1312,9 @@ export const getPostsByPage = query({
         lastTime = batch[batch.length - 1]._creationTime;
       }
 
+      // Sort by date descending (newest first) before pagination
+      validPosts.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
       const paginatedPosts = validPosts.slice(args.offset, args.offset + args.limit);
 
       return {
@@ -1334,6 +1366,9 @@ export const getPostsByPage = query({
       if (batch.length < 20) break;
       lastTime2 = batch[batch.length - 1]._creationTime;
     }
+
+    // Sort by date descending (newest first) before pagination
+    validPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     const effectiveOffset = Math.min(args.offset, validPosts.length);
     const paginatedPosts = validPosts.slice(effectiveOffset, effectiveOffset + args.limit);

@@ -1505,15 +1505,17 @@ function PostsListView({
       </div>
 
       {/* Pagination */}
-      {totalPostsCount > 0 && !searchQuery.trim() && (
+      {/* Only show pagination when: no search, no filter, and has posts */}
+      {totalPostsCount > 0 && filter === "all" && !searchQuery.trim() && (
         <div className="dashboard-pagination">
           <span className="dashboard-pagination-info">
-            Page {currentPage + 1} of {totalPages}
+            Page {currentPage + 1} of {totalPages} ({totalPostsCount} total posts)
           </span>
           <button
             onClick={handleFirstPage}
             disabled={!hasPrevPage}
             className="dashboard-pagination-btn"
+            title="Go to first page"
           >
             <CaretLeft size={16} />
             First
@@ -1522,6 +1524,7 @@ function PostsListView({
             onClick={handlePrevPage}
             disabled={!hasPrevPage}
             className="dashboard-pagination-btn"
+            title="Previous page"
           >
             Previous
           </button>
@@ -1529,10 +1532,27 @@ function PostsListView({
             onClick={handleNextPage}
             disabled={!hasNextPage}
             className="dashboard-pagination-btn"
+            title="Next page"
           >
             Next
             <CaretRight size={16} />
           </button>
+          <button
+            onClick={() => setPostsOffset(Math.floor((totalPostsCount - 1) / postsPerPage) * postsPerPage)}
+            disabled={!hasNextPage}
+            className="dashboard-pagination-btn"
+            title="Go to last page"
+          >
+            Last
+            <CaretRight size={16} />
+          </button>
+        </div>
+      )}
+
+      {/* Show info message when filtering or searching */}
+      {filter !== "all" && filteredPosts && filteredPosts.length > 0 && (
+        <div className="dashboard-pagination-info-text" style={{ textAlign: 'center', padding: '1rem', color: 'var(--fg-muted)' }}>
+          Showing {filteredPosts.length} {filter} posts from current page. Use pagination to see more.
         </div>
       )}
     </div>
@@ -1588,9 +1608,21 @@ function PagesListView({
     setCurrentPage(0);
   };
 
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage((prev) => prev - 1);
+    }
+  };
+
   const handleNextPage = () => {
     if (hasNextPage) {
       setCurrentPage((prev) => prev + 1);
+    }
+  };
+
+  const handleLastPage = () => {
+    if (filteredPages && totalPages > 0) {
+      setCurrentPage(totalPages - 1);
     }
   };
 
@@ -1704,22 +1736,44 @@ function PagesListView({
       </div>
 
       {/* Pagination */}
-      {filteredPages && filteredPages.length > itemsPerPage && (
+      {filteredPages && filteredPages.length > 0 && (
         <div className="dashboard-pagination">
+          <span className="dashboard-pagination-info">
+            Page {currentPage + 1} of {totalPages || 1} ({filteredPages.length} total)
+          </span>
           <button
             onClick={handleFirstPage}
             disabled={currentPage === 0}
             className="dashboard-pagination-btn"
+            title="Go to first page"
           >
             <CaretLeft size={16} />
             First
           </button>
           <button
+            onClick={handlePrevPage}
+            disabled={currentPage === 0}
+            className="dashboard-pagination-btn"
+            title="Previous page"
+          >
+            Previous
+          </button>
+          <button
             onClick={handleNextPage}
             disabled={!hasNextPage}
             className="dashboard-pagination-btn"
+            title="Next page"
           >
             Next
+            <CaretRight size={16} />
+          </button>
+          <button
+            onClick={handleLastPage}
+            disabled={!hasNextPage}
+            className="dashboard-pagination-btn"
+            title="Go to last page"
+          >
+            Last
             <CaretRight size={16} />
           </button>
         </div>

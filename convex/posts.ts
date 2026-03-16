@@ -2610,3 +2610,68 @@ export const syncAllPostSummariesInternal = internalMutation({
     return null;
   },
 });
+
+// ===============================
+// BACKUP QUERY - Fetch all post slugs for backup
+// ===============================
+
+// Fetch all post slugs (lightweight, no content) for backup purposes
+// Returns up to 500 slugs at a time, use pagination for more
+export const getAllPostSlugsForBackup = query({
+  args: {
+    cursor: v.optional(v.string()),
+  },
+  returns: v.object({
+    slugs: v.array(
+      v.object({
+        slug: v.string(),
+        title: v.string(),
+        published: v.boolean(),
+        date: v.string(),
+      })
+    ),
+    continueCursor: v.optional(v.string()),
+    hasMore: v.boolean(),
+  }),
+  handler: async (ctx, args) => {
+    const pageSize = 100;
+
+    // Try postSummaries first (lightweight, ~1KB per post)
+    const hasSummaries = await ctx.db.query("postSummaries").first();
+
+    if (hasSummaries) {
+      const result = await ctx.db
+        .query("postSummaries")
+        .order("desc")
+        .paginate({ cursor: args.cursor ?? null, numItems: pageSize });
+
+      return {
+        slugs: result.page.map((s) => ({
+          slug: s.slug,
+          title: s.title,
+          published: s.published,
+          date: s.date,
+        })),
+        continueCursor: result.continueCursor ?? undefined,
+        hasMore: result.continueCursor !== null,
+      };
+    }
+
+    // Fallback: use posts table
+    const result = await ctx.db
+      .query("posts")
+      .order("desc")
+      .paginate({ cursor: args.cursor ?? null, numItems: pageSize });
+
+    return {
+      slugs: result.page.map((p) => ({
+        slug: p.slug,
+        title: p.title,
+        published: p.published,
+        date: p.date,
+      })),
+      continueCursor: result.continueCursor ?? undefined,
+      hasMore: result.continueCursor !== null,
+    };
+  },
+});

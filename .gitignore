@@ -53,6 +53,7 @@ nul
 
 # backups and exports
 blog-posts-backup/
+backup-blog/
 *.zip
 dev-export.zip
 backup-posts.zip
@@ -64,3 +65,4 @@ scripts/export-posts-to-md.js
 scripts/import-posts-to-prod.js
 scripts/migrate-dev-to-prod.ts
 scripts/push-md-to-prod.js
+scripts/backup-blog-posts.ts

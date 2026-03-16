@@ -29,6 +29,29 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Available Scripts
+
+### Backup
+```bash
+npm run backup:blog
+```
+Backs up all blog posts from Convex to `backup-blog/` folder as markdown files.
+
+### Testing
+```bash
+npm run test:urls          # Test all URLs
+npm run test:internal-links # Test internal links
+npm run test:all           # Run all tests
+```
+
+### Development
+```bash
+npm run dev    # Start development server
+npm run build  # Build for production
+npm run start  # Start production server
+npm run lint   # Run ESLint
+```
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

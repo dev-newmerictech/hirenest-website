@@ -686,68 +686,6 @@ export const getAllTags = query({
   },
 });
 
-// Get posts filtered by a specific tag
-export const getPostsByTag = query({
-  args: {
-    tag: v.string(),
-  },
-  returns: v.array(
-    v.object({
-      _id: v.id("posts"),
-      _creationTime: v.number(),
-      slug: v.string(),
-      title: v.string(),
-      description: v.string(),
-      date: v.string(),
-      published: v.boolean(),
-      tags: v.array(v.string()),
-      readTime: v.optional(v.string()),
-      image: v.optional(v.string()),
-      excerpt: v.optional(v.string()),
-      featured: v.optional(v.boolean()),
-      featuredOrder: v.optional(v.number()),
-      authorName: v.optional(v.string()),
-      authorImage: v.optional(v.string()),
-    }),
-  ),
-  handler: async (ctx, args) => {
-    // Use collect() instead of paginated helper
-    const posts = await ctx.db
-      .query("posts")
-      .withIndex("by_published", (q) => q.eq("published", true))
-      .collect();
-
-    // Filter posts that have the specified tag and are not unlisted
-    const filteredPosts = posts.filter(
-      (post: any) =>
-        !post.unlisted &&
-        post.tags.some((t: string) => t.toLowerCase() === args.tag.toLowerCase()),
-    );
-
-    // Sort by date descending
-    const sortedPosts = filteredPosts.sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-    );
-
-    return sortedPosts.map((post) => ({
-      _id: post._id,
-      _creationTime: post._creationTime,
-      slug: post.slug,
-      title: post.title,
-      description: post.description,
-      date: post.date,
-      published: post.published,
-      tags: post.tags,
-      readTime: post.readTime,
-      image: post.image,
-      excerpt: post.excerpt,
-      featured: post.featured,
-      featuredOrder: post.featuredOrder,
-      authorName: post.authorName,
-      authorImage: post.authorImage,
-    }));
-  },
-});
 
 // Get related posts that share tags with the current post
 export const getRelatedPosts = query({
@@ -1269,6 +1207,7 @@ export const getPaginatedPosts = query({
 
 // Offset-based pagination for blog page (numbered mode)
 // Uses lightweight postSummaries table (no content/embedding) for efficiency
+// OPTIMIZED: Only fetches posts needed for the current page + counting without storing all
 export const getPostsByPage = query({
   args: {
     offset: v.number(),
@@ -1280,15 +1219,14 @@ export const getPostsByPage = query({
     totalPosts: v.number(),
   }),
   handler: async (ctx, args) => {
-    // Try lightweight summaries first (no content/embedding = ~1KB per post)
     const summariesExist = await ctx.db
       .query("postSummaries")
       .withIndex("by_published", (q) => q.eq("published", true))
       .first();
 
     if (summariesExist) {
-      // Fetch ALL published summaries using _creationTime cursor (unique, no skips)
-      const validPosts: any[] = [];
+      // First pass: count total posts without storing them
+      let totalCount = 0;
       let lastTime: number | null = null;
       while (true) {
         let batch;
@@ -1307,8 +1245,41 @@ export const getPostsByPage = query({
             .take(20);
         }
         if (batch.length === 0) break;
-        validPosts.push(...batch.filter((p: any) => !p.unlisted));
+        totalCount += batch.filter((p: any) => !p.unlisted).length;
         if (batch.length < 20) break;
+        lastTime = batch[batch.length - 1]._creationTime;
+      }
+
+      // Early return if offset is beyond total
+      if (args.offset >= totalCount) {
+        return { posts: [], totalPosts: totalCount };
+      }
+
+      // Second pass: fetch only the posts we need (offset + limit)
+      // Use a larger batch size for efficiency and to account for unlisted filtering
+      const targetCount = args.offset + args.limit + 10; // +10 buffer for unlisted
+      const validPosts: any[] = [];
+      lastTime = null;
+
+      while (validPosts.length < targetCount) {
+        let batch;
+        if (lastTime === null) {
+          batch = await ctx.db
+            .query("postSummaries")
+            .withIndex("by_published", (q) => q.eq("published", true))
+            .order("desc")
+            .take(50); // Larger batches for efficiency
+        } else {
+          batch = await ctx.db
+            .query("postSummaries")
+            .withIndex("by_published", (q) => q.eq("published", true))
+            .order("desc")
+            .filter((q) => q.lt(q.field("_creationTime"), lastTime as number))
+            .take(50);
+        }
+        if (batch.length === 0) break;
+        validPosts.push(...batch.filter((p: any) => !p.unlisted));
+        if (batch.length < 50) break;
         lastTime = batch[batch.length - 1]._creationTime;
       }
 
@@ -1336,14 +1307,14 @@ export const getPostsByPage = query({
           authorImage: post.authorImage,
           blogFeatured: post.blogFeatured,
         })),
-        totalPosts: validPosts.length,
+        totalPosts: totalCount,
       };
     }
 
     // Fallback: fetch ALL published posts using _creationTime cursor (unique, no skips)
-    const validPosts: Array<Doc<"posts">> = [];
+    // First pass: count total posts
+    let totalCount = 0;
     let lastTime2: number | null = null;
-
     while (true) {
       let batch: Doc<"posts">[];
       if (lastTime2 === null) {
@@ -1360,18 +1331,48 @@ export const getPostsByPage = query({
           .filter((q) => q.lt(q.field("_creationTime"), lastTime2 as number))
           .take(20);
       }
+      if (batch.length === 0) break;
+      totalCount += batch.filter((p) => !p.unlisted).length;
+      if (batch.length < 20) break;
+      lastTime2 = batch[batch.length - 1]._creationTime;
+    }
 
+    // Early return if offset is beyond total
+    if (args.offset >= totalCount) {
+      return { posts: [], totalPosts: totalCount };
+    }
+
+    // Second pass: fetch only the posts we need
+    const targetCount = args.offset + args.limit + 10;
+    const validPosts: Array<Doc<"posts">> = [];
+    lastTime2 = null;
+
+    while (validPosts.length < targetCount) {
+      let batch: Doc<"posts">[];
+      if (lastTime2 === null) {
+        batch = await ctx.db
+          .query("posts")
+          .withIndex("by_published_date", (q) => q.eq("published", true))
+          .order("desc")
+          .take(50);
+      } else {
+        batch = await ctx.db
+          .query("posts")
+          .withIndex("by_published_date", (q) => q.eq("published", true))
+          .order("desc")
+          .filter((q) => q.lt(q.field("_creationTime"), lastTime2 as number))
+          .take(50);
+      }
       if (batch.length === 0) break;
       validPosts.push(...batch.filter((p) => !p.unlisted));
-      if (batch.length < 20) break;
+      if (batch.length < 50) break;
       lastTime2 = batch[batch.length - 1]._creationTime;
     }
 
     // Sort by date descending (newest first) before pagination
     validPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-    const effectiveOffset = Math.min(args.offset, validPosts.length);
-    const paginatedPosts = validPosts.slice(effectiveOffset, effectiveOffset + args.limit);
+    const paginatedPosts = validPosts.slice(args.offset, args.offset + args.limit);
 
     return {
       posts: paginatedPosts.map((post) => ({
@@ -1392,7 +1393,7 @@ export const getPostsByPage = query({
         authorImage: post.authorImage,
         blogFeatured: post.blogFeatured,
       })),
-      totalPosts: validPosts.length,
+      totalPosts: totalCount,
     };
   },
 });
@@ -1405,7 +1406,7 @@ export const getRegularPostsCount = query({
   },
   returns: v.number(),
   handler: async (ctx) => {
-    // Always count dynamically — no stale cache dependency
+    // Use lightweight summaries table for faster counting
     const summariesExist = await ctx.db
       .query("postSummaries")
       .withIndex("by_published", (q) => q.eq("published", true))
@@ -1413,7 +1414,7 @@ export const getRegularPostsCount = query({
 
     let count = 0;
     if (summariesExist) {
-      // Count from summaries using _creationTime cursor (unique, no skips)
+      // Count from summaries using larger batches for efficiency
       let lastTime: number | null = null;
       while (true) {
         let batch;
@@ -1422,22 +1423,22 @@ export const getRegularPostsCount = query({
             .query("postSummaries")
             .withIndex("by_published", (q) => q.eq("published", true))
             .order("desc")
-            .take(20);
+            .take(100); // Larger batch = fewer queries
         } else {
           batch = await ctx.db
             .query("postSummaries")
             .withIndex("by_published", (q) => q.eq("published", true))
             .order("desc")
             .filter((q) => q.lt(q.field("_creationTime"), lastTime as number))
-            .take(20);
+            .take(100);
         }
         if (batch.length === 0) break;
         count += batch.filter((p: any) => !p.unlisted).length;
-        if (batch.length < 20) break;
+        if (batch.length < 100) break;
         lastTime = batch[batch.length - 1]._creationTime;
       }
     } else {
-      // Count from posts table using _creationTime cursor (unique, no skips)
+      // Count from posts table using larger batches
       let lastTime: number | null = null;
       while (true) {
         let batch;
@@ -1446,18 +1447,18 @@ export const getRegularPostsCount = query({
             .query("posts")
             .withIndex("by_published_date", (q) => q.eq("published", true))
             .order("desc")
-            .take(20);
+            .take(100); // Larger batch = fewer queries
         } else {
           batch = await ctx.db
             .query("posts")
             .withIndex("by_published_date", (q) => q.eq("published", true))
             .order("desc")
             .filter((q) => q.lt(q.field("_creationTime"), lastTime as number))
-            .take(20);
+            .take(100);
         }
         if (batch.length === 0) break;
         count += batch.filter((p: any) => !p.unlisted).length;
-        if (batch.length < 20) break;
+        if (batch.length < 100) break;
         lastTime = batch[batch.length - 1]._creationTime;
       }
     }
@@ -2495,22 +2496,30 @@ export const syncAllPostSummaries = mutation({
     cursor: v.optional(v.string()),
     totalCreated: v.optional(v.number()),
     totalUpdated: v.optional(v.number()),
+    totalPosts: v.optional(v.number()),
   },
   returns: v.object({
     created: v.number(),
     updated: v.number(),
-    status: v.string(),
+    deleted: v.number(),
+    totalProcessed: v.number(),
+    totalPosts: v.number(),
+    completed: v.boolean(),
+    continueCursor: v.optional(v.string()),
   }),
   handler: async (ctx, args) => {
     await requireAuth(ctx);
     const totalCreated = args.totalCreated ?? 0;
     const totalUpdated = args.totalUpdated ?? 0;
 
+    // Total posts count - passed from caller or estimated (will be accurate on completion)
+    const totalPosts = args.totalPosts ?? 0;
+
     // Fetch batch of posts
     const result = await ctx.db
       .query("posts")
       .order("desc")
-      .paginate({ cursor: args.cursor ?? null, numItems: 50 });
+      .paginate({ cursor: args.cursor ?? null, numItems: 100 });
 
     let created = 0;
     let updated = 0;
@@ -2551,28 +2560,29 @@ export const syncAllPostSummaries = mutation({
 
     const newTotalCreated = totalCreated + created;
     const newTotalUpdated = totalUpdated + updated;
+    const totalProcessed = newTotalCreated + newTotalUpdated;
 
     if (!result.isDone) {
-      // Schedule next batch
-      await ctx.scheduler.runAfter(0, internal.posts.syncAllPostSummariesInternal, {
-        cursor: result.continueCursor,
-        totalCreated: newTotalCreated,
-        totalUpdated: newTotalUpdated,
-      });
       return {
         created: newTotalCreated,
         updated: newTotalUpdated,
-        status: "in_progress - more batches scheduled",
+        deleted: 0,
+        totalProcessed,
+        totalPosts,
+        completed: false,
+        continueCursor: result.continueCursor ?? undefined,
       };
     }
 
-    // All done - update the post count cache
-    await updatePostCountCacheLogic(ctx);
-
+    // All done
     return {
       created: newTotalCreated,
       updated: newTotalUpdated,
-      status: "completed",
+      deleted: 0,
+      totalProcessed,
+      totalPosts,
+      completed: true,
+      continueCursor: undefined,
     };
   },
 });
@@ -2583,16 +2593,18 @@ export const syncAllPostSummariesInternal = internalMutation({
     cursor: v.optional(v.string()),
     totalCreated: v.optional(v.number()),
     totalUpdated: v.optional(v.number()),
+    totalPosts: v.optional(v.number()),
   },
   returns: v.null(),
   handler: async (ctx, args) => {
     const totalCreated = args.totalCreated ?? 0;
     const totalUpdated = args.totalUpdated ?? 0;
+    const totalPosts = args.totalPosts ?? 0;
 
     const result = await ctx.db
       .query("posts")
       .order("desc")
-      .paginate({ cursor: args.cursor ?? null, numItems: 50 });
+      .paginate({ cursor: args.cursor ?? null, numItems: 100 });
 
     let created = 0;
     let updated = 0;
@@ -2636,6 +2648,7 @@ export const syncAllPostSummariesInternal = internalMutation({
         cursor: result.continueCursor,
         totalCreated: totalCreated + created,
         totalUpdated: totalUpdated + updated,
+        totalPosts,
       });
     } else {
       // All done - update the post count cache

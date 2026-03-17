@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import TagClient from "./tag-client";
-import { fetchAllTags, fetchPostsByTag, type PostSummary } from "@/lib/convex-server";
+import { fetchAllTags } from "@/lib/convex-server";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai";
 
@@ -49,36 +49,8 @@ export async function generateStaticParams() {
     return tags.map((t) => ({ tag: encodeURIComponent(t.tag.toLowerCase()) }));
 }
 
-/** Server-rendered post listing for SEO crawlers */
-function ServerTagListing({ tag, posts }: { tag: string; posts: PostSummary[] }) {
-    return (
-        <section className="ssr-article-fallback" aria-label={`Posts tagged ${tag}`}>
-            <h1>{toTitleCase(tag)} Articles</h1>
-            <ul>
-                {posts.map((post) => (
-                    <li key={post.slug}>
-                        <a href={`/blog/${post.slug}`}>
-                            <h2>{post.title}</h2>
-                        </a>
-                        <p>{post.description}</p>
-                    </li>
-                ))}
-            </ul>
-        </section>
-    );
-}
-
 export default async function TagPageRoute({ params }: PageProps) {
-    const { tag } = await params;
-    const decodedTag = decodeURIComponent(tag);
-    const posts = await fetchPostsByTag(decodedTag);
-
-    return (
-        <>
-            {posts.length > 0 && <ServerTagListing tag={decodedTag} posts={posts} />}
-            <TagClient />
-        </>
-    );
+    return <TagClient />;
 }
 
 export const revalidate = 86400; // 24 hours

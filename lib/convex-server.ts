@@ -154,24 +154,6 @@ export async function fetchAllTags(): Promise<{ tag: string; count: number }[]> 
   });
 }
 
-/**
- * Fetch posts by tag with caching.
- */
-export async function fetchPostsByTag(tag: string): Promise<PostSummary[]> {
-  return withCache(`blog-posts-by-tag-${tag}`, CACHE_TTL.MEDIUM, async () => {
-    const client = getClient();
-    const posts = await client.query(api.posts.getPostsByTag, { tag });
-    return posts.map((post) => ({
-      title: post.title,
-      slug: post.slug,
-      description: post.description,
-      date: post.date,
-      readTime: post.readTime,
-      tags: post.tags,
-      url: `${SITE_URL}/blog/${post.slug}`,
-    }));
-  });
-}
 
 /**
  * Fetch all authors with caching.

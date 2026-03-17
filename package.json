@@ -17,6 +17,7 @@
     "test:all": "npm run build && npm run test:urls && npm run test:internal-links",
     "backup:blog": "npx tsx scripts/backup-blog-posts.ts",
     "sync:summaries": "npx tsx scripts/sync-summaries.ts",
+    "upload:blog": "npx tsx scripts/upload-blog-backup.ts",
     "import:blog": "node scripts/import-blog-backup.js"
   },
   "dependencies": {

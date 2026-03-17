@@ -31,11 +31,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Available Scripts
 
-### Backup
+### Backup / Upload
 ```bash
-npm run backup:blog
+npm run backup:blog    # Backup posts from Convex to backup-blog/ folder
+npm run upload:blog    # Upload posts from backup-blog/ folder to Convex
 ```
-Backs up all blog posts from Convex to `backup-blog/` folder as markdown files.
 
 ### Testing
 ```bash

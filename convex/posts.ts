@@ -2122,18 +2122,54 @@ export const createOrUpdatePost = mutation({
       .withIndex("by_slug", (q) => q.eq("slug", args.slug))
       .first();
 
+    const now = Date.now();
+    let postId: any;
+
     if (existing) {
       await ctx.db.patch(existing._id, {
         ...args,
-        lastSyncedAt: Date.now(),
+        lastSyncedAt: now,
       });
-      return existing._id;
+      postId = existing._id;
+    } else {
+      postId = await ctx.db.insert("posts", {
+        ...args,
+        lastSyncedAt: now,
+      });
     }
 
-    return await ctx.db.insert("posts", {
-      ...args,
-      lastSyncedAt: Date.now(),
-    });
+    // Sync postSummaries table (used for efficient queries)
+    const existingSummary = await ctx.db
+      .query("postSummaries")
+      .withIndex("by_postId", (q) => q.eq("postId", postId))
+      .first();
+
+    const summaryData = {
+      postId,
+      slug: args.slug,
+      title: args.title,
+      description: args.description,
+      date: args.date,
+      published: args.published,
+      tags: args.tags,
+      readTime: args.readTime,
+      image: args.image,
+      excerpt: args.excerpt,
+      featured: args.featured,
+      featuredOrder: args.featuredOrder,
+      authorName: args.authorName,
+      authorImage: args.authorImage,
+      blogFeatured: args.blogFeatured,
+      unlisted: args.unlisted,
+    };
+
+    if (existingSummary) {
+      await ctx.db.patch(existingSummary._id, summaryData);
+    } else {
+      await ctx.db.insert("postSummaries", summaryData);
+    }
+
+    return postId;
   },
 });
 
@@ -2211,6 +2247,37 @@ export const updatePost = mutation({
       ...updates,
       lastSyncedAt: Date.now(),
     });
+
+    // Sync postSummaries table (used for efficient queries)
+    const existingSummary = await ctx.db
+      .query("postSummaries")
+      .withIndex("by_postId", (q) => q.eq("postId", id))
+      .first();
+
+    const summaryData = {
+      postId: id,
+      slug: updates.slug,
+      title: updates.title,
+      description: updates.description,
+      date: updates.date,
+      published: updates.published,
+      tags: updates.tags,
+      readTime: updates.readTime,
+      image: updates.image,
+      excerpt: updates.excerpt,
+      featured: updates.featured,
+      featuredOrder: updates.featuredOrder,
+      authorName: updates.authorName,
+      authorImage: updates.authorImage,
+      blogFeatured: updates.blogFeatured,
+      unlisted: updates.unlisted,
+    };
+
+    if (existingSummary) {
+      await ctx.db.patch(existingSummary._id, summaryData);
+    } else {
+      await ctx.db.insert("postSummaries", summaryData);
+    }
   },
 });
 

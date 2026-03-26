@@ -96,8 +96,8 @@ export default function TermsOfServicePage() {
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
                                 If you have any questions about these Terms of Service, please contact us at{' '}
-                                <Link href="mailto:legal@hirenest.ai" color="blue.500">
-                                    legal@hirenest.ai
+                                <Link href="mailto:hello@hirenest.ai" color="blue.500">
+                                    hello@hirenest.ai
                                 </Link>
                             </Text>
                         </Box>

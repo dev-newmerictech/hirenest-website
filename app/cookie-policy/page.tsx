@@ -89,8 +89,8 @@ export default function CookiePolicyPage() {
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
                                 If you have any questions about our use of cookies, please contact us at{' '}
-                                <Link href="mailto:privacy@hirenest.ai" color="blue.500">
-                                    privacy@hirenest.ai
+                                <Link href="mailto:hello@hirenest.ai" color="blue.500">
+                                    hello@hirenest.ai
                                 </Link>
                             </Text>
                         </Box>

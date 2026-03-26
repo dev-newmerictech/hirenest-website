@@ -54,8 +54,8 @@ export default function LegalPage() {
                         </Heading>
                         <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
                             If you have any questions about our legal policies, please contact our legal team at{' '}
-                            <Link href="mailto:legal@hirenest.ai" color="blue.500">
-                                legal@hirenest.ai
+                            <Link href="mailto:hello@hirenest.ai" color="blue.500">
+                                hello@hirenest.ai
                             </Link>
                         </Text>
                     </VStack>

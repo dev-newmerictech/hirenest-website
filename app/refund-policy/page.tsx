@@ -20,76 +20,44 @@ export default function RefundPolicyPage() {
                     </Heading>
 
                     <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.600">
-                        Last Updated: November 21, 2025
+                        Last Updated: March 26, 2026
                     </Text>
 
                     <VStack alignItems="flex-start" gap={6}>
                         <Box>
                             <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
-                                1. Refund Eligibility
+                                No Refund Policy
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                We offer a 30-day money-back guarantee for all premium subscriptions. If you are not
-                                satisfied with our service, you may request a full refund within 30 days of your initial
-                                purchase.
+                                All sales made on HireNest are final. We do not offer refunds, exchanges, or credits for
+                                any purchases, subscriptions, or services under any circumstances. By completing a
+                                purchase, you acknowledge and agree to this no-refund policy.
                             </Text>
                         </Box>
 
                         <Box>
                             <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
-                                2. How to Request a Refund
+                                Subscription Cancellations
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                To request a refund, please contact our support team at{' '}
-                                <Link href="mailto:support@hirenest.ai" color="blue.500">
-                                    support@hirenest.ai
-                                </Link> with your account details and reason for the refund request. We will process your request within
-                                5-7 business days.
+                                You may cancel your subscription at any time from your account settings. Upon
+                                cancellation, your access to premium features will continue until the end of your
+                                current billing period. No refunds or credits will be issued for unused time remaining
+                                in the billing cycle.
                             </Text>
                         </Box>
 
                         <Box>
                             <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
-                                3. Non-Refundable Items
+                                Contact Us
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                The following items are non-refundable: job posting fees after the job has been
-                                published, premium job listings that have already been promoted, and any services that
-                                have been fully delivered.
-                            </Text>
-                        </Box>
-
-                        <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
-                                4. Subscription Cancellations
-                            </Heading>
-                            <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                You may cancel your subscription at any time. Upon cancellation, you will continue to
-                                have access to premium features until the end of your current billing period. No refunds
-                                will be provided for partial months.
-                            </Text>
-                        </Box>
-
-                        <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
-                                5. Refund Processing
-                            </Heading>
-                            <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                Approved refunds will be processed to the original payment method within 7-10 business
-                                days. Please note that it may take additional time for your bank or credit card company
-                                to process the refund.
-                            </Text>
-                        </Box>
-
-                        <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
-                                6. Contact Us
-                            </Heading>
-                            <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                If you have any questions about our refund policy, please contact us at{' '}
-                                <Link href="mailto:support@hirenest.ai" color="blue.500">
-                                    support@hirenest.ai
+                                If you have any questions or concerns regarding your account or this policy, please
+                                reach out to us at{' '}
+                                <Link href="mailto:hello@hirenest.ai" color="blue.500">
+                                    hello@hirenest.ai
                                 </Link>
+                                {' '}and we will be happy to assist you.
                             </Text>
                         </Box>
                     </VStack>

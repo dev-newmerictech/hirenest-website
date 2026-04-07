@@ -20,10 +20,6 @@ import { useEffect, useCallback, useState } from "react";
 import siteConfig from "@/src/config/siteConfig";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 
-// Local storage key for related posts view mode preference
-const RELATED_POSTS_VIEW_MODE_KEY = "related-posts-view-mode";
-
-
 // Site configuration - use dynamic origin to support both localhost and production
 const getSiteUrl = () => typeof window !== "undefined" ? window.location.origin : (process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai");
 
@@ -73,28 +69,6 @@ export default function Post({
   // For CSR: use slug from route params
   const effectiveSlug = initialPost?.slug || normalizeSlug(propSlug || routeSlug);
 
-  // State for related posts view mode toggle (list or thumbnails)
-  const [relatedPostsViewMode, setRelatedPostsViewMode] = useState<"list" | "thumbnails">(
-    siteConfig.relatedPosts?.defaultViewMode ?? "thumbnails",
-  );
-
-  // Load saved related posts view mode preference from localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem(RELATED_POSTS_VIEW_MODE_KEY);
-    if (saved === "list" || saved === "thumbnails") {
-      setRelatedPostsViewMode(saved);
-    }
-  }, []);
-
-  // Toggle related posts view mode and save preference
-  const toggleRelatedPostsViewMode = useCallback(() => {
-    setRelatedPostsViewMode((prev: "list" | "thumbnails") => {
-      const newMode = prev === "list" ? "thumbnails" : "list";
-      localStorage.setItem(RELATED_POSTS_VIEW_MODE_KEY, newMode);
-      return newMode;
-    });
-  }, []);
-
   // Check if this is a raw markdown request
   const isRawRequest = pathname.startsWith("/raw/");
 
@@ -114,14 +88,6 @@ export default function Post({
   const page = useQuery(api.pages.getPageBySlug, slug && !initialPost ? { slug } : "skip");
   const convexPost = useQuery(api.posts.getPostBySlug, slug && !initialPost ? { slug } : "skip");
   const post = convexPost ?? (initialPost as typeof convexPost);
-
-  // Fetch related posts based on current post's tags (only for blog posts, not pages)
-  const relatedPosts = useQuery(
-    api.posts.getRelatedPosts,
-    post && !page
-      ? { currentSlug: post.slug, tags: post.tags, limit: 3 }
-      : "skip",
-  );
 
   // Fetch adjacent posts for navigation (to avoid dead ends)
   const adjacentPosts = useQuery(
@@ -463,134 +429,6 @@ export default function Post({
                 !post.content.includes("<!-- newsletter -->") && (
                   <NewsletterSignup source="post" postSlug={post.slug} />
                 )}
-
-              {/* Related posts */}
-              {relatedPosts && relatedPosts.length > 0 && (
-                <div className="hirenest-related">
-                  <div className="related-posts-header"></div>
-                  <h2 className="hirenest-related-title">Related Posts</h2>
-                  {siteConfig.relatedPosts?.showViewToggle !== false && (
-                    <button
-                      className="view-toggle-button"
-                      onClick={toggleRelatedPostsViewMode}
-                      aria-label={`Switch to ${relatedPostsViewMode === "list" ? "thumbnail" : "list"} view`}
-                    >
-                      {relatedPostsViewMode === "thumbnails" ? (
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <line x1="8" y1="6" x2="21" y2="6" />
-                          <line x1="8" y1="12" x2="21" y2="12" />
-                          <line x1="8" y1="18" x2="21" y2="18" />
-                          <line x1="3" y1="6" x2="3.01" y2="6" />
-                          <line x1="3" y1="12" x2="3.01" y2="12" />
-                          <line x1="3" y1="18" x2="3.01" y2="18" />
-                        </svg>
-                      ) : (
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <rect x="3" y="3" width="7" height="7" />
-                          <rect x="14" y="3" width="7" height="7" />
-                          <rect x="3" y="14" width="7" height="7" />
-                          <rect x="14" y="14" width="7" height="7" />
-                        </svg>
-                      )}
-                    </button>
-                  )}
-
-                  {/* Thumbnail view - shows image, title, description, author */}
-                  {relatedPostsViewMode === "thumbnails" ? (
-                    <div className="related-posts-thumbnails">
-                      {relatedPosts.map((relatedPost) => (
-                        <Link
-                          key={relatedPost.slug}
-                          href={`/blog/${relatedPost.slug}`}
-                          className="related-post-thumbnail"
-                        >
-                          {relatedPost.image && (
-                            <div className="related-post-thumbnail-image">
-                              <Image
-                                src={relatedPost.image}
-                                alt={relatedPost.title}
-                                width={400}
-                                height={225}
-                                loading="lazy"
-                                style={{ width: '100%', height: 'auto' }}
-                              />
-                            </div>
-                          )}
-                          <div className="related-post-thumbnail-content">
-                            <h4 className="related-post-thumbnail-title">
-                              {relatedPost.title}
-                            </h4>
-                            {(relatedPost.excerpt || relatedPost.description) && (
-                              <p className="related-post-thumbnail-excerpt">
-                                {relatedPost.excerpt || relatedPost.description}
-                              </p>
-                            )}
-                            <div className="related-post-thumbnail-meta">
-                              {relatedPost.authorImage && (
-                                <Image
-                                  src={relatedPost.authorImage}
-                                  alt={relatedPost.authorName || "Author"}
-                                  width={24}
-                                  height={24}
-                                  className="related-post-thumbnail-author-image"
-                                />
-                              )}
-                              {relatedPost.authorName && (
-                                <span className="related-post-thumbnail-author">
-                                  {relatedPost.authorName}
-                                </span>
-                              )}
-                              {relatedPost.date && (
-                                <span className="related-post-thumbnail-date">
-                                  {format(parseISO(relatedPost.date), "MMM d, yyyy")}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  ) : (
-                    /* List view - simple list with title and read time */
-                    <div className="hirenest-related-grid">
-                      {relatedPosts.map((relatedPost) => (
-                        <Link
-                          key={relatedPost._id}
-                          href={`/blog/${relatedPost.slug}`}
-                          className="hirenest-related-card"
-                        >
-                          <h3 className="hirenest-related-card-title">
-                            {relatedPost.title}
-                          </h3>
-                          {relatedPost.description && (
-                            <p className="hirenest-related-card-description">
-                              {relatedPost.description}
-                            </p>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
 
               {/* Adjacent Posts Navigation (Prev/Next) */}
               {adjacentPosts && (adjacentPosts.newer || adjacentPosts.older) && (

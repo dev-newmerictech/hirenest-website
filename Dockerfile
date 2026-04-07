@@ -23,9 +23,9 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # Environment Variables
 ENV NEXT_PUBLIC_SITE_URL="https://hirenest.ai"
 ENV NEXT_PUBLIC_SITE_NAME="HireNest"
-ENV NEXT_PUBLIC_CONVEX_URL="https://greedy-wolverine-137.convex.cloud"
-ENV NEXT_PUBLIC_CONVEX_SITE_URL="https://greedy-wolverine-137.convex.site"
-ENV CONVEX_DEPLOYMENT="greedy-wolverine-137"
+ENV NEXT_PUBLIC_CONVEX_URL="https://agreeable-lark-944.convex.cloud"
+ENV NEXT_PUBLIC_CONVEX_SITE_URL="https://agreeable-lark-944.convex.site"
+ENV CONVEX_DEPLOYMENT="agreeable-lark-944"
 RUN npm run build
 
 # ---------- Production stage ----------

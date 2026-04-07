@@ -11,9 +11,9 @@ env:
     ECS_CLUSTER: ecs-dev-hirenest-01
     ECS_SERVICE: td-hirenest-website-service
     ECS_TASK_DEFINITION: td-hirenest-website
-    NEXT_PUBLIC_CONVEX_URL: https://greedy-wolverine-137.convex.cloud
-    NEXT_PUBLIC_CONVEX_SITE_URL: https://greedy-wolverine-137.convex.site
-    CONVEX_DEPLOYMENT: greedy-wolverine-137
+    NEXT_PUBLIC_CONVEX_URL: https://agreeable-lark-944.convex.cloud
+    NEXT_PUBLIC_CONVEX_SITE_URL: https://agreeable-lark-944.convex.site
+    CONVEX_DEPLOYMENT: agreeable-lark-944
 
 jobs:
     build:

@@ -24,17 +24,21 @@ interface BlogProps {
 }
 
 export default function Blog({ initialPosts }: BlogProps = {}) {
+  /* ---------------- Config (must be before state initialization) ---------------- */
+  const isPaginationEnabled = siteConfig.pagination?.enabled ?? false;
+  const paginationMode = siteConfig.pagination?.mode ?? "load-more";
+  const postsPerPage = siteConfig.pagination?.postsPerPage ?? 9;
+
   /* ---------------- Pagination state ---------------- */
   const pathname = usePathname();
   const router = useRouter();
   const [cursor, setCursor] = useState<number | null>(null);
-  const [allRegularPosts, setAllRegularPosts] = useState<any[]>(initialPosts ?? []);
+  // Only use first page of initialPosts to avoid showing 100+ posts on client load
+  const [allRegularPosts, setAllRegularPosts] = useState<any[]>(
+    initialPosts ? initialPosts.slice(0, postsPerPage) : []
+  );
   const [isLoading, setIsLoading] = useState(false);
   const lastProcessedResult = useRef<any>(null);
-
-  const isPaginationEnabled = siteConfig.pagination?.enabled ?? false;
-  const paginationMode = siteConfig.pagination?.mode ?? "load-more";
-  const postsPerPage = siteConfig.pagination?.postsPerPage ?? 9;
 
   /* ---------------- Convex Queries ---------------- */
 
@@ -165,8 +169,10 @@ export default function Blog({ initialPosts }: BlogProps = {}) {
     : allRegularPosts;
 
   const isServerRender = typeof window === "undefined";
+  // On server render, only show first page of initialPosts for SEO/no-JS
+  // Client-side will use proper pagination
   const displayPosts = isServerRender && initialPosts
-    ? initialPosts
+    ? initialPosts.slice(0, postsPerPage)
     : regularPosts;
 
   // Only show skeleton on initial load, not when loading more pages

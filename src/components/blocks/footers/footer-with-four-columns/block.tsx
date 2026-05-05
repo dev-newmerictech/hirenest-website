@@ -208,7 +208,7 @@ export function Block() {
             {/* Copyright & Trust Badges */}
             <Stack gap="4" flex="1" ml={10}>
               <Text fontSize={{ base: 'md' }} color="fg.muted">
-                © 2026 Hirenest.ai | Hire people who can actually do the job.
+                © 2026 Hirenest.ai | Hire people who can actually do the job. | Powered by Hridh Enterprise
               </Text>
             </Stack>
 

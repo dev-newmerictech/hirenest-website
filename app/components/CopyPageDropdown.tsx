@@ -415,7 +415,7 @@ export default function CopyPageDropdown(props: CopyPageDropdownProps) {
                 </button>
 
                 {/* View as Markdown (works without JS - uses href) */}
-                <a
+                {/* <a
                     className="copy-page-item"
                     href={rawMarkdownUrl}
                     target="_blank"
@@ -433,7 +433,7 @@ export default function CopyPageDropdown(props: CopyPageDropdownProps) {
                         </span>
                         <span className="copy-page-item-desc">Open raw .md file</span>
                     </div>
-                </a>
+                </a> */}
 
                 {/* Download as SKILL.md (requires JS) */}
                 <button

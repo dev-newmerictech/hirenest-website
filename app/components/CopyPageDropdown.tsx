@@ -435,26 +435,6 @@ export default function CopyPageDropdown(props: CopyPageDropdownProps) {
                     </div>
                 </a> */}
 
-                {/* Download as SKILL.md (requires JS) */}
-                <button
-                    className="copy-page-item js-only"
-                    onClick={handleDownloadSkill}
-                    role="menuitem"
-                    tabIndex={0}
-                    type="button"
-                >
-                    <Sparkles
-                        size={20}
-                        className="copy-page-icon"
-                        aria-hidden="true"
-                    />
-                    <div className="copy-page-item-content">
-                        <span className="copy-page-item-title">Download as {slug}.md</span>
-                        <span className="copy-page-item-desc">
-                            Export as Anthropic Agent Skill file
-                        </span>
-                    </div>
-                </button>
 
                 {/* Open in ChatGPT (works without JS - uses href) */}
                 <a

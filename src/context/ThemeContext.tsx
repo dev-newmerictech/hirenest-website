@@ -23,8 +23,10 @@ interface ThemeProviderProps {
 
 // Get initial theme from localStorage or use default
 const getInitialTheme = (defaultTheme: Theme): Theme => {
-  // SSR guard: return default theme if window is undefined
-  if (typeof window === "undefined") return defaultTheme;
+  // SSR guard: return default theme if window is undefined or localStorage is missing/mocked
+  if (typeof window === "undefined" || typeof localStorage === "undefined" || !localStorage.getItem) {
+    return defaultTheme;
+  }
 
   try {
     const saved = localStorage.getItem("blog-theme") as Theme;

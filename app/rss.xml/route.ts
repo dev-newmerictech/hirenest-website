@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 import { enabledJobTitles } from '../lib/programmatic-seo/enabled-job-titles';
 import { LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '../lib/programmatic-seo/job-board';
-import { ConvexHttpClient } from "convex/browser";
-import { api } from "@/convex/_generated/api";
+// Convex removed
 // Force Node.js runtime to avoid edge runtime module loading issues with large imports
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -23,27 +22,30 @@ export async function GET() {
             .replace(/'/g, "&apos;");
     }
 
-    // Initialize Convex client
-    const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+    const BLOG_CDN_URL = process.env.NEXT_PUBLIC_BLOG_CDN_URL || 'https://dmf25vwa4wepi.cloudfront.net';
     let blogItems: any[] = [];
 
     try {
-        const posts = await client.query(api.posts.getAllPosts);
-        blogItems = posts
-            .slice(0, 50) // Limit to recent 50 posts
-            .map((post) => {
-                const url = `${baseUrl}/blog/${post.slug}`;
-                const pubDate = new Date(post.date).toUTCString();
-                const category = post.tags?.[0] || 'Blog';
+        const response = await fetch(`${BLOG_CDN_URL}/index.json`, { next: { revalidate: 3600 } });
+        if (response.ok) {
+            const posts = await response.json();
+            blogItems = posts
+                .filter((post: any) => post.published !== false)
+                .slice(0, 50) // Limit to recent 50 posts
+                .map((post: any) => {
+                    const url = `${baseUrl}/blog/${post.slug}`;
+                    const pubDate = new Date(post.date).toUTCString();
+                    const category = post.tags?.[0] || 'Blog';
 
-                return {
-                    title: post.title,
-                    link: url,
-                    description: post.description,
-                    pubDate: pubDate,
-                    category: category,
-                };
-            });
+                    return {
+                        title: post.title,
+                        link: url,
+                        description: post.description,
+                        pubDate: pubDate,
+                        category: category,
+                    };
+                });
+        }
     } catch (error) {
         console.error("Failed to fetch blog posts for RSS:", error);
     }

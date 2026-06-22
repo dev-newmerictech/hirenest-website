@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
-import { clearConvexCache } from "@/lib/convex-server";
+import { clearBlogCache } from "@/lib/blog-data";
 
 /**
  * Revalidate blog post cache after create/update/delete.
@@ -23,8 +23,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Clear in-memory cache for this post and blog listing
-    clearConvexCache(slug);
-    clearConvexCache("blog-posts");
+    clearBlogCache(slug);
+    clearBlogCache("blog-posts");
 
     // Revalidate Next.js paths
     revalidatePath(`/blog/${slug}`);

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import BlogClient from "./blog-client";
-import { fetchBlogPosts, type PostSummary } from "@/lib/convex-server";
+import { fetchBlogPosts, type PostSummary } from "@/lib/blog-data";
 import { organizationSchema, websiteSchema } from '@/app/lib/structured-data';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai";

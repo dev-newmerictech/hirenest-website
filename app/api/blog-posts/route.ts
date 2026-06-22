@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fetchBlogPosts, clearConvexCache } from "@/lib/convex-server";
+import { fetchBlogPosts, clearBlogCache } from "@/lib/blog-data";
 
 /**
  * OPTIMIZED blog posts API with aggressive caching.
@@ -31,8 +31,8 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     // Clear all blog-related cache
-    clearConvexCache("blog-posts");
-    clearConvexCache("blog");
+    clearBlogCache("blog-posts");
+    clearBlogCache("blog");
 
     return NextResponse.json({
       success: true,

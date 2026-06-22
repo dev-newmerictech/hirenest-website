@@ -16,8 +16,9 @@ export default function PostNavigation({ headings = [], activeId: propActiveId, 
   const router = useRouter();
   const pathname = usePathname();
 
-  // Get pages for navigation
-  const pages = useQuery(api.pages.getAllPages);
+  // Convex disabled due to limits
+  // const pages = useQuery(api.pages.getAllPages);
+  const pages: any[] = [];
 
   // Filter headings to only show H2 (main titles only)
   const filteredHeadings = headings.filter(h => h.level === 2);

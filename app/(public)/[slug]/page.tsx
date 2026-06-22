@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import { fetchPostBySlug } from "@/lib/convex-server";
+import { fetchPostBySlug } from "@/lib/blog-data";
 
 export const dynamic = "force-dynamic";
 

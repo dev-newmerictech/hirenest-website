@@ -1,0 +1,91 @@
+**The short version**
+
+Most companies deploying AI in production have limited visibility into whether their models are behaving the way they expect. Not "limited" as in "we could probably add a few more dashboards." Limited as in: they find out something went wrong when a customer complains or a downstream metric tanks. An $80M funding round for an AI observability startup is a signal that this problem is real, that enterprises are finally willing to pay to solve it, and that the monitoring infrastructure built for traditional software does not transfer cleanly to probabilistic systems.
+
+---
+
+## Why this problem is worse than it sounds
+
+Traditional software either works or it does not. A function returns the right value or it throws an error. A service is up or it is down. The failure modes are discrete and detectable. You can write tests, set alerts, and build dashboards that tell you with reasonable confidence whether your system is healthy.
+
+AI models do not work like that. They degrade gradually. They hallucinate confidently. They perform well on the data distribution they were trained on and quietly fall apart when the real world drifts in a slightly different direction. A customer service bot that was accurate in January might be giving subtly wrong answers by April because the product it is answering questions about changed, and nobody updated the model or its context.
+
+The technical term for this is distribution shift, and it is genuinely hard to catch. The model does not throw an error. It still responds. It still sounds confident. The only way to know something is wrong is to measure output quality over time, which requires knowing what "quality" means for your specific use case, building infrastructure to evaluate it continuously, and having someone who actually looks at the results.
+
+Most companies are not doing this. They deploy the model, watch a few basic metrics like latency and error rates, and assume that if the infrastructure is healthy, the AI is working. Those are not the same thing.
+
+---
+
+## What an $80M bet actually tells you
+
+Funding rounds are not just financial events. They are signals about where enterprise willingness-to-pay is developing. When a startup raises at this scale, it means they have enough paying customers with large enough contracts that investors can project a credible path to a significant business. That is useful information about the market, separate from anything specific about the startup itself.
+
+The AI observability space has several players at various stages: Arize AI, WhyLabs, Fiddler AI, Evidently AI, and others depending on how broadly you define the category. An $80M raise puts a company firmly in the "enterprise sales motion with real revenue" tier. This is not seed-stage experimentation. Somebody is paying meaningful money to solve this problem today.
+
+What enterprises are actually buying when they invest in AI observability is closer to peace of mind than it is to any specific technical feature. The underlying anxiety is real: we have deployed AI into consequential workflows, we are not sure it is doing what we think, and if it fails badly enough in public we have a serious problem. Monitoring tools let companies say, with some evidence, that they are watching. That is worth a lot to a risk-conscious enterprise buyer.
+
+---
+
+## The three problems AI monitoring actually has to solve
+
+Lumping "AI monitoring" into one category obscures the fact that there are at least three genuinely distinct problems, and they require different approaches.
+
+The first is model performance drift. Did the model's accuracy change? This sounds straightforward but requires ground truth labels to measure against, and for most production AI systems, getting ground truth labels is expensive, slow, or both. If your model makes a recommendation and a user ignores it, was the recommendation wrong? Maybe. Or maybe the user just changed their mind. Inferring ground truth from behavior is a real research problem, not just an engineering one.
+
+The second is data quality monitoring. The inputs going into your model matter as much as the model itself. If upstream data pipelines start producing malformed records, or if the distribution of inputs shifts in ways your model was not trained to handle, the outputs will degrade without any change to the model weights. This is closer to traditional data observability, and companies like Monte Carlo have built substantial businesses here. But AI-specific data monitoring has additional complexity around embedding drift and feature distribution that generic data tools do not always handle well.
+
+The third is output quality evaluation, which is the hardest one for generative AI. If your model is producing text, how do you know whether the text is good? You can check for formatting, for toxicity, for factual hallucinations against a known knowledge base. But evaluating the quality of a free-form response at scale, in real time, across thousands of users, with different definitions of "good" for different use cases, is an unsolved problem that the industry is actively working through. LLM-as-judge approaches have become popular but introduce their own reliability questions.
+
+---
+
+## Why traditional APM tools are not the answer
+
+Application performance monitoring tools from companies like Datadog, New Relic, and Dynatrace are excellent at what they were designed to do: track latency, error rates, throughput, and infrastructure health. They have all added AI and ML monitoring features in the last couple of years, because they would be negligent not to.
+
+But there is a gap between bolting monitoring features onto existing infrastructure tooling and building something designed from the ground up for probabilistic systems. The mental model behind traditional APM is that deviations from expected behavior are exceptions worth alerting on. In AI systems, deviation from expected behavior is the normal operating mode. The distribution of outputs is inherently variable. The challenge is not detecting deviation but distinguishing meaningful degradation from normal variance.
+
+That distinction requires domain-specific tooling, not generic metrics. It also requires opinions about what "good" looks like for your specific model, which means the monitoring system has to be configurable in ways that traditional APM tools are not designed for. This is why purpose-built AI observability has a market even as the incumbents add features.
+
+---
+
+## How Hirenest fits into this
+
+Hiring is one of the domains where AI reliability problems are most consequential and least forgiving. AI-assisted hiring tools, whether for resume scoring, candidate matching, or interview evaluation, are making or influencing decisions that affect people's careers. A biased or degraded model does not just produce a bad recommendation in a vacuum. It affects who gets interviewed, who gets hired, and who gets passed over.
+
+Hirenest uses AI for resume parsing, candidate scoring, and interview question generation. The responsible version of operating those systems is not just deploying the models and watching latency dashboards. It is actively monitoring for output drift, checking whether scoring distributions are shifting over time, and building in human review at the points where model confidence is low.
+
+That is not a solved problem across the industry, but it is one the best AI hiring platforms are actively working on. The $80M raise in AI observability is partly a bet that companies like Hirenest, and their enterprise customers, will need this infrastructure as a standard part of the stack, not an optional add-on.
+
+---
+
+## What this means for you
+
+If you are running AI in production at any meaningful scale and your current monitoring strategy is "we will know something is wrong when users tell us," you have a gap worth closing. The specific tools you need depend on what kind of AI you are running: a classification model in a data pipeline has different observability needs than a customer-facing generative AI feature.
+
+Start with the basics before buying a dedicated observability platform. Log your model inputs and outputs. Define what "good" means for your use case quantitatively, even if the definition is imperfect. Sample outputs manually on a regular cadence. These practices cost almost nothing and will catch most of the obvious failures.
+
+When you have outgrown that, the dedicated observability platforms are worth evaluating seriously. The market is early enough that pricing is negotiable and most vendors will do a real proof of concept on your actual data before you commit.
+
+---
+
+## A few questions worth asking
+
+**Why is AI observability only getting serious attention now, when companies have been deploying ML models for years?**
+
+Traditional ML models in production were mostly narrow: a recommendation engine, a fraud score, a churn predictor. The stakes were real but the scope was limited, and the outputs were numeric enough that you could track them against ground truth. Generative AI changed the equation. The outputs are open-ended, the use cases are broader and more consequential, and the failure modes are harder to detect automatically. The monitoring problem scaled faster than the tooling did.
+
+**Is LLM-as-judge, using a language model to evaluate another language model's outputs, actually reliable?**
+
+Useful but not reliable in the way you might want. LLM judges correlate reasonably well with human judgment on certain dimensions, particularly formatting and factual consistency against a reference. They are less reliable for subjective quality judgments and can inherit biases from the evaluator model. The practical approach is to use LLM-as-judge as a high-volume first pass that flags candidates for human review, not as a replacement for human evaluation entirely.
+
+**How do you measure AI reliability for a system that is supposed to be creative or variable?**
+
+You measure the constraints, not the outputs. If a generative AI feature is supposed to always respond in a certain language, never mention competitors, stay within a specific topic domain, and respond in under two seconds: all of those are measurable even if the specific response content is not. Define the invariants your system must satisfy and monitor those. What you cannot constrain, you sample and review manually.
+
+**What is the regulatory angle here? Are companies going to be required to monitor their AI?**
+
+Increasingly yes, in specific domains. The EU AI Act puts explicit requirements on high-risk AI systems, which include things like employment decisions, credit scoring, and certain medical applications. Those requirements include documentation, human oversight, and ongoing monitoring obligations. Companies operating in regulated industries or jurisdictions are going to need observability infrastructure as a compliance requirement, not just a best practice. That is part of what makes the market timing for AI observability platforms compelling right now.
+
+**Does better monitoring change how companies build AI systems, or just how they watch them?**
+
+Both, if done right. The process of defining what you want to monitor forces clarity about what the system is supposed to do and what failure looks like. That clarity, worked backwards into the design phase, tends to produce better-scoped, more testable systems. The companies that build monitoring in from the start tend to make different and usually better architectural decisions than the ones that bolt it on after deployment.

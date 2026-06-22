@@ -1,21 +1,14 @@
-import { ConvexHttpClient } from "convex/browser";
-import { api } from "@/convex/_generated/api";
+import { fetchBlogPosts } from "@/lib/blog-data";
 
 export const dynamic = "force-dynamic";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai";
 const POSTS_PER_PAGE = 1000;
 
-function getClient(): ConvexHttpClient {
-    const url = process.env.NEXT_PUBLIC_CONVEX_URL;
-    if (!url) throw new Error("NEXT_PUBLIC_CONVEX_URL is not set");
-    return new ConvexHttpClient(url);
-}
-
 /** Sitemapindex listing all sitemap-posts-N.xml files */
 export async function GET() {
-    const client = getClient();
-    const totalCount = await client.query(api.posts.getSitemapPostsCount);
+    const posts = await fetchBlogPosts();
+    const totalCount = posts.length;
     const totalPages = Math.max(1, Math.ceil(totalCount / POSTS_PER_PAGE));
     const today = new Date().toISOString().split("T")[0];
 

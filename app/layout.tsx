@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 
-import { ConvexClientProvider } from "@/src/providers/ConvexClientProvider";
+// import { ConvexClientProvider } from "@/src/providers/ConvexClientProvider";
 
 const FIXED_DATE = "2024-01-01T00:00:00.000Z";
 
@@ -135,7 +135,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       {/* ... head ... */}
       <head>
         <link
@@ -228,22 +228,20 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} antialiased`}>
-        <ConvexClientProvider>
+      <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
           <ThemeProvider>
             <FontProvider>
               <SupabaseAuthProvider>
                 <Provider>
-                  <Box bg="gray.100">
+                  <div style={{ backgroundColor: "#EDF2F7", minHeight: "100vh" }}>
                     <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
                       {children}
                     </ConditionalLayout>
-                  </Box>
+                  </div>
                 </Provider>
               </SupabaseAuthProvider>
             </FontProvider>
           </ThemeProvider>
-        </ConvexClientProvider>
       </body>
     </html>
   );

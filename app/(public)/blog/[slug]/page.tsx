@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { fetchPostBySlug } from "@/lib/convex-server";
+import { fetchPostBySlug, fetchAdjacentPosts } from "@/lib/blog-data";
 import { extractFAQs } from "@/src/utils/extractFAQs";
 import { extractHeadings } from "@/src/utils/extractHeadings";
 import PostClient from "./post-client";
@@ -182,6 +182,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
     if (!post) notFound();
 
+    const adjacentPosts = await fetchAdjacentPosts(slug);
+
     return (
         <>
             <script
@@ -209,7 +211,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
                 />
             ))}
-            <PostClient initialPost={post} />
+            <PostClient initialPost={post} adjacentPosts={adjacentPosts} />
         </>
     );
 }

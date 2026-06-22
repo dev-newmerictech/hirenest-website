@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fetchPostBySlug, clearConvexCache } from "@/lib/convex-server";
+import { fetchPostBySlug, clearBlogCache } from "@/lib/blog-data";
 
 /**
  * OPTIMIZED blog post API with aggressive caching.
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Clear in-memory cache
-    clearConvexCache(slug);
+    clearBlogCache(slug);
 
     // Note: CDN cache will be purged via deployment or timestamp-based invalidation
     // For instant CDN purge, you'd need to use CloudFront/Cloud CDN invalidation APIs

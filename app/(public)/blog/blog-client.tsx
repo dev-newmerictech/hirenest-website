@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { PostSummary } from "@/lib/convex-server";
+import type { PostSummary } from "@/lib/blog-data";
 import Blog from "@/src/views/Blog";
 
 interface BlogClientProps {

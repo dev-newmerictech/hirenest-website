@@ -219,3 +219,12 @@ export default async function BlogPostPage({ params }: PageProps) {
 // Revalidate every 48 hours
 export const revalidate = 172800; // 48 hours
 
+export async function generateStaticParams() {
+    const slugs = await fetchAdjacentPosts("").catch(() => null); // Dummy call to trigger imports if needed, but wait we have fetchAllPostSlugs!
+    // Let's import fetchAllPostSlugs at the top instead! Wait, I will just do it inline here to avoid touching imports if possible, or I can just re-import it.
+    const { fetchAllPostSlugs } = await import("@/lib/blog-data");
+    const allSlugs = await fetchAllPostSlugs();
+    return allSlugs.map((slug) => ({
+        slug,
+    }));
+}

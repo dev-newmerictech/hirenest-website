@@ -171,7 +171,7 @@ function isUrlTooLong(url: string): boolean {
 type FeedbackState = "idle" | "copied" | "error" | "url-too-long";
 
 export default function CopyPageDropdown(props: CopyPageDropdownProps) {
-    const { title, slug } = props;
+    const { title, slug, url } = props;
 
     const [feedback, setFeedback] = useState<FeedbackState>("idle");
     const [feedbackMessage, setFeedbackMessage] = useState("");
@@ -363,14 +363,16 @@ export default function CopyPageDropdown(props: CopyPageDropdownProps) {
         }
     };
 
-    // Generate URLs for external links
-    const blogUrl = typeof window !== "undefined"
-        ? `${window.location.origin}/blog/${slug}`
-        : `/blog/${slug}`;
-
-    const rawMarkdownUrl = typeof window !== "undefined"
-        ? `${window.location.origin}/raw/${slug}`
-        : `/raw/${slug}`;
+    // Generate URLs for external links using the provided absolute URL prop to avoid hydration mismatch
+    const blogUrl = url;
+    
+    // Construct the raw URL based on the provided URL origin to ensure client/server match
+    let rawMarkdownUrl = `/raw/${slug}`;
+    try {
+        rawMarkdownUrl = new URL(`/raw/${slug}`, url).href;
+    } catch (e) {
+        // Fallback if url is invalid
+    }
 
     const chatGptUrl = `https://chatgpt.com/?q=${encodeURIComponent(`${AI_READ_PROMPT} ${blogUrl}`)}`;
     const claudeUrl = `https://claude.ai/new?q=${encodeURIComponent(`${AI_READ_PROMPT} ${blogUrl}`)}`;

@@ -1,12 +1,18 @@
 'use client';
 
 import Link from 'next/link';
-import { useQuery } from 'convex/react';
-import { api } from '../../convex/_generated/api';
+import { useState, useEffect } from 'react';
 import siteConfig from '@/src/config/siteConfig';
 
 export default function Footer() {
-  const recentPosts = useQuery(api.posts.getRecentPosts, { limit: 5 });
+  const [recentPosts, setRecentPosts] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch('/api/posts?limit=5')
+      .then((res) => res.json())
+      .then((data) => setRecentPosts(data))
+      .catch((err) => console.error("Failed to fetch recent posts for footer", err));
+  }, []);
 
   return (
     <footer className="border-t bg-background">

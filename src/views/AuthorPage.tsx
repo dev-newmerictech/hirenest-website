@@ -2,13 +2,12 @@ import { useState, useEffect, useCallback } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import PostList from "@/app/components/PostList";
 import LoadMoreButton from "@/app/components/Pagination/LoadMoreButton";
 import PostCountIndicator from "@/app/components/Pagination/PostCountIndicator";
 import siteConfig from "@/src/config/siteConfig";
 import { ArrowLeft, User } from "lucide-react";
+import { useS3Posts } from "@/src/hooks/useS3Posts";
 
 // Local storage key for author page view mode preference
 const AUTHOR_VIEW_MODE_KEY = "author-view-mode";
@@ -16,41 +15,27 @@ const AUTHOR_VIEW_MODE_KEY = "author-view-mode";
 // Author page component
 // Displays all posts written by a specific author (with pagination)
 export default function AuthorPage() {
-  const { slug: authorSlug } = useParams<{ slug: string }>();
+  const params = useParams();
+  const slug = params?.slug as string;
   const router = useRouter();
 
-  // Decode the URL-encoded author slug
-  const decodedSlug = authorSlug ? decodeURIComponent(authorSlug) : "";
+  // Decode the URL-encoded slug
+  const decodedSlug = slug ? decodeURIComponent(slug) : "";
+
+  const { posts: allData, loading, getPostsByAuthor, getAllAuthors } = useS3Posts();
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const [allPosts, setAllPosts] = useState<any[]>([]);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const postsPerPage = siteConfig.pagination?.postsPerPage ?? 20;
 
-  // Check if pagination is enabled (disabled for author pages for now)
-  const isPaginationEnabled = false; // siteConfig.pagination?.enabled ?? false;
-  const postsPerPage = siteConfig.pagination?.postsPerPage ?? 9;
-
-  // Fetch paginated posts by this author from Convex
-  const paginatedPostsResult = useQuery(
-    api.posts.getPostsByAuthorPaginated,
-    decodedSlug
-      ? {
-        authorSlug: decodedSlug,
-        page: currentPage,
-        pageSize: postsPerPage,
-      }
-      : "skip",
-  );
-
-  // Fetch total count of posts for this author
-  const authorPostsCount = useQuery(
-    api.posts.getPostsByAuthorCount,
-    decodedSlug ? { authorSlug: decodedSlug } : "skip",
-  );
-
-  // Fetch all authors for showing count and display name
-  const allAuthors = useQuery(api.posts.getAllAuthors);
+  // Get filtered posts
+  const allAuthorPosts = decodedSlug ? getPostsByAuthor(decodedSlug) : [];
+  
+  // Apply pagination manually
+  const allPosts = allAuthorPosts.slice(0, currentPage * postsPerPage);
+  
+  const authorPostsCount = allAuthorPosts.length;
+  const allAuthors = getAllAuthors();
 
   // Find the author info for this slug
   const authorInfo = allAuthors?.find(

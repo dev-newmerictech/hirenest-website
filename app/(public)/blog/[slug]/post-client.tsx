@@ -20,7 +20,12 @@ export default function PostClient({ initialPost, adjacentPosts }: PostClientPro
     return (
         <div ref={ref}>
             <Post 
-                initialPost={initialPost ?? undefined} 
+                initialPost={initialPost ? { 
+                    ...initialPost, 
+                    image: initialPost.image || undefined, 
+                    excerpt: initialPost.excerpt || undefined,
+                    authorName: initialPost.authorName || undefined
+                } : undefined} 
                 initialAdjacentPosts={adjacentPosts ?? undefined} 
             />
         </div>

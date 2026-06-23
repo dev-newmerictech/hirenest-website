@@ -18,9 +18,10 @@ import {
 } from "@phosphor-icons/react";
 
 // Generate a unique session ID for anonymous users
-function getSessionId(): string {
-    const key = "ai_chat_session_id";
-    let sessionId = localStorage.getItem(key);
+const getSessionId = () => {
+  if (typeof window === "undefined" || typeof localStorage === "undefined" || typeof localStorage.getItem !== "function") return "";
+  const key = "ai_chat_session_id";
+  let sessionId = localStorage.getItem(key);
     if (!sessionId) {
         sessionId = crypto.randomUUID();
         localStorage.setItem(key, sessionId);

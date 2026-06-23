@@ -1,8 +1,5 @@
 import { JobTitle } from './types'
 
-// Re-export enabled job titles for convenience
-export { enabledJobTitles, isJobSlugEnabled, getEnabledJobsByCategory, getEnabledJobsByCategoryGrouped } from './enabled-job-titles'
-
 export const jobTitles: JobTitle[] = [
     {
         id: 'software-engineer',

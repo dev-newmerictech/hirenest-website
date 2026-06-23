@@ -1,3 +1,4 @@
+import './polyfill';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
@@ -128,6 +129,13 @@ export const metadata: Metadata = {
     'ahrefs-site-verification': '9d53d325e70fb9a019b6bebdb98c427aded20a7491d6ba73f31efad3358b6622',
   },
 };
+
+if (typeof window === "undefined") {
+  console.log("[DEBUG SSR] typeof localStorage:", typeof localStorage);
+  if (typeof localStorage !== "undefined") {
+    console.log("[DEBUG SSR] localStorage keys:", Object.keys(localStorage));
+  }
+}
 
 export default function RootLayout({
   children,

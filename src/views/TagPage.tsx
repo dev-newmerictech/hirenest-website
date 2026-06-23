@@ -1,54 +1,38 @@
 import { useState, useEffect, useCallback } from "react";
-import { useParams } from "next/navigation";
 import Link from "next/link";
-import { useQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import PostList from "@/app/components/PostList";
 import LoadMoreButton from "@/app/components/Pagination/LoadMoreButton";
 import PostCountIndicator from "@/app/components/Pagination/PostCountIndicator";
 import siteConfig from "@/src/config/siteConfig";
 import Footer from "@/app/components/Footer";
+import { useS3Posts } from "@/src/hooks/useS3Posts";
 
 // Local storage key for tag page view mode preference
 const TAG_VIEW_MODE_KEY = "tag-view-mode";
 
+import { useParams } from "next/navigation";
+
 // Tag page component
 // Displays all posts that have a specific tag (with pagination)
 export default function TagPage() {
-  const { tag } = useParams<{ tag: string }>();
-
-  // Decode the URL-encoded tag
+  const params = useParams();
+  const tag = params?.tag as string;
   const decodedTag = tag ? decodeURIComponent(tag) : "";
+  
+  const { posts, loading, getPostsByTag, getAllTags } = useS3Posts();
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const [allPosts, setAllPosts] = useState<any[]>([]);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const postsPerPage = siteConfig.pagination?.postsPerPage || 20;
 
-  // Check if pagination is enabled (disabled for tag pages for now)
-  const isPaginationEnabled = false; // siteConfig.pagination?.enabled ?? false;
-  const postsPerPage = siteConfig.pagination?.postsPerPage ?? 9;
-
-  // Fetch paginated posts with this tag from Convex
-  const paginatedPostsResult = useQuery(
-    api.posts.getPostsByTagPaginated,
-    decodedTag
-      ? {
-        tag: decodedTag,
-        page: currentPage,
-        pageSize: postsPerPage,
-      }
-      : "skip",
-  );
-
-  // Fetch total count of posts for this tag
-  const tagPostsCount = useQuery(
-    api.posts.getPostsByTagCount,
-    decodedTag ? { tag: decodedTag } : "skip",
-  );
-
-  // Fetch all tags for showing count
-  const allTags = useQuery(api.posts.getAllTags);
+  // Get filtered posts
+  const allTagPosts = decodedTag ? getPostsByTag(decodedTag) : [];
+  
+  // Apply pagination manually
+  const allPosts = allTagPosts.slice(0, currentPage * postsPerPage);
+  
+  const tagPostsCount = allTagPosts.length;
+  const allTags = getAllTags();
 
   // Find the tag info for this tag
   const tagInfo = allTags?.find(

@@ -9,6 +9,7 @@ import { Box } from "@chakra-ui/react";
 import { Block as Navbar } from '@/src/components/blocks/marketing-navbars/navbar-island/block';
 import { Block as Footer } from '@/src/components/blocks/footers/footer-with-four-columns/block';
 import StructuredDataWrapper from "./StructuredDataWrapper";
+import AttributionCapture from "./components/AttributionCapture";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -229,6 +230,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${inter.variable} antialiased`}>
+        <AttributionCapture />
         <ConvexClientProvider>
           <ThemeProvider>
             <FontProvider>

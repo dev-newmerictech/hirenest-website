@@ -68,3 +68,4 @@ scripts/push-md-to-prod.js
 scripts/backup-blog-posts.ts
 scripts/sync-summaries.ts
 scripts/test-*.ts
+s3-upload/

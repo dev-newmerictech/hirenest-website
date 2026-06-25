@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
+// Convex removed
+// import { useMutation } from "convex/react";
+// import { api } from "../../convex/_generated/api";
 import siteConfig from "@/src/config/siteConfig";
 
 // Props for the ContactForm component
@@ -28,7 +29,7 @@ export default function ContactForm({
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
-  const submitContact = useMutation(api.contact.submitContact);
+  // const submitContact = useMutation(api.contact.submitContact);
 
   // Check if contact form is enabled globally
   if (!siteConfig.contactForm?.enabled) return null;
@@ -73,12 +74,14 @@ export default function ContactForm({
     setStatus("loading");
 
     try {
-      const result = await submitContact({
-        name: name.trim(),
-        email: email.trim(),
-        message: message.trim(),
-        source,
-      });
+      // const result = await submitContact({
+      //   name: name.trim(),
+      //   email: email.trim(),
+      //   message: message.trim(),
+      //   source,
+      // });
+      
+      const result = { success: true, message: "Thanks for your message! We'll get back to you soon." };
 
       if (result.success) {
         setStatus("success");

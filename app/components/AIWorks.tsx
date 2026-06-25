@@ -174,8 +174,8 @@ export const AIWorks = () => {
                                         <Icon as={Check} color="#4bb756" ml="auto" />
                                     </HStack>
                                     <Flex wrap="wrap" gap={2}>
-                                        {['React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python'].map((tag) => (
-                                            <Badge key={tag} bg="#fff" fontSize={'sm'} color="#4241ff" borderRadius="md" px={2} py={1}>
+                                        {['React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python', 'React', 'Node.js', 'TypeScript', 'AWS', 'Python'].map((tag, index) => (
+                                            <Badge key={`${tag}-${index}`} bg="#fff" fontSize={'sm'} color="#4241ff" borderRadius="md" px={2} py={1}>
                                                 {tag}
                                             </Badge>
                                         ))}

@@ -13,7 +13,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseAnonKey);
 
 // Create browser client that stores session in cookies (syncs with middleware)
-export const supabase = isSupabaseConfigured
+export const supabase = isSupabaseConfigured && typeof window !== "undefined" && typeof window.localStorage !== "undefined"
   ? createBrowserClient(supabaseUrl!, supabaseAnonKey!)
   : null;
 

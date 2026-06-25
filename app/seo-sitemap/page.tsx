@@ -1,8 +1,7 @@
 import { enabledJobTitles } from '@/app/lib/programmatic-seo/enabled-job-titles';
 import { Metadata } from 'next';
 import { Box, Container, Heading, Text, SimpleGrid, Link, Badge, VStack, HStack, Tabs } from '@chakra-ui/react';
-import { ConvexHttpClient } from 'convex/browser';
-import { api } from '@/convex/_generated/api';
+import { fetchBlogPosts } from '@/lib/blog-data';
 import { getAllJobBoardPages, LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '@/app/lib/programmatic-seo/job-board';
 
 export const dynamic = 'force-dynamic';
@@ -94,8 +93,7 @@ const baseUrl = 'https://hirenest.ai';
 
 async function getBlogPosts() {
   try {
-    const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
-    const posts = await client.query(api.posts.getAllPosts);
+    const posts = await fetchBlogPosts();
     return posts.slice(0, 50).map((post: any) => ({
       title: post.title,
       href: `/blog/${post.slug}`,

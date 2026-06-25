@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { useQuery } from "convex/react";
 import Link from "next/link";
-import { api } from "../../convex/_generated/api";
 import {
   ArrowLeft,
   Users,
@@ -36,7 +34,7 @@ function formatTrackingDate(timestamp: number | null): string {
 }
 
 export default function Stats() {
-  const stats = useQuery(api.stats.getStats);
+  const stats: any = null;
 
   // Pagination state for Views by Page section
   const [pageStatsPage, setPageStatsPage] = useState(1);

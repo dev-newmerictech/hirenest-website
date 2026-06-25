@@ -3,14 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useCallback } from 'react';
-import { api } from '../../convex/_generated/api';
-import { useQuery } from 'convex/react';
 import siteConfig from '@/src/config/siteConfig';
 
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pages = useQuery(api.pages.getAllPages);
+  const pages: any[] = []; // Convex removed, pages can be statically defined in siteConfig if needed
 
   const toggleMobileMenu = useCallback(() => {
     setIsMobileMenuOpen((prev) => !prev);

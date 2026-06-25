@@ -26,6 +26,7 @@ ENV NEXT_PUBLIC_SITE_NAME="HireNest"
 ENV NEXT_PUBLIC_CONVEX_URL="https://agreeable-lark-944.convex.cloud"
 ENV NEXT_PUBLIC_CONVEX_SITE_URL="https://agreeable-lark-944.convex.site"
 ENV CONVEX_DEPLOYMENT="agreeable-lark-944"
+ENV NEXT_PUBLIC_BLOG_CDN_URL="https://dmf25vwa4wepi.cloudfront.net"
 RUN npm run build
 
 # ---------- Production stage ----------

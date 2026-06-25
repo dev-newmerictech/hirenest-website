@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { fetchPostBySlug } from "@/lib/convex-server";
+import { fetchPostBySlug, fetchAdjacentPosts } from "@/lib/blog-data";
 import { extractFAQs } from "@/src/utils/extractFAQs";
 import { extractHeadings } from "@/src/utils/extractHeadings";
 import PostClient from "./post-client";
@@ -182,6 +182,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
     if (!post) notFound();
 
+    const adjacentPosts = await fetchAdjacentPosts(slug);
+
     return (
         <>
             <script
@@ -209,7 +211,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
                 />
             ))}
-            <PostClient initialPost={post} />
+            <PostClient initialPost={post} adjacentPosts={adjacentPosts} />
         </>
     );
 }
@@ -217,3 +219,12 @@ export default async function BlogPostPage({ params }: PageProps) {
 // Revalidate every 48 hours
 export const revalidate = 172800; // 48 hours
 
+export async function generateStaticParams() {
+    const slugs = await fetchAdjacentPosts("").catch(() => null); // Dummy call to trigger imports if needed, but wait we have fetchAllPostSlugs!
+    // Let's import fetchAllPostSlugs at the top instead! Wait, I will just do it inline here to avoid touching imports if possible, or I can just re-import it.
+    const { fetchAllPostSlugs } = await import("@/lib/blog-data");
+    const allSlugs = await fetchAllPostSlugs();
+    return allSlugs.map((slug) => ({
+        slug,
+    }));
+}

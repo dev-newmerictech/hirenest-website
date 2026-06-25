@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { ConvexHttpClient } from "convex/browser";
-import { api } from "@/convex/_generated/api";
+// Convex removed
 import { enabledJobTitles } from '@/app/lib/programmatic-seo/enabled-job-titles';
 import { LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '@/app/lib/programmatic-seo/job-board';
 
@@ -22,20 +21,23 @@ export async function GET() {
   const baseUrl = 'https://hirenest.ai';
   const currentDate = new Date().toISOString();
 
-  // Fetch recent blog posts for LLM context
-  const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+  const BLOG_CDN_URL = process.env.NEXT_PUBLIC_BLOG_CDN_URL || 'https://dmf25vwa4wepi.cloudfront.net';
   let blogPages: any[] = [];
 
   try {
-    const posts = await client.query(api.posts.getAllPosts);
-    blogPages = posts
-      .slice(0, 50)
-      .map((post: any) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        title: escapeXml(post.title || ''),
-        description: escapeXml(post.description || ''),
-        type: 'blog-post',
-      }));
+    const response = await fetch(`${BLOG_CDN_URL}/index.json`, { next: { revalidate: 3600 } });
+    if (response.ok) {
+      const posts = await response.json();
+      blogPages = posts
+        .filter((post: any) => post.published !== false)
+        .slice(0, 50)
+        .map((post: any) => ({
+          url: `${baseUrl}/blog/${post.slug}`,
+          title: escapeXml(post.title || ''),
+          description: escapeXml(post.description || ''),
+          type: 'blog-post',
+        }));
+    }
   } catch (error) {
     console.error("Failed to fetch blog posts for LLMs:", error);
   }

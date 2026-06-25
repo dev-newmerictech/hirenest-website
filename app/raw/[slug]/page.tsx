@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { fetchPostBySlug, fetchAllPostSlugs } from "@/lib/convex-server";
+import { fetchPostBySlug, fetchAllPostSlugs } from "@/lib/blog-data";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai";
 const SITE_NAME = "Hirenest AI";

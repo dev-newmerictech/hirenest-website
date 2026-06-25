@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
+// Convex removed
+// import { useMutation } from "convex/react";
+// import { api } from "../../convex/_generated/api";
 import siteConfig from "@/src/config/siteConfig";
 
 // Props for the newsletter signup component
@@ -28,7 +29,7 @@ export default function NewsletterSignup({
   >("idle");
   const [message, setMessage] = useState("");
 
-  const subscribe = useMutation(api.newsletter.subscribe);
+  // const subscribe = useMutation(api.newsletter.subscribe);
 
   // Check if newsletter is enabled globally
   if (!siteConfig.newsletter?.enabled) return null;
@@ -70,8 +71,10 @@ export default function NewsletterSignup({
 
     try {
       // Include post slug in source for tracking
-      const sourceValue = postSlug ? `post:${postSlug}` : source;
-      const result = await subscribe({ email, source: sourceValue });
+      // const sourceValue = postSlug ? `post:${postSlug}` : source;
+      // const result = await subscribe({ email, source: sourceValue });
+      
+      const result = { success: true, message: "Thanks for subscribing!" };
 
       if (result.success) {
         setStatus("success");

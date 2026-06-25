@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import TagClient from "./tag-client";
-import { fetchAllTags } from "@/lib/convex-server";
+import { fetchAllTags } from "@/lib/blog-data";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai";
 

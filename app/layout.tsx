@@ -1,3 +1,4 @@
+import './polyfill';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
@@ -17,8 +18,6 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-
-import { ConvexClientProvider } from "@/src/providers/ConvexClientProvider";
 
 const FIXED_DATE = "2024-01-01T00:00:00.000Z";
 
@@ -130,13 +129,20 @@ export const metadata: Metadata = {
   },
 };
 
+if (typeof window === "undefined") {
+  console.log("[DEBUG SSR] typeof localStorage:", typeof localStorage);
+  if (typeof localStorage !== "undefined") {
+    console.log("[DEBUG SSR] localStorage keys:", Object.keys(localStorage));
+  }
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       {/* ... head ... */}
       <head>
         <link
@@ -229,23 +235,22 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         <AttributionCapture />
-        <ConvexClientProvider>
+
           <ThemeProvider>
             <FontProvider>
               <SupabaseAuthProvider>
                 <Provider>
-                  <Box bg="gray.100">
+                  <div style={{ backgroundColor: "#EDF2F7", minHeight: "100vh" }}>
                     <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
                       {children}
                     </ConditionalLayout>
-                  </Box>
+                  </div>
                 </Provider>
               </SupabaseAuthProvider>
             </FontProvider>
           </ThemeProvider>
-        </ConvexClientProvider>
       </body>
     </html>
   );

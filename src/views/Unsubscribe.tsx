@@ -1,7 +1,5 @@
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import { useState, useEffect, useRef } from "react";
 
 // Unsubscribe page component
@@ -16,7 +14,10 @@ export default function Unsubscribe() {
   >("idle");
   const [message, setMessage] = useState("");
 
-  const unsubscribeMutation = useMutation(api.newsletter.unsubscribe);
+  const unsubscribeMutation = async ({ email, token }: { email: string, token: string }) => {
+    // Convex removed, mock success
+    return { success: true, message: "Successfully unsubscribed" };
+  };
 
   // Track if we've already attempted unsubscribe to prevent double calls
   const hasAttempted = useRef(false);

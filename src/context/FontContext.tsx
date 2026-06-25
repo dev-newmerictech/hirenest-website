@@ -31,7 +31,9 @@ const fontFamilies: Record<FontFamily, string> = {
 // Get initial font from localStorage or use default
 // If siteConfig default has changed, prefer the new default over localStorage
 const getInitialFont = (defaultFont: FontFamily): FontFamily => {
-  if (typeof window === "undefined") return defaultFont;
+  if (typeof window === "undefined" || typeof localStorage === "undefined" || typeof localStorage.getItem !== "function") {
+    return defaultFont;
+  }
   try {
     const saved = localStorage.getItem("blog-font-family") as FontFamily;
     const savedConfigDefault = localStorage.getItem("blog-font-family-config-default") as FontFamily;

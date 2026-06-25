@@ -58,6 +58,7 @@ function flattenHeadingIds(nodes: HeadingNode[]): string[] {
 
 // Load expanded state from localStorage
 function loadExpandedState(headings: Heading[]): Set<string> {
+  if (typeof window === "undefined" || typeof localStorage === "undefined" || typeof localStorage.getItem !== "function") return new Set(headings.map((h) => h.id));
   const stored = localStorage.getItem("page-sidebar-expanded-state");
   if (stored) {
     try {

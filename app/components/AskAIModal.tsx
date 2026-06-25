@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { useMutation, useAction, useQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
+// Convex removed
+// import { useMutation, useAction, useQuery } from "convex/react";
+// import { api } from "../../convex/_generated/api";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -47,7 +48,8 @@ function StreamingMessage({
   const [previousTextLength, setPreviousTextLength] = useState(0);
 
   // Query the response text from DB
-  const text = useQuery(api.askAI.getStreamBody, { streamId }) || "";
+  // const text = useQuery(api.askAI.getStreamBody, { streamId }) || "";
+  const text = "Ask AI is currently disabled.";
 
   // Trigger HTTP action when driven
   useEffect(() => {
@@ -162,21 +164,23 @@ export default function AskAIModal({ isOpen, onClose }: AskAIModalProps) {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const createSession = useMutation(api.askAI.createSession);
-  const checkConfiguration = useAction(api.askAI.checkConfiguration);
+  // const createSession = useMutation(api.askAI.createSession);
+  // const checkConfiguration = useAction(api.askAI.checkConfiguration);
 
   // Check configuration when modal opens
   useEffect(() => {
     if (isOpen && !configChecked) {
-      checkConfiguration({})
-        .then((status) => {
-          setConfigStatus(status);
-          setConfigChecked(true);
-        })
-        .catch((err) => {
-          console.error("Failed to check Ask AI configuration:", err);
-          setConfigChecked(true);
-        });
+      // checkConfiguration({})
+      //   .then((status) => {
+      //     setConfigStatus(status);
+      //     setConfigChecked(true);
+      //   })
+      //   .catch((err) => {
+      //     console.error("Failed to check Ask AI configuration:", err);
+      //     setConfigChecked(true);
+      //   });
+      setConfigStatus({ configured: false, missingKeys: ["CONVEX_REMOVED"] });
+      setConfigChecked(true);
     }
   }, [isOpen, configChecked, checkConfiguration]);
 
@@ -222,8 +226,8 @@ export default function AskAIModal({ isOpen, onClose }: AskAIModalProps) {
 
     try {
       // Create session with question and model stored in database
-      // The useStream hook will trigger the HTTP action which retrieves these from DB
-      const { streamId } = await createSession({ question, model: selectedModel });
+      // const { streamId } = await createSession({ question, model: selectedModel });
+      const streamId = `mock-stream-${Date.now()}`;
 
       // Add assistant message with stream
       const assistantMessageId = `assistant-${Date.now()}`;

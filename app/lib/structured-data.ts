@@ -196,7 +196,7 @@ export const websiteSchema: WebsiteSchema = {
     url: baseUrl,
     description: 'Your trusted platform connecting job seekers with top employers.',
     datePublished: '2024-01-01T00:00:00.000Z',
-    dateModified: new Date().toISOString(),
+    dateModified: '2024-01-01T00:00:00.000Z',
     potentialAction: {
         '@type': 'SearchAction',
         target: {

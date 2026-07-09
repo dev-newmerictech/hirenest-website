@@ -24,9 +24,9 @@ import {
 type InterviewType = 'video' | 'mcq' | 'openended'
 
 const videoSources = {
-    entry: 'https://d3g7cvsdf79icc.cloudfront.net/2_Entry.mp4',
-    idle: 'https://d3g7cvsdf79icc.cloudfront.net/1_idle_listening.mp4',
-    talking: 'https://d3g7cvsdf79icc.cloudfront.net/3_Talking.mp4',
+    entry: 'https://dnq5v8ark2rp0.cloudfront.net/2_Entry.mp4',
+    idle: 'https://dnq5v8ark2rp0.cloudfront.net/1_idle_listening.mp4',
+    talking: 'https://dnq5v8ark2rp0.cloudfront.net/3_Talking.mp4',
 }
 
 const interviewTypes = [
@@ -36,7 +36,7 @@ const interviewTypes = [
         title: 'AI Video Interview',
         description: 'Watch candidates explain their approach. AI scores communication, confidence, and critical thinking, before you schedule calls.',
         color: '#4241ff',
-        bg: '#bedcffff',
+        bg: '#230a66',
         features: [
             'Real-time facial analysis for analysing confidence levels',
             'Speech-to-text transcription for accurate record-keeping',
@@ -271,10 +271,11 @@ export const AIInterviewDemo = () => {
                                         <Box
                                             overflow="hidden"
                                             shadow="2xl"
+                                            h="full"
                                         >
                                             <video
                                                 ref={videoRef}
-                                                style={{ width: '100%', height: '430px', display: 'block', objectFit: 'cover' }}
+                                                style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover' }}
                                                 muted
                                                 playsInline
                                                 onEnded={handleVideoEnd}

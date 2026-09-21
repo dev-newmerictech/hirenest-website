@@ -43,8 +43,11 @@ RUN npm config set fetch-retries 5 && \
 COPY package.json package-lock.json ./
 RUN npm ci --production || (sleep 10 && npm ci --production) || (sleep 20 && npm ci --production)
 
-# Copy built files from builder
-COPY --from=builder /app ./
+# Copy built files from builder with node user ownership
+COPY --chown=node:node --from=builder /app ./
+
+# Switch to unprivileged user (UID 1000)
+USER node
 
 # Expose your app port
 EXPOSE 3000

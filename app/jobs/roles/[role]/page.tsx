@@ -32,11 +32,9 @@ export const revalidate = 86400; // 24 hours in seconds
 // On-Demand ISR: Allow dynamic generation for non-prebuilt pages
 export const dynamicParams = true;
 
-// Generate static params for top 100 job roles at build time (rest generate on first visit)
+// On-Demand ISR: Pages generate dynamically on first visit
 export async function generateStaticParams() {
-    return enabledJobTitles.slice(0, 100).map((job) => ({
-        role: job.slug,
-    }))
+    return []
 }
 
 interface PageProps {

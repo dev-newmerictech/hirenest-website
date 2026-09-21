@@ -31,25 +31,9 @@ export const revalidate = 86400; // 24 hours in seconds
 // On-Demand ISR: Allow dynamic generation for non-prebuilt pages
 export const dynamicParams = true;
 
-// Generate static params for top job+location combinations at build time (rest generate on first visit)
+// On-Demand ISR: Pages generate dynamically on first visit
 export async function generateStaticParams() {
-    const params: Array<{ location: string; job: string }> = []
-    const topJobs = enabledJobTitles.slice(0, 100) // Only top 100 jobs
-
-    for (const location of SUPPORTED_LOCATIONS) {
-        for (const job of topJobs) {
-            // Only include if we have data for this job+location combination
-            const hasData = getLocationJobBoard(job.slug, location.slug)
-            if (hasData) {
-                params.push({
-                    location: location.slug,
-                    job: job.slug
-                })
-            }
-        }
-    }
-
-    return params
+    return []
 }
 
 interface PageProps {

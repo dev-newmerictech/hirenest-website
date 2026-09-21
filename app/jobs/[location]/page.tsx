@@ -31,11 +31,9 @@ export const revalidate = 86400; // 24 hours in seconds
 // On-Demand ISR: Allow dynamic generation for non-prebuilt pages
 export const dynamicParams = true;
 
-// Generate static params for all supported locations (only ~40 locations)
+// On-Demand ISR: Pages generate dynamically on first visit
 export async function generateStaticParams() {
-    return SUPPORTED_LOCATIONS.map(location => ({
-        location: location.slug
-    }))
+    return []
 }
 
 interface PageProps {

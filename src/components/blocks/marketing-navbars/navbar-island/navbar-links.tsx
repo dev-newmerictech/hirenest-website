@@ -7,7 +7,7 @@ export const NavbarLinks = (props: StackProps) => {
   const pathname = usePathname()
 
   const links = [
-    { label: 'Find Jobs', href: '/job-seeker' },
+    { label: 'Find Jobs', href: '/jobs' },
     { label: 'Find Talents', href: '/job-provider' },
     { label: 'Blog', href: '/blog' }
   ]

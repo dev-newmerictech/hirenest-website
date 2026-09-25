@@ -212,20 +212,65 @@ export async function fetchPostCount(): Promise<number> {
   return posts.length;
 }
 
+export interface PaginatedBlogPostsResult {
+  posts: PostSummary[];
+  featuredPosts: PostSummary[];
+  heroPost: PostSummary | null;
+  featuredRowPosts: PostSummary[];
+  totalPages: number;
+  totalRegularPostsCount: number;
+  currentPage: number;
+}
+
+export async function fetchPaginatedBlogPosts(
+  page: number = 1,
+  pageSize: number = 20
+): Promise<PaginatedBlogPostsResult> {
+  const allPosts = await fetchBlogPosts();
+  const publicPosts = allPosts.filter((p) => !p.unlisted);
+  const blogFeaturedPosts = publicPosts.filter((p) => p.blogFeatured);
+  const featuredSlugs = new Set(blogFeaturedPosts.map((p) => p.slug));
+  const allRegularPosts = publicPosts.filter((p) => !featuredSlugs.has(p.slug));
+
+  const totalRegularPostsCount = allRegularPosts.length;
+  const totalPages = Math.max(1, Math.ceil(totalRegularPostsCount / pageSize));
+  const validPage = Math.max(1, Math.min(page, totalPages));
+  const start = (validPage - 1) * pageSize;
+  const paginatedPosts = allRegularPosts.slice(start, start + pageSize);
+
+  const heroPost = blogFeaturedPosts.length > 0 ? blogFeaturedPosts[0] : null;
+  const featuredRowPosts = blogFeaturedPosts.length > 1 ? blogFeaturedPosts.slice(1) : [];
+
+  return {
+    posts: paginatedPosts,
+    featuredPosts: blogFeaturedPosts,
+    heroPost,
+    featuredRowPosts,
+    totalPages,
+    totalRegularPostsCount,
+    currentPage: validPage,
+  };
+}
+
+export interface AdjacentPostSummary {
+  slug: string;
+  title: string;
+}
+
 export async function fetchAdjacentPosts(slug: string): Promise<{
-  newer: PostSummary | null;
-  older: PostSummary | null;
+  newer: AdjacentPostSummary | null;
+  older: AdjacentPostSummary | null;
 } | null> {
   const posts = await fetchBlogPosts();
-  const currentIndex = posts.findIndex(p => p.slug === slug);
-  
+  const currentIndex = posts.findIndex((p) => p.slug === slug);
+
   if (currentIndex === -1) return null;
 
   // The array is sorted descending by date (newest first).
   // Therefore, 'newer' post is at index - 1, 'older' post is at index + 1.
   return {
-    newer: currentIndex > 0 ? posts[currentIndex - 1] : null,
-    older: currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null
+    newer: currentIndex > 0 ? { slug: posts[currentIndex - 1].slug, title: posts[currentIndex - 1].title } : null,
+    older: currentIndex < posts.length - 1 ? { slug: posts[currentIndex + 1].slug, title: posts[currentIndex + 1].title } : null,
   };
 }
 

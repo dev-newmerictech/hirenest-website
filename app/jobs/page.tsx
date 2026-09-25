@@ -143,6 +143,9 @@ export default async function JobsPage() {
             return b.totalJobs - a.totalJobs
         })
 
+    // Display top in-demand featured jobs to keep DOM & HTML payload fast (<80KB vs 2.7MB)
+    const displayFeaturedJobs = featuredJobs.slice(0, 18)
+
     // Get latest job postings
     const latestJobs = featuredJobs.slice(0, 6)
 
@@ -228,7 +231,7 @@ export default async function JobsPage() {
         description: `Browse ${totalJobs.toLocaleString()}+ job openings across ${enabledJobTitles.length}+ career categories on HireNest.`,
         url: `${SEO_CONFIG.BASE_URL}/jobs`,
         numberOfItems: totalJobs,
-        itemListElement: featuredJobs.map((job, index) => ({
+        itemListElement: featuredJobs.slice(0, 20).map((job, index) => ({
             '@type': 'ListItem',
             position: index + 1,
             url: `${SEO_CONFIG.BASE_URL}/jobs/roles/${job.slug}`,
@@ -432,6 +435,11 @@ export default async function JobsPage() {
                     badge="Job Board"
                 />
 
+                {/* Search Bar Section */}
+                <Container maxW="3xl" mt={-8} mb={4} position="relative" zIndex={2}>
+                    <JobSearchBarWrapper />
+                </Container>
+
                 {/* Browse by Location */}
                 <Container maxW="7xl" py={12}>
                     <VStack align="stretch" gap={8}>
@@ -574,7 +582,7 @@ export default async function JobsPage() {
                         </HStack>
 
                         <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} gap={4}>
-                            {featuredJobs.map(job => (
+                            {displayFeaturedJobs.map(job => (
                                 <Link key={job.slug} href={`/jobs/roles/${job.slug}`} passHref legacyBehavior>
                                     <ChakraLink
                                         _hover={{ textDecoration: 'none' }}

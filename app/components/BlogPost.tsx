@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
@@ -899,11 +899,11 @@ export default function BlogPost({ content, slug, pageType = "post", copyPagePro
     };
 
     // Strip HTML comments (except special placeholders) and auto-add code fences before processing
-    const cleanedContent = autoAddCodeFences(stripHtmlComments(content));
+    const cleanedContent = useMemo(() => autoAddCodeFences(stripHtmlComments(content)), [content]);
 
     // Parse content for inline embeds
-    const segments = parseContentForEmbeds(cleanedContent);
-    const hasInlineEmbeds = segments.some((s) => s.type !== "content");
+    const segments = useMemo(() => parseContentForEmbeds(cleanedContent), [cleanedContent]);
+    const hasInlineEmbeds = useMemo(() => segments.some((s) => s.type !== "content"), [segments]);
 
     // Helper to render the h1 title with CopyPageDropdown if copyPageProps.title exists
     const renderTitleH1 = () => {

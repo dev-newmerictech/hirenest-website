@@ -172,7 +172,7 @@ export default function RootLayout({
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="tI+0vq92ZbFL7onBCkAeVQ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         {/* Google tag (gtag.js) */}
@@ -198,12 +198,13 @@ export default function RootLayout({
                 api_host: 'https://us.i.posthog.com',
                 defaults: '2026-01-30',
                 person_profiles: 'identified_only',
+                disable_session_recording: true,
             })
           `}
         </Script>
 
         {/* Meta Pixel */}
-        <Script id="meta-pixel" strategy="afterInteractive">
+        <Script id="meta-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

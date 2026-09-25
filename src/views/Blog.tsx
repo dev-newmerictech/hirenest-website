@@ -9,6 +9,8 @@ import NewsletterSignup from "@/app/components/NewsletterSignup";
 
 import { usePathname, useRouter } from "next/navigation";
 
+import type { PostSummary, PaginatedBlogPostsResult } from "@/lib/blog-data";
+
 interface BlogProps {
   initialPosts?: Array<{
     title: string;
@@ -21,9 +23,10 @@ interface BlogProps {
     unlisted?: boolean;
     url?: string;
   }>;
+  paginatedData?: PaginatedBlogPostsResult;
 }
 
-export default function Blog({ initialPosts = [] }: BlogProps) {
+export default function Blog({ initialPosts = [], paginatedData }: BlogProps) {
   /* ---------------- Config ---------------- */
   const isPaginationEnabled = siteConfig.pagination?.enabled ?? false;
   const paginationMode = siteConfig.pagination?.mode ?? "load-more";
@@ -32,33 +35,46 @@ export default function Blog({ initialPosts = [] }: BlogProps) {
   /* ---------------- Pagination state ---------------- */
   const pathname = usePathname();
   const router = useRouter();
-  
-  // Filter unlisted posts first
-  const publicPosts = initialPosts.filter(p => !p.unlisted);
-  
-  // Split into featured and regular
-  const blogFeaturedPosts = publicPosts.filter(p => p.blogFeatured);
-  
-  // Create a set of featured slugs to prevent duplicates
-  const featuredSlugs = new Set(blogFeaturedPosts.map((p) => p.slug));
-  const allRegularPosts = publicPosts.filter((p) => !featuredSlugs.has(p.slug));
 
-  const totalRegularPostsCount = allRegularPosts.length;
-  const totalPages = Math.max(1, Math.ceil(totalRegularPostsCount / postsPerPage));
+  // If paginatedData is provided by server SSR
+  const isServerPaginated = Boolean(paginatedData);
+
+  // Filter unlisted posts first (fallback mode)
+  const publicPosts = initialPosts.filter(p => !p.unlisted);
+  const fallbackFeatured = publicPosts.filter(p => p.blogFeatured);
+  const fallbackFeaturedSlugs = new Set(fallbackFeatured.map((p) => p.slug));
+  const fallbackRegularPosts = publicPosts.filter((p) => !fallbackFeaturedSlugs.has(p.slug));
+
+  const totalRegularPostsCount = isServerPaginated
+    ? paginatedData!.totalRegularPostsCount
+    : fallbackRegularPosts.length;
+
+  const totalPages = isServerPaginated
+    ? paginatedData!.totalPages
+    : Math.max(1, Math.ceil(totalRegularPostsCount / postsPerPage));
 
   const [displayCount, setDisplayCount] = useState(postsPerPage);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(
+    isServerPaginated ? paginatedData!.currentPage : 1
+  );
 
-  // Initialize from URL after mount
+  // Keep currentPage synced when server delivers new paginatedData
   useEffect(() => {
-    if (typeof window !== "undefined" && paginationMode === "numbered") {
+    if (paginatedData) {
+      setCurrentPage(paginatedData.currentPage);
+    }
+  }, [paginatedData?.currentPage]);
+
+  // Initialize from URL after mount for client-fallback mode
+  useEffect(() => {
+    if (!isServerPaginated && typeof window !== "undefined" && paginationMode === "numbered") {
       const param = new URLSearchParams(window.location.search).get("page");
       const page = Math.max(1, parseInt(param || "1", 10) || 1);
       if (page !== 1) {
         setCurrentPage(page);
       }
     }
-  }, [paginationMode]);
+  }, [paginationMode, isServerPaginated]);
 
   /* ---------------- View mode ---------------- */
   const [viewMode] = useState<"list" | "cards">(
@@ -81,18 +97,29 @@ export default function Blog({ initialPosts = [] }: BlogProps) {
   /* ---------------- Derived data ---------------- */
   const showPosts = siteConfig.postsDisplay.showOnBlogPage;
 
-  const heroPost = blogFeaturedPosts.length > 0 ? blogFeaturedPosts[0] : null;
-  const featuredRowPosts = blogFeaturedPosts.length > 1 ? blogFeaturedPosts.slice(1) : [];
+  const blogFeaturedPosts = isServerPaginated
+    ? paginatedData!.featuredPosts
+    : fallbackFeatured;
+
+  const heroPost = isServerPaginated
+    ? paginatedData!.heroPost
+    : (blogFeaturedPosts.length > 0 ? blogFeaturedPosts[0] : null);
+
+  const featuredRowPosts = isServerPaginated
+    ? paginatedData!.featuredRowPosts
+    : (blogFeaturedPosts.length > 1 ? blogFeaturedPosts.slice(1) : []);
 
   let displayPosts: any[] = [];
-  
-  if (!isPaginationEnabled) {
-    displayPosts = allRegularPosts;
+
+  if (isServerPaginated) {
+    displayPosts = paginatedData!.posts;
+  } else if (!isPaginationEnabled) {
+    displayPosts = fallbackRegularPosts;
   } else if (paginationMode === "load-more") {
-    displayPosts = allRegularPosts.slice(0, displayCount);
+    displayPosts = fallbackRegularPosts.slice(0, displayCount);
   } else if (paginationMode === "numbered") {
     const start = (currentPage - 1) * postsPerPage;
-    displayPosts = allRegularPosts.slice(start, start + postsPerPage);
+    displayPosts = fallbackRegularPosts.slice(start, start + postsPerPage);
   }
 
   const blogPageClass = [

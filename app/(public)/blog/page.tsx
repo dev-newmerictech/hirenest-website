@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import BlogClient from "./blog-client";
-import { fetchBlogPosts, type PostSummary } from "@/lib/blog-data";
+import { fetchBlogPosts, fetchPaginatedBlogPosts, type PostSummary } from "@/lib/blog-data";
 import { organizationSchema, websiteSchema } from '@/app/lib/structured-data';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hirenest.ai";
@@ -52,8 +52,16 @@ const blogJsonLd = {
     }
 };
 
-export default async function BlogPage() {
-    const initialPosts = await fetchBlogPosts();
+interface BlogPageProps {
+    searchParams?: Promise<{ page?: string }>;
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+    const resolvedParams = searchParams ? await searchParams : {};
+    const rawPage = resolvedParams?.page ? parseInt(resolvedParams.page, 10) : 1;
+    const currentPage = isNaN(rawPage) || rawPage < 1 ? 1 : rawPage;
+
+    const paginatedData = await fetchPaginatedBlogPosts(currentPage, 20);
 
     return (
         <>
@@ -79,7 +87,7 @@ export default async function BlogPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
             />
-            <BlogClient initialPosts={initialPosts} />
+            <BlogClient paginatedData={paginatedData} />
         </>
     );
 }

@@ -71,6 +71,7 @@ const nextConfig: NextConfig = {
       },
       // SEO URL rewrites to internal API handlers
       // /raw/:slug is now handled by app/raw/[slug]/page.tsx (proper HTML with SEO meta tags)
+      { source: '/.well-known/acme-challenge/:token*', destination: 'http://coolify-proxy:80/.well-known/acme-challenge/:token*' },
       { source: '/llms.txt', destination: '/api/llms' },
       { source: '/sitemap-posts.xml', destination: '/api/sitemap-posts' },
       { source: '/sitemap-post.xml', destination: '/api/sitemap-posts' },

@@ -504,7 +504,7 @@ export function getLocationJobBoard(jobSlug: string, locationSlug: string): Loca
  */
 export function getLocationJobsListings(jobSlug: string, locationSlug: string) {
     const locationBoard = getLocationJobBoard(jobSlug, locationSlug)
-    const baseListings = getJobListingsBySlug(jobSlug)
+    const baseListings = getJobListingsBySlug(jobSlug, locationSlug)
 
     // Add location to job listings
     const locationName = SUPPORTED_LOCATIONS.find(l => l.slug === locationSlug)?.name || locationSlug

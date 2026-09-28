@@ -18,12 +18,18 @@ import { JobBoardHero } from '../../components/programmatic-seo/job-board'
 import { JobListingCard } from '../../components/programmatic-seo/job-board'
 import { RelatedJobRoles } from '../../components/programmatic-seo/job-board'
 import { enabledJobTitles } from '../../lib/programmatic-seo/enabled-job-titles'
-import { LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '../../lib/programmatic-seo/job-board'
+import {
+    LOCATION_JOB_BOARDS,
+    SUPPORTED_LOCATIONS,
+    getLocalizedSalaryRange,
+    getLocalizedFaqSalaryText
+} from '../../lib/programmatic-seo/job-board'
 import { generatePageMetadata } from '../../lib/metadata'
 import { JsonLdSchema } from '../../components/seo'
 import { SEO_CONFIG } from '../../lib/seo/core/constants'
 import { Block as CTA } from '@/src/components/blocks/cta/cta-dual-button/block'
 import FaqSection from '@/app/components/FaqSection'
+import { fetchRealPublicJobs } from '../../lib/api/real-jobs-service'
 
 // ISR: Revalidate pages every 24 hours
 export const revalidate = 86400; // 24 hours in seconds
@@ -90,6 +96,7 @@ export default async function LocationJobsPage({ params }: PageProps) {
     }
 
     const locationName = locationData.name
+    const realJobs = await fetchRealPublicJobs({ location: locationData.name.split(',')[0], limit: 6 })
 
     // Get all job boards for this location
     const locationJobBoards = LOCATION_JOB_BOARDS.filter(b => b.locationSlug === location)
@@ -121,7 +128,7 @@ export default async function LocationJobsPage({ params }: PageProps) {
         },
         {
             question: `What is the average salary for jobs in ${locationName}?`,
-            answer: `Salaries in ${locationName} vary by role and experience level. Technology roles typically range from $60,000 to $150,000 annually, while other positions offer competitive compensation based on industry standards. Entry-level positions start around $40,000, with senior roles exceeding $150,000.`
+            answer: getLocalizedFaqSalaryText(locationName)
         },
         {
             question: `Are there remote job opportunities based in ${locationName}?`,
@@ -189,16 +196,19 @@ export default async function LocationJobsPage({ params }: PageProps) {
                 }
             },
             employmentType: 'FULL_TIME',
-            baseSalary: {
-                '@type': 'MonetaryAmount',
-                currency: 'USD',
-                value: {
-                    '@type': 'QuantitativeValue',
-                    minValue: jobTitle?.averageSalary ? Math.round(jobTitle.averageSalary * 0.7) : 50000,
-                    maxValue: jobTitle?.averageSalary ? Math.round(jobTitle.averageSalary * 1.3) : 150000,
-                    unitText: 'YEAR'
+            baseSalary: (() => {
+                const salary = getLocalizedSalaryRange(jobTitle?.averageSalary || 75000, jobTitle?.category || 'technology', location)
+                return {
+                    '@type': 'MonetaryAmount',
+                    currency: salary.currency,
+                    value: {
+                        '@type': 'QuantitativeValue',
+                        minValue: salary.min,
+                        maxValue: salary.max,
+                        unitText: 'YEAR'
+                    }
                 }
-            }
+            })()
         }
     })
 
@@ -437,6 +447,31 @@ export default async function LocationJobsPage({ params }: PageProps) {
                 }}
                 badge={`${locationName}`}
             />
+
+            {/* Verified Employer Openings if available */}
+            {realJobs.length > 0 && (
+                <Container maxW="7xl" pt={10} pb={4}>
+                    <VStack align="stretch" gap={6}>
+                        <VStack align="center" gap={2}>
+                            <Heading as="h2"
+                                fontSize={{ base: '2xl', md: '3xl' }}
+                                fontWeight="800"
+                                lineHeight="1.1"
+                                color="#1d1d1f">
+                                Verified Jobs in {locationName}
+                            </Heading>
+                            <Text color="gray.600" textAlign="center">
+                                Direct hiring positions from top verified employers in this location
+                            </Text>
+                        </VStack>
+                        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={5}>
+                            {realJobs.map(job => (
+                                <JobListingCard key={job.id} job={job} />
+                            ))}
+                        </SimpleGrid>
+                    </VStack>
+                </Container>
+            )}
 
             {/* Featured Job Categories */}
             <Container maxW="7xl" py={12}>

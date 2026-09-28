@@ -12,16 +12,17 @@ import {
     Link as ChakraLink
 } from '@chakra-ui/react'
 import { ArrowRight, Briefcase, MapPin } from 'lucide-react'
-import { JobBoardHero, JobSearchBarWrapper, JobsCTASection } from '../components/programmatic-seo/job-board'
+import { JobBoardHero, JobSearchBarWrapper, JobsCTASection, JobListingCard } from '../components/programmatic-seo/job-board'
 import { getJobStatistics, getAllJobBoardPages, LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '../lib/programmatic-seo/job-board'
 import { enabledJobTitles } from '../lib/programmatic-seo/enabled-job-titles'
 import { generatePageMetadata } from '../lib/metadata'
 import { JsonLdSchema } from '../components/seo'
 import { SEO_CONFIG } from '../lib/seo/core/constants'
 import FaqSection from '../components/FaqSection'
+import { fetchRealPublicJobs } from '../lib/api/real-jobs-service'
 
-// Force static generation
-export const dynamic = 'force-static'
+// Revalidate every hour (ISR)
+export const revalidate = 3600
 
 export async function generateMetadata(): Promise<Metadata> {
     const totalJobs = getAllJobBoardPages().reduce((sum, page) => sum + page.totalJobs, 0)
@@ -104,6 +105,7 @@ const CATEGORY_INFO: Record<string, { name: string; description: string; icon: s
 export default async function JobsPage() {
     const allJobPages = getAllJobBoardPages()
     const stats = getJobStatistics()
+    const realJobs = await fetchRealPublicJobs({ limit: 6 })
 
     // AI-related job slugs to show first
     const aiJobSlugs = [
@@ -439,6 +441,31 @@ export default async function JobsPage() {
                 <Container maxW="3xl" mt={-8} mb={4} position="relative" zIndex={2}>
                     <JobSearchBarWrapper />
                 </Container>
+
+                {/* Verified Employer Openings if available */}
+                {realJobs.length > 0 && (
+                    <Container maxW="7xl" pt={10} pb={4}>
+                        <VStack align="stretch" gap={6}>
+                            <VStack align="center" gap={2}>
+                                <Heading as="h2"
+                                    fontSize={{ base: '2xl', md: '3xl' }}
+                                    fontWeight="800"
+                                    lineHeight="1.1"
+                                    color="#1d1d1f">
+                                    Verified Employer Openings
+                                </Heading>
+                                <Text color="gray.600" textAlign="center">
+                                    Direct opportunities from verified companies actively hiring on HireNest
+                                </Text>
+                            </VStack>
+                            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={5}>
+                                {realJobs.map(job => (
+                                    <JobListingCard key={job.id} job={job} />
+                                ))}
+                            </SimpleGrid>
+                        </VStack>
+                    </Container>
+                )}
 
                 {/* Browse by Location */}
                 <Container maxW="7xl" py={12}>

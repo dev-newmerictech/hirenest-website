@@ -18,7 +18,15 @@ import { JobBoardHero } from '../../../components/programmatic-seo/job-board'
 import { JobListingCard } from '../../../components/programmatic-seo/job-board'
 import { RelatedJobRoles } from '../../../components/programmatic-seo/job-board'
 import { getJobBySlug, enabledJobTitles } from '../../../lib/programmatic-seo/enabled-job-titles'
-import { getLocationJobBoard, getLocationJobsListings, LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '../../../lib/programmatic-seo/job-board'
+import {
+    getLocationJobBoard,
+    getLocationJobsListings,
+    LOCATION_JOB_BOARDS,
+    SUPPORTED_LOCATIONS,
+    getLocalizedSalaryRange,
+    getLocalizedFaqSalaryText,
+    formatLocalizedSalary
+} from '../../../lib/programmatic-seo/job-board'
 import { generatePageMetadata } from '../../../lib/metadata'
 import { JsonLdSchema } from '../../../components/seo'
 import { SEO_CONFIG } from '../../../lib/seo/core/constants'
@@ -60,8 +68,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // Title: under 60 characters
     const title = `${jobData.title} Jobs ${shortLocation} | ${totalJobs}+ Open`
 
+    // Localized salary representation
+    const localizedSalary = getLocalizedSalaryRange(jobData?.averageSalary || 75000, jobData?.category || 'technology', location)
+    const formattedSalary = formatLocalizedSalary(localizedSalary)
+
     // Description: under 150 characters for optimal SEO
-    const description = `${jobData.title} jobs in ${shortLocation}. ${totalJobs}+ openings, $${(jobData?.averageSalary || 0).toLocaleString()}/year avg salary. Top employers hiring now.`
+    const description = `${jobData.title} jobs in ${shortLocation}. ${totalJobs}+ openings, ${formattedSalary} avg salary. Top employers hiring now.`
 
     // Location-specific keywords
     const keywords = [
@@ -117,7 +129,7 @@ export default async function LocationJobPage({ params }: PageProps) {
     const faqs = [
         {
             question: `What is the average salary for ${jobData.title} jobs in ${locationName}?`,
-            answer: `${jobData.title} salaries in ${locationName} typically range from $${Math.round((jobData?.averageSalary || 0) * 0.7).toLocaleString()} to $${Math.round((jobData?.averageSalary || 0) * 1.3).toLocaleString()} annually, depending on experience, skills, and company size. Entry-level positions start around $${Math.round((jobData?.averageSalary || 0) * 0.6).toLocaleString()} while senior jobs can exceed $${Math.round((jobData?.averageSalary || 0) * 1.5).toLocaleString()}.`
+            answer: getLocalizedFaqSalaryText(locationName, jobData.title, jobData.averageSalary, jobData.category)
         },
         {
             question: `What companies are hiring ${jobData.title} professionals in ${locationName}?`,
@@ -196,16 +208,19 @@ export default async function LocationJobPage({ params }: PageProps) {
                     maxValue: listing.salaryRange.max,
                     unitText: listing.salaryRange.period === 'yearly' ? 'YEAR' : 'HOUR'
                 }
-            } : {
-                '@type': 'MonetaryAmount',
-                currency: 'USD',
-                value: {
-                    '@type': 'QuantitativeValue',
-                    minValue: jobData?.averageSalary ? Math.round(jobData.averageSalary * 0.7) : 50000,
-                    maxValue: jobData?.averageSalary ? Math.round(jobData.averageSalary * 1.3) : 150000,
-                    unitText: 'YEAR'
+            } : (() => {
+                const salary = getLocalizedSalaryRange(jobData?.averageSalary || 75000, jobData?.category || 'technology', location)
+                return {
+                    '@type': 'MonetaryAmount',
+                    currency: salary.currency,
+                    value: {
+                        '@type': 'QuantitativeValue',
+                        minValue: salary.min,
+                        maxValue: salary.max,
+                        unitText: 'YEAR'
+                    }
                 }
-            }
+            })()
         }
     })
 

@@ -11,9 +11,9 @@ import {
     Link as ChakraLink,
     Separator
 } from '@chakra-ui/react'
-import { MapPin, DollarSign, Clock, Building2, Briefcase, Users } from 'lucide-react'
+import { MapPin, DollarSign, IndianRupee, Clock, Building2, Briefcase, Users } from 'lucide-react'
 import Link from 'next/link'
-import { JobListing } from '@/app/lib/programmatic-seo/job-board'
+import { JobListing, formatLocalizedSalary } from '@/app/lib/programmatic-seo/job-board'
 
 interface JobListingCardProps {
     job: JobListing
@@ -22,18 +22,7 @@ interface JobListingCardProps {
 
 export function JobListingCard({ job, showFeatured = true }: JobListingCardProps) {
     const formatSalary = (salary: { min: number; max: number; currency: string; period: string }) => {
-        const formatter = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: salary.currency,
-            maximumFractionDigits: 0
-        })
-
-        if (salary.period === 'yearly') {
-            return `${formatter.format(salary.min)} - ${formatter.format(salary.max)}/year`
-        } else if (salary.period === 'hourly') {
-            return `${formatter.format(salary.min)} - ${formatter.format(salary.max)}/hr`
-        }
-        return `${formatter.format(salary.min)} - ${formatter.format(salary.max)}`
+        return formatLocalizedSalary(salary as any)
     }
 
     const formatDate = (dateString: string) => {
@@ -186,7 +175,15 @@ export function JobListingCard({ job, showFeatured = true }: JobListingCardProps
                         {/* Salary */}
                         {job.salaryRange && (
                             <HStack gap={1} color="green.600" fontWeight="600">
-                                <DollarSign size={16} />
+                                {job.salaryRange.currency === 'INR' ? (
+                                    <IndianRupee size={15} />
+                                ) : job.salaryRange.currency === 'USD' ? (
+                                    <DollarSign size={15} />
+                                ) : (
+                                    <Text as="span" fontSize="xs" fontWeight="700">
+                                        {job.salaryRange.currency}
+                                    </Text>
+                                )}
                                 <Text fontSize="sm">{formatSalary(job.salaryRange)}</Text>
                             </HStack>
                         )}

@@ -3,9 +3,10 @@
 
 import { JobListing, JobLocation, SalaryRange, JobType, ExperienceLevel, JobCategory } from '../types'
 import { jobTitles } from '../job-titles'
+import { getLocalizedSalaryRange, getLocationCountry } from './location-currency'
 
 /**
- * Sample company names for job listings
+ * Global and regional company names for job listings
  */
 const COMPANIES = [
     'TechCorp Solutions', 'InnovateTech Inc', 'DataDriven Labs', 'CloudScale Systems',
@@ -17,6 +18,26 @@ const COMPANIES = [
     'HireNest AI', 'RecruitSmart Inc', 'TalentFlow Systems', 'PeopleFirst HR',
     'CloudNine Technologies', 'DataPeak Analytics', 'AI Solutions Ltd', 'FutureTech Corp'
 ]
+
+const INDIAN_COMPANIES = [
+    'Tata Consultancy Services', 'Infosys', 'Wipro Technologies', 'HCLTech', 'Tech Mahindra',
+    'Zomato', 'Swiggy', 'Flipkart', 'Paytm', 'PhonePe', 'Razorpay', 'Reliance Jio',
+    'CRED', 'Urban Company', 'Freshworks', 'Zoho Corporation', 'InMobi', 'BrowserStack',
+    'Postman', 'Ola Cabs', 'L&T Technology Services', 'Mindtree'
+]
+
+const UAE_COMPANIES = [
+    'Emirates Group', 'Careem', 'Noon', 'Property Finder', 'Bayut',
+    'Talabat', 'Fetchr', 'Yalla Group', 'G42', 'Emaar Technologies',
+    'Dubai Islamic Bank', 'Etisalat'
+]
+
+function getCompaniesForLocation(locationSlug?: string): string[] {
+    const country = getLocationCountry(locationSlug)
+    if (country === 'IN') return INDIAN_COMPANIES
+    if (country === 'AE') return UAE_COMPANIES
+    return COMPANIES
+}
 
 /**
  * Sample job descriptions by category
@@ -288,20 +309,12 @@ function randomRecentDate(): string {
 }
 
 /**
- * Generate salary range based on job title
+ * Generate salary range based on job title and location context
  */
-function generateSalaryRange(jobTitle: string, jobCategory: JobCategory): SalaryRange {
+function generateSalaryRange(jobTitle: string, jobCategory: JobCategory, locationSlug?: string): SalaryRange {
     const job = jobTitles.find(j => j.slug === jobTitle)
-    const baseSalary = job?.averageSalary || 70000
-
-    // Create a range around the base salary
-    const variance = baseSalary * 0.25
-    return {
-        min: Math.round(baseSalary - variance),
-        max: Math.round(baseSalary + variance),
-        currency: 'USD',
-        period: 'yearly'
-    }
+    const baseSalary = job?.averageSalary || 75000
+    return getLocalizedSalaryRange(baseSalary, jobCategory, locationSlug)
 }
 
 /**
@@ -311,7 +324,8 @@ export function generateJobListingsForJob(
     jobSlug: string,
     jobTitle: string,
     jobCategory: JobCategory,
-    count: number = 15
+    count: number = 15,
+    locationSlug?: string
 ): JobListing[] {
     const listings: JobListing[] = []
     const descriptions = JOB_DESCRIPTIONS[jobCategory] || JOB_DESCRIPTIONS.technology
@@ -320,9 +334,10 @@ export function generateJobListingsForJob(
 
     const jobTypes: JobType[] = ['full-time', 'full-time', 'full-time', 'contract', 'part-time']
     const experienceLevels: ExperienceLevel[] = ['entry-level', 'mid-level', 'mid-level', 'senior-level', 'senior-level', 'lead']
+    const companies = getCompaniesForLocation(locationSlug)
 
     for (let i = 0; i < count; i++) {
-        const company = COMPANIES[i % COMPANIES.length]
+        const company = companies[i % companies.length]
         const location = LOCATIONS[Math.min(i, LOCATIONS.length - 1)]
         const isRemote = location.city === 'Remote' || Math.random() > 0.7
         const isHybrid = !isRemote && Math.random() > 0.5
@@ -340,11 +355,11 @@ export function generateJobListingsForJob(
             title: jobTitle,
             slug: `${jobSlug}-jobs-${i + 1}`,
             companyName: company,
-            companySlug: company.toLowerCase().replace(/\s+/g, '-'),
+            companySlug: company.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
             location: jobLocation,
             jobType: jobTypes[Math.floor(Math.random() * jobTypes.length)],
             experienceLevel: experienceLevels[Math.floor(Math.random() * experienceLevels.length)],
-            salaryRange: generateSalaryRange(jobSlug, jobCategory),
+            salaryRange: generateSalaryRange(jobSlug, jobCategory, locationSlug),
             description: descriptions[i % descriptions.length],
             requirements: requirements.slice(0, 4 + Math.floor(Math.random() * 2)),
             benefits: BENEFITS.slice(0, 5 + Math.floor(Math.random() * 3)),
@@ -365,11 +380,11 @@ export function generateJobListingsForJob(
 /**
  * Get all job listings for a job slug
  */
-export function getJobListingsBySlug(jobSlug: string): JobListing[] {
+export function getJobListingsBySlug(jobSlug: string, locationSlug?: string): JobListing[] {
     const job = jobTitles.find(j => j.slug === jobSlug)
     if (!job) return []
 
-    return generateJobListingsForJob(job.slug, job.title, job.category, 12 + Math.floor(Math.random() * 8))
+    return generateJobListingsForJob(job.slug, job.title, job.category, 12 + Math.floor(Math.random() * 8), locationSlug)
 }
 
 /**

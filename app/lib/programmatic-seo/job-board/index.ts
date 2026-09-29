@@ -4,3 +4,4 @@
 export * from './types'
 export * from './job-listings'
 export * from './job-board-pages'
+export * from './location-currency'

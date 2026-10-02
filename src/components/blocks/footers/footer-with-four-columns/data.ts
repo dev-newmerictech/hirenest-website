@@ -2,7 +2,7 @@ export const links = [
   {
     title: 'Products',
     links: [
-      { label: 'SEOengine.ai', href: 'https://seoengine.ai' },
+      { label: 'Hirenest.ai', href: 'https://hirenest.ai' },
       { label: 'Autoposting.ai', href: 'https://autoposting.ai' },
       { label: 'Niyam.ai', href: 'https://niyam.ai' },
       { label: 'HappyDemo.io', href: 'https://happydemo.io' },

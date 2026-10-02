@@ -2,7 +2,8 @@
 
 import {
     generateFAQSchema,
-    generateImageObjectSchema
+    generateImageObjectSchema,
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
@@ -12,7 +13,7 @@ export function PrivacyPolicyStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         {
             name: 'Hirenest Privacy Policy',
             description: 'Learn how Hirenest collects, uses, and protects your personal information.',
@@ -24,18 +25,39 @@ export function PrivacyPolicyStructuredData() {
         }
     );
 
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Privacy Policy - Your Privacy Matters',
+        'Read our Privacy Policy to understand how we collect, use, and protect your personal data.',
+        'https://hirenest.ai/privacy-policy',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Privacy Policy', url: 'https://hirenest.ai/privacy-policy' }
+        ],
+        {
+            image: imageSchema,
+            author: 'Hirenest Team'
+        }
+    );
+
     return (
         <>
+            {/* Structured Data - WebPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+
+            {/* Structured Data - ImageObject */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
+            />
+
             {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-
-            {/* Image Structured Data */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
             />
         </>
     );

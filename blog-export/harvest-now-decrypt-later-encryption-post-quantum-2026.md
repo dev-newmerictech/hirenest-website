@@ -1,0 +1,177 @@
+**TL;DR (Direct Answer):** There is a class of cyberattack happening right now — across government networks, financial institutions, healthcare systems, and enterprise infrastructure — that produces no alerts, triggers no incident response, and leaves no detectable trace of harm. It's called "harvest now, decrypt later." Nation-states and sophisticated threat actors are intercepting and archiving encrypted communications today with a simple, patient plan: wait for quantum computers to mature, then decrypt everything they've collected. Sensitive communications captured in 2026 could be readable in 2032. The breach is invisible when the data is stolen — it only becomes visible years later when the encryption protecting it collapses. In August 2024, NIST finalized the first three post-quantum cryptography standards — ML-KEM (FIPS 203), ML-DSA (FIPS 204), and SLH-DSA (FIPS 205) — the most significant cryptographic transition since the internet was invented. The U.S. DHS, UK NCSC, EU ENISA, and Australian Cyber Security Centre have all issued official guidance based on the explicit premise that HNDL harvesting is already underway. Most large-scale cryptographic migrations have taken five to ten years to complete. If Q-Day — the moment when quantum computers can break today's encryption — arrives by 2030 or 2033, the math is uncomfortable for organizations that haven't started. This post explains what HNDL actually is, which organizations are most exposed, what NIST's new standards do, and how to begin the migration that cannot wait.
+
+---
+
+## The Breach That Already Happened
+
+Here is a thought experiment that is no longer theoretical.
+
+Imagine a sophisticated adversary — a nation-state intelligence agency with vast storage capacity and patient institutional objectives — intercepting the encrypted TLS traffic flowing across internet backbone infrastructure today. They can't read it. Everything is encrypted, and breaking that encryption with classical computers would take longer than the universe has existed. So they don't try. They just store it. Every packet. Every session. Every transaction, every email, every authentication token, every classified communication that crossed a network today — filed away in cold storage at a marginal cost that approaches zero.
+
+They're not committing a breach in any conventional sense. They're doing something more like taking a very long photograph.
+
+Then, sometime between 2029 and 2035 — depending on which team of physicists and quantum engineers you believe — a cryptographically relevant quantum computer comes online. A machine capable of running Shor's algorithm at the scale required to factor the large prime numbers that RSA and elliptic curve cryptography depend on. And every archive those adversaries built over the preceding decade becomes instantly readable. Not theoretically breakable. Actually readable. Plain text.
+
+The classified diplomatic cable your government sent in 2026 — readable. The patient medical record transmitted between hospital systems — readable. The financial transaction your bank encrypted for transit — readable. The trade secret your company sent to a partner over a secure channel — readable.
+
+"I'm sure that's happening right now," says Jeremy Allison, Distinguished Engineer at CIQ and co-creator of the Samba project. "Governments and bad actors are collecting as much encrypted data over TLS as they can possibly get their hands on and storing it away in the hope that when quantum computers arrive, they can just decrypt this and read it as though people were conducting plain text conversations over the internet."
+
+This is harvest now, decrypt later. And the most important thing to understand about it is that the window for defending against it is measured not in how soon quantum computers arrive — but in how long it takes to migrate your encryption before they do.
+
+---
+
+## Why This Is Different from Every Other Threat You've Dealt With
+
+Most cybersecurity threats have something in common: they require the attacker to succeed at a hard technical problem in real time. Breaking into a network requires finding a vulnerability, writing an exploit, evading detection. Ransomware requires persistent access, lateral movement, avoiding security tools. Even sophisticated state-level attacks involve technical difficulty that defenders can race against.
+
+HNDL removes the hard part entirely.
+
+Storage is cheap. Adversaries can afford to warehouse encrypted communications, financial transactions, medical records, and classified information indefinitely. The attacker doesn't need to be clever or fast. They need to be patient and have a budget for hard drives.
+
+The asymmetry this creates is genuinely unusual in security: the attack has already happened before the defender can respond to it. Once data is harvested and archived, it cannot be unharvested. No patch, no incident response plan, no SOC alert, and no retroactive security upgrade can protect data that's already in an adversary's cold storage. The only meaningful defense is forward-looking — encrypting data today in ways that will still be unbreakable when quantum computers eventually arrive.
+
+Sensitive communications captured in 2026 could be decrypted in 2032. The breach may not be visible when the data is stolen — it becomes visible years later when the encryption protecting it collapses.
+
+That temporal gap — between collection and decryption — is what makes HNDL so hard to communicate to leadership teams who are used to thinking about cyber risk in terms of incidents that happen and get resolved. HNDL is not an incident. It's a slow-motion catastrophe that's already in motion.
+
+---
+
+## Who Is Most Exposed — and Why the Answer Might Surprise You
+
+Not all organizations face the same HNDL risk, and understanding where you sit on the exposure spectrum determines how urgently you need to move.
+
+The core variable is simple: **data has a required secrecy lifetime. Encryption has an effective lifetime. If the encryption expires before the secrecy requirement does, the data becomes vulnerable.** That mismatch is called data lifespan risk. If you're still using classical cryptography to protect long-lived data, it's already exposed to harvest-now-decrypt-later collection.
+
+A consumer app that stores product preferences has a secrecy lifetime of roughly zero — the data doesn't need to be secret in five years, so HNDL exposure is negligible. A classified intelligence report, a long-term commercial contract, a patient medical history, a financial model representing a decade of proprietary research — these have secrecy lifetimes measured in decades. That's precisely the data HNDL is designed to target.
+
+The U.S. Department of Homeland Security, the UK's National Cyber Security Centre, the European Union Agency for Cybersecurity, and the Australian Cyber Security Centre all base their official post-quantum guidance on the premise that adversaries are currently exfiltrating and storing sensitive, long-lived data.
+
+The sectors carrying the highest exposure are predictable: government agencies and defense contractors handling classified information, intelligence archives, and diplomatic communications that retain sensitivity for decades; financial institutions holding transaction records, trading strategies, and M&A communications; healthcare systems carrying patient records under retention requirements spanning 20+ years; critical infrastructure operators whose operational technology networks were never designed for cryptographic agility; and legal and professional services firms holding privileged communications across decades of client relationships.
+
+High-retention sectors such as satellite and health networks face exposure windows extending decades under delayed PQC adoption. For a hospital system that encrypts patient records today using RSA-2048, and those records are required to remain confidential for 25 years, the question isn't whether quantum computers will exist in 2031 — it's whether the records encrypted today will still be protected if they are. Under HNDL, the answer is potentially no, regardless of when the hospital upgrades its systems, because the adversary already has the archived ciphertext.
+
+---
+
+## Mosca's Theorem: The Math That Should Focus Every CISO's Mind
+
+If there's a single analytical tool that turns the abstract HNDL threat into a concrete planning problem, it's Mosca's Theorem — a framework developed by quantum cryptography researcher Michele Mosca that translates the threat into a decision timeline.
+
+The theorem states: if the time needed to migrate your cryptographic infrastructure plus the time you need data to remain secure exceeds the time until a cryptographically relevant quantum computer exists — you have a problem that has already started.
+
+Written as a simple inequality: if **Migration Time + Secrecy Requirement > Time to Q-Day**, your data is at risk and your migration should have started yesterday.
+
+For a large financial institution with a five-year cryptographic migration timeline, a requirement to protect certain records for ten years, and a Q-Day estimate of ten to fifteen years — the math is uncomfortable. Start the migration today and you might just make it, assuming Q-Day is on the late end of projections. Start it in two years and you almost certainly won't.
+
+The uncertainty around Q-Day makes this calculation feel speculative, and security leaders sometimes use that uncertainty as a reason to defer action. The Freshfields analysis cuts through that reasoning directly: these timelines move the quantum threat to the immediate, setting regulatory expectations for preparedness today. The consensus seems clear: planning, discovery, and inventory must be completed within the next two to four years.
+
+Waiting for certainty about Q-Day is not a defensible posture. Cryptographic transitions take years. Large-scale migrations — particularly in government and regulated environments — require hardware refresh cycles, firmware updates, vendor coordination, compliance validation, and operational testing. Previous cryptographic migrations have taken five to ten years to complete. Waiting until quantum risks are being reported guarantees a long period of exposure.
+
+---
+
+## NIST's Three New Standards: What They Are and Why They Matter
+
+In August 2024, NIST finalized three post-quantum cryptographic algorithms that represent the most significant shift in encryption standards since the RSA algorithm was introduced in 1977. Understanding what they do — and what they don't do — is essential context for any migration planning.
+
+**ML-KEM (FIPS 203)** — formerly known as CRYSTALS-Kyber — is a key encapsulation mechanism designed for general encryption and key exchange. It replaces the Diffie-Hellman and RSA key exchange mechanisms that underpin TLS, the protocol securing virtually all HTTPS traffic. ML-KEM is the algorithm that will protect data in transit once widely deployed.
+
+**ML-DSA (FIPS 204)** — formerly CRYSTALS-Dilithium — is a digital signature algorithm. It replaces the RSA and ECDSA signatures used to verify the authenticity of software, certificates, and signed communications. ML-DSA protects identity and integrity.
+
+**SLH-DSA (FIPS 205)** — formerly SPHINCS+ — is a stateless hash-based digital signature scheme that uses different mathematical foundations from ML-DSA, providing a backup signature algorithm based on different assumptions about what quantum computers can and cannot attack.
+
+Symmetric key cryptography — such as AES and SHA — can remain secure in a post-quantum world by simply increasing key sizes, notably AES-256. When transitioning, organizations must consider key and signature sizes, as post-quantum algorithms often require significantly larger keys and signatures, which can impact storage and transmission, and performance overhead, as the time required to encrypt, decrypt, sign, and verify messages may increase, especially on constrained devices.
+
+The performance implications deserve emphasis because they're often underplayed. PQC algorithms are generally slower and produce larger keys and signatures than their classical counterparts. On server infrastructure with modern processors, the overhead is manageable. On embedded IoT devices, legacy industrial control systems, and constrained hardware — the categories that make up a significant proportion of most enterprise cryptographic footprints — PQC migration may require hardware replacement, not just software updates. That changes the timeline and the budget.
+
+---
+
+## The Hybrid Transition: You Don't Have to Choose Between Classical and Quantum-Safe
+
+One of the most important practical insights from organizations further along in PQC migration is that the transition doesn't require abandoning classical cryptography overnight. Hybrid approaches — combining classical algorithms with post-quantum algorithms in the same cryptographic handshake — are now the recommended migration path for most contexts.
+
+Hybrid and forward-secure approaches reduce the risk horizon by over two-thirds compared to delayed PQC adoption. The logic: a hybrid TLS session that requires an attacker to break both RSA-2048 and ML-KEM to read the traffic is significantly harder to harvest usefully, because even if the classical component eventually falls to a quantum computer, the quantum-safe component remains secure. Hybrid approaches also provide insurance against the theoretical possibility that a newly discovered classical attack breaks an early PQC algorithm — protecting against both sides of the uncertainty simultaneously.
+
+Major cloud providers — AWS, Google Cloud, and Microsoft Azure — have announced hybrid TLS support for 2024–2025, with full PQC migration targets set for 2028–2030. The ETSI Quantum-Safe Cryptography Roadmap projects hybrid deployment in 5G networks by 2026–2028 and full PQC integration in 6G specifications around 2030. These are not aspirational timelines — they are implementation commitments from the organizations running the infrastructure that the rest of the internet depends on.
+
+---
+
+## Crypto-Agility: The Concept That Changes How You Think About All of This
+
+If post-quantum migration were a one-time event — replace RSA with ML-KEM, done — the problem would be hard but tractable. It's not. The post-quantum standards landscape is still evolving. New algorithms are being evaluated. Implementation vulnerabilities in early PQC deployments are being discovered. The assumption that ML-KEM and ML-DSA will be the final answer to quantum-safe cryptography is probably wrong — they're the best answer we have right now.
+
+This is why the most important concept in long-term cryptographic resilience isn't any specific algorithm. It's **crypto-agility**: designing systems so that the underlying cryptographic algorithms can be swapped out without requiring a full system rebuild.
+
+Crypto-agility is defined by NIST as the capabilities needed to replace and adapt cryptographic algorithms without interrupting the flow of a running system. The ability to rapidly and seamlessly combine, modify, or swap cryptographic primitives must be adopted as the cornerstone of the new security posture to adapt to future advances in quantum-safe standards.
+
+The organizations that will weather the post-quantum transition most successfully are not the ones that deploy ML-KEM everywhere by 2028. They're the ones that build cryptographic infrastructure that can be reconfigured — updated algorithm choices, rotated keys, swapped signature schemes — without a multi-year engineering project each time standards evolve. Crypto-agility is the architectural principle that makes all future migrations cheaper and faster.
+
+---
+
+## The Four-Step Migration Framework
+
+PQC migration is a complex process that spans the entire organization and potentially reaches deep into its security architecture. Framing it as a four-step process makes it manageable.
+
+**Step 1 — Discover:** Build a complete cryptographic asset inventory. Map every place encryption is used: applications, APIs, devices, TLS endpoints, certificate authorities, HSMs, firmware, and third-party integrations. Most organizations discover through this process that they have significantly more cryptographic surface area than they realized. One of the most sobering realities uncovered in enterprise security research is that most organizations lack a comprehensive understanding of where and how cryptography is used within their environments. Without that visibility, assessing quantum risk becomes nearly impossible.
+
+**Step 2 — Assess:** Categorize every cryptographic asset by its data lifespan risk. Which systems protect data that needs to remain confidential for more than five years? More than ten? More than twenty? Apply Mosca's Theorem to each category. This assessment generates a prioritized migration list — the assets that need to move first are the ones where the combination of secrecy lifetime and migration complexity makes delay most dangerous.
+
+**Step 3 — Plan:** Develop a migration roadmap with a dedicated owner. Key activities involve appointing a dedicated migration manager to oversee the process and conducting a comprehensive cost estimate for the entire migration, spanning hardware refresh cycles, vendor coordination, and compliance validation. This is also the phase where you engage your supply chain — because your organization's quantum resilience is only as strong as that of your key technology vendors, cloud providers, and software suppliers.
+
+**Step 4 — Execute:** Begin with hybrid deployments in pilot environments. Start with non-critical workloads to validate performance, compatibility, and interoperability before scaling broadly. Adopt crypto-agility. Design systems to change algorithms and keys easily. Static cryptography locks you into today's vulnerabilities. Crypto-agility should also extend to certificate management, key rotation, and lifecycle governance. Shorten data retention — data that no longer exists can't be decrypted later. Review archival policies and delete what you don't need.
+
+---
+
+## The Bitcoin Problem Nobody Is Talking About Enough
+
+One specific application of HNDL deserves its own paragraph because the scale of potential exposure is enormous and the timeline for remediation is uniquely complicated.
+
+The Bitcoin network provides an illustrative example: while cryptocurrency distributed ledger maintainers could successfully deploy PQC mitigations to protect the network's security going forward, data privacy of previously recorded transactions remains vulnerable against a future-state quantum computer due to HNDL. A bad actor who obtains a distributed ledger replica today — which requires no hacking, since Bitcoin's blockchain is public — can harvest the transaction data and, once a cryptographically relevant quantum computer exists, potentially reveal previously obfuscated transaction relationships, wallet ownership, and financial flows.
+
+The HNDL threat began at the inception of Shor's algorithm in 1994 and remains ongoing. Data on the blockchain from 2009 onward is subject to the HNDL threat. Legacy Bitcoin address types — older addresses, reused addresses, and certain Taproot addresses — rely on elliptic curve cryptography that is quantum-vulnerable. Migrating a public, permissionless blockchain to post-quantum cryptography requires network-wide consensus that makes the enterprise PQC migration challenge look straightforward by comparison. There is currently no finalized path for this migration in the Bitcoin network.
+
+---
+
+## What This Means for Your Organization Right Now
+
+**If you're a CISO or security leader:** The first action is inventory, not purchasing. You cannot assess your HNDL exposure without knowing where you use classical asymmetric cryptography. Commission a cryptographic asset inventory before any other step. If your organization handles data with confidentiality requirements extending beyond 2030, that inventory is urgent — not a future-quarter backlog item.
+
+**If you're in a regulated industry:** Organisations are bound by a dynamic obligation to implement appropriate, adequate, or state-of-the-art security measures. Failure to have a quantum-readiness plan may represent a significant liability. The plan must also integrate post-quantum cryptography into legal and commercial due diligence. If you're in financial services, healthcare, or government contracting, the compliance direction of travel is clear. Getting ahead of the requirement is cheaper than responding to it under deadline.
+
+**If you manage cloud or SaaS infrastructure:** Your cloud providers' hybrid TLS migration timelines (2024–2025 hybrid support, 2028–2030 full PQC) are your minimum floor, not your ceiling. Hybrid TLS from your cloud provider protects data in transit to their platform — it doesn't protect data that was harvested before that migration, and it doesn't cover your own application-level encryption of stored data.
+
+**If you're building new systems today:** This is the lowest-cost intervention available. New applications and infrastructure built today should be designed with crypto-agility as a foundational requirement — not retrofitted later. The cost of building cryptographic flexibility into a new system is a fraction of the cost of adding it to a deployed one. NIST's standards are finalized. There is no credible technical argument for building RSA-dependent systems today that aren't designed to migrate.
+
+---
+
+## The Exposure Window by Sector
+
+| Sector | Data Confidentiality Requirement | Typical Migration Timeline | HNDL Exposure Window (Delayed PQC) |
+|---|---|---|---|
+| Government / Defense | 25–50+ years | 5–10 years | Decades |
+| Healthcare | 20–30 years | 5–8 years | Decades |
+| Financial Services | 10–20 years | 3–7 years | 10–15 years |
+| Legal / Professional | 10–25 years | 3–6 years | 10–20 years |
+| Critical Infrastructure | 15–30 years | 7–12 years | Decades |
+| Enterprise SaaS | 1–5 years | 2–4 years | Low–moderate |
+| Consumer Applications | <2 years | 1–3 years | Minimal |
+
+---
+
+## FAQ
+
+**What is "harvest now, decrypt later" in plain English?**
+Attackers — typically nation-states with large storage budgets — are intercepting and archiving encrypted data today that they cannot yet read. They're betting that quantum computers will eventually become powerful enough to break the encryption protecting that data. When that day comes, everything they've stored becomes readable. The threat is invisible today because no decryption is happening — it only becomes visible years from now when the encryption fails. If your data needs to stay secret for more than five to ten years, the harvesting has likely already happened.
+
+**When is Q-Day — the day quantum computers can break today's encryption?**
+No one knows precisely. Most serious projections fall in a range of 10 to 15 years, with some expert estimates suggesting it could be as early as 2029 and others suggesting it may be 2035 or later. The disagreement reflects genuine uncertainty about how quickly quantum error correction will advance. The appropriate response to that uncertainty is not to wait for a consensus estimate — it is to begin migration now, because large-scale cryptographic transitions take five to ten years regardless of when Q-Day arrives.
+
+**What are the three NIST PQC standards and when were they finalized?**
+NIST finalized three post-quantum cryptographic standards in August 2024: ML-KEM (FIPS 203) for key exchange and general encryption, ML-DSA (FIPS 204) for digital signatures, and SLH-DSA (FIPS 205) as a hash-based backup signature algorithm. These replace classical public-key algorithms — RSA and elliptic curve cryptography — that are vulnerable to quantum attack. Symmetric algorithms like AES-256 remain secure post-quantum with no migration required.
+
+**What is crypto-agility and why does it matter?**
+Crypto-agility is the ability to swap cryptographic algorithms in a system without rebuilding the system from scratch. It matters because the post-quantum standards landscape is still evolving — the algorithms finalized today may be supplemented or replaced as quantum security research advances. Organizations that build crypto-agility into their infrastructure can update their cryptographic posture quickly and cheaply as standards change, rather than facing a multi-year engineering project each time. It's the difference between changing a setting and replacing a foundation.
+
+**Does migrating to PQC now protect data that's already been harvested?**
+No. If data was intercepted and archived before you migrate, migrating your encryption does not protect that data. The only defense against already-harvested data is if it was originally encrypted with a quantum-resistant algorithm — which is why the urgency is forward-looking. Migration protects everything encrypted after the migration is complete. It cannot reach back and protect data already in an adversary's archive. This is the core reason migration urgency is measured by when you start, not when Q-Day arrives.
+
+**What should I do first if I'm starting from zero?**
+Commission a cryptographic asset inventory. Map every system, application, API, device, and third-party integration that uses encryption — specifically identifying where RSA, ECC, and Diffie-Hellman are deployed. Then assess each asset for data lifespan risk: does the data it protects need to remain confidential for more than five years? Ten? Twenty? That assessment produces a prioritized list of what to migrate first. Without inventory, all other planning is guesswork. With it, you have a defensible, auditable quantum readiness posture — which is what regulators in financial services, healthcare, and government contracting are already beginning to ask for.

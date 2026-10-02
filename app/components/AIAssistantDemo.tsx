@@ -45,9 +45,9 @@ const QuickActionButton = ({ icon, label, colorScheme }: { icon: any, label: str
         color={`${colorScheme}.600`}
         _hover={{ bg: `${colorScheme}.100` }}
         fontWeight="600"
-        fontSize="sm"
+        fontSize={{ base: 'sm', md: 'md' }}
     >
-        <Icon as={icon} boxSize={5} mr={3} />
+        <Icon as={icon} boxSize={5} />
         {label}
     </Button>
 )
@@ -142,7 +142,7 @@ export const AIAssistantDemo = () => {
                     >
                         {currentConfig.title}
                     </Heading>
-                    <Text fontSize="xl" color="#6e6e73" maxW="3xl" mx="auto" mb={8}>
+                    <Text fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="5xl" mx="auto" mb={8}>
                         {currentConfig.subtitle}
                     </Text>
 
@@ -159,6 +159,7 @@ export const AIAssistantDemo = () => {
                                     onClick={() => setUserType('provider')}
                                     fontWeight="600"
                                     _hover={{ color: userType === 'provider' ? '#4241ff' : '#1d1d1f' }}
+                                    fontSize={{ base: 'md', md: 'lg' }}
                                 >
                                     Job Providers
                                 </Button>
@@ -171,6 +172,7 @@ export const AIAssistantDemo = () => {
                                     onClick={() => setUserType('seeker')}
                                     fontWeight="600"
                                     _hover={{ color: userType === 'seeker' ? '#0071fb' : '#1d1d1f' }}
+                                    fontSize={{ base: 'md', md: 'lg' }}
                                 >
                                     Job Seekers
                                 </Button>
@@ -190,7 +192,7 @@ export const AIAssistantDemo = () => {
                     maxW="7xl"
                     mx="auto"
                 >
-                    <Grid templateColumns={{ base: '1fr', lg: '280px 1fr' }} gap={0}>
+                    <Grid templateColumns={{ base: '1fr', lg: '300px 1fr' }} gap={0}>
                         {/* Sidebar */}
                         <Box
                             p={6}
@@ -206,9 +208,9 @@ export const AIAssistantDemo = () => {
                             <Box>
                                 <HStack mb={4}>
                                     <Icon as={Sparkles} boxSize={5} color="#4241ff" />
-                                    <Text fontWeight="700" fontSize="md" color="#1d1d1f">{currentConfig.sidebarTitle}</Text>
+                                    <Text fontWeight="700" fontSize={{ base: 'md', md: 'lg' }} color="#1d1d1f">{currentConfig.sidebarTitle}</Text>
                                 </HStack>
-                                <VStack align="stretch" gap={2}>
+                                <VStack align="stretch">
                                     {currentConfig.quickActions.map((action, index) => (
                                         <QuickActionButton
                                             key={index}
@@ -229,13 +231,13 @@ export const AIAssistantDemo = () => {
                             >
                                 <HStack mb={4}>
                                     <Icon as={Sparkles} boxSize={5} />
-                                    <Text fontWeight="700" fontSize="md">AI Capabilities</Text>
+                                    <Text fontWeight="700" fontSize={{ base: 'md', md: 'lg' }}>AI Capabilities</Text>
                                 </HStack>
                                 <VStack align="stretch" gap={3}>
                                     {currentConfig.capabilities.map((capability, index) => (
                                         <HStack key={index} align="start">
-                                            <Icon as={Check} boxSize={4} mt={0.5} flexShrink={0} />
-                                            <Text fontSize="sm" lineHeight="1.5">{capability}</Text>
+                                            {/* <Icon as={Check} boxSize={4} mt={0.5} flexShrink={0} /> */}
+                                            <Text fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.5">{capability}</Text>
                                         </HStack>
                                     ))}
                                 </VStack>
@@ -252,10 +254,10 @@ export const AIAssistantDemo = () => {
                             >
                                 <Flex justify="space-between" align="center">
                                     <Box>
-                                        <Text fontSize="xl" fontWeight="700" mb={1}>
+                                        <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="700">
                                             {currentConfig.headerTitle}
                                         </Text>
-                                        <Text fontSize="sm" opacity={0.9}>
+                                        <Text fontSize={{ base: 'md', md: 'lg' }} opacity={0.9}>
                                             {currentConfig.headerSubtitle}
                                         </Text>
                                     </Box>
@@ -269,7 +271,7 @@ export const AIAssistantDemo = () => {
                                         backdropFilter="blur(10px)"
                                     >
                                         <Box w={2} h={2} bg="green" rounded="full" />
-                                        <Text fontSize="sm" color="green" fontWeight="600">Online</Text>
+                                        <Text fontSize={{ base: 'sm', md: 'md' }} color="green" fontWeight="600">Online</Text>
                                     </Flex>
                                 </Flex>
                             </Box>
@@ -297,10 +299,10 @@ export const AIAssistantDemo = () => {
                                 >
                                     <Icon as={Bot} boxSize={10} color="white" />
                                 </Flex>
-                                <Text fontSize="2xl" fontWeight="700" mb={4} color="#1d1d1f">
+                                <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="700" mb={4} color="#1d1d1f">
                                     {currentConfig.chatTitle}
                                 </Text>
-                                <Text color="#6e6e73" fontSize="lg" maxW="2xl" mb={10} lineHeight="1.6">
+                                <Text color="#6e6e73" fontSize={{ base: 'md', md: 'lg' }} maxW="2xl" mb={10} lineHeight="1.6">
                                     {currentConfig.chatSubtitle}
                                 </Text>
 
@@ -309,7 +311,7 @@ export const AIAssistantDemo = () => {
                                         <Button
                                             key={index}
                                             variant="ghost"
-                                            size="md"
+                                            size={{ base: 'md', md: 'lg' }}
                                             rounded="xl"
                                             bg="white"
                                             color="#1d1d1f"
@@ -318,13 +320,13 @@ export const AIAssistantDemo = () => {
                                             _hover={{ borderColor: '#4241ff', bg: 'gray.50' }}
                                             px={5}
                                         >
-                                            <Icon as={action.icon} boxSize={4} mr={2} color="#4241ff" />
+                                            <Icon as={action.icon} boxSize={4} color="#4241ff" />
                                             {action.label}
                                         </Button>
                                     ))}
                                 </HStack>
 
-                                <Flex align="center" gap={2} color="#6e6e73" fontSize="sm">
+                                <Flex align="center" gap={2} color="#6e6e73" fontSize={{ base: 'md', md: 'lg' }}>
                                     <Icon as={AlertCircle} boxSize={4} />
                                     <Text>Use the suggestions on the left or ask anything below</Text>
                                 </Flex>
@@ -335,7 +337,7 @@ export const AIAssistantDemo = () => {
                                 <HStack gap={3}>
                                     <Input
                                         placeholder={currentConfig.inputPlaceholder}
-                                        size="lg"
+                                        size={{ base: 'md', md: 'lg' }}
                                         rounded="full"
                                         bg="gray.50"
                                         border="1px solid"

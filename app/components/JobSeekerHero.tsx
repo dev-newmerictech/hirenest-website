@@ -21,9 +21,7 @@ export const JobSeekerHero = () => (
         <VStack align={{ base: 'center', lg: 'flex-start' }} gap={6}>
           <Box>
             <Text
-              fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-              fontWeight="600"
-              color="#4241ff"
+              fontSize="sm" fontWeight="600" color="#4241ff"
               textTransform="uppercase"
               letterSpacing="wider"
               mb={3}
@@ -34,10 +32,10 @@ export const JobSeekerHero = () => (
 
             <Heading
               as="h1"
-              fontSize={{ base: '3xl', md: '4xl' }}
-              fontWeight="700"
-              color="#000"
-              lineHeight="1.2"
+              fontSize={{ base: '4xl' }}
+              fontWeight="800"
+              lineHeight="1.1"
+              color="#1d1d1f"
               mb={4}
               textAlign={{ base: 'center', lg: 'left' }}
 
@@ -46,16 +44,14 @@ export const JobSeekerHero = () => (
             </Heading>
 
             <Text
-              fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-              color="#000"
-              lineHeight="1.6"
+              fontSize={{ base: 'lg', md: 'xl' }} color="gray.500" lineHeight="1.6"
               maxW="600px"
               textAlign={{ base: 'center', lg: 'left' }}
             >
               Tired of sending 50 applications and hearing nothing back?
               <br />
               Your resume gets filtered out before any human sees it.
-              <br /><br />
+              <br />
               With Hirenest, you prove your skills upfront with quick,
               15-minute assessments — and employers discover you for what
               you can actually do, not how well your resume is formatted.
@@ -64,7 +60,8 @@ export const JobSeekerHero = () => (
 
           {/* CTA */}
           <Button
-            size={{ base: 'md', md: 'lg', xl: 'xl' }}
+            size="lg"
+            fontWeight={'600'}
             borderRadius="full"
             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
             color="white"
@@ -81,24 +78,39 @@ export const JobSeekerHero = () => (
           </Button>
 
           {/* Proof Points */}
-          <Flex gap={{ base: 6, md: 8 }} mt={4} flexWrap="wrap">
+          <Flex gap={{ base: 6 }} mt={2} flexWrap="wrap">
             <Box>
-              <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700">
+              <Text
+                fontSize={{ base: '4xl' }}
+                fontWeight="800"
+                lineHeight="1.1"
+                color="#1d1d1f">
                 75%
               </Text>
-              <Text fontSize="sm">Resumes never reach a human</Text>
+              <Text
+                fontSize={{ base: 'lg', md: 'xl' }} color="gray.500">Resumes never reach a human</Text>
             </Box>
             <Box>
-              <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700">
+              <Text
+                fontSize={{ base: '4xl' }}
+                fontWeight="800"
+                lineHeight="1.1"
+                color="#1d1d1f">
                 300+
               </Text>
-              <Text fontSize="sm">Applicants per job</Text>
+              <Text
+                fontSize={{ base: 'lg', md: 'xl' }} color="gray.500">Applicants per job</Text>
             </Box>
             <Box>
-              <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700">
+              <Text
+                fontSize={{ base: '4xl' }}
+                fontWeight="800"
+                lineHeight="1.1"
+                color="#1d1d1f">
                 15 min
               </Text>
-              <Text fontSize="sm">To prove your skills once</Text>
+              <Text
+                fontSize={{ base: 'lg', md: 'xl' }} color="gray.500">To prove your skills once</Text>
             </Box>
           </Flex>
         </VStack>

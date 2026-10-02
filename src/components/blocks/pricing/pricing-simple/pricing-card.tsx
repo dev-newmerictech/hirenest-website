@@ -32,25 +32,25 @@ export const PricingCard = (props: PricingCardProps) => {
       align={{ base: 'center', md: 'stretch' }}
       {...rest}
     >
-      {data.recommended && <Badge position="absolute" top="0" left="50%" transform="translate(-50%, -50%)" variant="solid" color="white" bg="rgba(66, 65, 255, 1)" w="fit-content" rounded="20px 20px" px="4" py="2">Recommended</Badge>}
-      <HStack fontWeight="700" fontSize="24px" color="rgba(66, 65, 255, 1)" justify="space-between">
+      {data.recommended && <Badge fontSize={{ base: 'sm', md: 'md' }} position="absolute" top="0" left="50%" transform="translate(-50%, -50%)" variant="solid" color="white" bg="rgba(66, 65, 255, 1)" w="fit-content" rounded="20px 20px" px="4" py="2">Recommended</Badge>}
+      <HStack fontWeight="700" fontSize={{ base: 'lg', md: 'xl' }} color="rgba(66, 65, 255, 1)" justify="space-between">
         {data.title}
       </HStack>
       <Flex gap="1">
-        <Span fontSize="24px" lineHeight="1" fontWeight="700" color="#000">
+        <Span fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1" fontWeight="700" color="#000">
           {data.priceSymbol}
           {data.price}
         </Span>
         /
-        <Span fontSize="24px" lineHeight="1" fontWeight="400" color="#000" textTransform="capitalize">
+        <Span fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1" fontWeight="400" color="#000" textTransform="capitalize">
           {data.priceUnit}
         </Span>
       </Flex>
-      {data.extraline && <Span fontSize="16px" lineHeight="1" fontWeight="400" color="#000" textTransform="capitalize">{data.extraline}</Span>}
+      {data.extraline && <Span fontSize={{ base: 'md', md: 'lg' }} lineHeight="1" fontWeight="400" color="#000" textTransform="capitalize">{data.extraline}</Span>}
       <List.Root variant="plain" align="center" textStyle="sm" gap="5">
         <For each={data.features}>
           {(item) => (
-            <List.Item fontSize="16px" lineHeight="normal" fontWeight="400" color="#000" alignItems="flex-start" key={item}>
+            <List.Item fontSize={{ base: 'md', md: 'lg' }} lineHeight="normal" fontWeight="400" color="#000" alignItems="flex-start" key={item}>
               <List.Indicator p={0.5} w="20px" h="20px" asChild color="rgba(0, 168, 81, 1)" border="1px solid rgba(0, 168, 81, 1)" rounded="50%">
                 <LuCheck />
               </List.Indicator>
@@ -60,7 +60,7 @@ export const PricingCard = (props: PricingCardProps) => {
         </For>
       </List.Root>
       <Button
-        mt={data.value === 'free' ? '145px' : data.value === 'pro' ? '45px' : '1'}
+        mt={data.value === 'free' ? '205px' : data.value === 'pro' ? '45px' : '45px'}
         size={{ base: 'md', md: 'xl' }}
         borderRadius="full"
         background={data.recommended ? 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)' : 'transparent'}
@@ -68,7 +68,7 @@ export const PricingCard = (props: PricingCardProps) => {
         fontWeight="medium"
         border={!data.recommended ? '1px solid rgba(66, 65, 255, 1)' : 'none'}
         cursor={'not-allowed'}
-        // onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
+      // onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
       >
         {data.buttonText}
       </Button>

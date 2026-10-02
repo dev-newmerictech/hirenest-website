@@ -1,0 +1,6 @@
+/* Route-specific styles — loaded only on /blog and /dashboard routes */
+@import "./breadcrumbs.css";
+@import "./footer.css";
+@import "./global.css";
+@import "./responsive.css";
+@import "./hirenest-post.css";

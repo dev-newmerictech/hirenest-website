@@ -11,6 +11,9 @@ import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headl
 import { pageMetadata } from '../lib/metadata';
 import { AboutStructuredData } from './structured-data';
 
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = pageMetadata.about;
 
 export default function AboutPage() {

@@ -3,7 +3,7 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
@@ -13,7 +13,7 @@ export function AICandidateRankingStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/ai_candidate_ranking_hero.png',
+        'https://hirenest.ai/ai_candidate_ranking_hero.png',
         {
             name: 'AI Candidate Ranking - Hire the Best, Ignore the Rest',
             description: 'Automatically rank and score candidates with AI to make data-driven hiring decisions.',
@@ -25,37 +25,39 @@ export function AICandidateRankingStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'AI Candidate Ranking Demo',
-        'Learn how our AI Candidate Ranking system helps you identify top talent instantly and remove bias from your hiring process.',
-        'https://www.hirenest.ai/ai_candidate_ranking_hero.png',
-        '2024-01-15T00:00:00.000Z',
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'AI Candidate Ranking - Smart Hiring Decisions',
+        'Instantly identify top talent with AI Candidate Ranking. Our smart scoring system evaluates skills and fit for faster, data-driven hiring decisions.',
+        'https://hirenest.ai/ai-candidate-ranking',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'AI Candidate Ranking', url: 'https://hirenest.ai/ai-candidate-ranking' }
+        ],
         {
-            duration: 'PT3M15S',
-            width: 1920,
-            height: 1080
+            image: imageSchema,
+            author: 'Hirenest Team'
         }
     );
 
     return (
         <>
-            {/* FAQ Structured Data */}
+            {/* Structured Data - WebPage */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
             />
 
-            {/* Image Structured Data */}
+            {/* Structured Data - ImageObject */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
             />
 
-            {/* Video Structured Data */}
+            {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
         </>
     );

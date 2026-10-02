@@ -3,7 +3,7 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
@@ -13,7 +13,7 @@ export function AIResumeBuilderStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/resume-builder-hero.png',
+        'https://hirenest.ai/resume-builder-hero.png',
         {
             name: 'AI Resume Builder - Build a Resume That Gets You Hired',
             description: 'AI-powered resume builder interface showing professional templates',
@@ -25,37 +25,39 @@ export function AIResumeBuilderStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'AI Resume Builder Tutorial',
-        'Learn how to create a professional, ATS-optimized resume using Hirenest AI Resume Builder. Get personalized suggestions and stand out to employers.',
-        'https://www.hirenest.ai/resume-builder-hero.png',
-        '2024-01-15T00:00:00.000Z',
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'AI Resume Builder - Create Professional Resumes',
+        'Build ATS-optimized resumes with AI assistance. Get personalized suggestions and stand out to employers.',
+        'https://hirenest.ai/ai-resume-builder',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'AI Resume Builder', url: 'https://hirenest.ai/ai-resume-builder' }
+        ],
         {
-            duration: 'PT5M00S', // 5 minutes
-            width: 1920,
-            height: 1080
+            image: imageSchema,
+            author: 'Hirenest Team'
         }
     );
 
     return (
         <>
-            {/* FAQ Structured Data */}
+            {/* Structured Data - WebPage */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
             />
 
-            {/* Image Structured Data */}
+            {/* Structured Data - ImageObject */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
             />
 
-            {/* Video Structured Data */}
+            {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
         </>
     );

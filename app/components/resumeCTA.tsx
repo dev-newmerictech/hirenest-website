@@ -11,14 +11,15 @@ export const ResumeCTA = () => (
                 <Heading
                     as="h2"
                     fontSize={{ base: '3xl', md: '4xl' }}
-                    fontWeight="700"
+                    fontWeight="800"
                     color="#000"
-                    lineHeight="1.2"
+                    lineHeight="1.1"
+                    letterSpacing="tight"
                 >
                     Your Resume, <Text as="span" bg="#4241ff" bgClip="text">Re-built for Results</Text>
                 </Heading>
                 <Text
-                    fontSize={{ base: 'lg' }}
+                    fontSize={{ base: 'lg', md: 'xl' }}
                     color="#6e6e73"
                     lineHeight="1.4"
                     fontWeight="400"
@@ -27,18 +28,18 @@ export const ResumeCTA = () => (
                     Ever wondered if your resume even got past the ATS filters?
                 </Text>
                 <Text
-                    fontSize={{ base: 'lg' }}
+                    fontSize={{ base: 'lg', md: 'xl' }}
                     color="#6e6e73"
                     lineHeight="1.4"
                     fontWeight="400"
                     mb={4}
                 >
-                Now imagine a resume that both algorithms and hiring managers actually want to read. An AI-powered optimization that adapts to your skills, target role, and industry requirements.                
+                    Now imagine a resume that both algorithms and hiring managers actually want to read. An AI-powered optimization that adapts to your skills, target role, and industry requirements.
                 </Text>
                 <Button
                     size={{ base: 'md', md: 'lg' }}
                     borderRadius="full"
-                    fontWeight="500"
+                    fontWeight="600"
                     background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                     color="white"
                     minW={{ base: '100px', md: '100px' }}
@@ -81,7 +82,7 @@ export const ResumeCTA = () => (
                         </Flex>
                         <Heading
                             as="h3"
-                            fontSize={{ base: 'xl', md: '2xl' }}
+                            fontSize={{ base: 'lg', md: 'xl' }}
                             fontWeight="600"
                             color="#1d1d1f"
                             lineHeight="1.3"
@@ -89,7 +90,7 @@ export const ResumeCTA = () => (
                             AI Matching Algorithm
                         </Heading>
                         <Text
-                            fontSize={{ base: 'sm', md: 'md' }}
+                            fontSize={{ base: 'md', md: 'lg' }}
                             color="#6e6e73"
                             lineHeight="1.5"
                         >Connects you with opportunities based on demonstrated skills and career goals.
@@ -121,14 +122,14 @@ export const ResumeCTA = () => (
                         </Flex>
                         <Heading
                             as="h3"
-                            fontSize={{ base: 'xl', md: '2xl' }}
+                            fontSize={{ base: 'lg', md: 'xl' }}
                             fontWeight="600"
                             color="#1d1d1f"
                             lineHeight="1.3"
-                        >Skill Gap Analysis 
+                        >Skill Gap Analysis
                         </Heading>
                         <Text
-                            fontSize={{ base: 'sm', md: 'md' }}
+                            fontSize={{ base: 'md', md: 'lg' }}
                             color="#6e6e73"
                             lineHeight="1.5"
                         >Shows you which skills employers want the most, with personalized recommendations to close the gap.

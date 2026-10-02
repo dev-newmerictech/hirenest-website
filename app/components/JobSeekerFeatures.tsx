@@ -47,11 +47,16 @@ export const JobSeekerFeatures = () => (
     <Container maxW="7xl">
       {/* Section Header */}
       <VStack gap={4} textAlign="center" mb={{ base: 12, md: 16 }}>
-        <Heading fontSize={{ base: '3xl', md: '4xl' }} fontWeight="700" display={'flex'} gap={2}>
+        <Heading
+          fontSize={{ base: '3xl', md: '4xl' }}
+          fontWeight="800"
+          color="#1d1d1f"
+          lineHeight="1.1"
+          letterSpacing="tight">
           What You Get With
-            Hirenest
+          Hirenest
         </Heading>
-        <Text fontSize={{ base: 'md', md: 'lg' }} maxW="3xl">
+        <Text fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="3xl">
           Everything you need to get discovered, prove your skills, and land the right job — without wasting time on broken systems.
         </Text>
       </VStack>
@@ -85,11 +90,11 @@ export const JobSeekerFeatures = () => (
                 <Icon size={28} />
               </Flex>
 
-              <Heading size="md" fontWeight="700">
+              <Heading fontSize={{ base: 'lg', md: 'xl' }} color="#000" fontWeight="700">
                 {feature.title}
               </Heading>
 
-              <Text color="gray.600" fontSize="sm" lineHeight="1.6">
+              <Text color="gray.600" fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.6">
                 {feature.description}
               </Text>
             </VStack>
@@ -98,14 +103,15 @@ export const JobSeekerFeatures = () => (
       </Grid>
 
       {/* Bottom CTA */}
-      <VStack mt={{ base: 14, md: 20 }} gap={6} textAlign="center">
-        <Heading size="lg">Results Beat Resumes.</Heading>
-        <Text maxW="2xl">
+      <VStack mt={{ base: 14 }} gap={6} textAlign="center">
+        <Heading fontSize={{ base: 'lg', md: 'xl' }} color="#000">Results Beat Resumes.</Heading>
+        <Text fontSize={{ base: 'md', md: 'lg' }} color="#6e6e73" maxW="2xl">
           With Hirenest, you prove your abilities upfront. Employers find you based on what you can actually do — not how well you play the keyword game.
         </Text>
         <Button
           size="lg"
           rounded="full"
+          fontWeight={'600'}
           bg="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
           color="white"
           px={10}

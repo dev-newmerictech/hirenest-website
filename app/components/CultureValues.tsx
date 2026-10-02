@@ -19,22 +19,17 @@ export const CultureValues = () => {
                     {/* Left - Content */}
                     <VStack alignItems="flex-start" gap={6}>
                         <Text
-                            color="#4241ff"
-                            fontWeight="600"
-                            fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                            letterSpacing="wider"
-                            textTransform="uppercase"
-                            textAlign={{ base: 'center', lg: 'left' }}
+                            fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                         >
                             Our Culture
                         </Text>
                         <Heading
                             as="h2"
                             fontSize={{ base: '3xl', md: '4xl' }}
-                            fontWeight="700"
-                            lineHeight="1.2"
-                            color="#000"
-                            textAlign={{ base: 'center', lg: 'left' }}
+                            fontWeight="800"
+                            color="#1d1d1f"
+                            lineHeight="1.1"
+                            letterSpacing="tight"
                         >
                             A Place Where{' '}
                             <Box as="span" bg="#4241ff" bgClip="text">
@@ -42,18 +37,14 @@ export const CultureValues = () => {
                             </Box>
                         </Heading>
                         <Text
-                            color="#000"
-                            fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="4xl"
                             lineHeight="1.6"
-                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Our culture is built on trust, transparency, and collaboration. We believe in empowering our team members to do their best work while maintaining a healthy work-life balance.
                         </Text>
                         <Text
-                            color="#000"
-                            fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="4xl"
                             lineHeight="1.6"
-                            textAlign={{ base: 'center', lg: 'left' }}
                         >
                             We celebrate diversity, encourage innovation, and support each other's growth. Whether you're working remotely or in the office, you'll find a welcoming community that values your unique perspective.
                         </Text>
@@ -92,7 +83,7 @@ const CultureHighlight = ({ number, label }: { number: string, label: string }) 
         <Text fontSize={{ base: 'xl', md: '2xl' }} fontWeight="700" color="#4241ff" mb={1}>
             {number}
         </Text>
-        <Text fontSize={{ base: 'xs', md: 'sm' }} color="#000">
+        <Text fontSize={{ base: 'md', md: 'lg' }} color="#000">
             {label}
         </Text>
     </Box>

@@ -29,11 +29,8 @@ export const OurStory = () => {
                     {/* Right - Content */}
                     <VStack alignItems="flex-start" gap={6} order={{ base: 1, lg: 2 }}>
                         <Text
-                            color="#4241ff"
-                            fontWeight="600"
-                            fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                            letterSpacing="wider"
-                            textTransform="uppercase"
+
+                            fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                             textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Our Story
@@ -41,33 +38,30 @@ export const OurStory = () => {
                         <Heading
                             as="h2"
                             fontSize={{ base: '3xl', md: '4xl' }}
-                            fontWeight="700"
-                            lineHeight="1.2"
-                            color="#000"
-                            textAlign={{ base: 'center', lg: 'left' }}
+                            fontWeight="800"
+                            color="#1d1d1f"
+                            lineHeight="1.1"
+                            letterSpacing="tight"
                         >
                             From Idea to{' '}
                             <Box as="span" bg="#4241ff" bgClip="text">Innovation</Box>
                         </Heading>
                         <Text
-                            color="#000"
-                            fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="4xl"
                             lineHeight="1.6"
                             textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Founded in 2019, Hirenest was born from a simple observation: the traditional hiring process was broken. Talented candidates were getting lost in the noise, and companies were spending months trying to find the right fit.
                         </Text>
                         <Text
-                            color="#000"
-                            fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="4xl"
                             lineHeight="1.6"
                             textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Our founders, experienced technologists and HR professionals, knew there had to be a better way. By combining cutting-edge AI with deep industry expertise, they created a platform that doesn't just match resumes to job descriptions—it understands potential.
                         </Text>
                         <Text
-                            color="#000"
-                            fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="4xl"
                             lineHeight="1.6"
                             textAlign={{ base: 'center', lg: 'left' }}
                         >

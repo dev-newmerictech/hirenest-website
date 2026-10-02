@@ -13,6 +13,7 @@ import {
   Separator,
   Flex,
   Button,
+  IconButton,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import {
@@ -21,6 +22,9 @@ import {
   FaGithub,
   FaYoutube,
   FaInstagram,
+  FaSitemap,
+  FaRss,
+  FaRobot,
 } from 'react-icons/fa';
 import { LuShield, LuLock, LuCheck } from 'react-icons/lu';
 
@@ -53,6 +57,12 @@ const footerLinks = {
     links: [
       { label: 'About', href: '/about' },
       { label: 'Careers', href: '/careers' },
+      { label: 'All Jobs', href: '/jobs' },
+      { label: 'Interview Questions', href: '/interview-questions' },
+      { label: 'Resume Keywords', href: '/resume-keywords' },
+      { label: 'Job Descriptions', href: '/job-description' },
+      { label: 'Salary', href: '/salary' },
+      { label: 'Cover Letter', href: '/cover-letter' },
     ],
   },
   legal: {
@@ -63,6 +73,7 @@ const footerLinks = {
       { label: 'Refund Policy', href: '/refund-policy' },
       { label: 'Cookie Policy', href: '/cookie-policy' },
       { label: 'Security', href: '/security' },
+      { label: 'Legal Information', href: '/legal' },
     ],
   },
 };
@@ -82,7 +93,7 @@ const trustBadges = [
 export function Block() {
   return (
     <Box bg="bg.muted" pt={{ base: '10' }} pb="8">
-      <Container maxW="7xl">
+      <Container maxW="9xl">
         <Stack gap={{ base: '10', md: '10' }}>
           {/* Main Footer Content */}
           <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 5 }} gap={{ base: '8', md: '6' }}>
@@ -90,14 +101,15 @@ export function Block() {
             <VStack align="flex-start" gap="4" ml={10}>
 
               <Image src="/HpLogo.svg" alt="Hirenest" width={200} height={100} />
-              <Text fontSize="sm" color="fg.muted">
+              <Text
+                fontSize={{ base: 'md', md: 'lg' }} color="fg.muted">
                 Connect with opportunities and talent through validated skills and AI-powered matching.
               </Text>
             </VStack>
 
             {/* Features Column */}
             <VStack align="flex-start" gap="4" ml={10}>
-              <Heading size="sm" fontWeight="semibold">
+              <Heading fontSize={{ base: 'md', md: 'lg' }} fontWeight="700">
                 {footerLinks.features.title}
               </Heading>
               <Stack gap="3">
@@ -105,7 +117,7 @@ export function Block() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    fontSize="sm"
+                    fontSize={{ base: 'md' }}
                     color="fg.muted"
                     _hover={{ color: 'brand.500' }}
                   >
@@ -117,7 +129,7 @@ export function Block() {
 
             {/* Resources Column */}
             <VStack align="flex-start" gap="4" ml={10}>
-              <Heading size="sm" fontWeight="semibold">
+              <Heading fontSize={{ base: 'md', md: 'lg' }} fontWeight="700">
                 {footerLinks.resources.title}
               </Heading>
               <Stack gap="3">
@@ -125,7 +137,7 @@ export function Block() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    fontSize="sm"
+                    fontSize={{ base: 'md' }}
                     color="fg.muted"
                     _hover={{ color: 'brand.500' }}
                   >
@@ -137,7 +149,7 @@ export function Block() {
 
             {/* Company Column */}
             <VStack align="flex-start" gap="4" ml={10}>
-              <Heading size="sm" fontWeight="semibold">
+              <Heading fontSize={{ base: 'md', md: 'lg' }} fontWeight="700">
                 {footerLinks.company.title}
               </Heading>
               <Stack gap="3">
@@ -145,7 +157,7 @@ export function Block() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    fontSize="sm"
+                    fontSize={{ base: 'md' }}
                     color="fg.muted"
                     _hover={{ color: 'brand.500' }}
                   >
@@ -157,7 +169,7 @@ export function Block() {
 
             {/* Legal Column */}
             <VStack align="flex-start" gap="4" ml={10}>
-              <Heading size="sm" fontWeight="semibold">
+              <Heading fontSize={{ base: 'md', md: 'lg' }} fontWeight="700">
                 {footerLinks.legal.title}
               </Heading>
               <Stack gap="3">
@@ -165,13 +177,21 @@ export function Block() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    fontSize="sm"
+                    fontSize={{ base: 'md' }}
                     color="fg.muted"
                     _hover={{ color: 'brand.500' }}
                   >
                     {link.label}
                   </Link>
                 ))}
+                <Link
+                  href="/seo-sitemap"
+                  fontSize={{ base: 'md' }}
+                  color="fg.muted"
+                  _hover={{ color: 'brand.500' }}
+                >
+                  Sitemap
+                </Link>
               </Stack>
             </VStack>
           </SimpleGrid>
@@ -187,13 +207,46 @@ export function Block() {
           >
             {/* Copyright & Trust Badges */}
             <Stack gap="4" flex="1" ml={10}>
-              <Text fontSize="sm" color="fg.muted">
-                © 2025 Hirenest.co | Hire people who can actually do the job.
+              <Text fontSize={{ base: 'md' }} color="fg.muted">
+                © 2026 Hirenest.ai | Hire people who can actually do the job. | Powered by Hridh Enterprise
               </Text>
             </Stack>
 
             {/* Social Links and Join Our Community Button */}
             <HStack gap="4" ml={'10'} mr={'10'} flexWrap="wrap">
+              <Link href="/sitemap.xml" >
+                <IconButton
+
+                  aria-label="Sitemap"
+                  variant="ghost"
+                  color="fg.muted"
+                  _hover={{ color: 'brand.500' }}
+                >
+                  <FaSitemap />
+                </IconButton>
+              </Link>
+              <Link href="/rss.xml" >
+                <IconButton
+
+                  aria-label="RSS Feed"
+                  variant="ghost"
+                  color="fg.muted"
+                  _hover={{ color: 'brand.500' }}
+                >
+                  <FaRss />
+                </IconButton>
+              </Link>
+              <Link href="/llms.txt" >
+                <IconButton
+
+                  aria-label="LLMs.txt"
+                  variant="ghost"
+                  color="fg.muted"
+                  _hover={{ color: 'brand.500' }}
+                >
+                  <FaRobot />
+                </IconButton>
+              </Link>
               {socialLinks.map((social) => (
                 <Link
                   key={social.label}
@@ -209,7 +262,7 @@ export function Block() {
                 >
                   <Box
                     as={social.icon}
-                    fontSize="xl"
+                    fontSize={{ base: 'md', md: 'lg' }}
                     color="fg.muted"
                     _hover={{ color: 'brand.500' }}
                     transition="color 0.2s"

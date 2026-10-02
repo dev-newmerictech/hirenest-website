@@ -20,16 +20,24 @@ export const PageHeader = (props: PageHeaderProps) => {
   const { tagline, headline, description, ...rootProps } = props
   return (
     <Stack gap={{ base: '6', md: '8' }} {...rootProps}>
-      <Stack gap={{ base: '5', md: '6' }}>
+      <Stack gap={{ base: '4' }}>
         <Stack gap={{ base: '3', md: '4' }}>
-          <Text textStyle={{ base: 'sm', md: 'md' }} fontWeight="medium" color="#4241ff">
+          <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider">
             {tagline}
           </Text>
-          <Heading as="h2" color="#000" fontWeight="700" fontSize={{ base: '3xl', md: '4xl' }}>
+          <Heading
+            as="h2"
+            fontSize={{ base: '3xl', md: '4xl' }}
+            fontWeight="800"
+            color="#1d1d1f"
+            lineHeight="1.1"
+            letterSpacing="tight">
             {headline}
           </Heading>
         </Stack>
-        <Text color="#000" fontSize={{ base: 'md', md: 'lg' }} maxW="3xl">
+        <Text
+          fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
+          lineHeight="1.4" maxW="3xl">
           {description}
         </Text>
       </Stack>

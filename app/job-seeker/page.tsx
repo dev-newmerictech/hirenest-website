@@ -12,34 +12,16 @@ import {
     generateWebPageSchema,
     generateSoftwareApplicationSchema,
     generateFAQSchema,
-    generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateImageObjectSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
+
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = pageMetadata.jobSeeker;
 
 export default function JobSeekerPage() {
-    const webPageSchema = generateWebPageSchema(
-        'For Job Seekers - Find Your Dream Job',
-        'AI-powered job matching platform for job seekers. Create your profile, upload your resume, and get matched with opportunities.',
-        'https://hirenest.ai/job-seeker',
-        [
-            { name: 'Home', url: 'https://hirenest.ai' },
-            { name: 'For Job Seekers' }
-        ]
-    );
-
-    const softwareSchema = generateSoftwareApplicationSchema(
-        'Hirenest Job Seeker Platform',
-        'AI-powered job matching and career development platform for job seekers',
-        'https://hirenest.ai/job-seeker',
-        'BusinessApplication'
-    );
-
-    // Generate FAQ Schema
-    const faqSchema = generateFAQSchema(faqs);
-
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
         'https://hirenest.ai/job-seeker-og.png',
@@ -54,18 +36,29 @@ export default function JobSeekerPage() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Hirenest for Job Seekers - Platform Demo',
-        'Learn how Hirenest helps job seekers find their dream job with AI-powered matching, resume building, and career insights.',
-        'https://hirenest.ai/job-seeker-og.png',
-        '2024-01-15T00:00:00.000Z',
+    const webPageSchema = generateWebPageSchema(
+        'For Job Seekers - Find Your Dream Job',
+        'AI-powered job matching platform for job seekers. Create your profile, upload your resume, and get matched with opportunities.',
+        'https://hirenest.ai/job-seeker',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'For Job Seekers', url: 'https://hirenest.ai/job-seeker' }
+        ],
         {
-            duration: 'PT4M15S', // 4 minutes 15 seconds
-            width: 1920,
-            height: 1080
+            image: imageSchema,
+            author: 'Hirenest Team'
         }
     );
+
+    const softwareSchema = generateSoftwareApplicationSchema(
+        'Hirenest Job Seeker Platform',
+        'AI-powered job matching and career development platform for job seekers',
+        'https://hirenest.ai/job-seeker',
+        'BusinessApplication'
+    );
+
+    // Generate FAQ Schema
+    const faqSchema = generateFAQSchema(faqs);
 
     return (
         <Box>
@@ -76,19 +69,15 @@ export default function JobSeekerPage() {
             />
             <script
                 type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
+            />
+            <script
+                type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
             />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
             />
 
             {/* Hero Section with Images */}

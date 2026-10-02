@@ -23,16 +23,21 @@ export const SectionHeader = (props: SectionHeaderProps) => {
       <Stack gap={{ base: '4', md: '5' }}>
         <Stack gap={{ base: '2', md: '3' }}>
           {tagline && (
-            <Text textStyle={{ base: 'sm', md: 'md' }} fontWeight="medium" color="#4241ff">
+            <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider">
               {tagline}
             </Text>
           )}
-          <Heading as="h2" lineHeight="1.2" fontSize={{ base: '3xl', md: '4xl' }} fontWeight="700" color="#000">
+          <Heading as="h2"
+            fontSize={{ base: '3xl', md: '4xl' }}
+            fontWeight="800"
+            color="#1d1d1f"
+            lineHeight="1.1"
+            letterSpacing="tight">
             {headline}
           </Heading>
         </Stack>
         {description && (
-          <Text color="#000" textStyle={{ base: 'md', md: 'lg' }} maxW="3xl">
+          <Text fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="3xl">
             {description}
           </Text>
         )}

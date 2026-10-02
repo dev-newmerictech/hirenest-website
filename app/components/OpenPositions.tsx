@@ -64,30 +64,25 @@ export const OpenPositions = () => {
                 {/* Section Header */}
                 <VStack mb={12} textAlign="center">
                     <Text
-                        color="#4241ff"
-                        fontWeight="600"
-                        fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                        fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                         mb={4}
-                        letterSpacing="wider"
-                        textTransform="uppercase"
                     >
                         Open Positions
                     </Text>
                     <Heading
                         as="h2"
                         fontSize={{ base: '3xl', md: '4xl' }}
-                        fontWeight="700"
+                        fontWeight="800"
+                        color="#1d1d1f"
+                        lineHeight="1.1"
+                        letterSpacing="tight"
                         mb={6}
-                        lineHeight="1.2"
-                        color="#000"
                         maxW="800px"
                     >
                         Find Your Next <Box as="span" bg="#4241ff" bgClip="text">Opportunity</Box>
                     </Heading>
                     <Text
-                        color="#000"
-                        fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                        maxW="700px"
+                        fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="4xl"
                         lineHeight="1.6"
                     >
                         We're always looking for talented people to join our team. Explore our current openings and find your perfect role.
@@ -128,10 +123,7 @@ const PositionCard = ({ title, department, location, type, description }: {
         <Flex justify="space-between" align="start" mb={3}>
             <Box>
                 <Text
-                    fontSize="xs"
-                    fontWeight="600"
-                    color="#4241ff"
-                    textTransform="uppercase"
+                    fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                     mb={2}
                 >
                     {department}
@@ -150,7 +142,7 @@ const PositionCard = ({ title, department, location, type, description }: {
 
         <Text
             color="#000"
-            fontSize={{ base: 'sm', md: 'md' }}
+            fontSize={{ base: 'md', md: 'lg' }}
             mb={4}
             lineHeight="1.6"
         >
@@ -160,20 +152,20 @@ const PositionCard = ({ title, department, location, type, description }: {
         <Flex gap={4} mb={4} flexWrap="wrap">
             <Flex align="center" gap={1}>
                 <MapPin size={16} color="#4241ff" />
-                <Text fontSize="sm" color="#000">
+                <Text fontSize="md" color="#000">
                     {location}
                 </Text>
             </Flex>
             <Flex align="center" gap={1}>
                 <Clock size={16} color="#4241ff" />
-                <Text fontSize="sm" color="#000">
+                <Text fontSize="nd" color="#000">
                     {type}
                 </Text>
             </Flex>
         </Flex>
 
         <Button
-            size="sm"
+            size="md"
             variant="outline"
             borderColor="#4241ff"
             color="#4241ff"

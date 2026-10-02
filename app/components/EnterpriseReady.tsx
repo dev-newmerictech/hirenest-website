@@ -9,12 +9,7 @@ export const EnterpriseReady = () => {
                 <VStack gap={4} textAlign="center">
                     <Box mx={'auto'} mb={0}>
 
-                        <Text
-                            fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                            fontWeight="600"
-                            color="#4241ff"
-                            textTransform="uppercase"
-                            letterSpacing="wider"
+                        <Text fontSize="sm" fontWeight="600" color="#fff" textTransform="uppercase" letterSpacing="wider"
                             mb={3}
                         >
                             Enterprise
@@ -36,7 +31,7 @@ export const EnterpriseReady = () => {
                     <Text fontSize={{ base: 'lg', md: 'xl' }} color="#fff" maxW="3xl">
                         Built for scale, security, and seamless integration with your existing tools
                     </Text>
-                    
+
                     <Stack direction={{ base: 'column', sm: 'row' }} justifyContent="center" gap={4} w="full">
                         <Button
                             _hover={{
@@ -46,7 +41,8 @@ export const EnterpriseReady = () => {
                                 boxShadow: "lg"
                             }}
                             transition="all 0.3s"
-                            size={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
+                            size={{ base: 'lg' }}
+                            fontWeight={'600'}
                             borderRadius="full"
                             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                             color="white"

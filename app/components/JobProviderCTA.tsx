@@ -67,7 +67,7 @@ export const JobProviderCTA = ({ variant = 'primary' }: JobProviderCTAProps) => 
                         <Heading
                             as="h2"
                             fontSize={{ base: '3xl', md: '4xl' }}
-                            fontWeight="700"
+                            fontWeight="800"
                             color={isPrimary ? "white" : "#000"}
                             lineHeight="1.2"
                         >
@@ -86,7 +86,7 @@ export const JobProviderCTA = ({ variant = 'primary' }: JobProviderCTAProps) => 
                             )}
                         </Heading>
                         <Text
-                            fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                            fontSize={{ base: 'lg', md: 'xl' }}
                             color={isPrimary ? "rgba(255, 255, 255, 0.9)" : "#000"}
                             maxW="700px"
                             lineHeight="1.6"
@@ -104,7 +104,7 @@ export const JobProviderCTA = ({ variant = 'primary' }: JobProviderCTAProps) => 
                         mt={4}
                     >
                         <Button
-                            size={{ base: 'md', md: 'lg' }}
+                            size={{ base: 'lg' }}
                             bg={isPrimary ? "white" : "linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"}
                             color={isPrimary ? "#4241ff" : "white"}
                             px={{ base: 8, md: 10 }}
@@ -140,15 +140,15 @@ export const JobProviderCTA = ({ variant = 'primary' }: JobProviderCTAProps) => 
                         >
                             <Flex alignItems="center" gap={2}>
                                 <Box w="4px" h="4px" borderRadius="full" bg="white" />
-                                <Text>Free job posting</Text>
+                                <Text fontSize={{ base: 'md' }}>Free job posting</Text>
                             </Flex>
                             <Flex alignItems="center" gap={2}>
                                 <Box w="4px" h="4px" borderRadius="full" bg="white" />
-                                <Text>No credit card required</Text>
+                                <Text fontSize={{ base: 'md' }}>No credit card required</Text>
                             </Flex>
                             <Flex alignItems="center" gap={2}>
                                 <Box w="4px" h="4px" borderRadius="full" bg="white" />
-                                <Text>Cancel anytime</Text>
+                                <Text fontSize={{ base: 'md' }}>Cancel anytime</Text>
                             </Flex>
                         </Flex>
                     )}

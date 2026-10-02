@@ -12,7 +12,7 @@
 
 # testing
 /coverage
-
+.claude
 # next.js
 /.next/
 /out/
@@ -23,13 +23,20 @@
 # misc
 .DS_Store
 *.pem
-
+content
+extend_blogs.js
+google_index_tracking.json
+Tools.ms.ini
+truncate_blogs.js
+google_index_priority.js
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
+import-blog-backup.js
+backup-blog-posts.js
+blog-backups
 # env files (can opt-in for committing if needed)
 .env*
 
@@ -39,3 +46,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+plans
+docs
+service_account.json
+nul
+
+# backups and exports
+blog-posts-backup/
+backup-blog/
+*.zip
+dev-export.zip
+backup-posts.zip
+
+# utility scripts (local use only)
+scripts/check-cache.js
+scripts/copy-posts-to-prod.js
+scripts/export-posts-to-md.js
+scripts/import-posts-to-prod.js
+scripts/migrate-dev-to-prod.ts
+scripts/push-md-to-prod.js
+scripts/backup-blog-posts.ts
+scripts/sync-summaries.ts
+scripts/test-*.ts
+s3-upload/

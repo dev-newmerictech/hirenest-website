@@ -11,6 +11,9 @@ import { Block as FAQ } from '@/src/components/blocks/faqs/faq-with-inline-headl
 import { pageMetadata } from '../lib/metadata';
 import { CareersStructuredData } from './structured-data';
 
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = pageMetadata.careers;
 
 export default function CareersPage() {

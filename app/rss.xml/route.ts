@@ -1,11 +1,57 @@
 import { NextResponse } from 'next/server';
+import { enabledJobTitles } from '../lib/programmatic-seo/enabled-job-titles';
+import { LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '../lib/programmatic-seo/job-board';
+// Convex removed
+// Force Node.js runtime to avoid edge runtime module loading issues with large imports
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
     const baseUrl = 'https://hirenest.ai';
     const currentDate = new Date().toUTCString();
+    const SITE_TITLE = "Hirenest.ai";
+    const SITE_DESCRIPTION =
+        "Get 30 SEO-optimized articles published automatically each month, with your authentic brand voice intact.";
 
-    // Define content items for RSS feed
-    const items = [
+    function escapeXml(text: string): string {
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&apos;");
+    }
+
+    const BLOG_CDN_URL = process.env.NEXT_PUBLIC_BLOG_CDN_URL || 'https://dmf25vwa4wepi.cloudfront.net';
+    let blogItems: any[] = [];
+
+    try {
+        const response = await fetch(`${BLOG_CDN_URL}/index.json`, { next: { revalidate: 3600 } });
+        if (response.ok) {
+            const posts = await response.json();
+            blogItems = posts
+                .filter((post: any) => post.published !== false)
+                .slice(0, 50) // Limit to recent 50 posts
+                .map((post: any) => {
+                    const url = `${baseUrl}/blog/${post.slug}`;
+                    const pubDate = new Date(post.date).toUTCString();
+                    const category = post.tags?.[0] || 'Blog';
+
+                    return {
+                        title: post.title,
+                        link: url,
+                        description: post.description,
+                        pubDate: pubDate,
+                        category: category,
+                    };
+                });
+        }
+    } catch (error) {
+        console.error("Failed to fetch blog posts for RSS:", error);
+    }
+
+    // Main feature items
+    const featureItems = [
         {
             title: 'AI-Powered Resume Builder',
             link: `${baseUrl}/ai-resume-builder`,
@@ -62,15 +108,158 @@ export async function GET() {
             pubDate: currentDate,
             category: 'Analytics',
         },
+        {
+            title: 'Job Board',
+            link: `${baseUrl}/jobs`,
+            description: 'Browse thousands of job openings with AI-powered matching. Find remote, full-time, and contract positions from top companies hiring now.',
+            pubDate: currentDate,
+            category: 'Job Board',
+        },
     ];
 
-    const rssItems = items
+    // Interview Questions items - Index page
+    const interviewQuestionsIndexItem = {
+        title: 'Interview Questions - All Jobs',
+        link: `${baseUrl}/interview-questions`,
+        description: `Prepare for your job interview with our comprehensive collection of interview questions and answers for ${enabledJobTitles.length}+ job titles. Expert tips, behavioral questions, and technical interview prep.`,
+        pubDate: currentDate,
+        category: 'Interview Preparation',
+    };
+
+    // Resume Keywords items - Index page
+    const resumeKeywordsIndexItem = {
+        title: 'Resume Keywords & Skills',
+        link: `${baseUrl}/resume-keywords`,
+        description: `Discover the best resume keywords and skills for your job. Optimize your resume for ATS and impress recruiters with our comprehensive guides covering ${enabledJobTitles.length}+ job titles.`,
+        pubDate: currentDate,
+        category: 'Resume Writing',
+    };
+
+    // Job Descriptions items - Index page
+    const jobDescriptionsIndexItem = {
+        title: 'Job Description Templates',
+        link: `${baseUrl}/job-description`,
+        description: `Download professionally crafted job description templates for ${enabledJobTitles.length}+ job titles. Attract top talent with clear, comprehensive job postings that set proper expectations.`,
+        pubDate: currentDate,
+        category: 'HR Resources',
+    };
+
+    // Salary Guides items - Index page
+    const salaryGuidesIndexItem = {
+        title: 'Salary Guides & Compensation Data',
+        link: `${baseUrl}/salary`,
+        description: `Access comprehensive salary guides and compensation data for ${enabledJobTitles.length}+ job titles. Make informed decisions with market-based salary benchmarks.`,
+        pubDate: currentDate,
+        category: 'Compensation',
+    };
+
+    // Cover Letter Examples items - Index page
+    const coverLetterExamplesIndexItem = {
+        title: 'Cover Letter Examples & Templates',
+        link: `${baseUrl}/cover-letter`,
+        description: `Browse professional cover letter examples and templates for ${enabledJobTitles.length}+ job titles. Create compelling cover letters that get you noticed by employers.`,
+        pubDate: currentDate,
+        category: 'Resume Writing',
+    };
+
+    // Generate individual interview question items (only enabled job titles)
+    const interviewQuestionItems = enabledJobTitles.map((job) => ({
+        title: `${job.title} Interview Questions & Answers`,
+        link: `${baseUrl}/interview-questions/${job.slug}`,
+        description: `Prepare for your ${job.title} interview with our comprehensive guide. Discover the most commonly asked questions, expert-approved answers, and proven strategies to ace your next job interview.`,
+        pubDate: currentDate,
+        category: 'Interview Preparation',
+    }));
+
+    // Generate individual resume keyword items (only enabled job titles)
+    const resumeKeywordItems = enabledJobTitles.map((job) => ({
+        title: `${job.title} Resume Keywords & Skills`,
+        link: `${baseUrl}/resume-keywords/${job.slug}`,
+        description: `Discover the top ${job.title} resume keywords and skills that get past ATS scanners. Our comprehensive list includes hard skills, soft skills, and action verbs to make your resume stand out.`,
+        pubDate: currentDate,
+        category: 'Resume Writing',
+    }));
+
+    // Generate job description items (only enabled job titles)
+    const jobDescriptionItems = enabledJobTitles.map((job) => ({
+        title: `${job.title} Job Description Template`,
+        link: `${baseUrl}/job-description/${job.slug}`,
+        description: `Download our comprehensive ${job.title} job description template. Includes responsibilities, requirements, skills needed, and tips for attracting the best candidates.`,
+        pubDate: currentDate,
+        category: 'HR Resources',
+    }));
+
+    // Generate salary guide items (only enabled job titles)
+    const salaryGuideItems = enabledJobTitles.map((job) => ({
+        title: `${job.title} Salary Guide`,
+        link: `${baseUrl}/salary/${job.slug}`,
+        description: `Explore ${job.title} salary data, compensation trends, and factors affecting pay. Make informed decisions with our comprehensive salary benchmarking guide.`,
+        pubDate: currentDate,
+        category: 'Compensation',
+    }));
+
+    // Generate cover letter example items (only enabled job titles)
+    const coverLetterItems = enabledJobTitles.map((job) => ({
+        title: `${job.title} Cover Letter Example`,
+        link: `${baseUrl}/cover-letter/${job.slug}`,
+        description: `Review our professional ${job.title} cover letter example. Learn how to craft a compelling cover letter that showcases your skills and gets you noticed.`,
+        pubDate: currentDate,
+        category: 'Resume Writing',
+    }));
+
+    // Generate job board items (only enabled job titles)
+    const jobBoardItems = enabledJobTitles.map((job) => ({
+        title: `${job.title} Job Board`,
+        link: `${baseUrl}/jobs/roles/${job.slug}`,
+        description: `Browse ${job.title} jobs hiring now. Find remote and local ${job.title} jobs from top companies.`,
+        pubDate: currentDate,
+        category: 'Job Board',
+    }));
+
+    // Generate location-specific job board items (top combinations only to avoid RSS bloat)
+    const locationJobBoardItems = LOCATION_JOB_BOARDS.slice(0, 50).map((locJob) => ({
+        title: `${locJob.jobTitle} Jobs in ${locJob.locationName}`,
+        link: `${baseUrl}/jobs/${locJob.locationSlug}/${locJob.jobSlug}`,
+        description: `Find ${locJob.totalJobs}+ ${locJob.jobTitle} jobs in ${locJob.locationName}. Browse active openings, competitive salaries, and apply directly to top companies.`,
+        pubDate: currentDate,
+        category: 'Job Board',
+    }));
+
+    // Generate location hub pages
+    const locationHubItems = SUPPORTED_LOCATIONS.map((location) => ({
+        title: `Jobs in ${location.name}`,
+        link: `${baseUrl}/jobs/${location.slug}`,
+        description: `Browse all job openings in ${location.name}. Find jobs in technology, marketing, sales, healthcare, and more from top companies hiring now.`,
+        pubDate: currentDate,
+        category: 'Job Board',
+    }));
+
+    // Combine all items
+    const allItems = [
+        ...blogItems,
+        ...featureItems,
+        interviewQuestionsIndexItem,
+        resumeKeywordsIndexItem,
+        jobDescriptionsIndexItem,
+        salaryGuidesIndexItem,
+        coverLetterExamplesIndexItem,
+        ...interviewQuestionItems,
+        ...resumeKeywordItems,
+        ...jobDescriptionItems,
+        ...salaryGuideItems,
+        ...coverLetterItems,
+        ...locationHubItems,
+        ...jobBoardItems,
+        ...locationJobBoardItems.slice(0, 30), // Limit to avoid RSS bloat
+    ];
+
+    const rssItems = allItems
         .map(
             (item) => `
     <item>
-      <title><![CDATA[${item.title}]]></title>
+      <title>${escapeXml(item.title)}</title>
       <link>${item.link}</link>
-      <description><![CDATA[${item.description}]]></description>
+      <description>${escapeXml(item.description)}</description>
       <pubDate>${item.pubDate}</pubDate>
       <category>${item.category}</category>
       <guid isPermaLink="true">${item.link}</guid>
@@ -79,7 +268,7 @@ export async function GET() {
         .join('');
 
     const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hirenest - Connect Job Seekers with Employers</title>
     <link>${baseUrl}</link>
@@ -93,9 +282,14 @@ export async function GET() {
       <link>${baseUrl}</link>
     </image>
     <copyright>Copyright ${new Date().getFullYear()} Hirenest. All rights reserved.</copyright>
+    <managingEditor>hello@hirenest.ai (Hirenest Team)</managingEditor>
+    <webMaster>hello@hirenest.ai (Hirenest Team)</webMaster>
     <category>Jobs and Recruitment</category>
     <category>Career Development</category>
     <category>AI Technology</category>
+    <category>Interview Preparation</category>
+    <category>Resume Writing</category>
+    <ttl>60</ttl>
     ${rssItems}
   </channel>
 </rss>`;

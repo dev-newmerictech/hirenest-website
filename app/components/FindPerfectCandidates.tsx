@@ -74,12 +74,12 @@ export const FindPerfectCandidates = () => {
                                 <Box w={3} h={3} borderRadius="full" bg="red.400" />
                                 <Box w={3} h={3} borderRadius="full" bg="yellow.400" />
                                 <Box w={3} h={3} borderRadius="full" bg="green.400" />
-                                <Text ml="auto" fontSize="xs" color="gray.400">Employer Dashboard</Text>
+                                <Text ml="auto" fontSize="sm" color="gray.400">Employer Dashboard</Text>
                             </HStack>
 
                             <Flex justify="space-between" align="center" mb={6}>
-                                <Text fontWeight="bold" fontSize="lg" color="gray.800">Candidate Pipeline</Text>
-                                <Button size="xs" colorScheme="brand" variant="solid" bg="brand.600" color="white" borderRadius="full" px={4}>
+                                <Text fontWeight="bold" fontSize={{ base: 'lg', md: 'xl' }} color="gray.800">Candidate Pipeline</Text>
+                                <Button size="sm" colorScheme="brand" variant="solid" bg="brand.600" color="white" borderRadius="full" px={4}>
                                     Export Report
                                 </Button>
                             </Flex>
@@ -103,17 +103,17 @@ export const FindPerfectCandidates = () => {
                                             align="center"
                                             justify="center"
                                             fontWeight="bold"
-                                            fontSize="sm"
+                                            fontSize="lg"
                                         >
                                             {candidate.initial}
                                         </Flex>
                                         <Box flex={1}>
-                                            <Text fontWeight="bold" fontSize="sm" color="gray.800">{candidate.name}</Text>
-                                            <Text fontSize="xs" color="gray.500">{candidate.role}</Text>
+                                            <Text fontWeight="bold" fontSize="md" color="gray.800">{candidate.name}</Text>
+                                            <Text fontSize="sm" color="gray.500">{candidate.role}</Text>
                                         </Box>
                                         <Box textAlign="right">
-                                            <Text fontWeight="bold" fontSize="sm" color="#4241ff">{candidate.match} Match</Text>
-                                            <Text fontSize="xs" color="gray.500">{candidate.status}</Text>
+                                            <Text fontWeight="bold" fontSize="md" color="#4241ff">{candidate.match} Match</Text>
+                                            <Text fontSize="sm" color="gray.500">{candidate.status}</Text>
                                         </Box>
                                     </Flex>
                                 ))}
@@ -138,31 +138,27 @@ export const FindPerfectCandidates = () => {
                     {/* Right Content - Text */}
                     <Box flex={1}>
                         <Text
-                            color="#4241ff"
-                            fontWeight="600"
-                            fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                            fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                             mb={4}
-                            letterSpacing="wider"
-                            textTransform="uppercase"
                             textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Job Providers
                         </Text>
                         <Heading
                             as="h2"
-                            fontSize={{ base: '2xl', md: '4xl' }}
-                            fontWeight="700"
-                            color="#000"
+                            fontSize={{ base: '3xl', md: '4xl' }}
+                            fontWeight="800"
+                            color="#1d1d1f"
+                            lineHeight="1.1"
+                            letterSpacing="tight"
                             mb={6}
-                            lineHeight="1.2"
                             textAlign={{ base: 'center', lg: 'left' }}
                         >
                             Find Perfect Candidates in <br />
                             <Box as="span" color="#4241ff">Minutes, Not Months</Box>
                         </Heading>
                         <Text
-                            color="#000"
-                            fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#000"
                             mb={8}
                             lineHeight="1.6"
                         >
@@ -188,7 +184,8 @@ export const FindPerfectCandidates = () => {
                                 boxShadow: "lg"
                             }}
                             transition="all 0.3s"
-                            size={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
+                            size={{ base: 'lg' }}
+                            fontWeight={'600'}
                             borderRadius="full"
                             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                             color="white"

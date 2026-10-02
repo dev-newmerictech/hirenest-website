@@ -41,30 +41,25 @@ export const ApplicationProcess = () => {
                 {/* Section Header */}
                 <VStack mb={12} textAlign="center">
                     <Text
-                        color="#4241ff"
-                        fontWeight="600"
-                        fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                        fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                         mb={4}
-                        letterSpacing="wider"
-                        textTransform="uppercase"
                     >
                         Application Process
                     </Text>
                     <Heading
                         as="h2"
                         fontSize={{ base: '3xl', md: '4xl' }}
-                        fontWeight="700"
+                        fontWeight="800"
+                        color="#1d1d1f"
+                        lineHeight="1.1"
+                        letterSpacing="tight"
                         mb={6}
-                        lineHeight="1.2"
-                        color="#000"
                         maxW="800px"
                     >
                         How to <Box as="span" bg="#4241ff" bgClip="text">Join Us</Box>
                     </Heading>
                     <Text
-                        color="#000"
-                        fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                        maxW="700px"
+                        fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="4xl"
                         lineHeight="1.6"
                     >
                         Our hiring process is designed to be transparent and respectful of your time. Here's what to expect:
@@ -131,9 +126,7 @@ const ProcessStep = ({ icon, title, description, stepNumber, isLast }: {
         {/* Content */}
         <VStack textAlign="center" gap={2}>
             <Text
-                fontSize="sm"
-                fontWeight="600"
-                color="#4241ff"
+                fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
             >
                 Step {stepNumber}
             </Text>
@@ -146,7 +139,7 @@ const ProcessStep = ({ icon, title, description, stepNumber, isLast }: {
                 {title}
             </Heading>
             <Text
-                fontSize={{ base: 'sm', md: 'md' }}
+                fontSize={{ base: 'md', md: 'lg' }}
                 color="#000"
                 lineHeight="1.6"
             >

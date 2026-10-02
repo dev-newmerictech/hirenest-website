@@ -3,7 +3,7 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
@@ -13,7 +13,7 @@ export function TeamCollaborationStructuredData() {
 
     // Generate Image Schema - Using provider OG image as specific hero doesn't exist yet
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/job-provider-og.png',
+        'https://hirenest.ai/job-provider-og.png',
         {
             name: 'Team Collaboration - Hire Together, Decide Smarter',
             description: 'Bring your entire hiring team together with tools designed for seamless collaboration and faster decision-making.',
@@ -25,37 +25,39 @@ export function TeamCollaborationStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'Team Collaboration Demo',
-        'Learn how to streamline your hiring process with shared pipelines, real-time chat, and collaborative decision-making tools.',
-        'https://www.hirenest.ai/job-provider-og.png',
-        '2024-01-15T00:00:00.000Z',
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'Team Collaboration - Hire Together, Decide Smarter',
+        'Streamline your hiring process with Team Collaboration tools. Share feedback, rate candidates, and make hiring decisions together.',
+        'https://hirenest.ai/team-collaboration',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'Team Collaboration', url: 'https://hirenest.ai/team-collaboration' }
+        ],
         {
-            duration: 'PT3M10S',
-            width: 1920,
-            height: 1080
+            image: imageSchema,
+            author: 'Hirenest Team'
         }
     );
 
     return (
         <>
-            {/* FAQ Structured Data */}
+            {/* Structured Data - WebPage */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
             />
 
-            {/* Image Structured Data */}
+            {/* Structured Data - ImageObject */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
             />
 
-            {/* Video Structured Data */}
+            {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
         </>
     );

@@ -24,9 +24,9 @@ import {
 type InterviewType = 'video' | 'mcq' | 'openended'
 
 const videoSources = {
-    entry: 'https://d3g7cvsdf79icc.cloudfront.net/2_Entry.mp4',
-    idle: 'https://d3g7cvsdf79icc.cloudfront.net/1_idle_listening.mp4',
-    talking: 'https://d3g7cvsdf79icc.cloudfront.net/3_Talking.mp4',
+    entry: 'https://dnq5v8ark2rp0.cloudfront.net/2_Entry.mp4',
+    idle: 'https://dnq5v8ark2rp0.cloudfront.net/1_idle_listening.mp4',
+    talking: 'https://dnq5v8ark2rp0.cloudfront.net/3_Talking.mp4',
 }
 
 const interviewTypes = [
@@ -36,7 +36,7 @@ const interviewTypes = [
         title: 'AI Video Interview',
         description: 'Watch candidates explain their approach. AI scores communication, confidence, and critical thinking, before you schedule calls.',
         color: '#4241ff',
-        bg: '#bedcffff',
+        bg: '#230a66',
         features: [
             'Real-time facial analysis for analysing confidence levels',
             'Speech-to-text transcription for accurate record-keeping',
@@ -119,7 +119,7 @@ export const AIInterviewDemo = () => {
                     {/* Section Header */}
                     <VStack textAlign="center" gap={4} maxW="5xl" mx="auto">
                         <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider">
-                        Hiring Platform
+                            Hiring Platform
                         </Text>
                         <Heading
                             as="h2"
@@ -131,11 +131,9 @@ export const AIInterviewDemo = () => {
                         >
                             Let <Text as="span" color="#4241ff">AI Evaluate</Text> All The Candidates AI
                         </Heading>
-                        <Text fontSize="xl" color="#6e6e73" maxW="6xl">
-                        Tired of interviewing candidates who look perfect on paper but can't actually do the job?
-                        </Text>
-                        <Text fontSize="xl" color="#6e6e73" maxW="6xl">
-                        Choose from multiple assessment formats powered by AI to identify people who can perform, not just talk.
+                        <Text fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73" maxW="6xl">
+                            Tired of interviewing candidates who look perfect on paper but can't actually do the job?
+                            Choose from multiple assessment formats powered by AI to identify people who can perform, not just talk.
                         </Text>
                     </VStack>
 
@@ -220,7 +218,7 @@ export const AIInterviewDemo = () => {
                                     shadow: 'lg',
                                 }}
                             >
-                                <Flex flexDirection={{base:'column', md:'row'}} gap={4} alignItems={{base: 'flex-start', md: 'center'}}>
+                                <Flex flexDirection={{ base: 'column', md: 'row' }} gap={4} alignItems={{ base: 'flex-start', md: 'center' }}>
                                     <Flex
                                         p={4}
                                         w={'auto'}
@@ -235,10 +233,10 @@ export const AIInterviewDemo = () => {
                                         <Icon as={type.icon} boxSize={6} />
                                     </Flex>
                                     <Box>
-                                        <Heading size="md" fontWeight="700" color="#1d1d1f" mb={2}>
+                                        <Heading fontSize={{ base: 'lg', md: 'xl' }} fontWeight="700" color="#1d1d1f" mb={2}>
                                             {type.title}
                                         </Heading>
-                                        <Text fontSize="sm" color="#6e6e73" lineHeight="1.6">
+                                        <Text fontSize={{ base: 'md', md: 'lg' }} color="#6e6e73" lineHeight="1.6">
                                             {type.description}
                                         </Text>
                                     </Box>
@@ -273,10 +271,11 @@ export const AIInterviewDemo = () => {
                                         <Box
                                             overflow="hidden"
                                             shadow="2xl"
+                                            h="full"
                                         >
                                             <video
                                                 ref={videoRef}
-                                                style={{ width: '100%', height: '430px', display: 'block', objectFit: 'cover' }}
+                                                style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover' }}
                                                 muted
                                                 playsInline
                                                 onEnded={handleVideoEnd}
@@ -306,7 +305,7 @@ export const AIInterviewDemo = () => {
                                                 rounded="full"
                                                 animation="pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
                                             />
-                                            <Text fontSize="xs" color="white" fontWeight="600" textTransform="capitalize">
+                                            <Text fontSize={{ base: 'md' }} color="white" fontWeight="600" textTransform="capitalize">
                                                 {currentVideo}
                                             </Text>
                                         </Flex>
@@ -339,7 +338,7 @@ export const AIInterviewDemo = () => {
                                                     >
                                                         {String.fromCharCode(64 + option)}
                                                     </Flex>
-                                                    <Text fontWeight="600" color="#1d1d1f">
+                                                    <Text fontWeight="600" fontSize={{ base: 'md' }} color="#1d1d1f">
                                                         Sample answer option {option}
                                                     </Text>
                                                 </HStack>
@@ -357,7 +356,7 @@ export const AIInterviewDemo = () => {
                                             borderColor={selectedInterview.color}
                                         >
                                             <VStack align="flex-start" gap={4}>
-                                                <Text fontWeight="700" color="#1d1d1f" fontSize="lg">
+                                                <Text fontWeight="700" fontSize={{ base: 'md' }} color="#1d1d1f">
                                                     Question: Describe your problem-solving approach
                                                 </Text>
                                                 <Box
@@ -389,16 +388,16 @@ export const AIInterviewDemo = () => {
                             <Box px={{ base: 8, md: 12 }} py={{ base: 4, md: 8 }} display="flex" flexDirection="column" justifyContent="center">
                                 <VStack align="flex-start" gap={6}>
                                     <Box>
-                                        <Heading size="lg" fontWeight="700" color="#1d1d1f" mb={3}>
+                                        <Heading size={{ base: 'lg', md: 'xl' }} fontWeight="700" color="#1d1d1f" mb={3}>
                                             {selectedInterview.title}
                                         </Heading>
-                                        <Text fontSize="lg" color="#6e6e73" lineHeight="1.6">
+                                        <Text fontSize={{ base: 'md', md: 'lg' }} color="#6e6e73" lineHeight="1.6">
                                             {selectedInterview.description}
                                         </Text>
                                     </Box>
 
                                     <VStack align="flex-start" gap={3} w="full">
-                                        <Text fontWeight="700" color="#1d1d1f" fontSize="md">
+                                        <Text fontWeight="700" color="#1d1d1f" fontSize={{ base: 'md', md: 'lg' }}>
                                             Key Features:
                                         </Text>
                                         {selectedInterview.features.map((feature, index) => (
@@ -416,7 +415,7 @@ export const AIInterviewDemo = () => {
                                                 >
                                                     <Icon as={Sparkles} boxSize={3} color={selectedInterview.color} />
                                                 </Box>
-                                                <Text color="#6e6e73" fontSize="md" lineHeight="1.6">
+                                                <Text color="#6e6e73" fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.6">
                                                     {feature}
                                                 </Text>
                                             </HStack>

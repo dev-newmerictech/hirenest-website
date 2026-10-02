@@ -1,0 +1,15 @@
+{"name":"activeSessions","id":10001}
+{"name":"aiChats","id":10002}
+{"name":"aiGeneratedImages","id":10003}
+{"name":"askAISessions","id":10004}
+{"name":"contactMessages","id":10005}
+{"name":"contentVersions","id":10006}
+{"name":"newsletterSentPosts","id":10007}
+{"name":"newsletterSubscribers","id":10008}
+{"name":"pageViews","id":10009}
+{"name":"pages","id":10010}
+{"name":"postSummaries","id":10011}
+{"name":"posts","id":10012}
+{"name":"siteConfig","id":10013}
+{"name":"versionControlSettings","id":10014}
+{"name":"viewCounts","id":10015}

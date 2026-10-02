@@ -52,32 +52,28 @@ export const OurValues = () => {
                 {/* Section Header */}
                 <VStack mb={12} textAlign="center">
                     <Text
-                        color="#4241ff"
-                        fontWeight="600"
-                        fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+                        fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                         mb={4}
-                        letterSpacing="wider"
-                        textTransform="uppercase"
                     >
                         Our Values
                     </Text>
                     <Heading
                         as="h2"
                         fontSize={{ base: '3xl', md: '4xl' }}
-                        fontWeight="700"
+                        fontWeight="800"
+                        color="#1d1d1f"
+                        lineHeight="1.1"
+                        letterSpacing="tight"
                         mb={6}
-                        lineHeight="1.2"
-                        color="#000"
                         maxW="800px"
                     >
                         Principles That{' '}
                         <Box as="span" bg="#4241ff" bgClip="text">Guide Us</Box>
                     </Heading>
                     <Text
-                        color="#000"
-                        fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-                        maxW="700px"
+                        fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
                         lineHeight="1.6"
+                        maxW="700px"
                     >
                         These core values shape our culture, drive our decisions, and define who we are as a company.
                     </Text>
@@ -121,7 +117,7 @@ const ValueCard = ({ icon, title, description }: { icon: any, title: string, des
         </Heading>
         <Text
             color="#000"
-            fontSize={{ base: 'sm', md: 'md' }}
+            fontSize={{ base: 'md', md: 'lg' }}
             lineHeight="1.6"
         >
             {description}

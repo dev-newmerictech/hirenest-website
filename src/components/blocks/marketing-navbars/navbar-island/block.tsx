@@ -98,7 +98,7 @@ export const Block = () => {
       left="0"
       right="0"
       bg={'transparent'}
-      backdropFilter="blur(44px)"
+      //backdropFilter="blur(44px)" 
       pt={{ base: '4' }}
       transition="background-color 0.2s ease"
     >
@@ -108,11 +108,11 @@ export const Block = () => {
             <HStack gap={{ base: '2', md: '4', lg: '8' }} w="full" justify="space-between">
               {/* <Text fontSize="24px" fontWeight="bold" color="brand.500">Hirenest</Text> */}
 
-              <Image src="/HpLogo.svg" alt="Hirenest Logo" width={150} height={80} style={{ cursor: 'pointer' }} onClick={() => router.push('/')} />
+              <Image src="/HpLogo.svg" alt="Hirenest Logo" width={150} height={31} priority style={{ cursor: 'pointer' }} onClick={() => router.push('/')} />
               <NavbarLinks hideBelow="lg" />
               <HStack gap={{ base: '2', md: '3' }} hideBelow="lg">
                 <Button
-                  size={{ base: 'sm', md: 'sm' }}
+                  size={{ base: 'md', md: 'lg' }}
                   variant="outline"
                   colorPalette="brand"
                   borderRadius="full"
@@ -120,6 +120,8 @@ export const Block = () => {
                   borderColor="brand.500"
                   color="brand.500"
                   minW={{ base: '80px', md: '100px' }}
+                  data-umami-event="nav_login_click"
+                  data-umami-event-position="desktop"
                   _hover={{
                     bg: 'brand.50',
                   }}
@@ -128,11 +130,13 @@ export const Block = () => {
                   Login
                 </Button>
                 <Button
-                  size={{ base: 'sm', md: 'sm' }}
+                  size={{ base: 'md', md: 'lg' }}
                   borderRadius="full"
                   background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                   color="white"
                   minW={{ base: '80px', md: '100px' }}
+                  data-umami-event="nav_signup_click"
+                  data-umami-event-position="desktop"
                   _hover={{
                     background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
                     opacity: 0.9,
@@ -148,7 +152,7 @@ export const Block = () => {
               <NavbarLinks pt="5" pb="2" alignItems="center" justify="center" />
               <HStack gap="3" pt="4" pb="2" justify="center">
                 <Button
-                  size={{ base: 'sm', md: 'md' }}
+                  size={{ base: 'md', md: 'lg' }}
                   variant="outline"
                   colorPalette="brand"
                   borderRadius="full"
@@ -156,6 +160,8 @@ export const Block = () => {
                   borderColor="brand.500"
                   color="brand.500"
                   minW={{ base: '100px', md: '100px' }}
+                  data-umami-event="nav_login_click"
+                  data-umami-event-position="mobile"
                   _hover={{
                     bg: 'brand.50',
                   }}
@@ -164,11 +170,13 @@ export const Block = () => {
                   Login
                 </Button>
                 <Button
-                  size={{ base: 'sm', md: 'md' }}
+                  size={{ base: 'md', md: 'lg' }}
                   borderRadius="full"
                   background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                   color="white"
                   minW={{ base: '100px', md: '100px' }}
+                  data-umami-event="nav_signup_click"
+                  data-umami-event-position="mobile"
                   _hover={{
                     background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
                     opacity: 0.9,

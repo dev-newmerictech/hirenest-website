@@ -14,12 +14,7 @@ export const GotTalent = () => {
                     <Box flex={1}>
                         <Flex align="center" gap={2} mb={0}>
 
-                            <Text
-                                fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                                fontWeight="600"
-                                color="#4241ff"
-                                textTransform="uppercase"
-                                letterSpacing="wider"
+                            <Text fontSize="sm" fontWeight="600" color="#4241ff" textTransform="uppercase" letterSpacing="wider"
                                 mb={3}
                             >
                                 Job Seekers
@@ -28,17 +23,16 @@ export const GotTalent = () => {
                         <Heading
                             as="h2"
                             fontSize={{ base: '3xl', md: '4xl' }}
-                            fontWeight="700"
-                            letterSpacing="normal"
-                            color="#000"
+                            fontWeight="800"
+                            color="#1d1d1f"
+                            lineHeight="1.1"
+                            letterSpacing="tight"
                             mb={4}
-                            lineHeight={'normal'}
                         >
                             Stop Sending Applications into the <Text as="span" bg="#4241ff" bgClip="text">Void</Text>
                         </Heading>
                         <Text
-                            fontSize="lg"
-                            color="#6e6e73"
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
                             lineHeight="1.4"
                             mb={2}
                             maxW="lg"
@@ -46,8 +40,7 @@ export const GotTalent = () => {
                             Ever wondered why your applications disappear without a response?
                         </Text>
                         <Text
-                            fontSize="lg"
-                            color="#6e6e73"
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
                             lineHeight="1.4"
                             mb={2}
                             maxW="lg"
@@ -55,8 +48,7 @@ export const GotTalent = () => {
                             What if your next job found you because of what you can do, not what you wrote on paper?
                         </Text>
                         <Text
-                            fontSize="lg"
-                            color="#6e6e73"
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
                             lineHeight="1.4"
                             mb={2}
                             maxW="lg"
@@ -64,8 +56,7 @@ export const GotTalent = () => {
                             We've rebuilt job searching from the ground up because the old way doesn't work well today.
                         </Text>
                         <Text
-                            fontSize="lg"
-                            color="#6e6e73"
+                            fontSize={{ base: 'lg', md: 'xl' }} color="#6e6e73"
                             lineHeight="1.4"
                             mb={10}
                             maxW="lg"
@@ -101,7 +92,7 @@ export const GotTalent = () => {
                             size="lg"
                             h="14"
                             px="8"
-                            fontSize="md"
+                            fontSize="600"
                             borderRadius="full"
                             background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                             color="white"
@@ -173,10 +164,10 @@ const Feature = ({ icon, title, desc }: { icon: any, title: string, desc: string
             <Icon as={icon} boxSize={5} />
         </Flex>
         <VStack align="flex-start" gap={1}>
-            <Text fontWeight="700" fontSize="md" color="#1d1d1f">
+            <Text fontWeight="700" fontSize={{ base: 'lg', md: 'xl' }} color="#1d1d1f">
                 {title}
             </Text>
-            <Text fontSize="md" color="#6e6e73" lineHeight="1.5">
+            <Text fontSize={{ base: 'md', md: 'lg' }} color="#6e6e73" lineHeight="1.5">
                 {desc}
             </Text>
         </VStack>

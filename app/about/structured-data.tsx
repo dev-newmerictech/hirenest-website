@@ -3,7 +3,7 @@
 import {
     generateFAQSchema,
     generateImageObjectSchema,
-    generateVideoObjectSchema
+    generateWebPageSchema
 } from '../lib/structured-data';
 import { faqs } from '@/src/components/blocks/faqs/faq-with-inline-headline/data';
 
@@ -13,7 +13,7 @@ export function AboutStructuredData() {
 
     // Generate Image Schema
     const imageSchema = generateImageObjectSchema(
-        'https://www.hirenest.ai/about-hero.png',
+        'https://hirenest.ai/about-hero.png',
         {
             name: 'About Hirenest - Transforming Talent Acquisition',
             description: 'Learn about Hirenest mission to revolutionize recruitment through AI-powered technology.',
@@ -25,37 +25,39 @@ export function AboutStructuredData() {
         }
     );
 
-    // Generate Video Schema
-    const videoSchema = generateVideoObjectSchema(
-        'About Hirenest',
-        'Discover the story behind Hirenest and our mission to transform the recruitment industry with AI.',
-        'https://www.hirenest.ai/about-hero.png',
-        '2024-01-15T00:00:00.000Z',
+    // Generate WebPage Schema
+    const webPageSchema = generateWebPageSchema(
+        'About Us - Hirenest',
+        'Hirenest is an AI-powered recruitment platform connecting job seekers with top employers. Learn about our mission, vision, and team.',
+        'https://hirenest.ai/about',
+        [
+            { name: 'Home', url: 'https://hirenest.ai' },
+            { name: 'About Us', url: 'https://hirenest.ai/about' }
+        ],
         {
-            duration: 'PT2M00S',
-            width: 1920,
-            height: 1080
+            image: imageSchema,
+            author: 'Hirenest Team'
         }
     );
 
     return (
         <>
-            {/* FAQ Structured Data */}
+            {/* Structured Data - WebPage */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
             />
 
-            {/* Image Structured Data */}
+            {/* Structured Data - ImageObject */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
             />
 
-            {/* Video Structured Data */}
+            {/* FAQ Structured Data */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
         </>
     );

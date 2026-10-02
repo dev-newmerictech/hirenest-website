@@ -2,6 +2,10 @@ import { Metadata } from 'next'
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import { pageMetadata } from '../lib/metadata';
 import { TermsOfServiceStructuredData } from './structured-data';
+import Link from 'next/link';
+
+// Force static generation for optimal performance
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = pageMetadata.termsOfService;
 
@@ -11,17 +15,17 @@ export default function TermsOfServicePage() {
             <TermsOfServiceStructuredData />
             <Container maxW="4xl">
                 <VStack alignItems="flex-start" gap={8}>
-                    <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} color="#023E8A">
+                    <Heading as="h1" fontWeight="800" fontSize={{ base: '3xl', md: '4xl' }} color="#4241ff">
                         Terms of Service
                     </Heading>
 
-                    <Text fontSize={{ base: 'sm', md: 'md' }} color="gray.600">
+                    <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.600">
                         Last Updated: November 21, 2025
                     </Text>
 
                     <VStack alignItems="flex-start" gap={6}>
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
                                 1. Acceptance of Terms
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -32,7 +36,7 @@ export default function TermsOfServicePage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
                                 2. Use of Services
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -43,7 +47,7 @@ export default function TermsOfServicePage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
                                 3. User Content
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -54,7 +58,7 @@ export default function TermsOfServicePage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
                                 4. Prohibited Activities
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -65,7 +69,7 @@ export default function TermsOfServicePage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
                                 5. Limitation of Liability
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -76,7 +80,7 @@ export default function TermsOfServicePage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
                                 6. Changes to Terms
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
@@ -87,12 +91,14 @@ export default function TermsOfServicePage() {
                         </Box>
 
                         <Box>
-                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#023E8A" mb={3}>
+                            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} color="#4241ff" mb={3} fontWeight="800">
                                 7. Contact Information
                             </Heading>
                             <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.700" lineHeight="1.8">
-                                If you have any questions about these Terms of Service, please contact us at
-                                legal@hirenest.com
+                                If you have any questions about these Terms of Service, please contact us at{' '}
+                                <Link href="mailto:hello@hirenest.ai" color="blue.500">
+                                    hello@hirenest.ai
+                                </Link>
                             </Text>
                         </Box>
                     </VStack>

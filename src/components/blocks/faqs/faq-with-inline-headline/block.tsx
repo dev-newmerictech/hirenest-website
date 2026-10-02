@@ -25,18 +25,18 @@ export const Block = () => {
             <Accordion.Root multiple defaultValue={[faqs[0].question]}>
               {faqs.slice(0, showAll ? faqs.length : 5).map(({ question, answer }) => (
                 <Accordion.Item key={question} value={question}>
-                  <Accordion.ItemTrigger textStyle="lg" py="4">
+                  <Accordion.ItemTrigger fontSize={{ base: 'lg', md: 'xl' }} color="#000" fontWeight={'600'} py="4">
                     <Span flex="1">{question}</Span>
                     <Accordion.ItemIndicator />
                   </Accordion.ItemTrigger>
-                  <Accordion.ItemContent color="fg.muted">
+                  <Accordion.ItemContent fontSize={{ base: 'md', md: 'lg' }} color="#6e6e73" fontWeight={'400'}>
                     <Accordion.ItemBody>{answer}</Accordion.ItemBody>
                   </Accordion.ItemContent>
                 </Accordion.Item>
               ))}
             </Accordion.Root>
             <Button
-              size="xl"
+              fontSize={{ base: 'md', md: 'lg' }}
               alignSelf="center"
               variant="outline"
               colorPalette="gray"

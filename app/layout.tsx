@@ -1,12 +1,17 @@
+import './polyfill';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import "./styles/global.css";
+import "./styles/hirenest-post.css";
 import { Provider } from "@/components/ui/provider";
 import { Box } from "@chakra-ui/react";
 import { Block as Navbar } from '@/src/components/blocks/marketing-navbars/navbar-island/block';
 import { Block as Footer } from '@/src/components/blocks/footers/footer-with-four-columns/block';
-import { organizationSchema, websiteSchema } from './lib/structured-data';
+import StructuredDataWrapper from "./StructuredDataWrapper";
+import AttributionCapture from "./components/AttributionCapture";
+import ScrollDepthTracker from "./components/ScrollDepthTracker";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,6 +20,12 @@ const inter = Inter({
 });
 
 
+const FIXED_DATE = "2024-01-01T00:00:00.000Z";
+
+import { ThemeProvider } from "@/src/context/ThemeContext";
+import { FontProvider } from "@/src/context/FontContext";
+import { SupabaseAuthProvider } from "@/src/context/SupabaseAuthContext";
+import { ConditionalLayout } from "./ConditionalLayout";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hirenest.ai'),
@@ -107,17 +118,24 @@ export const metadata: Metadata = {
   other: {
     // Open Graph article dates (for compatibility)
     'article:published_time': "2024-01-01T00:00:00.000Z",
-    'article:modified_time': new Date().toISOString(),
+    'article:modified_time': FIXED_DATE,
     // Standard meta tags for dates
     'published_time': "2024-01-01T00:00:00.000Z",
-    'modified_time': new Date().toISOString(),
+    'modified_time': FIXED_DATE,
     // Additional date formats for better SEO
     'date': "2024-01-01T00:00:00.000Z",
-    'last-modified': new Date().toISOString(),
+    'last-modified': FIXED_DATE,
     // Ahrefs site verification
     'ahrefs-site-verification': '9d53d325e70fb9a019b6bebdb98c427aded20a7491d6ba73f31efad3358b6622',
   },
 };
+
+if (typeof window === "undefined") {
+  console.log("[DEBUG SSR] typeof localStorage:", typeof localStorage);
+  if (typeof localStorage !== "undefined") {
+    console.log("[DEBUG SSR] localStorage keys:", Object.keys(localStorage));
+  }
+}
 
 export default function RootLayout({
   children,
@@ -125,7 +143,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      {/* ... head ... */}
       <head>
         <link
           rel="alternate"
@@ -137,33 +156,86 @@ export default function RootLayout({
           rel="alternate"
           type="application/xml"
           title="Hirenest LLM Metadata"
-          href="https://hirenest.ai/llms.xml"
+          href="https://hirenest.ai/llms.txt"
         />
-        {/* Structured Data - Combined Organization & Website */}
+        {/* JS Detection: Add class when JavaScript is enabled
+             This allows CSS to hide SSR fallback content after hydration,
+             while keeping it visible for SEO crawlers and users with JS disabled */}
         <script
-          type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@graph': [
-                // Remove @context from individual schemas when using @graph
-                { ...organizationSchema, '@context': undefined },
-                { ...websiteSchema, '@context': undefined },
-              ].map(schema => {
-                // Clean up undefined values
-                const { '@context': _, ...rest } = schema;
-                return rest;
-              }),
-            }),
+            __html: `document.documentElement.classList.add('js-loaded', 'js-available');`
           }}
         />
-
+        {/* Structured Data - Combined Organization & Website */}
+        <StructuredDataWrapper />
+        <meta name="linksindexer-site-verification" content="f4e5bfc7cf21ea2ab5130cf9f64b50c13b10e7603a78a51e098525db8969c1a3"></meta>
         {/* Ahrefs Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="tI+0vq92ZbFL7onBCkAeVQ"
+          strategy="lazyOnload"
+        />
+
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PT6NYXN1VG"
           strategy="afterInteractive"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-PT6NYXN1VG');
+          `}
+        </Script>
+
+        {/* PostHog Analytics */}
+        <Script id="posthog-analytics" strategy="afterInteractive">
+          {`
+            !function(t,e){var o,n,p,r;e._SV||(window.posthog && window.posthog.loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init ns hs wi ls ds rs os capture calculateEventProperties fs register register_once register_for_session unregister unregister_for_session bs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty gs cs createPersonProfile setInternalOrTestUser ts ys opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing vs debug M ps getPageViewId captureTraceFeedback captureTraceMetric Xr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e._SV=1)}(document,window.posthog||[]);
+            posthog.init('phc_PlOglv6S1bfBO9ZA5bu4LVpWMS50uNoLfNIipPK4O97', {
+                api_host: 'https://us.i.posthog.com',
+                defaults: '2026-01-30',
+                person_profiles: 'identified_only',
+                disable_session_recording: true,
+            })
+          `}
+        </Script>
+
+        {/* Meta Pixel */}
+        <Script id="meta-pixel" strategy="lazyOnload">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '3222662094581134');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img height="1" width="1" style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=3222662094581134&ev=PageView&noscript=1"
+          />
+        </noscript>
+
+        {/* Privacy-friendly analytics by Plausible */}
+        <Script
+          src="https://plausible.io/js/pa-Qp1UVMUMD1BO3GmoYFccD.js"
+          strategy="afterInteractive"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`
+          window.plausible=window.plausible||function(){(plausible.q = plausible.q || []).push(arguments)},plausible.init=plausible.init||function(i){plausible.o = i || {}};
+          plausible.init()
+          `}
+        </Script>
 
         {/* Umami Analytics (Hardened Self-Hosted) */}
         <Script
@@ -172,14 +244,23 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${inter.variable} antialiased`}>
-        <Provider>
-          <Box bg="gray.100">
-            <Navbar />
-            {children}
-            <Footer />
-          </Box>
-        </Provider>
+      <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
+        <AttributionCapture />
+        <ScrollDepthTracker />
+
+          <ThemeProvider>
+            <FontProvider>
+              <SupabaseAuthProvider>
+                <Provider>
+                  <div style={{ backgroundColor: "#EDF2F7", minHeight: "100vh" }}>
+                    <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
+                      {children}
+                    </ConditionalLayout>
+                  </div>
+                </Provider>
+              </SupabaseAuthProvider>
+            </FontProvider>
+          </ThemeProvider>
       </body>
     </html>
   );

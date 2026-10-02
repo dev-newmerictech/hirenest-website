@@ -235,6 +235,13 @@ export default function RootLayout({
           plausible.init()
           `}
         </Script>
+
+        {/* Umami Analytics (Hardened Self-Hosted) */}
+        <Script
+          src="https://analytics.hirenest.ai/script.js"
+          data-website-id="e4ccfab8-76cd-4af7-85ff-d3210d428407"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         <AttributionCapture />

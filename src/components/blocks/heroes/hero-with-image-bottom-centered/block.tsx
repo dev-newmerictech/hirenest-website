@@ -68,6 +68,7 @@ export const Block = () => {
                   px={8}
                   h="12"
                   fontSize="md"
+                  data-umami-event="hero_find_job_click"
                   _hover={{ opacity: 0.9 }}
                   w={{ base: 'full', md: 'auto' }}
                   onClick={() => window.open('https://app.hirenest.ai/jobseeker/find-jobs', '_blank')}

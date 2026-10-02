@@ -11,6 +11,7 @@ import { Block as Navbar } from '@/src/components/blocks/marketing-navbars/navba
 import { Block as Footer } from '@/src/components/blocks/footers/footer-with-four-columns/block';
 import StructuredDataWrapper from "./StructuredDataWrapper";
 import AttributionCapture from "./components/AttributionCapture";
+import ScrollDepthTracker from "./components/ScrollDepthTracker";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -245,6 +246,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         <AttributionCapture />
+        <ScrollDepthTracker />
 
           <ThemeProvider>
             <FontProvider>

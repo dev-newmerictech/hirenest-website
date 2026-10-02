@@ -120,6 +120,8 @@ export const Block = () => {
                   borderColor="brand.500"
                   color="brand.500"
                   minW={{ base: '80px', md: '100px' }}
+                  data-umami-event="nav_login_click"
+                  data-umami-event-position="desktop"
                   _hover={{
                     bg: 'brand.50',
                   }}
@@ -133,6 +135,8 @@ export const Block = () => {
                   background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                   color="white"
                   minW={{ base: '80px', md: '100px' }}
+                  data-umami-event="nav_signup_click"
+                  data-umami-event-position="desktop"
                   _hover={{
                     background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
                     opacity: 0.9,
@@ -156,6 +160,8 @@ export const Block = () => {
                   borderColor="brand.500"
                   color="brand.500"
                   minW={{ base: '100px', md: '100px' }}
+                  data-umami-event="nav_login_click"
+                  data-umami-event-position="mobile"
                   _hover={{
                     bg: 'brand.50',
                   }}
@@ -169,6 +175,8 @@ export const Block = () => {
                   background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
                   color="white"
                   minW={{ base: '100px', md: '100px' }}
+                  data-umami-event="nav_signup_click"
+                  data-umami-event-position="mobile"
                   _hover={{
                     background: 'linear-gradient(90deg, #0071fb 0%, #b000ea 100%)',
                     opacity: 0.9,

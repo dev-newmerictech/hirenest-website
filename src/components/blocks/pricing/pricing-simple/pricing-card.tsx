@@ -68,6 +68,8 @@ export const PricingCard = (props: PricingCardProps) => {
         fontWeight="medium"
         border={!data.recommended ? '1px solid rgba(66, 65, 255, 1)' : 'none'}
         cursor={'not-allowed'}
+        data-umami-event="pricing_plan_click"
+        data-umami-event-plan={data.title}
       // onClick={() => window.open('https://app.hirenest.ai/', '_blank')}
       >
         {data.buttonText}

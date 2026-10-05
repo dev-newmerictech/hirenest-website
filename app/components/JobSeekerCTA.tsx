@@ -113,6 +113,7 @@ export const JobSeekerCTA = ({ variant = 'primary' }: JobSeekerCTAProps) => {
                 boxShadow: 'lg',
               }}
               transition="all 0.3s"
+              data-umami-event="cta_seeker_profile_click"
               onClick={() => window.open('https://app.hirenest.ai/jobseeker', '_blank')}
             >
               Start My Free Profile

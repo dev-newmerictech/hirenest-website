@@ -94,6 +94,7 @@ export const NeedTalent = () => {
                                 opacity: 0.9,
                             }}
                             transition="all 0.3s"
+                            data-umami-event="cta_search_candidates_click"
                             onClick={() => window.open('https://app.hirenest.ai/jobprovider/search-candidates', '_blank')}
                         >
                             Let’s Find the Right Talent

@@ -119,6 +119,7 @@ export const JobProviderCTA = ({ variant = 'primary' }: JobProviderCTAProps) => 
                                 boxShadow: "lg"
                             }}
                             transition="all 0.3s"
+                            data-umami-event="cta_post_job_click"
                             onClick={() => {
                                 window.open("https://app.hirenest.ai/", "_blank");
                             }}

@@ -67,6 +67,7 @@ export const JobSeekerHero = () => (
             color="white"
             minW={{ base: '200px', md: '260px' }}
             transition="all 0.3s"
+            data-umami-event="hero_seeker_create_profile_click"
             _hover={{
               transform: 'translateY(-2px)',
               boxShadow: 'lg',

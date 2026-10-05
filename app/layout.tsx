@@ -237,10 +237,10 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Umami Analytics (Hardened Self-Hosted) */}
+        {/* Umami Analytics (Hardened Self-Hosted - Marketing Website) */}
         <Script
           src="https://analytics.hirenest.ai/script.js"
-          data-website-id="e4ccfab8-76cd-4af7-85ff-d3210d428407"
+          data-website-id="b2d9a657-36e2-45e0-9e6b-7341d08bcfa1"
           strategy="afterInteractive"
         />
       </head>

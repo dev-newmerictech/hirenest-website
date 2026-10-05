@@ -102,6 +102,7 @@ export const GotTalent = () => {
                                 opacity: 0.9,
                             }}
                             transition="all 0.3s"
+                            data-umami-event="cta_find_jobs_click"
                             onClick={() => window.open('https://app.hirenest.ai/jobseeker/find-jobs', '_blank')}
                         >
                             Get Matched with Your Dream Job

@@ -74,6 +74,7 @@ export const JobProviderHero = () => (
               background="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
               color="white"
               minW={{ base: '80px', md: '250px' }}
+              data-umami-event="hero_post_job_click"
               onClick={() => window.open('https://app.hirenest.ai/jobprovider/post-job', '_blank')}
             >
               Book My Demo
@@ -88,6 +89,7 @@ export const JobProviderHero = () => (
               fontWeight={'600'}
               borderRadius="full"
               minW={{ base: '80px', md: '250px' }}
+              data-umami-event="hero_seeker_profile_click"
               onClick={() => window.open('https://app.hirenest.ai/jobseeker', '_blank')}
             >
               Create Free Profile

@@ -48,6 +48,7 @@ export const ResumeCTA = () => (
                         opacity: 0.9,
                     }}
                     transition="all 0.3s ease"
+                    data-umami-event="cta_resume_builder_click"
                     onClick={() => window.open('https://app.hirenest.ai/jobseeker/resume-builder', '_blank')}
                 >
                     Try AI Resume Builder

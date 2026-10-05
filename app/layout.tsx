@@ -241,6 +241,7 @@ export default function RootLayout({
         <Script
           src="https://analytics.hirenest.ai/script.js"
           data-website-id="b2d9a657-36e2-45e0-9e6b-7341d08bcfa1"
+          data-domains="hirenest.ai,www.hirenest.ai"
           strategy="afterInteractive"
         />
       </head>

@@ -100,8 +100,8 @@ export function JobListingCard({ job, showFeatured = true }: JobListingCardProps
                 {/* Header */}
                 <HStack justify="space-between" align="flex-start">
                     <VStack align="stretch" gap={1} flex={1}>
-                        <Link href={'https://app.hirenest.ai'} passHref legacyBehavior>
-                            <ChakraLink _hover={{ textDecoration: 'none' }}>
+                        <Link href={job.applicationUrl || 'https://app.hirenest.ai'} passHref legacyBehavior>
+                            <ChakraLink _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
                                 <Heading
                                     as="h3"
                                     size="lg"
@@ -219,7 +219,7 @@ export function JobListingCard({ job, showFeatured = true }: JobListingCardProps
                             <Text fontSize="xs">{formatDate(job.postedDate)}</Text>
                         </HStack>
                         <ChakraLink
-                            href={`https://app.hirenest.ai`}
+                            href={job.applicationUrl || 'https://app.hirenest.ai'}
                             target="_blank"
                             rel="noopener noreferrer"
                             bg="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"

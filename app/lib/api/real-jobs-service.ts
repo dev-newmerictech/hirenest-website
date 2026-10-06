@@ -77,7 +77,7 @@ export async function fetchRealPublicJobs(filter?: PublicJobFilter): Promise<Job
                 benefits: ['Health insurance', 'Paid time off', 'Flexible schedule', 'Equity compensation'],
                 skills: job.preferences?.skills || ['Collaboration', 'Leadership'],
                 postedDate: job.createdAt ? new Date(job.createdAt).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
-                applicationUrl: `https://app.hirenest.ai/jobs/${job._id}`,
+                applicationUrl: job.externalLink || `https://app.hirenest.ai/jobs/${job._id}`,
                 isRemote,
                 featured: true,
                 category: 'technology'

@@ -18,9 +18,9 @@ import { JobBoardHero } from '../../../components/programmatic-seo/job-board'
 import { JobListingCard } from '../../../components/programmatic-seo/job-board'
 import { RelatedJobRoles } from '../../../components/programmatic-seo/job-board'
 import { getJobBySlug, enabledJobTitles } from '../../../lib/programmatic-seo/enabled-job-titles'
+import { fetchRealPublicJobs } from '../../../lib/api/real-jobs-service'
 import {
     getLocationJobBoard,
-    getLocationJobsListings,
     LOCATION_JOB_BOARDS,
     SUPPORTED_LOCATIONS,
     getLocalizedSalaryRange,
@@ -110,9 +110,15 @@ export default async function LocationJobPage({ params }: PageProps) {
 
     const locationName = locationData.name
     const locationBoard = getLocationJobBoard(job, location)
-    const jobListings = getLocationJobsListings(job, location)
-    const featuredListings = jobListings.filter((j: any) => j.featured)
-    const regularListings = jobListings.filter((j: any) => !j.featured)
+    const localizedSalary = getLocalizedSalaryRange(jobData?.averageSalary || 75000, jobData?.category || 'technology', location)
+    const formattedSalary = formatLocalizedSalary(localizedSalary)
+
+    // Fetch real verified jobs from backend API
+    const realJobs = await fetchRealPublicJobs({
+        search: jobData.title,
+        location: locationData.name.split(',')[0],
+        limit: 10
+    })
 
     // Get related jobs from same category
     const relatedJobs = enabledJobTitles
@@ -153,12 +159,9 @@ export default async function LocationJobPage({ params }: PageProps) {
         }
     ]
 
-    // Build structured data
-    const jobPostingSchemas = jobListings.map((listing: any) => {
-        // Calculate validThrough date (90 days from now)
+    // Build structured data only for real verified jobs (prevents deceptive JobPosting SEO penalties)
+    const jobPostingSchemas = realJobs.map((listing: any) => {
         const validThroughDate = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
-
-        // Generate comprehensive address details
         const shortLocation = locationName.split(',')[0]
         const addressRegion = locationName.includes(',') ? locationName.split(',')[1].trim() : ''
         const addressCountry = locationName.includes('India') ? 'IN' :
@@ -208,19 +211,7 @@ export default async function LocationJobPage({ params }: PageProps) {
                     maxValue: listing.salaryRange.max,
                     unitText: listing.salaryRange.period === 'yearly' ? 'YEAR' : 'HOUR'
                 }
-            } : (() => {
-                const salary = getLocalizedSalaryRange(jobData?.averageSalary || 75000, jobData?.category || 'technology', location)
-                return {
-                    '@type': 'MonetaryAmount',
-                    currency: salary.currency,
-                    value: {
-                        '@type': 'QuantitativeValue',
-                        minValue: salary.min,
-                        maxValue: salary.max,
-                        unitText: 'YEAR'
-                    }
-                }
-            })()
+            } : undefined
         }
     })
 
@@ -471,8 +462,8 @@ export default async function LocationJobPage({ params }: PageProps) {
                 badge={`${jobData.category} • ${locationName}`}
             />
 
-            {/* Featured Jobs */}
-            {featuredListings.length > 0 && (
+            {/* Job Listings / Verified Status Section */}
+            {realJobs.length > 0 ? (
                 <Container maxW="7xl" py={8}>
                     <VStack align="stretch" gap={6}>
                         <HStack justify="space-between" align="center">
@@ -481,7 +472,7 @@ export default async function LocationJobPage({ params }: PageProps) {
                                 fontWeight="800"
                                 lineHeight="1.1"
                                 color="#1d1d1f">
-                                Featured {jobData.title} Jobs in {locationName}
+                                Verified {jobData.title} Jobs in {locationName}
                             </Heading>
                             <Badge
                                 bg="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
@@ -490,39 +481,84 @@ export default async function LocationJobPage({ params }: PageProps) {
                                 py={1}
                                 borderRadius="full"
                             >
-                                {featuredListings.length} Featured
+                                {realJobs.length} Verified
                             </Badge>
                         </HStack>
 
                         <SimpleGrid columns={{ base: 1, lg: 2 }} gap={5}>
-                            {featuredListings.map((listing: any) => (
+                            {realJobs.map((listing: any) => (
                                 <JobListingCard key={listing.id} job={listing} />
                             ))}
                         </SimpleGrid>
                     </VStack>
                 </Container>
+            ) : (
+                <Container maxW="7xl" py={8}>
+                    <Box
+                        bg="linear-gradient(135deg, rgba(0, 113, 251, 0.04) 0%, rgba(176, 0, 234, 0.04) 100%)"
+                        borderWidth="1px"
+                        borderColor="blue.100"
+                        borderRadius="2xl"
+                        p={{ base: 6, md: 10 }}
+                        textAlign="center"
+                    >
+                        <VStack gap={4} maxW="2xl" mx="auto">
+                            <Badge
+                                bg="blue.50"
+                                color="blue.700"
+                                px={3}
+                                py={1}
+                                borderRadius="full"
+                                fontSize="xs"
+                                fontWeight="700"
+                                textTransform="uppercase"
+                            >
+                                Verified Openings In Progress
+                            </Badge>
+                            <Heading as="h3" fontSize={{ base: 'xl', md: '2xl' }} fontWeight="800" color="gray.900">
+                                New {jobData.title} Roles in {locationName} Coming Soon
+                            </Heading>
+                            <Text color="gray.600" fontSize={{ base: 'sm', md: 'md' }}>
+                                We are actively onboarding verified employer partners for {jobData.title} positions in {locationName}. Join over 1,400+ job seekers already matching with top tech and enterprise teams on HireNest.
+                            </Text>
+                            <HStack gap={4} pt={2} flexWrap="wrap" justify="center">
+                                <Link href="https://app.hirenest.ai/jobs" passHref legacyBehavior>
+                                    <ChakraLink
+                                        bg="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                                        color="white"
+                                        fontWeight="700"
+                                        fontSize="sm"
+                                        px={6}
+                                        py={3}
+                                        borderRadius="xl"
+                                        _hover={{ opacity: 0.9, textDecoration: 'none' }}
+                                    >
+                                        Browse All Live Jobs
+                                    </ChakraLink>
+                                </Link>
+                                <Link href="https://app.hirenest.ai/auth/signup" passHref legacyBehavior>
+                                    <ChakraLink
+                                        bg="white"
+                                        color="gray.800"
+                                        borderWidth="1px"
+                                        borderColor="gray.200"
+                                        fontWeight="600"
+                                        fontSize="sm"
+                                        px={6}
+                                        py={3}
+                                        borderRadius="xl"
+                                        _hover={{ bg: 'gray.50', textDecoration: 'none' }}
+                                    >
+                                        Upload Resume for AI Matching
+                                    </ChakraLink>
+                                </Link>
+                            </HStack>
+                        </VStack>
+                    </Box>
+                </Container>
             )}
 
             <Separator my={8} />
-
-            {/* All Jobs */}
-            <Container maxW="7xl" py={8}>
-                <VStack align="stretch" gap={6}>
-                    <Heading as="h2"
-                        fontSize={{ base: '2xl', md: '3xl' }}
-                        fontWeight="800"
-                        lineHeight="1.1"
-                        color="#1d1d1f">
-                        All {jobData.title} Openings in {locationName}
-                    </Heading>
-
-                    <SimpleGrid columns={{ base: 1, lg: 2 }} gap={5}>
-                        {regularListings.map((listing: any) => (
-                            <JobListingCard key={listing.id} job={listing} showFeatured={false} />
-                        ))}
-                    </SimpleGrid>
-                </VStack>
-            </Container>
 
             {/* Location Info Section */}
             <Container maxW="7xl" py={12}>
@@ -543,7 +579,7 @@ export default async function LocationJobPage({ params }: PageProps) {
                             <VStack align="start" gap={1}>
                                 <Text fontSize="sm" color="gray.500">Average Salary</Text>
                                 <Text fontSize="lg" fontWeight="700" color="gray.800">
-                                    ${(jobData?.averageSalary || 0).toLocaleString()}/year
+                                    {formattedSalary}
                                 </Text>
                             </VStack>
                             <VStack align="start" gap={1}>

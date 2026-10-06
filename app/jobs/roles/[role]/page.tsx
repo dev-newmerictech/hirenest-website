@@ -19,7 +19,8 @@ import { JobBoardHero } from '../../../components/programmatic-seo/job-board'
 import { JobListingCard } from '../../../components/programmatic-seo/job-board'
 import { RelatedJobRoles } from '../../../components/programmatic-seo/job-board'
 import { getJobBySlug, enabledJobTitles } from '../../../lib/programmatic-seo/enabled-job-titles'
-import { getJobBoardPageBySlug, getJobListingsBySlug, getJobStatistics, LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '../../../lib/programmatic-seo/job-board'
+import { getJobBoardPageBySlug, getJobStatistics, LOCATION_JOB_BOARDS, SUPPORTED_LOCATIONS } from '../../../lib/programmatic-seo/job-board'
+import { fetchRealPublicJobs } from '../../../lib/api/real-jobs-service'
 import { generatePageMetadata } from '../../../lib/metadata'
 import { JsonLdSchema } from '../../../components/seo'
 import { SEO_CONFIG } from '../../../lib/seo/core/constants'
@@ -75,9 +76,11 @@ export default async function JobBoardPage({ params }: PageProps) {
         notFound()
     }
 
-    const jobListings = getJobListingsBySlug(role)
-    const featuredListings = jobListings.filter(j => j.featured)
-    const regularListings = jobListings.filter(j => !j.featured)
+    // Fetch real verified jobs from backend API
+    const realJobs = await fetchRealPublicJobs({
+        search: job.title,
+        limit: 10
+    })
     const stats = getJobStatistics(job.category)
 
     // Get related jobs from same category
@@ -91,17 +94,17 @@ export default async function JobBoardPage({ params }: PageProps) {
             category: j.category as string
         }))
 
-    // Build structured data for job postings
-    const jobPostingSchemas = jobListings.map(listing => {
+    // Build structured data only for real verified jobs (prevents deceptive JobPosting SEO penalties)
+    const jobPostingSchemas = realJobs.map((listing: any) => {
         // Calculate validThrough date (90 days from now)
         const validThroughDate = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
 
         // Generate address details based on listing location
-        const addressLocality = listing.location.city || listing.location.state || 'Remote'
-        const addressRegion = listing.location.state || listing.location.country === 'United States' ? 'US' : ''
-        const addressCountry = listing.location.country === 'United States' ? 'US' :
-                              listing.location.country === 'India' ? 'IN' :
-                              listing.location.country === 'United Arab Emirates' ? 'AE' : 'US'
+        const addressLocality = listing.location?.city || listing.location?.state || 'Remote'
+        const addressRegion = listing.location?.state || (listing.location?.country === 'United States' ? 'US' : '')
+        const addressCountry = listing.location?.country === 'United States' ? 'US' :
+                              listing.location?.country === 'India' ? 'IN' :
+                              listing.location?.country === 'United Arab Emirates' ? 'AE' : 'US'
         const streetAddress = listing.isRemote ? 'Remote' : ''
         const postalCode = listing.isRemote ? '00000' : ''
 
@@ -147,16 +150,7 @@ export default async function JobBoardPage({ params }: PageProps) {
                     maxValue: listing.salaryRange.max,
                     unitText: listing.salaryRange.period === 'yearly' ? 'YEAR' : 'HOUR'
                 }
-            } : {
-                '@type': 'MonetaryAmount',
-                currency: 'USD',
-                value: {
-                    '@type': 'QuantitativeValue',
-                    minValue: 50000,
-                    maxValue: 150000,
-                    unitText: 'YEAR'
-                }
-            }
+            } : undefined
         }
     })
 
@@ -383,8 +377,8 @@ export default async function JobBoardPage({ params }: PageProps) {
                 badge={`${job.category} Jobs`}
             />
 
-            {/* Featured Jobs */}
-            {featuredListings.length > 0 && (
+            {/* Job Listings / Verified Status Section */}
+            {realJobs.length > 0 ? (
                 <Container maxW="7xl" py={8}>
                     <VStack align="stretch" gap={6}>
                         <HStack justify="space-between" align="center">
@@ -393,7 +387,7 @@ export default async function JobBoardPage({ params }: PageProps) {
                                 fontWeight="800"
                                 lineHeight="1.1"
                                 color="#1d1d1f">
-                                Featured {job.title} Positions
+                                Verified {job.title} Positions
                             </Heading>
                             <Badge
                                 bg="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
@@ -402,16 +396,80 @@ export default async function JobBoardPage({ params }: PageProps) {
                                 py={1}
                                 borderRadius="full"
                             >
-                                {featuredListings.length} Featured
+                                {realJobs.length} Verified
                             </Badge>
                         </HStack>
 
                         <SimpleGrid columns={{ base: 1, lg: 2 }} gap={5}>
-                            {featuredListings.map(listing => (
+                            {realJobs.map((listing: any) => (
                                 <JobListingCard key={listing.id} job={listing} />
                             ))}
                         </SimpleGrid>
                     </VStack>
+                </Container>
+            ) : (
+                <Container maxW="7xl" py={8}>
+                    <Box
+                        bg="linear-gradient(135deg, rgba(0, 113, 251, 0.04) 0%, rgba(176, 0, 234, 0.04) 100%)"
+                        borderWidth="1px"
+                        borderColor="blue.100"
+                        borderRadius="2xl"
+                        p={{ base: 6, md: 10 }}
+                        textAlign="center"
+                    >
+                        <VStack gap={4} maxW="2xl" mx="auto">
+                            <Badge
+                                bg="blue.50"
+                                color="blue.700"
+                                px={3}
+                                py={1}
+                                borderRadius="full"
+                                fontSize="xs"
+                                fontWeight="700"
+                                textTransform="uppercase"
+                            >
+                                Verified Openings In Progress
+                            </Badge>
+                            <Heading as="h3" fontSize={{ base: 'xl', md: '2xl' }} fontWeight="800" color="gray.900">
+                                New {job.title} Roles Coming Soon
+                            </Heading>
+                            <Text color="gray.600" fontSize={{ base: 'sm', md: 'md' }}>
+                                We are actively onboarding verified employer partners for {job.title} positions. Join over 1,400+ job seekers already matching with top tech and enterprise teams on HireNest.
+                            </Text>
+                            <HStack gap={4} pt={2} flexWrap="wrap" justify="center">
+                                <Link href="https://app.hirenest.ai/jobs" passHref legacyBehavior>
+                                    <ChakraLink
+                                        bg="linear-gradient(90deg, #0071fb 0%, #b000ea 100%)"
+                                        color="white"
+                                        fontWeight="700"
+                                        fontSize="sm"
+                                        px={6}
+                                        py={3}
+                                        borderRadius="xl"
+                                        _hover={{ opacity: 0.9, textDecoration: 'none' }}
+                                    >
+                                        Browse All Live Jobs
+                                    </ChakraLink>
+                                </Link>
+                                <Link href="https://app.hirenest.ai/auth/signup" passHref legacyBehavior>
+                                    <ChakraLink
+                                        bg="white"
+                                        color="gray.800"
+                                        borderWidth="1px"
+                                        borderColor="gray.200"
+                                        fontWeight="600"
+                                        fontSize="sm"
+                                        px={6}
+                                        py={3}
+                                        borderRadius="xl"
+                                        _hover={{ bg: 'gray.50', textDecoration: 'none' }}
+                                    >
+                                        Upload Resume for AI Matching
+                                    </ChakraLink>
+                                </Link>
+                            </HStack>
+                        </VStack>
+                    </Box>
                 </Container>
             )}
 
@@ -591,26 +649,6 @@ export default async function JobBoardPage({ params }: PageProps) {
                 </VStack>
             </Container>
 
-            <Separator my={8} />
-
-            {/* All Jobs */}
-            <Container maxW="7xl" py={8}>
-                <VStack align="stretch" gap={6}>
-                    <Heading as="h2"
-                        fontSize={{ base: '2xl', md: '3xl' }}
-                        fontWeight="800"
-                        lineHeight="1.1"
-                        color="#1d1d1f">
-                        All {job.title} Openings
-                    </Heading>
-
-                    <SimpleGrid columns={{ base: 1, lg: 2 }} gap={5}>
-                        {regularListings.map(listing => (
-                            <JobListingCard key={listing.id} job={listing} showFeatured={false} />
-                        ))}
-                    </SimpleGrid>
-                </VStack>
-            </Container>
 
             {/* Job Resources Section */}
             <Container maxW="7xl" py={12}>

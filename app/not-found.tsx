@@ -50,7 +50,7 @@ export default function NotFound() {
 
           {/* Action Buttons */}
           <VStack gap={3} pt={4}>
-            <Link href="/" passHref>
+            <Link href="/" passHref legacyBehavior>
               <Button
                 size="lg"
                 variant={'solid'}

@@ -100,7 +100,7 @@ export const Block = () => {
                       overflow="hidden"
                       position="relative"
                     >
-                      <Image src={src} alt="User" fill style={{ objectFit: 'cover' }} />
+                      <Image src={src} alt="User" fill style={{ objectFit: 'cover' }} unoptimized />
                     </Box>
                   ))}
                 </HStack>

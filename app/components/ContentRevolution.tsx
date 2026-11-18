@@ -211,8 +211,9 @@ export default function ContentRevolution() {
                     </Box>
 
                     {/* CTA Button */}
-                    <Link href="https://app.hirenest.ai/login">
+                    <Link href="https://app.hirenest.ai/login" style={{ textDecoration: 'none' }}>
                         <Button
+                            as="span"
                             className="primary-cta-btn"
                             size="lg"
                             px={10}

@@ -71,8 +71,9 @@ export default function ExamplesHero() {
                             w="full"
                             justifyContent="center"
                         >
-                            <Link href="https://app.hirenest.ai/login">
+                            <Link href="https://app.hirenest.ai/login" style={{ textDecoration: 'none' }}>
                                 <Button
+                                    as="span"
                                     size={{ base: "md", md: "lg" }}
                                     w={{ base: "100%", sm: "280px" }}
                                     bg="#4241ff"

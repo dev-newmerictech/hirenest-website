@@ -53,8 +53,8 @@ export default function FeatureSection() {
                             Identifies high-value, low-competition keywords in your niche automatically. You're targeting keywords that actually move the needle not guessing or spending 2 hours in Ahrefs. The system analyzes search volume, competition, and relevance to YOUR business.
                         </Text>
                         <Box bg="#89A8D8" rounded={"3xl"} p={"1"} w="fit-content">
-                            <Link href="https://app.hirenest.ai/login">
-                                <Button colorScheme="purple" rounded={"3xl"} bg="#4241ff">Start for Free →</Button>
+                            <Link href="https://app.hirenest.ai/login" style={{ textDecoration: 'none' }}>
+                                <Button as="span" colorScheme="purple" rounded={"3xl"} bg="#4241ff">Start for Free →</Button>
                             </Link>
                         </Box>
                     </Box>
@@ -97,8 +97,8 @@ export default function FeatureSection() {
                             Publishes articles directly to your WordPress (or other CMS) on your schedule. No copy-pasting. No manual uploads. No forgetting to publish. Articles go live exactly when you want them even if you're offline for a week.
                         </Text>
                         <Box bg="#89A8D8" rounded={"3xl"} p={"1"} w="fit-content">
-                            <Link href={"/#examples"}>
-                                <Button colorScheme="purple" variant="outline" rounded={"3xl"} bg="white">
+                            <Link href={"/#examples"} style={{ textDecoration: 'none' }}>
+                                <Button as="span" colorScheme="purple" variant="outline" rounded={"3xl"} bg="white">
                                     Read Examples
                                 </Button>
                             </Link>
@@ -125,8 +125,8 @@ export default function FeatureSection() {
                             Learns your writing style, vocabulary, tone, and POV from your examples. Articles sound like YOUR brand, not generic AI. This is the difference between content that builds authority and content that gets ignored. Google rewards authentic brand voice (E-E-A-T).
                         </Text>
                         <Box bg="#89A8D8" rounded={"3xl"} p={"1"} w="fit-content">
-                            <Link href="https://app.hirenest.ai/login">
-                                <Button colorScheme="purple" rounded={"3xl"} bg="#4241ff">Start for Free →</Button>
+                            <Link href="https://app.hirenest.ai/login" style={{ textDecoration: 'none' }}>
+                                <Button as="span" colorScheme="purple" rounded={"3xl"} bg="#4241ff">Start for Free →</Button>
                             </Link>
                         </Box>
                     </Box>

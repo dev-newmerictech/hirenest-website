@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { Box, Container, Heading, Text, Button, VStack } from '@chakra-ui/react'
 
@@ -50,11 +52,12 @@ export default function NotFound() {
 
           {/* Action Buttons */}
           <VStack gap={3} pt={4}>
-            <Link href="/">
+            <Link href="/" style={{ textDecoration: 'none' }}>
               <Button
                 size="lg"
                 variant={'solid'}
                 transition="all 0.2s"
+                as="span"
               >
                 Go Back Home
               </Button>
@@ -65,4 +68,5 @@ export default function NotFound() {
     </Box>
   )
 }
+
 
